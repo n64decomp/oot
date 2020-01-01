@@ -1,0 +1,14 @@
+glabel func_800C0C88
+/* B37E28 800C0C88 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* B37E2C 800C0C8C AFBF0014 */  sw    $ra, 0x14($sp)
+/* B37E30 800C0C90 AFA40018 */  sw    $a0, 0x18($sp)
+/* B37E34 800C0C94 00002825 */  move  $a1, $zero
+/* B37E38 800C0C98 0C0302BD */  jal   func_800C0AF4
+/* B37E3C 800C0C9C 24060DFF */   li    $a2, 3583
+/* B37E40 800C0CA0 0C0302ED */  jal   func_800C0BB4
+/* B37E44 800C0CA4 8FA40018 */   lw    $a0, 0x18($sp)
+/* B37E48 800C0CA8 8FBF0014 */  lw    $ra, 0x14($sp)
+/* B37E4C 800C0CAC 27BD0018 */  addiu $sp, $sp, 0x18
+/* B37E50 800C0CB0 03E00008 */  jr    $ra
+/* B37E54 800C0CB4 00000000 */   nop   
+

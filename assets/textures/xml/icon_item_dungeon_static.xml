@@ -1,0 +1,23 @@
+<Root>
+    <File Name="icon_item_dungeon_static">
+        <Texture Name="Blank_Floor_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="1F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="2F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="3F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="4F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="5F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="6F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="7F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="8F_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B1_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B2_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B3_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B4_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B5_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B6_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B7_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="B8_Button" Format="ia8" Width="24" Height="16"/>
+		<Texture Name="Link_Head" Format="rgb5a1" Width="16" Height="16"/>
+		<Texture Name="Skull" Format="rgb5a1" Width="16" Height="16"/>
+    </File>
+</Root>
