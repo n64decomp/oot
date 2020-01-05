@@ -36,7 +36,7 @@ s32 func_8008F0D8(s32 arg0, s32 arg1)
 {
     s32 temp_v0;
 
-    temp_v0 = arg1 - 21;
+    temp_v0 = arg1 - 0x15;
     if (temp_v0 >= 0 && temp_v0 < 6)
     {
         return temp_v0;
@@ -70,7 +70,7 @@ s32 func_8008F270(s32 arg0, s32 arg1)
 {
     s32 temp_v0;
 
-    temp_v0 = arg1 - 18;
+    temp_v0 = arg1 - 0x12;
     if (temp_v0 >= 0 && temp_v0 < 2)
     {
         return temp_v0;

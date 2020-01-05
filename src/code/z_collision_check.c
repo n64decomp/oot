@@ -9,7 +9,7 @@
 
 s32 func_8005B6A0(s32 arg0, s32 arg1)
 {
-return 1;
+    return 1;
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B6B0.s")
