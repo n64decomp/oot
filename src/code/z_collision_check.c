@@ -75,6 +75,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/ActorCollider_CylinderFree.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C450.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/ActorCollider_InitCylinder.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C5B0.s")

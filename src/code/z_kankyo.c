@@ -11,6 +11,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006F93C.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006F9BC.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006FB94.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006FC88.s")
