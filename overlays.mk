@@ -9,6 +9,7 @@ SRC_DIRS += \
     src/overlays/actors/ovl_En_Boom \
     src/overlays/actors/ovl_En_It \
     src/overlays/actors/ovl_En_Eg \
+    src/overlays/actors/ovl_En_Xc \
     src/overlays/actors/ovl_Obj_Roomtimer \
     src/overlays/actors/ovl_Bg_Spot18_Futa \
     src/overlays/actors/ovl_Item_Inbox \
