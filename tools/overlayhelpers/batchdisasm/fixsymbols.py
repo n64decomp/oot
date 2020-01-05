@@ -14,7 +14,8 @@ def Main():
         asmText = asmFile.read()
 
         for symbolLine in symbolList:
-            asmText = asmText.replace(symbolLine.split(' ')[0], symbolLine.split(' ')[1])
+            if len(symbolLine.strip()) > 0:
+                asmText = asmText.replace(symbolLine.split(' ')[0], symbolLine.split(' ')[1])
 
         asmText = ".include \"macro.inc\"\n\n" + asmText
         asmText = FixIncBin(fileName, asmText)

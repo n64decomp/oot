@@ -7,7 +7,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B65C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B6A0.s")
+s32 func_8005B6A0(s32 arg0, s32 arg1)
+{
+return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B6B0.s")
 
@@ -23,15 +26,24 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B7C0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B7E4.s")
+s32 func_8005B7E4(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B7F4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B818.s")
+void func_8005B818(s32 arg0, s32 arg1)
+{
+
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B824.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B850.s")
+s32 func_8005B850(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005B860.s")
 
@@ -49,7 +61,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005BA30.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005BA74.s")
+s32 func_8005BA74(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005BA84.s")
 
@@ -67,7 +82,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C2BC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C318.s")
+s32 func_8005C318(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C328.s")
 
@@ -79,7 +97,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C5B0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C5F8.s")
+s32 func_8005C5F8(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005C608.s")
 
@@ -97,7 +118,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005CE6C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005CEB4.s")
+s32 func_8005CEB4(s32 arg0, s32 arg1)
+{
+    return 1;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005CEC4.s")
 
@@ -115,7 +139,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005D3BC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005D400.s")
+void func_8005D400(s32 arg0, s32 arg1)
+{
+
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_8005D40C.s")
 

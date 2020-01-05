@@ -39,7 +39,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C0230.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C030C.s")
+s16 func_800C030C(GlobalContext *arg0)
+{
+    return arg0->cameraCtx.unk_5C0;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C0314.s")
 

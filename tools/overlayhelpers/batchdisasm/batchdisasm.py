@@ -8,6 +8,9 @@ for line in overlayListLines:
     overlayVRAM = int(line.split(' ')[1], 16)
 
     #print(overlayName)
+    outdir = "output"
+    if not os.path.exists(outdir):
+        os.mkdir(outdir)
 
     overlaySize = os.path.getsize("../../../baserom/" + overlayName)
 
