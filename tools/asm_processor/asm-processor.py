@@ -384,6 +384,7 @@ class GlobalAsmBlock:
             '.late_rodata': 0,
         }
         self.fn_ins_inds = []
+        self.glued_line = ''
         self.num_lines = 0
 
     def fail(self, message, line=None):
@@ -449,12 +450,21 @@ class GlobalAsmBlock:
         if self.cur_section == '.text':
             if not self.text_glabels:
                 self.fail(".text block without an initial glabel", line)
-            self.fn_ins_inds.append((self.num_lines, size // 4))
+            self.fn_ins_inds.append((self.num_lines - 1, size // 4))
 
     def process_line(self, line):
+        self.num_lines += 1
+        if line.endswith('\\'):
+            self.glued_line += line[:-1]
+            return
+        line = self.glued_line + line
+        self.glued_line = ''
+
+        real_line = line
         line = re.sub(r'/\*.*?\*/', '', line)
         line = re.sub(r'#.*', '', line)
         line = line.strip()
+        line = re.sub(r'^[a-zA-Z0-9_]+:\s*', '', line)
         changed_section = False
         if line.startswith('glabel ') and self.cur_section == '.text':
             self.text_glabels.append(line.split()[1])
@@ -466,36 +476,36 @@ class GlobalAsmBlock:
             # section change
             self.cur_section = '.rodata' if line == '.rdata' else line.split(',')[0].split()[-1]
             if self.cur_section not in ['.data', '.text', '.rodata', '.late_rodata', '.bss']:
-                self.fail("unrecognized .section directive", line)
+                self.fail("unrecognized .section directive", real_line)
             changed_section = True
         elif line.startswith('.late_rodata_alignment'):
             if self.cur_section != '.late_rodata':
-                self.fail(".late_rodata_alignment must occur within .late_rodata section")
+                self.fail(".late_rodata_alignment must occur within .late_rodata section", real_line)
             self.late_rodata_alignment = int(line.split()[1])
             if self.late_rodata_alignment not in [4, 8]:
-                self.fail(".late_rodata_alignment argument must be 4 or 8", line)
+                self.fail(".late_rodata_alignment argument must be 4 or 8", real_line)
             changed_section = True
         elif line.startswith('.incbin'):
-            self.add_sized(int(line.split(',')[-1].strip(), 0), line)
+            self.add_sized(int(line.split(',')[-1].strip(), 0), real_line)
         elif line.startswith('.word') or line.startswith('.float'):
             self.align4()
-            self.add_sized(4 * len(line.split(',')), line)
+            self.add_sized(4 * len(line.split(',')), real_line)
         elif line.startswith('.double'):
             self.align4()
-            self.add_sized(8 * len(line.split(',')), line)
+            self.add_sized(8 * len(line.split(',')), real_line)
         elif line.startswith('.space'):
-            self.add_sized(int(line.split()[1], 0), line)
+            self.add_sized(int(line.split()[1], 0), real_line)
         elif line.startswith('.balign') or line.startswith('.align'):
             align = int(line.split()[1])
             if align != 4:
-                self.fail("only .balign 4 is supported", line)
+                self.fail("only .balign 4 is supported", real_line)
             self.align4()
         elif line.startswith('.asci'):
             z = (line.startswith('.asciz') or line.startswith('.asciiz'))
-            self.add_sized(self.count_quoted_size(line, z), line)
+            self.add_sized(self.count_quoted_size(line, z), real_line)
         elif line.startswith('.'):
             # .macro, ...
-            self.fail("asm directive not supported", line)
+            self.fail("asm directive not supported", real_line)
         else:
             # Unfortunately, macros are hard to support for .rodata --
             # we don't know how how space they will expand to before
@@ -506,14 +516,13 @@ class GlobalAsmBlock:
             # Similarly, we can't currently deal with pseudo-instructions
             # that expand to several real instructions.
             if self.cur_section != '.text':
-                self.fail("instruction or macro call in non-.text section? not supported", line)
-            self.add_sized(4, line)
+                self.fail("instruction or macro call in non-.text section? not supported", real_line)
+            self.add_sized(4, real_line)
         if self.cur_section == '.late_rodata':
             if not changed_section:
-                self.late_rodata_asm_conts.append(line)
+                self.late_rodata_asm_conts.append(real_line)
         else:
-            self.asm_conts.append(line)
-        self.num_lines += 1
+            self.asm_conts.append(real_line)
 
     def finish(self, state):
         src = [''] * (self.num_lines + 1)
@@ -661,7 +670,7 @@ def parse_source(f, opt, framepointer, input_enc, output_enc=None, print_source=
                 asm_functions.append(fn)
                 global_asm = None
             else:
-                global_asm.process_line(line)
+                global_asm.process_line(raw_line)
         else:
             if line in ['GLOBAL_ASM(', '#pragma GLOBAL_ASM(']:
                 global_asm = GlobalAsmBlock("GLOBAL_ASM block at line " + str(line_no))
@@ -672,7 +681,7 @@ def parse_source(f, opt, framepointer, input_enc, output_enc=None, print_source=
                 global_asm = GlobalAsmBlock(fname)
                 with open(fname, encoding=input_enc) as f:
                     for line2 in f:
-                        global_asm.process_line(line2)
+                        global_asm.process_line(line2.rstrip())
                 src, fn = global_asm.finish(state)
                 output_lines[-1] = ''.join(src)
                 asm_functions.append(fn)
@@ -933,7 +942,7 @@ def fixup_objfile(objfile_name, functions, asm_prelude, assembler, output_enc):
         objfile.write(objfile_name)
     finally:
         s_file.close()
-        os.remove(s_name)
+        #os.remove(s_name)
         try:
             os.remove(o_name)
         except:
