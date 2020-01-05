@@ -992,7 +992,7 @@ typedef struct GlobalContext
     /* 0x001E0 */ CameraContext cameraCtx;
     /* 0x007A4 */ SoundContext soundCtx;
     /* 0x007A8 */ LightingContext lightCtx;
-    /* 0x007B8 */ char unk_7B8[0x8];
+    /* 0x007B8 */ s32 unk_7B8[2];
     /* 0x007C0 */ CollisionContext colCtx;
     /* 0x01C24 */ ActorContext actorCtx;
     /* 0x01D64 */ CutsceneContext csCtx;

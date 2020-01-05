@@ -9,7 +9,11 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BC88C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BC8A0.s")
+Gfx* func_800BC8A0(GlobalContext *globalCtx, Gfx* a1)
+{
+    func_80093708(a1, globalCtx->lightCtx.unk_07, globalCtx->lightCtx.unk_08, globalCtx->lightCtx.unk_09, 0,
+            globalCtx->lightCtx.unk_0A, 0x3e8);
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BC8EC.s")
 
@@ -23,7 +27,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BFAE4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BFC84.s")
+s32 func_800BFC84(GlobalContext *globalCtx)
+{
+    return globalCtx->csCtx.state != 0 || func_8008E988(globalCtx) != 0;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BFCB8.s")
 
@@ -76,7 +83,10 @@ s16 func_800C030C(GlobalContext *arg0)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C0CB8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C0D28.s")
+u32 func_800C0D28(GlobalContext *globalCtx)
+{
+    return (globalCtx->unk_7B8[0] != 0);
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800C0D34.s")
 
