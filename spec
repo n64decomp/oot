@@ -2861,7 +2861,7 @@ endseg
 
 beginseg
     name "ovl_En_Xc"
-    increment 0x30
+    //increment 0x30
     //include "build/baserom/ovl_En_Xc.o"
     include "build/src/overlays/actors/ovl_En_Xc/z_en_xc.o"
 endseg
