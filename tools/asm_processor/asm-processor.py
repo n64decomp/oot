@@ -942,7 +942,7 @@ def fixup_objfile(objfile_name, functions, asm_prelude, assembler, output_enc):
         objfile.write(objfile_name)
     finally:
         s_file.close()
-        #os.remove(s_name)
+        os.remove(s_name)
         try:
             os.remove(o_name)
         except:

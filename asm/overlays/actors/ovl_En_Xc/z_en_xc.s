@@ -1,4 +1,4 @@
-glabel func_80B3C1E0:
+glabel func_80B3C1E0
 /* 00000 80B3C1E0 27BDFFE0 */  addiu   $sp, $sp, 0xFFE0           ## $sp = FFFFFFE0
 /* 00004 80B3C1E4 00803025 */  or      $a2, $a0, $zero            ## $a2 = 00000000
 /* 00008 80B3C1E8 AFA50024 */  sw      $a1, 0x0024($sp)           
