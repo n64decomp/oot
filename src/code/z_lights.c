@@ -124,7 +124,13 @@ void Lights_Free(z_Light* light)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_lights/Lights_Free.s")
 #endif
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_lights/func_8007A614.s")
+void func_8007A614(GlobalContext* globalCtx, LightingContext* lightCtx)
+{
+    Lights_ClearHead(globalCtx, lightCtx);
+    Lights_SetAmbientColor(lightCtx, 0x50, 0x50, 0x50);
+    func_8007A698(lightCtx, 0, 0, 0, 0x3e4, 0x3200);
+    bzero(&sLightsList, 0x188);
+}
 
 void Lights_SetAmbientColor(LightingContext* lightCtx, u8 red, u8 green, u8 blue)
 {
