@@ -782,7 +782,7 @@ void func_8006C438(GlobalContext* globalCtx, s16 arg1);
 // ? func_8006E418(?);
 // ? func_8006EA30(?);
 // ? func_8006ECF4(?);
-// ? func_8006EE48(?);
+void func_8006EE48(s32);
 // ? func_8006EE50(?);
 // ? func_8006EE60(?);
 // ? func_8006EEBC(?);
