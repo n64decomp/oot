@@ -20,10 +20,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_player_lib/func_8008ECAC.s")
 
-void func_8008EDF0(Player *arg0)
+void func_8008EDF0(Player* player)
 {
-    arg0->unk_664 = 0;
-    arg0->stateFlags2 = (s32) (arg0->stateFlags2 & -0x2001);
+    player->unk_664 = 0;
+    player->stateFlags2 = (s32) (player->stateFlags2 & -0x2001);
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_player_lib/func_8008EE08.s")
