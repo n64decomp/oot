@@ -1,6 +1,6 @@
-
 #include <ultra64.h>
 #include <global.h>
+#include <vt.h>
 
 //rodata
 const u32 sFaultDrawerFont[] = {
@@ -136,13 +136,13 @@ void FaultDrawer_UpdatePrintColor()
     s32 idx;
     if (sFaultDrawerStruct.osSyncPrintfEnabled)
     {
-        osSyncPrintf("\x1b[m");
+        osSyncPrintf(VT_RST);
         idx = FaultDrawer_ColorToPrintColor(sFaultDrawerStruct.foreColor);
         if (idx >= 0 && idx < 8)
-            osSyncPrintf("\x1b[3%dm", idx);
+            osSyncPrintf(VT_SGR("3%d"), idx);
         idx = FaultDrawer_ColorToPrintColor(sFaultDrawerStruct.backColor);
         if (idx >= 0 && idx < 8)
-            osSyncPrintf("\x1b[4%dm", idx);
+            osSyncPrintf(VT_SGR("4%d"), idx);
     }
 }
 
@@ -172,7 +172,7 @@ void FaultDrawer_SetCharPad(s8 padW, s8 padH)
 void FaultDrawer_SetCursor(s32 x, s32 y)
 {
     if (sFaultDrawerStruct.osSyncPrintfEnabled)
-        osSyncPrintf("\x1b[%d;%dH", (y - sFaultDrawerStruct.yStart) / (sFaultDrawerStruct.charH + sFaultDrawerStruct.charHPad), (x - sFaultDrawerStruct.xStart) / (sFaultDrawerStruct.charW + sFaultDrawerStruct.charWPad));
+        osSyncPrintf(VT_CUP(%d, %d), (y - sFaultDrawerStruct.yStart) / (sFaultDrawerStruct.charH + sFaultDrawerStruct.charHPad), (x - sFaultDrawerStruct.xStart) / (sFaultDrawerStruct.charW + sFaultDrawerStruct.charWPad));
     sFaultDrawerStruct.cursorX = x;
     sFaultDrawerStruct.cursorY = y;
 }
@@ -180,7 +180,7 @@ void FaultDrawer_SetCursor(s32 x, s32 y)
 void FaultDrawer_FillScreen()
 {
     if (sFaultDrawerStruct.osSyncPrintfEnabled)
-        osSyncPrintf("\x1b[2J");
+        osSyncPrintf(VT_CLS);
 
     FaultDrawer_DrawRecImpl(sFaultDrawerStruct.xStart, sFaultDrawerStruct.yStart, sFaultDrawerStruct.xEnd, sFaultDrawerStruct.yEnd, sFaultDrawerStruct.backColor | 1);
     FaultDrawer_SetCursor(sFaultDrawerStruct.xStart, sFaultDrawerStruct.yStart);
@@ -260,7 +260,7 @@ u32 FaultDrawer_FormatStringFunc(u32 arg0, const char* str, s32 count)
 
 void FaultDrawer_VPrintf(const char* str, char* args) //va_list
 {
-    func_800052E0(&FaultDrawer_FormatStringFunc, &sFaultDrawerStruct, str, args);
+    _Printf(&FaultDrawer_FormatStringFunc, &sFaultDrawerStruct, str, args);
 }
 
 #ifdef NON_MATCHING
@@ -309,5 +309,5 @@ void FaultDrawer_WritebackFBDCache()
 void FaultDrawer_SetDefault()
 {
     bcopy(&sFaultDrawerDefault, &sFaultDrawerStruct, sizeof(FaultDrawer));
-    sFaultDrawerStruct.fb = (u16*)(((u32)D_80000318 | 0x80000000) - 0x25800);
+    sFaultDrawerStruct.fb = (u16*)((osMemSize | 0x80000000) - 0x25800);
 }

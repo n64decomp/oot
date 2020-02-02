@@ -7,32 +7,43 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801354E0
-    .incbin "baserom.z64", 0xBAC680, 0x24
+    .asciz "spark():u_div,v_div \x30\xA4\xC7\xA4\xCF\xBA\xA4\xA4\xEB\xA1\xA3\n"
+    # EUC-JP: 0では困る。| 0 is not good.
+    .balign 4
 
 glabel D_80135504
-    .incbin "baserom.z64", 0xBAC6A4, 0x14
+    .asciz "table_size\xA5\xAA\xA1\xBC\xA5\xD0\xA1\xBC\n"
+    # EUC-JP: オーバー | over-
+    .balign 4
 
 glabel D_80135518
-    .incbin "baserom.z64", 0xBAC6B8, 0x30
+    .asciz "EffectSparkInfo_proc():Spark Pointer is NULL\n"
+    .balign 4
 
 glabel D_80135548
-    .incbin "baserom.z64", 0xBAC6E8, 0x14
+    .asciz "../z_eff_spark.c"
+    .balign 4
 
 glabel D_8013555C
-    .incbin "baserom.z64", 0xBAC6FC, 0x38
+    .asciz "EffectSparkInfo_disp():\xA5\xE1\xA5\xE2\xA5\xEA\xA1\xBC\xB3\xCE\xCA\xDD\xBC\xBA\xC7\xD4 graph_malloc\n"
+    # EUC-JP: メモリー確保失敗 | Memory allocation failure
+    .balign 4
 
 glabel D_80135594
-    .incbin "baserom.z64", 0xBAC734, 0x14
+    .asciz "../z_eff_spark.c"
+    .balign 4
 
 glabel D_801355A8
-    .incbin "baserom.z64", 0xBAC748, 0x4
+    .float 0.008
 
 glabel D_801355AC
-    .incbin "baserom.z64", 0xBAC74C, 0x4
+    .float 65534
 
 glabel D_801355B0
-    .incbin "baserom.z64", 0xBAC750, 0x4
+    .float 15000
 
 glabel D_801355B4
-    .incbin "baserom.z64", 0xBAC754, 0xC
+    .float 30000

@@ -1,26 +1,45 @@
 #include <ultra64.h>
-#include "global.h"
+#include <global.h>
+
+u8 sBootThreadInfo[0x20];
+OSThread sIdleThread;
+u8 sIdleThreadStack[0x400];
+u8 sIdleThreadInfo[0x20];
+u8 sBootThreadStack[0x400];
+OSThread sMainThread;
+
+void* D_80009410[] = 
+{
+    &osStopThread,
+    &func_80009270,
+    &__osSetFpcCsr,
+    &__osGetFpcCsr,
+    &func_800092E0,
+    &func_80009270,
+    &osViGetNextFramebuffer,
+    &bcmp,
+};
 
 void cleararena(void)
 {
-    bzero(_dmadataSegmentStart, (u8*)D_80000318 - D_00016DA0);
+    bzero(_dmadataSegmentStart, (u8*)osMemSize - OS_K0_TO_PHYSICAL(_dmadataSegmentStart));
 }
 
 void bootproc(void)
 {
-    func_80002660(D_80012370, D_80012960, D_80012D60, 0, -1, "boot");
+    StackCheck_Init(sBootThreadInfo, sBootThreadStack, sBootThreadStack+sizeof(sBootThreadStack), 0, -1, "boot");
 
-    D_80000318 = func_80005100();
+    osMemSize = func_80005100();
     cleararena();
     func_8000345C();
     func_80003708();
 
-    D_80009450 = func_80007910();
+    gCartHandle = osCartRomInit();
     func_800023D0();
-    func_80002080();
-    func_80001E60();
+    isPrintfInit();
+    Locale_Init();
     
-    func_80002660(D_80012940, D_80012540, D_80012940_, 0, 256, "idle");
-    osCreateThread(&D_80012390, 1, func_80000694, 0, D_80012940, 10);
-    osStartThread(&D_80012390);
+    StackCheck_Init(sIdleThreadInfo, sIdleThreadStack, sIdleThreadStack+sizeof(sIdleThreadStack), 0, 256, "idle");
+    osCreateThread(&sIdleThread, 1, func_80000694, 0, sIdleThreadInfo, 10);
+    osStartThread(&sIdleThread);
 }

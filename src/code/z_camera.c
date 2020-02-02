@@ -2,6 +2,7 @@
 #include <global.h>
 #include <macros.h>
 #include <z64.h>
+#include <vt.h>
 
 // Non-matchings functions marked with CLOSE are either a matter of regalloc or stack size and can possibly be fixed with the permutator.
 
@@ -421,7 +422,7 @@ void *func_8004545C(Vec3f *a, s32 b, s32 c, struct_80043D18 *d, struct_80043D18 
 
     if (func_800427B4(d->unk_18, e->unk_18, b, c, &sp24) == 0)
     {
-        osSyncPrintf("\x1B[43;30mcamera: corner check no cross point %x %x\n\x1B[m", d, e);
+        osSyncPrintf(VT_COL(YELLOW, BLACK) "camera: corner check no cross point %x %x\n" VT_RST, d, e);
         *a = d->unk_00;
         return a;
     }
@@ -1036,8 +1037,14 @@ s32 func_8005A77C(Camera *camera, s16 b)
 // 47 lines (has lwl/lwr)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005A8C4.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005A948.s")
+
 // 80 lines (has lwl/lwr)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005A970.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005A9CC.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005AA1C.s")
 
 // 118 lines (has 1 jtbl)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_camera/func_8005AA90.s")
@@ -1188,7 +1195,7 @@ void Camera_SetCameraData(Camera *camera, s16 b, s32 c, s32 d, s16 e, s16 f) // 
         camera->unk_12E = f;
     
     if (b & 0x10)
-        osSyncPrintf("\x1B[41;37mcamera: setCameraData: last argument not alive!\n\x1B[m", b);
+        osSyncPrintf(VT_COL(RED, WHITE) "camera: setCameraData: last argument not alive!\n" VT_RST, b);
 }
 
 s32 func_8005B044()

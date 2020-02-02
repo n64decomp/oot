@@ -7,32 +7,44 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80146230
-    .incbin "baserom.z64", 0xBBD3D0, 0x8
+    .asciz "this"
+    .balign 4
 
 glabel D_80146238
-    .incbin "baserom.z64", 0xBBD3D8, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4
 
 glabel D_8014624C
-    .incbin "baserom.z64", 0xBBD3EC, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4
 
 glabel D_80146260
-    .incbin "baserom.z64", 0xBBD400, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4
 
 glabel D_80146274
-    .incbin "baserom.z64", 0xBBD414, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8014627C
-    .incbin "baserom.z64", 0xBBD41C, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4
 
 glabel D_80146290
-    .incbin "baserom.z64", 0xBBD430, 0x14
+    .asciz "this->maxval = %d\n"
+    .balign 4
 
 glabel D_801462A4
-    .incbin "baserom.z64", 0xBBD444, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_801462A8
-    .incbin "baserom.z64", 0xBBD448, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4
 
 glabel D_801462BC
-    .incbin "baserom.z64", 0xBBD45C, 0x14
+    .asciz "../speed_meter.c"
+    .balign 4

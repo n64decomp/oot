@@ -17,7 +17,7 @@ glabel func_800FF340
 /* B764F0 800FF350 AFA40018 */  sw    $a0, 0x18($sp)
 /* B764F4 800FF354 00C03825 */  move  $a3, $a2
 /* B764F8 800FF358 8FA6001C */  lw    $a2, 0x1c($sp)
-/* B764FC 800FF35C 0C0014B8 */  jal   func_800052E0
+/* B764FC 800FF35C 0C0014B8 */  jal   _Printf
 /* B76500 800FF360 8C840000 */   lw    $a0, ($a0)
 /* B76504 800FF364 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B76508 800FF368 27BD0018 */  addiu $sp, $sp, 0x18

@@ -66,6 +66,7 @@ glabel func_8003E214
 /* AB54A4 8003E304 03E00008 */  jr    $ra
 /* AB54A8 8003E308 00000000 */   nop   
 
+glabel func_8003E30C
 /* AB54AC 8003E30C 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* AB54B0 8003E310 AFA50034 */  sw    $a1, 0x34($sp)
 /* AB54B4 8003E314 44866000 */  mtc1  $a2, $f12

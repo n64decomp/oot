@@ -7,35 +7,48 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013B9E0
-    .incbin "baserom.z64", 0xBB2B80, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BA00
-    .incbin "baserom.z64", 0xBB2BA0, 0x18
+    .asciz "this->now_joint != NULL"
+    .balign 4
 
 glabel D_8013BA18
-    .incbin "baserom.z64", 0xBB2BB8, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BA38
-    .incbin "baserom.z64", 0xBB2BD8, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BA58
-    .incbin "baserom.z64", 0xBB2BF8, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BA78
-    .incbin "baserom.z64", 0xBB2C18, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BA98
-    .incbin "baserom.z64", 0xBB2C38, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BAB8
-    .incbin "baserom.z64", 0xBB2C58, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BAD8
-    .incbin "baserom.z64", 0xBB2C78, 0x24
+    .asciz "FcSkeletonInfo_draw_child():\xCC\xA4\xC2\xD0\xB1\xFE\n"
+    # EUC-JP: 未対応 | Not compatible
+    .balign 4
 
 glabel D_8013BAFC
-    .incbin "baserom.z64", 0xBB2C9C, 0x20
+    .asciz "../z_fcurve_data_skelanime.c"
+    .balign 4
 
 glabel D_8013BB1C
-    .incbin "baserom.z64", 0xBB2CBC, 0x4
+    .float 182.04445

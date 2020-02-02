@@ -7,5 +7,12 @@
 
 .section .rodata
 
+.align 4
+
 glabel jtbl_801493D0
-    .incbin "baserom.z64", 0xBC0570, 0x20
+    .word L800DCCE4
+    .word L800DCD0C
+    .word L800DCD20
+    .word L800DCCF8
+    .word L800DCDA0
+    .word L800DCD60

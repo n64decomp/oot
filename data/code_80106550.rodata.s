@@ -7,8 +7,10 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014B2E0
-    .incbin "baserom.z64", 0xBC2480, 0x8
+    .double -0
 
 glabel D_8014B2E8
-    .incbin "baserom.z64", 0xBC2488, 0x8
+    .double -0

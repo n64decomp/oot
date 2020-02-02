@@ -23,8 +23,8 @@ glabel func_80000694
 /* 0012E8 800006E8 3C048001 */  lui   $a0, %hi(D_8000B0BC) # $a0, 0x8001
 /* 0012EC 800006EC 0C00084C */  jal   osSyncPrintf
 /* 0012F0 800006F0 2484B0BC */   addiu $a0, %lo(D_8000B0BC) # addiu $a0, $a0, -0x4f44
-/* 0012F4 800006F4 3C058000 */  lui   $a1, %hi(D_80000318) # $a1, 0x8000
-/* 0012F8 800006F8 8CA50318 */  lw    $a1, %lo(D_80000318)($a1)
+/* 0012F4 800006F4 3C058000 */  lui   $a1, %hi(osMemSize) # $a1, 0x8000
+/* 0012F8 800006F8 8CA50318 */  lw    $a1, %lo(osMemSize)($a1)
 /* 0012FC 800006FC 3C048001 */  lui   $a0, %hi(D_8000B0C4) # $a0, 0x8001
 /* 001300 80000700 2484B0C4 */  addiu $a0, %lo(D_8000B0C4) # addiu $a0, $a0, -0x4f3c
 /* 001304 80000704 04A10002 */  bgez  $a1, .L80000710
@@ -55,10 +55,10 @@ glabel func_80000694
 /* 001364 80000764 2484B1CC */  addiu $a0, %lo(D_8000B1CC) # addiu $a0, $a0, -0x4e34
 /* 001368 80000768 0C00084C */  jal   osSyncPrintf
 /* 00136C 8000076C 24050003 */   li    $a1, 3
-/* 001370 80000770 3C0E8021 */  lui   $t6, %hi(D_802109E0) # $t6, 0x8021
-/* 001374 80000774 3C0F801E */  lui   $t7, %hi(D_801D89E0) # $t7, 0x801e
-/* 001378 80000778 25EF89E0 */  addiu $t7, %lo(D_801D89E0) # addiu $t7, $t7, -0x7620
-/* 00137C 8000077C 25CE09E0 */  addiu $t6, %lo(D_802109E0) # addiu $t6, $t6, 0x9e0
+/* 001370 80000770 3C0E8021 */  lui   $t6, %hi(gSystemHeap) # $t6, 0x8021
+/* 001374 80000774 3C0F801E */  lui   $t7, %hi(gAudioHeap) # $t7, 0x801e
+/* 001378 80000778 25EF89E0 */  addiu $t7, %lo(gAudioHeap) # addiu $t7, $t7, -0x7620
+/* 00137C 8000077C 25CE09E0 */  addiu $t6, %lo(gSystemHeap) # addiu $t6, $t6, 0x9e0
 /* 001380 80000780 01CF2823 */  subu  $a1, $t6, $t7
 /* 001384 80000784 3C048001 */  lui   $a0, %hi(D_8000B1FC) # $a0, 0x8001
 /* 001388 80000788 2484B1FC */  addiu $a0, %lo(D_8000B1FC) # addiu $a0, $a0, -0x4e04
@@ -83,9 +83,9 @@ glabel func_80000694
 /* 0013D0 800007D0 3C018001 */  lui   $at, %hi(D_80009440)
 /* 0013D4 800007D4 24639444 */  addiu $v1, %lo(D_80009444) # addiu $v1, $v1, -0x6bbc
 /* 0013D8 800007D8 E4209440 */  swc1  $f0, %lo(D_80009440)($at)
-/* 0013DC 800007DC 3C028000 */  lui   $v0, %hi(D_80000300) # $v0, 0x8000
+/* 0013DC 800007DC 3C028000 */  lui   $v0, %hi(osTvType) # $v0, 0x8000
 /* 0013E0 800007E0 E4600000 */  swc1  $f0, ($v1)
-/* 0013E4 800007E4 8C420300 */  lw    $v0, %lo(D_80000300)($v0)
+/* 0013E4 800007E4 8C420300 */  lw    $v0, %lo(osTvType)($v0)
 /* 0013E8 800007E8 3C048001 */  lui   $a0, %hi(D_80013910) # $a0, 0x8001
 /* 0013EC 800007EC 2409002C */  li    $t1, 44
 /* 0013F0 800007F0 10400033 */  beqz  $v0, .L800008C0
@@ -200,23 +200,23 @@ glabel func_80000694
 /* 001584 80000984 24A52F10 */  addiu $a1, %lo(D_80012F10) # addiu $a1, $a1, 0x2f10
 /* 001588 80000988 24843810 */  addiu $a0, %lo(D_80013810) # addiu $a0, $a0, 0x3810
 /* 00158C 8000098C AFB80014 */  sw    $t8, 0x14($sp)
-/* 001590 80000990 0C000998 */  jal   func_80002660
+/* 001590 80000990 0C000998 */  jal   StackCheck_Init
 /* 001594 80000994 00003825 */   move  $a3, $zero
 /* 001598 80000998 3C198001 */  lui   $t9, %hi(D_80013810) # $t9, 0x8001
 /* 00159C 8000099C 27393810 */  addiu $t9, %lo(D_80013810) # addiu $t9, $t9, 0x3810
-/* 0015A0 800009A0 3C048001 */  lui   $a0, %hi(D_80012D60) # $a0, 0x8001
+/* 0015A0 800009A0 3C048001 */  lui   $a0, %hi(sMainThread) # $a0, 0x8001
 /* 0015A4 800009A4 3C068000 */  lui   $a2, %hi(func_800005A0) # $a2, 0x8000
 /* 0015A8 800009A8 2409000A */  li    $t1, 10
 /* 0015AC 800009AC AFA90014 */  sw    $t1, 0x14($sp)
 /* 0015B0 800009B0 24C605A0 */  addiu $a2, %lo(func_800005A0) # addiu $a2, $a2, 0x5a0
-/* 0015B4 800009B4 24842D60 */  addiu $a0, %lo(D_80012D60) # addiu $a0, $a0, 0x2d60
+/* 0015B4 800009B4 24842D60 */  addiu $a0, %lo(sMainThread) # addiu $a0, $a0, 0x2d60
 /* 0015B8 800009B8 AFB90010 */  sw    $t9, 0x10($sp)
 /* 0015BC 800009BC 24050003 */  li    $a1, 3
 /* 0015C0 800009C0 0C001154 */  jal   osCreateThread
 /* 0015C4 800009C4 8FA70020 */   lw    $a3, 0x20($sp)
-/* 0015C8 800009C8 3C048001 */  lui   $a0, %hi(D_80012D60) # $a0, 0x8001
+/* 0015C8 800009C8 3C048001 */  lui   $a0, %hi(sMainThread) # $a0, 0x8001
 /* 0015CC 800009CC 0C0023F0 */  jal   osStartThread
-/* 0015D0 800009D0 24842D60 */   addiu $a0, %lo(D_80012D60) # addiu $a0, $a0, 0x2d60
+/* 0015D0 800009D0 24842D60 */   addiu $a0, %lo(sMainThread) # addiu $a0, $a0, 0x2d60
 /* 0015D4 800009D4 00002025 */  move  $a0, $zero
 /* 0015D8 800009D8 0C00190C */  jal   osSetThreadPri
 /* 0015DC 800009DC 00002825 */   move  $a1, $zero

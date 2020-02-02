@@ -7,8 +7,15 @@
 
 .section .rodata
 
+.align 4
+
 glabel jtbl_8014A620
-    .incbin "baserom.z64", 0xBC17C0, 0x18
+    .word L800F7534
+    .word L800F7560
+    .word L800F759C
+    .word L800F75C0
+    .word L800F75F4
+    .word L800F7628
 
 glabel D_8014A638
-    .incbin "baserom.z64", 0xBC17D8, 0x8
+    .float 10000000000

@@ -7,5 +7,9 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013F310
-    .incbin "baserom.z64", 0xBB64B0, 0x20
+    .asciz "\xC1\xF5\xC8\xF7\xA5\xA2\xA5\xA4\xA5\xC6\xA5\xE0\xCB\xF5\xBE\xC3 = %d  zzz=%d\n"
+    # EUC-JP: 装備アイテム抹消 | Erasomg equipment items
+    .balign 4

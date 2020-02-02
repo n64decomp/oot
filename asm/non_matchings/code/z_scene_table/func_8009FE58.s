@@ -1,12 +1,15 @@
 .rdata
 glabel D_8013FE60
-    .incbin "baserom.z64", 0xBB7000, 0x14
+    .asciz "../z_scene_table.c"
+    .balign 4
 
 glabel D_8013FE74
-    .incbin "baserom.z64", 0xBB7014, 0x14
+    .asciz "../z_scene_table.c"
+    .balign 4
 
 glabel D_8013FE88
-    .incbin "baserom.z64", 0xBB7028, 0x14
+    .asciz "../z_scene_table.c"
+    .balign 4
 
 .late_rodata
 glabel D_8013FF28

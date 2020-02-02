@@ -61,6 +61,8 @@ u32 func_80038878(s32 iParm1)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80038BE0.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80038C78.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80038D48.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80038E78.s")
@@ -127,6 +129,8 @@ u32 func_80038878(s32 iParm1)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003C614.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003C890.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003C8EC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003C940.s")
@@ -135,11 +139,15 @@ u32 func_80038878(s32 iParm1)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003CA0C.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003CA64.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003CB30.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003CCA4.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003CDD4.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003D464.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003D52C.s")
 
@@ -156,6 +164,10 @@ u32 func_80038878(s32 iParm1)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003DD6C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003DFA0.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E02C.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E0B8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E0FC.s")
 
@@ -268,7 +280,11 @@ void func_8003E954(u32 uParm1, u8* puParm2)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003EB84.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003ECA8.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003ED58.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003EE6C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003EE80.s")
 
@@ -305,6 +321,8 @@ void func_8003E954(u32 uParm1, u8* puParm2)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_800417A0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041880.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_800418D0.s")
 
 #ifdef NON_MATCHING
 void func_80041978(int iParm1, int iParm2)
@@ -345,6 +363,8 @@ u32 func_80041A28(CollisionContext *a0, u32 a1, u32 a2)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041C98.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041D28.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041D4C.s")
 
 u32 func_80041D94(u32 a0, u32 a1, u32 a2)
@@ -357,7 +377,15 @@ u32 func_80041D94(u32 a0, u32 a1, u32 a2)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041DB8.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041DE4.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041E18.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041E4C.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041EC8.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041EEC.s")
 
 u32 func_80041F10(u32 a0, u32 a1, u32 a2)
 {
@@ -369,7 +397,19 @@ u32 func_80041F10(u32 a0, u32 a1, u32 a2)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041F34.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041F7C.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041FA0.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80041FC4.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8004200C.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80042048.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_80042084.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_800420E4.s")
 
 u32 func_80042108(u32 a0, u32 a1, u32 a2)
 {

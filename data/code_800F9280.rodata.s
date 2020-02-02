@@ -7,20 +7,54 @@
 
 .section .rodata
 
+.align 4
+
 glabel jtbl_8014A640
-    .incbin "baserom.z64", 0xBC17E0, 0x40
+    .word L800F9588
+    .word L800F95F4
+    .word L800F9614
+    .word L800F97E4
+    .word L800F9940
+    .word L800F9A00
+    .word L800F9BD8
+    .word L800F9CE4
+    .word L800F9D20
+    .word L800F9DB4
+    .word L800F9DE8
+    .word L800F9E84
+    .word L800F9EB8
+    .word L800F9B00
+    .word L800F9F68
+    .word L800F9FB8
 
 glabel jtbl_8014A680
-    .incbin "baserom.z64", 0xBC1820, 0x42
+    .word L800FAAE4
+    .word L800FAB28
+    .word L800FAB48
+    .word L800FAB84
+    .word L800FABAC
+    .word L800FABD0
+    .word L800FAC18
+    .word L800FAAFC
+    .word L800FAC24
+    .word L800FAC84
+    .word L800FACA4
+    .word L800FACD4
+    .word L800FACD4
+    .word L800FACD4
+    .word L800FAC3C
 
-glabel D_8014A6C2
-    .incbin "baserom.z64", 0xBC1862, 0x2
+.align 4 # file split? const data below used in multiple files
+
+glabel D_8014A6C0
+    .half 0x1C00
+    .half 0x0030
 
 glabel D_8014A6C4
-    .incbin "baserom.z64", 0xBC1864, 0x4
+    .word 0x37F00
 
 glabel D_8014A6C8
-    .incbin "baserom.z64", 0xBC1868, 0x4
+    .word 0xE0E0
 
 glabel D_8014A6CC
-    .incbin "baserom.z64", 0xBC186C, 0x4
+    .word 0xBCE0

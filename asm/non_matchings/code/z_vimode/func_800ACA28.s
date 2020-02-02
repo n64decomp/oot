@@ -12,8 +12,8 @@ glabel func_800ACA28
 /* B23BF0 800ACA50 AC800064 */  sw    $zero, 0x64($a0)
 /* B23BF4 800ACA54 AC800060 */  sw    $zero, 0x60($a0)
 /* B23BF8 800ACA58 AC980080 */  sw    $t8, 0x80($a0)
-/* B23BFC 800ACA5C 3C198000 */  lui   $t9, %hi(D_80000300) # $t9, 0x8000
-/* B23C00 800ACA60 8F390300 */  lw    $t9, %lo(D_80000300)($t9)
+/* B23BFC 800ACA5C 3C198000 */  lui   $t9, %hi(osTvType) # $t9, 0x8000
+/* B23C00 800ACA60 8F390300 */  lw    $t9, %lo(osTvType)($t9)
 /* B23C04 800ACA64 24020001 */  li    $v0, 1
 /* B23C08 800ACA68 AC82007C */  sw    $v0, 0x7c($a0)
 /* B23C0C 800ACA6C AC820078 */  sw    $v0, 0x78($a0)

@@ -30,7 +30,7 @@ glabel func_8006EF10
 /* AE6120 8006EF80 24E7C1B0 */  addiu $a3, %lo(D_8013C1B0) # addiu $a3, $a3, -0x3e50
 /* AE6124 8006EF84 00812021 */  addu  $a0, $a0, $at
 /* AE6128 8006EF88 00582821 */  addu  $a1, $v0, $t8
-/* AE612C 8006EF8C 0C0006A8 */  jal   func_80001AA0
+/* AE612C 8006EF8C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* AE6130 8006EF90 00C08025 */   move  $s0, $a2
 /* AE6134 8006EF94 3C048014 */  lui   $a0, %hi(D_8013C1C0) # $a0, 0x8014
 /* AE6138 8006EF98 2484C1C0 */  addiu $a0, %lo(D_8013C1C0) # addiu $a0, $a0, -0x3e40
@@ -78,7 +78,7 @@ glabel func_8006EF10
 /* AE61D8 8006F038 AFAD0010 */  sw    $t5, 0x10($sp)
 /* AE61DC 8006F03C 24E7C22C */  addiu $a3, %lo(D_8013C22C) # addiu $a3, $a3, -0x3dd4
 /* AE61E0 8006F040 02602025 */  move  $a0, $s3
-/* AE61E4 8006F044 0C0006A8 */  jal   func_80001AA0
+/* AE61E4 8006F044 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* AE61E8 8006F048 24060080 */   li    $a2, 128
 /* AE61EC 8006F04C 26520010 */  addiu $s2, $s2, 0x10
 .L8006F050:

@@ -19,8 +19,8 @@ glabel func_800C40B0
 /* B3B268 800C40C8 0C018D90 */  jal   func_80063640
 /* B3B26C 800C40CC 00000000 */   nop   
 /* B3B270 800C40D0 8FA20018 */  lw    $v0, 0x18($sp)
-/* B3B274 800C40D4 3C0E8080 */  lui   $t6, %hi(D_80800878) # $t6, 0x8080
-/* B3B278 800C40D8 25CE0878 */  addiu $t6, %lo(D_80800878) # addiu $t6, $t6, 0x878
+/* B3B274 800C40D4 3C0E8080 */  lui   $t6, %hi(func_80800878) # $t6, 0x8080
+/* B3B278 800C40D8 25CE0878 */  addiu $t6, %lo(func_80800878) # addiu $t6, $t6, 0x878
 /* B3B27C 800C40DC 240F01E8 */  li    $t7, 488
 /* B3B280 800C40E0 AC400098 */  sw    $zero, 0x98($v0)
 /* B3B284 800C40E4 AC4F0010 */  sw    $t7, 0x10($v0)

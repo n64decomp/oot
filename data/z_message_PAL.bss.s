@@ -50,4 +50,3 @@ glabel D_801759BE
     .space 0x2
 
 glabel D_801759C0
-glabel gZBuffer

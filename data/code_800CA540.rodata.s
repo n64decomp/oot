@@ -7,14 +7,16 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801463C0
-    .incbin "baserom.z64", 0xBBD560, 0x4
+    .float 10430.06
 
 glabel D_801463C4
-    .incbin "baserom.z64", 0xBBD564, 0x4
+    .float 3.051851E-05
 
 glabel D_801463C8
-    .incbin "baserom.z64", 0xBBD568, 0x4
+    .float 10430.06
 
 glabel D_801463CC
-    .incbin "baserom.z64", 0xBBD56C, 0x4
+    .float 3.051851E-05

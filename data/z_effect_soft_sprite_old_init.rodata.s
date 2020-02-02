@@ -7,26 +7,30 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80135C00
-    .incbin "baserom.z64", 0xBACDA0, 0x24
+    .asciz "../z_effect_soft_sprite_old_init.c"
+    .balign 4
 
 glabel D_80135C24
-    .incbin "baserom.z64", 0xBACDC4, 0x24
+    .asciz "../z_effect_soft_sprite_old_init.c"
+    .balign 4
 
 glabel D_80135C48
-    .incbin "baserom.z64", 0xBACDE8, 0x4
+    .float 0.0025
 
 glabel D_80135C4C
-    .incbin "baserom.z64", 0xBACDEC, 0x4
+    .float -0.07
 
 glabel D_80135C50
-    .incbin "baserom.z64", 0xBACDF0, 0x4
+    .float 1.99
 
 glabel D_80135C54
-    .incbin "baserom.z64", 0xBACDF4, 0x4
+    .float -0.2
 
 glabel D_80135C58
-    .incbin "baserom.z64", 0xBACDF8, 0x4
+    .float 1.3
 
 glabel D_80135C5C
-    .incbin "baserom.z64", 0xBACDFC, 0x4
+    .float 0.18

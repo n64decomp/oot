@@ -7,23 +7,38 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014A980
-    .incbin "baserom.z64", 0xBC1B20, 0x38
+    .asciz "\n\xA5\xC0\xA5\xA4\xA5\xCA\xA5\xDF\xA5\xC3\xA5\xAF\xA5\xEA\xA5\xF3\xA5\xAF\xA5\xD5\xA5\xA1\xA5\xF3\xA5\xAF\xA5\xB7\xA5\xE7\xA5\xF3\xA4\xCE\xA5\xED\xA1\xBC\xA5\xC9\xA4\xF2\xB3\xAB\xBB\xCF\xA4\xB7\xA4\xDE\xA4\xB9\n"
+    # EUC-JP: ダイナミックリンクファンクションのロードを開始します | Start loading dynamic link function
+    .balign 4
 
 glabel D_8014A9B8
-    .incbin "baserom.z64", 0xBC1B58, 0x34
+    .asciz "TEXT,DATA,RODATA+rel\xA4\xF2\xA3\xC4\xA3\xCD\xA3\xC1\xC5\xBE\xC1\xF7\xA4\xB7\xA4\xDE\xA4\xB9(%08x-%08x)\n"
+    # EUC-JP: をＤＭＡ転送します | DMA transfer
+    .balign 4
 
 glabel D_8014A9EC
-    .incbin "baserom.z64", 0xBC1B8C, 0x34
+    .asciz "TEXT(%08x), DATA(%08x), RODATA(%08x), BSS(%08x)\n"
+    .balign 4
 
 glabel D_8014AA20
-    .incbin "baserom.z64", 0xBC1BC0, 0x18
+    .asciz "\xA5\xEA\xA5\xED\xA5\xB1\xA1\xBC\xA5\xB7\xA5\xE7\xA5\xF3\xA4\xB7\xA4\xDE\xA4\xB9\n"
+    # EUC-JP: リロケーションします | Relocate
+    .balign 4
 
 glabel D_8014AA38
-    .incbin "baserom.z64", 0xBC1BD8, 0x24
+    .asciz "\x42\x53\x53\xCE\xCE\xB0\xE8\xA4\xF2\xA5\xAF\xA5\xEA\xA5\xA2\xA4\xB7\xA4\xDE\xA4\xB9(%08x-%08x)\n"
+    # EUC-JP: BSS領域をクリアします | Clear BSS area
+    .balign 4
 
 glabel D_8014AA5C
-    .incbin "baserom.z64", 0xBC1BFC, 0x24
+    .asciz "\x52\x45\x4C\xCE\xCE\xB0\xE8\xA4\xF2\xA5\xAF\xA5\xEA\xA5\xA2\xA4\xB7\xA4\xDE\xA4\xB9(%08x-%08x)\n"
+    # EUC-JP:  REL領域をクリアします | Clear REL area
+    .balign 4
 
 glabel D_8014AA80
-    .incbin "baserom.z64", 0xBC1C20, 0x40
+    .asciz "\xA5\xC0\xA5\xA4\xA5\xCA\xA5\xDF\xA5\xC3\xA5\xAF\xA5\xEA\xA5\xF3\xA5\xAF\xA5\xD5\xA5\xA1\xA5\xF3\xA5\xAF\xA5\xB7\xA5\xE7\xA5\xF3\xA4\xCE\xA5\xED\xA1\xBC\xA5\xC9\xA4\xF2\xBD\xAA\xCE\xBB\xA4\xB7\xA4\xDE\xA4\xB9\n\n"
+    # EUC-JP: ダイナミックリンクファンクションのロードを終了します | Finish loading dynamic link function
+    .balign 4

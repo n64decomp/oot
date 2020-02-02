@@ -14,7 +14,7 @@ glabel func_8006EEBC
 /* AE608C 8006EEEC 24E7C1A0 */  addiu $a3, %lo(D_8013C1A0) # addiu $a3, $a3, -0x3e60
 /* AE6090 8006EEF0 03192821 */  addu  $a1, $t8, $t9
 /* AE6094 8006EEF4 24843C08 */  addiu $a0, $a0, 0x3c08
-/* AE6098 8006EEF8 0C0006A8 */  jal   func_80001AA0
+/* AE6098 8006EEF8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* AE609C 8006EEFC 24060080 */   li    $a2, 128
 /* AE60A0 8006EF00 8FBF001C */  lw    $ra, 0x1c($sp)
 /* AE60A4 8006EF04 27BD0020 */  addiu $sp, $sp, 0x20

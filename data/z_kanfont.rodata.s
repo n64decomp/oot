@@ -7,23 +7,33 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013C190
-    .incbin "baserom.z64", 0xBB3330, 0x10
+    .asciz "../z_kanfont.c"
+    .balign 4
 
 glabel D_8013C1A0
-    .incbin "baserom.z64", 0xBB3340, 0x10
+    .asciz "../z_kanfont.c"
+    .balign 4
 
 glabel D_8013C1B0
-    .incbin "baserom.z64", 0xBB3350, 0x10
+    .asciz "../z_kanfont.c"
+    .balign 4
 
 glabel D_8013C1C0
-    .incbin "baserom.z64", 0xBB3360, 0x24
+    .asciz "msg_data=%x,  msg_data0=%x   jj=%x\n"
+    .balign 4
 
 glabel D_8013C1E4
-    .incbin "baserom.z64", 0xBB3384, 0x34
+    .asciz "\xA3\xC5\xA3\xD2\xA3\xD2\xA3\xCF\xA3\xD2\xA1\xAA\xA1\xAA  \xA5\xA8\xA5\xE9\xA1\xBC\xA1\xAA\xA1\xAA\xA1\xAA  error\xA8\xA1\xA8\xA1\xA8\xA1\xA1\xAA\xA1\xAA\xA1\xAA\xA1\xAA\n"
+    # EUC-JP: ＥＲＲＯＲ！！ エラー！！！ error───！！！！ | ERROR! ! error! ! ! error───! ! ! !|
+    .balign 4
 
 glabel D_8013C218
-    .incbin "baserom.z64", 0xBB33B8, 0x14
+    .asciz "nes_mes_buf[%d]=%d\n"   
+    .balign 4
 
 glabel D_8013C22C
-    .incbin "baserom.z64", 0xBB33CC, 0x14
+    .asciz "../z_kanfont.c"
+    .balign 4

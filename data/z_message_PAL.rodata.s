@@ -7,6 +7,8 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014B2F0
     .incbin "baserom.z64", 0xBC2490, 0x4
 
@@ -665,22 +667,151 @@ glabel D_80154B00
     .incbin "baserom.z64", 0xBCBCA0, 0x28
 
 glabel jtbl_80154B28
-    .incbin "baserom.z64", 0xBCBCC8, 0x20
+    .word L80107934
+    .word L801076F4
+    .word func_8010773C
+    .word func_801077B4
+    .word func_80107804
+    .word func_8010787C
+    .word func_801078CC
+    .word func_80107918
 
 glabel jtbl_80154B48
-    .incbin "baserom.z64", 0xBCBCE8, 0x80
+    .word L801087EC
+    .word L801095F0
+    .word L801097E4
+    .word L801088E8
+    .word L8010887C
+    .word L80108984
+    .word L801089B8
+    .word L80108A2C
+    .word L80108AD4
+    .word L80109724
+    .word L8010977C
+    .word L80108B34
+    .word L80108AE0
+    .word L801096B4
+    .word L801097E4
+    .word L80109680
+    .word L80108B70
+    .word L80108C0C
+    .word L80108CB8
+    .word L801094E4
+    .word L80108D00
+    .word L801097E4
+    .word L801097E4
+    .word L801097E4
+    .word L801097E4
+    .word L80109510
+    .word L80109528
+    .word L8010958C
+    .word L801097E4
+    .word L801097E4
+    .word L801097E4
+    .word L801088CC
 
 glabel D_80154BC8
     .incbin "baserom.z64", 0xBCBD68, 0x4
 
 glabel jtbl_80154BCC
-    .incbin "baserom.z64", 0xBCBD6C, 0x1C
+    .word L8010A6FC
+    .word L8010A6FC
+    .word L8010A6FC
+    .word L8010A850
+    .word L8010A850
+    .word L8010B06C
+    .word L8010A850
 
 glabel jtbl_80154BE8
-    .incbin "baserom.z64", 0xBCBD88, 0xDC
+    .word L8010C4F4
+    .word L8010C4F4
+    .word L8010C4F4
+    .word L8010C4F4
+    .word L8010C4FC
+    .word L8010C564
+    .word L8010C578
+    .word L8010C564
+    .word L8010C5AC
+    .word L8010C5AC
+    .word L8010C5AC
+    .word L8010C750
+    .word L8010CBFC
+    .word L8010D500
+    .word L8010D50C
+    .word L8010D594
+    .word L8010D65C
+    .word L8010D768
+    .word L8010DC10
+    .word L8010D924
+    .word L8010D968
+    .word L8010D9A0
+    .word L8010D9D8
+    .word L8010D824
+    .word L8010DC10
+    .word L8010DD08
+    .word L8010DD1C
+    .word L8010CBFC
+    .word L8010D500
+    .word L8010D594
+    .word L8010DEAC
+    .word L8010EC60
+    .word L8010DED8
+    .word L8010DF4C
+    .word L8010E1D8
+    .word L8010E334
+    .word L8010E364
+    .word L8010E544
+    .word L8010CBFC
+    .word L8010E1D8
+    .word L8010E580
+    .word L8010E5F0
+    .word L8010E730
+    .word L8010E5F0
+    .word L8010E730
+    .word L8010E79C
+    .word L8010E904
+    .word L8010EA20
+    .word L8010EA70
+    .word L8010EAE0
+    .word L8010EB44
+    .word L8010C578
+    .word L8010EB4C
+    .word L8010EC58
+    .word L8010EC58
 
 glabel jtbl_80154CC4
-    .incbin "baserom.z64", 0xBCBE64, 0x2C
+    .word L8010F8F8
+    .word L8010FCE0
+    .word L8010FCF0
+    .word L8010FD24
+    .word L8010FD80
+    .word L8010FDB0
+    .word L8010FE10
+    .word L8010FE58
+    .balign 16
 
 glabel jtbl_80154CF0
-    .incbin "baserom.z64", 0xBCBE90, 0x60
+    .word L80110520
+    .word L80110960
+    .word L80110748
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L80110960
+    .word L8011079C
+    .word L801107D8
+    .word L801108A4
+    .word L801108E8
+    .word L8011092C

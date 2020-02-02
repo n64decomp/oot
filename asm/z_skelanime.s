@@ -2979,7 +2979,7 @@ glabel func_800A336C
 /* B1A5F4 800A3454 AFA00010 */  sw    $zero, 0x10($sp)
 /* B1A5F8 800A3458 8FA50050 */  lw    $a1, 0x50($sp)
 /* B1A5FC 800A345C 24640004 */  addiu $a0, $v1, 4
-/* B1A600 800A3460 0C000697 */  jal   func_80001A5C
+/* B1A600 800A3460 0C000697 */  jal   DmaMgr_SendRequest2
 /* B1A604 800A3464 AFA90014 */   sw    $t1, 0x14($sp)
 .L800A3468:
 /* B1A608 800A3468 8FBF002C */  lw    $ra, 0x2c($sp)

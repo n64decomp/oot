@@ -7,53 +7,82 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80146A40
-    .incbin "baserom.z64", 0xBBDBE0, 0x24
+    .asciz "%s: %u \xA5\xD0\xA5\xA4\xA5\xC8\xA4\xCE%s\xA4\xCB\xBC\xBA\xC7\xD4\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF\n"
+    # EUC-JP: %s: %u バイトの%sに失敗しました | bytes failed?
+    .balign 4
 
 glabel D_80146A64
-    .incbin "baserom.z64", 0xBBDC04, 0x24
+    .asciz "%s: %u \xA5\xD0\xA5\xA4\xA5\xC8\xA4\xCE%s\xA4\xCB\xC0\xAE\xB8\xF9\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF\n"
+    # EUC-JP: %s: %u バイトの%sに成功しました | bytes succeeded?
+    .balign 4
 
 glabel D_80146A88
-    .incbin "baserom.z64", 0xBBDC28, 0x10
+    .asciz "debug_malloc"
+    .balign 4
 
 glabel D_80146A98
-    .incbin "baserom.z64", 0xBBDC38, 0x8
+    .asciz "\xB3\xCE\xCA\xDD"
+    # EUC-JP: 確保 | Securing
+    .balign 4
 
 glabel D_80146AA0
-    .incbin "baserom.z64", 0xBBDC40, 0x14
+    .asciz "debug_malloc_DEBUG"
+    .balign 4
 
 glabel D_80146AB4
-    .incbin "baserom.z64", 0xBBDC54, 0x8
+    .asciz "\xB3\xCE\xCA\xDD"
+    # EUC-JP: 確保 | Securing
+    .balign 4
 
 glabel D_80146ABC
-    .incbin "baserom.z64", 0xBBDC5C, 0x10
+    .asciz "debug_malloc_r"
+    .balign 4
 
 glabel D_80146ACC
-    .incbin "baserom.z64", 0xBBDC6C, 0x8
+    .asciz "\xB3\xCE\xCA\xDD"
+    # EUC-JP: 確保 | Securing
+    .balign 4
 
 glabel D_80146AD4
-    .incbin "baserom.z64", 0xBBDC74, 0x18
+    .asciz "debug_malloc_r_DEBUG"
+    .balign 4
 
 glabel D_80146AEC
-    .incbin "baserom.z64", 0xBBDC8C, 0x8
+    .asciz "\xB3\xCE\xCA\xDD"
+    # EUC-JP: 確保 | Securing
+    .balign 4
 
 glabel D_80146AF4
-    .incbin "baserom.z64", 0xBBDC94, 0x10
+    .asciz "debug_realloc"
+    .balign 4
 
 glabel D_80146B04
-    .incbin "baserom.z64", 0xBBDCA4, 0x8
+    .asciz "\xBA\xC6\xB3\xCE\xCA\xDD"
+    # EUC-JP: 再確保 | Re-securing
+    .balign 4
 
 glabel D_80146B0C
-    .incbin "baserom.z64", 0xBBDCAC, 0x14
+    .asciz "debug_realloc_DEBUG"
+    .balign 4
 
 glabel D_80146B20
-    .incbin "baserom.z64", 0xBBDCC0, 0x8
+    .asciz "\xBA\xC6\xB3\xCE\xCA\xDD"
+    # EUC-JP: 再確保 | Re-securing
+    .balign 4
 
 glabel D_80146B28
-    .incbin "baserom.z64", 0xBBDCC8, 0x10
+    .asciz "debug_calloc"
+    .balign 4
 
 glabel D_80146B38
-    .incbin "baserom.z64", 0xBBDCD8, 0x8
+    .asciz "\xB3\xCE\xCA\xDD"
+    # EUC-JP: 確保 | Securing
+    .balign 4
 
 glabel D_80146B40
-    .incbin "baserom.z64", 0xBBDCE0, 0x20
+    .asciz "\xA5\xBC\xA5\xEB\xA5\xC0\xA5\xD2\xA1\xBC\xA5\xD7\xC9\xBD\xBC\xA8\n"
+    # EUC-JP: ゼルダヒープ表示 | Zelda heap display
+    .balign 4

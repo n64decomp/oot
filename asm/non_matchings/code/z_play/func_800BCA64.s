@@ -12,8 +12,8 @@ glabel func_800BCA64
 /* B33C2C 800BCA8C 15C10009 */  bne   $t6, $at, .L800BCAB4
 /* B33C30 800BCA90 8C900000 */   lw    $s0, ($a0)
 /* B33C34 800BCA94 AE400000 */  sw    $zero, ($s2)
-/* B33C38 800BCA98 3C0F8080 */  lui   $t7, %hi(D_80803CAC) # $t7, 0x8080
-/* B33C3C 800BCA9C 25EF3CAC */  addiu $t7, %lo(D_80803CAC) # addiu $t7, $t7, 0x3cac
+/* B33C38 800BCA98 3C0F8080 */  lui   $t7, %hi(func_80803CAC) # $t7, 0x8080
+/* B33C3C 800BCA9C 25EF3CAC */  addiu $t7, %lo(func_80803CAC) # addiu $t7, $t7, 0x3cac
 /* B33C40 800BCAA0 241801D0 */  li    $t8, 464
 /* B33C44 800BCAA4 AC800098 */  sw    $zero, 0x98($a0)
 /* B33C48 800BCAA8 AC980010 */  sw    $t8, 0x10($a0)
@@ -581,7 +581,7 @@ glabel func_800BCA64
 /* B34488 800BD2E8 3C0403FE */  lui   $a0, (0x03FEB000 >> 16) # lui $a0, 0x3fe
 /* B3448C 800BD2EC 3484B000 */  ori   $a0, (0x03FEB000 & 0xFFFF) # ori $a0, $a0, 0xb000
 /* B34490 800BD2F0 8E050000 */  lw    $a1, ($s0)
-/* B34494 800BD2F4 0C0002FF */  jal   DMARomToRam
+/* B34494 800BD2F4 0C0002FF */  jal   DmaMgr_DMARomToRam
 /* B34498 800BD2F8 24065000 */   li    $a2, 20480
 .L800BD2FC:
 /* B3449C 800BD2FC 8FBF002C */  lw    $ra, 0x2c($sp)

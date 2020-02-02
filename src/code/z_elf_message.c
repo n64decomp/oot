@@ -9,3 +9,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_elf_message/func_8006C0FC.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_elf_message/func_8006C2B0.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_elf_message/func_8006C318.s")
+

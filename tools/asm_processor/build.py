@@ -31,6 +31,8 @@ opt_flags = [x for x in compile_args if x in ['-g3', '-g', '-O2', '-framepointer
 
 preprocessed_file = tempfile.NamedTemporaryFile(prefix='preprocessed', suffix='.c')
 
-subprocess.check_call(asm_processor + opt_flags + [in_file, '--input-enc', 'utf-8', '--output-enc', 'euc-jp'], stdout=preprocessed_file)
+asm_processor_call = asm_processor + opt_flags + [in_file, '--input-enc', 'utf-8', '--output-enc', 'euc-jp']
+
+subprocess.check_call(asm_processor_call, stdout=preprocessed_file)
 subprocess.check_call(compiler + compile_args + ['-I', in_dir, '-o', out_file, preprocessed_file.name])
-subprocess.check_call(asm_processor + opt_flags + [in_file, '--post-process', out_file, '--assembler', assembler_sh, '--asm-prelude', prelude])
+subprocess.check_call(asm_processor_call + ['--post-process', out_file, '--assembler', assembler_sh, '--asm-prelude', prelude])

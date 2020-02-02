@@ -7,14 +7,20 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014A900
-    .incbin "baserom.z64", 0xBC1AA0, 0x20
+    .asciz "DoRelocation(%08x, %08x, %08x)\n"
+    .balign 4
 
 glabel D_8014A920
-    .incbin "baserom.z64", 0xBC1AC0, 0x30
+    .asciz "text=%08x, data=%08x, rodata=%08x, bss=%08x\n"
+    .balign 4
 
 glabel D_8014A950
-    .incbin "baserom.z64", 0xBC1AF0, 0x18
+    .asciz "%02d %08x %08x %08x "
+    .balign 4
 
 glabel D_8014A968
-    .incbin "baserom.z64", 0xBC1B08, 0x18
+    .asciz " %08x %08x %08x %08x\n"
+    .balign 4

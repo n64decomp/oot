@@ -7,5 +7,9 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013C160
-    .incbin "baserom.z64", 0xBB3300, 0x30
+    .asciz "\xA3\xCD\xA3\xEF\xA3\xE4\xA3\xE5=%d  eye.x=%f,  eye.z=%f  kscp_pos=%d\n"
+    # EUC-JP: Ｍｏｄｅ
+    .balign 4

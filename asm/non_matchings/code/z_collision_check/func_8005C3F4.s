@@ -1,0 +1,25 @@
+glabel func_8005C3F4
+/* AD3594 8005C3F4 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* AD3598 8005C3F8 AFBF0014 */  sw    $ra, 0x14($sp)
+/* AD359C 8005C3FC AFA40018 */  sw    $a0, 0x18($sp)
+/* AD35A0 8005C400 AFA5001C */  sw    $a1, 0x1c($sp)
+/* AD35A4 8005C404 0C016DAC */  jal   func_8005B6B0
+/* AD35A8 8005C408 AFA60020 */   sw    $a2, 0x20($sp)
+/* AD35AC 8005C40C 8FA5001C */  lw    $a1, 0x1c($sp)
+/* AD35B0 8005C410 8FA60020 */  lw    $a2, 0x20($sp)
+/* AD35B4 8005C414 8FA40018 */  lw    $a0, 0x18($sp)
+/* AD35B8 8005C418 24A50018 */  addiu $a1, $a1, 0x18
+/* AD35BC 8005C41C 0C016E4F */  jal   func_8005B93C
+/* AD35C0 8005C420 24C60008 */   addiu $a2, $a2, 8
+/* AD35C4 8005C424 8FA5001C */  lw    $a1, 0x1c($sp)
+/* AD35C8 8005C428 8FA60020 */  lw    $a2, 0x20($sp)
+/* AD35CC 8005C42C 8FA40018 */  lw    $a0, 0x18($sp)
+/* AD35D0 8005C430 24A50040 */  addiu $a1, $a1, 0x40
+/* AD35D4 8005C434 0C0170CA */  jal   func_8005C328
+/* AD35D8 8005C438 24C60020 */   addiu $a2, $a2, 0x20
+/* AD35DC 8005C43C 8FBF0014 */  lw    $ra, 0x14($sp)
+/* AD35E0 8005C440 27BD0018 */  addiu $sp, $sp, 0x18
+/* AD35E4 8005C444 24020001 */  li    $v0, 1
+/* AD35E8 8005C448 03E00008 */  jr    $ra
+/* AD35EC 8005C44C 00000000 */   nop
+

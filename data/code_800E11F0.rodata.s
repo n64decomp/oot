@@ -7,44 +7,132 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80149420
-    .incbin "baserom.z64", 0xBC05C0, 0xC
+    .asciz "SUPERDMA"
+    .balign 4
 
 glabel D_8014942C
-    .incbin "baserom.z64", 0xBC05CC, 0xC
+    .asciz "FastCopy"
+    .balign 4
 
 glabel D_80149438
-    .incbin "baserom.z64", 0xBC05D8, 0xC
+    .asciz "FastCopy"
+    .balign 4
 
 glabel D_80149444
-    .incbin "baserom.z64", 0xBC05E4, 0xC
+    .asciz "SLOWCOPY"
+    .balign 4
 
 glabel D_80149450
-    .incbin "baserom.z64", 0xBC05F0, 0x8
+    .asciz "BGCOPY"
+    .balign 4
 
 glabel jtbl_80149458
-    .incbin "baserom.z64", 0xBC05F8, 0x14
+    .word L800E2610
+    .word L800E2630
+    .word L800E2654
+    .word L800E2678
+    .word L800E2678
 
 glabel jtbl_8014946C
-    .incbin "baserom.z64", 0xBC060C, 0x14
+    .word L800E2E30
+    .word L800E2E5C
+    .word L800E2E80
+    .word L800E2EA4
+    .word L800E2EA4
 
 glabel D_80149480
-    .incbin "baserom.z64", 0xBC0620, 0x4
+    .float 20.03042
 
 glabel D_80149484
-    .incbin "baserom.z64", 0xBC0624, 0x4
+    .float 16.546
 
 glabel D_80149488
-    .incbin "baserom.z64", 0xBC0628, 0x8
+    .float 16.713
+
+.align 4 # file split?
 
 glabel jtbl_80149490
-    .incbin "baserom.z64", 0xBC0630, 0x7C
+    .word L800E58AC
+    .word L800E58AC
+    .word L800E58AC
+    .word L800E593C
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E569C
+    .word L800E56B0
+    .word L800E5700
+    .word L800E57D8
+    .word L800E57F0
+    .word L800E5810
+    .word L800E5850
+    .word L800E5944
+    .word L800E5944
+    .word L800E5880
+    .word L800E5944
+    .word L800E589C
+    .word L800E5830
+    .word L800E5944
+    .word L800E58C8
 
 glabel jtbl_8014950C
-    .incbin "baserom.z64", 0xBC06AC, 0x40
+    .word L800E55EC
+    .word L800E5600
+    .word L800E563C
+    .word L800E5944
+    .word L800E5624
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5944
+    .word L800E5860
 
 glabel jtbl_8014954C
-    .incbin "baserom.z64", 0xBC06EC, 0x38
+    .word L800E6150
+    .word L800E62F8
+    .word L800E62F8
+    .word L800E62F8
+    .word L800E62F8
+    .word L800E61C4
+    .word L800E617C
+    .word L800E61B8
+    .word L800E6194
+    .word L800E61D8
+    .word L800E61F8
+    .word L800E6268
+    .word L800E62B8
+    .word L800E61AC
 
 glabel jtbl_80149584
-    .incbin "baserom.z64", 0xBC0724, 0x3C
+    .word L800E6328
+    .word L800E6354
+    .word L800E6380
+    .word L800E63C8
+    .word L800E63F4
+    .word L800E640C
+    .word L800E63A4
+    .word L800E642C
+    .word L800E644C
+    .word L800E6458
+    .word L800E6470
+    .word L800E6488
+    .word L800E6494
+    .word L800E64A0

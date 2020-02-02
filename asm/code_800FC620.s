@@ -43,7 +43,7 @@ glabel func_800FC620
 /* B73830 800FC690 02002825 */  move  $a1, $s0
 /* B73834 800FC694 03103023 */  subu  $a2, $t8, $s0
 /* B73838 800FC698 0086C821 */  addu  $t9, $a0, $a2
-/* B7383C 800FC69C 0C0005F0 */  jal   func_800017C0
+/* B7383C 800FC69C 0C0005F0 */  jal   DmaMgr_SendRequest0
 /* B73840 800FC6A0 AFB9002C */   sw    $t9, 0x2c($sp)
 /* B73844 800FC6A4 3C028013 */  lui   $v0, %hi(D_80133BC0) # $v0, 0x8013
 /* B73848 800FC6A8 8C423BC0 */  lw    $v0, %lo(D_80133BC0)($v0)

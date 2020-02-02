@@ -47,7 +47,7 @@ glabel func_80007FA0
 /* 008C1C 8000801C 03E00008 */  jr    $ra
 /* 008C20 80008020 AC880004 */   sw    $t0, 4($a0)
 
-glabel func_80008024
+glabel lldiv
 /* 008C24 80008024 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* 008C28 80008028 AFA40030 */  sw    $a0, 0x30($sp)
 /* 008C2C 8000802C AFBF0014 */  sw    $ra, 0x14($sp)

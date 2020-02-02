@@ -7,224 +7,296 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013A5B0
-    .incbin "baserom.z64", 0xBB1750, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A5C8
-    .incbin "baserom.z64", 0xBB1768, 0x10
+    .asciz "vtx_tbl != NULL"
+    .balign 4
 
 glabel D_8013A5D8
-    .incbin "baserom.z64", 0xBB1778, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A5F0
-    .incbin "baserom.z64", 0xBB1790, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A608
-    .incbin "baserom.z64", 0xBB17A8, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A620
-    .incbin "baserom.z64", 0xBB17C0, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A638
-    .incbin "baserom.z64", 0xBB17D8, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8013A640
-    .incbin "baserom.z64", 0xBB17E0, 0x30
+    .asciz "ClObjJntSph_set():zelda_malloc()\xBD\xD0\xCD\xE8\xA4\xDE\xA4\xBB\xA4\xF3\xA1\xA3\n"
+    # EUC-JP: 出来ません。 | Can not.
+    .balign 4
 
 glabel D_8013A670
-    .incbin "baserom.z64", 0xBB1810, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013A674
-    .incbin "baserom.z64", 0xBB1814, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A68C
-    .incbin "baserom.z64", 0xBB182C, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8013A694
-    .incbin "baserom.z64", 0xBB1834, 0x30
+    .asciz "ClObjJntSph_set3():zelda_malloc_\xBD\xD0\xCD\xE8\xA4\xDE\xA4\xBB\xA4\xF3\xA1\xA3\n"
+    # EUC-JP: 出来ません。 | Can not.
+    .balign 4
 
 glabel D_8013A6C4
-    .incbin "baserom.z64", 0xBB1864, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013A6C8
-    .incbin "baserom.z64", 0xBB1868, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A6E0
-    .incbin "baserom.z64", 0xBB1880, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8013A6E8
-    .incbin "baserom.z64", 0xBB1888, 0x2C
+    .asciz "ClObjJntSph_set5():zelda_malloc\xBD\xD0\xCD\xE8\xA4\xDE\xA4\xBB\xA4\xF3\n"
+    # EUC-JP: 出来ません。 | Can not.
+    .balign 4
 
 glabel D_8013A714
-    .incbin "baserom.z64", 0xBB18B4, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013A718
-    .incbin "baserom.z64", 0xBB18B8, 0x20
+    .asciz "pclobj_jntsph->elem_tbl != NULL"
+    .balign 4
 
 glabel D_8013A738
-    .incbin "baserom.z64", 0xBB18D8, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A750
-    .incbin "baserom.z64", 0xBB18F0, 0x14
-
-glabel D_8013A764
-    .incbin "baserom.z64", 0xBB1904, 0x4
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A768
-    .incbin "baserom.z64", 0xBB1908, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A780
-    .incbin "baserom.z64", 0xBB1920, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8013A788
-    .incbin "baserom.z64", 0xBB1928, 0x2C
+    .asciz "ClObjTris_set3():zelda_malloc()\xBD\xD0\xCD\xE8\xA4\xDE\xA4\xBB\xA4\xF3\n"
+    # EUC-JP: 出来ません。 | Can not.
+    .balign 4
 
 glabel D_8013A7B4
-    .incbin "baserom.z64", 0xBB1954, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013A7B8
-    .incbin "baserom.z64", 0xBB1958, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A7D0
-    .incbin "baserom.z64", 0xBB1970, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_8013A7D8
-    .incbin "baserom.z64", 0xBB1978, 0x2C
+    .asciz "ClObjTris_set5():zelda_malloc\xBD\xD0\xCD\xE8\xA4\xDE\xA4\xBB\xA4\xF3\n"
+    # EUC-JP: 出来ません。 | Can not.
+    .balign 4
 
 glabel D_8013A804
-    .incbin "baserom.z64", 0xBB19A4, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013A808
-    .incbin "baserom.z64", 0xBB19A8, 0x20
+    .asciz "pclobj_tris->elem_tbl != NULL"
+    .balign 4
 
 glabel D_8013A828
-    .incbin "baserom.z64", 0xBB19C8, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A840
-    .incbin "baserom.z64", 0xBB19E0, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013A868
-    .incbin "baserom.z64", 0xBB1A08, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A880
-    .incbin "baserom.z64", 0xBB1A20, 0x3C
+    .asciz "CollisionCheck_setAT():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA1\xBC\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバーして追加不能 | Index cannot be added due to over index
+    .balign 4
 
 glabel D_8013A8BC
-    .incbin "baserom.z64", 0xBB1A5C, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013A8E4
-    .incbin "baserom.z64", 0xBB1A84, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A8FC
-    .incbin "baserom.z64", 0xBB1A9C, 0x50
+    .asciz "CollisionCheck_setAT_SAC():\xC1\xB4\xA5\xC7\xA1\xBC\xA5\xBF\xBF\xF4\xA4\xE8\xA4\xEA\xC2\xE7\xA4\xAD\xA4\xA4\xA4\xC8\xA4\xB3\xA4\xED\xA4\xCB\xC5\xD0\xCF\xBF\xA4\xB7\xA4\xE8\xA4\xA6\xA4\xC8\xA4\xB7\xA4\xC6\xA4\xA4\xA4\xEB\xA1\xA3\n"
+    # EUC-JP: 全データ数より大きいところに登録しようとしている。 | You are trying to register a location that is larger than the total number of data.
+    .balign 4
 
 glabel D_8013A94C
-    .incbin "baserom.z64", 0xBB1AEC, 0x3C
+    .asciz "CollisionCheck_setAT():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA1\xBC\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバーして追加不能 | Index cannot be added due to over index
+    .balign 4
 
 glabel D_8013A988
-    .incbin "baserom.z64", 0xBB1B28, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013A9B0
-    .incbin "baserom.z64", 0xBB1B50, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013A9C8
-    .incbin "baserom.z64", 0xBB1B68, 0x3C
+    .asciz "CollisionCheck_setAC():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバして追加不能 | Index exceeded and cannot be added
+    .balign 4
 
 glabel D_8013AA04
-    .incbin "baserom.z64", 0xBB1BA4, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013AA2C
-    .incbin "baserom.z64", 0xBB1BCC, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013AA44
-    .incbin "baserom.z64", 0xBB1BE4, 0x50
+    .asciz "CollisionCheck_setAC_SAC():\xC1\xB4\xA5\xC7\xA1\xBC\xA5\xBF\xBF\xF4\xA4\xE8\xA4\xEA\xC2\xE7\xA4\xAD\xA4\xA4\xA4\xC8\xA4\xB3\xA4\xED\xA4\xCB\xC5\xD0\xCF\xBF\xA4\xB7\xA4\xE8\xA4\xA6\xA4\xC8\xA4\xB7\xA4\xC6\xA4\xA4\xA4\xEB\xA1\xA3\n"
+    # EUC-JP: 全データ数より大きいところに登録しようとしている。| You are trying to register a location that is larger than the total number of data.
+    .balign 4
 
 glabel D_8013AA94
-    .incbin "baserom.z64", 0xBB1C34, 0x3C
+    .asciz "CollisionCheck_setAC():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバして追加不能 | Index exceeded and cannot be added
+    .balign 4
 
 glabel D_8013AAD0
-    .incbin "baserom.z64", 0xBB1C70, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013AAF8
-    .incbin "baserom.z64", 0xBB1C98, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013AB10
-    .incbin "baserom.z64", 0xBB1CB0, 0x3C
+    .asciz "CollisionCheck_setOC():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバして追加不能 | Index exceeded and cannot be added
+    .balign 4
 
 glabel D_8013AB4C
-    .incbin "baserom.z64", 0xBB1CEC, 0x28
+    .asciz "pcl_obj->data_type <= CL_DATA_LBL_SWRD"
+    .balign 4
 
 glabel D_8013AB74
-    .incbin "baserom.z64", 0xBB1D14, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013AB8C
-    .incbin "baserom.z64", 0xBB1D2C, 0x50
+    .asciz "CollisionCheck_setOC_SAC():\xC1\xB4\xA5\xC7\xA1\xBC\xA5\xBF\xBF\xF4\xA4\xE8\xA4\xEA\xC2\xE7\xA4\xAD\xA4\xA4\xA4\xC8\xA4\xB3\xA4\xED\xA4\xCB\xC5\xD0\xCF\xBF\xA4\xB7\xA4\xE8\xA4\xA6\xA4\xC8\xA4\xB7\xA4\xC6\xA4\xA4\xA4\xEB\xA1\xA3\n"
+    # EUC-JP: 全データ数より大きいところに登録しようとしている。| You are trying to register a location that is larger than the total number of data.
+    .balign 4
 
 glabel D_8013ABDC
-    .incbin "baserom.z64", 0xBB1D7C, 0x3C
+    .asciz "CollisionCheck_setOC():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバして追加不能 | Index exceeded and cannot be added
+    .balign 4
 
 glabel D_8013AC18
-    .incbin "baserom.z64", 0xBB1DB8, 0x40
+    .asciz "CollisionCheck_setOCLine():\xA5\xA4\xA5\xF3\xA5\xC7\xA5\xC3\xA5\xAF\xA5\xB9\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xC4\xC9\xB2\xC3\xC9\xD4\xC7\xBD\n"
+    # EUC-JP: インデックスがオーバして追加不能 | Index exceeded and cannot be added
+    .balign 4
 
 glabel D_8013AC58
-    .incbin "baserom.z64", 0xBB1DF8, 0x24
+    .asciz "CollisionCheck_OC():\xCC\xA4\xC2\xD0\xB1\xFE %d, %d\n"
+    # EUC-JP: 未対応 | Not compatible
+    .balign 4
 
 glabel D_8013AC7C
-    .incbin "baserom.z64", 0xBB1E1C, 0x24
+    .asciz "pclobj_elem->ac_hit_elem != NULL"
+    .balign 4
 
 glabel D_8013ACA0
-    .incbin "baserom.z64", 0xBB1E40, 0x18
+    .asciz "../z_collision_check.c"
+    .balign 4
 
 glabel D_8013ACB8
-    .incbin "baserom.z64", 0xBB1E58, 0x38
+    .asciz "CollisionCheck_generalLineOcCheck():\xCC\xA4\xC2\xD0\xB1\xFE %d\xA5\xBF\xA5\xA4\xA5\xD7\n"
+    # EUC-JP: 未対応 %dタイプ | %d's type is not supported
+    .balign 4
 
 glabel D_8013ACF0
-    .incbin "baserom.z64", 0xBB1E90, 0x4
+    .float 0.01
 
 glabel D_8013ACF4
-    .incbin "baserom.z64", 0xBB1E94, 0x4
+    .float 1.0E38
 
 glabel D_8013ACF8
-    .incbin "baserom.z64", 0xBB1E98, 0x4
+    .float 0.008
 
 glabel D_8013ACFC
-    .incbin "baserom.z64", 0xBB1E9C, 0x4
+    .float 0.008
 
 glabel D_8013AD00
-    .incbin "baserom.z64", 0xBB1EA0, 0x4
+    .float 0.008
 
 glabel D_8013AD04
-    .incbin "baserom.z64", 0xBB1EA4, 0x4
+    .float 0.33333334
 
 glabel D_8013AD08
-    .incbin "baserom.z64", 0xBB1EA8, 0x4
+    .float 0.33333334
 
 glabel D_8013AD0C
-    .incbin "baserom.z64", 0xBB1EAC, 0x4
+    .float 0.008
 
 glabel D_8013AD10
-    .incbin "baserom.z64", 0xBB1EB0, 0x4
+    .float 0.33333334
 
 glabel D_8013AD14
-    .incbin "baserom.z64", 0xBB1EB4, 0x4
+    .float 0.33333334
 
 glabel D_8013AD18
-    .incbin "baserom.z64", 0xBB1EB8, 0x4
+    .float 0.33333334
 
 glabel D_8013AD1C
-    .incbin "baserom.z64", 0xBB1EBC, 0x4
+    .float 0.33333334
 
 glabel D_8013AD20
-    .incbin "baserom.z64", 0xBB1EC0, 0x4
+    .float 0.33333334
 
 glabel D_8013AD24
-    .incbin "baserom.z64", 0xBB1EC4, 0x4
+    .float 0.008
 
 glabel D_8013AD28
-    .incbin "baserom.z64", 0xBB1EC8, 0x4
+    .float 0.008
 
 glabel D_8013AD2C
-    .incbin "baserom.z64", 0xBB1ECC, 0x4
+    .float 0.008
 
 glabel D_8013AD30
-    .incbin "baserom.z64", 0xBB1ED0, 0x10
+    .float 0.008

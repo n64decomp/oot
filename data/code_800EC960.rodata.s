@@ -7,524 +7,721 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80149C60
-    .incbin "baserom.z64", 0xBC0E00, 0x28
+    .asciz "AUDIO : Ocarina Control Assign Normal\n"
+    .balign 4
 
 glabel D_80149C88
-    .incbin "baserom.z64", 0xBC0E28, 0x28
+    .asciz "AUDIO : Ocarina Control Assign Custom\n"
+    .balign 4
 
 glabel D_80149CB0
-    .incbin "baserom.z64", 0xBC0E50, 0x18
+    .asciz "Presss NA_KEY_D4 %08x\n"
+    .balign 4
 
 glabel D_80149CC8
-    .incbin "baserom.z64", 0xBC0E68, 0x18
+    .asciz "Presss NA_KEY_F4 %08x\n"
+    .balign 4
 
 glabel D_80149CE0
-    .incbin "baserom.z64", 0xBC0E80, 0x18
+    .asciz "Presss NA_KEY_A4 %08x\n"
+    .balign 4
 
 glabel D_80149CF8
-    .incbin "baserom.z64", 0xBC0E98, 0x18
+    .asciz "Presss NA_KEY_B4 %08x\n"
+    .balign 4
 
 glabel D_80149D10
-    .incbin "baserom.z64", 0xBC0EB0, 0x18
+    .asciz "Presss NA_KEY_D5 %08x\n"
+    .balign 4
 
 glabel D_80149D28
-    .incbin "baserom.z64", 0xBC0EC8, 0x4
+    .asciz "1"
+    .balign 4
 
 glabel D_80149D2C
-    .incbin "baserom.z64", 0xBC0ECC, 0x14
+    .asciz "Audio Debug Mode"
+    .balign 4
 
 glabel D_80149D40
-    .incbin "baserom.z64", 0xBC0EE0, 0x8
+    .asciz "- %s -"
+    .balign 4
 
 glabel D_80149D48
-    .incbin "baserom.z64", 0xBC0EE8, 0x10
+    .asciz "Audio ScrPrt"
+    .balign 4
 
 glabel D_80149D58
-    .incbin "baserom.z64", 0xBC0EF8, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_80149D5C
-    .incbin "baserom.z64", 0xBC0EFC, 0x8
+    .asciz "%04X"
+    .balign 4
 
 glabel D_80149D64
-    .incbin "baserom.z64", 0xBC0F04, 0x10
+    .asciz "BGM CANCEL:%s"
+    .balign 4
 
 glabel D_80149D74
-    .incbin "baserom.z64", 0xBC0F14, 0xC
+    .asciz "SE MUTE:%s"
+    .balign 4
 
 glabel D_80149D80
-    .incbin "baserom.z64", 0xBC0F20, 0x14
+    .asciz "PUSH CONT-4 A-BTN"
+    .balign 4
 
 glabel D_80149D94
-    .incbin "baserom.z64", 0xBC0F34, 0x10
+    .asciz "SE HANDLE:%s"
+    .balign 4
 
 glabel D_80149DA4
-    .incbin "baserom.z64", 0xBC0F44, 0x14
+    .asciz "%02x %04x %02x %08x"
+    .balign 4
 
 glabel D_80149DB8
-    .incbin "baserom.z64", 0xBC0F58, 0x4
+    .asciz "*"
+    .balign 4
 
 glabel D_80149DBC
-    .incbin "baserom.z64", 0xBC0F5C, 0x10
+    .asciz "Seq 0  : %2x"
+    .balign 4
 
 glabel D_80149DCC
-    .incbin "baserom.z64", 0xBC0F6C, 0x10
+    .asciz "Seq 1  : %2x"
+    .balign 4
 
 glabel D_80149DDC
-    .incbin "baserom.z64", 0xBC0F7C, 0x10
+    .asciz "SE HD  : %2x %s"
+    .balign 4
 
 glabel D_80149DEC
-    .incbin "baserom.z64", 0xBC0F8C, 0xC
+    .asciz "SE No. :%3x"
+    .balign 4
 
 glabel D_80149DF8
-    .incbin "baserom.z64", 0xBC0F98, 0x10
+    .asciz "S-Out  : %2x %s"
+    .balign 4
 
 glabel D_80149E08
-    .incbin "baserom.z64", 0xBC0FA8, 0x10
+    .asciz "BGM Ent: %2x"
+    .balign 4
 
 glabel D_80149E18
-    .incbin "baserom.z64", 0xBC0FB8, 0x10
+    .asciz "Spec   : %2x" 
+    .balign 4
 
 glabel D_80149E28
-    .incbin "baserom.z64", 0xBC0FC8, 0x10
+    .asciz "Na Snd : %2x"
+    .balign 4
 
 glabel D_80149E38
-    .incbin "baserom.z64", 0xBC0FD8, 0xC
+    .asciz "Cam Wt : %s"
+    .balign 4
 
 glabel D_80149E44
-    .incbin "baserom.z64", 0xBC0FE4, 0xC
+    .asciz "Lnk Wt : %s"
+    .balign 4
 
 glabel D_80149E50
-    .incbin "baserom.z64", 0xBC0FF0, 0x10
+    .asciz "SE Ent : %2x"
+    .balign 4
 
 glabel D_80149E60
-    .incbin "baserom.z64", 0xBC1000, 0x8
+    .asciz "%s <%d>"
+    .balign 4
 
 glabel D_80149E68
-    .incbin "baserom.z64", 0xBC1008, 0x20
+    .asciz "%2X %5d %5d %5d %02X %04X %04X"
+    .balign 4
 
 glabel D_80149E88
-    .incbin "baserom.z64", 0xBC1028, 0x24
+    .asciz "FF ----- ----- ----- -- ---- ----"
+    .balign 4
 
 glabel D_80149EAC
-    .incbin "baserom.z64", 0xBC104C, 0x20
+    .asciz "%2X %5d %5d %5d %3d %3d %04X"
+    .balign 4
 
 glabel D_80149ECC
-    .incbin "baserom.z64", 0xBC106C, 0x24
+    .asciz "FF ----- ----- ----- --- --- ----"
+    .balign 4
 
 glabel D_80149EF0
-    .incbin "baserom.z64", 0xBC1090, 0x20
+    .asciz "%2X %5d %5d %5d %3d %3d %04X"
+    .balign 4
 
 glabel D_80149F10
-    .incbin "baserom.z64", 0xBC10B0, 0x24
+    .asciz "FF ----- ----- ----- --- --- ----"
+    .balign 4
 
 glabel D_80149F34
-    .incbin "baserom.z64", 0xBC10D4, 0xC
+    .asciz "%2X %04X"
+    .balign 4
 
 glabel D_80149F40
-    .incbin "baserom.z64", 0xBC10E0, 0x8
+    .asciz "FF ----"
+    .balign 4
 
 glabel D_80149F48
-    .incbin "baserom.z64", 0xBC10E8, 0x4
+    .asciz "*"
+    .balign 4
 
 glabel D_80149F4C
-    .incbin "baserom.z64", 0xBC10EC, 0x10
+    .asciz "Swicth  : %d"
+    .balign 4
 
 glabel D_80149F5C
-    .incbin "baserom.z64", 0xBC10FC, 0x10
+    .asciz "Lines   : %d"
+    .balign 4
 
 glabel D_80149F6C
-    .incbin "baserom.z64", 0xBC110C, 0x10
+    .asciz "Color   : %d"
+    .balign 4
 
 glabel D_80149F7C
-    .incbin "baserom.z64", 0xBC111C, 0xC
+    .asciz "%s  : %d"
+    .balign 4
 
 glabel D_80149F88
-    .incbin "baserom.z64", 0xBC1128, 0xC
+    .asciz "%s    : %d"
+    .balign 4
 
 glabel D_80149F94
-    .incbin "baserom.z64", 0xBC1134, 0x10
+    .asciz "ENVRONM : %d"
+    .balign 4
 
 glabel D_80149FA4
-    .incbin "baserom.z64", 0xBC1144, 0xC
+    .asciz "%s   : %d"
+    .balign 4
 
 glabel D_80149FB0
-    .incbin "baserom.z64", 0xBC1150, 0xC
+    .asciz "%s  : %d"
+    .balign 4
 
 glabel D_80149FBC
-    .incbin "baserom.z64", 0xBC115C, 0x8
+    .asciz "%s : %d"
+    .balign 4
 
 glabel D_80149FC4
-    .incbin "baserom.z64", 0xBC1164, 0xC
+    .asciz "%s    : %d"
+    .balign 4
 
 glabel D_80149FD0
-    .incbin "baserom.z64", 0xBC1170, 0x10
+    .asciz "SEQ ENT : %d"
+    .balign 4
 
 glabel D_80149FE0
-    .incbin "baserom.z64", 0xBC1180, 0xC
+    .asciz "SWAP OFF"
+    .balign 4
 
 glabel D_80149FEC
-    .incbin "baserom.z64", 0xBC118C, 0x4
+    .asciz "*"
+    .balign 4
 
 glabel D_80149FF0
-    .incbin "baserom.z64", 0xBC1190, 0x4
+    .asciz "V"
+    .balign 4
 
 glabel D_80149FF4
-    .incbin "baserom.z64", 0xBC1194, 0x10
+    .asciz "%04x %04x %s"
+    .balign 4
 
 glabel D_8014A004
-    .incbin "baserom.z64", 0xBC11A4, 0x10
+    .asciz "Group Track:%d"
+    .balign 4
 
 glabel D_8014A014
-    .incbin "baserom.z64", 0xBC11B4, 0x10
+    .asciz "Sub Track  :%d"
+    .balign 4
 
 glabel D_8014A024
-    .incbin "baserom.z64", 0xBC11C4, 0xC
+    .asciz "TRK NO. "
+    .balign 4
 
 glabel D_8014A030
-    .incbin "baserom.z64", 0xBC11D0, 0xC
+    .asciz "ENTRY   "
+    .balign 4
 
 glabel D_8014A03C
-    .incbin "baserom.z64", 0xBC11DC, 0xC
+    .asciz "MUTE    "
+    .balign 4
 
 glabel D_8014A048
-    .incbin "baserom.z64", 0xBC11E8, 0xC
+    .asciz "OPENNOTE"
+    .balign 4
 
 glabel D_8014A054
-    .incbin "baserom.z64", 0xBC11F4, 0x4
+    .asciz "%1X"
+    .balign 4
 
 glabel D_8014A058
-    .incbin "baserom.z64", 0xBC11F8, 0x4
+    .asciz "O"
+    .balign 4
 
 glabel D_8014A05C
-    .incbin "baserom.z64", 0xBC11FC, 0x4
+    .asciz "X"
+    .balign 4
 
 glabel D_8014A060
-    .incbin "baserom.z64", 0xBC1200, 0x4
+    .asciz "O"
+    .balign 4
 
 glabel D_8014A064
-    .incbin "baserom.z64", 0xBC1204, 0x4
+    .asciz "X"
+    .balign 4
 
 glabel D_8014A068
-    .incbin "baserom.z64", 0xBC1208, 0x4
+    .asciz "%1X"
+    .balign 4
 
 glabel D_8014A06C
-    .incbin "baserom.z64", 0xBC120C, 0x8
+    .asciz "%2d,%2d"
+    .balign 4
 
 glabel D_8014A074
-    .incbin "baserom.z64", 0xBC1214, 0xC
+    .asciz "VOL     "
+    .balign 4
 
 glabel D_8014A080
-    .incbin "baserom.z64", 0xBC1220, 0xC
+    .asciz "E VOL   "
+    .balign 4
 
 glabel D_8014A08C
-    .incbin "baserom.z64", 0xBC122C, 0xC
+    .asciz "BANK ID "
+    .balign 4
 
 glabel D_8014A098
-    .incbin "baserom.z64", 0xBC1238, 0xC
+    .asciz "PROG    "
+    .balign 4
 
 glabel D_8014A0A4
-    .incbin "baserom.z64", 0xBC1244, 0x8
+    .asciz "PAN    "
+    .balign 4
 
 glabel D_8014A0AC
-    .incbin "baserom.z64", 0xBC124C, 0xC
+    .asciz "PANPOW  "
+    .balign 4
 
 glabel D_8014A0B8
-    .incbin "baserom.z64", 0xBC1258, 0xC
+    .asciz "FXMIX   "
+    .balign 4
 
 glabel D_8014A0C4
-    .incbin "baserom.z64", 0xBC1264, 0xC
+    .asciz "PRIO    "
+    .balign 4
 
 glabel D_8014A0D0
-    .incbin "baserom.z64", 0xBC1270, 0xC
+    .asciz "VIB PIT "
+    .balign 4
 
 glabel D_8014A0DC
-    .incbin "baserom.z64", 0xBC127C, 0xC
+    .asciz "VIB DEP "
+    .balign 4
 
 glabel D_8014A0E8
-    .incbin "baserom.z64", 0xBC1288, 0xC
+    .asciz "TUNE    "
+    .balign 4
 
 glabel D_8014A0F4
-    .incbin "baserom.z64", 0xBC1294, 0xC
+    .asciz "TUNE    "
+    .balign 4
 
 glabel D_8014A100
-    .incbin "baserom.z64", 0xBC12A0, 0x8
+    .asciz "%02X "
+    .balign 4
 
 glabel D_8014A108
-    .incbin "baserom.z64", 0xBC12A8, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A10C
-    .incbin "baserom.z64", 0xBC12AC, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A110
-    .incbin "baserom.z64", 0xBC12B0, 0x4
+    .asciz "%X"
+    .balign 4
 
 glabel D_8014A114
-    .incbin "baserom.z64", 0xBC12B4, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A118
-    .incbin "baserom.z64", 0xBC12B8, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A11C
-    .incbin "baserom.z64", 0xBC12BC, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A120
-    .incbin "baserom.z64", 0xBC12C0, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A124
-    .incbin "baserom.z64", 0xBC12C4, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A128
-    .incbin "baserom.z64", 0xBC12C8, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A12C
-    .incbin "baserom.z64", 0xBC12CC, 0x4
-
+    .asciz "%d"
+    .balign 4
+ 
 glabel D_8014A130
-    .incbin "baserom.z64", 0xBC12D0, 0x4
-
+    .asciz "%d"
+    .balign 4
+ 
 glabel D_8014A134
-    .incbin "baserom.z64", 0xBC12D4, 0xC
+    .asciz "TOTAL  %d"
+    .balign 4
 
 glabel D_8014A140
-    .incbin "baserom.z64", 0xBC12E0, 0x14
+    .asciz "DRIVER %05X / %05X"
+    .balign 4
 
 glabel D_8014A154
-    .incbin "baserom.z64", 0xBC12F4, 0x24
+    .asciz "AT-SEQ %02X-%02X (%05X-%05X / %05X)"
+    .balign 4
 
 glabel D_8014A178
-    .incbin "baserom.z64", 0xBC1318, 0x24
+    .asciz "AT-BNK %02X-%02X (%05X-%05X / %05X)"
+    .balign 4
 
 glabel D_8014A19C
-    .incbin "baserom.z64", 0xBC133C, 0x20
+    .asciz "ST-SEQ %02Xseqs  (%05X / %06X)"
+    .balign 4
 
 glabel D_8014A1BC
-    .incbin "baserom.z64", 0xBC135C, 0x8
+    .asciz "%02x"
+    .balign 4
 
 glabel D_8014A1C4
-    .incbin "baserom.z64", 0xBC1364, 0x20
+    .asciz "ST-BNK %02Xbanks (%05X / %06X)"
+    .balign 4
 
 glabel D_8014A1E4
-    .incbin "baserom.z64", 0xBC1384, 0x8
+    .asciz "%02x"
+    .balign 4
 
 glabel D_8014A1EC
-    .incbin "baserom.z64", 0xBC138C, 0x14
+    .asciz "E-MEM  %05X / %05X"
+    .balign 4
 
 glabel D_8014A200
-    .incbin "baserom.z64", 0xBC13A0, 0x10
+    .asciz "BGM No.    %02X"
+    .balign 4
 
 glabel D_8014A210
-    .incbin "baserom.z64", 0xBC13B0, 0x14
+    .asciz "SCENE SET  %02X %s"
+    .balign 4
 
 glabel D_8014A224
-    .incbin "baserom.z64", 0xBC13C4, 0x4
+    .asciz "*"
+    .balign 4
 
 glabel D_8014A228
-    .incbin "baserom.z64", 0xBC13C8, 0x14
+    .asciz "NEXT SCENE %02X %s"
+    .balign 4
 
 glabel D_8014A23C
-    .incbin "baserom.z64", 0xBC13DC, 0x14
+    .asciz "NOW SCENE  %02X %s"
+    .balign 4
 
 glabel D_8014A250
-    .incbin "baserom.z64", 0xBC13F0, 0x10
+    .asciz "NOW BLOCK  %02X"
+    .balign 4
 
 glabel D_8014A260
-    .incbin "baserom.z64", 0xBC1400, 0x8
+    .asciz "PORT"
+    .balign 4
 
 glabel D_8014A268
-    .incbin "baserom.z64", 0xBC1408, 0x14
+    .asciz "%02X %02X %02X %02X"
+    .balign 4
 
 glabel D_8014A27C
-    .incbin "baserom.z64", 0xBC141C, 0x14
+    .asciz "%02X %02X %02X %02X"
+    .balign 4
 
 glabel D_8014A290
-    .incbin "baserom.z64", 0xBC1430, 0x18
+    .asciz "SEQ INFO  : %2d %02x %d"
+    .balign 4
 
 glabel D_8014A2A8
-    .incbin "baserom.z64", 0xBC1448, 0x18
+    .asciz "PLAY INFO : %2d %02x %d"
+    .balign 4
 
 glabel D_8014A2C0
-    .incbin "baserom.z64", 0xBC1460, 0x1C
+    .asciz "8note REC POINTER : %08x"
+    .balign 4
 
 glabel D_8014A2DC
-    .incbin "baserom.z64", 0xBC147C, 0x8
+    .asciz "%02x"
+    .balign 4
 
 glabel D_8014A2E4
-    .incbin "baserom.z64", 0xBC1484, 0x28
+    .asciz "OCA:%02x SEQ:%04x PLAY:%02x REC:%02x"
+    .balign 4
 
 glabel D_8014A30C
-    .incbin "baserom.z64", 0xBC14AC, 0x4
+    .asciz "*"
+    .balign 4
 
 glabel D_8014A310
-    .incbin "baserom.z64", 0xBC14B0, 0x14
+    .asciz "SE HD  : %02x %s"
+    .balign 4
 
 glabel D_8014A324
-    .incbin "baserom.z64", 0xBC14C4, 0x10
+    .asciz "SE No. : %02x"
+    .balign 4
 
 glabel D_8014A334
-    .incbin "baserom.z64", 0xBC14D4, 0x10
+    .asciz "       : %04x"
+    .balign 4
 
 glabel D_8014A344
-    .incbin "baserom.z64", 0xBC14E4, 0xC
+    .asciz "SE SW    %s"
+    .balign 4
 
 glabel D_8014A350
-    .incbin "baserom.z64", 0xBC14F0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8014A354
-    .incbin "baserom.z64", 0xBC14F4, 0x10
+    .asciz "SE PR  : %02x"
+    .balign 4
 
 glabel D_8014A364
-    .incbin "baserom.z64", 0xBC1504, 0x20
+    .asciz "env_fx %d code_fx %d SPEC %d"
+    .balign 4
 
 glabel D_8014A384
-    .incbin "baserom.z64", 0xBC1524, 0x18
+    .asciz "SOUND GAME FRAME NOW %f"
+    .balign 4
 
 glabel D_8014A39C
-    .incbin "baserom.z64", 0xBC153C, 0x18
+    .asciz "SOUND GAME FRAME MAX %f"
+    .balign 4
 
 glabel D_8014A3B4
-    .incbin "baserom.z64", 0xBC1554, 0x24
+    .asciz "SWITCH BGM MODE %d %d %d (FLAG %d)"
+    .balign 4
 
 glabel D_8014A3D8
-    .incbin "baserom.z64", 0xBC1578, 0x18
+    .asciz "ENEMY DIST %f VOL %3d"
+    .balign 4
 
 glabel D_8014A3F0
-    .incbin "baserom.z64", 0xBC1590, 0x14
+    .asciz "GANON DIST VOL %3d"
+    .balign 4
 
 glabel D_8014A404
-    .incbin "baserom.z64", 0xBC15A4, 0x10
+    .asciz "DEMO FLAG %d"
+    .balign 4
 
 glabel D_8014A414
-    .incbin "baserom.z64", 0xBC15B4, 0x14
+    .asciz "MARON BGM DIST %f"
+    .balign 4
 
 glabel D_8014A428
-    .incbin "baserom.z64", 0xBC15C8, 0x14
+    .asciz "NATURE FAILED %01x"
+    .balign 4
 
 glabel D_8014A43C
-    .incbin "baserom.z64", 0xBC15DC, 0x14
+    .asciz "SARIA BGM PTR %08x"
+    .balign 4
 
 glabel D_8014A450
-    .incbin "baserom.z64", 0xBC15F0, 0xC
+    .asciz "POLI %d(%d)"
+    .balign 4
 
 glabel D_8014A45C
-    .incbin "baserom.z64", 0xBC15FC, 0x4
+    .asciz "%d"
+    .balign 4
 
 glabel D_8014A460
-    .incbin "baserom.z64", 0xBC1600, 0x24
+    .asciz "Middle Boss BGM Start not stack \n"
+    .balign 4
 
 glabel jtbl_8014A484
-    .incbin "baserom.z64", 0xBC1624, 0x3C
+    .word L800EEEB4
+    .word L800EF124
+    .word L800F1BA4
+    .word L800F0CFC
+    .word L800F1BA4
+    .word L800F008C
+    .word L800F1BA4
+    .word L800EF3F0
+    .word L800EFC20
+    .word L800F1014
+    .word L800F1BA4
+    .word L800F12F0
+    .word L800F14B8
+    .word L800EF978
+    .word L800F17F8
 
 glabel D_8014A4C0
-    .incbin "baserom.z64", 0xBC1660, 0x8
+    .float 127.1
 
+    .balign 8
 glabel D_8014A4C8
-    .incbin "baserom.z64", 0xBC1668, 0x8
+    .double 127.1
 
 glabel D_8014A4D0
-    .incbin "baserom.z64", 0xBC1670, 0x4
+    .float 50000000
 
 glabel jtbl_8014A4D4
-    .incbin "baserom.z64", 0xBC1674, 0x2C
+    .word L800F1E70
+    .word L800F1E70
+    .word L800F1EA4
+    .word L800F1EA4
+    .word L800F1F00
+    .word L800F1F2C
+    .word L800F1F64
+    .word L800F1FE4
+    .word L800F2048
+    .word L800F2048
+    .word L800F2010
 
 glabel jtbl_8014A500
-    .incbin "baserom.z64", 0xBC16A0, 0x20
+    .word L800F2078
+    .word L800F2078
+    .word L800F20C0
+    .word L800F20C0
+    .word L800F20D8
+    .word L800F20D8
+    .word L800F20D8
+    .word L800F20A0
 
 glabel jtbl_8014A520
-    .incbin "baserom.z64", 0xBC16C0, 0x3C
+    .word L800F2F08
+    .word L800F2FAC
+    .word L800F3034
+    .word L800F2FFC
+    .word L800F3034
+    .word L800F2FEC
+    .word L800F3034
+    .word L800F2FBC
+    .word L800F2FDC
+    .word L800F300C
+    .word L800F3034
+    .word L800F301C
+    .word L800F302C
+    .word L800F2FCC
+    .word L800F3034
 
 glabel D_8014A55C
-    .incbin "baserom.z64", 0xBC16FC, 0x4
+    .float 10000
 
 glabel D_8014A560
-    .incbin "baserom.z64", 0xBC1700, 0x4
+    .float 666.6667
 
 glabel D_8014A564
-    .incbin "baserom.z64", 0xBC1704, 0x4
+    .float 952.381
 
 glabel D_8014A568
-    .incbin "baserom.z64", 0xBC1708, 0x4
+    .float 3846.154
 
 glabel D_8014A56C
-    .incbin "baserom.z64", 0xBC170C, 0x4
+    .float 0.19
 
 glabel D_8014A570
-    .incbin "baserom.z64", 0xBC1710, 0x4
+    .float 0.81
 
 glabel D_8014A574
-    .incbin "baserom.z64", 0xBC1714, 0x4
+    .float 0.81
 
 glabel D_8014A578
-    .incbin "baserom.z64", 0xBC1718, 0x4
+    .float 2500
 
 glabel D_8014A57C
-    .incbin "baserom.z64", 0xBC171C, 0x4
+    .float 3.3
 
 glabel D_8014A580
-    .incbin "baserom.z64", 0xBC1720, 0x4
+    .float 5.0769234
 
 glabel jtbl_8014A584
-    .incbin "baserom.z64", 0xBC1724, 0x1C
+    .word L800F3694
+    .word L800F3694
+    .word L800F36AC
+    .word L800F36AC
+    .word L800F36C0
+    .word L800F36C0
+    .word L800F3694
 
+    .balign 8
 glabel D_8014A5A0
-    .incbin "baserom.z64", 0xBC1740, 0x8
+    .double 1.0293
 
 glabel D_8014A5A8
-    .incbin "baserom.z64", 0xBC1748, 0x4
+    .float 10000
 
 glabel D_8014A5AC
-    .incbin "baserom.z64", 0xBC174C, 0x4
+    .float 0.2
 
 glabel D_8014A5B0
-    .incbin "baserom.z64", 0xBC1750, 0x4
+    .float 0.2
 
 glabel D_8014A5B4
-    .incbin "baserom.z64", 0xBC1754, 0x4
+    .float 1923.077
 
 glabel D_8014A5B8
-    .incbin "baserom.z64", 0xBC1758, 0x4
+    .float 625
 
 glabel jtbl_8014A5BC
-    .incbin "baserom.z64", 0xBC175C, 0x1C
+    .word L800F3A94
+    .word L800F3A94
+    .word L800F3A94
+    .word L800F3A94
+    .word L800F3C74
+    .word L800F3AC4
+    .word L800F3A94
 
 glabel D_8014A5D8
-    .incbin "baserom.z64", 0xBC1778, 0x4
+    .float 1.1
 
 glabel D_8014A5DC
-    .incbin "baserom.z64", 0xBC177C, 0x4
+    .float 0.22500002
 
 glabel D_8014A5E0
-    .incbin "baserom.z64", 0xBC1780, 0x4
+    .float 0.77499997
 
 glabel D_8014A5E4
-    .incbin "baserom.z64", 0xBC1784, 0x4
+    .float 0.2
 
 glabel D_8014A5E8
-    .incbin "baserom.z64", 0xBC1788, 0x4
+    .float 0.89999997
 
 glabel D_8014A5EC
-    .incbin "baserom.z64", 0xBC178C, 0x4
+    .float 0.3
 
 glabel D_8014A5F0
-    .incbin "baserom.z64", 0xBC1790, 0x8
+    .float 1.1
 
+    .balign 8
 glabel D_8014A5F8
-    .incbin "baserom.z64", 0xBC1798, 0x8
+    .double 0.7
 
 glabel D_8014A600
-    .incbin "baserom.z64", 0xBC17A0, 0x8
+    .double 0.3
 
 glabel D_8014A608
-    .incbin "baserom.z64", 0xBC17A8, 0x4
+    .float 0.15
 
 glabel D_8014A60C
-    .incbin "baserom.z64", 0xBC17AC, 0x4
+    .float 1.39999997
 
 glabel D_8014A610
-    .incbin "baserom.z64", 0xBC17B0, 0x4
+    .float 0.1
 
 glabel D_8014A614
-    .incbin "baserom.z64", 0xBC17B4, 0x4
+    .float 0.89999997
 
 glabel D_8014A618
-    .incbin "baserom.z64", 0xBC17B8, 0x8
+    .float 0.1

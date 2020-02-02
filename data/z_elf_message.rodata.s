@@ -7,35 +7,115 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013B830
-    .incbin "baserom.z64", 0xBB29D0, 0x14
+    .asciz "../z_elf_message.c"
+    .balign 4
 
 glabel D_8013B844
-    .incbin "baserom.z64", 0xBB29E4, 0x14
+    .asciz "\x22\xB4\xEB\xB2\xE8\xB3\xB0\x20\xBE\xF2\xB7\xEF\x22 = %s\n"
+    # EUC-JP: 企画外 条件 | Unplanned conditions
+    .balign 4
 
 glabel D_8013B858
-    .incbin "baserom.z64", 0xBB29F8, 0xC
+    .asciz "\xB4\xEB\xB2\xE8\xB3\xB0\x20\xBE\xF2\xB7\xEF"
+    # EUC-JP: 企画外 条件 | Unplanned conditions
+    .balign 4
 
 glabel D_8013B864
-    .incbin "baserom.z64", 0xBB2A04, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_8013B868
-    .incbin "baserom.z64", 0xBB2A08, 0x14
+    .asciz "../z_elf_message.c"
+    .balign 4
 
 glabel D_8013B87C
-    .incbin "baserom.z64", 0xBB2A1C, 0x14
+    .asciz "../z_elf_message.c"
+    .balign 4
 
 glabel D_8013B890
-    .incbin "baserom.z64", 0xBB2A30, 0x14
+    .asciz "\x22\xB4\xEB\xB2\xE8\xB3\xB0\x20\xBE\xF2\xB7\xEF\x22 = %s\n"
+    # EUC-JP: 企画外 条件 | Unplanned conditions
+    .balign 4
 
 glabel D_8013B8A4
-    .incbin "baserom.z64", 0xBB2A44, 0xC
+    .asciz "\xB4\xEB\xB2\xE8\xB3\xB0\x20\xBE\xF2\xB7\xEF"
+    # EUC-JP: 企画外 条件 | Unplanned conditions
+    .balign 4
 
 glabel D_8013B8B0
-    .incbin "baserom.z64", 0xBB2A50, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_8013B8B4
-    .incbin "baserom.z64", 0xBB2A54, 0x14
+    .asciz "../z_elf_message.c"
+    .balign 4
 
 glabel jtbl_8013B8C8
-    .incbin "baserom.z64", 0xBB2A68, 0x108
+    .word L8006BCFC
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BD44
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BD90
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BDD0
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE38
+    .word L8006BE10

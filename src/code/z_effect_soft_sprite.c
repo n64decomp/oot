@@ -77,6 +77,8 @@ void Effect_SS_ResetEntry(LoadedParticleEntry* particle)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_effect_soft_sprite/func_800275D0.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_effect_soft_sprite/func_80027704.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_effect_soft_sprite/func_80027798.s")
 
 void Effect_SS_UpdateParticle(GlobalContext* globalCtx, s32 index)
@@ -125,6 +127,12 @@ void Effect_SS_DrawParticle(GlobalContext* globalCtx, s32 index)
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_effect_soft_sprite/func_80027BDC.s")
+
+s16 func_80027DD4(s16 arg0, s16 arg1, s32 arg2)
+{
+    s16 ret = !arg2 ? arg1 : (arg0 + (s32) ((f32) (arg1 - arg0) / arg2));
+    return ret;
+}
 
 s16 func_80027E34(s16 a0, s16 a1, f32 a2)
 {

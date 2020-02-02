@@ -4,31 +4,31 @@ glabel D_801363E4
     .balign 4
 
 glabel D_801363F4
-    .incbin "baserom.z64", 0xBAD594, 0x12
+    .asciz "魔法のメガネ START"
     .balign 4
 
 glabel D_80136408
-    .incbin "baserom.z64", 0xBAD5A8, 0x29
+    .asciz "魔法のメガネ 見えないＡcｔｏｒ表示 START"
     .balign 4
 
 glabel D_80136434
-    .incbin "baserom.z64", 0xBAD5D4, 0x23
+    .asciz "魔法のメガネ 見えないＡcｔｏｒ表示"
     .balign 4
 
 glabel D_80136458
-    .incbin "baserom.z64", 0xBAD5F8, 0x27
+    .asciz "魔法のメガネ 見えないＡcｔｏｒ表示 END"
     .balign 4
 
 glabel D_80136480
-    .incbin "baserom.z64", 0xBAD620, 0x0F
+    .asciz "青い眼鏡(外側)"
     .balign 4
 
 glabel D_80136490
-    .incbin "baserom.z64", 0xBAD630, 0x0F
+    .asciz "青い眼鏡(外側)"
     .balign 4
 
 glabel D_801364A0
-    .incbin "baserom.z64", 0xBAD640, 0x11
+    .asciz "魔法のメガネ END"
     .balign 4
 
 glabel D_801364B4

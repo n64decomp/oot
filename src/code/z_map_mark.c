@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <global.h>
+#include <vt.h>
 
 typedef struct
 {
@@ -101,7 +102,7 @@ void MapMark_Draw(GlobalContext* globalCtx)
     if ((D_8015FFD0 != NULL) && (globalCtx->interfaceCtx.roomNum >= D_8015FFD0[7][minimapId]))
     {
         // Translates to: "ROOM NUMBER EXCEEDED, YIKES %d/%d  MapMarkDraw PROCESSING INTERRUPTED"
-        osSyncPrintf("\x1B[41;37m部屋番号がオーバーしてるで,ヤバイで %d/%d  \nMapMarkDraw の処理を中断します\n", "\x1B[m",
+        osSyncPrintf(VT_COL(RED, WHITE) "部屋番号がオーバーしてるで,ヤバイで %d/%d  \nMapMarkDraw の処理を中断します\n", VT_RST,
                      globalCtx->interfaceCtx.roomNum, D_8015FFD0[7][minimapId]);
         return;
     }

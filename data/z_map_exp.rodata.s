@@ -7,131 +7,361 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013D700
-    .incbin "baserom.z64", 0xBB48A0, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_8013D708
-    .incbin "baserom.z64", 0xBB48A8, 0x54
+    .asciz "\xA3\xD0\xA3\xC1\xA3\xCC\xA3\xC5\xA3\xD4\xA3\xC5\xA5\xBB\xA5\xC3\xA5\xC8 \xA1\xDA i=%x : room=%x \xA1\xDBRoom_Inf[%d][4]=%x  ( map_palete_no = %d )\n"
+    # EUC-JP: ＰＡＬＥＴＥセット 【 i=%x : room=%x 】 | Palette set
+    .balign 4
 
 glabel D_8013D75C
-    .incbin "baserom.z64", 0xBB48FC, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013D760
-    .incbin "baserom.z64", 0xBB4900, 0x8
+    .asciz "\x1b[34m"
+    .balign 4
 
 glabel D_8013D768
-    .incbin "baserom.z64", 0xBB4908, 0xC
+    .asciz "\xA3\xCB\xA3\xCB\xA3\xCB\xA1\xE1%d\n"
+    # EUC-JP: ＫＫＫ＝
+    .balign 4
 
 glabel D_8013D774
-    .incbin "baserom.z64", 0xBB4914, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013D778
-    .incbin "baserom.z64", 0xBB4918, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D788
-    .incbin "baserom.z64", 0xBB4928, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_8013D790
-    .incbin "baserom.z64", 0xBB4930, 0x50
+    .asciz "\xA5\xC7\xA5\xAF\xA4\xCE\xBC\xF9\xA5\xC0\xA5\xF3\xA5\xB8\xA5\xE7\xA5\xF3\xA3\xCD\xA3\xC1\xA3\xD0\x20\xA5\xC6\xA5\xAF\xA5\xB9\xA5\xC1\xA5\xE3\xA3\xC4\xA3\xCD\xA3\xC1(%x) scene_id_offset=%d  VREG(30)=%d\n"
+    # EUC-JP: デクの樹ダンジョンＭＡＰ テクスチャＤＭＡ | Deck Tree Dungeon MAP Texture DMA
+    .balign 4
 
 glabel D_8013D7E0
-    .incbin "baserom.z64", 0xBB4980, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013D7E4
-    .incbin "baserom.z64", 0xBB4984, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D7F4
-    .incbin "baserom.z64", 0xBB4994, 0x1C
+    .asciz "\xA3\xCD\xA3\xC1\xA3\xD0\x20\xB3\xC6\xB3\xAC\xA3\xCF\xA3\xCE\xA5\xC1\xA5\xA7\xA5\xC3\xA5\xAF\n"
+    # EUC-JP: ＭＡＰ 各階ＯＮチェック | MAP ON check on each floor
+    .balign 4
 
 glabel D_8013D810
-    .incbin "baserom.z64", 0xBB49B0, 0x54
+    .asciz "\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\n\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\nroom_no=%d (%d)(%d)\n\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\n\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\xA1\xF6\n"
+    # EUC-JP: ＊＊＊＊＊＊＊ ＊＊＊＊＊＊＊ room_no=%d (%d)(%d) ＊＊＊＊＊＊＊ ＊＊＊＊＊＊＊
+    .balign 4
 
 glabel D_8013D864
-    .incbin "baserom.z64", 0xBB4A04, 0x18
+    .asciz "\xA3\xD2\xA3\xCF\xA3\xCF\xA3\xCD\xA1\xB2\xA3\xC9\xA3\xCE\xA3\xC6\xA1\xE1%d\n"
+    # EUC-JP: ＲＯＯＭ＿ＩＮＦ＝
+    .balign 4
 
 glabel D_8013D87C
-    .incbin "baserom.z64", 0xBB4A1C, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_8013D884
-    .incbin "baserom.z64", 0xBB4A24, 0x10
+    .asciz "\xC9\xF4\xB2\xB0\xC9\xF4\xB2\xB0\xA1\xE1%d\n"
+    # EUC-JP: 部屋部屋＝ | Room Room = 
+    .balign 4
 
 glabel D_8013D894
-    .incbin "baserom.z64", 0xBB4A34, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8013D898
-    .incbin "baserom.z64", 0xBB4A38, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D8A8
-    .incbin "baserom.z64", 0xBB4A48, 0x40
+    .asciz "\n\n\n\xA3\xCD\xA3\xC1\xA3\xD0\x20\xA5\xC6\xA5\xAF\xA5\xB9\xA5\xC1\xA5\xE3\xBD\xE9\xB4\xFC\xB2\xBD   scene_data_ID=%d\nmapSegment=%x\n\n"
+    # EUC-JP: ＭＡＰ テクスチャ初期化 | MAP texture initalization
+    .balign 4
 
 glabel D_8013D8E8
-    .incbin "baserom.z64", 0xBB4A88, 0x20
+    .asciz "parameter->mapSegment != NULL"
+    .balign 4
 
 glabel D_8013D908
-    .incbin "baserom.z64", 0xBB4AA8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D918
-    .incbin "baserom.z64", 0xBB4AB8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D928
-    .incbin "baserom.z64", 0xBB4AC8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D938
-    .incbin "baserom.z64", 0xBB4AD8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D948
-    .incbin "baserom.z64", 0xBB4AE8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D958
-    .incbin "baserom.z64", 0xBB4AF8, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D968
-    .incbin "baserom.z64", 0xBB4B08, 0x20
+    .asciz "Game_play_demo_mode_check=%d\n"
+    .balign 4
 
 glabel D_8013D988
-    .incbin "baserom.z64", 0xBB4B28, 0x10
+    .asciz "../z_map_exp.c"
+    .balign 4
 
 glabel D_8013D998
-    .incbin "baserom.z64", 0xBB4B38, 0x28
+    .asciz "\xB8\xBD\xBA\xDF\xB3\xAC\xA1\xE1\x25\x64\x20\x20\xB8\xBD\xBA\xDF\xC9\xF4\xB2\xB0\xA1\xE1\x25\x78\x20\x20\xC9\xF4\xB2\xB0\xBF\xF4\xA1\xE1\x25\x64\n"
+    # EUC-JP: 現在階＝%d 現在部屋＝%x 部屋数＝%d | Current floor =% d Current room =% x Number of rooms =% d
+    .balign 4
 
 glabel D_8013D9C0
-    .incbin "baserom.z64", 0xBB4B60, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_8013D9C8
-    .incbin "baserom.z64", 0xBB4B68, 0x10
+    .asciz "\xB3\xAC\xC1\xD8\xC0\xDA\xC2\xD8\xA1\xE1%x\n"
+    # EUC-JP: 階層切替＝ | Tier switching = 
+    .balign 4
 
 glabel D_8013D9D8
-    .incbin "baserom.z64", 0xBB4B78, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel jtbl_8013D9DC
-    .incbin "baserom.z64", 0xBB4B7C, 0x64
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L80080A84
+    .word L80080A84
+    .word L80080A84
+    .word L80080A84
+    .word L80080A84
+    .word L80080A84
+    .word L80080A84
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
+    .word L800809C4
 
 glabel jtbl_8013DA40
-    .incbin "baserom.z64", 0xBB4BE0, 0x50
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
+    .word L80080B28
 
 glabel jtbl_8013DA90
-    .incbin "baserom.z64", 0xBB4C30, 0x64
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080DF4
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
+    .word L80080CBC
 
 glabel jtbl_8013DAF4
-    .incbin "baserom.z64", 0xBB4C94, 0x64
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080F1C
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
+    .word L80080E74
 
 glabel jtbl_8013DB58
-    .incbin "baserom.z64", 0xBB4CF8, 0x50
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
+    .word L8008106C
 
 glabel jtbl_8013DBA8
-    .incbin "baserom.z64", 0xBB4D48, 0x64
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
+    .word L8008114C
 
 glabel D_8013DC0C
-    .incbin "baserom.z64", 0xBB4DAC, 0x4
+    .float 0.4
 
 glabel D_8013DC10
-    .incbin "baserom.z64", 0xBB4DB0, 0x4
+    .float -1.6
 
 glabel jtbl_8013DC14
-    .incbin "baserom.z64", 0xBB4DB4, 0x50
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
+    .word L80081AA0
 
 glabel jtbl_8013DC64
-    .incbin "baserom.z64", 0xBB4E04, 0x28
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
+    .word L80081784
 
 glabel jtbl_8013DC8C
-    .incbin "baserom.z64", 0xBB4E2C, 0x64
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800822DC
+    .word L800825BC
+    .word L800825BC
+    .word L800825BC
+    .word L800825BC
+    .word L800825BC
+    .word L800825BC
+    .word L800825BC
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C
+    .word L8008255C

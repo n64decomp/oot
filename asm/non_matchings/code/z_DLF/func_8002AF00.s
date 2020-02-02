@@ -1,21 +1,27 @@
 .rdata
 glabel D_80136010
-    .incbin "baserom.z64", 0xBAD1B0, 0x18
+    .asciz "既にリンクされています\n"
+    .balign 4
 
 glabel D_80136028
-    .incbin "baserom.z64", 0xBAD1C8, 0x18
+    .asciz "ロードに失敗しました\n"
+    .balign 4
 
 glabel D_80136040
-    .incbin "baserom.z64", 0xBAD1E0, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80136048
-    .incbin "baserom.z64", 0xBAD1E8, 0x30
+    .asciz "OVL(d):Seg:%08x-%08x Ram:%08x-%08x Off:%08x %s\n"
+    .balign 4
 
 glabel D_80136078
-    .incbin "baserom.z64", 0xBAD218, 0x4
+    .asciz ""
+    .balign 4
 
 glabel D_8013607C
-    .incbin "baserom.z64", 0xBAD21C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 .text
 glabel func_8002AF00

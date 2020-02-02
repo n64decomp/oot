@@ -1,7 +1,7 @@
 glabel func_8007BE60
 /* AF3000 8007BE60 AC800000 */  sw    $zero, ($a0)
-/* AF3004 8007BE64 3C0E8000 */  lui   $t6, %hi(D_8000030C) # $t6, 0x8000
-/* AF3008 8007BE68 8DCE030C */  lw    $t6, %lo(D_8000030C)($t6)
+/* AF3004 8007BE64 3C0E8000 */  lui   $t6, %hi(osResetType) # $t6, 0x8000
+/* AF3008 8007BE68 8DCE030C */  lw    $t6, %lo(osResetType)($t6)
 /* AF300C 8007BE6C 24180000 */  li    $t8, 0
 /* AF3010 8007BE70 24190000 */  li    $t9, 0
 /* AF3014 8007BE74 55C00006 */  bnezl $t6, .L8007BE90

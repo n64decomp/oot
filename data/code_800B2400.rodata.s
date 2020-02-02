@@ -7,17 +7,20 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80143070
-    .incbin "baserom.z64", 0xBBA210, 0x20
+    .asciz "rate=%f tx=%f ty=%f rotate=%f\n"
+    .balign 4
 
 glabel D_80143090
-    .incbin "baserom.z64", 0xBBA230, 0x4
+    .float 0.03
 
 glabel D_80143094
-    .incbin "baserom.z64", 0xBBA234, 0x4
+    .float 0.015
 
 glabel D_80143098
-    .incbin "baserom.z64", 0xBBA238, 0x4
+    .float 0.03
 
 glabel D_8014309C
-    .incbin "baserom.z64", 0xBBA23C, 0x4
+    .float 0.03

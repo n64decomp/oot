@@ -7,5 +7,7 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80012160
     .incbin "baserom.z64", 0x12D60, 0x80

@@ -70,7 +70,7 @@ glabel func_8003DD6C
 /* AB5018 8003DE78 27BD0038 */  addiu $sp, $sp, 0x38
 /* AB501C 8003DE7C 03E00008 */  jr    $ra
 /* AB5020 8003DE80 00000000 */   nop   
-
+glabel func_8003DE84
 /* AB5024 8003DE84 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* AB5028 8003DE88 AFBF0034 */  sw    $ra, 0x34($sp)
 /* AB502C 8003DE8C AFA40038 */  sw    $a0, 0x38($sp)

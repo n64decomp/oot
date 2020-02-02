@@ -7,26 +7,36 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80143CF0
-    .incbin "baserom.z64", 0xBBAE90, 0x18
+    .asciz "mempak: find '%c' (%d)\n"
+    .balign 4
 
 glabel D_80143D08
-    .incbin "baserom.z64", 0xBBAEA8, 0x20
+    .asciz "mempak: find '%c' - '%c' %02x\n"
+    .balign 4
 
 glabel D_80143D28
-    .incbin "baserom.z64", 0xBBAEC8, 0x28
+    .asciz "mempak: write %d byte '%c' (%d)->%d\n"
+    .balign 4
 
 glabel D_80143D50
-    .incbin "baserom.z64", 0xBBAEF0, 0x24
+    .asciz "mempak: read %d byte '%c' (%d)<-%d\n"
+    .balign 4
 
 glabel D_80143D74
-    .incbin "baserom.z64", 0xBBAF14, 0x24
+    .asciz "mempak: alloc %d byte '%c' (%d)\n"
+    .balign 4
 
 glabel D_80143D98
-    .incbin "baserom.z64", 0xBBAF38, 0x24
+    .asciz "mempak: resize %d byte '%c' (%d)\n"
+    .balign 4
 
 glabel D_80143DBC
-    .incbin "baserom.z64", 0xBBAF5C, 0x30
+    .asciz "mempak: alloc %d byte '%c' (%d) with search\n"
+    .balign 4
 
 glabel D_80143DEC
-    .incbin "baserom.z64", 0xBBAF8C, 0x24
+    .asciz "mempak: delete '%c' (%d)\n"
+    .balign 4

@@ -40,32 +40,32 @@ glabel func_8002AAB0
 /* AA1CE4 8002AB44 AC820004 */  sw    $v0, 4($a0)
 /* AA1CE8 8002AB48 AC8A0000 */  sw    $t2, ($a0)
 /* AA1CEC 8002AB4C AFA2008C */  sw    $v0, 0x8c($sp)
-/* AA1CF0 8002AB50 0C03EEE3 */  jal   func_800FBB8C
+/* AA1CF0 8002AB50 0C03EEE3 */  jal   GfxPrint_Ctor
 /* AA1CF4 8002AB54 02002025 */   move  $a0, $s0
 /* AA1CF8 8002AB58 8FA5008C */  lw    $a1, 0x8c($sp)
-/* AA1CFC 8002AB5C 0C03EF07 */  jal   func_800FBC1C
+/* AA1CFC 8002AB5C 0C03EF07 */  jal   GfxPrint_Open
 /* AA1D00 8002AB60 02002025 */   move  $a0, $s0
 /* AA1D04 8002AB64 240F00FF */  li    $t7, 255
 /* AA1D08 8002AB68 AFAF0010 */  sw    $t7, 0x10($sp)
 /* AA1D0C 8002AB6C 02002025 */  move  $a0, $s0
 /* AA1D10 8002AB70 240500FA */  li    $a1, 250
 /* AA1D14 8002AB74 24060032 */  li    $a2, 50
-/* AA1D18 8002AB78 0C03ECEB */  jal   SetTextRGBA
+/* AA1D18 8002AB78 0C03ECEB */  jal   GfxPrint_SetColor
 /* AA1D1C 8002AB7C 24070032 */   li    $a3, 50
 /* AA1D20 8002AB80 02002025 */  move  $a0, $s0
 /* AA1D24 8002AB84 24050004 */  li    $a1, 4
-/* AA1D28 8002AB88 0C03ED07 */  jal   SetTextXY
+/* AA1D28 8002AB88 0C03ED07 */  jal   GfxPrint_SetPos
 /* AA1D2C 8002AB8C 2406000D */   li    $a2, 13
 /* AA1D30 8002AB90 3C038011 */  lui   $v1, %hi(D_80115F68) # $v1, 0x8011
 /* AA1D34 8002AB94 8C635F68 */  lw    $v1, %lo(D_80115F68)($v1)
 /* AA1D38 8002AB98 02002025 */  move  $a0, $s0
 /* AA1D3C 8002AB9C 000370C0 */  sll   $t6, $v1, 3
 /* AA1D40 8002ABA0 03AE2821 */  addu  $a1, $sp, $t6
-/* AA1D44 8002ABA4 0C03EF2D */  jal   SetTextString
+/* AA1D44 8002ABA4 0C03EF2D */  jal   GfxPrint_Printf
 /* AA1D48 8002ABA8 8CA5009C */   lw    $a1, 0x9c($a1)
 /* AA1D4C 8002ABAC 02002025 */  move  $a0, $s0
 /* AA1D50 8002ABB0 24050004 */  li    $a1, 4
-/* AA1D54 8002ABB4 0C03ED07 */  jal   SetTextXY
+/* AA1D54 8002ABB4 0C03ED07 */  jal   GfxPrint_SetPos
 /* AA1D58 8002ABB8 2406000F */   li    $a2, 15
 /* AA1D5C 8002ABBC 2402000F */  li    $v0, 15
 .L8002ABC0:
@@ -80,7 +80,7 @@ glabel func_8002AAB0
 /* AA1D80 8002ABE0 02002025 */  move  $a0, $s0
 /* AA1D84 8002ABE4 240500C8 */  li    $a1, 200
 /* AA1D88 8002ABE8 240600C8 */  li    $a2, 200
-/* AA1D8C 8002ABEC 0C03ECEB */  jal   SetTextRGBA
+/* AA1D8C 8002ABEC 0C03ECEB */  jal   GfxPrint_SetColor
 /* AA1D90 8002ABF0 240700C8 */   li    $a3, 200
 /* AA1D94 8002ABF4 10000007 */  b     .L8002AC14
 /* AA1D98 8002ABF8 00000000 */   nop   
@@ -89,7 +89,7 @@ glabel func_8002AAB0
 /* AA1DA0 8002AC00 AFB90010 */  sw    $t9, 0x10($sp)
 /* AA1DA4 8002AC04 24050064 */  li    $a1, 100
 /* AA1DA8 8002AC08 24060064 */  li    $a2, 100
-/* AA1DAC 8002AC0C 0C03ECEB */  jal   SetTextRGBA
+/* AA1DAC 8002AC0C 0C03ECEB */  jal   GfxPrint_SetColor
 /* AA1DB0 8002AC10 24070064 */   li    $a3, 100
 .L8002AC14:
 /* AA1DB4 8002AC14 3C038011 */  lui   $v1, %hi(D_80115F68) # $v1, 0x8011
@@ -109,12 +109,12 @@ glabel func_8002AAB0
 /* AA1DEC 8002AC4C 00000000 */   nop   
 /* AA1DF0 8002AC50 3C058013 */  lui   $a1, %hi(D_80135FE8) # $a1, 0x8013
 /* AA1DF4 8002AC54 24A55FE8 */  addiu $a1, %lo(D_80135FE8) # addiu $a1, $a1, 0x5fe8
-/* AA1DF8 8002AC58 0C03EF2D */  jal   SetTextString
+/* AA1DF8 8002AC58 0C03EF2D */  jal   GfxPrint_Printf
 /* AA1DFC 8002AC5C 02002025 */   move  $a0, $s0
 /* AA1E00 8002AC60 10000003 */  b     .L8002AC70
 /* AA1E04 8002AC64 00000000 */   nop   
 .L8002AC68:
-/* AA1E08 8002AC68 0C03EF2D */  jal   SetTextString
+/* AA1E08 8002AC68 0C03EF2D */  jal   GfxPrint_Printf
 /* AA1E0C 8002AC6C 24A55FEC */   addiu $a1, %lo(D_80135FEC)
 .L8002AC70:
 /* AA1E10 8002AC70 3C028016 */  lui   $v0, %hi(D_8015BB90) # $v0, 0x8016
@@ -124,7 +124,7 @@ glabel func_8002AAB0
 /* AA1E20 8002AC80 30580003 */  andi  $t8, $v0, 3
 /* AA1E24 8002AC84 57000006 */  bnezl $t8, .L8002ACA0
 /* AA1E28 8002AC88 2442FFFF */   addiu $v0, $v0, -1
-/* AA1E2C 8002AC8C 0C03EF2D */  jal   SetTextString
+/* AA1E2C 8002AC8C 0C03EF2D */  jal   GfxPrint_Printf
 /* AA1E30 8002AC90 24A55FF0 */   addiu $a1, %lo(D_80135FF0) # addiu $a1, $a1, 0x5ff0
 /* AA1E34 8002AC94 3C028016 */  lui   $v0, %hi(D_8015BB90) # $v0, 0x8016
 /* AA1E38 8002AC98 8C42BB90 */  lw    $v0, %lo(D_8015BB90)($v0)
@@ -252,10 +252,10 @@ glabel func_8002AAB0
 /* AA1FF0 8002AE50 AC245F70 */  sw    $a0, %lo(D_80115F70)($at)
 .L8002AE54:
 /* AA1FF4 8002AE54 02002025 */  move  $a0, $s0
-/* AA1FF8 8002AE58 0C03EF19 */  jal   func_800FBC64
+/* AA1FF8 8002AE58 0C03EF19 */  jal   GfxPrint_Close
 /* AA1FFC 8002AE5C AFA70034 */   sw    $a3, 0x34($sp)
 /* AA2000 8002AE60 02002025 */  move  $a0, $s0
-/* AA2004 8002AE64 0C03EF05 */  jal   func_800FBC14
+/* AA2004 8002AE64 0C03EF05 */  jal   GfxPrint_Dtor
 /* AA2008 8002AE68 AFA2008C */   sw    $v0, 0x8c($sp)
 /* AA200C 8002AE6C 8FA5008C */  lw    $a1, 0x8c($sp)
 /* AA2010 8002AE70 8FA70034 */  lw    $a3, 0x34($sp)

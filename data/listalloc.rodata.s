@@ -7,8 +7,12 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80145650
-    .incbin "baserom.z64", 0xBBC7F0, 0x10
+    .asciz "../listalloc.c"
+    .balign 4
 
 glabel D_80145660
-    .incbin "baserom.z64", 0xBBC800, 0x10
+    .asciz "../listalloc.c"
+    .balign 4

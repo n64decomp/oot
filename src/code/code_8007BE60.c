@@ -1,7 +1,7 @@
 #include <ultra64.h>
 #include <global.h>
 
-extern u32 D_8000030C;
+extern u32 osResetType;
 
 /*
 void func_8007BE60(u32* a0)
@@ -10,7 +10,7 @@ void func_8007BE60(u32* a0)
 
     //*a0 = 0;
 
-    if (D_8000030C == 0)
+    if (osResetType == 0)
     {
         a0[1] = 0;
         a0[2] = 0;

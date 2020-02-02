@@ -12,19 +12,19 @@ glabel D_8013663C
     .balign 4
 
 glabel D_80136640
-    .incbin "baserom.z64", 0xBAD7E0, 0x1C
+    .asciz "アクタークラス追加 [%d:%s]\n"
     .balign 4
 
 glabel D_8013665C
-    .incbin "baserom.z64", 0xBAD7FC, 0x27
+    .asciz "\x1b[43;30mＡｃｔｏｒセット数オーバー\n\x1b[m"
     .balign 4
 
 glabel D_80136684
-    .incbin "baserom.z64", 0xBAD824, 0x1C
+    .asciz "オーバーレイではありません\n"
     .balign 4
 
 glabel D_801366A0
-    .incbin "baserom.z64", 0xBAD840, 0x18
+    .asciz "既にロードされています\n"
     .balign 4
 
 glabel D_801366B8
@@ -36,19 +36,19 @@ glabel D_801366D8
     .balign 4
 
 glabel D_801366E8
-    .incbin "baserom.z64", 0xBAD888, 0x11
+    .asciz "AMF:絶対魔法領域"
     .balign 4
 
 glabel D_801366FC
-    .incbin "baserom.z64", 0xBAD89C, 0x20
+    .asciz "絶対魔法領域確保 %d バイト確保\n"
     .balign 4
 
 glabel D_8013671C
-    .incbin "baserom.z64", 0xBAD8BC, 0x37
+    .asciz "\x1b[41;37mＡｃｔｏｒプログラムメモリが確保できません\n\x1b[m"
     .balign 4
 
 glabel D_80136754
-    .incbin "baserom.z64", 0xBAD8F4, 0x6
+    .asciz "\x1b[32m"
     .balign 4
 
 glabel D_8013675C
@@ -56,19 +56,19 @@ glabel D_8013675C
     .balign 4
 
 glabel D_8013678C
-    .incbin "baserom.z64", 0xBAD92C, 0x4
+    .asciz "\x1b[m"
     .balign 4
 
 glabel D_80136790
-    .incbin "baserom.z64", 0xBAD930, 0x46
+    .asciz "\x1b[41;37mデータバンク無し！！<データバンク＝%d>(profilep->bank=%d)\n\x1b[m"
     .balign 4
 
 glabel D_801367D8
-    .incbin "baserom.z64", 0xBAD978, 0x40
+    .asciz "\x1b[41;37mＡｃｔｏｒクラス確保できません！ %s <サイズ＝%dバイト>\n"
     .balign 4
 
 glabel D_80136818
-    .incbin "baserom.z64", 0xBAD9B8, 0x4
+    .asciz "\x1b[m"
     .balign 4
 
 glabel D_8013681C
@@ -80,7 +80,7 @@ glabel D_80136838
     .balign 4
 
 glabel D_80136848
-    .incbin "baserom.z64", 0xBAD9E8, 0x24
+    .asciz "アクタークライアントは %d 個目です\n"
     .balign 4
 
 .text

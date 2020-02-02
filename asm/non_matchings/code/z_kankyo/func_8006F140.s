@@ -221,6 +221,7 @@ glabel func_8006F140
 /* AE663C 8006F49C 8C2DC790 */  lw    $t5, %lo(jtbl_8013C790)($at)
 /* AE6640 8006F4A0 01A00008 */  jr    $t5
 /* AE6644 8006F4A4 00000000 */   nop   
+glabel L8006F4A8
 /* AE6648 8006F4A8 24020003 */  li    $v0, 3
 /* AE664C 8006F4AC 24090001 */  li    $t1, 1
 /* AE6650 8006F4B0 A2090017 */  sb    $t1, 0x17($s0)
@@ -230,6 +231,7 @@ glabel func_8006F140
 /* AE6660 8006F4C0 A0C00B15 */  sb    $zero, 0xb15($a2)
 /* AE6664 8006F4C4 10000013 */  b     .L8006F514
 /* AE6668 8006F4C8 A0C00B14 */   sb    $zero, 0xb14($a2)
+glabel L8006F4CC
 /* AE666C 8006F4CC 24020002 */  li    $v0, 2
 /* AE6670 8006F4D0 24090001 */  li    $t1, 1
 /* AE6674 8006F4D4 A2090017 */  sb    $t1, 0x17($s0)
@@ -239,6 +241,7 @@ glabel func_8006F140
 /* AE6684 8006F4E4 A0C00B15 */  sb    $zero, 0xb15($a2)
 /* AE6688 8006F4E8 1000000A */  b     .L8006F514
 /* AE668C 8006F4EC A0C00B14 */   sb    $zero, 0xb14($a2)
+glabel L8006F4F0
 /* AE6690 8006F4F0 24020004 */  li    $v0, 4
 /* AE6694 8006F4F4 24090001 */  li    $t1, 1
 /* AE6698 8006F4F8 A2090017 */  sb    $t1, 0x17($s0)

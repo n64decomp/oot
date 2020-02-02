@@ -7,5 +7,7 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013B9D0
-    .incbin "baserom.z64", 0xBB2B70, 0x10
+    .float 0.033333335

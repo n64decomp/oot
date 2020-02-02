@@ -34,6 +34,7 @@ glabel func_800ADBB0
 /* B24DA4 800ADC04 8C2E2D90 */  lw    $t6, %lo(jtbl_80142D90)($at)
 /* B24DA8 800ADC08 01C00008 */  jr    $t6
 /* B24DAC 800ADC0C 00000000 */   nop   
+glabel L800ADC10
 /* B24DB0 800ADC10 8FAB0448 */  lw    $t3, 0x448($sp)
 /* B24DB4 800ADC14 3C148013 */  lui   $s4, %hi(D_8012AD2C) # $s4, 0x8013
 /* B24DB8 800ADC18 3C138013 */  lui   $s3, %hi(D_8012AD20) # $s3, 0x8013
@@ -99,6 +100,7 @@ glabel func_800ADBB0
 /* B24EA4 800ADD04 AD19FFF0 */   sw    $t9, -0x10($t0)
 /* B24EA8 800ADD08 1000007F */  b     .L800ADF08
 /* B24EAC 800ADD0C 00000000 */   nop   
+glabel L800ADD10
 /* B24EB0 800ADD10 8FAB0448 */  lw    $t3, 0x448($sp)
 /* B24EB4 800ADD14 8FB10444 */  lw    $s1, 0x444($sp)
 /* B24EB8 800ADD18 3C148013 */  lui   $s4, %hi(D_8012AD2C) # $s4, 0x8013
@@ -164,6 +166,7 @@ glabel func_800ADBB0
 /* B24FA4 800ADE04 AD0FFFF0 */   sw    $t7, -0x10($t0)
 /* B24FA8 800ADE08 1000003F */  b     .L800ADF08
 /* B24FAC 800ADE0C 00000000 */   nop   
+glabel L800ADE10
 /* B24FB0 800ADE10 8FAB0448 */  lw    $t3, 0x448($sp)
 /* B24FB4 800ADE14 3C148013 */  lui   $s4, %hi(D_8012AD2C) # $s4, 0x8013
 /* B24FB8 800ADE18 3C138013 */  lui   $s3, %hi(D_8012AD20) # $s3, 0x8013
@@ -496,6 +499,7 @@ glabel func_800AE2C0
 /* B254B4 800AE314 8C2E2DA8 */  lw    $t6, %lo(jtbl_80142DA8)($at)
 /* B254B8 800AE318 01C00008 */  jr    $t6
 /* B254BC 800AE31C 00000000 */   nop   
+glabel L800AE320
 /* B254C0 800AE320 8FAB0350 */  lw    $t3, 0x350($sp)
 /* B254C4 800AE324 3C148013 */  lui   $s4, %hi(D_8012AE30) # $s4, 0x8013
 /* B254C8 800AE328 3C138013 */  lui   $s3, %hi(D_8012AE18) # $s3, 0x8013
@@ -561,6 +565,7 @@ glabel func_800AE2C0
 /* B255B4 800AE414 AD19FFF0 */   sw    $t9, -0x10($t0)
 /* B255B8 800AE418 10000080 */  b     .L800AE61C
 /* B255BC 800AE41C 00177080 */   sll   $t6, $s7, 2
+glabel L800AE420
 /* B255C0 800AE420 8FAB0350 */  lw    $t3, 0x350($sp)
 /* B255C4 800AE424 8FB1034C */  lw    $s1, 0x34c($sp)
 /* B255C8 800AE428 3C148013 */  lui   $s4, %hi(D_8012AE30) # $s4, 0x8013
@@ -626,6 +631,7 @@ glabel func_800AE2C0
 /* B256B4 800AE514 AD0FFFF0 */   sw    $t7, -0x10($t0)
 /* B256B8 800AE518 10000040 */  b     .L800AE61C
 /* B256BC 800AE51C 00177080 */   sll   $t6, $s7, 2
+glabel L800AE520
 /* B256C0 800AE520 8FAB0350 */  lw    $t3, 0x350($sp)
 /* B256C4 800AE524 3C148013 */  lui   $s4, %hi(D_8012AE24) # $s4, 0x8013
 /* B256C8 800AE528 3C138013 */  lui   $s3, %hi(D_8012AE18) # $s3, 0x8013
@@ -1501,6 +1507,7 @@ glabel func_800AF218
 /* B263F0 800AF250 8C2E2DC0 */  lw    $t6, %lo(jtbl_80142DC0)($at)
 /* B263F4 800AF254 01C00008 */  jr    $t6
 /* B263F8 800AF258 00000000 */   nop   
+glabel L800AF25C
 /* B263FC 800AF25C 3C088016 */  lui   $t0, %hi(gSaveContext) # $t0, 0x8016
 /* B26400 800AF260 2508E660 */  addiu $t0, %lo(gSaveContext) # addiu $t0, $t0, -0x19a0
 /* B26404 800AF264 910F13C3 */  lbu   $t7, 0x13c3($t0)
@@ -1649,7 +1656,7 @@ glabel func_800AF218
 /* B26610 800AF470 8D450000 */  lw    $a1, ($t2)
 /* B26614 800AF474 AFAB0010 */  sw    $t3, 0x10($sp)
 /* B26618 800AF478 24E71958 */  addiu $a3, %lo(D_80141958) # addiu $a3, $a3, 0x1958
-/* B2661C 800AF47C 0C0006A8 */  jal   func_80001AA0
+/* B2661C 800AF47C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26620 800AF480 8FA60044 */   lw    $a2, 0x44($sp)
 /* B26624 800AF484 93AC0040 */  lbu   $t4, 0x40($sp)
 /* B26628 800AF488 3C0E8012 */  lui   $t6, %hi(D_8011FD3C) # $t6, 0x8012
@@ -1682,7 +1689,7 @@ glabel func_800AF218
 /* B26690 800AF4F0 8F250000 */  lw    $a1, ($t9)
 /* B26694 800AF4F4 AFA90010 */  sw    $t1, 0x10($sp)
 /* B26698 800AF4F8 24E719B0 */  addiu $a3, %lo(D_801419B0) # addiu $a3, $a3, 0x19b0
-/* B2669C 800AF4FC 0C0006A8 */  jal   func_80001AA0
+/* B2669C 800AF4FC 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B266A0 800AF500 8FA60044 */   lw    $a2, 0x44($sp)
 /* B266A4 800AF504 93A30041 */  lbu   $v1, 0x41($sp)
 /* B266A8 800AF508 8FAD0030 */  lw    $t5, 0x30($sp)
@@ -1719,7 +1726,7 @@ glabel func_800AF218
 /* B26720 800AF580 8F050008 */  lw    $a1, 8($t8)
 /* B26724 800AF584 AFB90010 */  sw    $t9, 0x10($sp)
 /* B26728 800AF588 24E71A08 */  addiu $a3, %lo(D_80141A08) # addiu $a3, $a3, 0x1a08
-/* B2672C 800AF58C 0C0006A8 */  jal   func_80001AA0
+/* B2672C 800AF58C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26730 800AF590 8FA60044 */   lw    $a2, 0x44($sp)
 /* B26734 800AF594 8FAA002C */  lw    $t2, 0x2c($sp)
 /* B26738 800AF598 8E090130 */  lw    $t1, 0x130($s0)
@@ -1729,7 +1736,7 @@ glabel func_800AF218
 /* B26748 800AF5A8 8D450008 */  lw    $a1, 8($t2)
 /* B2674C 800AF5AC AFAC0010 */  sw    $t4, 0x10($sp)
 /* B26750 800AF5B0 24E71A18 */  addiu $a3, %lo(D_80141A18) # addiu $a3, $a3, 0x1a18
-/* B26754 800AF5B4 0C0006A8 */  jal   func_80001AA0
+/* B26754 800AF5B4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26758 800AF5B8 01262021 */   addu  $a0, $t1, $a2
 /* B2675C 800AF5BC 10000620 */  b     .L800B0E40
 /* B26760 800AF5C0 8FBF0024 */   lw    $ra, 0x24($sp)
@@ -1758,7 +1765,7 @@ glabel func_800AF218
 /* B267B4 800AF614 8F050008 */  lw    $a1, 8($t8)
 /* B267B8 800AF618 AFB90010 */  sw    $t9, 0x10($sp)
 /* B267BC 800AF61C 24E71A70 */  addiu $a3, %lo(D_80141A70) # addiu $a3, $a3, 0x1a70
-/* B267C0 800AF620 0C0006A8 */  jal   func_80001AA0
+/* B267C0 800AF620 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B267C4 800AF624 8FA60044 */   lw    $a2, 0x44($sp)
 /* B267C8 800AF628 8FAB0030 */  lw    $t3, 0x30($sp)
 /* B267CC 800AF62C 8E090130 */  lw    $t1, 0x130($s0)
@@ -1768,16 +1775,17 @@ glabel func_800AF218
 /* B267DC 800AF63C 8D650008 */  lw    $a1, 8($t3)
 /* B267E0 800AF640 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B267E4 800AF644 24E71A80 */  addiu $a3, %lo(D_80141A80) # addiu $a3, $a3, 0x1a80
-/* B267E8 800AF648 0C0006A8 */  jal   func_80001AA0
+/* B267E8 800AF648 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B267EC 800AF64C 01262021 */   addu  $a0, $t1, $a2
 /* B267F0 800AF650 100005FB */  b     .L800B0E40
 /* B267F4 800AF654 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AF658
 /* B267F8 800AF658 240D0001 */  li    $t5, 1
-/* B267FC 800AF65C 3C0201D5 */  lui   $v0, %hi(D_01D52000) # $v0, 0x1d5
-/* B26800 800AF660 3C0E01D7 */  lui   $t6, %hi(D_01D72000) # $t6, 0x1d7
+/* B267FC 800AF65C 3C0201D5 */  lui   $v0, %hi(_vr_SP1a_staticSegmentRomStart) # $v0, 0x1d5
+/* B26800 800AF660 3C0E01D7 */  lui   $t6, %hi(_vr_SP1a_staticSegmentRomEnd) # $t6, 0x1d7
 /* B26804 800AF664 A60D0140 */  sh    $t5, 0x140($s0)
-/* B26808 800AF668 25CE2000 */  addiu $t6, %lo(D_01D72000) # addiu $t6, $t6, 0x2000
-/* B2680C 800AF66C 24422000 */  addiu $v0, %lo(D_01D52000) # addiu $v0, $v0, 0x2000
+/* B26808 800AF668 25CE2000 */  addiu $t6, %lo(_vr_SP1a_staticSegmentRomEnd) # addiu $t6, $t6, 0x2000
+/* B2680C 800AF66C 24422000 */  addiu $v0, %lo(_vr_SP1a_staticSegmentRomStart) # addiu $v0, $v0, 0x2000
 /* B26810 800AF670 01C22823 */  subu  $a1, $t6, $v0
 /* B26814 800AF674 3C068014 */  lui   $a2, %hi(D_80141A90) # $a2, 0x8014
 /* B26818 800AF678 24C61A90 */  addiu $a2, %lo(D_80141A90) # addiu $a2, $a2, 0x1a90
@@ -1801,12 +1809,12 @@ glabel func_800AF218
 /* B2685C 800AF6BC AFAF0010 */  sw    $t7, 0x10($sp)
 /* B26860 800AF6C0 24E71AD8 */  addiu $a3, %lo(D_80141AD8) # addiu $a3, $a3, 0x1ad8
 /* B26864 800AF6C4 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26868 800AF6C8 0C0006A8 */  jal   func_80001AA0
+/* B26868 800AF6C8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B2686C 800AF6CC 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26870 800AF6D0 3C0301D7 */  lui   $v1, %hi(D_01D72000) # $v1, 0x1d7
-/* B26874 800AF6D4 3C1801D7 */  lui   $t8, %hi(D_01D72400) # $t8, 0x1d7
-/* B26878 800AF6D8 27182400 */  addiu $t8, %lo(D_01D72400) # addiu $t8, $t8, 0x2400
-/* B2687C 800AF6DC 24632000 */  addiu $v1, %lo(D_01D72000) # addiu $v1, $v1, 0x2000
+/* B26870 800AF6D0 3C0301D7 */  lui   $v1, %hi(_vr_SP1a_pal_staticSegmentRomStart) # $v1, 0x1d7
+/* B26874 800AF6D4 3C1801D7 */  lui   $t8, %hi(_vr_SP1a_pal_staticSegmentRomEnd) # $t8, 0x1d7
+/* B26878 800AF6D8 27182400 */  addiu $t8, %lo(_vr_SP1a_pal_staticSegmentRomEnd) # addiu $t8, $t8, 0x2400
+/* B2687C 800AF6DC 24632000 */  addiu $v1, %lo(_vr_SP1a_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x2000
 /* B26880 800AF6E0 03032823 */  subu  $a1, $t8, $v1
 /* B26884 800AF6E4 3C068014 */  lui   $a2, %hi(D_80141AE8) # $a2, 0x8014
 /* B26888 800AF6E8 24C61AE8 */  addiu $a2, %lo(D_80141AE8) # addiu $a2, $a2, 0x1ae8
@@ -1830,16 +1838,17 @@ glabel func_800AF218
 /* B268CC 800AF72C AFB90010 */  sw    $t9, 0x10($sp)
 /* B268D0 800AF730 24E71B30 */  addiu $a3, %lo(D_80141B30) # addiu $a3, $a3, 0x1b30
 /* B268D4 800AF734 8FA50030 */  lw    $a1, 0x30($sp)
-/* B268D8 800AF738 0C0006A8 */  jal   func_80001AA0
+/* B268D8 800AF738 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B268DC 800AF73C 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B268E0 800AF740 3C018014 */  lui   $at, %hi(D_80142E5C)
 /* B268E4 800AF744 C42A2E5C */  lwc1  $f10, %lo(D_80142E5C)($at)
 /* B268E8 800AF748 100005BC */  b     .L800B0E3C
 /* B268EC 800AF74C E60A0148 */   swc1  $f10, 0x148($s0)
-/* B268F0 800AF750 3C0201B4 */  lui   $v0, %hi(D_01B3E000) # $v0, 0x1b4
-/* B268F4 800AF754 3C0901B5 */  lui   $t1, %hi(D_01B4A000) # $t1, 0x1b5
-/* B268F8 800AF758 2529A000 */  addiu $t1, %lo(D_01B4A000) # addiu $t1, $t1, -0x6000
-/* B268FC 800AF75C 2442E000 */  addiu $v0, %lo(D_01B3E000) # addiu $v0, $v0, -0x2000
+glabel L800AF750
+/* B268F0 800AF750 3C0201B4 */  lui   $v0, %hi(_vr_cloud2_staticSegmentRomStart) # $v0, 0x1b4
+/* B268F4 800AF754 3C0901B5 */  lui   $t1, %hi(_vr_cloud2_staticSegmentRomEnd) # $t1, 0x1b5
+/* B268F8 800AF758 2529A000 */  addiu $t1, %lo(_vr_cloud2_staticSegmentRomEnd) # addiu $t1, $t1, -0x6000
+/* B268FC 800AF75C 2442E000 */  addiu $v0, %lo(_vr_cloud2_staticSegmentRomStart) # addiu $v0, $v0, -0x2000
 /* B26900 800AF760 01222823 */  subu  $a1, $t1, $v0
 /* B26904 800AF764 3C068014 */  lui   $a2, %hi(D_80141B40) # $a2, 0x8014
 /* B26908 800AF768 24C61B40 */  addiu $a2, %lo(D_80141B40) # addiu $a2, $a2, 0x1b40
@@ -1863,7 +1872,7 @@ glabel func_800AF218
 /* B2694C 800AF7AC AFAB0010 */  sw    $t3, 0x10($sp)
 /* B26950 800AF7B0 24E71B88 */  addiu $a3, %lo(D_80141B88) # addiu $a3, $a3, 0x1b88
 /* B26954 800AF7B4 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26958 800AF7B8 0C0006A8 */  jal   func_80001AA0
+/* B26958 800AF7B8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B2695C 800AF7BC 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26960 800AF7C0 3C068014 */  lui   $a2, %hi(D_80141B98) # $a2, 0x8014
 /* B26964 800AF7C4 24C61B98 */  addiu $a2, %lo(D_80141B98) # addiu $a2, $a2, 0x1b98
@@ -1886,12 +1895,12 @@ glabel func_800AF218
 /* B269A4 800AF804 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B269A8 800AF808 24E71BE0 */  addiu $a3, %lo(D_80141BE0) # addiu $a3, $a3, 0x1be0
 /* B269AC 800AF80C 8FA50030 */  lw    $a1, 0x30($sp)
-/* B269B0 800AF810 0C0006A8 */  jal   func_80001AA0
+/* B269B0 800AF810 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B269B4 800AF814 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B269B8 800AF818 3C0301B5 */  lui   $v1, %hi(D_01B4A000) # $v1, 0x1b5
-/* B269BC 800AF81C 3C0C01B5 */  lui   $t4, %hi(D_01B4A100) # $t4, 0x1b5
-/* B269C0 800AF820 258CA100 */  addiu $t4, %lo(D_01B4A100) # addiu $t4, $t4, -0x5f00
-/* B269C4 800AF824 2463A000 */  addiu $v1, %lo(D_01B4A000) # addiu $v1, $v1, -0x6000
+/* B269B8 800AF818 3C0301B5 */  lui   $v1, %hi(_vr_cloud2_pal_staticSegmentRomStart) # $v1, 0x1b5
+/* B269BC 800AF81C 3C0C01B5 */  lui   $t4, %hi(_vr_cloud2_pal_staticSegmentRomEnd) # $t4, 0x1b5
+/* B269C0 800AF820 258CA100 */  addiu $t4, %lo(_vr_cloud2_pal_staticSegmentRomEnd) # addiu $t4, $t4, -0x5f00
+/* B269C4 800AF824 2463A000 */  addiu $v1, %lo(_vr_cloud2_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x6000
 /* B269C8 800AF828 01834023 */  subu  $t0, $t4, $v1
 /* B269CC 800AF82C 3C068014 */  lui   $a2, %hi(D_80141BF0) # $a2, 0x8014
 /* B269D0 800AF830 24C61BF0 */  addiu $a2, %lo(D_80141BF0) # addiu $a2, $a2, 0x1bf0
@@ -1916,7 +1925,7 @@ glabel func_800AF218
 /* B26A18 800AF878 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B26A1C 800AF87C 24E71C38 */  addiu $a3, %lo(D_80141C38) # addiu $a3, $a3, 0x1c38
 /* B26A20 800AF880 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26A24 800AF884 0C0006A8 */  jal   func_80001AA0
+/* B26A24 800AF884 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26A28 800AF888 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26A2C 800AF88C 8E0E0130 */  lw    $t6, 0x130($s0)
 /* B26A30 800AF890 8FA6002C */  lw    $a2, 0x2c($sp)
@@ -1925,16 +1934,17 @@ glabel func_800AF218
 /* B26A3C 800AF89C AFB80010 */  sw    $t8, 0x10($sp)
 /* B26A40 800AF8A0 24E71C48 */  addiu $a3, %lo(D_80141C48) # addiu $a3, $a3, 0x1c48
 /* B26A44 800AF8A4 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26A48 800AF8A8 0C0006A8 */  jal   func_80001AA0
+/* B26A48 800AF8A8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26A4C 800AF8AC 01C62021 */   addu  $a0, $t6, $a2
 /* B26A50 800AF8B0 10000563 */  b     .L800B0E40
 /* B26A54 800AF8B4 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AF8B8
 /* B26A58 800AF8B8 24190001 */  li    $t9, 1
-/* B26A5C 800AF8BC 3C0201C0 */  lui   $v0, %hi(D_01BFC000) # $v0, 0x1c0
-/* B26A60 800AF8C0 3C0901C4 */  lui   $t1, %hi(D_01C3C000) # $t1, 0x1c4
+/* B26A5C 800AF8BC 3C0201C0 */  lui   $v0, %hi(_vr_RUVR_staticSegmentRomStart) # $v0, 0x1c0
+/* B26A60 800AF8C0 3C0901C4 */  lui   $t1, %hi(_vr_RUVR_staticSegmentRomEnd) # $t1, 0x1c4
 /* B26A64 800AF8C4 A6190140 */  sh    $t9, 0x140($s0)
-/* B26A68 800AF8C8 2529C000 */  addiu $t1, %lo(D_01C3C000) # addiu $t1, $t1, -0x4000
-/* B26A6C 800AF8CC 2442C000 */  addiu $v0, %lo(D_01BFC000) # addiu $v0, $v0, -0x4000
+/* B26A68 800AF8C8 2529C000 */  addiu $t1, %lo(_vr_RUVR_staticSegmentRomEnd) # addiu $t1, $t1, -0x4000
+/* B26A6C 800AF8CC 2442C000 */  addiu $v0, %lo(_vr_RUVR_staticSegmentRomStart) # addiu $v0, $v0, -0x4000
 /* B26A70 800AF8D0 01222823 */  subu  $a1, $t1, $v0
 /* B26A74 800AF8D4 3C068014 */  lui   $a2, %hi(D_80141C58) # $a2, 0x8014
 /* B26A78 800AF8D8 24C61C58 */  addiu $a2, %lo(D_80141C58) # addiu $a2, $a2, 0x1c58
@@ -1958,12 +1968,12 @@ glabel func_800AF218
 /* B26ABC 800AF91C AFAB0010 */  sw    $t3, 0x10($sp)
 /* B26AC0 800AF920 24E71CA0 */  addiu $a3, %lo(D_80141CA0) # addiu $a3, $a3, 0x1ca0
 /* B26AC4 800AF924 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26AC8 800AF928 0C0006A8 */  jal   func_80001AA0
+/* B26AC8 800AF928 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26ACC 800AF92C 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26AD0 800AF930 3C0301C4 */  lui   $v1, %hi(D_01C3C000) # $v1, 0x1c4
-/* B26AD4 800AF934 3C0A01C4 */  lui   $t2, %hi(D_01C3C800) # $t2, 0x1c4
-/* B26AD8 800AF938 254AC800 */  addiu $t2, %lo(D_01C3C800) # addiu $t2, $t2, -0x3800
-/* B26ADC 800AF93C 2463C000 */  addiu $v1, %lo(D_01C3C000) # addiu $v1, $v1, -0x4000
+/* B26AD0 800AF930 3C0301C4 */  lui   $v1, %hi(_vr_RUVR_pal_staticSegmentRomStart) # $v1, 0x1c4
+/* B26AD4 800AF934 3C0A01C4 */  lui   $t2, %hi(_vr_RUVR_pal_staticSegmentRomEnd) # $t2, 0x1c4
+/* B26AD8 800AF938 254AC800 */  addiu $t2, %lo(_vr_RUVR_pal_staticSegmentRomEnd) # addiu $t2, $t2, -0x3800
+/* B26ADC 800AF93C 2463C000 */  addiu $v1, %lo(_vr_RUVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x4000
 /* B26AE0 800AF940 01432823 */  subu  $a1, $t2, $v1
 /* B26AE4 800AF944 3C048014 */  lui   $a0, %hi(D_80141CB0) # $a0, 0x8014
 /* B26AE8 800AF948 24841CB0 */  addiu $a0, %lo(D_80141CB0) # addiu $a0, $a0, 0x1cb0
@@ -1991,14 +2001,15 @@ glabel func_800AF218
 /* B26B3C 800AF99C AFAC0010 */  sw    $t4, 0x10($sp)
 /* B26B40 800AF9A0 24E71D08 */  addiu $a3, %lo(D_80141D08) # addiu $a3, $a3, 0x1d08
 /* B26B44 800AF9A4 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26B48 800AF9A8 0C0006A8 */  jal   func_80001AA0
+/* B26B48 800AF9A8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26B4C 800AF9AC 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26B50 800AF9B0 10000523 */  b     .L800B0E40
 /* B26B54 800AF9B4 8FBF0024 */   lw    $ra, 0x24($sp)
-/* B26B58 800AF9B8 3C0201B6 */  lui   $v0, %hi(D_01B58000) # $v0, 0x1b6
-/* B26B5C 800AF9BC 3C0D01B7 */  lui   $t5, %hi(D_01B68000) # $t5, 0x1b7
-/* B26B60 800AF9C0 25AD8000 */  addiu $t5, %lo(D_01B68000) # addiu $t5, $t5, -0x8000
-/* B26B64 800AF9C4 24428000 */  addiu $v0, %lo(D_01B58000) # addiu $v0, $v0, -0x8000
+glabel L800AF9B8
+/* B26B58 800AF9B8 3C0201B6 */  lui   $v0, %hi(_vr_holy0_staticSegmentRomStart) # $v0, 0x1b6
+/* B26B5C 800AF9BC 3C0D01B7 */  lui   $t5, %hi(_vr_holy0_staticSegmentRomEnd) # $t5, 0x1b7
+/* B26B60 800AF9C0 25AD8000 */  addiu $t5, %lo(_vr_holy0_staticSegmentRomEnd) # addiu $t5, $t5, -0x8000
+/* B26B64 800AF9C4 24428000 */  addiu $v0, %lo(_vr_holy0_staticSegmentRomStart) # addiu $v0, $v0, -0x8000
 /* B26B68 800AF9C8 01A22823 */  subu  $a1, $t5, $v0
 /* B26B6C 800AF9CC 3C068014 */  lui   $a2, %hi(D_80141D18) # $a2, 0x8014
 /* B26B70 800AF9D0 24C61D18 */  addiu $a2, %lo(D_80141D18) # addiu $a2, $a2, 0x1d18
@@ -2022,12 +2033,12 @@ glabel func_800AF218
 /* B26BB4 800AFA14 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B26BB8 800AFA18 24E71D60 */  addiu $a3, %lo(D_80141D60) # addiu $a3, $a3, 0x1d60
 /* B26BBC 800AFA1C 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26BC0 800AFA20 0C0006A8 */  jal   func_80001AA0
+/* B26BC0 800AFA20 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26BC4 800AFA24 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26BC8 800AFA28 3C0301B7 */  lui   $v1, %hi(D_01B69000) # $v1, 0x1b7
-/* B26BCC 800AFA2C 3C0F01B8 */  lui   $t7, %hi(D_01B79000) # $t7, 0x1b8
-/* B26BD0 800AFA30 25EF9000 */  addiu $t7, %lo(D_01B79000) # addiu $t7, $t7, -0x7000
-/* B26BD4 800AFA34 24639000 */  addiu $v1, %lo(D_01B69000) # addiu $v1, $v1, -0x7000
+/* B26BC8 800AFA28 3C0301B7 */  lui   $v1, %hi(_vr_holy1_staticSegmentRomStart) # $v1, 0x1b7
+/* B26BCC 800AFA2C 3C0F01B8 */  lui   $t7, %hi(_vr_holy1_staticSegmentRomEnd) # $t7, 0x1b8
+/* B26BD0 800AFA30 25EF9000 */  addiu $t7, %lo(_vr_holy1_staticSegmentRomEnd) # addiu $t7, $t7, -0x7000
+/* B26BD4 800AFA34 24639000 */  addiu $v1, %lo(_vr_holy1_staticSegmentRomStart) # addiu $v1, $v1, -0x7000
 /* B26BD8 800AFA38 01E32823 */  subu  $a1, $t7, $v1
 /* B26BDC 800AFA3C 3C068014 */  lui   $a2, %hi(D_80141D70) # $a2, 0x8014
 /* B26BE0 800AFA40 24C61D70 */  addiu $a2, %lo(D_80141D70) # addiu $a2, $a2, 0x1d70
@@ -2051,12 +2062,12 @@ glabel func_800AF218
 /* B26C24 800AFA84 AFB80010 */  sw    $t8, 0x10($sp)
 /* B26C28 800AFA88 24E71DB8 */  addiu $a3, %lo(D_80141DB8) # addiu $a3, $a3, 0x1db8
 /* B26C2C 800AFA8C 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26C30 800AFA90 0C0006A8 */  jal   func_80001AA0
+/* B26C30 800AFA90 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26C34 800AFA94 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26C38 800AFA98 3C0301B7 */  lui   $v1, %hi(D_01B68000) # $v1, 0x1b7
-/* B26C3C 800AFA9C 3C1901B7 */  lui   $t9, %hi(D_01B68100) # $t9, 0x1b7
-/* B26C40 800AFAA0 27398100 */  addiu $t9, %lo(D_01B68100) # addiu $t9, $t9, -0x7f00
-/* B26C44 800AFAA4 24638000 */  addiu $v1, %lo(D_01B68000) # addiu $v1, $v1, -0x8000
+/* B26C38 800AFA98 3C0301B7 */  lui   $v1, %hi(_vr_holy0_pal_staticSegmentRomStart) # $v1, 0x1b7
+/* B26C3C 800AFA9C 3C1901B7 */  lui   $t9, %hi(_vr_holy0_pal_staticSegmentRomEnd) # $t9, 0x1b7
+/* B26C40 800AFAA0 27398100 */  addiu $t9, %lo(_vr_holy0_pal_staticSegmentRomEnd) # addiu $t9, $t9, -0x7f00
+/* B26C44 800AFAA4 24638000 */  addiu $v1, %lo(_vr_holy0_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x8000
 /* B26C48 800AFAA8 03234023 */  subu  $t0, $t9, $v1
 /* B26C4C 800AFAAC 3C068014 */  lui   $a2, %hi(D_80141DC8) # $a2, 0x8014
 /* B26C50 800AFAB0 24C61DC8 */  addiu $a2, %lo(D_80141DC8) # addiu $a2, $a2, 0x1dc8
@@ -2081,26 +2092,27 @@ glabel func_800AF218
 /* B26C98 800AFAF8 AFA90010 */  sw    $t1, 0x10($sp)
 /* B26C9C 800AFAFC 24E71E10 */  addiu $a3, %lo(D_80141E10) # addiu $a3, $a3, 0x1e10
 /* B26CA0 800AFB00 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26CA4 800AFB04 0C0006A8 */  jal   func_80001AA0
+/* B26CA4 800AFB04 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26CA8 800AFB08 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26CAC 800AFB0C 8E0B0130 */  lw    $t3, 0x130($s0)
 /* B26CB0 800AFB10 8FA6002C */  lw    $a2, 0x2c($sp)
-/* B26CB4 800AFB14 3C0501B8 */  lui   $a1, %hi(D_01B79000) # $a1, 0x1b8
+/* B26CB4 800AFB14 3C0501B8 */  lui   $a1, %hi(_vr_holy1_pal_staticSegmentRomStart) # $a1, 0x1b8
 /* B26CB8 800AFB18 3C078014 */  lui   $a3, %hi(D_80141E20) # $a3, 0x8014
 /* B26CBC 800AFB1C 240C04C0 */  li    $t4, 1216
 /* B26CC0 800AFB20 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B26CC4 800AFB24 24E71E20 */  addiu $a3, %lo(D_80141E20) # addiu $a3, $a3, 0x1e20
-/* B26CC8 800AFB28 24A59000 */  addiu $a1, %lo(D_01B79000) # addiu $a1, $a1, -0x7000
-/* B26CCC 800AFB2C 0C0006A8 */  jal   func_80001AA0
+/* B26CC8 800AFB28 24A59000 */  addiu $a1, %lo(_vr_holy1_pal_staticSegmentRomStart) # addiu $a1, $a1, -0x7000
+/* B26CCC 800AFB2C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26CD0 800AFB30 01662021 */   addu  $a0, $t3, $a2
 /* B26CD4 800AFB34 100004C2 */  b     .L800B0E40
 /* B26CD8 800AFB38 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AFB3C
 /* B26CDC 800AFB3C 240D0001 */  li    $t5, 1
-/* B26CE0 800AFB40 3C0201C4 */  lui   $v0, %hi(D_01C3D000) # $v0, 0x1c4
-/* B26CE4 800AFB44 3C0E01C8 */  lui   $t6, %hi(D_01C7D000) # $t6, 0x1c8
+/* B26CE0 800AFB40 3C0201C4 */  lui   $v0, %hi(_vr_LHVR_staticSegmentRomStart) # $v0, 0x1c4
+/* B26CE4 800AFB44 3C0E01C8 */  lui   $t6, %hi(_vr_LHVR_staticSegmentRomEnd) # $t6, 0x1c8
 /* B26CE8 800AFB48 A60D0140 */  sh    $t5, 0x140($s0)
-/* B26CEC 800AFB4C 25CED000 */  addiu $t6, %lo(D_01C7D000) # addiu $t6, $t6, -0x3000
-/* B26CF0 800AFB50 2442D000 */  addiu $v0, %lo(D_01C3D000) # addiu $v0, $v0, -0x3000
+/* B26CEC 800AFB4C 25CED000 */  addiu $t6, %lo(_vr_LHVR_staticSegmentRomEnd) # addiu $t6, $t6, -0x3000
+/* B26CF0 800AFB50 2442D000 */  addiu $v0, %lo(_vr_LHVR_staticSegmentRomStart) # addiu $v0, $v0, -0x3000
 /* B26CF4 800AFB54 01C22823 */  subu  $a1, $t6, $v0
 /* B26CF8 800AFB58 3C068014 */  lui   $a2, %hi(D_80141E30) # $a2, 0x8014
 /* B26CFC 800AFB5C 24C61E30 */  addiu $a2, %lo(D_80141E30) # addiu $a2, $a2, 0x1e30
@@ -2124,12 +2136,12 @@ glabel func_800AF218
 /* B26D40 800AFBA0 AFAF0010 */  sw    $t7, 0x10($sp)
 /* B26D44 800AFBA4 24E71E78 */  addiu $a3, %lo(D_80141E78) # addiu $a3, $a3, 0x1e78
 /* B26D48 800AFBA8 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26D4C 800AFBAC 0C0006A8 */  jal   func_80001AA0
+/* B26D4C 800AFBAC 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26D50 800AFBB0 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26D54 800AFBB4 3C0301C8 */  lui   $v1, %hi(D_01C7D000) # $v1, 0x1c8
-/* B26D58 800AFBB8 3C1801C8 */  lui   $t8, %hi(D_01C7D800) # $t8, 0x1c8
-/* B26D5C 800AFBBC 2718D800 */  addiu $t8, %lo(D_01C7D800) # addiu $t8, $t8, -0x2800
-/* B26D60 800AFBC0 2463D000 */  addiu $v1, %lo(D_01C7D000) # addiu $v1, $v1, -0x3000
+/* B26D54 800AFBB4 3C0301C8 */  lui   $v1, %hi(_vr_LHVR_pal_staticSegmentRomStart) # $v1, 0x1c8
+/* B26D58 800AFBB8 3C1801C8 */  lui   $t8, %hi(_vr_LHVR_pal_staticSegmentRomEnd) # $t8, 0x1c8
+/* B26D5C 800AFBBC 2718D800 */  addiu $t8, %lo(_vr_LHVR_pal_staticSegmentRomEnd) # addiu $t8, $t8, -0x2800
+/* B26D60 800AFBC0 2463D000 */  addiu $v1, %lo(_vr_LHVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x3000
 /* B26D64 800AFBC4 03032823 */  subu  $a1, $t8, $v1
 /* B26D68 800AFBC8 3C068014 */  lui   $a2, %hi(D_80141E88) # $a2, 0x8014
 /* B26D6C 800AFBCC 24C61E88 */  addiu $a2, %lo(D_80141E88) # addiu $a2, $a2, 0x1e88
@@ -2153,16 +2165,17 @@ glabel func_800AF218
 /* B26DB0 800AFC10 AFB90010 */  sw    $t9, 0x10($sp)
 /* B26DB4 800AFC14 24E71ED0 */  addiu $a3, %lo(D_80141ED0) # addiu $a3, $a3, 0x1ed0
 /* B26DB8 800AFC18 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26DBC 800AFC1C 0C0006A8 */  jal   func_80001AA0
+/* B26DBC 800AFC1C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26DC0 800AFC20 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26DC4 800AFC24 10000486 */  b     .L800B0E40
 /* B26DC8 800AFC28 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AFC2C
 /* B26DCC 800AFC2C 24090001 */  li    $t1, 1
-/* B26DD0 800AFC30 3C0201B8 */  lui   $v0, %hi(D_01B7A000) # $v0, 0x1b8
-/* B26DD4 800AFC34 3C0B01BC */  lui   $t3, %hi(D_01BBA000) # $t3, 0x1bc
+/* B26DD0 800AFC30 3C0201B8 */  lui   $v0, %hi(_vr_MDVR_staticSegmentRomStart) # $v0, 0x1b8
+/* B26DD4 800AFC34 3C0B01BC */  lui   $t3, %hi(_vr_MDVR_staticSegmentRomEnd) # $t3, 0x1bc
 /* B26DD8 800AFC38 A6090140 */  sh    $t1, 0x140($s0)
-/* B26DDC 800AFC3C 256BA000 */  addiu $t3, %lo(D_01BBA000) # addiu $t3, $t3, -0x6000
-/* B26DE0 800AFC40 2442A000 */  addiu $v0, %lo(D_01B7A000) # addiu $v0, $v0, -0x6000
+/* B26DDC 800AFC3C 256BA000 */  addiu $t3, %lo(_vr_MDVR_staticSegmentRomEnd) # addiu $t3, $t3, -0x6000
+/* B26DE0 800AFC40 2442A000 */  addiu $v0, %lo(_vr_MDVR_staticSegmentRomStart) # addiu $v0, $v0, -0x6000
 /* B26DE4 800AFC44 01622823 */  subu  $a1, $t3, $v0
 /* B26DE8 800AFC48 3C068014 */  lui   $a2, %hi(D_80141EE0) # $a2, 0x8014
 /* B26DEC 800AFC4C 24C61EE0 */  addiu $a2, %lo(D_80141EE0) # addiu $a2, $a2, 0x1ee0
@@ -2186,12 +2199,12 @@ glabel func_800AF218
 /* B26E30 800AFC90 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B26E34 800AFC94 24E71F28 */  addiu $a3, %lo(D_80141F28) # addiu $a3, $a3, 0x1f28
 /* B26E38 800AFC98 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26E3C 800AFC9C 0C0006A8 */  jal   func_80001AA0
+/* B26E3C 800AFC9C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26E40 800AFCA0 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26E44 800AFCA4 3C0301BC */  lui   $v1, %hi(D_01BBA000) # $v1, 0x1bc
-/* B26E48 800AFCA8 3C0C01BC */  lui   $t4, %hi(D_01BBA800) # $t4, 0x1bc
-/* B26E4C 800AFCAC 258CA800 */  addiu $t4, %lo(D_01BBA800) # addiu $t4, $t4, -0x5800
-/* B26E50 800AFCB0 2463A000 */  addiu $v1, %lo(D_01BBA000) # addiu $v1, $v1, -0x6000
+/* B26E44 800AFCA4 3C0301BC */  lui   $v1, %hi(_vr_MDVR_pal_staticSegmentRomStart) # $v1, 0x1bc
+/* B26E48 800AFCA8 3C0C01BC */  lui   $t4, %hi(_vr_MDVR_pal_staticSegmentRomEnd) # $t4, 0x1bc
+/* B26E4C 800AFCAC 258CA800 */  addiu $t4, %lo(_vr_MDVR_pal_staticSegmentRomEnd) # addiu $t4, $t4, -0x5800
+/* B26E50 800AFCB0 2463A000 */  addiu $v1, %lo(_vr_MDVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x6000
 /* B26E54 800AFCB4 01832823 */  subu  $a1, $t4, $v1
 /* B26E58 800AFCB8 3C068014 */  lui   $a2, %hi(D_80141F38) # $a2, 0x8014
 /* B26E5C 800AFCBC 24C61F38 */  addiu $a2, %lo(D_80141F38) # addiu $a2, $a2, 0x1f38
@@ -2215,16 +2228,17 @@ glabel func_800AF218
 /* B26EA0 800AFD00 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B26EA4 800AFD04 24E71F80 */  addiu $a3, %lo(D_80141F80) # addiu $a3, $a3, 0x1f80
 /* B26EA8 800AFD08 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26EAC 800AFD0C 0C0006A8 */  jal   func_80001AA0
+/* B26EAC 800AFD0C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26EB0 800AFD10 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26EB4 800AFD14 1000044A */  b     .L800B0E40
 /* B26EB8 800AFD18 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AFD1C
 /* B26EBC 800AFD1C 240E0001 */  li    $t6, 1
-/* B26EC0 800AFD20 3C0201BC */  lui   $v0, %hi(D_01BBB000) # $v0, 0x1bc
-/* B26EC4 800AFD24 3C0F01C0 */  lui   $t7, %hi(D_01BFB000) # $t7, 0x1c0
+/* B26EC0 800AFD20 3C0201BC */  lui   $v0, %hi(_vr_MNVR_staticSegmentRomStart) # $v0, 0x1bc
+/* B26EC4 800AFD24 3C0F01C0 */  lui   $t7, %hi(_vr_MNVR_staticSegmentRomEnd) # $t7, 0x1c0
 /* B26EC8 800AFD28 A60E0140 */  sh    $t6, 0x140($s0)
-/* B26ECC 800AFD2C 25EFB000 */  addiu $t7, %lo(D_01BFB000) # addiu $t7, $t7, -0x5000
-/* B26ED0 800AFD30 2442B000 */  addiu $v0, %lo(D_01BBB000) # addiu $v0, $v0, -0x5000
+/* B26ECC 800AFD2C 25EFB000 */  addiu $t7, %lo(_vr_MNVR_staticSegmentRomEnd) # addiu $t7, $t7, -0x5000
+/* B26ED0 800AFD30 2442B000 */  addiu $v0, %lo(_vr_MNVR_staticSegmentRomStart) # addiu $v0, $v0, -0x5000
 /* B26ED4 800AFD34 01E22823 */  subu  $a1, $t7, $v0
 /* B26ED8 800AFD38 3C068014 */  lui   $a2, %hi(D_80141F90) # $a2, 0x8014
 /* B26EDC 800AFD3C 24C61F90 */  addiu $a2, %lo(D_80141F90) # addiu $a2, $a2, 0x1f90
@@ -2248,12 +2262,12 @@ glabel func_800AF218
 /* B26F20 800AFD80 AFB80010 */  sw    $t8, 0x10($sp)
 /* B26F24 800AFD84 24E71FD8 */  addiu $a3, %lo(D_80141FD8) # addiu $a3, $a3, 0x1fd8
 /* B26F28 800AFD88 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26F2C 800AFD8C 0C0006A8 */  jal   func_80001AA0
+/* B26F2C 800AFD8C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26F30 800AFD90 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B26F34 800AFD94 3C0301C0 */  lui   $v1, %hi(D_01BFB000) # $v1, 0x1c0
-/* B26F38 800AFD98 3C1901C0 */  lui   $t9, %hi(D_01BFB800) # $t9, 0x1c0
-/* B26F3C 800AFD9C 2739B800 */  addiu $t9, %lo(D_01BFB800) # addiu $t9, $t9, -0x4800
-/* B26F40 800AFDA0 2463B000 */  addiu $v1, %lo(D_01BFB000) # addiu $v1, $v1, -0x5000
+/* B26F34 800AFD94 3C0301C0 */  lui   $v1, %hi(_vr_MNVR_pal_staticSegmentRomStart) # $v1, 0x1c0
+/* B26F38 800AFD98 3C1901C0 */  lui   $t9, %hi(_vr_MNVR_pal_staticSegmentRomEnd) # $t9, 0x1c0
+/* B26F3C 800AFD9C 2739B800 */  addiu $t9, %lo(_vr_MNVR_pal_staticSegmentRomEnd) # addiu $t9, $t9, -0x4800
+/* B26F40 800AFDA0 2463B000 */  addiu $v1, %lo(_vr_MNVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x5000
 /* B26F44 800AFDA4 03232823 */  subu  $a1, $t9, $v1
 /* B26F48 800AFDA8 3C048014 */  lui   $a0, %hi(D_80141FE8) # $a0, 0x8014
 /* B26F4C 800AFDAC 24841FE8 */  addiu $a0, %lo(D_80141FE8) # addiu $a0, $a0, 0x1fe8
@@ -2281,16 +2295,17 @@ glabel func_800AF218
 /* B26FA0 800AFE00 AFA90010 */  sw    $t1, 0x10($sp)
 /* B26FA4 800AFE04 24E72040 */  addiu $a3, %lo(D_80142040) # addiu $a3, $a3, 0x2040
 /* B26FA8 800AFE08 8FA50030 */  lw    $a1, 0x30($sp)
-/* B26FAC 800AFE0C 0C0006A8 */  jal   func_80001AA0
+/* B26FAC 800AFE0C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B26FB0 800AFE10 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B26FB4 800AFE14 1000040A */  b     .L800B0E40
 /* B26FB8 800AFE18 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800AFE1C
 /* B26FBC 800AFE1C 240B0001 */  li    $t3, 1
-/* B26FC0 800AFE20 3C0201FA */  lui   $v0, %hi(D_01F9F000) # $v0, 0x1fa
-/* B26FC4 800AFE24 3C0A01FC */  lui   $t2, %hi(D_01FBF000) # $t2, 0x1fc
+/* B26FC0 800AFE20 3C0201FA */  lui   $v0, %hi(_vr_FCVR_staticSegmentRomStart) # $v0, 0x1fa
+/* B26FC4 800AFE24 3C0A01FC */  lui   $t2, %hi(_vr_FCVR_staticSegmentRomEnd) # $t2, 0x1fc
 /* B26FC8 800AFE28 A60B0140 */  sh    $t3, 0x140($s0)
-/* B26FCC 800AFE2C 254AF000 */  addiu $t2, %lo(D_01FBF000) # addiu $t2, $t2, -0x1000
-/* B26FD0 800AFE30 2442F000 */  addiu $v0, %lo(D_01F9F000) # addiu $v0, $v0, -0x1000
+/* B26FCC 800AFE2C 254AF000 */  addiu $t2, %lo(_vr_FCVR_staticSegmentRomEnd) # addiu $t2, $t2, -0x1000
+/* B26FD0 800AFE30 2442F000 */  addiu $v0, %lo(_vr_FCVR_staticSegmentRomStart) # addiu $v0, $v0, -0x1000
 /* B26FD4 800AFE34 01422823 */  subu  $a1, $t2, $v0
 /* B26FD8 800AFE38 3C068014 */  lui   $a2, %hi(D_80142050) # $a2, 0x8014
 /* B26FDC 800AFE3C 24C62050 */  addiu $a2, %lo(D_80142050) # addiu $a2, $a2, 0x2050
@@ -2314,12 +2329,12 @@ glabel func_800AF218
 /* B27020 800AFE80 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B27024 800AFE84 24E72098 */  addiu $a3, %lo(D_80142098) # addiu $a3, $a3, 0x2098
 /* B27028 800AFE88 8FA50030 */  lw    $a1, 0x30($sp)
-/* B2702C 800AFE8C 0C0006A8 */  jal   func_80001AA0
+/* B2702C 800AFE8C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27030 800AFE90 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27034 800AFE94 3C0301FC */  lui   $v1, %hi(D_01FBF000) # $v1, 0x1fc
-/* B27038 800AFE98 3C0D01FC */  lui   $t5, %hi(D_01FBF400) # $t5, 0x1fc
-/* B2703C 800AFE9C 25ADF400 */  addiu $t5, %lo(D_01FBF400) # addiu $t5, $t5, -0xc00
-/* B27040 800AFEA0 2463F000 */  addiu $v1, %lo(D_01FBF000) # addiu $v1, $v1, -0x1000
+/* B27034 800AFE94 3C0301FC */  lui   $v1, %hi(_vr_FCVR_pal_staticSegmentRomStart) # $v1, 0x1fc
+/* B27038 800AFE98 3C0D01FC */  lui   $t5, %hi(_vr_FCVR_pal_staticSegmentRomEnd) # $t5, 0x1fc
+/* B2703C 800AFE9C 25ADF400 */  addiu $t5, %lo(_vr_FCVR_pal_staticSegmentRomEnd) # addiu $t5, $t5, -0xc00
+/* B27040 800AFEA0 2463F000 */  addiu $v1, %lo(_vr_FCVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x1000
 /* B27044 800AFEA4 01A32823 */  subu  $a1, $t5, $v1
 /* B27048 800AFEA8 3C068014 */  lui   $a2, %hi(D_801420A8) # $a2, 0x8014
 /* B2704C 800AFEAC 24C620A8 */  addiu $a2, %lo(D_801420A8) # addiu $a2, $a2, 0x20a8
@@ -2343,18 +2358,19 @@ glabel func_800AF218
 /* B27090 800AFEF0 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B27094 800AFEF4 24E720F0 */  addiu $a3, %lo(D_801420F0) # addiu $a3, $a3, 0x20f0
 /* B27098 800AFEF8 8FA50030 */  lw    $a1, 0x30($sp)
-/* B2709C 800AFEFC 0C0006A8 */  jal   func_80001AA0
+/* B2709C 800AFEFC 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B270A0 800AFF00 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B270A4 800AFF04 3C018014 */  lui   $at, %hi(D_80142E60)
 /* B270A8 800AFF08 C4302E60 */  lwc1  $f16, %lo(D_80142E60)($at)
 /* B270AC 800AFF0C 100003CB */  b     .L800B0E3C
 /* B270B0 800AFF10 E6100148 */   swc1  $f16, 0x148($s0)
+glabel L800AFF14
 /* B270B4 800AFF14 240F0001 */  li    $t7, 1
-/* B270B8 800AFF18 3C0201C8 */  lui   $v0, %hi(D_01C7E000) # $v0, 0x1c8
-/* B270BC 800AFF1C 3C1801CC */  lui   $t8, %hi(D_01CBE000) # $t8, 0x1cc
+/* B270B8 800AFF18 3C0201C8 */  lui   $v0, %hi(_vr_KHVR_staticSegmentRomStart) # $v0, 0x1c8
+/* B270BC 800AFF1C 3C1801CC */  lui   $t8, %hi(_vr_KHVR_staticSegmentRomEnd) # $t8, 0x1cc
 /* B270C0 800AFF20 A60F0140 */  sh    $t7, 0x140($s0)
-/* B270C4 800AFF24 2718E000 */  addiu $t8, %lo(D_01CBE000) # addiu $t8, $t8, -0x2000
-/* B270C8 800AFF28 2442E000 */  addiu $v0, %lo(D_01C7E000) # addiu $v0, $v0, -0x2000
+/* B270C4 800AFF24 2718E000 */  addiu $t8, %lo(_vr_KHVR_staticSegmentRomEnd) # addiu $t8, $t8, -0x2000
+/* B270C8 800AFF28 2442E000 */  addiu $v0, %lo(_vr_KHVR_staticSegmentRomStart) # addiu $v0, $v0, -0x2000
 /* B270CC 800AFF2C 03022823 */  subu  $a1, $t8, $v0
 /* B270D0 800AFF30 3C068014 */  lui   $a2, %hi(D_80142100) # $a2, 0x8014
 /* B270D4 800AFF34 24C62100 */  addiu $a2, %lo(D_80142100) # addiu $a2, $a2, 0x2100
@@ -2378,12 +2394,12 @@ glabel func_800AF218
 /* B27118 800AFF78 AFB90010 */  sw    $t9, 0x10($sp)
 /* B2711C 800AFF7C 24E72148 */  addiu $a3, %lo(D_80142148) # addiu $a3, $a3, 0x2148
 /* B27120 800AFF80 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27124 800AFF84 0C0006A8 */  jal   func_80001AA0
+/* B27124 800AFF84 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27128 800AFF88 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B2712C 800AFF8C 3C0301CC */  lui   $v1, %hi(D_01CBE000) # $v1, 0x1cc
-/* B27130 800AFF90 3C0901CC */  lui   $t1, %hi(D_01CBE800) # $t1, 0x1cc
-/* B27134 800AFF94 2529E800 */  addiu $t1, %lo(D_01CBE800) # addiu $t1, $t1, -0x1800
-/* B27138 800AFF98 2463E000 */  addiu $v1, %lo(D_01CBE000) # addiu $v1, $v1, -0x2000
+/* B2712C 800AFF8C 3C0301CC */  lui   $v1, %hi(_vr_KHVR_pal_staticSegmentRomStart) # $v1, 0x1cc
+/* B27130 800AFF90 3C0901CC */  lui   $t1, %hi(_vr_KHVR_pal_staticSegmentRomEnd) # $t1, 0x1cc
+/* B27134 800AFF94 2529E800 */  addiu $t1, %lo(_vr_KHVR_pal_staticSegmentRomEnd) # addiu $t1, $t1, -0x1800
+/* B27138 800AFF98 2463E000 */  addiu $v1, %lo(_vr_KHVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x2000
 /* B2713C 800AFF9C 01232823 */  subu  $a1, $t1, $v1
 /* B27140 800AFFA0 3C068014 */  lui   $a2, %hi(D_80142158) # $a2, 0x8014
 /* B27144 800AFFA4 24C62158 */  addiu $a2, %lo(D_80142158) # addiu $a2, $a2, 0x2158
@@ -2407,16 +2423,17 @@ glabel func_800AF218
 /* B27188 800AFFE8 AFAB0010 */  sw    $t3, 0x10($sp)
 /* B2718C 800AFFEC 24E721A0 */  addiu $a3, %lo(D_801421A0) # addiu $a3, $a3, 0x21a0
 /* B27190 800AFFF0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27194 800AFFF4 0C0006A8 */  jal   func_80001AA0
+/* B27194 800AFFF4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27198 800AFFF8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2719C 800AFFFC 10000390 */  b     .L800B0E40
 /* B271A0 800B0000 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0004
 /* B271A4 800B0004 240A0002 */  li    $t2, 2
-/* B271A8 800B0008 3C0201CC */  lui   $v0, %hi(D_01CBF000) # $v0, 0x1cc
-/* B271AC 800B000C 3C0C01CF */  lui   $t4, %hi(D_01CEF000) # $t4, 0x1cf
+/* B271A8 800B0008 3C0201CC */  lui   $v0, %hi(_vr_K3VR_staticSegmentRomStart) # $v0, 0x1cc
+/* B271AC 800B000C 3C0C01CF */  lui   $t4, %hi(_vr_K3VR_staticSegmentRomEnd) # $t4, 0x1cf
 /* B271B0 800B0010 A60A0140 */  sh    $t2, 0x140($s0)
-/* B271B4 800B0014 258CF000 */  addiu $t4, %lo(D_01CEF000) # addiu $t4, $t4, -0x1000
-/* B271B8 800B0018 2442F000 */  addiu $v0, %lo(D_01CBF000) # addiu $v0, $v0, -0x1000
+/* B271B4 800B0014 258CF000 */  addiu $t4, %lo(_vr_K3VR_staticSegmentRomEnd) # addiu $t4, $t4, -0x1000
+/* B271B8 800B0018 2442F000 */  addiu $v0, %lo(_vr_K3VR_staticSegmentRomStart) # addiu $v0, $v0, -0x1000
 /* B271BC 800B001C 01822823 */  subu  $a1, $t4, $v0
 /* B271C0 800B0020 3C068014 */  lui   $a2, %hi(D_801421B0) # $a2, 0x8014
 /* B271C4 800B0024 24C621B0 */  addiu $a2, %lo(D_801421B0) # addiu $a2, $a2, 0x21b0
@@ -2440,12 +2457,12 @@ glabel func_800AF218
 /* B27208 800B0068 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B2720C 800B006C 24E721F8 */  addiu $a3, %lo(D_801421F8) # addiu $a3, $a3, 0x21f8
 /* B27210 800B0070 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27214 800B0074 0C0006A8 */  jal   func_80001AA0
+/* B27214 800B0074 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27218 800B0078 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B2721C 800B007C 3C0301CF */  lui   $v1, %hi(D_01CEF000) # $v1, 0x1cf
-/* B27220 800B0080 3C0E01CF */  lui   $t6, %hi(D_01CEF600) # $t6, 0x1cf
-/* B27224 800B0084 25CEF600 */  addiu $t6, %lo(D_01CEF600) # addiu $t6, $t6, -0xa00
-/* B27228 800B0088 2463F000 */  addiu $v1, %lo(D_01CEF000) # addiu $v1, $v1, -0x1000
+/* B2721C 800B007C 3C0301CF */  lui   $v1, %hi(_vr_K3VR_pal_staticSegmentRomStart) # $v1, 0x1cf
+/* B27220 800B0080 3C0E01CF */  lui   $t6, %hi(_vr_K3VR_pal_staticSegmentRomEnd) # $t6, 0x1cf
+/* B27224 800B0084 25CEF600 */  addiu $t6, %lo(_vr_K3VR_pal_staticSegmentRomEnd) # addiu $t6, $t6, -0xa00
+/* B27228 800B0088 2463F000 */  addiu $v1, %lo(_vr_K3VR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x1000
 /* B2722C 800B008C 01C32823 */  subu  $a1, $t6, $v1
 /* B27230 800B0090 3C068014 */  lui   $a2, %hi(D_80142208) # $a2, 0x8014
 /* B27234 800B0094 24C62208 */  addiu $a2, %lo(D_80142208) # addiu $a2, $a2, 0x2208
@@ -2469,16 +2486,17 @@ glabel func_800AF218
 /* B27278 800B00D8 AFAF0010 */  sw    $t7, 0x10($sp)
 /* B2727C 800B00DC 24E72250 */  addiu $a3, %lo(D_80142250) # addiu $a3, $a3, 0x2250
 /* B27280 800B00E0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27284 800B00E4 0C0006A8 */  jal   func_80001AA0
+/* B27284 800B00E4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27288 800B00E8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2728C 800B00EC 10000354 */  b     .L800B0E40
 /* B27290 800B00F0 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B00F4
 /* B27294 800B00F4 24180001 */  li    $t8, 1
-/* B27298 800B00F8 3C0201D7 */  lui   $v0, %hi(D_01D73000) # $v0, 0x1d7
-/* B2729C 800B00FC 3C1901DB */  lui   $t9, %hi(D_01DB3000) # $t9, 0x1db
+/* B27298 800B00F8 3C0201D7 */  lui   $v0, %hi(_vr_MLVR_staticSegmentRomStart) # $v0, 0x1d7
+/* B2729C 800B00FC 3C1901DB */  lui   $t9, %hi(_vr_MLVR_staticSegmentRomEnd) # $t9, 0x1db
 /* B272A0 800B0100 A6180140 */  sh    $t8, 0x140($s0)
-/* B272A4 800B0104 27393000 */  addiu $t9, %lo(D_01DB3000) # addiu $t9, $t9, 0x3000
-/* B272A8 800B0108 24423000 */  addiu $v0, %lo(D_01D73000) # addiu $v0, $v0, 0x3000
+/* B272A4 800B0104 27393000 */  addiu $t9, %lo(_vr_MLVR_staticSegmentRomEnd) # addiu $t9, $t9, 0x3000
+/* B272A8 800B0108 24423000 */  addiu $v0, %lo(_vr_MLVR_staticSegmentRomStart) # addiu $v0, $v0, 0x3000
 /* B272AC 800B010C 03222823 */  subu  $a1, $t9, $v0
 /* B272B0 800B0110 3C068014 */  lui   $a2, %hi(D_80142260) # $a2, 0x8014
 /* B272B4 800B0114 24C62260 */  addiu $a2, %lo(D_80142260) # addiu $a2, $a2, 0x2260
@@ -2502,12 +2520,12 @@ glabel func_800AF218
 /* B272F8 800B0158 AFA90010 */  sw    $t1, 0x10($sp)
 /* B272FC 800B015C 24E722A8 */  addiu $a3, %lo(D_801422A8) # addiu $a3, $a3, 0x22a8
 /* B27300 800B0160 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27304 800B0164 0C0006A8 */  jal   func_80001AA0
+/* B27304 800B0164 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27308 800B0168 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B2730C 800B016C 3C0301DB */  lui   $v1, %hi(D_01DB3000) # $v1, 0x1db
-/* B27310 800B0170 3C0B01DB */  lui   $t3, %hi(D_01DB3800) # $t3, 0x1db
-/* B27314 800B0174 256B3800 */  addiu $t3, %lo(D_01DB3800) # addiu $t3, $t3, 0x3800
-/* B27318 800B0178 24633000 */  addiu $v1, %lo(D_01DB3000) # addiu $v1, $v1, 0x3000
+/* B2730C 800B016C 3C0301DB */  lui   $v1, %hi(_vr_MLVR_pal_staticSegmentRomStart) # $v1, 0x1db
+/* B27310 800B0170 3C0B01DB */  lui   $t3, %hi(_vr_MLVR_pal_staticSegmentRomEnd) # $t3, 0x1db
+/* B27314 800B0174 256B3800 */  addiu $t3, %lo(_vr_MLVR_pal_staticSegmentRomEnd) # addiu $t3, $t3, 0x3800
+/* B27318 800B0178 24633000 */  addiu $v1, %lo(_vr_MLVR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x3000
 /* B2731C 800B017C 01632823 */  subu  $a1, $t3, $v1
 /* B27320 800B0180 3C068014 */  lui   $a2, %hi(D_801422B8) # $a2, 0x8014
 /* B27324 800B0184 24C622B8 */  addiu $a2, %lo(D_801422B8) # addiu $a2, $a2, 0x22b8
@@ -2531,16 +2549,17 @@ glabel func_800AF218
 /* B27368 800B01C8 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B2736C 800B01CC 24E72300 */  addiu $a3, %lo(D_80142300) # addiu $a3, $a3, 0x2300
 /* B27370 800B01D0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27374 800B01D4 0C0006A8 */  jal   func_80001AA0
+/* B27374 800B01D4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27378 800B01D8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2737C 800B01DC 10000318 */  b     .L800B0E40
 /* B27380 800B01E0 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B01E4
 /* B27384 800B01E4 240C0001 */  li    $t4, 1
-/* B27388 800B01E8 3C0201DB */  lui   $v0, %hi(D_01DB4000) # $v0, 0x1db
-/* B2738C 800B01EC 3C0D01DF */  lui   $t5, %hi(D_01DF4000) # $t5, 0x1df
+/* B27388 800B01E8 3C0201DB */  lui   $v0, %hi(_vr_KKRVR_staticSegmentRomStart) # $v0, 0x1db
+/* B2738C 800B01EC 3C0D01DF */  lui   $t5, %hi(_vr_KKRVR_staticSegmentRomEnd) # $t5, 0x1df
 /* B27390 800B01F0 A60C0140 */  sh    $t4, 0x140($s0)
-/* B27394 800B01F4 25AD4000 */  addiu $t5, %lo(D_01DF4000) # addiu $t5, $t5, 0x4000
-/* B27398 800B01F8 24424000 */  addiu $v0, %lo(D_01DB4000) # addiu $v0, $v0, 0x4000
+/* B27394 800B01F4 25AD4000 */  addiu $t5, %lo(_vr_KKRVR_staticSegmentRomEnd) # addiu $t5, $t5, 0x4000
+/* B27398 800B01F8 24424000 */  addiu $v0, %lo(_vr_KKRVR_staticSegmentRomStart) # addiu $v0, $v0, 0x4000
 /* B2739C 800B01FC 01A22823 */  subu  $a1, $t5, $v0
 /* B273A0 800B0200 3C068014 */  lui   $a2, %hi(D_80142310) # $a2, 0x8014
 /* B273A4 800B0204 24C62310 */  addiu $a2, %lo(D_80142310) # addiu $a2, $a2, 0x2310
@@ -2564,12 +2583,12 @@ glabel func_800AF218
 /* B273E8 800B0248 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B273EC 800B024C 24E72358 */  addiu $a3, %lo(D_80142358) # addiu $a3, $a3, 0x2358
 /* B273F0 800B0250 8FA50030 */  lw    $a1, 0x30($sp)
-/* B273F4 800B0254 0C0006A8 */  jal   func_80001AA0
+/* B273F4 800B0254 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B273F8 800B0258 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B273FC 800B025C 3C0301DF */  lui   $v1, %hi(D_01DF4000) # $v1, 0x1df
-/* B27400 800B0260 3C0F01DF */  lui   $t7, %hi(D_01DF4800) # $t7, 0x1df
-/* B27404 800B0264 25EF4800 */  addiu $t7, %lo(D_01DF4800) # addiu $t7, $t7, 0x4800
-/* B27408 800B0268 24634000 */  addiu $v1, %lo(D_01DF4000) # addiu $v1, $v1, 0x4000
+/* B273FC 800B025C 3C0301DF */  lui   $v1, %hi(_vr_KKRVR_pal_staticSegmentRomStart) # $v1, 0x1df
+/* B27400 800B0260 3C0F01DF */  lui   $t7, %hi(_vr_KKRVR_pal_staticSegmentRomEnd) # $t7, 0x1df
+/* B27404 800B0264 25EF4800 */  addiu $t7, %lo(_vr_KKRVR_pal_staticSegmentRomEnd) # addiu $t7, $t7, 0x4800
+/* B27408 800B0268 24634000 */  addiu $v1, %lo(_vr_KKRVR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x4000
 /* B2740C 800B026C 01E32823 */  subu  $a1, $t7, $v1
 /* B27410 800B0270 3C068014 */  lui   $a2, %hi(D_80142368) # $a2, 0x8014
 /* B27414 800B0274 24C62368 */  addiu $a2, %lo(D_80142368) # addiu $a2, $a2, 0x2368
@@ -2593,16 +2612,17 @@ glabel func_800AF218
 /* B27458 800B02B8 AFB80010 */  sw    $t8, 0x10($sp)
 /* B2745C 800B02BC 24E723B0 */  addiu $a3, %lo(D_801423B0) # addiu $a3, $a3, 0x23b0
 /* B27460 800B02C0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27464 800B02C4 0C0006A8 */  jal   func_80001AA0
+/* B27464 800B02C4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27468 800B02C8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2746C 800B02CC 100002DC */  b     .L800B0E40
 /* B27470 800B02D0 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B02D4
 /* B27474 800B02D4 24190001 */  li    $t9, 1
-/* B27478 800B02D8 3C0201E6 */  lui   $v0, %hi(D_01E67000) # $v0, 0x1e6
-/* B2747C 800B02DC 3C0901E8 */  lui   $t1, %hi(D_01E87000) # $t1, 0x1e8
+/* B27478 800B02D8 3C0201E6 */  lui   $v0, %hi(_vr_KSVR_staticSegmentRomStart) # $v0, 0x1e6
+/* B2747C 800B02DC 3C0901E8 */  lui   $t1, %hi(_vr_KSVR_staticSegmentRomEnd) # $t1, 0x1e8
 /* B27480 800B02E0 A6190140 */  sh    $t9, 0x140($s0)
-/* B27484 800B02E4 25297000 */  addiu $t1, %lo(D_01E87000) # addiu $t1, $t1, 0x7000
-/* B27488 800B02E8 24427000 */  addiu $v0, %lo(D_01E67000) # addiu $v0, $v0, 0x7000
+/* B27484 800B02E4 25297000 */  addiu $t1, %lo(_vr_KSVR_staticSegmentRomEnd) # addiu $t1, $t1, 0x7000
+/* B27488 800B02E8 24427000 */  addiu $v0, %lo(_vr_KSVR_staticSegmentRomStart) # addiu $v0, $v0, 0x7000
 /* B2748C 800B02EC 01222823 */  subu  $a1, $t1, $v0
 /* B27490 800B02F0 3C068014 */  lui   $a2, %hi(D_801423C0) # $a2, 0x8014
 /* B27494 800B02F4 24C623C0 */  addiu $a2, %lo(D_801423C0) # addiu $a2, $a2, 0x23c0
@@ -2626,12 +2646,12 @@ glabel func_800AF218
 /* B274D8 800B0338 AFAB0010 */  sw    $t3, 0x10($sp)
 /* B274DC 800B033C 24E72408 */  addiu $a3, %lo(D_80142408) # addiu $a3, $a3, 0x2408
 /* B274E0 800B0340 8FA50030 */  lw    $a1, 0x30($sp)
-/* B274E4 800B0344 0C0006A8 */  jal   func_80001AA0
+/* B274E4 800B0344 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B274E8 800B0348 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B274EC 800B034C 3C0301E8 */  lui   $v1, %hi(D_01E87000) # $v1, 0x1e8
-/* B274F0 800B0350 3C0A01E8 */  lui   $t2, %hi(D_01E87400) # $t2, 0x1e8
-/* B274F4 800B0354 254A7400 */  addiu $t2, %lo(D_01E87400) # addiu $t2, $t2, 0x7400
-/* B274F8 800B0358 24637000 */  addiu $v1, %lo(D_01E87000) # addiu $v1, $v1, 0x7000
+/* B274EC 800B034C 3C0301E8 */  lui   $v1, %hi(_vr_KSVR_pal_staticSegmentRomStart) # $v1, 0x1e8
+/* B274F0 800B0350 3C0A01E8 */  lui   $t2, %hi(_vr_KSVR_pal_staticSegmentRomEnd) # $t2, 0x1e8
+/* B274F4 800B0354 254A7400 */  addiu $t2, %lo(_vr_KSVR_pal_staticSegmentRomEnd) # addiu $t2, $t2, 0x7400
+/* B274F8 800B0358 24637000 */  addiu $v1, %lo(_vr_KSVR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x7000
 /* B274FC 800B035C 01432823 */  subu  $a1, $t2, $v1
 /* B27500 800B0360 3C068014 */  lui   $a2, %hi(D_80142418) # $a2, 0x8014
 /* B27504 800B0364 24C62418 */  addiu $a2, %lo(D_80142418) # addiu $a2, $a2, 0x2418
@@ -2655,18 +2675,19 @@ glabel func_800AF218
 /* B27548 800B03A8 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B2754C 800B03AC 24E72460 */  addiu $a3, %lo(D_80142460) # addiu $a3, $a3, 0x2460
 /* B27550 800B03B0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27554 800B03B4 0C0006A8 */  jal   func_80001AA0
+/* B27554 800B03B4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27558 800B03B8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2755C 800B03BC 3C018014 */  lui   $at, %hi(D_80142E64)
 /* B27560 800B03C0 C4322E64 */  lwc1  $f18, %lo(D_80142E64)($at)
 /* B27564 800B03C4 1000029D */  b     .L800B0E3C
 /* B27568 800B03C8 E6120148 */   swc1  $f18, 0x148($s0)
+glabel L800B03CC
 /* B2756C 800B03CC 240D0001 */  li    $t5, 1
-/* B27570 800B03D0 3C0201E9 */  lui   $v0, %hi(D_01E88000) # $v0, 0x1e9
-/* B27574 800B03D4 3C0E01EB */  lui   $t6, %hi(D_01EA8000) # $t6, 0x1eb
+/* B27570 800B03D0 3C0201E9 */  lui   $v0, %hi(_vr_GLVR_staticSegmentRomStart) # $v0, 0x1e9
+/* B27574 800B03D4 3C0E01EB */  lui   $t6, %hi(_vr_GLVR_staticSegmentRomEnd) # $t6, 0x1eb
 /* B27578 800B03D8 A60D0140 */  sh    $t5, 0x140($s0)
-/* B2757C 800B03DC 25CE8000 */  addiu $t6, %lo(D_01EA8000) # addiu $t6, $t6, -0x8000
-/* B27580 800B03E0 24428000 */  addiu $v0, %lo(D_01E88000) # addiu $v0, $v0, -0x8000
+/* B2757C 800B03DC 25CE8000 */  addiu $t6, %lo(_vr_GLVR_staticSegmentRomEnd) # addiu $t6, $t6, -0x8000
+/* B27580 800B03E0 24428000 */  addiu $v0, %lo(_vr_GLVR_staticSegmentRomStart) # addiu $v0, $v0, -0x8000
 /* B27584 800B03E4 01C22823 */  subu  $a1, $t6, $v0
 /* B27588 800B03E8 3C068014 */  lui   $a2, %hi(D_80142470) # $a2, 0x8014
 /* B2758C 800B03EC 24C62470 */  addiu $a2, %lo(D_80142470) # addiu $a2, $a2, 0x2470
@@ -2690,12 +2711,12 @@ glabel func_800AF218
 /* B275D0 800B0430 AFAF0010 */  sw    $t7, 0x10($sp)
 /* B275D4 800B0434 24E724B8 */  addiu $a3, %lo(D_801424B8) # addiu $a3, $a3, 0x24b8
 /* B275D8 800B0438 8FA50030 */  lw    $a1, 0x30($sp)
-/* B275DC 800B043C 0C0006A8 */  jal   func_80001AA0
+/* B275DC 800B043C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B275E0 800B0440 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B275E4 800B0444 3C0301EB */  lui   $v1, %hi(D_01EA8000) # $v1, 0x1eb
-/* B275E8 800B0448 3C1801EB */  lui   $t8, %hi(D_01EA8400) # $t8, 0x1eb
-/* B275EC 800B044C 27188400 */  addiu $t8, %lo(D_01EA8400) # addiu $t8, $t8, -0x7c00
-/* B275F0 800B0450 24638000 */  addiu $v1, %lo(D_01EA8000) # addiu $v1, $v1, -0x8000
+/* B275E4 800B0444 3C0301EB */  lui   $v1, %hi(_vr_GLVR_pal_staticSegmentRomStart) # $v1, 0x1eb
+/* B275E8 800B0448 3C1801EB */  lui   $t8, %hi(_vr_GLVR_pal_staticSegmentRomEnd) # $t8, 0x1eb
+/* B275EC 800B044C 27188400 */  addiu $t8, %lo(_vr_GLVR_pal_staticSegmentRomEnd) # addiu $t8, $t8, -0x7c00
+/* B275F0 800B0450 24638000 */  addiu $v1, %lo(_vr_GLVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x8000
 /* B275F4 800B0454 03032823 */  subu  $a1, $t8, $v1
 /* B275F8 800B0458 3C068014 */  lui   $a2, %hi(D_801424C8) # $a2, 0x8014
 /* B275FC 800B045C 24C624C8 */  addiu $a2, %lo(D_801424C8) # addiu $a2, $a2, 0x24c8
@@ -2719,18 +2740,19 @@ glabel func_800AF218
 /* B27640 800B04A0 AFB90010 */  sw    $t9, 0x10($sp)
 /* B27644 800B04A4 24E72510 */  addiu $a3, %lo(D_80142510) # addiu $a3, $a3, 0x2510
 /* B27648 800B04A8 8FA50030 */  lw    $a1, 0x30($sp)
-/* B2764C 800B04AC 0C0006A8 */  jal   func_80001AA0
+/* B2764C 800B04AC 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27650 800B04B0 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27654 800B04B4 3C018014 */  lui   $at, %hi(D_80142E68)
 /* B27658 800B04B8 C4242E68 */  lwc1  $f4, %lo(D_80142E68)($at)
 /* B2765C 800B04BC 1000025F */  b     .L800B0E3C
 /* B27660 800B04C0 E6040148 */   swc1  $f4, 0x148($s0)
+glabel L800B04C4
 /* B27664 800B04C4 24090001 */  li    $t1, 1
-/* B27668 800B04C8 3C0201EB */  lui   $v0, %hi(D_01EA9000) # $v0, 0x1eb
-/* B2766C 800B04CC 3C0B01ED */  lui   $t3, %hi(D_01EC9000) # $t3, 0x1ed
+/* B27668 800B04C8 3C0201EB */  lui   $v0, %hi(_vr_ZRVR_staticSegmentRomStart) # $v0, 0x1eb
+/* B2766C 800B04CC 3C0B01ED */  lui   $t3, %hi(_vr_ZRVR_staticSegmentRomEnd) # $t3, 0x1ed
 /* B27670 800B04D0 A6090140 */  sh    $t1, 0x140($s0)
-/* B27674 800B04D4 256B9000 */  addiu $t3, %lo(D_01EC9000) # addiu $t3, $t3, -0x7000
-/* B27678 800B04D8 24429000 */  addiu $v0, %lo(D_01EA9000) # addiu $v0, $v0, -0x7000
+/* B27674 800B04D4 256B9000 */  addiu $t3, %lo(_vr_ZRVR_staticSegmentRomEnd) # addiu $t3, $t3, -0x7000
+/* B27678 800B04D8 24429000 */  addiu $v0, %lo(_vr_ZRVR_staticSegmentRomStart) # addiu $v0, $v0, -0x7000
 /* B2767C 800B04DC 01622823 */  subu  $a1, $t3, $v0
 /* B27680 800B04E0 3C068014 */  lui   $a2, %hi(D_80142520) # $a2, 0x8014
 /* B27684 800B04E4 24C62520 */  addiu $a2, %lo(D_80142520) # addiu $a2, $a2, 0x2520
@@ -2754,12 +2776,12 @@ glabel func_800AF218
 /* B276C8 800B0528 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B276CC 800B052C 24E72568 */  addiu $a3, %lo(D_80142568) # addiu $a3, $a3, 0x2568
 /* B276D0 800B0530 8FA50030 */  lw    $a1, 0x30($sp)
-/* B276D4 800B0534 0C0006A8 */  jal   func_80001AA0
+/* B276D4 800B0534 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B276D8 800B0538 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B276DC 800B053C 3C0301ED */  lui   $v1, %hi(D_01EC9000) # $v1, 0x1ed
-/* B276E0 800B0540 3C0C01ED */  lui   $t4, %hi(D_01EC9400) # $t4, 0x1ed
-/* B276E4 800B0544 258C9400 */  addiu $t4, %lo(D_01EC9400) # addiu $t4, $t4, -0x6c00
-/* B276E8 800B0548 24639000 */  addiu $v1, %lo(D_01EC9000) # addiu $v1, $v1, -0x7000
+/* B276DC 800B053C 3C0301ED */  lui   $v1, %hi(_vr_ZRVR_pal_staticSegmentRomStart) # $v1, 0x1ed
+/* B276E0 800B0540 3C0C01ED */  lui   $t4, %hi(_vr_ZRVR_pal_staticSegmentRomEnd) # $t4, 0x1ed
+/* B276E4 800B0544 258C9400 */  addiu $t4, %lo(_vr_ZRVR_pal_staticSegmentRomEnd) # addiu $t4, $t4, -0x6c00
+/* B276E8 800B0548 24639000 */  addiu $v1, %lo(_vr_ZRVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x7000
 /* B276EC 800B054C 01832823 */  subu  $a1, $t4, $v1
 /* B276F0 800B0550 3C068014 */  lui   $a2, %hi(D_80142578) # $a2, 0x8014
 /* B276F4 800B0554 24C62578 */  addiu $a2, %lo(D_80142578) # addiu $a2, $a2, 0x2578
@@ -2783,18 +2805,19 @@ glabel func_800AF218
 /* B27738 800B0598 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B2773C 800B059C 24E725C0 */  addiu $a3, %lo(D_801425C0) # addiu $a3, $a3, 0x25c0
 /* B27740 800B05A0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27744 800B05A4 0C0006A8 */  jal   func_80001AA0
+/* B27744 800B05A4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27748 800B05A8 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2774C 800B05AC 3C018014 */  lui   $at, %hi(D_80142E6C)
 /* B27750 800B05B0 C4262E6C */  lwc1  $f6, %lo(D_80142E6C)($at)
 /* B27754 800B05B4 10000221 */  b     .L800B0E3C
 /* B27758 800B05B8 E6060148 */   swc1  $f6, 0x148($s0)
+glabel L800B05BC
 /* B2775C 800B05BC 240E0001 */  li    $t6, 1
-/* B27760 800B05C0 3C0201ED */  lui   $v0, %hi(D_01ECA000) # $v0, 0x1ed
-/* B27764 800B05C4 3C0F01EF */  lui   $t7, %hi(D_01EEA000) # $t7, 0x1ef
+/* B27760 800B05C0 3C0201ED */  lui   $v0, %hi(_vr_DGVR_staticSegmentRomStart) # $v0, 0x1ed
+/* B27764 800B05C4 3C0F01EF */  lui   $t7, %hi(_vr_DGVR_staticSegmentRomEnd) # $t7, 0x1ef
 /* B27768 800B05C8 A60E0140 */  sh    $t6, 0x140($s0)
-/* B2776C 800B05CC 25EFA000 */  addiu $t7, %lo(D_01EEA000) # addiu $t7, $t7, -0x6000
-/* B27770 800B05D0 2442A000 */  addiu $v0, %lo(D_01ECA000) # addiu $v0, $v0, -0x6000
+/* B2776C 800B05CC 25EFA000 */  addiu $t7, %lo(_vr_DGVR_staticSegmentRomEnd) # addiu $t7, $t7, -0x6000
+/* B27770 800B05D0 2442A000 */  addiu $v0, %lo(_vr_DGVR_staticSegmentRomStart) # addiu $v0, $v0, -0x6000
 /* B27774 800B05D4 01E22823 */  subu  $a1, $t7, $v0
 /* B27778 800B05D8 3C068014 */  lui   $a2, %hi(D_801425D0) # $a2, 0x8014
 /* B2777C 800B05DC 24C625D0 */  addiu $a2, %lo(D_801425D0) # addiu $a2, $a2, 0x25d0
@@ -2818,12 +2841,12 @@ glabel func_800AF218
 /* B277C0 800B0620 AFB80010 */  sw    $t8, 0x10($sp)
 /* B277C4 800B0624 24E72618 */  addiu $a3, %lo(D_80142618) # addiu $a3, $a3, 0x2618
 /* B277C8 800B0628 8FA50030 */  lw    $a1, 0x30($sp)
-/* B277CC 800B062C 0C0006A8 */  jal   func_80001AA0
+/* B277CC 800B062C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B277D0 800B0630 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B277D4 800B0634 3C0301EF */  lui   $v1, %hi(D_01EEA000) # $v1, 0x1ef
-/* B277D8 800B0638 3C1901EF */  lui   $t9, %hi(D_01EEA400) # $t9, 0x1ef
-/* B277DC 800B063C 2739A400 */  addiu $t9, %lo(D_01EEA400) # addiu $t9, $t9, -0x5c00
-/* B277E0 800B0640 2463A000 */  addiu $v1, %lo(D_01EEA000) # addiu $v1, $v1, -0x6000
+/* B277D4 800B0634 3C0301EF */  lui   $v1, %hi(_vr_DGVR_pal_staticSegmentRomStart) # $v1, 0x1ef
+/* B277D8 800B0638 3C1901EF */  lui   $t9, %hi(_vr_DGVR_pal_staticSegmentRomEnd) # $t9, 0x1ef
+/* B277DC 800B063C 2739A400 */  addiu $t9, %lo(_vr_DGVR_pal_staticSegmentRomEnd) # addiu $t9, $t9, -0x5c00
+/* B277E0 800B0640 2463A000 */  addiu $v1, %lo(_vr_DGVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x6000
 /* B277E4 800B0644 03232823 */  subu  $a1, $t9, $v1
 /* B277E8 800B0648 3C068014 */  lui   $a2, %hi(D_80142628) # $a2, 0x8014
 /* B277EC 800B064C 24C62628 */  addiu $a2, %lo(D_80142628) # addiu $a2, $a2, 0x2628
@@ -2847,18 +2870,19 @@ glabel func_800AF218
 /* B27830 800B0690 AFA90010 */  sw    $t1, 0x10($sp)
 /* B27834 800B0694 24E72670 */  addiu $a3, %lo(D_80142670) # addiu $a3, $a3, 0x2670
 /* B27838 800B0698 8FA50030 */  lw    $a1, 0x30($sp)
-/* B2783C 800B069C 0C0006A8 */  jal   func_80001AA0
+/* B2783C 800B069C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27840 800B06A0 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27844 800B06A4 3C018014 */  lui   $at, %hi(D_80142E70)
 /* B27848 800B06A8 C4282E70 */  lwc1  $f8, %lo(D_80142E70)($at)
 /* B2784C 800B06AC 100001E3 */  b     .L800B0E3C
 /* B27850 800B06B0 E6080148 */   swc1  $f8, 0x148($s0)
+glabel L800B06B4
 /* B27854 800B06B4 240B0001 */  li    $t3, 1
-/* B27858 800B06B8 3C0201EF */  lui   $v0, %hi(D_01EEB000) # $v0, 0x1ef
-/* B2785C 800B06BC 3C0A01F1 */  lui   $t2, %hi(D_01F0B000) # $t2, 0x1f1
+/* B27858 800B06B8 3C0201EF */  lui   $v0, %hi(_vr_ALVR_staticSegmentRomStart) # $v0, 0x1ef
+/* B2785C 800B06BC 3C0A01F1 */  lui   $t2, %hi(_vr_ALVR_staticSegmentRomEnd) # $t2, 0x1f1
 /* B27860 800B06C0 A60B0140 */  sh    $t3, 0x140($s0)
-/* B27864 800B06C4 254AB000 */  addiu $t2, %lo(D_01F0B000) # addiu $t2, $t2, -0x5000
-/* B27868 800B06C8 2442B000 */  addiu $v0, %lo(D_01EEB000) # addiu $v0, $v0, -0x5000
+/* B27864 800B06C4 254AB000 */  addiu $t2, %lo(_vr_ALVR_staticSegmentRomEnd) # addiu $t2, $t2, -0x5000
+/* B27868 800B06C8 2442B000 */  addiu $v0, %lo(_vr_ALVR_staticSegmentRomStart) # addiu $v0, $v0, -0x5000
 /* B2786C 800B06CC 01422823 */  subu  $a1, $t2, $v0
 /* B27870 800B06D0 3C068014 */  lui   $a2, %hi(D_80142680) # $a2, 0x8014
 /* B27874 800B06D4 24C62680 */  addiu $a2, %lo(D_80142680) # addiu $a2, $a2, 0x2680
@@ -2882,12 +2906,12 @@ glabel func_800AF218
 /* B278B8 800B0718 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B278BC 800B071C 24E726C8 */  addiu $a3, %lo(D_801426C8) # addiu $a3, $a3, 0x26c8
 /* B278C0 800B0720 8FA50030 */  lw    $a1, 0x30($sp)
-/* B278C4 800B0724 0C0006A8 */  jal   func_80001AA0
+/* B278C4 800B0724 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B278C8 800B0728 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B278CC 800B072C 3C0301F1 */  lui   $v1, %hi(D_01F0B000) # $v1, 0x1f1
-/* B278D0 800B0730 3C0D01F1 */  lui   $t5, %hi(D_01F0B400) # $t5, 0x1f1
-/* B278D4 800B0734 25ADB400 */  addiu $t5, %lo(D_01F0B400) # addiu $t5, $t5, -0x4c00
-/* B278D8 800B0738 2463B000 */  addiu $v1, %lo(D_01F0B000) # addiu $v1, $v1, -0x5000
+/* B278CC 800B072C 3C0301F1 */  lui   $v1, %hi(_vr_ALVR_pal_staticSegmentRomStart) # $v1, 0x1f1
+/* B278D0 800B0730 3C0D01F1 */  lui   $t5, %hi(_vr_ALVR_pal_staticSegmentRomEnd) # $t5, 0x1f1
+/* B278D4 800B0734 25ADB400 */  addiu $t5, %lo(_vr_ALVR_pal_staticSegmentRomEnd) # addiu $t5, $t5, -0x4c00
+/* B278D8 800B0738 2463B000 */  addiu $v1, %lo(_vr_ALVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x5000
 /* B278DC 800B073C 01A32823 */  subu  $a1, $t5, $v1
 /* B278E0 800B0740 3C068014 */  lui   $a2, %hi(D_801426D8) # $a2, 0x8014
 /* B278E4 800B0744 24C626D8 */  addiu $a2, %lo(D_801426D8) # addiu $a2, $a2, 0x26d8
@@ -2911,18 +2935,19 @@ glabel func_800AF218
 /* B27928 800B0788 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B2792C 800B078C 24E72720 */  addiu $a3, %lo(D_80142720) # addiu $a3, $a3, 0x2720
 /* B27930 800B0790 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27934 800B0794 0C0006A8 */  jal   func_80001AA0
+/* B27934 800B0794 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27938 800B0798 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B2793C 800B079C 3C018014 */  lui   $at, %hi(D_80142E74)
 /* B27940 800B07A0 C42A2E74 */  lwc1  $f10, %lo(D_80142E74)($at)
 /* B27944 800B07A4 100001A5 */  b     .L800B0E3C
 /* B27948 800B07A8 E60A0148 */   swc1  $f10, 0x148($s0)
+glabel L800B07AC
 /* B2794C 800B07AC 240F0001 */  li    $t7, 1
-/* B27950 800B07B0 3C0201F1 */  lui   $v0, %hi(D_01F0C000) # $v0, 0x1f1
-/* B27954 800B07B4 3C1801F3 */  lui   $t8, %hi(D_01F2C000) # $t8, 0x1f3
+/* B27950 800B07B0 3C0201F1 */  lui   $v0, %hi(_vr_NSVR_staticSegmentRomStart) # $v0, 0x1f1
+/* B27954 800B07B4 3C1801F3 */  lui   $t8, %hi(_vr_NSVR_staticSegmentRomEnd) # $t8, 0x1f3
 /* B27958 800B07B8 A60F0140 */  sh    $t7, 0x140($s0)
-/* B2795C 800B07BC 2718C000 */  addiu $t8, %lo(D_01F2C000) # addiu $t8, $t8, -0x4000
-/* B27960 800B07C0 2442C000 */  addiu $v0, %lo(D_01F0C000) # addiu $v0, $v0, -0x4000
+/* B2795C 800B07BC 2718C000 */  addiu $t8, %lo(_vr_NSVR_staticSegmentRomEnd) # addiu $t8, $t8, -0x4000
+/* B27960 800B07C0 2442C000 */  addiu $v0, %lo(_vr_NSVR_staticSegmentRomStart) # addiu $v0, $v0, -0x4000
 /* B27964 800B07C4 03022823 */  subu  $a1, $t8, $v0
 /* B27968 800B07C8 3C068014 */  lui   $a2, %hi(D_80142730) # $a2, 0x8014
 /* B2796C 800B07CC 24C62730 */  addiu $a2, %lo(D_80142730) # addiu $a2, $a2, 0x2730
@@ -2946,12 +2971,12 @@ glabel func_800AF218
 /* B279B0 800B0810 AFB90010 */  sw    $t9, 0x10($sp)
 /* B279B4 800B0814 24E72778 */  addiu $a3, %lo(D_80142778) # addiu $a3, $a3, 0x2778
 /* B279B8 800B0818 8FA50030 */  lw    $a1, 0x30($sp)
-/* B279BC 800B081C 0C0006A8 */  jal   func_80001AA0
+/* B279BC 800B081C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B279C0 800B0820 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B279C4 800B0824 3C0301F3 */  lui   $v1, %hi(D_01F2C000) # $v1, 0x1f3
-/* B279C8 800B0828 3C0901F3 */  lui   $t1, %hi(D_01F2C400) # $t1, 0x1f3
-/* B279CC 800B082C 2529C400 */  addiu $t1, %lo(D_01F2C400) # addiu $t1, $t1, -0x3c00
-/* B279D0 800B0830 2463C000 */  addiu $v1, %lo(D_01F2C000) # addiu $v1, $v1, -0x4000
+/* B279C4 800B0824 3C0301F3 */  lui   $v1, %hi(_vr_NSVR_pal_staticSegmentRomStart) # $v1, 0x1f3
+/* B279C8 800B0828 3C0901F3 */  lui   $t1, %hi(_vr_NSVR_pal_staticSegmentRomEnd) # $t1, 0x1f3
+/* B279CC 800B082C 2529C400 */  addiu $t1, %lo(_vr_NSVR_pal_staticSegmentRomEnd) # addiu $t1, $t1, -0x3c00
+/* B279D0 800B0830 2463C000 */  addiu $v1, %lo(_vr_NSVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x4000
 /* B279D4 800B0834 01232823 */  subu  $a1, $t1, $v1
 /* B279D8 800B0838 3C068014 */  lui   $a2, %hi(D_80142788) # $a2, 0x8014
 /* B279DC 800B083C 24C62788 */  addiu $a2, %lo(D_80142788) # addiu $a2, $a2, 0x2788
@@ -2975,18 +3000,19 @@ glabel func_800AF218
 /* B27A20 800B0880 AFAB0010 */  sw    $t3, 0x10($sp)
 /* B27A24 800B0884 24E727D0 */  addiu $a3, %lo(D_801427D0) # addiu $a3, $a3, 0x27d0
 /* B27A28 800B0888 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27A2C 800B088C 0C0006A8 */  jal   func_80001AA0
+/* B27A2C 800B088C 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27A30 800B0890 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27A34 800B0894 3C018014 */  lui   $at, %hi(D_80142E78)
 /* B27A38 800B0898 C4302E78 */  lwc1  $f16, %lo(D_80142E78)($at)
 /* B27A3C 800B089C 10000167 */  b     .L800B0E3C
 /* B27A40 800B08A0 E6100148 */   swc1  $f16, 0x148($s0)
+glabel L800B08A4
 /* B27A44 800B08A4 240A0001 */  li    $t2, 1
-/* B27A48 800B08A8 3C0201E2 */  lui   $v0, %hi(D_01E26000) # $v0, 0x1e2
-/* B27A4C 800B08AC 3C0C01E6 */  lui   $t4, %hi(D_01E66000) # $t4, 0x1e6
+/* B27A48 800B08A8 3C0201E2 */  lui   $v0, %hi(_vr_IPVR_staticSegmentRomStart) # $v0, 0x1e2
+/* B27A4C 800B08AC 3C0C01E6 */  lui   $t4, %hi(_vr_IPVR_staticSegmentRomEnd) # $t4, 0x1e6
 /* B27A50 800B08B0 A60A0140 */  sh    $t2, 0x140($s0)
-/* B27A54 800B08B4 258C6000 */  addiu $t4, %lo(D_01E66000) # addiu $t4, $t4, 0x6000
-/* B27A58 800B08B8 24426000 */  addiu $v0, %lo(D_01E26000) # addiu $v0, $v0, 0x6000
+/* B27A54 800B08B4 258C6000 */  addiu $t4, %lo(_vr_IPVR_staticSegmentRomEnd) # addiu $t4, $t4, 0x6000
+/* B27A58 800B08B8 24426000 */  addiu $v0, %lo(_vr_IPVR_staticSegmentRomStart) # addiu $v0, $v0, 0x6000
 /* B27A5C 800B08BC 01822823 */  subu  $a1, $t4, $v0
 /* B27A60 800B08C0 3C068014 */  lui   $a2, %hi(D_801427E0) # $a2, 0x8014
 /* B27A64 800B08C4 24C627E0 */  addiu $a2, %lo(D_801427E0) # addiu $a2, $a2, 0x27e0
@@ -3010,12 +3036,12 @@ glabel func_800AF218
 /* B27AA8 800B0908 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B27AAC 800B090C 24E72828 */  addiu $a3, %lo(D_80142828) # addiu $a3, $a3, 0x2828
 /* B27AB0 800B0910 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27AB4 800B0914 0C0006A8 */  jal   func_80001AA0
+/* B27AB4 800B0914 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27AB8 800B0918 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27ABC 800B091C 3C0301E6 */  lui   $v1, %hi(D_01E66000) # $v1, 0x1e6
-/* B27AC0 800B0920 3C0E01E6 */  lui   $t6, %hi(D_01E66800) # $t6, 0x1e6
-/* B27AC4 800B0924 25CE6800 */  addiu $t6, %lo(D_01E66800) # addiu $t6, $t6, 0x6800
-/* B27AC8 800B0928 24636000 */  addiu $v1, %lo(D_01E66000) # addiu $v1, $v1, 0x6000
+/* B27ABC 800B091C 3C0301E6 */  lui   $v1, %hi(_vr_IPVR_pal_staticSegmentRomStart) # $v1, 0x1e6
+/* B27AC0 800B0920 3C0E01E6 */  lui   $t6, %hi(_vr_IPVR_pal_staticSegmentRomEnd) # $t6, 0x1e6
+/* B27AC4 800B0924 25CE6800 */  addiu $t6, %lo(_vr_IPVR_pal_staticSegmentRomEnd) # addiu $t6, $t6, 0x6800
+/* B27AC8 800B0928 24636000 */  addiu $v1, %lo(_vr_IPVR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x6000
 /* B27ACC 800B092C 01C32823 */  subu  $a1, $t6, $v1
 /* B27AD0 800B0930 3C068014 */  lui   $a2, %hi(D_80142838) # $a2, 0x8014
 /* B27AD4 800B0934 24C62838 */  addiu $a2, %lo(D_80142838) # addiu $a2, $a2, 0x2838
@@ -3039,16 +3065,17 @@ glabel func_800AF218
 /* B27B18 800B0978 AFAF0010 */  sw    $t7, 0x10($sp)
 /* B27B1C 800B097C 24E72880 */  addiu $a3, %lo(D_80142880) # addiu $a3, $a3, 0x2880
 /* B27B20 800B0980 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27B24 800B0984 0C0006A8 */  jal   func_80001AA0
+/* B27B24 800B0984 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27B28 800B0988 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27B2C 800B098C 1000012C */  b     .L800B0E40
 /* B27B30 800B0990 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0994
 /* B27B34 800B0994 24180001 */  li    $t8, 1
-/* B27B38 800B0998 3C0201F3 */  lui   $v0, %hi(D_01F2D000) # $v0, 0x1f3
-/* B27B3C 800B099C 3C1901F7 */  lui   $t9, %hi(D_01F6D000) # $t9, 0x1f7
+/* B27B38 800B0998 3C0201F3 */  lui   $v0, %hi(_vr_LBVR_staticSegmentRomStart) # $v0, 0x1f3
+/* B27B3C 800B099C 3C1901F7 */  lui   $t9, %hi(_vr_LBVR_staticSegmentRomEnd) # $t9, 0x1f7
 /* B27B40 800B09A0 A6180140 */  sh    $t8, 0x140($s0)
-/* B27B44 800B09A4 2739D000 */  addiu $t9, %lo(D_01F6D000) # addiu $t9, $t9, -0x3000
-/* B27B48 800B09A8 2442D000 */  addiu $v0, %lo(D_01F2D000) # addiu $v0, $v0, -0x3000
+/* B27B44 800B09A4 2739D000 */  addiu $t9, %lo(_vr_LBVR_staticSegmentRomEnd) # addiu $t9, $t9, -0x3000
+/* B27B48 800B09A8 2442D000 */  addiu $v0, %lo(_vr_LBVR_staticSegmentRomStart) # addiu $v0, $v0, -0x3000
 /* B27B4C 800B09AC 03222823 */  subu  $a1, $t9, $v0
 /* B27B50 800B09B0 3C068014 */  lui   $a2, %hi(D_80142890) # $a2, 0x8014
 /* B27B54 800B09B4 24C62890 */  addiu $a2, %lo(D_80142890) # addiu $a2, $a2, 0x2890
@@ -3072,12 +3099,12 @@ glabel func_800AF218
 /* B27B98 800B09F8 AFA90010 */  sw    $t1, 0x10($sp)
 /* B27B9C 800B09FC 24E728D8 */  addiu $a3, %lo(D_801428D8) # addiu $a3, $a3, 0x28d8
 /* B27BA0 800B0A00 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27BA4 800B0A04 0C0006A8 */  jal   func_80001AA0
+/* B27BA4 800B0A04 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27BA8 800B0A08 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27BAC 800B0A0C 3C0301F7 */  lui   $v1, %hi(D_01F6D000) # $v1, 0x1f7
-/* B27BB0 800B0A10 3C0B01F7 */  lui   $t3, %hi(D_01F6D800) # $t3, 0x1f7
-/* B27BB4 800B0A14 256BD800 */  addiu $t3, %lo(D_01F6D800) # addiu $t3, $t3, -0x2800
-/* B27BB8 800B0A18 2463D000 */  addiu $v1, %lo(D_01F6D000) # addiu $v1, $v1, -0x3000
+/* B27BAC 800B0A0C 3C0301F7 */  lui   $v1, %hi(_vr_LBVR_pal_staticSegmentRomStart) # $v1, 0x1f7
+/* B27BB0 800B0A10 3C0B01F7 */  lui   $t3, %hi(_vr_LBVR_pal_staticSegmentRomEnd) # $t3, 0x1f7
+/* B27BB4 800B0A14 256BD800 */  addiu $t3, %lo(_vr_LBVR_pal_staticSegmentRomEnd) # addiu $t3, $t3, -0x2800
+/* B27BB8 800B0A18 2463D000 */  addiu $v1, %lo(_vr_LBVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x3000
 /* B27BBC 800B0A1C 01632823 */  subu  $a1, $t3, $v1
 /* B27BC0 800B0A20 3C068014 */  lui   $a2, %hi(D_801428E8) # $a2, 0x8014
 /* B27BC4 800B0A24 24C628E8 */  addiu $a2, %lo(D_801428E8) # addiu $a2, $a2, 0x28e8
@@ -3101,16 +3128,17 @@ glabel func_800AF218
 /* B27C08 800B0A68 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B27C0C 800B0A6C 24E72930 */  addiu $a3, %lo(D_80142930) # addiu $a3, $a3, 0x2930
 /* B27C10 800B0A70 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27C14 800B0A74 0C0006A8 */  jal   func_80001AA0
+/* B27C14 800B0A74 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27C18 800B0A78 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27C1C 800B0A7C 100000F0 */  b     .L800B0E40
 /* B27C20 800B0A80 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0A84
 /* B27C24 800B0A84 240C0002 */  li    $t4, 2
-/* B27C28 800B0A88 3C0201F7 */  lui   $v0, %hi(D_01F6E000) # $v0, 0x1f7
-/* B27C2C 800B0A8C 3C0D01FA */  lui   $t5, %hi(D_01F9E000) # $t5, 0x1fa
+/* B27C28 800B0A88 3C0201F7 */  lui   $v0, %hi(_vr_TTVR_staticSegmentRomStart) # $v0, 0x1f7
+/* B27C2C 800B0A8C 3C0D01FA */  lui   $t5, %hi(_vr_TTVR_staticSegmentRomEnd) # $t5, 0x1fa
 /* B27C30 800B0A90 A60C0140 */  sh    $t4, 0x140($s0)
-/* B27C34 800B0A94 25ADE000 */  addiu $t5, %lo(D_01F9E000) # addiu $t5, $t5, -0x2000
-/* B27C38 800B0A98 2442E000 */  addiu $v0, %lo(D_01F6E000) # addiu $v0, $v0, -0x2000
+/* B27C34 800B0A94 25ADE000 */  addiu $t5, %lo(_vr_TTVR_staticSegmentRomEnd) # addiu $t5, $t5, -0x2000
+/* B27C38 800B0A98 2442E000 */  addiu $v0, %lo(_vr_TTVR_staticSegmentRomStart) # addiu $v0, $v0, -0x2000
 /* B27C3C 800B0A9C 01A22823 */  subu  $a1, $t5, $v0
 /* B27C40 800B0AA0 3C068014 */  lui   $a2, %hi(D_80142940) # $a2, 0x8014
 /* B27C44 800B0AA4 24C62940 */  addiu $a2, %lo(D_80142940) # addiu $a2, $a2, 0x2940
@@ -3134,12 +3162,12 @@ glabel func_800AF218
 /* B27C88 800B0AE8 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B27C8C 800B0AEC 24E72988 */  addiu $a3, %lo(D_80142988) # addiu $a3, $a3, 0x2988
 /* B27C90 800B0AF0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27C94 800B0AF4 0C0006A8 */  jal   func_80001AA0
+/* B27C94 800B0AF4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27C98 800B0AF8 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27C9C 800B0AFC 3C0301FA */  lui   $v1, %hi(D_01F9E000) # $v1, 0x1fa
-/* B27CA0 800B0B00 3C0F01FA */  lui   $t7, %hi(D_01F9E600) # $t7, 0x1fa
-/* B27CA4 800B0B04 25EFE600 */  addiu $t7, %lo(D_01F9E600) # addiu $t7, $t7, -0x1a00
-/* B27CA8 800B0B08 2463E000 */  addiu $v1, %lo(D_01F9E000) # addiu $v1, $v1, -0x2000
+/* B27C9C 800B0AFC 3C0301FA */  lui   $v1, %hi(_vr_TTVR_pal_staticSegmentRomStart) # $v1, 0x1fa
+/* B27CA0 800B0B00 3C0F01FA */  lui   $t7, %hi(_vr_TTVR_pal_staticSegmentRomEnd) # $t7, 0x1fa
+/* B27CA4 800B0B04 25EFE600 */  addiu $t7, %lo(_vr_TTVR_pal_staticSegmentRomEnd) # addiu $t7, $t7, -0x1a00
+/* B27CA8 800B0B08 2463E000 */  addiu $v1, %lo(_vr_TTVR_pal_staticSegmentRomStart) # addiu $v1, $v1, -0x2000
 /* B27CAC 800B0B0C 01E32823 */  subu  $a1, $t7, $v1
 /* B27CB0 800B0B10 3C068014 */  lui   $a2, %hi(D_80142998) # $a2, 0x8014
 /* B27CB4 800B0B14 24C62998 */  addiu $a2, %lo(D_80142998) # addiu $a2, $a2, 0x2998
@@ -3163,16 +3191,17 @@ glabel func_800AF218
 /* B27CF8 800B0B58 AFB80010 */  sw    $t8, 0x10($sp)
 /* B27CFC 800B0B5C 24E729E0 */  addiu $a3, %lo(D_801429E0) # addiu $a3, $a3, 0x29e0
 /* B27D00 800B0B60 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27D04 800B0B64 0C0006A8 */  jal   func_80001AA0
+/* B27D04 800B0B64 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27D08 800B0B68 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27D0C 800B0B6C 100000B4 */  b     .L800B0E40
 /* B27D10 800B0B70 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0B74
 /* B27D14 800B0B74 24190002 */  li    $t9, 2
-/* B27D18 800B0B78 3C0201CF */  lui   $v0, 0x1cf
-/* B27D1C 800B0B7C 3C0901D2 */  lui   $t1, 0x1d2
+/* B27D18 800B0B78 3C0201CF */  lui   $v0, %hi(_vr_K4VR_staticSegmentRomStart) # $v0, 0x1cf
+/* B27D1C 800B0B7C 3C0901D2 */  lui   $t1, %hi(_vr_K4VR_staticSegmentRomEnd) # $t1, 0x1d2
 /* B27D20 800B0B80 A6190140 */  sh    $t9, 0x140($s0)
-/* B27D24 800B0B84 25290000 */  addiu $t1, $t1, 0
-/* B27D28 800B0B88 24420000 */  addiu $v0, $v0, 0
+/* B27D24 800B0B84 25290000 */  addiu $t1, %lo(_vr_K4VR_staticSegmentRomEnd) # addiu $t1, $t1, 0x600
+/* B27D28 800B0B88 24420000 */  addiu $v0, %lo(_vr_K4VR_staticSegmentRomStart) # addiu $v0, $v0, 0
 /* B27D2C 800B0B8C 01222823 */  subu  $a1, $t1, $v0
 /* B27D30 800B0B90 3C068014 */  lui   $a2, %hi(D_801429F0) # $a2, 0x8014
 /* B27D34 800B0B94 24C629F0 */  addiu $a2, %lo(D_801429F0) # addiu $a2, $a2, 0x29f0
@@ -3196,12 +3225,12 @@ glabel func_800AF218
 /* B27D78 800B0BD8 AFAB0010 */  sw    $t3, 0x10($sp)
 /* B27D7C 800B0BDC 24E72A38 */  addiu $a3, %lo(D_80142A38) # addiu $a3, $a3, 0x2a38
 /* B27D80 800B0BE0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27D84 800B0BE4 0C0006A8 */  jal   func_80001AA0
+/* B27D84 800B0BE4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27D88 800B0BE8 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27D8C 800B0BEC 3C0301D2 */  lui   $v1, 0x1d2
-/* B27D90 800B0BF0 3C0A01D2 */  lui   $t2, %hi(D_01D20600) # $t2, 0x1d2
-/* B27D94 800B0BF4 254A0600 */  addiu $t2, %lo(D_01D20600) # addiu $t2, $t2, 0x600
-/* B27D98 800B0BF8 24630000 */  addiu $v1, $v1, 0
+/* B27D8C 800B0BEC 3C0301D2 */  lui   $v1, %hi(_vr_K4VR_pal_staticSegmentRomStart) # $v1, 0x1d2
+/* B27D90 800B0BF0 3C0A01D2 */  lui   $t2, %hi(_vr_K4VR_pal_staticSegmentRomEnd) # $t2, 0x1d2
+/* B27D94 800B0BF4 254A0600 */  addiu $t2, %lo(_vr_K4VR_pal_staticSegmentRomEnd) # addiu $t2, $t2, 0x600
+/* B27D98 800B0BF8 24630000 */  addiu $v1, %lo(_vr_K4VR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0
 /* B27D9C 800B0BFC 01432823 */  subu  $a1, $t2, $v1
 /* B27DA0 800B0C00 3C068014 */  lui   $a2, %hi(D_80142A48) # $a2, 0x8014
 /* B27DA4 800B0C04 24C62A48 */  addiu $a2, %lo(D_80142A48) # addiu $a2, $a2, 0x2a48
@@ -3225,16 +3254,17 @@ glabel func_800AF218
 /* B27DE8 800B0C48 AFAC0010 */  sw    $t4, 0x10($sp)
 /* B27DEC 800B0C4C 24E72A90 */  addiu $a3, %lo(D_80142A90) # addiu $a3, $a3, 0x2a90
 /* B27DF0 800B0C50 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27DF4 800B0C54 0C0006A8 */  jal   func_80001AA0
+/* B27DF4 800B0C54 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27DF8 800B0C58 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27DFC 800B0C5C 10000078 */  b     .L800B0E40
 /* B27E00 800B0C60 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0C64
 /* B27E04 800B0C64 240D0002 */  li    $t5, 2
-/* B27E08 800B0C68 3C0201D2 */  lui   $v0, %hi(D_01D21000) # $v0, 0x1d2
-/* B27E0C 800B0C6C 3C0E01D5 */  lui   $t6, %hi(D_01D51000) # $t6, 0x1d5
+/* B27E08 800B0C68 3C0201D2 */  lui   $v0, %hi(_vr_K5VR_staticSegmentRomStart) # $v0, 0x1d2
+/* B27E0C 800B0C6C 3C0E01D5 */  lui   $t6, %hi(_vr_K5VR_staticSegmentRomEnd) # $t6, 0x1d5
 /* B27E10 800B0C70 A60D0140 */  sh    $t5, 0x140($s0)
-/* B27E14 800B0C74 25CE1000 */  addiu $t6, %lo(D_01D51000) # addiu $t6, $t6, 0x1000
-/* B27E18 800B0C78 24421000 */  addiu $v0, %lo(D_01D21000) # addiu $v0, $v0, 0x1000
+/* B27E14 800B0C74 25CE1000 */  addiu $t6, %lo(_vr_K5VR_staticSegmentRomEnd) # addiu $t6, $t6, 0x1000
+/* B27E18 800B0C78 24421000 */  addiu $v0, %lo(_vr_K5VR_staticSegmentRomStart) # addiu $v0, $v0, 0x1000
 /* B27E1C 800B0C7C 01C22823 */  subu  $a1, $t6, $v0
 /* B27E20 800B0C80 3C068014 */  lui   $a2, %hi(D_80142AA0) # $a2, 0x8014
 /* B27E24 800B0C84 24C62AA0 */  addiu $a2, %lo(D_80142AA0) # addiu $a2, $a2, 0x2aa0
@@ -3258,12 +3288,12 @@ glabel func_800AF218
 /* B27E68 800B0CC8 AFAF0010 */  sw    $t7, 0x10($sp)
 /* B27E6C 800B0CCC 24E72AE8 */  addiu $a3, %lo(D_80142AE8) # addiu $a3, $a3, 0x2ae8
 /* B27E70 800B0CD0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27E74 800B0CD4 0C0006A8 */  jal   func_80001AA0
+/* B27E74 800B0CD4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27E78 800B0CD8 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27E7C 800B0CDC 3C0301D5 */  lui   $v1, %hi(D_01D51000) # $v1, 0x1d5
-/* B27E80 800B0CE0 3C1801D5 */  lui   $t8, %hi(D_01D51600) # $t8, 0x1d5
-/* B27E84 800B0CE4 27181600 */  addiu $t8, %lo(D_01D51600) # addiu $t8, $t8, 0x1600
-/* B27E88 800B0CE8 24631000 */  addiu $v1, %lo(D_01D51000) # addiu $v1, $v1, 0x1000
+/* B27E7C 800B0CDC 3C0301D5 */  lui   $v1, %hi(_vr_K5VR_pal_staticSegmentRomStart) # $v1, 0x1d5
+/* B27E80 800B0CE0 3C1801D5 */  lui   $t8, %hi(_vr_K5VR_pal_staticSegmentRomEnd) # $t8, 0x1d5
+/* B27E84 800B0CE4 27181600 */  addiu $t8, %lo(_vr_K5VR_pal_staticSegmentRomEnd) # addiu $t8, $t8, 0x1600
+/* B27E88 800B0CE8 24631000 */  addiu $v1, %lo(_vr_K5VR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x1000
 /* B27E8C 800B0CEC 03032823 */  subu  $a1, $t8, $v1
 /* B27E90 800B0CF0 3C068014 */  lui   $a2, %hi(D_80142AF8) # $a2, 0x8014
 /* B27E94 800B0CF4 24C62AF8 */  addiu $a2, %lo(D_80142AF8) # addiu $a2, $a2, 0x2af8
@@ -3287,16 +3317,17 @@ glabel func_800AF218
 /* B27ED8 800B0D38 AFB90010 */  sw    $t9, 0x10($sp)
 /* B27EDC 800B0D3C 24E72B40 */  addiu $a3, %lo(D_80142B40) # addiu $a3, $a3, 0x2b40
 /* B27EE0 800B0D40 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27EE4 800B0D44 0C0006A8 */  jal   func_80001AA0
+/* B27EE4 800B0D44 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27EE8 800B0D48 8FA6002C */   lw    $a2, 0x2c($sp)
 /* B27EEC 800B0D4C 1000003C */  b     .L800B0E40
 /* B27EF0 800B0D50 8FBF0024 */   lw    $ra, 0x24($sp)
+glabel L800B0D54
 /* B27EF4 800B0D54 24090002 */  li    $t1, 2
-/* B27EF8 800B0D58 3C0201DF */  lui   $v0, %hi(D_01DF5000) # $v0, 0x1df
-/* B27EFC 800B0D5C 3C0B01E2 */  lui   $t3, %hi(D_01E25000) # $t3, 0x1e2
+/* B27EF8 800B0D58 3C0201DF */  lui   $v0, %hi(_vr_KR3VR_staticSegmentRomStart) # $v0, 0x1df
+/* B27EFC 800B0D5C 3C0B01E2 */  lui   $t3, %hi(_vr_KR3VR_staticSegmentRomEnd) # $t3, 0x1e2
 /* B27F00 800B0D60 A6090140 */  sh    $t1, 0x140($s0)
-/* B27F04 800B0D64 256B5000 */  addiu $t3, %lo(D_01E25000) # addiu $t3, $t3, 0x5000
-/* B27F08 800B0D68 24425000 */  addiu $v0, %lo(D_01DF5000) # addiu $v0, $v0, 0x5000
+/* B27F04 800B0D64 256B5000 */  addiu $t3, %lo(_vr_KR3VR_staticSegmentRomEnd) # addiu $t3, $t3, 0x5000
+/* B27F08 800B0D68 24425000 */  addiu $v0, %lo(_vr_KR3VR_staticSegmentRomStart) # addiu $v0, $v0, 0x5000
 /* B27F0C 800B0D6C 01622823 */  subu  $a1, $t3, $v0
 /* B27F10 800B0D70 3C068014 */  lui   $a2, %hi(D_80142B50) # $a2, 0x8014
 /* B27F14 800B0D74 24C62B50 */  addiu $a2, %lo(D_80142B50) # addiu $a2, $a2, 0x2b50
@@ -3320,12 +3351,12 @@ glabel func_800AF218
 /* B27F58 800B0DB8 AFAA0010 */  sw    $t2, 0x10($sp)
 /* B27F5C 800B0DBC 24E72B98 */  addiu $a3, %lo(D_80142B98) # addiu $a3, $a3, 0x2b98
 /* B27F60 800B0DC0 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27F64 800B0DC4 0C0006A8 */  jal   func_80001AA0
+/* B27F64 800B0DC4 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27F68 800B0DC8 8FA6002C */   lw    $a2, 0x2c($sp)
-/* B27F6C 800B0DCC 3C0301E2 */  lui   $v1, %hi(D_01E25000) # $v1, 0x1e2
-/* B27F70 800B0DD0 3C0C01E2 */  lui   $t4, %hi(D_01E25600) # $t4, 0x1e2
-/* B27F74 800B0DD4 258C5600 */  addiu $t4, %lo(D_01E25600) # addiu $t4, $t4, 0x5600
-/* B27F78 800B0DD8 24635000 */  addiu $v1, %lo(D_01E25000) # addiu $v1, $v1, 0x5000
+/* B27F6C 800B0DCC 3C0301E2 */  lui   $v1, %hi(_vr_KR3VR_pal_staticSegmentRomStart) # $v1, 0x1e2
+/* B27F70 800B0DD0 3C0C01E2 */  lui   $t4, %hi(_vr_KR3VR_pal_staticSegmentRomEnd) # $t4, 0x1e2
+/* B27F74 800B0DD4 258C5600 */  addiu $t4, %lo(_vr_KR3VR_pal_staticSegmentRomEnd) # addiu $t4, $t4, 0x5600
+/* B27F78 800B0DD8 24635000 */  addiu $v1, %lo(_vr_KR3VR_pal_staticSegmentRomStart) # addiu $v1, $v1, 0x5000
 /* B27F7C 800B0DDC 01832823 */  subu  $a1, $t4, $v1
 /* B27F80 800B0DE0 3C068014 */  lui   $a2, %hi(D_80142BA8) # $a2, 0x8014
 /* B27F84 800B0DE4 24C62BA8 */  addiu $a2, %lo(D_80142BA8) # addiu $a2, $a2, 0x2ba8
@@ -3349,8 +3380,9 @@ glabel func_800AF218
 /* B27FC8 800B0E28 AFAD0010 */  sw    $t5, 0x10($sp)
 /* B27FCC 800B0E2C 24E72BF0 */  addiu $a3, %lo(D_80142BF0) # addiu $a3, $a3, 0x2bf0
 /* B27FD0 800B0E30 8FA50030 */  lw    $a1, 0x30($sp)
-/* B27FD4 800B0E34 0C0006A8 */  jal   func_80001AA0
+/* B27FD4 800B0E34 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B27FD8 800B0E38 8FA6002C */   lw    $a2, 0x2c($sp)
+glabel L800B0E3C
 .L800B0E3C:
 /* B27FDC 800B0E3C 8FBF0024 */  lw    $ra, 0x24($sp)
 .L800B0E40:

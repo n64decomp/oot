@@ -7,110 +7,168 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80146690
-    .incbin "baserom.z64", 0xBBD830, 0x8
+    .asciz "this"
+    .balign 4
 
 glabel D_80146698
-    .incbin "baserom.z64", 0xBBD838, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_801466A4
-    .incbin "baserom.z64", 0xBBD844, 0x4
+    .asciz "c"
+    .balign 4
 
 glabel D_801466A8
-    .incbin "baserom.z64", 0xBBD848, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_801466B4
-    .incbin "baserom.z64", 0xBBD854, 0x8
+    .asciz "msgQ"
+    .balign 4
 
 glabel D_801466BC
-    .incbin "baserom.z64", 0xBBD85C, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_801466C8
-    .incbin "baserom.z64", 0xBBD868, 0x8
+    .asciz "this"
+    .balign 4
 
 glabel D_801466D0
-    .incbin "baserom.z64", 0xBBD870, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_801466DC
-    .incbin "baserom.z64", 0xBBD87C, 0x4
+    .asciz "c"
+    .balign 4
 
 glabel D_801466E0
-    .incbin "baserom.z64", 0xBBD880, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_801466EC
-    .incbin "baserom.z64", 0xBBD88C, 0x58
+    .asciz "\x1b[41;37mirqmgr_SendMesgForClient:\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA5\xAD\xA5\xE5\xA1\xBC\xA4\xAC\xA4\xA2\xA4\xD5\xA4\xEC\xA4\xC6\xA4\xA4\xA4\xDE\xA4\xB9 mq=%08x cnt=%d\n\x1b[m"
+    # EUC-JP: メッセージキューがあふれています | Message queue is overflowing
+    .balign 4
 
 glabel D_80146744
-    .incbin "baserom.z64", 0xBBD8E4, 0x54
+    .asciz "\x1b[41;37mirqmgr_JamMesgForClient:\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA5\xAD\xA5\xE5\xA1\xBC\xA4\xAC\xA4\xA2\xA4\xD5\xA4\xEC\xA4\xC6\xA4\xA4\xA4\xDE\xA4\xB9 mq=%08x cnt=%d\n\x1b[m"
+    # EUC-JP: メッセージキューがあふれています | Message queue is overflowing
+    .balign 4
 
 glabel D_80146798
-    .incbin "baserom.z64", 0xBBD938, 0x20
+    .asciz "irqmgr.c: PRENMI\xA4\xAB\xA4\xE9\x30\x2E\x35\xC9\xC3\xB7\xD0\xB2\xE1\n"
+    # EUC-JP: から0.5秒経過 | 0.5 seconds after
+    .balign 4
 
 glabel D_801467B8
-    .incbin "baserom.z64", 0xBBD958, 0x1C
+    .asciz "\xA5\xB9\xA5\xBF\xA5\xC3\xA5\xAF\xA4\xCF\xC2\xE7\xBE\xE6\xC9\xD7\xA4\xDF\xA4\xBF\xA4\xA4\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: スタックは大丈夫みたいです | The stack looks ok
+    .balign 4
 
 glabel D_801467D4
-    .incbin "baserom.z64", 0xBBD974, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_801467D8
-    .incbin "baserom.z64", 0xBBD978, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_801467E0
-    .incbin "baserom.z64", 0xBBD980, 0x30
+    .asciz "\xA5\xB9\xA5\xBF\xA5\xC3\xA5\xAF\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA1\xBC\xA5\xD5\xA5\xED\xA1\xBC\xA4\xB7\xA4\xBF\xA4\xAB\xB4\xED\xB8\xB1\xA4\xCA\xBE\xF5\xC2\xD6\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: スタックがオーバーフローしたか危険な状態です | Stack overflow or dangerous
+    .balign 4
 
 glabel D_80146810
-    .incbin "baserom.z64", 0xBBD9B0, 0x48
+    .asciz "\xC1\xE1\xA1\xB9\xA4\xCB\xA5\xB9\xA5\xBF\xA5\xC3\xA5\xAF\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xF2\xC1\xFD\xA4\xE4\xA4\xB9\xA4\xAB\xA1\xA2\xA5\xB9\xA5\xBF\xA5\xC3\xA5\xAF\xA4\xF2\xBE\xC3\xC8\xF1\xA4\xB7\xA4\xCA\xA4\xA4\xA4\xE8\xA4\xA6\xA4\xCB\xA4\xB7\xA4\xC6\xA4\xAF\xA4\xC0\xA4\xB5\xA4\xA4\n"
+    # EUC-JP: 早々にスタックサイズを増やすか、スタックを消費しないようにしてください | Increase stack size early or don't consume stack
+    .balign 4
 
 glabel D_80146858
-    .incbin "baserom.z64", 0xBBD9F8, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8014685C
-    .incbin "baserom.z64", 0xBBD9FC, 0x28
+    .asciz "osAfterPreNMI\xA4\xAC\x20\x25\x64\x20\xA4\xF2\xCA\xD6\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF\xA1\xAA\xA1\xA9\n"
+    # EUC-JP: が %d を返しました！？ | 'Returned d?!'
+    .balign 4
 
 glabel D_80146884
-    .incbin "baserom.z64", 0xBBDA24, 0x24
+    .asciz "\xA3\xC9\xA3\xD2\xA3\xD1\xA5\xDE\xA5\xCD\xA1\xBC\xA5\xB8\xA5\xE3\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: ＩＲＱマネージャスレッド実行開始 | Start IRQ manager thread execution
+    .balign 4
 
 glabel D_801468A8
-    .incbin "baserom.z64", 0xBBDA48, 0x10
+    .asciz "PRE_NMI_MSG\n"
+    .balign 4
 
 glabel D_801468B8
-    .incbin "baserom.z64", 0xBBDA58, 0x28
+    .asciz "\xA5\xB9\xA5\xB1\xA5\xB8\xA5\xE5\xA1\xBC\xA5\xE9\xA1\xA7PRE_NMI\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA4\xF2\xBC\xF5\xBF\xAE\n"
+    # EUC-JP: スケジューラ：PRE_NMIメッセージを受信 | Scheduler: Receives PRE_NMI message
+    .balign 4
 
 glabel D_801468E0
-    .incbin "baserom.z64", 0xBBDA80, 0x10
+    .asciz "PRENMI450_MSG\n"
+    .balign 4
 
 glabel D_801468F0
-    .incbin "baserom.z64", 0xBBDA90, 0x2C
+    .asciz "\xA5\xB9\xA5\xB1\xA5\xB8\xA5\xE5\xA1\xBC\xA5\xE9\xA1\xA7PRENMI450\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA4\xF2\xBC\xF5\xBF\xAE\n"
+    # EUC-JP: スケジューラ：PRENMI450メッセージを受信 | Scheduler: Receives PRENMI450 message
+    .balign 4
 
 glabel D_8014691C
-    .incbin "baserom.z64", 0xBBDABC, 0x10
+    .asciz "PRENMI480_MSG\n"
+    .balign 4
 
 glabel D_8014692C
-    .incbin "baserom.z64", 0xBBDACC, 0x2C
+    .asciz "\xA5\xB9\xA5\xB1\xA5\xB8\xA5\xE5\xA1\xBC\xA5\xE9\xA1\xA7PRENMI480\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA4\xF2\xBC\xF5\xBF\xAE\n"
+    # EUC-JP: スケジューラ：PRENMI480メッセージを受信 | Scheduler: Receives PRENMI480 message
+    .balign 4
 
 glabel D_80146958
-    .incbin "baserom.z64", 0xBBDAF8, 0x10
+    .asciz "PRENMI500_MSG\n"
+    .balign 4
 
 glabel D_80146968
-    .incbin "baserom.z64", 0xBBDB08, 0x2C
+    .asciz "\xA5\xB9\xA5\xB1\xA5\xB8\xA5\xE5\xA1\xBC\xA5\xE9\xA1\xA7PRENMI500\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA4\xF2\xBC\xF5\xBF\xAE\n"
+    # EUC-JP: スケジューラ：PRENMI500メッセージを受信 | Scheduler: Receives PRENMI500 message
+    .balign 4
 
 glabel D_80146994
-    .incbin "baserom.z64", 0xBBDB34, 0x38
+    .asciz "irqmgr.c:\xCD\xBD\xB4\xFC\xA4\xB7\xA4\xCA\xA4\xA4\xA5\xE1\xA5\xC3\xA5\xBB\xA1\xBC\xA5\xB8\xA4\xF2\xBC\xF5\xA4\xB1\xBC\xE8\xA4\xEA\xA4\xDE\xA4\xB7\xA4\xBF(%08x)\n"
+    # EUC-JP: 予期しないメッセージを受け取りました | Unexpected message received
+    .balign 4
 
 glabel D_801469CC
-    .incbin "baserom.z64", 0xBBDB6C, 0x24
+    .asciz "\xA3\xC9\xA3\xD2\xA3\xD1\xA5\xDE\xA5\xCD\xA1\xBC\xA5\xB8\xA5\xE3\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xBD\xAA\xCE\xBB\n"
+    # EUC-JP: ＩＲＱマネージャスレッド実行終了 | End of IRQ manager thread execution
+    .balign 4
 
 glabel D_801469F0
-    .incbin "baserom.z64", 0xBBDB90, 0x8
+    .asciz "this"
+    .balign 4
 
 glabel D_801469F8
-    .incbin "baserom.z64", 0xBBDB98, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel D_80146A04
-    .incbin "baserom.z64", 0xBBDBA4, 0x8
+    .asciz "stack"
+    .balign 4
 
 glabel D_80146A0C
-    .incbin "baserom.z64", 0xBBDBAC, 0xC
+    .asciz "../irqmgr.c"
+    .balign 4
 
 glabel jtbl_80146A18
-    .incbin "baserom.z64", 0xBBDBB8, 0x28
+    .word L800D389C
+    .word L800D393C
+    .word L800D393C
+    .word L800D38AC
+    .word L800D393C
+    .word L800D38D4
+    .word L800D38F8
+    .word L800D3918

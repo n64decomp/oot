@@ -1,6 +1,7 @@
 .rdata
 glabel D_8013AEC8
-    .incbin "baserom.z64", 0xBB2068, 0x24
+    .asciz "\ngame_info.mode=[%d] restart_flag"
+    .balign 4
 
 .text
 glabel Cutscene_HandleConditionalTriggers

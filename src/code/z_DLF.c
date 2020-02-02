@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <global.h>
+#include <vt.h>
 
 #ifdef NON_MATCHING
 // only missing a useless move instruction
@@ -26,14 +27,14 @@ void func_8002AF00(GameState* gameState)
             return;
         }
 
-        osSyncPrintf("\x1B[32m");
-        osSyncPrintf("OVL(a):Seg:%08x-%08x Ram:%08x-%08x Off:%08x %s\n",
+        osSyncPrintf(VT_FGCOL(GREEN));
+        osSyncPrintf("OVL(d):Seg:%08x-%08x Ram:%08x-%08x Off:%08x %s\n",
                      gameState->vramStart, gameState->vramEnd,
                      (s32)gameState->loadedRamAddr,
                      (s32)gameState->loadedRamAddr + (s32)gameState->vramEnd - (s32)gameState->vramStart,
                      (s32)gameState->vramStart - (s32)gameState->loadedRamAddr,
                       "");
-        osSyncPrintf("\x1B[m");
+        osSyncPrintf(VT_RST);
 
         if (gameState->unk_14 != NULL)
             gameState->unk_14 = (void*)((s32)gameState->unk_14 - (s32)(gameState->vramStart - (s32)gameState->loadedRamAddr));

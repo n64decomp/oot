@@ -11,38 +11,30 @@ endseg
 beginseg
     name "boot"
     include "build/src/boot/boot_main.o"
-    include "build/data/boot_main.data.o"
-    include "build/data/boot_main.bss.o"
     include "build/src/boot/idle.o"
     include "build/data/idle.data.o"
     include "build/data/idle.rodata.o"
     include "build/data/idle.bss.o"
     include "build/src/boot/boot_80000A10.o"
-    include "build/data/boot_80000A10.rodata.o"
     include "build/src/boot/z_std_dma.o"
-    include "build/data/z_std_dma.data.o"
-    include "build/data/z_std_dma.rodata.o"
-    include "build/data/z_std_dma.bss.o"
     include "build/asm/boot_80001B30.o"
     include "build/data/boot_80001B30.bss.o"
     include "build/src/boot/z_locale.o"
-    include "build/data/z_locale.data.o"
-    include "build/data/z_locale.rodata.o"
-    include "build/asm/libultra_assert.o"
-    include "build/data/libultra_assert.rodata.o"
-    include "build/asm/boot_80002080.o"
-    include "build/data/boot_80002080.data.o"
-    include "build/data/boot_80002080.rodata.o"
-    include "build/data/boot_80002080.bss.o"
+    include "build/src/boot/assert.o"
+    include "build/src/boot/is.o"
+    include "build/asm/boot_800023D0.o"
+    include "build/data/boot_800023D0.data.o"
+    include "build/data/boot_800023D0.bss.o"
     include "build/asm/boot_800025B0.o"
-    include "build/data/boot_800025B0.rodata.o"
-    include "build/asm/boot_800029F0.o"
-    include "build/data/boot_800029F0.rodata.o"
+    include "build/src/boot/stackcheck.o"
+    include "build/src/boot/boot_800029F0.o"
+    include "build/src/boot/snprintf.o"
     include "build/src/libultra_boot/libultra_os.o"
     include "build/src/libultra_boot/osStopThread.o"
     include "build/src/libultra_boot/os80003270.o"
     include "build/src/libultra_boot/osRecvMesg.o"
     include "build/asm/boot_800033C0.o"
+    include "build/data/boot_800033C0.data.o"
     include "build/asm/libm.o"
     include "build/asm/boot_800039D0.o"
     include "build/data/boot_800039D0.rodata.o"
@@ -59,12 +51,12 @@ beginseg
     include "build/asm/boot_80004CE0.o"
     include "build/asm/boot_80004D10.o"
     include "build/src/libultra_boot/osVirtualToPhysical.o"
-    include "build/asm/osViBlack.o"
+    include "build/src/libultra_code/osViBlack.o"
     include "build/asm/boot_80004ED0.o"
     include "build/src/libultra_boot/osGetThreadId.o"
     include "build/asm/osSetIntMask.o"
     include "build/data/osSetIntMask.rodata.o"
-    include "build/asm/osViSetMode.o"
+    include "build/src/libultra_code/osViSetMode.o"
     include "build/asm/__osProbeTLB.o"
     include "build/asm/boot_80005100.o"
     include "build/asm/boot_80005220.o"
@@ -73,18 +65,18 @@ beginseg
     include "build/data/boot_800052E0.data.o"
     include "build/data/boot_800052E0.rodata.o"
     include "build/asm/boot_80005FC0.o"
-    include "build/asm/boot_80006010.o"
+    include "build/asm/osEPiStartDma.o"
     include "build/asm/boot_800060B0.o"
     include "build/asm/boot_800060F0.o"
     include "build/asm/osInvalICache.o"
     include "build/src/libultra_boot/osCreateMesgQueue.o"
     include "build/asm/osInvalDCache.o"
     include "build/asm/boot_800062B0.o"
-    include "build/asm/osJamMesg.o"
+    include "build/src/libultra_code/osJamMesg.o"
     include "build/src/libultra_boot/osSetThreadPri.o"
     include "build/src/libultra_boot/osGetThreadPri.o"
     include "build/asm/boot_80006530.o"
-    include "build/asm/osViSwapBuffer.o"
+    include "build/src/libultra_code/osViSwapBuffer.o"
     include "build/asm/boot_800066E0.o"
     include "build/asm/bcmp.o"
     include "build/src/libultra_boot/osGetTime.o"
@@ -102,19 +94,18 @@ beginseg
     include "build/data/boot_80007310.data.o"
     include "build/asm/boot_80007430.o"
     include "build/asm/boot_80007730.o"
-    include "build/asm/boot_80007760.o"
-    include "build/asm/osViSetSpecialFeatures.o"
-    include "build/asm/boot_80007910.o"
-    include "build/data/boot_80007910.bss.o"
+    include "build/asm/osEPiReadIo.o"
+    include "build/src/libultra_code/osViSetSpecialFeatures.o"
+    include "build/asm/osCartRomInit.o"
+    include "build/data/osCartRomInit.bss.o"
     include "build/asm/__osSetFpcCsr.o"
     include "build/asm/__osGetFpcCsr.o"
-    include "build/asm/boot_80007A90.o"
+    include "build/asm/osEPiWriteIo.o"
     include "build/asm/osMapTLBRdb.o"
     include "build/asm/osYieldThread.o"
     include "build/asm/__osGetCause.o"
     include "build/asm/boot_80007BA0.o"
-    include "build/asm/_Litob.o"
-    include "build/data/_Litob.data.o"
+    include "build/src/libultra_code/_Litob.o"
     include "build/asm/boot_80007FA0.o"
     include "build/asm/boot_80008130.o"
     include "build/data/boot_80008130.rodata.o"
@@ -128,7 +119,8 @@ beginseg
     include "build/asm/boot_80009270.o"
     include "build/asm/boot_800092E0.o"
     include "build/asm/boot_80009310.o"
-    include "build/data/boot_80009320.text.o"
+    include "build/data/boot_rodata_80012340.o"
+    include "build/data/rsp_boot.text.o"
     address 0x80000460
 endseg
 
@@ -162,28 +154,28 @@ beginseg
     name "icon_item_static"
     romalign 0x1000
     //include "build/baserom/icon_item_static.o"
-    include "build/assets/textures/icon_item_static.o"
+    include "build/assets/textures/icon_item_static/icon_item_static.o"
 endseg
 
 beginseg
     name "icon_item_24_static"
     romalign 0x1000
     //include "build/baserom/icon_item_24_static.o"
-    include "build/assets/textures/icon_item_24_static.o"
+    include "build/assets/textures/icon_item_24_static/icon_item_24_static.o"
 endseg
 
 beginseg
     name "icon_item_field_static"
     romalign 0x1000
     //include "build/baserom/icon_item_field_static.o"
-    include "build/assets/textures/icon_item_field_static.o"
+    include "build/assets/textures/icon_item_field_static/icon_item_field_static.o"
 endseg
 
 beginseg
     name "icon_item_dungeon_static"
     romalign 0x1000
     //include "build/baserom/icon_item_dungeon_static.o"
-    include "build/assets/textures/icon_item_dungeon_static.o"
+    include "build/assets/textures/icon_item_dungeon_static/icon_item_dungeon_static.o"
 endseg
 
 beginseg
@@ -196,7 +188,7 @@ beginseg
     name "icon_item_nes_static"
     romalign 0x1000
     include "build/baserom/icon_item_nes_static.o"
-    //include "build/assets/textures/icon_item_nes_static.o"
+    //include "build/assets/textures/icon_item_nes_static/icon_item_nes_static.o"
 endseg
 
 beginseg
@@ -302,7 +294,7 @@ beginseg
     include "build/src/code/z_eff_shield_particle.o"
     include "build/data/z_eff_shield_particle.data.o"
     include "build/data/z_eff_shield_partile.rodata.o"
-    include "build/asm/z_eff_spark.o"
+    include "build/src/code/z_eff_spark.o"
     include "build/data/z_eff_spark.rodata.o"
     include "build/src/code/z_eff_ss_dead.o"
     include "build/data/z_eff_ss_dead.rodata.o"
@@ -313,7 +305,7 @@ beginseg
     include "build/src/code/z_effect_soft_sprite.o"
     include "build/data/z_effect_soft_sprite.data.o"
     include "build/data/z_effect_soft_sprite.rodata.o"
-    include "build/asm/z_effect_soft_sprite_old_init.o"
+    include "build/src/code/z_effect_soft_sprite_old_init.o"
     include "build/data/z_effect_soft_sprite_old_init.rodata.o"
     include "build/src/code/flg_set.o"
     include "build/data/flg_set.data.o"
@@ -327,6 +319,8 @@ beginseg
     include "build/data/z_bgcheck.bss.o"
     include "build/src/code/code_800430A0.o"
     include "build/data/code_800430A0.rodata.o"
+    include "build/src/code/code_80043480.o"
+    include "build/data/code_80043480.rodata.o"
     include "build/src/code/z_camera.o"
     include "build/data/z_camera.data.o"
     include "build/data/z_camera.bss.o"
@@ -389,14 +383,14 @@ beginseg
     include "build/src/code/code_8007BF10.o"
     include "build/src/code/code_8007BF90.o"
     include "build/data/code_8007BF90.rodata.o"
-    include "build/asm/z_onepointdemo.o"
+    include "build/src/code/z_onepointdemo.o"
     include "build/data/z_onepointdemo.data.o"
     include "build/data/z_onepointdemo.rodata.o"
-    include "build/asm/z_map_exp.o"
+    include "build/src/code/z_map_exp.o"
     include "build/data/z_map_exp.data.o"
     include "build/data/z_map_exp.rodata.o"
     include "build/data/z_map_exp.bss.o"
-    include "build/asm/z_parameter.o"
+    include "build/src/code/z_parameter.o"
     include "build/data/z_parameter.data.o"
     include "build/data/z_parameter.rodata.o"
     include "build/data/z_parameter.bss.o"
@@ -429,14 +423,14 @@ beginseg
     include "build/asm/z_skin.o"
     include "build/data/z_skin.rodata.o"
     include "build/asm/z_skin_awb.o"
-    include "build/data/z_skin_awb.data.o"
     include "build/data/z_skin_awb.rodata.o"
+    include "build/asm/z_skin_matrix.o"
+    include "build/data/z_skin_matrix.data.o"
+    include "build/data/z_skin_matrix.rodata.o"
     include "build/asm/z_sram.o"
     include "build/data/z_sram.data.o"
     include "build/data/z_sram.rodata.o"
     include "build/src/code/code_800A9D40.o"
-    include "build/data/code_800A9D40.data.o"
-    include "build/data/code_800A9D40.rodata.o"
     include "build/src/code/code_800A9F30.o"
     include "build/data/code_800A9F30.rodata.o"
     include "build/data/code_800A9F30.bss.o"
@@ -592,12 +586,8 @@ beginseg
     include "build/asm/code_800F9280.o"
     include "build/data/code_800F9280.data.o"
     include "build/data/code_800F9280.rodata.o"
-    include "build/asm/code_800FAF60.o"
-    include "build/data/code_800FAF60.data.o"
-    include "build/data/code_800FAF60.rodata.o"
-    include "build/data/code_800FAF60.bss.o"
-    include "build/asm/code_800FBCE0.o"
-    include "build/data/code_800FBCE0.rodata.o"
+    include "build/src/code/gfxprint.o"
+    include "build/src/code/code_800FBCE0.o"
     include "build/asm/loadfragment2.o"
     include "build/data/loadfragment2.rodata.o"
     include "build/asm/mtxuty-cvt.o"
@@ -613,6 +603,10 @@ beginseg
     include "build/data/code_800FCE80.data.o"
     include "build/data/code_800FCE80.rodata.o"
     include "build/data/code_800FCE80.bss.o"
+    include "build/asm/code_800FD4F0.o"
+    include "build/data/code_800FD4F0.data.o"
+    include "build/data/code_800FD4F0.rodata.o"
+    include "build/data/code_800FD4F0.bss.o"
     include "build/asm/code_800FD970.o"
     include "build/data/code_800FD970.data.o"
     include "build/data/code_800FD970.bss.o"
@@ -632,8 +626,7 @@ beginseg
     include "build/data/code_80100780.data.o"
     include "build/data/code_80100780.bss.o"
     include "build/asm/code_80100EF0.o"
-    include "build/asm/guPerspective.o"
-    include "build/data/guPerspective.rodata.o"
+    include "build/src/libultra_code/guPerspectiveF.o"
     include "build/asm/code_80101360.o"
     include "build/data/code_80101360.rodata.o"
     include "build/asm/code_801013F0.o"
@@ -649,7 +642,7 @@ beginseg
     include "build/data/code_80102420.data.o"
     include "build/asm/code_80102FA0.o"
     include "build/asm/code_80103010.o"
-    include "build/asm/sqrtf.o"
+    include "build/src/libultra_code/sqrtf.o"
     include "build/asm/code_801031F0.o"
     include "build/src/libultra_code/code_80103B30.o"
     include "build/asm/code_80103B60.o"
@@ -674,7 +667,7 @@ beginseg
     include "build/asm/code_80104D60.o"
     include "build/asm/code_80104F40.o"
     include "build/asm/code_80105250.o"
-    include "build/asm/osAiGetLength.o"
+    include "build/src/libultra_code/osAiGetLength.o"
     include "build/asm/code_80105C20.o"
     include "build/asm/code_80105CF0.o"
     include "build/data/code_80105CF0.data.o"
@@ -706,6 +699,14 @@ beginseg
 endseg
 
 beginseg
+    name "buffers"
+    include "build/src/buffers/zbuffer.o"
+    include "build/src/buffers/taskbuffers.o"
+    include "build/src/buffers/framebuffers.o"
+    include "build/src/buffers/heaps.o"
+endseg
+
+beginseg
     name "ovl_title"
     //include "build/baserom/ovl_title.o"
     include "build/asm/overlays/gamestates/ovl_title/z_title.o"
@@ -726,2425 +727,3692 @@ endseg
 
 beginseg
     name "ovl_file_choose"
-    increment 0x20
-    include "build/baserom/ovl_file_choose.o"
+    include "build/asm/overlays/gamestates/ovl_file_choose/z_file_choose.o"
 endseg
 
 beginseg
     name "ovl_kaleido_scope"
-    increment 0x70
-    include "build/baserom/ovl_kaleido_scope.o"
+    include "build/asm/overlays/gamestates/ovl_kaleido_scope/z_kaleido_scope.o"
 endseg
 
 beginseg
     name "ovl_player_actor"
-    increment 0xD0
-    include "build/baserom/ovl_player_actor.o"
+    include "build/src/overlays/actors/ovl_player_actor/z_player.o"
+    include "build/data/overlays/actors/z_player.data.o"
+    include "build/data/overlays/actors/z_player.rodata.o"
+    include "build/data/overlays/actors/z_player.bss.o"
+    include "build/data/overlays/actors/z_player.reloc.o"
 endseg
 
 beginseg
     name "ovl_map_mark_data"
-    include "build/baserom/ovl_map_mark_data.o"
+    include "build/asm/overlays/data/ovl_map_mark_data/z_map_mark_data.o"
 endseg
 
 beginseg
     name "ovl_En_Test"
-    include "build/baserom/ovl_En_Test.o"
+    include "build/src/overlays/actors/ovl_En_Test/z_en_test.o"
+    include "build/data/overlays/actors/z_en_test.data.o"
+    include "build/data/overlays/actors/z_en_test.rodata.o"
+    include "build/data/overlays/actors/z_en_test.reloc.o"
 endseg
 
 beginseg
     name "ovl_Arms_Hook"
-    include "build/baserom/ovl_Arms_Hook.o"
+    include "build/src/overlays/actors/ovl_Arms_Hook/z_arms_hook.o"
+    include "build/data/overlays/actors/z_arms_hook.data.o"
+    include "build/data/overlays/actors/z_arms_hook.rodata.o"
+    include "build/data/overlays/actors/z_arms_hook.reloc.o"
 endseg
 
 beginseg
     name "ovl_Arrow_Fire"
-    include "build/baserom/ovl_Arrow_Fire.o"
+    include "build/src/overlays/actors/ovl_Arrow_Fire/z_arrow_fire.o"
+    include "build/data/overlays/actors/z_arrow_fire.data.o"
+    include "build/data/overlays/actors/z_arrow_fire.rodata.o"
+    include "build/data/overlays/actors/z_arrow_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Arrow_Ice"
-    include "build/baserom/ovl_Arrow_Ice.o"
+    include "build/src/overlays/actors/ovl_Arrow_Ice/z_arrow_ice.o"
+    include "build/data/overlays/actors/z_arrow_ice.data.o"
+    include "build/data/overlays/actors/z_arrow_ice.rodata.o"
+    include "build/data/overlays/actors/z_arrow_ice.reloc.o"
 endseg
 
 beginseg
     name "ovl_Arrow_Light"
-    include "build/baserom/ovl_Arrow_Light.o"
+    include "build/src/overlays/actors/ovl_Arrow_Light/z_arrow_light.o"
+    include "build/data/overlays/actors/z_arrow_light.data.o"
+    include "build/data/overlays/actors/z_arrow_light.rodata.o"
+    include "build/data/overlays/actors/z_arrow_light.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Bdan_Objects"
-    include "build/baserom/ovl_Bg_Bdan_Objects.o"
+    include "build/src/overlays/actors/ovl_Bg_Bdan_Objects/z_bg_bdan_objects.o"
+    include "build/data/overlays/actors/z_bg_bdan_objects.data.o"
+    include "build/data/overlays/actors/z_bg_bdan_objects.rodata.o"
+    include "build/data/overlays/actors/z_bg_bdan_objects.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Bdan_Switch"
-    include "build/baserom/ovl_Bg_Bdan_Switch.o"
+    include "build/src/overlays/actors/ovl_Bg_Bdan_Switch/z_bg_bdan_switch.o"
+    include "build/data/overlays/actors/z_bg_bdan_switch.data.o"
+    include "build/data/overlays/actors/z_bg_bdan_switch.rodata.o"
+    include "build/data/overlays/actors/z_bg_bdan_switch.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Bom_Guard"
-    include "build/asm/overlays/actors/ovl_Bg_Bom_Guard/z_bg_bom_guard.o"
+    include "build/src/overlays/actors/ovl_Bg_Bom_Guard/z_bg_bom_guard.o"
+    include "build/data/overlays/actors/z_bg_bom_guard.data.o"
+    include "build/data/overlays/actors/z_bg_bom_guard.rodata.o"
+    include "build/data/overlays/actors/z_bg_bom_guard.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Bombwall"
-    include "build/baserom/ovl_Bg_Bombwall.o"
+    include "build/src/overlays/actors/ovl_Bg_Bombwall/z_bg_bombwall.o"
+    include "build/data/overlays/actors/z_bg_bombwall.data.o"
+    include "build/data/overlays/actors/z_bg_bombwall.rodata.o"
+    include "build/data/overlays/actors/z_bg_bombwall.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Bowl_Wall"
-    include "build/baserom/ovl_Bg_Bowl_Wall.o"
+    include "build/src/overlays/actors/ovl_Bg_Bowl_Wall/z_bg_bowl_wall.o"
+    include "build/data/overlays/actors/z_bg_bowl_wall.data.o"
+    include "build/data/overlays/actors/z_bg_bowl_wall.rodata.o"
+    include "build/data/overlays/actors/z_bg_bowl_wall.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Breakwall"
-    include "build/baserom/ovl_Bg_Breakwall.o"
+    include "build/src/overlays/actors/ovl_Bg_Breakwall/z_bg_breakwall.o"
+    include "build/data/overlays/actors/z_bg_breakwall.data.o"
+    include "build/data/overlays/actors/z_bg_breakwall.rodata.o"
+    include "build/data/overlays/actors/z_bg_breakwall.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ddan_Jd"
-    include "build/baserom/ovl_Bg_Ddan_Jd.o"
+    include "build/src/overlays/actors/ovl_Bg_Ddan_Jd/z_bg_ddan_jd.o"
+    include "build/data/overlays/actors/z_bg_ddan_jd.data.o"
+    include "build/data/overlays/actors/z_bg_ddan_jd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ddan_Kd"
-    include "build/baserom/ovl_Bg_Ddan_Kd.o"
+    include "build/src/overlays/actors/ovl_Bg_Ddan_Kd/z_bg_ddan_kd.o"
+    include "build/data/overlays/actors/z_bg_ddan_kd.data.o"
+    include "build/data/overlays/actors/z_bg_ddan_kd.rodata.o"
+    include "build/data/overlays/actors/z_bg_ddan_kd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Dodoago"
-    increment 0x70
-    include "build/baserom/ovl_Bg_Dodoago.o"
+    include "build/src/overlays/actors/ovl_Bg_Dodoago/z_bg_dodoago.o"
+    include "build/data/overlays/actors/z_bg_dodoago.data.o"
+    include "build/data/overlays/actors/z_bg_dodoago.rodata.o"
+    include "build/data/overlays/actors/z_bg_dodoago.bss.o"
+    include "build/data/overlays/actors/z_bg_dodoago.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Dy_Yoseizo"
-    include "build/baserom/ovl_Bg_Dy_Yoseizo.o"
+    include "build/src/overlays/actors/ovl_Bg_Dy_Yoseizo/z_bg_dy_yoseizo.o"
+    include "build/data/overlays/actors/z_bg_dy_yoseizo.data.o"
+    include "build/data/overlays/actors/z_bg_dy_yoseizo.rodata.o"
+    include "build/data/overlays/actors/z_bg_dy_yoseizo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ganon_Otyuka"
-    include "build/baserom/ovl_Bg_Ganon_Otyuka.o"
+    include "build/src/overlays/actors/ovl_Bg_Ganon_Otyuka/z_bg_ganon_otyuka.o"
+    include "build/data/overlays/actors/z_bg_ganon_otyuka.data.o"
+    include "build/data/overlays/actors/z_bg_ganon_otyuka.rodata.o"
+    include "build/data/overlays/actors/z_bg_ganon_otyuka.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gate_Shutter"
-    include "build/baserom/ovl_Bg_Gate_Shutter.o"
+    include "build/src/overlays/actors/ovl_Bg_Gate_Shutter/z_bg_gate_shutter.o"
+    include "build/data/overlays/actors/z_bg_gate_shutter.data.o"
+    include "build/data/overlays/actors/z_bg_gate_shutter.rodata.o"
+    include "build/data/overlays/actors/z_bg_gate_shutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gjyo_Bridge"
-    //include "build/baserom/ovl_Bg_Gjyo_Bridge.o"
-    include "build/asm/overlays/actors/ovl_Bg_Gjyo_Bridge/z_bg_gjyo_bridge.o"
+    include "build/src/overlays/actors/ovl_Bg_Gjyo_Bridge/z_bg_gjyo_bridge.o"
+    include "build/data/overlays/actors/z_bg_gjyo_bridge.data.o"
+    include "build/data/overlays/actors/z_bg_gjyo_bridge.rodata.o"
+    include "build/data/overlays/actors/z_bg_gjyo_bridge.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gnd_Darkmeiro"
-    include "build/baserom/ovl_Bg_Gnd_Darkmeiro.o"
+    include "build/src/overlays/actors/ovl_Bg_Gnd_Darkmeiro/z_bg_gnd_darkmeiro.o"
+    include "build/data/overlays/actors/z_bg_gnd_darkmeiro.data.o"
+    include "build/data/overlays/actors/z_bg_gnd_darkmeiro.rodata.o"
+    include "build/data/overlays/actors/z_bg_gnd_darkmeiro.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gnd_Firemeiro"
-    include "build/baserom/ovl_Bg_Gnd_Firemeiro.o"
+    include "build/src/overlays/actors/ovl_Bg_Gnd_Firemeiro/z_bg_gnd_firemeiro.o"
+    include "build/data/overlays/actors/z_bg_gnd_firemeiro.data.o"
+    include "build/data/overlays/actors/z_bg_gnd_firemeiro.rodata.o"
+    include "build/data/overlays/actors/z_bg_gnd_firemeiro.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gnd_Iceblock"
-    include "build/baserom/ovl_Bg_Gnd_Iceblock.o"
-    increment 0x10
+    include "build/src/overlays/actors/ovl_Bg_Gnd_Iceblock/z_bg_gnd_iceblock.o"
+    include "build/data/overlays/actors/z_bg_gnd_iceblock.data.o"
+    include "build/data/overlays/actors/z_bg_gnd_iceblock.rodata.o"
+    include "build/data/overlays/actors/z_bg_gnd_iceblock.bss.o"
+    include "build/data/overlays/actors/z_bg_gnd_iceblock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gnd_Nisekabe"
-    //increment 0x10 // rodata???
     include "build/src/overlays/actors/ovl_Bg_Gnd_Nisekabe/z_bg_gnd_nisekabe.o"
     include "build/src/overlays/actors/ovl_Bg_Gnd_Nisekabe/z_bg_gnd_nisekabe_reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Gnd_Soulmeiro"
-    include "build/baserom/ovl_Bg_Gnd_Soulmeiro.o"
+    include "build/src/overlays/actors/ovl_Bg_Gnd_Soulmeiro/z_bg_gnd_soulmeiro.o"
+    include "build/data/overlays/actors/z_bg_gnd_soulmeiro.data.o"
+    include "build/data/overlays/actors/z_bg_gnd_soulmeiro.rodata.o"
+    include "build/data/overlays/actors/z_bg_gnd_soulmeiro.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka"
-    include "build/baserom/ovl_Bg_Haka.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka/z_bg_haka.o"
+    include "build/data/overlays/actors/z_bg_haka.data.o"
+    include "build/data/overlays/actors/z_bg_haka.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Gate"
-    increment 0x10
-    include "build/baserom/ovl_Bg_Haka_Gate.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Gate/z_bg_haka_gate.o"
+    include "build/data/overlays/actors/z_bg_haka_gate.data.o"
+    include "build/data/overlays/actors/z_bg_haka_gate.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_gate.bss.o"
+    include "build/data/overlays/actors/z_bg_haka_gate.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Huta"
-    include "build/baserom/ovl_Bg_Haka_Huta.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Huta/z_bg_haka_huta.o"
+    include "build/data/overlays/actors/z_bg_haka_huta.data.o"
+    include "build/data/overlays/actors/z_bg_haka_huta.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_huta.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Megane"
-    include "build/baserom/ovl_Bg_Haka_Megane.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Megane/z_bg_haka_megane.o"
+    include "build/data/overlays/actors/z_bg_haka_megane.data.o"
+    include "build/data/overlays/actors/z_bg_haka_megane.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_MeganeBG"
-    //include "build/baserom/ovl_Bg_Haka_MeganeBG.o"
-    include "build/asm/overlays/actors/ovl_Bg_Haka_MeganeBG/z_bg_haka_meganebg.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_MeganeBG/z_bg_haka_meganebg.o"
+    include "build/data/overlays/actors/z_bg_haka_meganebg.data.o"
+    include "build/data/overlays/actors/z_bg_haka_meganebg.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_meganebg.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Sgami"
-    include "build/baserom/ovl_Bg_Haka_Sgami.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Sgami/z_bg_haka_sgami.o"
+    include "build/data/overlays/actors/z_bg_haka_sgami.data.o"
+    include "build/data/overlays/actors/z_bg_haka_sgami.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_sgami.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Ship"
-    include "build/baserom/ovl_Bg_Haka_Ship.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Ship/z_bg_haka_ship.o"
+    include "build/data/overlays/actors/z_bg_haka_ship.data.o"
+    include "build/data/overlays/actors/z_bg_haka_ship.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_ship.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Trap"
-    include "build/baserom/ovl_Bg_Haka_Trap.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Trap/z_bg_haka_trap.o"
+    include "build/data/overlays/actors/z_bg_haka_trap.data.o"
+    include "build/data/overlays/actors/z_bg_haka_trap.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_trap.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Tubo"
-    include "build/baserom/ovl_Bg_Haka_Tubo.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Tubo/z_bg_haka_tubo.o"
+    include "build/data/overlays/actors/z_bg_haka_tubo.data.o"
+    include "build/data/overlays/actors/z_bg_haka_tubo.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_tubo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Water"
-    include "build/baserom/ovl_Bg_Haka_Water.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Water/z_bg_haka_water.o"
+    include "build/data/overlays/actors/z_bg_haka_water.data.o"
+    include "build/data/overlays/actors/z_bg_haka_water.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_water.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Haka_Zou"
-    include "build/baserom/ovl_Bg_Haka_Zou.o"
+    include "build/src/overlays/actors/ovl_Bg_Haka_Zou/z_bg_haka_zou.o"
+    include "build/data/overlays/actors/z_bg_haka_zou.data.o"
+    include "build/data/overlays/actors/z_bg_haka_zou.rodata.o"
+    include "build/data/overlays/actors/z_bg_haka_zou.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Heavy_Block"
-    include "build/baserom/ovl_Bg_Heavy_Block.o"
+    include "build/src/overlays/actors/ovl_Bg_Heavy_Block/z_bg_heavy_block.o"
+    include "build/data/overlays/actors/z_bg_heavy_block.data.o"
+    include "build/data/overlays/actors/z_bg_heavy_block.rodata.o"
+    include "build/data/overlays/actors/z_bg_heavy_block.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Curtain"
-    include "build/baserom/ovl_Bg_Hidan_Curtain.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Curtain/z_bg_hidan_curtain.o"
+    include "build/data/overlays/actors/z_bg_hidan_curtain.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_curtain.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_curtain.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Dalm"
-    include "build/baserom/ovl_Bg_Hidan_Dalm.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Dalm/z_bg_hidan_dalm.o"
+    include "build/data/overlays/actors/z_bg_hidan_dalm.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_dalm.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Firewall"
-    include "build/baserom/ovl_Bg_Hidan_Firewall.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Firewall/z_bg_hidan_firewall.o"
+    include "build/data/overlays/actors/z_bg_hidan_firewall.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_firewall.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_firewall.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Fslift"
-    include "build/baserom/ovl_Bg_Hidan_Fslift.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Fslift/z_bg_hidan_fslift.o"
+    include "build/data/overlays/actors/z_bg_hidan_fslift.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_fslift.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_fslift.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Fwbig"
-    include "build/baserom/ovl_Bg_Hidan_Fwbig.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Fwbig/z_bg_hidan_fwbig.o"
+    include "build/data/overlays/actors/z_bg_hidan_fwbig.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_fwbig.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_fwbig.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Hamstep"
-    include "build/baserom/ovl_Bg_Hidan_Hamstep.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Hamstep/z_bg_hidan_hamstep.o"
+    include "build/data/overlays/actors/z_bg_hidan_hamstep.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_hamstep.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_hamstep.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Hrock"
-    include "build/baserom/ovl_Bg_Hidan_Hrock.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Hrock/z_bg_hidan_hrock.o"
+    include "build/data/overlays/actors/z_bg_hidan_hrock.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_hrock.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_hrock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Kousi"
-    include "build/baserom/ovl_Bg_Hidan_Kousi.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Kousi/z_bg_hidan_kousi.o"
+    include "build/data/overlays/actors/z_bg_hidan_kousi.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_kousi.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_kousi.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Kowarerukabe"
-    include "build/baserom/ovl_Bg_Hidan_Kowarerukabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Kowarerukabe/z_bg_hidan_kowarerukabe.o"
+    include "build/data/overlays/actors/z_bg_hidan_kowarerukabe.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_kowarerukabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_kowarerukabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Rock"
-    include "build/baserom/ovl_Bg_Hidan_Rock.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Rock/z_bg_hidan_rock.o"
+    include "build/data/overlays/actors/z_bg_hidan_rock.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_rock.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_rock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Rsekizou"
-    include "build/baserom/ovl_Bg_Hidan_Rsekizou.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Rsekizou/z_bg_hidan_rsekizou.o"
+    include "build/data/overlays/actors/z_bg_hidan_rsekizou.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_rsekizou.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_rsekizou.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Sekizou"
-    include "build/baserom/ovl_Bg_Hidan_Sekizou.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Sekizou/z_bg_hidan_sekizou.o"
+    include "build/data/overlays/actors/z_bg_hidan_sekizou.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_sekizou.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_sekizou.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Sima"
-    include "build/baserom/ovl_Bg_Hidan_Sima.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Sima/z_bg_hidan_sima.o"
+    include "build/data/overlays/actors/z_bg_hidan_sima.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_sima.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_sima.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Hidan_Syoku"
-    include "build/baserom/ovl_Bg_Hidan_Syoku.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Syoku/z_bg_hidan_syoku.o"
+    include "build/data/overlays/actors/z_bg_hidan_syoku.data.o"
+    include "build/data/overlays/actors/z_bg_hidan_syoku.rodata.o"
+    include "build/data/overlays/actors/z_bg_hidan_syoku.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ice_Objects"
-    include "build/baserom/ovl_Bg_Ice_Objects.o"
+    include "build/src/overlays/actors/ovl_Bg_Ice_Objects/z_bg_ice_objects.o"
+    include "build/data/overlays/actors/z_bg_ice_objects.data.o"
+    include "build/data/overlays/actors/z_bg_ice_objects.rodata.o"
+    include "build/data/overlays/actors/z_bg_ice_objects.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ice_Shelter"
-    include "build/baserom/ovl_Bg_Ice_Shelter.o"
+    include "build/src/overlays/actors/ovl_Bg_Ice_Shelter/z_bg_ice_shelter.o"
+    include "build/data/overlays/actors/z_bg_ice_shelter.data.o"
+    include "build/data/overlays/actors/z_bg_ice_shelter.rodata.o"
+    include "build/data/overlays/actors/z_bg_ice_shelter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ice_Shutter"
-    include "build/baserom/ovl_Bg_Ice_Shutter.o"
+    include "build/src/overlays/actors/ovl_Bg_Ice_Shutter/z_bg_ice_shutter.o"
+    include "build/data/overlays/actors/z_bg_ice_shutter.data.o"
+    include "build/data/overlays/actors/z_bg_ice_shutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ice_Turara"
-    include "build/baserom/ovl_Bg_Ice_Turara.o"
+    include "build/src/overlays/actors/ovl_Bg_Ice_Turara/z_bg_ice_turara.o"
+    include "build/data/overlays/actors/z_bg_ice_turara.data.o"
+    include "build/data/overlays/actors/z_bg_ice_turara.rodata.o"
+    include "build/data/overlays/actors/z_bg_ice_turara.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ingate"
-    // include "build/baserom/ovl_Bg_Ingate.o"
-    include "build/asm/overlays/actors/ovl_Bg_Ingate/z_bg_ingate.o"
+    include "build/src/overlays/actors/ovl_Bg_Ingate/z_bg_ingate.o"
+    include "build/data/overlays/actors/z_bg_ingate.data.o"
+    include "build/data/overlays/actors/z_bg_ingate.rodata.o"
+    include "build/data/overlays/actors/z_bg_ingate.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_1flift"
-    include "build/baserom/ovl_Bg_Jya_1flift.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_1flift/z_bg_jya_1flift.o"
+    include "build/data/overlays/actors/z_bg_jya_1flift.data.o"
+    include "build/data/overlays/actors/z_bg_jya_1flift.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_1flift.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Amishutter"
-    include "build/baserom/ovl_Bg_Jya_Amishutter.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Amishutter/z_bg_jya_amishutter.o"
+    include "build/data/overlays/actors/z_bg_jya_amishutter.data.o"
+    include "build/data/overlays/actors/z_bg_jya_amishutter.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_amishutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Bigmirror"
-    include "build/baserom/ovl_Bg_Jya_Bigmirror.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Bigmirror/z_bg_jya_bigmirror.o"
+    include "build/data/overlays/actors/z_bg_jya_bigmirror.data.o"
+    include "build/data/overlays/actors/z_bg_jya_bigmirror.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_bigmirror.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Block"
-    include "build/baserom/ovl_Bg_Jya_Block.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Block/z_bg_jya_block.o"
+    include "build/data/overlays/actors/z_bg_jya_block.data.o"
+    include "build/data/overlays/actors/z_bg_jya_block.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_block.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Bombchuiwa"
-    include "build/baserom/ovl_Bg_Jya_Bombchuiwa.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Bombchuiwa/z_bg_jya_bombchuiwa.o"
+    include "build/data/overlays/actors/z_bg_jya_bombchuiwa.data.o"
+    include "build/data/overlays/actors/z_bg_jya_bombchuiwa.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_bombchuiwa.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Bombiwa"
-    include "build/baserom/ovl_Bg_Jya_Bombiwa.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Bombiwa/z_bg_jya_bombiwa.o"
+    include "build/data/overlays/actors/z_bg_jya_bombiwa.data.o"
+    include "build/data/overlays/actors/z_bg_jya_bombiwa.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_bombiwa.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Cobra"
-    include "build/baserom/ovl_Bg_Jya_Cobra.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Cobra/z_bg_jya_cobra.o"
+    include "build/data/overlays/actors/z_bg_jya_cobra.data.o"
+    include "build/data/overlays/actors/z_bg_jya_cobra.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_cobra.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Goroiwa"
-    include "build/baserom/ovl_Bg_Jya_Goroiwa.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Goroiwa/z_bg_jya_goroiwa.o"
+    include "build/data/overlays/actors/z_bg_jya_goroiwa.data.o"
+    include "build/data/overlays/actors/z_bg_jya_goroiwa.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_goroiwa.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Haheniron"
-    include "build/baserom/ovl_Bg_Jya_Haheniron.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Haheniron/z_bg_jya_haheniron.o"
+    include "build/data/overlays/actors/z_bg_jya_haheniron.data.o"
+    include "build/data/overlays/actors/z_bg_jya_haheniron.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_haheniron.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Ironobj"
-    include "build/baserom/ovl_Bg_Jya_Ironobj.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Ironobj/z_bg_jya_ironobj.o"
+    include "build/data/overlays/actors/z_bg_jya_ironobj.data.o"
+    include "build/data/overlays/actors/z_bg_jya_ironobj.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_ironobj.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Kanaami"
-    include "build/baserom/ovl_Bg_Jya_Kanaami.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Kanaami/z_bg_jya_kanaami.o"
+    include "build/data/overlays/actors/z_bg_jya_kanaami.data.o"
+    include "build/data/overlays/actors/z_bg_jya_kanaami.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_kanaami.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Lift"
-    include "build/baserom/ovl_Bg_Jya_Lift.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Lift/z_bg_jya_lift.o"
+    include "build/data/overlays/actors/z_bg_jya_lift.data.o"
+    include "build/data/overlays/actors/z_bg_jya_lift.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_lift.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Megami"
-    include "build/baserom/ovl_Bg_Jya_Megami.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Megami/z_bg_jya_megami.o"
+    include "build/data/overlays/actors/z_bg_jya_megami.data.o"
+    include "build/data/overlays/actors/z_bg_jya_megami.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_megami.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Jya_Zurerukabe"
-    include "build/baserom/ovl_Bg_Jya_Zurerukabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Zurerukabe/z_bg_jya_zurerukabe.o"
+    include "build/data/overlays/actors/z_bg_jya_zurerukabe.data.o"
+    include "build/data/overlays/actors/z_bg_jya_zurerukabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_jya_zurerukabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Menkuri_Eye"
-    increment 0x10
-    include "build/baserom/ovl_Bg_Menkuri_Eye.o"
+    include "build/src/overlays/actors/ovl_Bg_Menkuri_Eye/z_bg_menkuri_eye.o"
+    include "build/data/overlays/actors/z_bg_menkuri_eye.data.o"
+    include "build/data/overlays/actors/z_bg_menkuri_eye.rodata.o"
+    include "build/data/overlays/actors/z_bg_menkuri_eye.bss.o"
+    include "build/data/overlays/actors/z_bg_menkuri_eye.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Menkuri_Kaiten"
-    include "build/baserom/ovl_Bg_Menkuri_Kaiten.o"
+    include "build/src/overlays/actors/ovl_Bg_Menkuri_Kaiten/z_bg_menkuri_kaiten.o"
+    include "build/src/overlays/actors/ovl_Bg_Menkuri_Kaiten/z_bg_menkuri_kaiten_reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Menkuri_Nisekabe"
-    include "build/baserom/ovl_Bg_Menkuri_Nisekabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Menkuri_Nisekabe/z_bg_menkuri_nisekabe.o"
+    include "build/data/overlays/actors/z_bg_menkuri_nisekabe.data.o"
+    include "build/data/overlays/actors/z_bg_menkuri_nisekabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mizu_Bwall"
-    include "build/baserom/ovl_Bg_Mizu_Bwall.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Bwall/z_bg_mizu_bwall.o"
+    include "build/data/overlays/actors/z_bg_mizu_bwall.data.o"
+    include "build/data/overlays/actors/z_bg_mizu_bwall.rodata.o"
+    include "build/data/overlays/actors/z_bg_mizu_bwall.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mizu_Movebg"
-    increment 0x10
-    include "build/baserom/ovl_Bg_Mizu_Movebg.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Movebg/z_bg_mizu_movebg.o"
+    include "build/data/overlays/actors/z_bg_mizu_movebg.data.o"
+    include "build/data/overlays/actors/z_bg_mizu_movebg.rodata.o"
+    include "build/data/overlays/actors/z_bg_mizu_movebg.bss.o"
+    include "build/data/overlays/actors/z_bg_mizu_movebg.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mizu_Shutter"
-    include "build/baserom/ovl_Bg_Mizu_Shutter.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Shutter/z_bg_mizu_shutter.o"
+    include "build/data/overlays/actors/z_bg_mizu_shutter.data.o"
+    include "build/data/overlays/actors/z_bg_mizu_shutter.rodata.o"
+    include "build/data/overlays/actors/z_bg_mizu_shutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mizu_Uzu"
-    include "build/baserom/ovl_Bg_Mizu_Uzu.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Uzu/z_bg_mizu_uzu.o"
+    include "build/data/overlays/actors/z_bg_mizu_uzu.data.o"
+    include "build/data/overlays/actors/z_bg_mizu_uzu.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mizu_Water"
-    include "build/baserom/ovl_Bg_Mizu_Water.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Water/z_bg_mizu_water.o"
+    include "build/data/overlays/actors/z_bg_mizu_water.data.o"
+    include "build/data/overlays/actors/z_bg_mizu_water.rodata.o"
+    include "build/data/overlays/actors/z_bg_mizu_water.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mjin"
-    include "build/baserom/ovl_Bg_Mjin.o"
+    include "build/src/overlays/actors/ovl_Bg_Mjin/z_bg_mjin.o"
+    include "build/data/overlays/actors/z_bg_mjin.data.o"
+    include "build/data/overlays/actors/z_bg_mjin.rodata.o"
+    include "build/data/overlays/actors/z_bg_mjin.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Bigst"
-    include "build/baserom/ovl_Bg_Mori_Bigst.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Bigst/z_bg_mori_bigst.o"
+    include "build/data/overlays/actors/z_bg_mori_bigst.data.o"
+    include "build/data/overlays/actors/z_bg_mori_bigst.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_bigst.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Elevator"
-    include "build/baserom/ovl_Bg_Mori_Elevator.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Elevator/z_bg_mori_elevator.o"
+    include "build/data/overlays/actors/z_bg_mori_elevator.data.o"
+    include "build/data/overlays/actors/z_bg_mori_elevator.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_elevator.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Hashigo"
-    include "build/baserom/ovl_Bg_Mori_Hashigo.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Hashigo/z_bg_mori_hashigo.o"
+    include "build/data/overlays/actors/z_bg_mori_hashigo.data.o"
+    include "build/data/overlays/actors/z_bg_mori_hashigo.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_hashigo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Hashira4"
-    increment 0x10
-    include "build/baserom/ovl_Bg_Mori_Hashira4.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Hashira4/z_bg_mori_hashira4.o"
+    include "build/data/overlays/actors/z_bg_mori_hashira4.data.o"
+    include "build/data/overlays/actors/z_bg_mori_hashira4.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_hashira4.bss.o"
+    include "build/data/overlays/actors/z_bg_mori_hashira4.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Hineri"
-    include "build/baserom/ovl_Bg_Mori_Hineri.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Hineri/z_bg_mori_hineri.o"
+    include "build/data/overlays/actors/z_bg_mori_hineri.data.o"
+    include "build/data/overlays/actors/z_bg_mori_hineri.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_hineri.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Idomizu"
-    include "build/baserom/ovl_Bg_Mori_Idomizu.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Idomizu/z_bg_mori_idomizu.o"
+    include "build/data/overlays/actors/z_bg_mori_idomizu.data.o"
+    include "build/data/overlays/actors/z_bg_mori_idomizu.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_idomizu.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Kaitenkabe"
-    include "build/baserom/ovl_Bg_Mori_Kaitenkabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Kaitenkabe/z_bg_mori_kaitenkabe.o"
+    include "build/data/overlays/actors/z_bg_mori_kaitenkabe.data.o"
+    include "build/data/overlays/actors/z_bg_mori_kaitenkabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_kaitenkabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Mori_Rakkatenjo"
-    include "build/baserom/ovl_Bg_Mori_Rakkatenjo.o"
+    include "build/src/overlays/actors/ovl_Bg_Mori_Rakkatenjo/z_bg_mori_rakkatenjo.o"
+    include "build/data/overlays/actors/z_bg_mori_rakkatenjo.data.o"
+    include "build/data/overlays/actors/z_bg_mori_rakkatenjo.rodata.o"
+    include "build/data/overlays/actors/z_bg_mori_rakkatenjo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Po_Event"
-    increment 0x10
-    include "build/baserom/ovl_Bg_Po_Event.o"
+    include "build/src/overlays/actors/ovl_Bg_Po_Event/z_bg_po_event.o"
+    include "build/data/overlays/actors/z_bg_po_event.data.o"
+    include "build/data/overlays/actors/z_bg_po_event.rodata.o"
+    include "build/data/overlays/actors/z_bg_po_event.bss.o"
+    include "build/data/overlays/actors/z_bg_po_event.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Po_Syokudai"
-    include "build/baserom/ovl_Bg_Po_Syokudai.o"
+    include "build/src/overlays/actors/ovl_Bg_Po_Syokudai/z_bg_po_syokudai.o"
+    include "build/data/overlays/actors/z_bg_po_syokudai.data.o"
+    include "build/data/overlays/actors/z_bg_po_syokudai.rodata.o"
+    include "build/data/overlays/actors/z_bg_po_syokudai.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Pushbox"
-    include "build/baserom/ovl_Bg_Pushbox.o"
+    include "build/src/overlays/actors/ovl_Bg_Pushbox/z_bg_pushbox.o"
+    include "build/data/overlays/actors/z_bg_pushbox.data.o"
+    include "build/data/overlays/actors/z_bg_pushbox.rodata.o"
+    include "build/data/overlays/actors/z_bg_pushbox.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Relay_Objects"
-    include "build/baserom/ovl_Bg_Relay_Objects.o"
+    include "build/src/overlays/actors/ovl_Bg_Relay_Objects/z_bg_relay_objects.o"
+    include "build/data/overlays/actors/z_bg_relay_objects.data.o"
+    include "build/data/overlays/actors/z_bg_relay_objects.rodata.o"
+    include "build/data/overlays/actors/z_bg_relay_objects.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot00_Break"
-    //include "build/baserom/ovl_Bg_Spot00_Break.o"
-    //include "build/asm/overlays/actors/ovl_Bg_Spot00_Break/z_bg_spot00_break.o"
     include "build/src/overlays/actors/ovl_Bg_Spot00_Break/z_bg_spot00_break.o"
     include "build/src/overlays/actors/ovl_Bg_Spot00_Break/z_bg_spot00_break_reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot00_Hanebasi"
-    include "build/baserom/ovl_Bg_Spot00_Hanebasi.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot00_Hanebasi/z_bg_spot00_hanebasi.o"
+    include "build/data/overlays/actors/z_bg_spot00_hanebasi.data.o"
+    include "build/data/overlays/actors/z_bg_spot00_hanebasi.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot00_hanebasi.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot01_Fusya"
-    //include "build/baserom/ovl_Bg_Spot01_Fusya.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot01_Fusya/z_bg_spot01_fusya.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Fusya/z_bg_spot01_fusya.o"
+    include "build/data/overlays/actors/z_bg_spot01_fusya.data.o"
+    include "build/data/overlays/actors/z_bg_spot01_fusya.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot01_fusya.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot01_Idohashira"
-    include "build/baserom/ovl_Bg_Spot01_Idohashira.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Idohashira/z_bg_spot01_idohashira.o"
+    include "build/data/overlays/actors/z_bg_spot01_idohashira.data.o"
+    include "build/data/overlays/actors/z_bg_spot01_idohashira.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot01_idohashira.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot01_Idomizu"
-    //include "build/baserom/ovl_Bg_Spot01_Idomizu.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot01_Idomizu/z_bg_spot01_idomizu.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Idomizu/z_bg_spot01_idomizu.o"
+    include "build/data/overlays/actors/z_bg_spot01_idomizu.data.o"
+    include "build/data/overlays/actors/z_bg_spot01_idomizu.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot01_idomizu.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot01_Idosoko"
-    include "build/baserom/ovl_Bg_Spot01_Idosoko.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Idosoko/z_bg_spot01_idosoko.o"
+    include "build/data/overlays/actors/z_bg_spot01_idosoko.data.o"
+    include "build/data/overlays/actors/z_bg_spot01_idosoko.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot01_idosoko.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot01_Objects2"
-    include "build/baserom/ovl_Bg_Spot01_Objects2.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Objects2/z_bg_spot01_objects2.o"
+    include "build/data/overlays/actors/z_bg_spot01_objects2.data.o"
+    include "build/data/overlays/actors/z_bg_spot01_objects2.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot01_objects2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot02_Objects"
-    include "build/baserom/ovl_Bg_Spot02_Objects.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot02_Objects/z_bg_spot02_objects.o"
+    include "build/data/overlays/actors/z_bg_spot02_objects.data.o"
+    include "build/data/overlays/actors/z_bg_spot02_objects.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot02_objects.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot03_Taki"
-    include "build/baserom/ovl_Bg_Spot03_Taki.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot03_Taki/z_bg_spot03_taki.o"
+    include "build/data/overlays/actors/z_bg_spot03_taki.data.o"
+    include "build/data/overlays/actors/z_bg_spot03_taki.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot03_taki.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot05_Soko"
-    include "build/baserom/ovl_Bg_Spot05_Soko.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot05_Soko/z_bg_spot05_soko.o"
+    include "build/data/overlays/actors/z_bg_spot05_soko.data.o"
+    include "build/data/overlays/actors/z_bg_spot05_soko.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot06_Objects"
-    include "build/baserom/ovl_Bg_Spot06_Objects.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot06_Objects/z_bg_spot06_objects.o"
+    include "build/data/overlays/actors/z_bg_spot06_objects.data.o"
+    include "build/data/overlays/actors/z_bg_spot06_objects.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot06_objects.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot07_Taki"
-    //include "build/baserom/ovl_Bg_Spot07_Taki.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot07_Taki/z_bg_spot07_taki.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot07_Taki/z_bg_spot07_taki.o"
+    include "build/data/overlays/actors/z_bg_spot07_taki.data.o"
+    include "build/data/overlays/actors/z_bg_spot07_taki.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot07_taki.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot08_Bakudankabe"
-    include "build/baserom/ovl_Bg_Spot08_Bakudankabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot08_Bakudankabe/z_bg_spot08_bakudankabe.o"
+    include "build/data/overlays/actors/z_bg_spot08_bakudankabe.data.o"
+    include "build/data/overlays/actors/z_bg_spot08_bakudankabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot08_bakudankabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot08_Iceblock"
-    include "build/baserom/ovl_Bg_Spot08_Iceblock.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot08_Iceblock/z_bg_spot08_iceblock.o"
+    include "build/data/overlays/actors/z_bg_spot08_iceblock.data.o"
+    include "build/data/overlays/actors/z_bg_spot08_iceblock.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot08_iceblock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot09_Obj"
-    //include "build/baserom/ovl_Bg_Spot09_Obj.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot09_Obj/z_bg_spot09_obj.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot09_Obj/z_bg_spot09_obj.o"
+    include "build/data/overlays/actors/z_bg_spot09_obj.data.o"
+    include "build/data/overlays/actors/z_bg_spot09_obj.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot09_obj.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot11_Bakudankabe"
-    include "build/baserom/ovl_Bg_Spot11_Bakudankabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot11_Bakudankabe/z_bg_spot11_bakudankabe.o"
+    include "build/data/overlays/actors/z_bg_spot11_bakudankabe.data.o"
+    include "build/data/overlays/actors/z_bg_spot11_bakudankabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot11_bakudankabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot11_Oasis"
-    include "build/baserom/ovl_Bg_Spot11_Oasis.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot11_Oasis/z_bg_spot11_oasis.o"
+    include "build/data/overlays/actors/z_bg_spot11_oasis.data.o"
+    include "build/data/overlays/actors/z_bg_spot11_oasis.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot11_oasis.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot12_Gate"
-    include "build/baserom/ovl_Bg_Spot12_Gate.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot12_Gate/z_bg_spot12_gate.o"
+    include "build/data/overlays/actors/z_bg_spot12_gate.data.o"
+    include "build/data/overlays/actors/z_bg_spot12_gate.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot12_gate.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot12_Saku"
-    include "build/baserom/ovl_Bg_Spot12_Saku.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot12_Saku/z_bg_spot12_saku.o"
+    include "build/data/overlays/actors/z_bg_spot12_saku.data.o"
+    include "build/data/overlays/actors/z_bg_spot12_saku.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot12_saku.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot15_Rrbox"
-    include "build/baserom/ovl_Bg_Spot15_Rrbox.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot15_Rrbox/z_bg_spot15_rrbox.o"
+    include "build/data/overlays/actors/z_bg_spot15_rrbox.data.o"
+    include "build/data/overlays/actors/z_bg_spot15_rrbox.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot15_rrbox.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot15_Saku"
-    //include "build/baserom/ovl_Bg_Spot15_Saku.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot15_Saku/z_bg_spot15_saku.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot15_Saku/z_bg_spot15_saku.o"
+    include "build/data/overlays/actors/z_bg_spot15_saku.data.o"
+    include "build/data/overlays/actors/z_bg_spot15_saku.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot15_saku.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot16_Bombstone"
-    include "build/baserom/ovl_Bg_Spot16_Bombstone.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot16_Bombstone/z_bg_spot16_bombstone.o"
+    include "build/data/overlays/actors/z_bg_spot16_bombstone.data.o"
+    include "build/data/overlays/actors/z_bg_spot16_bombstone.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot16_bombstone.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot16_Doughnut"
-    include "build/baserom/ovl_Bg_Spot16_Doughnut.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot16_Doughnut/z_bg_spot16_doughnut.o"
+    include "build/data/overlays/actors/z_bg_spot16_doughnut.data.o"
+    include "build/data/overlays/actors/z_bg_spot16_doughnut.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot16_doughnut.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot17_Bakudankabe"
-    include "build/baserom/ovl_Bg_Spot17_Bakudankabe.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot17_Bakudankabe/z_bg_spot17_bakudankabe.o"
+    include "build/data/overlays/actors/z_bg_spot17_bakudankabe.data.o"
+    include "build/data/overlays/actors/z_bg_spot17_bakudankabe.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot17_bakudankabe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot17_Funen"
-    //include "build/baserom/ovl_Bg_Spot17_Funen.o"
-    include "build/asm/overlays/actors/ovl_Bg_Spot17_Funen/z_bg_spot17_funen.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot17_Funen/z_bg_spot17_funen.o"
+    include "build/data/overlays/actors/z_bg_spot17_funen.data.o"
+    include "build/data/overlays/actors/z_bg_spot17_funen.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot17_funen.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot18_Basket"
-    include "build/baserom/ovl_Bg_Spot18_Basket.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot18_Basket/z_bg_spot18_basket.o"
+    include "build/data/overlays/actors/z_bg_spot18_basket.data.o"
+    include "build/data/overlays/actors/z_bg_spot18_basket.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot18_basket.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot18_Futa"
-    //include "build/baserom/ovl_Bg_Spot18_Futa.o"
     include "build/src/overlays/actors/ovl_Bg_Spot18_Futa/z_bg_spot18_futa.o"
     include "build/src/overlays/actors/ovl_Bg_Spot18_Futa/z_bg_spot18_futa_reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot18_Obj"
-    include "build/baserom/ovl_Bg_Spot18_Obj.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot18_Obj/z_bg_spot18_obj.o"
+    include "build/data/overlays/actors/z_bg_spot18_obj.data.o"
+    include "build/data/overlays/actors/z_bg_spot18_obj.rodata.o"
+    include "build/data/overlays/actors/z_bg_spot18_obj.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Spot18_Shutter"
-    include "build/baserom/ovl_Bg_Spot18_Shutter.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot18_Shutter/z_bg_spot18_shutter.o"
+    include "build/data/overlays/actors/z_bg_spot18_shutter.data.o"
+    include "build/data/overlays/actors/z_bg_spot18_shutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Sst_Floor"
-    include "build/baserom/ovl_Bg_Sst_Floor.o"
+    include "build/src/overlays/actors/ovl_Bg_Sst_Floor/z_bg_sst_floor.o"
+    include "build/data/overlays/actors/z_bg_sst_floor.data.o"
+    include "build/data/overlays/actors/z_bg_sst_floor.rodata.o"
+    include "build/data/overlays/actors/z_bg_sst_floor.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Toki_Hikari"
-    include "build/baserom/ovl_Bg_Toki_Hikari.o"
+    include "build/src/overlays/actors/ovl_Bg_Toki_Hikari/z_bg_toki_hikari.o"
+    include "build/data/overlays/actors/z_bg_toki_hikari.data.o"
+    include "build/data/overlays/actors/z_bg_toki_hikari.rodata.o"
+    include "build/data/overlays/actors/z_bg_toki_hikari.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Toki_Swd"
-    include "build/baserom/ovl_Bg_Toki_Swd.o"
+    include "build/src/overlays/actors/ovl_Bg_Toki_Swd/z_bg_toki_swd.o"
+    include "build/data/overlays/actors/z_bg_toki_swd.data.o"
+    include "build/data/overlays/actors/z_bg_toki_swd.rodata.o"
+    include "build/data/overlays/actors/z_bg_toki_swd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Treemouth"
-    include "build/baserom/ovl_Bg_Treemouth.o"
+    include "build/src/overlays/actors/ovl_Bg_Treemouth/z_bg_treemouth.o"
+    include "build/data/overlays/actors/z_bg_treemouth.data.o"
+    include "build/data/overlays/actors/z_bg_treemouth.rodata.o"
+    include "build/data/overlays/actors/z_bg_treemouth.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Umajump"
-    //include "build/baserom/ovl_Bg_Umajump.o"
     include "build/src/overlays/actors/ovl_Bg_Umajump/z_bg_umajump.o"
     include "build/src/overlays/actors/ovl_Bg_Umajump/z_bg_umajump_reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Vb_Sima"
-    include "build/baserom/ovl_Bg_Vb_Sima.o"
+    include "build/src/overlays/actors/ovl_Bg_Vb_Sima/z_bg_vb_sima.o"
+    include "build/data/overlays/actors/z_bg_vb_sima.data.o"
+    include "build/data/overlays/actors/z_bg_vb_sima.rodata.o"
+    include "build/data/overlays/actors/z_bg_vb_sima.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ydan_Hasi"
-    include "build/baserom/ovl_Bg_Ydan_Hasi.o"
+    include "build/src/overlays/actors/ovl_Bg_Ydan_Hasi/z_bg_ydan_hasi.o"
+    include "build/data/overlays/actors/z_bg_ydan_hasi.data.o"
+    include "build/data/overlays/actors/z_bg_ydan_hasi.rodata.o"
+    include "build/data/overlays/actors/z_bg_ydan_hasi.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ydan_Maruta"
-    include "build/baserom/ovl_Bg_Ydan_Maruta.o"
+    include "build/src/overlays/actors/ovl_Bg_Ydan_Maruta/z_bg_ydan_maruta.o"
+    include "build/data/overlays/actors/z_bg_ydan_maruta.data.o"
+    include "build/data/overlays/actors/z_bg_ydan_maruta.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Ydan_Sp"
-    include "build/baserom/ovl_Bg_Ydan_Sp.o"
+    include "build/src/overlays/actors/ovl_Bg_Ydan_Sp/z_bg_ydan_sp.o"
+    include "build/data/overlays/actors/z_bg_ydan_sp.data.o"
+    include "build/data/overlays/actors/z_bg_ydan_sp.rodata.o"
+    include "build/data/overlays/actors/z_bg_ydan_sp.reloc.o"
 endseg
 
 beginseg
     name "ovl_Bg_Zg"
-    include "build/baserom/ovl_Bg_Zg.o"
+    include "build/src/overlays/actors/ovl_Bg_Zg/z_bg_zg.o"
+    include "build/data/overlays/actors/z_bg_zg.data.o"
+    include "build/data/overlays/actors/z_bg_zg.rodata.o"
+    include "build/data/overlays/actors/z_bg_zg.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Dodongo"
-    include "build/baserom/ovl_Boss_Dodongo.o"
+    include "build/src/overlays/actors/ovl_Boss_Dodongo/z_boss_dodongo.o"
+    include "build/data/overlays/actors/z_boss_dodongo.data.o"
+    include "build/data/overlays/actors/z_boss_dodongo.rodata.o"
+    include "build/data/overlays/actors/z_boss_dodongo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Fd"
-    include "build/baserom/ovl_Boss_Fd.o"
+    include "build/src/overlays/actors/ovl_Boss_Fd/z_boss_fd.o"
+    include "build/data/overlays/actors/z_boss_fd.data.o"
+    include "build/data/overlays/actors/z_boss_fd.rodata.o"
+    include "build/data/overlays/actors/z_boss_fd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Fd2"
-    include "build/baserom/ovl_Boss_Fd2.o"
+    include "build/src/overlays/actors/ovl_Boss_Fd2/z_boss_fd2.o"
+    include "build/data/overlays/actors/z_boss_fd2.data.o"
+    include "build/data/overlays/actors/z_boss_fd2.rodata.o"
+    include "build/data/overlays/actors/z_boss_fd2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Ganon"
-    increment 0x3B80
-    include "build/baserom/ovl_Boss_Ganon.o"
+    include "build/src/overlays/actors/ovl_Boss_Ganon/z_boss_ganon.o"
+    include "build/data/overlays/actors/z_boss_ganon.data.o"
+    include "build/data/overlays/actors/z_boss_ganon.rodata.o"
+    include "build/data/overlays/actors/z_boss_ganon.bss.o"
+    include "build/data/overlays/actors/z_boss_ganon.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Ganon2"
-    increment 0x1B20
-    include "build/baserom/ovl_Boss_Ganon2.o"
+    include "build/src/overlays/actors/ovl_Boss_Ganon2/z_boss_ganon2.o"
+    include "build/data/overlays/actors/z_boss_ganon2.data.o"
+    include "build/data/overlays/actors/z_boss_ganon2.rodata.o"
+    include "build/data/overlays/actors/z_boss_ganon2.bss.o"
+    include "build/data/overlays/actors/z_boss_ganon2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Ganondrof"
-    include "build/baserom/ovl_Boss_Ganondrof.o"
+    include "build/src/overlays/actors/ovl_Boss_Ganondrof/z_boss_ganondrof.o"
+    include "build/data/overlays/actors/z_boss_ganondrof.data.o"
+    include "build/data/overlays/actors/z_boss_ganondrof.rodata.o"
+    include "build/data/overlays/actors/z_boss_ganondrof.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Goma"
-    include "build/baserom/ovl_Boss_Goma.o"
+    include "build/src/overlays/actors/ovl_Boss_Goma/z_boss_goma.o"
+    include "build/data/overlays/actors/z_boss_goma.data.o"
+    include "build/data/overlays/actors/z_boss_goma.rodata.o"
+    include "build/data/overlays/actors/z_boss_goma.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Mo"
-    increment 0x4B10
-    include "build/baserom/ovl_Boss_Mo.o"
+    include "build/src/overlays/actors/ovl_Boss_Mo/z_boss_mo.o"
+    include "build/data/overlays/actors/z_boss_mo.data.o"
+    include "build/data/overlays/actors/z_boss_mo.rodata.o"
+    include "build/data/overlays/actors/z_boss_mo.bss.o"
+    include "build/data/overlays/actors/z_boss_mo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Sst"
-    increment 0x40
-    include "build/baserom/ovl_Boss_Sst.o"
+    include "build/src/overlays/actors/ovl_Boss_Sst/z_boss_sst.o"
+    include "build/data/overlays/actors/z_boss_sst.data.o"
+    include "build/data/overlays/actors/z_boss_sst.rodata.o"
+    include "build/data/overlays/actors/z_boss_sst.bss.o"
+    include "build/data/overlays/actors/z_boss_sst.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Tw"
-    increment 0x2A80
-    include "build/baserom/ovl_Boss_Tw.o"
+    include "build/src/overlays/actors/ovl_Boss_Tw/z_boss_tw.o"
+    include "build/data/overlays/actors/z_boss_tw.data.o"
+    include "build/data/overlays/actors/z_boss_tw.rodata.o"
+    include "build/data/overlays/actors/z_boss_tw.bss.o"
+    include "build/data/overlays/actors/z_boss_tw.reloc.o"
 endseg
 
 beginseg
     name "ovl_Boss_Va"
-    increment 0x8A00
-    include "build/baserom/ovl_Boss_Va.o"
+    include "build/src/overlays/actors/ovl_Boss_Va/z_boss_va.o"
+    include "build/data/overlays/actors/z_boss_va.data.o"
+    include "build/data/overlays/actors/z_boss_va.rodata.o"
+    include "build/data/overlays/actors/z_boss_va.bss.o"
+    include "build/data/overlays/actors/z_boss_va.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_6K"
-    include "build/baserom/ovl_Demo_6K.o"
+    include "build/src/overlays/actors/ovl_Demo_6K/z_demo_6k.o"
+    include "build/data/overlays/actors/z_demo_6k.data.o"
+    include "build/data/overlays/actors/z_demo_6k.rodata.o"
+    include "build/data/overlays/actors/z_demo_6k.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Du"
-    include "build/baserom/ovl_Demo_Du.o"
+    include "build/src/overlays/actors/ovl_Demo_Du/z_demo_du.o"
+    include "build/data/overlays/actors/z_demo_du.data.o"
+    include "build/data/overlays/actors/z_demo_du.rodata.o"
+    include "build/data/overlays/actors/z_demo_du.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Ec"
-    include "build/baserom/ovl_Demo_Ec.o"
+    include "build/src/overlays/actors/ovl_Demo_Ec/z_demo_ec.o"
+    include "build/data/overlays/actors/z_demo_ec.data.o"
+    include "build/data/overlays/actors/z_demo_ec.rodata.o"
+    include "build/data/overlays/actors/z_demo_ec.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Effect"
-    include "build/baserom/ovl_Demo_Effect.o"
+    include "build/src/overlays/actors/ovl_Demo_Effect/z_demo_effect.o"
+    include "build/data/overlays/actors/z_demo_effect.data.o"
+    include "build/data/overlays/actors/z_demo_effect.rodata.o"
+    include "build/data/overlays/actors/z_demo_effect.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Ext"
-    include "build/baserom/ovl_Demo_Ext.o"
+    include "build/src/overlays/actors/ovl_Demo_Ext/z_demo_ext.o"
+    include "build/data/overlays/actors/z_demo_ext.data.o"
+    include "build/data/overlays/actors/z_demo_ext.rodata.o"
+    include "build/data/overlays/actors/z_demo_ext.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Geff"
-    include "build/baserom/ovl_Demo_Geff.o"
+    include "build/src/overlays/actors/ovl_Demo_Geff/z_demo_geff.o"
+    include "build/data/overlays/actors/z_demo_geff.data.o"
+    include "build/data/overlays/actors/z_demo_geff.rodata.o"
+    include "build/data/overlays/actors/z_demo_geff.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Gj"
-    include "build/baserom/ovl_Demo_Gj.o"
+    include "build/src/overlays/actors/ovl_Demo_Gj/z_demo_gj.o"
+    include "build/data/overlays/actors/z_demo_gj.data.o"
+    include "build/data/overlays/actors/z_demo_gj.rodata.o"
+    include "build/data/overlays/actors/z_demo_gj.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Go"
-    include "build/baserom/ovl_Demo_Go.o"
+    include "build/src/overlays/actors/ovl_Demo_Go/z_demo_go.o"
+    include "build/data/overlays/actors/z_demo_go.data.o"
+    include "build/data/overlays/actors/z_demo_go.rodata.o"
+    include "build/data/overlays/actors/z_demo_go.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Gt"
-    include "build/baserom/ovl_Demo_Gt.o"
+    include "build/src/overlays/actors/ovl_Demo_Gt/z_demo_gt.o"
+    include "build/data/overlays/actors/z_demo_gt.data.o"
+    include "build/data/overlays/actors/z_demo_gt.rodata.o"
+    include "build/data/overlays/actors/z_demo_gt.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Ik"
-    include "build/baserom/ovl_Demo_Ik.o"
+    include "build/src/overlays/actors/ovl_Demo_Ik/z_demo_ik.o"
+    include "build/data/overlays/actors/z_demo_ik.data.o"
+    include "build/data/overlays/actors/z_demo_ik.rodata.o"
+    include "build/data/overlays/actors/z_demo_ik.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Im"
-    include "build/baserom/ovl_Demo_Im.o"
+    include "build/src/overlays/actors/ovl_Demo_Im/z_demo_im.o"
+    include "build/data/overlays/actors/z_demo_im.data.o"
+    include "build/data/overlays/actors/z_demo_im.rodata.o"
+    include "build/data/overlays/actors/z_demo_im.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Kankyo"
-    increment 0x50
-    include "build/baserom/ovl_Demo_Kankyo.o"
+    include "build/src/overlays/actors/ovl_Demo_Kankyo/z_demo_kankyo.o"
+    include "build/data/overlays/actors/z_demo_kankyo.data.o"
+    include "build/data/overlays/actors/z_demo_kankyo.rodata.o"
+    include "build/data/overlays/actors/z_demo_kankyo.bss.o"
+    include "build/data/overlays/actors/z_demo_kankyo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Kekkai"
-    include "build/baserom/ovl_Demo_Kekkai.o"
+    include "build/src/overlays/actors/ovl_Demo_Kekkai/z_demo_kekkai.o"
+    include "build/data/overlays/actors/z_demo_kekkai.data.o"
+    include "build/data/overlays/actors/z_demo_kekkai.rodata.o"
+    include "build/data/overlays/actors/z_demo_kekkai.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Sa"
-    include "build/baserom/ovl_Demo_Sa.o"
+    include "build/src/overlays/actors/ovl_Demo_Sa/z_demo_sa.o"
+    include "build/data/overlays/actors/z_demo_sa.data.o"
+    include "build/data/overlays/actors/z_demo_sa.rodata.o"
+    include "build/data/overlays/actors/z_demo_sa.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Shd"
-    include "build/baserom/ovl_Demo_Shd.o"
+    include "build/src/overlays/actors/ovl_Demo_Shd/z_demo_shd.o"
+    include "build/data/overlays/actors/z_demo_shd.data.o"
+    include "build/data/overlays/actors/z_demo_shd.rodata.o"
+    include "build/data/overlays/actors/z_demo_shd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Demo_Tre_Lgt"
-    include "build/baserom/ovl_Demo_Tre_Lgt.o"
+    include "build/src/overlays/actors/ovl_Demo_Tre_Lgt/z_demo_tre_lgt.o"
+    include "build/data/overlays/actors/z_demo_tre_lgt.data.o"
+    include "build/data/overlays/actors/z_demo_tre_lgt.rodata.o"
+    include "build/data/overlays/actors/z_demo_tre_lgt.reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Ana"
-    //include "build/baserom/ovl_Door_Ana.o"
-    include "build/asm/overlays/actors/ovl_Door_Ana/z_door_ana.o"
+    include "build/src/overlays/actors/ovl_Door_Ana/z_door_ana.o"
+    include "build/data/overlays/actors/z_door_ana.data.o"
+    include "build/data/overlays/actors/z_door_ana.rodata.o"
+    include "build/data/overlays/actors/z_door_ana.reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Gerudo"
-    //include "build/baserom/ovl_Door_Gerudo.o"
-    include "build/asm/overlays/actors/ovl_Door_Gerudo/z_door_gerudo.o"
+    include "build/src/overlays/actors/ovl_Door_Gerudo/z_door_gerudo.o"
+    include "build/data/overlays/actors/z_door_gerudo.data.o"
+    include "build/data/overlays/actors/z_door_gerudo.rodata.o"
+    include "build/data/overlays/actors/z_door_gerudo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Killer"
-    include "build/baserom/ovl_Door_Killer.o"
+    include "build/src/overlays/actors/ovl_Door_Killer/z_door_killer.o"
+    include "build/data/overlays/actors/z_door_killer.data.o"
+    include "build/data/overlays/actors/z_door_killer.rodata.o"
+    include "build/data/overlays/actors/z_door_killer.reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Shutter"
-    include "build/baserom/ovl_Door_Shutter.o"
+    include "build/src/overlays/actors/ovl_Door_Shutter/z_door_shutter.o"
+    include "build/data/overlays/actors/z_door_shutter.data.o"
+    include "build/data/overlays/actors/z_door_shutter.rodata.o"
+    include "build/data/overlays/actors/z_door_shutter.reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Toki"
-    //include "build/baserom/ovl_Door_Toki.o"
     include "build/src/overlays/actors/ovl_Door_Toki/z_door_toki.o"
     include "build/src/overlays/actors/ovl_Door_Toki/z_door_toki_reloc.o"
 endseg
 
 beginseg
     name "ovl_Door_Warp1"
-    increment 0x10
-    include "build/baserom/ovl_Door_Warp1.o"
+    include "build/src/overlays/actors/ovl_Door_Warp1/z_door_warp1.o"
+    include "build/data/overlays/actors/z_door_warp1.data.o"
+    include "build/data/overlays/actors/z_door_warp1.rodata.o"
+    include "build/data/overlays/actors/z_door_warp1.bss.o"
+    include "build/data/overlays/actors/z_door_warp1.reloc.o"
 endseg
 
 beginseg
     name "ovl_Efc_Erupc"
-    include "build/baserom/ovl_Efc_Erupc.o"
+    include "build/src/overlays/actors/ovl_Efc_Erupc/z_efc_erupc.o"
+    include "build/data/overlays/actors/z_efc_erupc.data.o"
+    include "build/data/overlays/actors/z_efc_erupc.rodata.o"
+    include "build/data/overlays/actors/z_efc_erupc.reloc.o"
 endseg
 
 beginseg
     name "ovl_Eff_Dust"
-    include "build/baserom/ovl_Eff_Dust.o"
+    include "build/src/overlays/actors/ovl_Eff_Dust/z_eff_dust.o"
+    include "build/data/overlays/actors/z_eff_dust.data.o"
+    include "build/data/overlays/actors/z_eff_dust.rodata.o"
+    include "build/data/overlays/actors/z_eff_dust.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Blast"
-    include "build/baserom/ovl_Effect_Ss_Blast.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Blast/z_effect_ss_blast.o"
+    include "build/data/overlays/effects/z_effect_ss_blast.data.o"
+    include "build/data/overlays/effects/z_effect_ss_blast.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_blast.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Bomb"
-    include "build/baserom/ovl_Effect_Ss_Bomb.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Bomb/z_effect_ss_bomb.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb.data.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Bomb2"
-    include "build/baserom/ovl_Effect_Ss_Bomb2.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Bomb2/z_effect_ss_bomb2.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb2.data.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb2.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_bomb2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Bubble"
-    include "build/baserom/ovl_Effect_Ss_Bubble.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Bubble/z_effect_ss_bubble.o"
+    include "build/data/overlays/effects/z_effect_ss_bubble.data.o"
+    include "build/data/overlays/effects/z_effect_ss_bubble.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_bubble.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_D_Fire"
-    include "build/baserom/ovl_Effect_Ss_D_Fire.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_D_Fire/z_effect_ss_d_fire.o"
+    include "build/data/overlays/effects/z_effect_ss_d_fire.data.o"
+    include "build/data/overlays/effects/z_effect_ss_d_fire.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_d_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dead_Db"
-    include "build/baserom/ovl_Effect_Ss_Dead_Db.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dead_Db/z_effect_ss_dead_db.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_db.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_db.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_db.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dead_Dd"
-    //include "build/baserom/ovl_Effect_Ss_Dead_Dd.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_Dead_Dd/z_effect_ss_dead_dd.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dead_Dd/z_effect_ss_dead_dd.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_dd.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_dd.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_dd.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dead_Ds"
-    include "build/baserom/ovl_Effect_Ss_Dead_Ds.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dead_Ds/z_effect_ss_dead_ds.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_ds.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_ds.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_ds.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dead_Sound"
-    //include "build/baserom/ovl_Effect_Ss_Dead_Sound.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_Dead_Sound/z_effect_ss_dead_sound.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dead_Sound/z_effect_ss_dead_sound.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_sound.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_sound.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dead_sound.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dt_Bubble"
-    include "build/baserom/ovl_Effect_Ss_Dt_Bubble.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dt_Bubble/z_effect_ss_dt_bubble.o"
+    include "build/data/overlays/effects/z_effect_ss_dt_bubble.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dt_bubble.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dt_bubble.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Dust"
-    include "build/baserom/ovl_Effect_Ss_Dust.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Dust/z_effect_ss_dust.o"
+    include "build/data/overlays/effects/z_effect_ss_dust.data.o"
+    include "build/data/overlays/effects/z_effect_ss_dust.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_dust.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_En_Fire"
-    include "build/baserom/ovl_Effect_Ss_En_Fire.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_En_Fire/z_effect_ss_en_fire.o"
+    include "build/data/overlays/effects/z_effect_ss_en_fire.data.o"
+    include "build/data/overlays/effects/z_effect_ss_en_fire.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_en_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_En_Ice"
-    include "build/baserom/ovl_Effect_Ss_En_Ice.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_En_Ice/z_effect_ss_en_ice.o"
+    include "build/data/overlays/effects/z_effect_ss_en_ice.data.o"
+    include "build/data/overlays/effects/z_effect_ss_en_ice.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_en_ice.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Extra"
-    //include "build/baserom/ovl_Effect_Ss_Extra.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_Extra/z_effect_ss_extra.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Extra/z_effect_ss_extra.o"
+    include "build/data/overlays/effects/z_effect_ss_extra.data.o"
+    include "build/data/overlays/effects/z_effect_ss_extra.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_extra.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Fcircle"
-    include "build/baserom/ovl_Effect_Ss_Fcircle.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Fcircle/z_effect_ss_fcircle.o"
+    include "build/data/overlays/effects/z_effect_ss_fcircle.data.o"
+    include "build/data/overlays/effects/z_effect_ss_fcircle.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_fcircle.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Fhg_Flash"
-    include "build/baserom/ovl_Effect_Ss_Fhg_Flash.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Fhg_Flash/z_effect_ss_fhg_flash.o"
+    include "build/data/overlays/effects/z_effect_ss_fhg_flash.data.o"
+    include "build/data/overlays/effects/z_effect_ss_fhg_flash.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_fhg_flash.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Fire_Tail"
-    include "build/baserom/ovl_Effect_Ss_Fire_Tail.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Fire_Tail/z_effect_ss_fire_tail.o"
+    include "build/data/overlays/effects/z_effect_ss_fire_tail.data.o"
+    include "build/data/overlays/effects/z_effect_ss_fire_tail.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_fire_tail.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Fire"
-    include "build/baserom/ovl_Effect_Ss_G_Fire.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Fire/z_effect_ss_g_fire.o"
+    include "build/data/overlays/effects/z_effect_ss_g_fire.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Magma"
-    include "build/baserom/ovl_Effect_Ss_G_Magma.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Magma/z_effect_ss_g_magma.o"
+    include "build/data/overlays/effects/z_effect_ss_g_magma.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_magma.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Magma2"
-    include "build/baserom/ovl_Effect_Ss_G_Magma2.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Magma2/z_effect_ss_g_magma2.o"
+    include "build/data/overlays/effects/z_effect_ss_g_magma2.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_magma2.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_g_magma2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Ripple"
-    //include "build/baserom/ovl_Effect_Ss_G_Ripple.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_G_Ripple/z_effect_ss_g_ripple.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Ripple/z_effect_ss_g_ripple.o"
+    include "build/data/overlays/effects/z_effect_ss_g_ripple.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_ripple.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_g_ripple.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Spk"
-    include "build/baserom/ovl_Effect_Ss_G_Spk.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Spk/z_effect_ss_g_spk.o"
+    include "build/data/overlays/effects/z_effect_ss_g_spk.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_spk.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_g_spk.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_G_Splash"
-    //include "build/baserom/ovl_Effect_Ss_G_Splash.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_G_Splash/z_effect_ss_g_splash.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_G_Splash/z_effect_ss_g_splash.o"
+    include "build/data/overlays/effects/z_effect_ss_g_splash.data.o"
+    include "build/data/overlays/effects/z_effect_ss_g_splash.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_g_splash.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Hahen"
-    include "build/baserom/ovl_Effect_Ss_Hahen.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Hahen/z_effect_ss_hahen.o"
+    include "build/data/overlays/effects/z_effect_ss_hahen.data.o"
+    include "build/data/overlays/effects/z_effect_ss_hahen.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_hahen.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_HitMark"
-    include "build/baserom/ovl_Effect_Ss_HitMark.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_HitMark/z_effect_ss_hitmark.o"
+    include "build/data/overlays/effects/z_effect_ss_hitmark.data.o"
+    include "build/data/overlays/effects/z_effect_ss_hitmark.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_hitmark.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Ice_Piece"
-    include "build/baserom/ovl_Effect_Ss_Ice_Piece.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Ice_Piece/z_effect_ss_ice_piece.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_piece.data.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_piece.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_piece.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Ice_Smoke"
-    //include "build/baserom/ovl_Effect_Ss_Ice_Smoke.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_Ice_Smoke/z_effect_ss_ice_smoke.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Ice_Smoke/z_effect_ss_ice_smoke.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_smoke.data.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_smoke.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_ice_smoke.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_K_Fire"
-    include "build/baserom/ovl_Effect_Ss_K_Fire.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_K_Fire/z_effect_ss_k_fire.o"
+    include "build/data/overlays/effects/z_effect_ss_k_fire.data.o"
+    include "build/data/overlays/effects/z_effect_ss_k_fire.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_k_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Kakera"
-    include "build/baserom/ovl_Effect_Ss_Kakera.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Kakera/z_effect_ss_kakera.o"
+    include "build/data/overlays/effects/z_effect_ss_kakera.data.o"
+    include "build/data/overlays/effects/z_effect_ss_kakera.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_kakera.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_KiraKira"
-    //include "build/baserom/ovl_Effect_Ss_KiraKira.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_KiraKira/z_effect_ss_kirakira.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_KiraKira/z_effect_ss_kirakira.o"
+    include "build/data/overlays/effects/z_effect_ss_kirakira.data.o"
+    include "build/data/overlays/effects/z_effect_ss_kirakira.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_kirakira.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Lightning"
-    include "build/baserom/ovl_Effect_Ss_Lightning.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Lightning/z_effect_ss_lightning.o"
+    include "build/data/overlays/effects/z_effect_ss_lightning.data.o"
+    include "build/data/overlays/effects/z_effect_ss_lightning.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_lightning.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Sibuki"
-    include "build/baserom/ovl_Effect_Ss_Sibuki.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Sibuki/z_effect_ss_sibuki.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki.data.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Sibuki2"
-    include "build/baserom/ovl_Effect_Ss_Sibuki2.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Sibuki2/z_effect_ss_sibuki2.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki2.data.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki2.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_sibuki2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Solder_Srch_Ball"
-    include "build/baserom/ovl_Effect_Ss_Solder_Srch_Ball.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Solder_Srch_Ball/z_eff_ss_solder_srch_ball.o"
+    include "build/data/overlays/effects/z_eff_ss_solder_srch_ball.data.o"
+    include "build/data/overlays/effects/z_eff_ss_solder_srch_ball.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Stick"
-    //include "build/baserom/ovl_Effect_Ss_Stick.o"
-    include "build/asm/overlays/effects/ovl_Effect_Ss_Stick/z_effect_ss_stick.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Stick/z_effect_ss_stick.o"
+    include "build/data/overlays/effects/z_effect_ss_stick.data.o"
+    include "build/data/overlays/effects/z_effect_ss_stick.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_stick.reloc.o"
 endseg
 
 beginseg
     name "ovl_Effect_Ss_Stone1"
-    include "build/baserom/ovl_Effect_Ss_Stone1.o"
+    include "build/src/overlays/effects/ovl_Effect_Ss_Stone1/z_effect_ss_stone1.o"
+    include "build/data/overlays/effects/z_effect_ss_stone1.data.o"
+    include "build/data/overlays/effects/z_effect_ss_stone1.rodata.o"
+    include "build/data/overlays/effects/z_effect_ss_stone1.reloc.o"
 endseg
 
 beginseg
     name "ovl_Elf_Msg"
-    include "build/baserom/ovl_Elf_Msg.o"
+    include "build/src/overlays/actors/ovl_Elf_Msg/z_elf_msg.o"
+    include "build/data/overlays/actors/z_elf_msg.data.o"
+    include "build/data/overlays/actors/z_elf_msg.rodata.o"
+    include "build/data/overlays/actors/z_elf_msg.reloc.o"
 endseg
 
 beginseg
     name "ovl_Elf_Msg2"
-    include "build/baserom/ovl_Elf_Msg2.o"
+    include "build/src/overlays/actors/ovl_Elf_Msg2/z_elf_msg2.o"
+    include "build/data/overlays/actors/z_elf_msg2.data.o"
+    include "build/data/overlays/actors/z_elf_msg2.rodata.o"
+    include "build/data/overlays/actors/z_elf_msg2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Am"
-    include "build/baserom/ovl_En_Am.o"
+    include "build/src/overlays/actors/ovl_En_Am/z_en_am.o"
+    include "build/data/overlays/actors/z_en_am.data.o"
+    include "build/data/overlays/actors/z_en_am.rodata.o"
+    include "build/data/overlays/actors/z_en_am.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ani"
-    include "build/baserom/ovl_En_Ani.o"
+    include "build/src/overlays/actors/ovl_En_Ani/z_en_ani.o"
+    include "build/data/overlays/actors/z_en_ani.data.o"
+    include "build/data/overlays/actors/z_en_ani.rodata.o"
+    include "build/data/overlays/actors/z_en_ani.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Anubice"
-    include "build/baserom/ovl_En_Anubice.o"
+    include "build/src/overlays/actors/ovl_En_Anubice/z_en_anubice.o"
+    include "build/data/overlays/actors/z_en_anubice.data.o"
+    include "build/data/overlays/actors/z_en_anubice.rodata.o"
+    include "build/data/overlays/actors/z_en_anubice.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Anubice_Fire"
-    include "build/baserom/ovl_En_Anubice_Fire.o"
+    include "build/src/overlays/actors/ovl_En_Anubice_Fire/z_en_anubice_fire.o"
+    include "build/data/overlays/actors/z_en_anubice_fire.data.o"
+    include "build/data/overlays/actors/z_en_anubice_fire.rodata.o"
+    include "build/data/overlays/actors/z_en_anubice_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Anubice_Tag"
-    include "build/baserom/ovl_En_Anubice_Tag.o"
+    include "build/src/overlays/actors/ovl_En_Anubice_Tag/z_en_anubice_tag.o"
+    include "build/data/overlays/actors/z_en_anubice_tag.data.o"
+    include "build/data/overlays/actors/z_en_anubice_tag.rodata.o"
+    include "build/data/overlays/actors/z_en_anubice_tag.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Arow_Trap"
-    //include "build/baserom/ovl_En_Arow_Trap.o"
     include "build/src/overlays/actors/ovl_En_Arow_Trap/z_en_arow_trap.o"
     include "build/src/overlays/actors/ovl_En_Arow_Trap/z_en_arow_trap_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Arrow"
-    include "build/baserom/ovl_En_Arrow.o"
+    include "build/src/overlays/actors/ovl_En_Arrow/z_en_arrow.o"
+    include "build/data/overlays/actors/z_en_arrow.data.o"
+    include "build/data/overlays/actors/z_en_arrow.rodata.o"
+    include "build/data/overlays/actors/z_en_arrow.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Attack_Niw"
-    include "build/baserom/ovl_En_Attack_Niw.o"
+    include "build/src/overlays/actors/ovl_En_Attack_Niw/z_en_attack_niw.o"
+    include "build/data/overlays/actors/z_en_attack_niw.data.o"
+    include "build/data/overlays/actors/z_en_attack_niw.rodata.o"
+    include "build/data/overlays/actors/z_en_attack_niw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ba"
-    include "build/baserom/ovl_En_Ba.o"
+    include "build/src/overlays/actors/ovl_En_Ba/z_en_ba.o"
+    include "build/data/overlays/actors/z_en_ba.data.o"
+    include "build/data/overlays/actors/z_en_ba.rodata.o"
+    include "build/data/overlays/actors/z_en_ba.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bb"
-    include "build/baserom/ovl_En_Bb.o"
+    include "build/src/overlays/actors/ovl_En_Bb/z_en_bb.o"
+    include "build/data/overlays/actors/z_en_bb.data.o"
+    include "build/data/overlays/actors/z_en_bb.rodata.o"
+    include "build/data/overlays/actors/z_en_bb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bdfire"
-    include "build/baserom/ovl_En_Bdfire.o"
+    include "build/src/overlays/actors/ovl_En_Bdfire/z_en_bdfire.o"
+    include "build/data/overlays/actors/z_en_bdfire.data.o"
+    include "build/data/overlays/actors/z_en_bdfire.rodata.o"
+    include "build/data/overlays/actors/z_en_bdfire.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bigokuta"
-    include "build/baserom/ovl_En_Bigokuta.o"
+    include "build/src/overlays/actors/ovl_En_Bigokuta/z_en_bigokuta.o"
+    include "build/data/overlays/actors/z_en_bigokuta.data.o"
+    include "build/data/overlays/actors/z_en_bigokuta.rodata.o"
+    include "build/data/overlays/actors/z_en_bigokuta.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bili"
-    include "build/baserom/ovl_En_Bili.o"
+    include "build/src/overlays/actors/ovl_En_Bili/z_en_bili.o"
+    include "build/data/overlays/actors/z_en_bili.data.o"
+    include "build/data/overlays/actors/z_en_bili.rodata.o"
+    include "build/data/overlays/actors/z_en_bili.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bird"
-    include "build/baserom/ovl_En_Bird.o"
+    include "build/asm/overlays/actors/ovl_En_Bird/z_en_bird.o"
 endseg
 
 beginseg
     name "ovl_En_Blkobj"
-    include "build/baserom/ovl_En_Blkobj.o"
+    include "build/src/overlays/actors/ovl_En_Blkobj/z_en_blkobj.o"
+    include "build/data/overlays/actors/z_en_blkobj.data.o"
+    include "build/data/overlays/actors/z_en_blkobj.rodata.o"
+    include "build/data/overlays/actors/z_en_blkobj.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bom"
-    include "build/baserom/ovl_En_Bom.o"
+    include "build/src/overlays/actors/ovl_En_Bom/z_en_bom.o"
+    include "build/data/overlays/actors/z_en_bom.data.o"
+    include "build/data/overlays/actors/z_en_bom.rodata.o"
+    include "build/data/overlays/actors/z_en_bom.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bom_Bowl_Man"
-    include "build/baserom/ovl_En_Bom_Bowl_Man.o"
+    include "build/src/overlays/actors/ovl_En_Bom_Bowl_Man/z_en_bom_bowl_man.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_man.data.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_man.rodata.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_man.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bom_Bowl_Pit"
-    include "build/baserom/ovl_En_Bom_Bowl_Pit.o"
+    include "build/src/overlays/actors/ovl_En_Bom_Bowl_Pit/z_en_bom_bowl_pit.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_pit.data.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_pit.rodata.o"
+    include "build/data/overlays/actors/z_en_bom_bowl_pit.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bom_Chu"
-    include "build/baserom/ovl_En_Bom_Chu.o"
+    include "build/src/overlays/actors/ovl_En_Bom_Chu/z_en_bom_chu.o"
+    include "build/data/overlays/actors/z_en_bom_chu.data.o"
+    include "build/data/overlays/actors/z_en_bom_chu.rodata.o"
+    include "build/data/overlays/actors/z_en_bom_chu.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bombf"
-    include "build/baserom/ovl_En_Bombf.o"
+    include "build/src/overlays/actors/ovl_En_Bombf/z_en_bombf.o"
+    include "build/data/overlays/actors/z_en_bombf.data.o"
+    include "build/data/overlays/actors/z_en_bombf.rodata.o"
+    include "build/data/overlays/actors/z_en_bombf.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Boom"
-    include "build/baserom/ovl_En_Boom.o"
-    //include "build/src/overlays/actors/ovl_En_Boom/z_en_boom.o"
-    //include "build/src/overlays/actors/ovl_En_Boom/z_en_boom_reloc.o"
+    include "build/asm/overlays/actors/ovl_En_Boom/z_en_boom.o"
 endseg
 
 beginseg
     name "ovl_En_Box"
     increment 0x10
-    include "build/baserom/ovl_En_Box.o"
+    include "build/src/overlays/actors/ovl_En_Box/z_en_box.o"
+    include "build/data/overlays/actors/z_en_box.data.o"
+    include "build/data/overlays/actors/z_en_box.rodata.o"
+    include "build/data/overlays/actors/z_en_box.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Brob"
-    include "build/baserom/ovl_En_Brob.o"
+    include "build/src/overlays/actors/ovl_En_Brob/z_en_brob.o"
+    include "build/data/overlays/actors/z_en_brob.data.o"
+    include "build/data/overlays/actors/z_en_brob.rodata.o"
+    include "build/data/overlays/actors/z_en_brob.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bubble"
-    include "build/baserom/ovl_En_Bubble.o"
+    include "build/src/overlays/actors/ovl_En_Bubble/z_en_bubble.o"
+    include "build/data/overlays/actors/z_en_bubble.data.o"
+    include "build/data/overlays/actors/z_en_bubble.rodata.o"
+    include "build/data/overlays/actors/z_en_bubble.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Butte"
-    include "build/baserom/ovl_En_Butte.o"
+    include "build/src/overlays/actors/ovl_En_Butte/z_en_butte.o"
+    include "build/data/overlays/actors/z_en_butte.data.o"
+    include "build/data/overlays/actors/z_en_butte.rodata.o"
+    include "build/data/overlays/actors/z_en_butte.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bw"
-    include "build/baserom/ovl_En_Bw.o"
+    include "build/src/overlays/actors/ovl_En_Bw/z_en_bw.o"
+    include "build/data/overlays/actors/z_en_bw.data.o"
+    include "build/data/overlays/actors/z_en_bw.rodata.o"
+    include "build/data/overlays/actors/z_en_bw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Bx"
-    include "build/baserom/ovl_En_Bx.o"
+    include "build/src/overlays/actors/ovl_En_Bx/z_en_bx.o"
+    include "build/data/overlays/actors/z_en_bx.data.o"
+    include "build/data/overlays/actors/z_en_bx.rodata.o"
+    include "build/data/overlays/actors/z_en_bx.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Changer"
-    include "build/baserom/ovl_En_Changer.o"
+    include "build/src/overlays/actors/ovl_En_Changer/z_en_changer.o"
+    include "build/data/overlays/actors/z_en_changer.data.o"
+    include "build/data/overlays/actors/z_en_changer.rodata.o"
+    include "build/data/overlays/actors/z_en_changer.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Clear_Tag"
-    increment 0x2A30
-    include "build/baserom/ovl_En_Clear_Tag.o"
+    include "build/src/overlays/actors/ovl_En_Clear_Tag/z_en_clear_tag.o"
+    include "build/data/overlays/actors/z_en_clear_tag.data.o"
+    include "build/data/overlays/actors/z_en_clear_tag.rodata.o"
+    include "build/data/overlays/actors/z_en_clear_tag.bss.o"
+    include "build/data/overlays/actors/z_en_clear_tag.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Cow"
-    include "build/baserom/ovl_En_Cow.o"
+    include "build/src/overlays/actors/ovl_En_Cow/z_en_cow.o"
+    include "build/data/overlays/actors/z_en_cow.data.o"
+    include "build/data/overlays/actors/z_en_cow.rodata.o"
+    include "build/data/overlays/actors/z_en_cow.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Crow"
-    include "build/baserom/ovl_En_Crow.o"
+    include "build/src/overlays/actors/ovl_En_Crow/z_en_crow.o"
+    include "build/data/overlays/actors/z_en_crow.data.o"
+    include "build/data/overlays/actors/z_en_crow.rodata.o"
+    include "build/data/overlays/actors/z_en_crow.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Cs"
-    include "build/baserom/ovl_En_Cs.o"
+    include "build/src/overlays/actors/ovl_En_Cs/z_en_cs.o"
+    include "build/data/overlays/actors/z_en_cs.data.o"
+    include "build/data/overlays/actors/z_en_cs.rodata.o"
+    include "build/data/overlays/actors/z_en_cs.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Daiku"
-    include "build/baserom/ovl_En_Daiku.o"
+    include "build/src/overlays/actors/ovl_En_Daiku/z_en_daiku.o"
+    include "build/data/overlays/actors/z_en_daiku.data.o"
+    include "build/data/overlays/actors/z_en_daiku.rodata.o"
+    include "build/data/overlays/actors/z_en_daiku.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Daiku_Kakariko"
-    include "build/baserom/ovl_En_Daiku_Kakariko.o"
+    include "build/src/overlays/actors/ovl_En_Daiku_Kakariko/z_en_daiku_kakariko.o"
+    include "build/data/overlays/actors/z_en_daiku_kakariko.data.o"
+    include "build/data/overlays/actors/z_en_daiku_kakariko.rodata.o"
+    include "build/data/overlays/actors/z_en_daiku_kakariko.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dekubaba"
-    include "build/baserom/ovl_En_Dekubaba.o"
+    include "build/src/overlays/actors/ovl_En_Dekubaba/z_en_dekubaba.o"
+    include "build/data/overlays/actors/z_en_dekubaba.data.o"
+    include "build/data/overlays/actors/z_en_dekubaba.rodata.o"
+    include "build/data/overlays/actors/z_en_dekubaba.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dekunuts"
-    include "build/baserom/ovl_En_Dekunuts.o"
+    include "build/src/overlays/actors/ovl_En_Dekunuts/z_en_dekunuts.o"
+    include "build/data/overlays/actors/z_en_dekunuts.data.o"
+    include "build/data/overlays/actors/z_en_dekunuts.rodata.o"
+    include "build/data/overlays/actors/z_en_dekunuts.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dh"
-    include "build/baserom/ovl_En_Dh.o"
+    include "build/src/overlays/actors/ovl_En_Dh/z_en_dh.o"
+    include "build/data/overlays/actors/z_en_dh.data.o"
+    include "build/data/overlays/actors/z_en_dh.rodata.o"
+    include "build/data/overlays/actors/z_en_dh.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dha"
-    include "build/baserom/ovl_En_Dha.o"
+    include "build/src/overlays/actors/ovl_En_Dha/z_en_dha.o"
+    include "build/data/overlays/actors/z_en_dha.data.o"
+    include "build/data/overlays/actors/z_en_dha.rodata.o"
+    include "build/data/overlays/actors/z_en_dha.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Diving_Game"
-    include "build/baserom/ovl_En_Diving_Game.o"
+    include "build/src/overlays/actors/ovl_En_Diving_Game/z_en_diving_game.o"
+    include "build/data/overlays/actors/z_en_diving_game.data.o"
+    include "build/data/overlays/actors/z_en_diving_game.rodata.o"
+    include "build/data/overlays/actors/z_en_diving_game.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dns"
-    include "build/baserom/ovl_En_Dns.o"
+    include "build/src/overlays/actors/ovl_En_Dns/z_en_dns.o"
+    include "build/data/overlays/actors/z_en_dns.data.o"
+    include "build/data/overlays/actors/z_en_dns.rodata.o"
+    include "build/data/overlays/actors/z_en_dns.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dnt_Demo"
-    include "build/baserom/ovl_En_Dnt_Demo.o"
+    include "build/src/overlays/actors/ovl_En_Dnt_Demo/z_en_dnt_demo.o"
+    include "build/data/overlays/actors/z_en_dnt_demo.data.o"
+    include "build/data/overlays/actors/z_en_dnt_demo.rodata.o"
+    include "build/data/overlays/actors/z_en_dnt_demo.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dnt_Jiji"
-    include "build/baserom/ovl_En_Dnt_Jiji.o"
+    include "build/src/overlays/actors/ovl_En_Dnt_Jiji/z_en_dnt_jiji.o"
+    include "build/data/overlays/actors/z_en_dnt_jiji.data.o"
+    include "build/data/overlays/actors/z_en_dnt_jiji.rodata.o"
+    include "build/data/overlays/actors/z_en_dnt_jiji.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dnt_Nomal"
-    include "build/baserom/ovl_En_Dnt_Nomal.o"
+    include "build/src/overlays/actors/ovl_En_Dnt_Nomal/z_en_dnt_nomal.o"
+    include "build/data/overlays/actors/z_en_dnt_nomal.data.o"
+    include "build/data/overlays/actors/z_en_dnt_nomal.rodata.o"
+    include "build/data/overlays/actors/z_en_dnt_nomal.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dodojr"
-    include "build/baserom/ovl_En_Dodojr.o"
+    include "build/src/overlays/actors/ovl_En_Dodojr/z_en_dodojr.o"
+    include "build/data/overlays/actors/z_en_dodojr.data.o"
+    include "build/data/overlays/actors/z_en_dodojr.rodata.o"
+    include "build/data/overlays/actors/z_en_dodojr.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dodongo"
-    include "build/baserom/ovl_En_Dodongo.o"
+    include "build/src/overlays/actors/ovl_En_Dodongo/z_en_dodongo.o"
+    include "build/data/overlays/actors/z_en_dodongo.data.o"
+    include "build/data/overlays/actors/z_en_dodongo.rodata.o"
+    include "build/data/overlays/actors/z_en_dodongo.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dog"
-    include "build/baserom/ovl_En_Dog.o"
+    include "build/src/overlays/actors/ovl_En_Dog/z_en_dog.o"
+    include "build/data/overlays/actors/z_en_dog.data.o"
+    include "build/data/overlays/actors/z_en_dog.rodata.o"
+    include "build/data/overlays/actors/z_en_dog.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Door"
-    include "build/baserom/ovl_En_Door.o"
+    include "build/src/overlays/actors/ovl_En_Door/z_en_door.o"
+    include "build/data/overlays/actors/z_en_door.data.o"
+    include "build/data/overlays/actors/z_en_door.rodata.o"
+    include "build/data/overlays/actors/z_en_door.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ds"
-    include "build/baserom/ovl_En_Ds.o"
+    include "build/src/overlays/actors/ovl_En_Ds/z_en_ds.o"
+    include "build/data/overlays/actors/z_en_ds.data.o"
+    include "build/data/overlays/actors/z_en_ds.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Du"
-    include "build/baserom/ovl_En_Du.o"
+    include "build/src/overlays/actors/ovl_En_Du/z_en_du.o"
+    include "build/data/overlays/actors/z_en_du.data.o"
+    include "build/data/overlays/actors/z_en_du.rodata.o"
+    include "build/data/overlays/actors/z_en_du.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Dy_Extra"
-    include "build/baserom/ovl_En_Dy_Extra.o"
+    include "build/src/overlays/actors/ovl_En_Dy_Extra/z_en_dy_extra.o"
+    include "build/data/overlays/actors/z_en_dy_extra.data.o"
+    include "build/data/overlays/actors/z_en_dy_extra.rodata.o"
+    include "build/data/overlays/actors/z_en_dy_extra.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Eg"
-    //include "build/baserom/ovl_En_Eg.o"
     include "build/src/overlays/actors/ovl_En_Eg/z_en_eg.o"
     include "build/src/overlays/actors/ovl_En_Eg/z_en_eg_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Eiyer"
-    include "build/baserom/ovl_En_Eiyer.o"
+    include "build/src/overlays/actors/ovl_En_Eiyer/z_en_eiyer.o"
+    include "build/data/overlays/actors/z_en_eiyer.data.o"
+    include "build/data/overlays/actors/z_en_eiyer.rodata.o"
+    include "build/data/overlays/actors/z_en_eiyer.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Elf"
-    include "build/baserom/ovl_En_Elf.o"
+    include "build/src/overlays/actors/ovl_En_Elf/z_en_elf.o"
+    include "build/data/overlays/actors/z_en_elf.data.o"
+    include "build/data/overlays/actors/z_en_elf.rodata.o"
+    include "build/data/overlays/actors/z_en_elf.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Encount1"
-    include "build/baserom/ovl_En_Encount1.o"
+    include "build/src/overlays/actors/ovl_En_Encount1/z_en_encount1.o"
+    include "build/data/overlays/actors/z_en_encount1.data.o"
+    include "build/data/overlays/actors/z_en_encount1.rodata.o"
+    include "build/data/overlays/actors/z_en_encount1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Encount2"
-    include "build/baserom/ovl_En_Encount2.o"
+    include "build/src/overlays/actors/ovl_En_Encount2/z_en_encount2.o"
+    include "build/data/overlays/actors/z_en_encount2.data.o"
+    include "build/data/overlays/actors/z_en_encount2.rodata.o"
+    include "build/data/overlays/actors/z_en_encount2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ex_Item"
-    include "build/baserom/ovl_En_Ex_Item.o"
+    include "build/src/overlays/actors/ovl_En_Ex_Item/z_en_ex_item.o"
+    include "build/data/overlays/actors/z_en_ex_item.data.o"
+    include "build/data/overlays/actors/z_en_ex_item.rodata.o"
+    include "build/data/overlays/actors/z_en_ex_item.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ex_Ruppy"
-    include "build/baserom/ovl_En_Ex_Ruppy.o"
+    include "build/src/overlays/actors/ovl_En_Ex_Ruppy/z_en_ex_ruppy.o"
+    include "build/data/overlays/actors/z_en_ex_ruppy.data.o"
+    include "build/data/overlays/actors/z_en_ex_ruppy.rodata.o"
+    include "build/data/overlays/actors/z_en_ex_ruppy.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fd"
-    include "build/baserom/ovl_En_Fd.o"
+    include "build/src/overlays/actors/ovl_En_Fd/z_en_fd.o"
+    include "build/data/overlays/actors/z_en_fd.data.o"
+    include "build/data/overlays/actors/z_en_fd.rodata.o"
+    include "build/data/overlays/actors/z_en_fd.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fd_Fire"
-    include "build/baserom/ovl_En_Fd_Fire.o"
+    include "build/src/overlays/actors/ovl_En_Fd_Fire/z_en_fd_fire.o"
+    include "build/data/overlays/actors/z_en_fd_fire.data.o"
+    include "build/data/overlays/actors/z_en_fd_fire.rodata.o"
+    include "build/data/overlays/actors/z_en_fd_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fhg_Fire"
-    include "build/baserom/ovl_En_Fhg_Fire.o"
+    include "build/src/overlays/actors/ovl_En_Fhg_Fire/z_en_fhg_fire.o"
+    include "build/data/overlays/actors/z_en_fhg_fire.data.o"
+    include "build/data/overlays/actors/z_en_fhg_fire.rodata.o"
+    include "build/data/overlays/actors/z_en_fhg_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fire_Rock"
-    include "build/baserom/ovl_En_Fire_Rock.o"
+    include "build/src/overlays/actors/ovl_En_Fire_Rock/z_en_fire_rock.o"
+    include "build/data/overlays/actors/z_en_fire_rock.data.o"
+    include "build/data/overlays/actors/z_en_fire_rock.rodata.o"
+    include "build/data/overlays/actors/z_en_fire_rock.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Firefly"
-    include "build/baserom/ovl_En_Firefly.o"
+    include "build/src/overlays/actors/ovl_En_Firefly/z_en_firefly.o"
+    include "build/data/overlays/actors/z_en_firefly.data.o"
+    include "build/data/overlays/actors/z_en_firefly.rodata.o"
+    include "build/data/overlays/actors/z_en_firefly.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fish"
-    include "build/baserom/ovl_En_Fish.o"
+    include "build/src/overlays/actors/ovl_En_Fish/z_en_fish.o"
+    include "build/data/overlays/actors/z_en_fish.data.o"
+    include "build/data/overlays/actors/z_en_fish.rodata.o"
+    include "build/data/overlays/actors/z_en_fish.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Floormas"
-    include "build/baserom/ovl_En_Floormas.o"
+    include "build/src/overlays/actors/ovl_En_Floormas/z_en_floormas.o"
+    include "build/data/overlays/actors/z_en_floormas.data.o"
+    include "build/data/overlays/actors/z_en_floormas.rodata.o"
+    include "build/data/overlays/actors/z_en_floormas.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fr"
-    include "build/baserom/ovl_En_Fr.o"
+    include "build/src/overlays/actors/ovl_En_Fr/z_en_fr.o"
+    include "build/data/overlays/actors/z_en_fr.data.o"
+    include "build/data/overlays/actors/z_en_fr.rodata.o"
+    include "build/data/overlays/actors/z_en_fr.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fu"
-    increment 0x10
-    include "build/baserom/ovl_En_Fu.o"
+    include "build/src/overlays/actors/ovl_En_Fu/z_en_fu.o"
+    include "build/data/overlays/actors/z_en_fu.data.o"
+    include "build/data/overlays/actors/z_en_fu.rodata.o"
+    include "build/data/overlays/actors/z_en_fu.bss.o"
+    include "build/data/overlays/actors/z_en_fu.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fw"
-    include "build/baserom/ovl_En_Fw.o"
+    include "build/src/overlays/actors/ovl_En_Fw/z_en_fw.o"
+    include "build/data/overlays/actors/z_en_fw.data.o"
+    include "build/data/overlays/actors/z_en_fw.rodata.o"
+    include "build/data/overlays/actors/z_en_fw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Fz"
-    include "build/baserom/ovl_En_Fz.o"
+    include "build/src/overlays/actors/ovl_En_Fz/z_en_fz.o"
+    include "build/data/overlays/actors/z_en_fz.data.o"
+    include "build/data/overlays/actors/z_en_fz.rodata.o"
+    include "build/data/overlays/actors/z_en_fz.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_G_Switch"
-    include "build/baserom/ovl_En_G_Switch.o"
+    include "build/src/overlays/actors/ovl_En_G_Switch/z_en_g_switch.o"
+    include "build/data/overlays/actors/z_en_g_switch.data.o"
+    include "build/data/overlays/actors/z_en_g_switch.rodata.o"
+    include "build/data/overlays/actors/z_en_g_switch.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ganon_Mant"
-    include "build/baserom/ovl_En_Ganon_Mant.o"
+    include "build/src/overlays/actors/ovl_En_Ganon_Mant/z_en_ganon_mant.o"
+    include "build/data/overlays/actors/z_en_ganon_mant.data.o"
+    include "build/data/overlays/actors/z_en_ganon_mant.rodata.o"
+    include "build/data/overlays/actors/z_en_ganon_mant.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ganon_Organ"
-    include "build/baserom/ovl_En_Ganon_Organ.o"
+    include "build/src/overlays/actors/ovl_En_Ganon_Organ/z_en_ganon_organ.o"
+    include "build/data/overlays/actors/z_en_ganon_organ.data.o"
+    include "build/data/overlays/actors/z_en_ganon_organ.rodata.o"
+    include "build/data/overlays/actors/z_en_ganon_organ.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Gb"
-    include "build/baserom/ovl_En_Gb.o"
+    include "build/src/overlays/actors/ovl_En_Gb/z_en_gb.o"
+    include "build/data/overlays/actors/z_en_gb.data.o"
+    include "build/data/overlays/actors/z_en_gb.rodata.o"
+    include "build/data/overlays/actors/z_en_gb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ge1"
-    include "build/baserom/ovl_En_Ge1.o"
+    include "build/src/overlays/actors/ovl_En_Ge1/z_en_ge1.o"
+    include "build/data/overlays/actors/z_en_ge1.data.o"
+    include "build/data/overlays/actors/z_en_ge1.rodata.o"
+    include "build/data/overlays/actors/z_en_ge1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ge2"
-    include "build/baserom/ovl_En_Ge2.o"
+    include "build/src/overlays/actors/ovl_En_Ge2/z_en_ge2.o"
+    include "build/data/overlays/actors/z_en_ge2.data.o"
+    include "build/data/overlays/actors/z_en_ge2.rodata.o"
+    include "build/data/overlays/actors/z_en_ge2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ge3"
-    include "build/baserom/ovl_En_Ge3.o"
+    include "build/src/overlays/actors/ovl_En_Ge3/z_en_ge3.o"
+    include "build/data/overlays/actors/z_en_ge3.data.o"
+    include "build/data/overlays/actors/z_en_ge3.rodata.o"
+    include "build/data/overlays/actors/z_en_ge3.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_GeldB"
-    include "build/baserom/ovl_En_GeldB.o"
+    include "build/src/overlays/actors/ovl_En_GeldB/z_en_geldb.o"
+    include "build/data/overlays/actors/z_en_geldb.data.o"
+    include "build/data/overlays/actors/z_en_geldb.rodata.o"
+    include "build/data/overlays/actors/z_en_geldb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_GirlA"
-    include "build/baserom/ovl_En_GirlA.o"
+    include "build/src/overlays/actors/ovl_En_GirlA/z_en_girla.o"
+    include "build/data/overlays/actors/z_en_girla.data.o"
+    include "build/data/overlays/actors/z_en_girla.rodata.o"
+    include "build/data/overlays/actors/z_en_girla.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Gm"
-    include "build/baserom/ovl_En_Gm.o"
+    include "build/src/overlays/actors/ovl_En_Gm/z_en_gm.o"
+    include "build/data/overlays/actors/z_en_gm.data.o"
+    include "build/data/overlays/actors/z_en_gm.rodata.o"
+    include "build/data/overlays/actors/z_en_gm.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Go"
-    include "build/baserom/ovl_En_Go.o"
+    include "build/src/overlays/actors/ovl_En_Go/z_en_go.o"
+    include "build/data/overlays/actors/z_en_go.data.o"
+    include "build/data/overlays/actors/z_en_go.rodata.o"
+    include "build/data/overlays/actors/z_en_go.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Go2"
-    include "build/baserom/ovl_En_Go2.o"
+    include "build/src/overlays/actors/ovl_En_Go2/z_en_go2.o"
+    include "build/data/overlays/actors/z_en_go2.data.o"
+    include "build/data/overlays/actors/z_en_go2.rodata.o"
+    include "build/data/overlays/actors/z_en_go2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Goma"
-    include "build/baserom/ovl_En_Goma.o"
+    include "build/src/overlays/actors/ovl_En_Goma/z_en_goma.o"
+    include "build/data/overlays/actors/z_en_goma.data.o"
+    include "build/data/overlays/actors/z_en_goma.rodata.o"
+    include "build/data/overlays/actors/z_en_goma.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Goroiwa"
-    include "build/baserom/ovl_En_Goroiwa.o"
+    include "build/src/overlays/actors/ovl_En_Goroiwa/z_en_goroiwa.o"
+    include "build/data/overlays/actors/z_en_goroiwa.data.o"
+    include "build/data/overlays/actors/z_en_goroiwa.rodata.o"
+    include "build/data/overlays/actors/z_en_goroiwa.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Gs"
-    include "build/baserom/ovl_En_Gs.o"
+    include "build/src/overlays/actors/ovl_En_Gs/z_en_gs.o"
+    include "build/data/overlays/actors/z_en_gs.data.o"
+    include "build/data/overlays/actors/z_en_gs.rodata.o"
+    include "build/data/overlays/actors/z_en_gs.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Guest"
-    include "build/baserom/ovl_En_Guest.o"
+    include "build/src/overlays/actors/ovl_En_Guest/z_en_guest.o"
+    include "build/data/overlays/actors/z_en_guest.data.o"
+    include "build/data/overlays/actors/z_en_guest.rodata.o"
+    include "build/data/overlays/actors/z_en_guest.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Hata"
-    include "build/baserom/ovl_En_Hata.o"
+    include "build/src/overlays/actors/ovl_En_Hata/z_en_hata.o"
+    include "build/data/overlays/actors/z_en_hata.data.o"
+    include "build/data/overlays/actors/z_en_hata.rodata.o"
+    include "build/data/overlays/actors/z_en_hata.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Heishi1"
-    include "build/baserom/ovl_En_Heishi1.o"
+    include "build/src/overlays/actors/ovl_En_Heishi1/z_en_heishi1.o"
+    include "build/data/overlays/actors/z_en_heishi1.data.o"
+    include "build/data/overlays/actors/z_en_heishi1.rodata.o"
+    include "build/data/overlays/actors/z_en_heishi1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Heishi2"
-    include "build/baserom/ovl_En_Heishi2.o"
+    include "build/src/overlays/actors/ovl_En_Heishi2/z_en_heishi2.o"
+    include "build/data/overlays/actors/z_en_heishi2.data.o"
+    include "build/data/overlays/actors/z_en_heishi2.rodata.o"
+    include "build/data/overlays/actors/z_en_heishi2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Heishi3"
-    include "build/baserom/ovl_En_Heishi3.o"
+    include "build/src/overlays/actors/ovl_En_Heishi3/z_en_heishi3.o"
+    include "build/data/overlays/actors/z_en_heishi3.data.o"
+    include "build/data/overlays/actors/z_en_heishi3.rodata.o"
+    include "build/data/overlays/actors/z_en_heishi3.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Heishi4"
-    include "build/baserom/ovl_En_Heishi4.o"
+    include "build/src/overlays/actors/ovl_En_Heishi4/z_en_heishi4.o"
+    include "build/data/overlays/actors/z_en_heishi4.data.o"
+    include "build/data/overlays/actors/z_en_heishi4.rodata.o"
+    include "build/data/overlays/actors/z_en_heishi4.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Hintnuts"
-    include "build/baserom/ovl_En_Hintnuts.o"
+    include "build/src/overlays/actors/ovl_En_Hintnuts/z_en_hintnuts.o"
+    include "build/data/overlays/actors/z_en_hintnuts.data.o"
+    include "build/data/overlays/actors/z_en_hintnuts.rodata.o"
+    include "build/data/overlays/actors/z_en_hintnuts.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Holl"
-    include "build/baserom/ovl_En_Holl.o"
+    include "build/src/overlays/actors/ovl_En_Holl/z_en_holl.o"
+    include "build/data/overlays/actors/z_en_holl.data.o"
+    include "build/data/overlays/actors/z_en_holl.rodata.o"
+    include "build/data/overlays/actors/z_en_holl.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Honotrap"
-    include "build/baserom/ovl_En_Honotrap.o"
+    include "build/src/overlays/actors/ovl_En_Honotrap/z_en_honotrap.o"
+    include "build/data/overlays/actors/z_en_honotrap.data.o"
+    include "build/data/overlays/actors/z_en_honotrap.rodata.o"
+    include "build/data/overlays/actors/z_en_honotrap.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse"
-    include "build/baserom/ovl_En_Horse.o"
+    include "build/src/overlays/actors/ovl_En_Horse/z_en_horse.o"
+    include "build/data/overlays/actors/z_en_horse.data.o"
+    include "build/data/overlays/actors/z_en_horse.rodata.o"
+    include "build/data/overlays/actors/z_en_horse.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse_Game_Check"
-    include "build/baserom/ovl_En_Horse_Game_Check.o"
+    include "build/src/overlays/actors/ovl_En_Horse_Game_Check/z_en_horse_game_check.o"
+    include "build/data/overlays/actors/z_en_horse_game_check.data.o"
+    include "build/data/overlays/actors/z_en_horse_game_check.rodata.o"
+    include "build/data/overlays/actors/z_en_horse_game_check.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse_Ganon"
-    include "build/baserom/ovl_En_Horse_Ganon.o"
+    include "build/src/overlays/actors/ovl_En_Horse_Ganon/z_en_horse_ganon.o"
+    include "build/data/overlays/actors/z_en_horse_ganon.data.o"
+    include "build/data/overlays/actors/z_en_horse_ganon.rodata.o"
+    include "build/data/overlays/actors/z_en_horse_ganon.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse_Link_Child"
-    include "build/baserom/ovl_En_Horse_Link_Child.o"
+    include "build/src/overlays/actors/ovl_En_Horse_Link_Child/z_en_horse_link_child.o"
+    include "build/data/overlays/actors/z_en_horse_link_child.data.o"
+    include "build/data/overlays/actors/z_en_horse_link_child.rodata.o"
+    include "build/data/overlays/actors/z_en_horse_link_child.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse_Normal"
-    include "build/baserom/ovl_En_Horse_Normal.o"
+    include "build/src/overlays/actors/ovl_En_Horse_Normal/z_en_horse_normal.o"
+    include "build/data/overlays/actors/z_en_horse_normal.data.o"
+    include "build/data/overlays/actors/z_en_horse_normal.rodata.o"
+    include "build/data/overlays/actors/z_en_horse_normal.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Horse_Zelda"
-    include "build/baserom/ovl_En_Horse_Zelda.o"
+    include "build/src/overlays/actors/ovl_En_Horse_Zelda/z_en_horse_zelda.o"
+    include "build/data/overlays/actors/z_en_horse_zelda.data.o"
+    include "build/data/overlays/actors/z_en_horse_zelda.rodata.o"
+    include "build/data/overlays/actors/z_en_horse_zelda.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Hs"
-    include "build/baserom/ovl_En_Hs.o"
+    include "build/src/overlays/actors/ovl_En_Hs/z_en_hs.o"
+    include "build/data/overlays/actors/z_en_hs.data.o"
+    include "build/data/overlays/actors/z_en_hs.rodata.o"
+    include "build/data/overlays/actors/z_en_hs.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Hs2"
-    include "build/baserom/ovl_En_Hs2.o"
+    include "build/src/overlays/actors/ovl_En_Hs2/z_en_hs2.o"
+    include "build/data/overlays/actors/z_en_hs2.data.o"
+    include "build/data/overlays/actors/z_en_hs2.rodata.o"
+    include "build/data/overlays/actors/z_en_hs2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Hy"
-    include "build/baserom/ovl_En_Hy.o"
+    include "build/src/overlays/actors/ovl_En_Hy/z_en_hy.o"
+    include "build/data/overlays/actors/z_en_hy.data.o"
+    include "build/data/overlays/actors/z_en_hy.rodata.o"
+    include "build/data/overlays/actors/z_en_hy.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ice_Hono"
-    include "build/baserom/ovl_En_Ice_Hono.o"
+    include "build/src/overlays/actors/ovl_En_Ice_Hono/z_en_ice_hono.o"
+    include "build/data/overlays/actors/z_en_ice_hono.data.o"
+    include "build/data/overlays/actors/z_en_ice_hono.rodata.o"
+    include "build/data/overlays/actors/z_en_ice_hono.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ik"
-    increment 0x10
-    include "build/baserom/ovl_En_Ik.o"
+    include "build/src/overlays/actors/ovl_En_Ik/z_en_ik.o"
+    include "build/data/overlays/actors/z_en_ik.data.o"
+    include "build/data/overlays/actors/z_en_ik.rodata.o"
+    include "build/data/overlays/actors/z_en_ik.bss.o"
+    include "build/data/overlays/actors/z_en_ik.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_In"
-    include "build/baserom/ovl_En_In.o"
+    include "build/src/overlays/actors/ovl_En_In/z_en_in.o"
+    include "build/data/overlays/actors/z_en_in.data.o"
+    include "build/data/overlays/actors/z_en_in.rodata.o"
+    include "build/data/overlays/actors/z_en_in.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Insect"
-    include "build/baserom/ovl_En_Insect.o"
+    include "build/src/overlays/actors/ovl_En_Insect/z_en_insect.o"
+    include "build/data/overlays/actors/z_en_insect.data.o"
+    include "build/data/overlays/actors/z_en_insect.rodata.o"
+    include "build/data/overlays/actors/z_en_insect.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ishi"
-    include "build/baserom/ovl_En_Ishi.o"
+    include "build/src/overlays/actors/ovl_En_Ishi/z_en_ishi.o"
+    include "build/data/overlays/actors/z_en_ishi.data.o"
+    include "build/data/overlays/actors/z_en_ishi.rodata.o"
+    include "build/data/overlays/actors/z_en_ishi.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_It"
-    //include "build/baserom/ovl_En_It.o"
     include "build/src/overlays/actors/ovl_En_It/z_en_it.o"
     include "build/src/overlays/actors/ovl_En_It/z_en_it_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Jj"
-    include "build/baserom/ovl_En_Jj.o"
+    include "build/src/overlays/actors/ovl_En_Jj/z_en_jj.o"
+    include "build/data/overlays/actors/z_en_jj.data.o"
+    include "build/data/overlays/actors/z_en_jj.rodata.o"
+    include "build/data/overlays/actors/z_en_jj.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Js"
-    include "build/baserom/ovl_En_Js.o"
+    include "build/src/overlays/actors/ovl_En_Js/z_en_js.o"
+    include "build/data/overlays/actors/z_en_js.data.o"
+    include "build/data/overlays/actors/z_en_js.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Jsjutan"
-    increment 0xB60
-    include "build/baserom/ovl_En_Jsjutan.o"
+    include "build/src/overlays/actors/ovl_En_Jsjutan/z_en_jsjutan.o"
+    include "build/data/overlays/actors/z_en_jsjutan.data.o"
+    include "build/data/overlays/actors/z_en_jsjutan.rodata.o"
+    include "build/data/overlays/actors/z_en_jsjutan.bss.o"
+    include "build/data/overlays/actors/z_en_jsjutan.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kakasi"
-    include "build/baserom/ovl_En_Kakasi.o"
+    include "build/src/overlays/actors/ovl_En_Kakasi/z_en_kakasi.o"
+    include "build/data/overlays/actors/z_en_kakasi.data.o"
+    include "build/data/overlays/actors/z_en_kakasi.rodata.o"
+    include "build/data/overlays/actors/z_en_kakasi.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kakasi2"
-    include "build/baserom/ovl_En_Kakasi2.o"
+    include "build/src/overlays/actors/ovl_En_Kakasi2/z_en_kakasi2.o"
+    include "build/data/overlays/actors/z_en_kakasi2.data.o"
+    include "build/data/overlays/actors/z_en_kakasi2.rodata.o"
+    include "build/data/overlays/actors/z_en_kakasi2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kakasi3"
-    include "build/baserom/ovl_En_Kakasi3.o"
+    include "build/src/overlays/actors/ovl_En_Kakasi3/z_en_kakasi3.o"
+    include "build/data/overlays/actors/z_en_kakasi3.data.o"
+    include "build/data/overlays/actors/z_en_kakasi3.rodata.o"
+    include "build/data/overlays/actors/z_en_kakasi3.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kanban"
-    include "build/baserom/ovl_En_Kanban.o"
+    include "build/src/overlays/actors/ovl_En_Kanban/z_en_kanban.o"
+    include "build/data/overlays/actors/z_en_kanban.data.o"
+    include "build/data/overlays/actors/z_en_kanban.rodata.o"
+    include "build/data/overlays/actors/z_en_kanban.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Karebaba"
-    include "build/baserom/ovl_En_Karebaba.o"
+    include "build/src/overlays/actors/ovl_En_Karebaba/z_en_karebaba.o"
+    include "build/data/overlays/actors/z_en_karebaba.data.o"
+    include "build/data/overlays/actors/z_en_karebaba.rodata.o"
+    include "build/data/overlays/actors/z_en_karebaba.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ko"
-    include "build/baserom/ovl_En_Ko.o"
+    include "build/src/overlays/actors/ovl_En_Ko/z_en_ko.o"
+    include "build/data/overlays/actors/z_en_ko.data.o"
+    include "build/data/overlays/actors/z_en_ko.rodata.o"
+    include "build/data/overlays/actors/z_en_ko.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kusa"
-    include "build/baserom/ovl_En_Kusa.o"
+    include "build/src/overlays/actors/ovl_En_Kusa/z_en_kusa.o"
+    include "build/data/overlays/actors/z_en_kusa.data.o"
+    include "build/data/overlays/actors/z_en_kusa.rodata.o"
+    include "build/data/overlays/actors/z_en_kusa.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Kz"
-    include "build/baserom/ovl_En_Kz.o"
+    include "build/src/overlays/actors/ovl_En_Kz/z_en_kz.o"
+    include "build/data/overlays/actors/z_en_kz.data.o"
+    include "build/data/overlays/actors/z_en_kz.rodata.o"
+    include "build/data/overlays/actors/z_en_kz.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Light"
-    include "build/baserom/ovl_En_Light.o"
+    include "build/src/overlays/actors/ovl_En_Light/z_en_light.o"
+    include "build/data/overlays/actors/z_en_light.data.o"
+    include "build/data/overlays/actors/z_en_light.rodata.o"
+    include "build/data/overlays/actors/z_en_light.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Lightbox"
-    //include "build/baserom/ovl_En_Lightbox.o"
-    include "build/asm/overlays/actors/ovl_En_Lightbox/z_en_lightbox.o"
+    include "build/src/overlays/actors/ovl_En_Lightbox/z_en_lightbox.o"
+    include "build/data/overlays/actors/z_en_lightbox.data.o"
+    include "build/data/overlays/actors/z_en_lightbox.rodata.o"
+    include "build/data/overlays/actors/z_en_lightbox.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_M_Fire1"
-    //include "build/baserom/ovl_En_M_Fire1.o"
     include "build/src/overlays/actors/ovl_En_M_Fire1/z_en_m_fire1.o"
     include "build/src/overlays/actors/ovl_En_M_Fire1/z_en_m_fire1_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_M_Thunder"
-    include "build/baserom/ovl_En_M_Thunder.o"
+    include "build/src/overlays/actors/ovl_En_M_Thunder/z_en_m_thunder.o"
+    include "build/data/overlays/actors/z_en_m_thunder.data.o"
+    include "build/data/overlays/actors/z_en_m_thunder.rodata.o"
+    include "build/data/overlays/actors/z_en_m_thunder.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ma1"
-    include "build/baserom/ovl_En_Ma1.o"
+    include "build/src/overlays/actors/ovl_En_Ma1/z_en_ma1.o"
+    include "build/data/overlays/actors/z_en_ma1.data.o"
+    include "build/data/overlays/actors/z_en_ma1.rodata.o"
+    include "build/data/overlays/actors/z_en_ma1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ma2"
-    include "build/baserom/ovl_En_Ma2.o"
+    include "build/src/overlays/actors/ovl_En_Ma2/z_en_ma2.o"
+    include "build/data/overlays/actors/z_en_ma2.data.o"
+    include "build/data/overlays/actors/z_en_ma2.rodata.o"
+    include "build/data/overlays/actors/z_en_ma2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ma3"
-    include "build/baserom/ovl_En_Ma3.o"
+    include "build/src/overlays/actors/ovl_En_Ma3/z_en_ma3.o"
+    include "build/data/overlays/actors/z_en_ma3.data.o"
+    include "build/data/overlays/actors/z_en_ma3.rodata.o"
+    include "build/data/overlays/actors/z_en_ma3.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mag"
-    include "build/baserom/ovl_En_Mag.o"
+    include "build/src/overlays/actors/ovl_En_Mag/z_en_mag.o"
+    include "build/data/overlays/actors/z_en_mag.data.o"
+    include "build/data/overlays/actors/z_en_mag.rodata.o"
+    include "build/data/overlays/actors/z_en_mag.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mb"
-    include "build/baserom/ovl_En_Mb.o"
+    include "build/src/overlays/actors/ovl_En_Mb/z_en_mb.o"
+    include "build/data/overlays/actors/z_en_mb.data.o"
+    include "build/data/overlays/actors/z_en_mb.rodata.o"
+    include "build/data/overlays/actors/z_en_mb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Md"
-    include "build/baserom/ovl_En_Md.o"
+    include "build/src/overlays/actors/ovl_En_Md/z_en_md.o"
+    include "build/data/overlays/actors/z_en_md.data.o"
+    include "build/data/overlays/actors/z_en_md.rodata.o"
+    include "build/data/overlays/actors/z_en_md.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mk"
-    include "build/baserom/ovl_En_Mk.o"
+    include "build/src/overlays/actors/ovl_En_Mk/z_en_mk.o"
+    include "build/data/overlays/actors/z_en_mk.data.o"
+    include "build/data/overlays/actors/z_en_mk.rodata.o"
+    include "build/data/overlays/actors/z_en_mk.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mm"
-    include "build/baserom/ovl_En_Mm.o"
+    include "build/src/overlays/actors/ovl_En_Mm/z_en_mm.o"
+    include "build/data/overlays/actors/z_en_mm.data.o"
+    include "build/data/overlays/actors/z_en_mm.rodata.o"
+    include "build/data/overlays/actors/z_en_mm.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mm2"
-    include "build/baserom/ovl_En_Mm2.o"
+    include "build/src/overlays/actors/ovl_En_Mm2/z_en_mm2.o"
+    include "build/data/overlays/actors/z_en_mm2.data.o"
+    include "build/data/overlays/actors/z_en_mm2.rodata.o"
+    include "build/data/overlays/actors/z_en_mm2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ms"
-    include "build/baserom/ovl_En_Ms.o"
+    include "build/src/overlays/actors/ovl_En_Ms/z_en_ms.o"
+    include "build/data/overlays/actors/z_en_ms.data.o"
+    include "build/data/overlays/actors/z_en_ms.rodata.o"
+    include "build/data/overlays/actors/z_en_ms.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Mu"
-    include "build/baserom/ovl_En_Mu.o"
+    include "build/src/overlays/actors/ovl_En_Mu/z_en_mu.o"
+    include "build/data/overlays/actors/z_en_mu.data.o"
+    include "build/data/overlays/actors/z_en_mu.rodata.o"
+    include "build/data/overlays/actors/z_en_mu.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Nb"
-    include "build/baserom/ovl_En_Nb.o"
+    include "build/src/overlays/actors/ovl_En_Nb/z_en_nb.o"
+    include "build/data/overlays/actors/z_en_nb.data.o"
+    include "build/data/overlays/actors/z_en_nb.rodata.o"
+    include "build/data/overlays/actors/z_en_nb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Niw"
-    include "build/baserom/ovl_En_Niw.o"
+    include "build/src/overlays/actors/ovl_En_Niw/z_en_niw.o"
+    include "build/data/overlays/actors/z_en_niw.data.o"
+    include "build/data/overlays/actors/z_en_niw.rodata.o"
+    include "build/data/overlays/actors/z_en_niw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Niw_Girl"
-    include "build/baserom/ovl_En_Niw_Girl.o"
+    include "build/src/overlays/actors/ovl_En_Niw_Girl/z_en_niw_girl.o"
+    include "build/data/overlays/actors/z_en_niw_girl.data.o"
+    include "build/data/overlays/actors/z_en_niw_girl.rodata.o"
+    include "build/data/overlays/actors/z_en_niw_girl.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Niw_Lady"
-    include "build/baserom/ovl_En_Niw_Lady.o"
+    include "build/src/overlays/actors/ovl_En_Niw_Lady/z_en_niw_lady.o"
+    include "build/data/overlays/actors/z_en_niw_lady.data.o"
+    include "build/data/overlays/actors/z_en_niw_lady.rodata.o"
+    include "build/data/overlays/actors/z_en_niw_lady.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Nutsball"
-    include "build/baserom/ovl_En_Nutsball.o"
+    include "build/asm/overlays/actors/ovl_En_Nutsball/z_en_nutsball.o"
 endseg
 
 beginseg
     name "ovl_En_Nwc"
-    include "build/baserom/ovl_En_Nwc.o"
+    include "build/src/overlays/actors/ovl_En_Nwc/z_en_nwc.o"
+    include "build/data/overlays/actors/z_en_nwc.data.o"
+    include "build/data/overlays/actors/z_en_nwc.rodata.o"
+    include "build/data/overlays/actors/z_en_nwc.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ny"
-    include "build/baserom/ovl_En_Ny.o"
+    include "build/src/overlays/actors/ovl_En_Ny/z_en_ny.o"
+    include "build/data/overlays/actors/z_en_ny.data.o"
+    include "build/data/overlays/actors/z_en_ny.rodata.o"
+    include "build/data/overlays/actors/z_en_ny.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_OE2"
-    //include "build/baserom/ovl_En_OE2.o"
     include "build/src/overlays/actors/ovl_En_OE2/z_en_oe2.o"
     include "build/src/overlays/actors/ovl_En_OE2/z_en_oe2_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Okarina_Effect"
-    include "build/baserom/ovl_En_Okarina_Effect.o"
+    include "build/src/overlays/actors/ovl_En_Okarina_Effect/z_en_okarina_effect.o"
+    include "build/data/overlays/actors/z_en_okarina_effect.data.o"
+    include "build/data/overlays/actors/z_en_okarina_effect.rodata.o"
+    include "build/data/overlays/actors/z_en_okarina_effect.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Okarina_Tag"
-    include "build/baserom/ovl_En_Okarina_Tag.o"
+    include "build/src/overlays/actors/ovl_En_Okarina_Tag/z_en_okarina_tag.o"
+    include "build/data/overlays/actors/z_en_okarina_tag.data.o"
+    include "build/data/overlays/actors/z_en_okarina_tag.rodata.o"
+    include "build/data/overlays/actors/z_en_okarina_tag.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Okuta"
-    include "build/baserom/ovl_En_Okuta.o"
+    include "build/src/overlays/actors/ovl_En_Okuta/z_en_okuta.o"
+    include "build/data/overlays/actors/z_en_okuta.data.o"
+    include "build/data/overlays/actors/z_en_okuta.rodata.o"
+    include "build/data/overlays/actors/z_en_okuta.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ossan"
-    include "build/baserom/ovl_En_Ossan.o"
+    include "build/src/overlays/actors/ovl_En_Ossan/z_en_ossan.o"
+    include "build/data/overlays/actors/z_en_ossan.data.o"
+    include "build/data/overlays/actors/z_en_ossan.rodata.o"
+    include "build/data/overlays/actors/z_en_ossan.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Owl"
-    include "build/baserom/ovl_En_Owl.o"
+    include "build/src/overlays/actors/ovl_En_Owl/z_en_owl.o"
+    include "build/data/overlays/actors/z_en_owl.data.o"
+    include "build/data/overlays/actors/z_en_owl.rodata.o"
+    include "build/data/overlays/actors/z_en_owl.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Part"
-    include "build/baserom/ovl_En_Part.o"
+    include "build/src/overlays/actors/ovl_En_Part/z_en_part.o"
+    include "build/data/overlays/actors/z_en_part.data.o"
+    include "build/data/overlays/actors/z_en_part.rodata.o"
+    include "build/data/overlays/actors/z_en_part.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Peehat"
-    include "build/baserom/ovl_En_Peehat.o"
+    include "build/src/overlays/actors/ovl_En_Peehat/z_en_peehat.o"
+    include "build/data/overlays/actors/z_en_peehat.data.o"
+    include "build/data/overlays/actors/z_en_peehat.rodata.o"
+    include "build/data/overlays/actors/z_en_peehat.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Po_Desert"
-    include "build/baserom/ovl_En_Po_Desert.o"
+    include "build/src/overlays/actors/ovl_En_Po_Desert/z_en_po_desert.o"
+    include "build/data/overlays/actors/z_en_po_desert.data.o"
+    include "build/data/overlays/actors/z_en_po_desert.rodata.o"
+    include "build/data/overlays/actors/z_en_po_desert.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Po_Field"
-    increment 0x90
-    include "build/baserom/ovl_En_Po_Field.o"
+    include "build/src/overlays/actors/ovl_En_Po_Field/z_en_po_field.o"
+    include "build/data/overlays/actors/z_en_po_field.data.o"
+    include "build/data/overlays/actors/z_en_po_field.rodata.o"
+    include "build/data/overlays/actors/z_en_po_field.bss.o"
+    include "build/data/overlays/actors/z_en_po_field.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Po_Relay"
-    include "build/baserom/ovl_En_Po_Relay.o"
+    include "build/src/overlays/actors/ovl_En_Po_Relay/z_en_po_relay.o"
+    include "build/data/overlays/actors/z_en_po_relay.data.o"
+    include "build/data/overlays/actors/z_en_po_relay.rodata.o"
+    include "build/data/overlays/actors/z_en_po_relay.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Po_Sisters"
-    include "build/baserom/ovl_En_Po_Sisters.o"
+    include "build/src/overlays/actors/ovl_En_Po_Sisters/z_en_po_sisters.o"
+    include "build/data/overlays/actors/z_en_po_sisters.data.o"
+    include "build/data/overlays/actors/z_en_po_sisters.rodata.o"
+    include "build/data/overlays/actors/z_en_po_sisters.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Poh"
-    include "build/baserom/ovl_En_Poh.o"
+    include "build/src/overlays/actors/ovl_En_Poh/z_en_poh.o"
+    include "build/data/overlays/actors/z_en_poh.data.o"
+    include "build/data/overlays/actors/z_en_poh.rodata.o"
+    include "build/data/overlays/actors/z_en_poh.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Pu_box"
-    include "build/baserom/ovl_En_Pu_box.o"
+    include "build/src/overlays/actors/ovl_En_Pu_box/z_en_pu_box.o"
+    include "build/data/overlays/actors/z_en_pu_box.data.o"
+    include "build/data/overlays/actors/z_en_pu_box.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Rd"
-    include "build/baserom/ovl_En_Rd.o"
+    include "build/src/overlays/actors/ovl_En_Rd/z_en_rd.o"
+    include "build/data/overlays/actors/z_en_rd.data.o"
+    include "build/data/overlays/actors/z_en_rd.rodata.o"
+    include "build/data/overlays/actors/z_en_rd.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Reeba"
-    include "build/baserom/ovl_En_Reeba.o"
+    include "build/src/overlays/actors/ovl_En_Reeba/z_en_reeba.o"
+    include "build/data/overlays/actors/z_en_reeba.data.o"
+    include "build/data/overlays/actors/z_en_reeba.rodata.o"
+    include "build/data/overlays/actors/z_en_reeba.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_River_Sound"
-    //include "build/baserom/ovl_En_River_Sound.o"
-    include "build/asm/overlays/actors/ovl_En_River_Sound/z_en_river_sound.o"
+    include "build/src/overlays/actors/ovl_En_River_Sound/z_en_river_sound.o"
+    include "build/data/overlays/actors/z_en_river_sound.data.o"
+    include "build/data/overlays/actors/z_en_river_sound.rodata.o"
+    include "build/data/overlays/actors/z_en_river_sound.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Rl"
-    include "build/baserom/ovl_En_Rl.o"
+    include "build/src/overlays/actors/ovl_En_Rl/z_en_rl.o"
+    include "build/data/overlays/actors/z_en_rl.data.o"
+    include "build/data/overlays/actors/z_en_rl.rodata.o"
+    include "build/data/overlays/actors/z_en_rl.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Rr"
-    include "build/baserom/ovl_En_Rr.o"
+    include "build/src/overlays/actors/ovl_En_Rr/z_en_rr.o"
+    include "build/data/overlays/actors/z_en_rr.data.o"
+    include "build/data/overlays/actors/z_en_rr.rodata.o"
+    include "build/data/overlays/actors/z_en_rr.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ru1"
-    include "build/baserom/ovl_En_Ru1.o"
+    include "build/src/overlays/actors/ovl_En_Ru1/z_en_ru1.o"
+    include "build/data/overlays/actors/z_en_ru1.data.o"
+    include "build/data/overlays/actors/z_en_ru1.rodata.o"
+    include "build/data/overlays/actors/z_en_ru1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ru2"
-    include "build/baserom/ovl_En_Ru2.o"
+    include "build/src/overlays/actors/ovl_En_Ru2/z_en_ru2.o"
+    include "build/data/overlays/actors/z_en_ru2.data.o"
+    include "build/data/overlays/actors/z_en_ru2.rodata.o"
+    include "build/data/overlays/actors/z_en_ru2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Sa"
-    include "build/baserom/ovl_En_Sa.o"
+    include "build/src/overlays/actors/ovl_En_Sa/z_en_sa.o"
+    include "build/data/overlays/actors/z_en_sa.data.o"
+    include "build/data/overlays/actors/z_en_sa.rodata.o"
+    include "build/data/overlays/actors/z_en_sa.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Sb"
-    include "build/baserom/ovl_En_Sb.o"
+    include "build/src/overlays/actors/ovl_En_Sb/z_en_sb.o"
+    include "build/data/overlays/actors/z_en_sb.data.o"
+    include "build/data/overlays/actors/z_en_sb.rodata.o"
+    include "build/data/overlays/actors/z_en_sb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Scene_Change"
-    //include "build/baserom/ovl_En_Scene_Change.o"
-    include "build/asm/overlays/actors/ovl_En_Scene_Change/z_en_scene_change.o"
+    include "build/src/overlays/actors/ovl_En_Scene_Change/z_en_scene_change.o"
+    include "build/data/overlays/actors/z_en_scene_change.data.o"
+    include "build/data/overlays/actors/z_en_scene_change.rodata.o"
+    include "build/data/overlays/actors/z_en_scene_change.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Sda"
-    increment 0xC0
-    include "build/baserom/ovl_En_Sda.o"
+    include "build/src/overlays/actors/ovl_En_Sda/z_en_sda.o"
+    include "build/data/overlays/actors/z_en_sda.data.o"
+    include "build/data/overlays/actors/z_en_sda.rodata.o"
+    include "build/data/overlays/actors/z_en_sda.bss.o"
+    include "build/data/overlays/actors/z_en_sda.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Shopnuts"
-    include "build/baserom/ovl_En_Shopnuts.o"
+    include "build/src/overlays/actors/ovl_En_Shopnuts/z_en_shopnuts.o"
+    include "build/data/overlays/actors/z_en_shopnuts.data.o"
+    include "build/data/overlays/actors/z_en_shopnuts.rodata.o"
+    include "build/data/overlays/actors/z_en_shopnuts.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Si"
-    include "build/baserom/ovl_En_Si.o"
+    include "build/src/overlays/actors/ovl_En_Si/z_en_si.o"
+    include "build/data/overlays/actors/z_en_si.data.o"
+    include "build/data/overlays/actors/z_en_si.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Siofuki"
-    include "build/baserom/ovl_En_Siofuki.o"
+    include "build/src/overlays/actors/ovl_En_Siofuki/z_en_siofuki.o"
+    include "build/data/overlays/actors/z_en_siofuki.data.o"
+    include "build/data/overlays/actors/z_en_siofuki.rodata.o"
+    include "build/data/overlays/actors/z_en_siofuki.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Skb"
-    include "build/baserom/ovl_En_Skb.o"
+    include "build/src/overlays/actors/ovl_En_Skb/z_en_skb.o"
+    include "build/data/overlays/actors/z_en_skb.data.o"
+    include "build/data/overlays/actors/z_en_skb.rodata.o"
+    include "build/data/overlays/actors/z_en_skb.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Skj"
-    increment 0x10
-    include "build/baserom/ovl_En_Skj.o"
+    include "build/src/overlays/actors/ovl_En_Skj/z_en_skj.o"
+    include "build/data/overlays/actors/z_en_skj.data.o"
+    include "build/data/overlays/actors/z_en_skj.rodata.o"
+    include "build/data/overlays/actors/z_en_skj.bss.o"
+    include "build/data/overlays/actors/z_en_skj.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Skjneedle"
-    include "build/baserom/ovl_En_Skjneedle.o"
+    include "build/src/overlays/actors/ovl_En_Skjneedle/z_en_skjneedle.o"
+    include "build/data/overlays/actors/z_en_skjneedle.data.o"
+    include "build/data/overlays/actors/z_en_skjneedle.rodata.o"
+    include "build/data/overlays/actors/z_en_skjneedle.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ssh"
-    include "build/baserom/ovl_En_Ssh.o"
+    include "build/src/overlays/actors/ovl_En_Ssh/z_en_ssh.o"
+    include "build/data/overlays/actors/z_en_ssh.data.o"
+    include "build/data/overlays/actors/z_en_ssh.rodata.o"
+    include "build/data/overlays/actors/z_en_ssh.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_St"
-    include "build/baserom/ovl_En_St.o"
+    include "build/src/overlays/actors/ovl_En_St/z_en_st.o"
+    include "build/data/overlays/actors/z_en_st.data.o"
+    include "build/data/overlays/actors/z_en_st.rodata.o"
+    include "build/data/overlays/actors/z_en_st.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Sth"
-    include "build/baserom/ovl_En_Sth.o"
+    include "build/src/overlays/actors/ovl_En_Sth/z_en_sth.o"
+    include "build/data/overlays/actors/z_en_sth.data.o"
+    include "build/data/overlays/actors/z_en_sth.rodata.o"
+    include "build/data/overlays/actors/z_en_sth.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Stream"
-    include "build/baserom/ovl_En_Stream.o"
+    include "build/src/overlays/actors/ovl_En_Stream/z_en_stream.o"
+    include "build/data/overlays/actors/z_en_stream.data.o"
+    include "build/data/overlays/actors/z_en_stream.rodata.o"
+    include "build/data/overlays/actors/z_en_stream.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Sw"
     increment 0x80
-    include "build/baserom/ovl_En_Sw.o"
+    include "build/src/overlays/actors/ovl_En_Sw/z_en_sw.o"
+    include "build/data/overlays/actors/z_en_sw.data.o"
+    include "build/data/overlays/actors/z_en_sw.rodata.o"
+    include "build/data/overlays/actors/z_en_sw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Syateki_Itm"
-    include "build/baserom/ovl_En_Syateki_Itm.o"
+    include "build/src/overlays/actors/ovl_En_Syateki_Itm/z_en_syateki_itm.o"
+    include "build/data/overlays/actors/z_en_syateki_itm.data.o"
+    include "build/data/overlays/actors/z_en_syateki_itm.rodata.o"
+    include "build/data/overlays/actors/z_en_syateki_itm.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Syateki_Man"
-    include "build/baserom/ovl_En_Syateki_Man.o"
+    include "build/src/overlays/actors/ovl_En_Syateki_Man/z_en_syateki_man.o"
+    include "build/data/overlays/actors/z_en_syateki_man.data.o"
+    include "build/data/overlays/actors/z_en_syateki_man.rodata.o"
+    include "build/data/overlays/actors/z_en_syateki_man.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Syateki_Niw"
-    include "build/baserom/ovl_En_Syateki_Niw.o"
+    include "build/src/overlays/actors/ovl_En_Syateki_Niw/z_en_syateki_niw.o"
+    include "build/data/overlays/actors/z_en_syateki_niw.data.o"
+    include "build/data/overlays/actors/z_en_syateki_niw.rodata.o"
+    include "build/data/overlays/actors/z_en_syateki_niw.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Ta"
-    include "build/baserom/ovl_En_Ta.o"
+    include "build/src/overlays/actors/ovl_En_Ta/z_en_ta.o"
+    include "build/data/overlays/actors/z_en_ta.data.o"
+    include "build/data/overlays/actors/z_en_ta.rodata.o"
+    include "build/data/overlays/actors/z_en_ta.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Takara_Man"
-    include "build/baserom/ovl_En_Takara_Man.o"
+    include "build/src/overlays/actors/ovl_En_Takara_Man/z_en_takara_man.o"
+    include "build/data/overlays/actors/z_en_takara_man.data.o"
+    include "build/data/overlays/actors/z_en_takara_man.rodata.o"
+    include "build/data/overlays/actors/z_en_takara_man.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tana"
-    include "build/baserom/ovl_En_Tana.o"
+    include "build/src/overlays/actors/ovl_En_Tana/z_en_tana.o"
+    include "build/data/overlays/actors/z_en_tana.data.o"
+    include "build/data/overlays/actors/z_en_tana.rodata.o"
+    include "build/data/overlays/actors/z_en_tana.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tg"
-    include "build/baserom/ovl_En_Tg.o"
+    include "build/src/overlays/actors/ovl_En_Tg/z_en_tg.o"
+    include "build/data/overlays/actors/z_en_tg.data.o"
+    include "build/data/overlays/actors/z_en_tg.rodata.o"
+    include "build/data/overlays/actors/z_en_tg.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tite"
-    include "build/baserom/ovl_En_Tite.o"
+    include "build/src/overlays/actors/ovl_En_Tite/z_en_tite.o"
+    include "build/data/overlays/actors/z_en_tite.data.o"
+    include "build/data/overlays/actors/z_en_tite.rodata.o"
+    include "build/data/overlays/actors/z_en_tite.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tk"
-    include "build/baserom/ovl_En_Tk.o"
+    include "build/src/overlays/actors/ovl_En_Tk/z_en_tk.o"
+    include "build/data/overlays/actors/z_en_tk.data.o"
+    include "build/data/overlays/actors/z_en_tk.rodata.o"
+    include "build/data/overlays/actors/z_en_tk.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Torch"
-    //include "build/baserom/ovl_En_Torch.o"
     include "build/src/overlays/actors/ovl_En_Torch/z_en_torch.o"
     include "build/src/overlays/actors/ovl_En_Torch/z_en_torch_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Torch2"
-    increment 0x40
-    include "build/baserom/ovl_En_Torch2.o"
+    include "build/src/overlays/actors/ovl_En_Torch2/z_en_torch2.o"
+    include "build/data/overlays/actors/z_en_torch2.data.o"
+    include "build/data/overlays/actors/z_en_torch2.rodata.o"
+    include "build/data/overlays/actors/z_en_torch2.bss.o"
+    include "build/data/overlays/actors/z_en_torch2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Toryo"
-    include "build/baserom/ovl_En_Toryo.o"
+    include "build/src/overlays/actors/ovl_En_Toryo/z_en_toryo.o"
+    include "build/data/overlays/actors/z_en_toryo.data.o"
+    include "build/data/overlays/actors/z_en_toryo.rodata.o"
+    include "build/data/overlays/actors/z_en_toryo.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tp"
-    include "build/baserom/ovl_En_Tp.o"
+    include "build/src/overlays/actors/ovl_En_Tp/z_en_tp.o"
+    include "build/data/overlays/actors/z_en_tp.data.o"
+    include "build/data/overlays/actors/z_en_tp.rodata.o"
+    include "build/data/overlays/actors/z_en_tp.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tr"
-    include "build/baserom/ovl_En_Tr.o"
+    include "build/src/overlays/actors/ovl_En_Tr/z_en_tr.o"
+    include "build/data/overlays/actors/z_en_tr.data.o"
+    include "build/data/overlays/actors/z_en_tr.rodata.o"
+    include "build/data/overlays/actors/z_en_tr.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Trap"
-    include "build/baserom/ovl_En_Trap.o"
+    include "build/src/overlays/actors/ovl_En_Trap/z_en_trap.o"
+    include "build/data/overlays/actors/z_en_trap.data.o"
+    include "build/data/overlays/actors/z_en_trap.rodata.o"
+    include "build/data/overlays/actors/z_en_trap.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Tubo_Trap"
-    include "build/baserom/ovl_En_Tubo_Trap.o"
+    include "build/asm/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o"
 endseg
 
 beginseg
     name "ovl_En_Vali"
-    include "build/baserom/ovl_En_Vali.o"
+    include "build/src/overlays/actors/ovl_En_Vali/z_en_vali.o"
+    include "build/data/overlays/actors/z_en_vali.data.o"
+    include "build/data/overlays/actors/z_en_vali.rodata.o"
+    include "build/data/overlays/actors/z_en_vali.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Vase"
-    //include "build/baserom/ovl_En_Vase.o"
     include "build/src/overlays/actors/ovl_En_Vase/z_en_vase.o"
     include "build/src/overlays/actors/ovl_En_Vase/z_en_vase_reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Vb_Ball"
-    include "build/baserom/ovl_En_Vb_Ball.o"
+    include "build/src/overlays/actors/ovl_En_Vb_Ball/z_en_vb_ball.o"
+    include "build/data/overlays/actors/z_en_vb_ball.data.o"
+    include "build/data/overlays/actors/z_en_vb_ball.rodata.o"
+    include "build/data/overlays/actors/z_en_vb_ball.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Viewer"
-    increment 0x20
-    include "build/baserom/ovl_En_Viewer.o"
+    include "build/src/overlays/actors/ovl_En_Viewer/z_en_viewer.o"
+    include "build/data/overlays/actors/z_en_viewer.data.o"
+    include "build/data/overlays/actors/z_en_viewer.rodata.o"
+    include "build/data/overlays/actors/z_en_viewer.bss.o"
+    include "build/data/overlays/actors/z_en_viewer.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Vm"
-    include "build/baserom/ovl_En_Vm.o"
+    include "build/src/overlays/actors/ovl_En_Vm/z_en_vm.o"
+    include "build/data/overlays/actors/z_en_vm.data.o"
+    include "build/data/overlays/actors/z_en_vm.rodata.o"
+    include "build/data/overlays/actors/z_en_vm.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wall_Tubo"
-    include "build/baserom/ovl_En_Wall_Tubo.o"
+    include "build/src/overlays/actors/ovl_En_Wall_Tubo/z_en_wall_tubo.o"
+    include "build/data/overlays/actors/z_en_wall_tubo.data.o"
+    include "build/data/overlays/actors/z_en_wall_tubo.rodata.o"
+    include "build/data/overlays/actors/z_en_wall_tubo.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wallmas"
-    include "build/baserom/ovl_En_Wallmas.o"
+    include "build/src/overlays/actors/ovl_En_Wallmas/z_en_wallmas.o"
+    include "build/data/overlays/actors/z_en_wallmas.data.o"
+    include "build/data/overlays/actors/z_en_wallmas.rodata.o"
+    include "build/data/overlays/actors/z_en_wallmas.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Weather_Tag"
-    include "build/baserom/ovl_En_Weather_Tag.o"
+    include "build/src/overlays/actors/ovl_En_Weather_Tag/z_en_weather_tag.o"
+    include "build/data/overlays/actors/z_en_weather_tag.data.o"
+    include "build/data/overlays/actors/z_en_weather_tag.rodata.o"
+    include "build/data/overlays/actors/z_en_weather_tag.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Weiyer"
-    include "build/baserom/ovl_En_Weiyer.o"
+    include "build/src/overlays/actors/ovl_En_Weiyer/z_en_weiyer.o"
+    include "build/data/overlays/actors/z_en_weiyer.data.o"
+    include "build/data/overlays/actors/z_en_weiyer.rodata.o"
+    include "build/data/overlays/actors/z_en_weiyer.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wf"
-    include "build/baserom/ovl_En_Wf.o"
+    include "build/src/overlays/actors/ovl_En_Wf/z_en_wf.o"
+    include "build/data/overlays/actors/z_en_wf.data.o"
+    include "build/data/overlays/actors/z_en_wf.rodata.o"
+    include "build/data/overlays/actors/z_en_wf.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wonder_Item"
-    increment 0xE0
-    include "build/baserom/ovl_En_Wonder_Item.o"
+    include "build/src/overlays/actors/ovl_En_Wonder_Item/z_en_wonder_item.o"
+    include "build/data/overlays/actors/z_en_wonder_item.data.o"
+    include "build/data/overlays/actors/z_en_wonder_item.rodata.o"
+    include "build/data/overlays/actors/z_en_wonder_item.bss.o"
+    include "build/data/overlays/actors/z_en_wonder_item.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wonder_Talk"
-    include "build/baserom/ovl_En_Wonder_Talk.o"
+    include "build/src/overlays/actors/ovl_En_Wonder_Talk/z_en_wonder_talk.o"
+    include "build/data/overlays/actors/z_en_wonder_talk.data.o"
+    include "build/data/overlays/actors/z_en_wonder_talk.rodata.o"
+    include "build/data/overlays/actors/z_en_wonder_talk.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wonder_Talk2"
-    include "build/baserom/ovl_En_Wonder_Talk2.o"
+    include "build/src/overlays/actors/ovl_En_Wonder_Talk2/z_en_wonder_talk2.o"
+    include "build/data/overlays/actors/z_en_wonder_talk2.data.o"
+    include "build/data/overlays/actors/z_en_wonder_talk2.rodata.o"
+    include "build/data/overlays/actors/z_en_wonder_talk2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Wood02"
-    increment 0x10
-    include "build/baserom/ovl_En_Wood02.o"
+    include "build/src/overlays/actors/ovl_En_Wood02/z_en_wood02.o"
+    include "build/data/overlays/actors/z_en_wood02.data.o"
+    include "build/data/overlays/actors/z_en_wood02.rodata.o"
+    include "build/data/overlays/actors/z_en_wood02.bss.o"
+    include "build/data/overlays/actors/z_en_wood02.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Xc"
-    increment 0x30
-    include "build/baserom/ovl_En_Xc.o"
+    include "build/src/overlays/actors/ovl_En_Xc/z_en_xc.o"
+    include "build/data/overlays/actors/z_en_xc.data.o"
+    include "build/data/overlays/actors/z_en_xc.rodata.o"
+    include "build/data/overlays/actors/z_en_xc.bss.o"
+    include "build/data/overlays/actors/z_en_xc.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Yabusame_Mark"
-    include "build/baserom/ovl_En_Yabusame_Mark.o"
+    include "build/src/overlays/actors/ovl_En_Yabusame_Mark/z_en_yabusame_mark.o"
+    include "build/data/overlays/actors/z_en_yabusame_mark.data.o"
+    include "build/data/overlays/actors/z_en_yabusame_mark.rodata.o"
+    include "build/data/overlays/actors/z_en_yabusame_mark.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Yukabyun"
-    include "build/baserom/ovl_En_Yukabyun.o"
+    include "build/src/overlays/actors/ovl_En_Yukabyun/z_en_yukabyun.o"
+    include "build/data/overlays/actors/z_en_yukabyun.data.o"
+    include "build/data/overlays/actors/z_en_yukabyun.rodata.o"
+    include "build/data/overlays/actors/z_en_yukabyun.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zf"
-    increment 0x10
-    include "build/baserom/ovl_En_Zf.o"
+    include "build/src/overlays/actors/ovl_En_Zf/z_en_zf.o"
+    include "build/data/overlays/actors/z_en_zf.data.o"
+    include "build/data/overlays/actors/z_en_zf.rodata.o"
+    include "build/data/overlays/actors/z_en_zf.bss.o"
+    include "build/data/overlays/actors/z_en_zf.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zl1"
-    include "build/baserom/ovl_En_Zl1.o"
+    include "build/src/overlays/actors/ovl_En_Zl1/z_en_zl1.o"
+    include "build/data/overlays/actors/z_en_zl1.data.o"
+    include "build/data/overlays/actors/z_en_zl1.rodata.o"
+    include "build/data/overlays/actors/z_en_zl1.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zl2"
-    include "build/baserom/ovl_En_Zl2.o"
+    include "build/src/overlays/actors/ovl_En_Zl2/z_en_zl2.o"
+    include "build/data/overlays/actors/z_en_zl2.data.o"
+    include "build/data/overlays/actors/z_en_zl2.rodata.o"
+    include "build/data/overlays/actors/z_en_zl2.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zl3"
-    include "build/baserom/ovl_En_Zl3.o"
+    include "build/src/overlays/actors/ovl_En_Zl3/z_en_zl3.o"
+    include "build/data/overlays/actors/z_en_zl3.data.o"
+    include "build/data/overlays/actors/z_en_zl3.rodata.o"
+    include "build/data/overlays/actors/z_en_zl3.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zl4"
-    include "build/baserom/ovl_En_Zl4.o"
+    include "build/src/overlays/actors/ovl_En_Zl4/z_en_zl4.o"
+    include "build/data/overlays/actors/z_en_zl4.data.o"
+    include "build/data/overlays/actors/z_en_zl4.rodata.o"
+    include "build/data/overlays/actors/z_en_zl4.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_Zo"
-    include "build/baserom/ovl_En_Zo.o"
+    include "build/src/overlays/actors/ovl_En_Zo/z_en_zo.o"
+    include "build/data/overlays/actors/z_en_zo.data.o"
+    include "build/data/overlays/actors/z_en_zo.rodata.o"
+    include "build/data/overlays/actors/z_en_zo.reloc.o"
 endseg
 
 beginseg
     name "ovl_En_fHG"
-    include "build/baserom/ovl_En_fHG.o"
+    include "build/src/overlays/actors/ovl_En_fHG/z_en_fhg.o"
+    include "build/data/overlays/actors/z_en_fhg.data.o"
+    include "build/data/overlays/actors/z_en_fhg.rodata.o"
+    include "build/data/overlays/actors/z_en_fhg.reloc.o"
 endseg
 
 beginseg
     name "ovl_End_Title"
-    include "build/baserom/ovl_End_Title.o"
+    include "build/src/overlays/actors/ovl_End_Title/z_end_title.o"
+    include "build/data/overlays/actors/z_end_title.data.o"
+    include "build/data/overlays/actors/z_end_title.rodata.o"
+    include "build/data/overlays/actors/z_end_title.reloc.o"
 endseg
 
 beginseg
     name "ovl_Fishing"
-    increment 0x70E0
-    include "build/baserom/ovl_Fishing.o"
+    include "build/src/overlays/actors/ovl_Fishing/z_fishing.o"
+    include "build/data/overlays/actors/z_fishing.data.o"
+    include "build/data/overlays/actors/z_fishing.rodata.o"
+    include "build/data/overlays/actors/z_fishing.bss.o"
+    include "build/data/overlays/actors/z_fishing.reloc.o"
 endseg
 
 beginseg
     name "ovl_Item_B_Heart"
-    //include "build/baserom/ovl_Item_B_Heart.o"
-    include "build/asm/overlays/actors/ovl_Item_B_Heart/z_item_b_heart.o"
+    include "build/src/overlays/actors/ovl_Item_B_Heart/z_item_b_heart.o"
+    include "build/data/overlays/actors/z_item_b_heart.data.o"
+    include "build/data/overlays/actors/z_item_b_heart.rodata.o"
+    include "build/data/overlays/actors/z_item_b_heart.reloc.o"
 endseg
 
 beginseg
     name "ovl_Item_Etcetera"
-    include "build/baserom/ovl_Item_Etcetera.o"
+    include "build/src/overlays/actors/ovl_Item_Etcetera/z_item_etcetera.o"
+    include "build/data/overlays/actors/z_item_etcetera.data.o"
+    include "build/data/overlays/actors/z_item_etcetera.rodata.o"
+    include "build/data/overlays/actors/z_item_etcetera.reloc.o"
 endseg
 
 beginseg
     name "ovl_Item_Inbox"
-    //include "build/baserom/ovl_Item_Inbox.o"
     include "build/src/overlays/actors/ovl_Item_Inbox/z_item_inbox.o"
     include "build/src/overlays/actors/ovl_Item_Inbox/z_item_inbox_reloc.o"
 endseg
 
 beginseg
     name "ovl_Item_Ocarina"
-    include "build/baserom/ovl_Item_Ocarina.o"
+    include "build/src/overlays/actors/ovl_Item_Ocarina/z_item_ocarina.o"
+    include "build/data/overlays/actors/z_item_ocarina.data.o"
+    include "build/data/overlays/actors/z_item_ocarina.rodata.o"
+    include "build/data/overlays/actors/z_item_ocarina.reloc.o"
 endseg
 
 beginseg
     name "ovl_Item_Shield"
-    include "build/baserom/ovl_Item_Shield.o"
+    include "build/src/overlays/actors/ovl_Item_Shield/z_item_shield.o"
+    include "build/data/overlays/actors/z_item_shield.data.o"
+    include "build/data/overlays/actors/z_item_shield.rodata.o"
+    include "build/data/overlays/actors/z_item_shield.reloc.o"
 endseg
 
 beginseg
     name "ovl_Magic_Dark"
-    include "build/baserom/ovl_Magic_Dark.o"
+    include "build/src/overlays/actors/ovl_Magic_Dark/z_magic_dark.o"
+    include "build/data/overlays/actors/z_magic_dark.data.o"
+    include "build/data/overlays/actors/z_magic_dark.rodata.o"
+    include "build/data/overlays/actors/z_magic_dark.reloc.o"
 endseg
 
 beginseg
     name "ovl_Magic_Fire"
-    include "build/baserom/ovl_Magic_Fire.o"
+    include "build/src/overlays/actors/ovl_Magic_Fire/z_magic_fire.o"
+    include "build/data/overlays/actors/z_magic_fire.data.o"
+    include "build/data/overlays/actors/z_magic_fire.rodata.o"
+    include "build/data/overlays/actors/z_magic_fire.reloc.o"
 endseg
 
 beginseg
     name "ovl_Magic_Wind"
-    include "build/baserom/ovl_Magic_Wind.o"
+    include "build/src/overlays/actors/ovl_Magic_Wind/z_magic_wind.o"
+    include "build/data/overlays/actors/z_magic_wind.data.o"
+    include "build/data/overlays/actors/z_magic_wind.rodata.o"
+    include "build/data/overlays/actors/z_magic_wind.reloc.o"
 endseg
 
 beginseg
     name "ovl_Mir_Ray"
-    include "build/baserom/ovl_Mir_Ray.o"
+    include "build/src/overlays/actors/ovl_Mir_Ray/z_mir_ray.o"
+    include "build/data/overlays/actors/z_mir_ray.data.o"
+    include "build/data/overlays/actors/z_mir_ray.rodata.o"
+    include "build/data/overlays/actors/z_mir_ray.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Bean"
-    include "build/baserom/ovl_Obj_Bean.o"
+    include "build/src/overlays/actors/ovl_Obj_Bean/z_obj_bean.o"
+    include "build/data/overlays/actors/z_obj_bean.data.o"
+    include "build/data/overlays/actors/z_obj_bean.rodata.o"
+    include "build/data/overlays/actors/z_obj_bean.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Blockstop"
-    //include "build/baserom/ovl_Obj_Blockstop.o"
     include "build/src/overlays/actors/ovl_Obj_Blockstop/z_obj_blockstop.o"
     include "build/src/overlays/actors/ovl_Obj_Blockstop/z_obj_blockstop_reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Bombiwa"
-    include "build/baserom/ovl_Obj_Bombiwa.o"
+    include "build/src/overlays/actors/ovl_Obj_Bombiwa/z_obj_bombiwa.o"
+    include "build/data/overlays/actors/z_obj_bombiwa.data.o"
+    include "build/data/overlays/actors/z_obj_bombiwa.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Comb"
-    include "build/baserom/ovl_Obj_Comb.o"
+    include "build/src/overlays/actors/ovl_Obj_Comb/z_obj_comb.o"
+    include "build/data/overlays/actors/z_obj_comb.data.o"
+    include "build/data/overlays/actors/z_obj_comb.rodata.o"
+    include "build/data/overlays/actors/z_obj_comb.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Dekujr"
-    include "build/baserom/ovl_Obj_Dekujr.o"
+    include "build/src/overlays/actors/ovl_Obj_Dekujr/z_obj_dekujr.o"
+    include "build/data/overlays/actors/z_obj_dekujr.data.o"
+    include "build/data/overlays/actors/z_obj_dekujr.rodata.o"
+    include "build/data/overlays/actors/z_obj_dekujr.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Elevator"
-    //include "build/baserom/ovl_Obj_Elevator.o"
-    include "build/asm/overlays/actors/ovl_Obj_Elevator/z_obj_elevator.o"
+    include "build/src/overlays/actors/ovl_Obj_Elevator/z_obj_elevator.o"
+    include "build/data/overlays/actors/z_obj_elevator.data.o"
+    include "build/data/overlays/actors/z_obj_elevator.rodata.o"
+    include "build/data/overlays/actors/z_obj_elevator.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Hamishi"
-    include "build/baserom/ovl_Obj_Hamishi.o"
+    include "build/src/overlays/actors/ovl_Obj_Hamishi/z_obj_hamishi.o"
+    include "build/data/overlays/actors/z_obj_hamishi.data.o"
+    include "build/data/overlays/actors/z_obj_hamishi.rodata.o"
+    include "build/data/overlays/actors/z_obj_hamishi.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Hana"
-    include "build/baserom/ovl_Obj_Hana.o"
+    include "build/src/overlays/actors/ovl_Obj_Hana/z_obj_hana.o"
+    include "build/data/overlays/actors/z_obj_hana.data.o"
+    include "build/data/overlays/actors/z_obj_hana.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Hsblock"
-    include "build/baserom/ovl_Obj_Hsblock.o"
+    include "build/src/overlays/actors/ovl_Obj_Hsblock/z_obj_hsblock.o"
+    include "build/data/overlays/actors/z_obj_hsblock.data.o"
+    include "build/data/overlays/actors/z_obj_hsblock.rodata.o"
+    include "build/data/overlays/actors/z_obj_hsblock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Ice_Poly"
-    include "build/baserom/ovl_Obj_Ice_Poly.o"
+    include "build/src/overlays/actors/ovl_Obj_Ice_Poly/z_obj_ice_poly.o"
+    include "build/data/overlays/actors/z_obj_ice_poly.data.o"
+    include "build/data/overlays/actors/z_obj_ice_poly.rodata.o"
+    include "build/data/overlays/actors/z_obj_ice_poly.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Kibako"
-    include "build/baserom/ovl_Obj_Kibako.o"
+    include "build/src/overlays/actors/ovl_Obj_Kibako/z_obj_kibako.o"
+    include "build/data/overlays/actors/z_obj_kibako.data.o"
+    include "build/data/overlays/actors/z_obj_kibako.rodata.o"
+    include "build/data/overlays/actors/z_obj_kibako.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Kibako2"
-    include "build/baserom/ovl_Obj_Kibako2.o"
+    include "build/src/overlays/actors/ovl_Obj_Kibako2/z_obj_kibako2.o"
+    include "build/data/overlays/actors/z_obj_kibako2.data.o"
+    include "build/data/overlays/actors/z_obj_kibako2.rodata.o"
+    include "build/data/overlays/actors/z_obj_kibako2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Lift"
-    include "build/baserom/ovl_Obj_Lift.o"
+    include "build/src/overlays/actors/ovl_Obj_Lift/z_obj_lift.o"
+    include "build/data/overlays/actors/z_obj_lift.data.o"
+    include "build/data/overlays/actors/z_obj_lift.rodata.o"
+    include "build/data/overlays/actors/z_obj_lift.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Lightswitch"
-    include "build/baserom/ovl_Obj_Lightswitch.o"
+    include "build/src/overlays/actors/ovl_Obj_Lightswitch/z_obj_lightswitch.o"
+    include "build/data/overlays/actors/z_obj_lightswitch.data.o"
+    include "build/data/overlays/actors/z_obj_lightswitch.rodata.o"
+    include "build/data/overlays/actors/z_obj_lightswitch.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Makekinsuta"
-    include "build/baserom/ovl_Obj_Makekinsuta.o"
+    include "build/src/overlays/actors/ovl_Obj_Makekinsuta/z_obj_makekinsuta.o"
+    include "build/data/overlays/actors/z_obj_makekinsuta.data.o"
+    include "build/data/overlays/actors/z_obj_makekinsuta.rodata.o"
+    include "build/data/overlays/actors/z_obj_makekinsuta.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Makeoshihiki"
-    include "build/baserom/ovl_Obj_Makeoshihiki.o"
+    include "build/src/overlays/actors/ovl_Obj_Makeoshihiki/z_obj_makeoshihiki.o"
+    include "build/data/overlays/actors/z_obj_makeoshihiki.data.o"
+    include "build/data/overlays/actors/z_obj_makeoshihiki.rodata.o"
+    include "build/data/overlays/actors/z_obj_makeoshihiki.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Mure"
-    include "build/baserom/ovl_Obj_Mure.o"
+    include "build/src/overlays/actors/ovl_Obj_Mure/z_obj_mure.o"
+    include "build/data/overlays/actors/z_obj_mure.data.o"
+    include "build/data/overlays/actors/z_obj_mure.rodata.o"
+    include "build/data/overlays/actors/z_obj_mure.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Mure2"
-    include "build/baserom/ovl_Obj_Mure2.o"
+    include "build/src/overlays/actors/ovl_Obj_Mure2/z_obj_mure2.o"
+    include "build/data/overlays/actors/z_obj_mure2.data.o"
+    include "build/data/overlays/actors/z_obj_mure2.rodata.o"
+    include "build/data/overlays/actors/z_obj_mure2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Mure3"
-    include "build/baserom/ovl_Obj_Mure3.o"
+    include "build/src/overlays/actors/ovl_Obj_Mure3/z_obj_mure3.o"
+    include "build/data/overlays/actors/z_obj_mure3.data.o"
+    include "build/data/overlays/actors/z_obj_mure3.rodata.o"
+    include "build/data/overlays/actors/z_obj_mure3.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Oshihiki"
-    include "build/baserom/ovl_Obj_Oshihiki.o"
+    include "build/src/overlays/actors/ovl_Obj_Oshihiki/z_obj_oshihiki.o"
+    include "build/data/overlays/actors/z_obj_oshihiki.data.o"
+    include "build/data/overlays/actors/z_obj_oshihiki.rodata.o"
+    include "build/data/overlays/actors/z_obj_oshihiki.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Roomtimer"
-    //include "build/baserom/ovl_Obj_Roomtimer.o"
     include "build/src/overlays/actors/ovl_Obj_Roomtimer/z_obj_roomtimer.o"
     include "build/src/overlays/actors/ovl_Obj_Roomtimer/z_obj_roomtimer_reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Switch"
-    include "build/baserom/ovl_Obj_Switch.o"
+    include "build/src/overlays/actors/ovl_Obj_Switch/z_obj_switch.o"
+    include "build/data/overlays/actors/z_obj_switch.data.o"
+    include "build/data/overlays/actors/z_obj_switch.rodata.o"
+    include "build/data/overlays/actors/z_obj_switch.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Syokudai"
-    increment 0x10
-    include "build/baserom/ovl_Obj_Syokudai.o"
+    include "build/src/overlays/actors/ovl_Obj_Syokudai/z_obj_syokudai.o"
+    include "build/data/overlays/actors/z_obj_syokudai.data.o"
+    include "build/data/overlays/actors/z_obj_syokudai.rodata.o"
+    include "build/data/overlays/actors/z_obj_syokudai.bss.o"
+    include "build/data/overlays/actors/z_obj_syokudai.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Timeblock"
-    include "build/baserom/ovl_Obj_Timeblock.o"
+    include "build/src/overlays/actors/ovl_Obj_Timeblock/z_obj_timeblock.o"
+    include "build/data/overlays/actors/z_obj_timeblock.data.o"
+    include "build/data/overlays/actors/z_obj_timeblock.rodata.o"
+    include "build/data/overlays/actors/z_obj_timeblock.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Tsubo"
-    include "build/baserom/ovl_Obj_Tsubo.o"
+    include "build/src/overlays/actors/ovl_Obj_Tsubo/z_obj_tsubo.o"
+    include "build/data/overlays/actors/z_obj_tsubo.data.o"
+    include "build/data/overlays/actors/z_obj_tsubo.rodata.o"
+    include "build/data/overlays/actors/z_obj_tsubo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Obj_Warp2block"
-    include "build/baserom/ovl_Obj_Warp2block.o"
+    include "build/src/overlays/actors/ovl_Obj_Warp2block/z_obj_warp2block.o"
+    include "build/data/overlays/actors/z_obj_warp2block.data.o"
+    include "build/data/overlays/actors/z_obj_warp2block.rodata.o"
+    include "build/data/overlays/actors/z_obj_warp2block.reloc.o"
 endseg
 
 beginseg
     name "ovl_Object_Kankyo"
-    include "build/baserom/ovl_Object_Kankyo.o"
+    include "build/src/overlays/actors/ovl_Object_Kankyo/z_object_kankyo.o"
+    include "build/data/overlays/actors/z_object_kankyo.data.o"
+    include "build/data/overlays/actors/z_object_kankyo.rodata.o"
+    include "build/data/overlays/actors/z_object_kankyo.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Spot"
-    include "build/baserom/ovl_Oceff_Spot.o"
+    include "build/src/overlays/actors/ovl_Oceff_Spot/z_oceff_spot.o"
+    include "build/data/overlays/actors/z_oceff_spot.data.o"
+    include "build/data/overlays/actors/z_oceff_spot.rodata.o"
+    include "build/data/overlays/actors/z_oceff_spot.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Storm"
-    include "build/baserom/ovl_Oceff_Storm.o"
+    include "build/src/overlays/actors/ovl_Oceff_Storm/z_oceff_storm.o"
+    include "build/data/overlays/actors/z_oceff_storm.data.o"
+    include "build/data/overlays/actors/z_oceff_storm.rodata.o"
+    include "build/data/overlays/actors/z_oceff_storm.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Wipe"
-    include "build/baserom/ovl_Oceff_Wipe.o"
+    include "build/src/overlays/actors/ovl_Oceff_Wipe/z_oceff_wipe.o"
+    include "build/data/overlays/actors/z_oceff_wipe.data.o"
+    include "build/data/overlays/actors/z_oceff_wipe.rodata.o"
+    include "build/data/overlays/actors/z_oceff_wipe.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Wipe2"
-    include "build/baserom/ovl_Oceff_Wipe2.o"
+    include "build/src/overlays/actors/ovl_Oceff_Wipe2/z_oceff_wipe2.o"
+    include "build/data/overlays/actors/z_oceff_wipe2.data.o"
+    include "build/data/overlays/actors/z_oceff_wipe2.rodata.o"
+    include "build/data/overlays/actors/z_oceff_wipe2.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Wipe3"
-    include "build/baserom/ovl_Oceff_Wipe3.o"
+    include "build/src/overlays/actors/ovl_Oceff_Wipe3/z_oceff_wipe3.o"
+    include "build/data/overlays/actors/z_oceff_wipe3.data.o"
+    include "build/data/overlays/actors/z_oceff_wipe3.rodata.o"
+    include "build/data/overlays/actors/z_oceff_wipe3.reloc.o"
 endseg
 
 beginseg
     name "ovl_Oceff_Wipe4"
-    include "build/baserom/ovl_Oceff_Wipe4.o"
+    include "build/src/overlays/actors/ovl_Oceff_Wipe4/z_oceff_wipe4.o"
+    include "build/data/overlays/actors/z_oceff_wipe4.data.o"
+    include "build/data/overlays/actors/z_oceff_wipe4.rodata.o"
+    include "build/data/overlays/actors/z_oceff_wipe4.reloc.o"
 endseg
 
 beginseg
     name "ovl_Shot_Sun"
-    //include "build/baserom/ovl_Shot_Sun.o"
-    include "build/asm/overlays/actors/ovl_Shot_Sun/z_shot_sun.o"
+    include "build/src/overlays/actors/ovl_Shot_Sun/z_shot_sun.o"
+    include "build/data/overlays/actors/z_shot_sun.data.o"
+    include "build/data/overlays/actors/z_shot_sun.rodata.o"
+    include "build/data/overlays/actors/z_shot_sun.reloc.o"
 endseg
 
 beginseg
@@ -9258,7 +10526,9 @@ endseg
 beginseg
     name "test01_scene"
     romalign 0x1000
-    include "build/baserom/test01_scene.o"
+    //include "build/baserom/test01_scene.o"
+    include "build/scenes/test01_scene/test01_scene.o"
+    address 0x02000000
 endseg
 
 beginseg

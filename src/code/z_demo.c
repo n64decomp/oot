@@ -92,21 +92,22 @@ void func_80068ECC(GlobalContext* globalCtx, CutsceneContext* csCtx);
 
 void Cutscene_DrawDebugInfo(GlobalContext* globalCtx, Gfx** dlist, CutsceneContext* csCtx)
 {
-    UNK_TYPE sp30[12];
-    s32 pad[2];
+    u8 pad[0x1C];
+    GfxPrint printer;
+    u8 pad2[8];
 
-    func_800FBB8C(sp30);
-    func_800FBC1C(sp30, *dlist);
-    SetTextXY(sp30, 22, 25);
-    SetTextRGBA(sp30, 255, 255, 55, 32);
-    SetTextString(sp30, "%s", "FLAME ");
-    SetTextRGBA(sp30, 255, 255, 255, 32);
-    SetTextString(sp30, "%06d", csCtx->frames);
-    SetTextRGBA(sp30, 50, 255, 255, 60);
-    SetTextXY(sp30, 4, 26);
-    SetTextString(sp30, "%s", "SKIP=(START) or (Cursole Right)");
-    *dlist = func_800FBC64(sp30);
-    func_800FBC14(sp30);
+    GfxPrint_Ctor(&printer);
+    GfxPrint_Open(&printer, *dlist);
+    GfxPrint_SetPos(&printer, 22, 25);
+    GfxPrint_SetColor(&printer, 255, 255, 55, 32);
+    GfxPrint_Printf(&printer, "%s", "FLAME ");
+    GfxPrint_SetColor(&printer, 255, 255, 255, 32);
+    GfxPrint_Printf(&printer, "%06d", csCtx->frames);
+    GfxPrint_SetColor(&printer, 50, 255, 255, 60);
+    GfxPrint_SetPos(&printer, 4, 26);
+    GfxPrint_Printf(&printer, "%s", "SKIP=(START) or (Cursole Right)");
+    *dlist = GfxPrint_Close(&printer);
+    GfxPrint_Dtor(&printer);
 }
 
 void func_8006450C(GlobalContext* globalCtx, CutsceneContext* csCtx)

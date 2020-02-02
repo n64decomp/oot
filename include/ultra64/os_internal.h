@@ -22,7 +22,7 @@ extern u32 D_80015AE8;
 
 u32 __osProbeTLB(void *);
 u32 __osDisableInt(void);
-OSThread *func_8000415C();
+OSThread *func_8000415C(OSThread**);
 void func_800042F0(void);
 
 #endif

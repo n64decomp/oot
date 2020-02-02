@@ -252,7 +252,7 @@ glabel func_800D3574
 /* B4A71C 800D357C 3C048014 */  lui   $a0, %hi(D_80146798) # $a0, 0x8014
 /* B4A720 800D3580 0C00084C */  jal   osSyncPrintf
 /* B4A724 800D3584 24846798 */   addiu $a0, %lo(D_80146798) # addiu $a0, $a0, 0x6798
-/* B4A728 800D3588 0C000A6D */  jal   func_800029B4
+/* B4A728 800D3588 0C000A6D */  jal   StackCheck_Check
 /* B4A72C 800D358C 00002025 */   move  $a0, $zero
 /* B4A730 800D3590 14400006 */  bnez  $v0, .L800D35AC
 /* B4A734 800D3594 3C048014 */   lui   $a0, %hi(D_801467D4)
@@ -465,10 +465,12 @@ glabel func_800D37F0
 /* B4AA30 800D3890 8C2F6A18 */  lw    $t7, %lo(jtbl_80146A18)($at)
 /* B4AA34 800D3894 01E00008 */  jr    $t7
 /* B4AA38 800D3898 00000000 */   nop   
+glabel L800D389C
 /* B4AA3C 800D389C 0C034DCE */  jal   func_800D3738
 /* B4AA40 800D38A0 02002025 */   move  $a0, $s0
 /* B4AA44 800D38A4 10000029 */  b     .L800D394C
 /* B4AA48 800D38A8 00000000 */   nop   
+glabel L800D38AC
 /* B4AA4C 800D38AC 3C048014 */  lui   $a0, %hi(D_801468A8) # $a0, 0x8014
 /* B4AA50 800D38B0 0C00084C */  jal   osSyncPrintf
 /* B4AA54 800D38B4 248468A8 */   addiu $a0, %lo(D_801468A8) # addiu $a0, $a0, 0x68a8
@@ -479,6 +481,7 @@ glabel func_800D37F0
 /* B4AA68 800D38C8 02002025 */   move  $a0, $s0
 /* B4AA6C 800D38CC 1000001F */  b     .L800D394C
 /* B4AA70 800D38D0 00000000 */   nop   
+glabel L800D38D4
 /* B4AA74 800D38D4 0C00084C */  jal   osSyncPrintf
 /* B4AA78 800D38D8 03C02025 */   move  $a0, $fp
 /* B4AA7C 800D38DC 3C048014 */  lui   $a0, %hi(D_801468F0) # $a0, 0x8014
@@ -488,6 +491,7 @@ glabel func_800D37F0
 /* B4AA8C 800D38EC 02002025 */   move  $a0, $s0
 /* B4AA90 800D38F0 10000016 */  b     .L800D394C
 /* B4AA94 800D38F4 00000000 */   nop   
+glabel L800D38F8
 /* B4AA98 800D38F8 0C00084C */  jal   osSyncPrintf
 /* B4AA9C 800D38FC 02C02025 */   move  $a0, $s6
 /* B4AAA0 800D3900 0C00084C */  jal   osSyncPrintf
@@ -496,6 +500,7 @@ glabel func_800D37F0
 /* B4AAAC 800D390C 02002025 */   move  $a0, $s0
 /* B4AAB0 800D3910 1000000E */  b     .L800D394C
 /* B4AAB4 800D3914 00000000 */   nop   
+glabel L800D3918
 /* B4AAB8 800D3918 02802025 */  move  $a0, $s4
 /* B4AABC 800D391C 0C00084C */  jal   osSyncPrintf
 /* B4AAC0 800D3920 24110001 */   li    $s1, 1
@@ -505,6 +510,7 @@ glabel func_800D37F0
 /* B4AAD0 800D3930 02002025 */   move  $a0, $s0
 /* B4AAD4 800D3934 10000005 */  b     .L800D394C
 /* B4AAD8 800D3938 00000000 */   nop   
+glabel L800D393C
 .L800D393C:
 /* B4AADC 800D393C 3C048014 */  lui   $a0, %hi(D_80146994) # $a0, 0x8014
 /* B4AAE0 800D3940 24846994 */  addiu $a0, %lo(D_80146994) # addiu $a0, $a0, 0x6994

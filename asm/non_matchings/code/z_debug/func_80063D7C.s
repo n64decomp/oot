@@ -9,7 +9,7 @@ glabel func_80063D7C
 /* ADAF38 80063D98 27A40030 */  addiu $a0, $sp, 0x30
 /* ADAF3C 80063D9C 0C031AB1 */  jal   func_800C6AC4
 /* ADAF40 80063DA0 24070274 */   li    $a3, 628
-/* ADAF44 80063DA4 0C03EEE3 */  jal   func_800FBB8C
+/* ADAF44 80063DA4 0C03EEE3 */  jal   GfxPrint_Ctor
 /* ADAF48 80063DA8 27A40048 */   addiu $a0, $sp, 0x48
 /* ADAF4C 80063DAC 8E0402C0 */  lw    $a0, 0x2c0($s0)
 /* ADAF50 80063DB0 0C031B08 */  jal   func_800C6C20
@@ -21,7 +21,7 @@ glabel func_80063D7C
 /* ADAF68 80063DC8 AE0E02B0 */  sw    $t6, 0x2b0($s0)
 /* ADAF6C 80063DCC AC820004 */  sw    $v0, 4($a0)
 /* ADAF70 80063DD0 AC8F0000 */  sw    $t7, ($a0)
-/* ADAF74 80063DD4 0C03EF07 */  jal   func_800FBC1C
+/* ADAF74 80063DD4 0C03EF07 */  jal   GfxPrint_Open
 /* ADAF78 80063DD8 27A40048 */   addiu $a0, $sp, 0x48
 /* ADAF7C 80063DDC 3C028016 */  lui   $v0, %hi(gGameInfo) # $v0, 0x8016
 /* ADAF80 80063DE0 8C42FA90 */  lw    $v0, %lo(gGameInfo)($v0)
@@ -45,7 +45,7 @@ glabel func_80063D7C
 .L80063E20:
 /* ADAFC0 80063E20 3C018012 */  lui   $at, %hi(D_8011E0B0) # $at, 0x8012
 /* ADAFC4 80063E24 A420E0B0 */  sh    $zero, %lo(D_8011E0B0)($at)
-/* ADAFC8 80063E28 0C03EF19 */  jal   func_800FBC64
+/* ADAFC8 80063E28 0C03EF19 */  jal   GfxPrint_Close
 /* ADAFCC 80063E2C 27A40048 */   addiu $a0, $sp, 0x48
 /* ADAFD0 80063E30 3C19DF00 */  lui   $t9, 0xdf00
 /* ADAFD4 80063E34 AC590000 */  sw    $t9, ($v0)
@@ -62,7 +62,7 @@ glabel func_80063D7C
 /* ADB000 80063E60 27A40030 */  addiu $a0, $sp, 0x30
 /* ADB004 80063E64 0C031AD5 */  jal   func_800C6B54
 /* ADB008 80063E68 24070298 */   li    $a3, 664
-/* ADB00C 80063E6C 0C03EF05 */  jal   func_800FBC14
+/* ADB00C 80063E6C 0C03EF05 */  jal   GfxPrint_Dtor
 /* ADB010 80063E70 27A40048 */   addiu $a0, $sp, 0x48
 /* ADB014 80063E74 8FBF001C */  lw    $ra, 0x1c($sp)
 /* ADB018 80063E78 8FB00018 */  lw    $s0, 0x18($sp)

@@ -82,6 +82,7 @@ glabel func_8006BBC0
 /* AE2E90 8006BCF0 8C2FB8C8 */  lw    $t7, %lo(jtbl_8013B8C8)($at)
 /* AE2E94 8006BCF4 01E00008 */  jr    $t7
 /* AE2E98 8006BCF8 00000000 */   nop   
+glabel L8006BCFC
 /* AE2E9C 8006BCFC 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2EA0 8006BD00 24E7E660 */  addiu $a3, %lo(gSaveContext) # addiu $a3, $a3, -0x19a0
 /* AE2EA4 8006BD04 3C188012 */  lui   $t8, %hi(D_801271B8) # $t8, 0x8012
@@ -100,6 +101,7 @@ glabel func_8006BBC0
 /* AE2ED8 8006BD38 016C1026 */  xor   $v0, $t3, $t4
 /* AE2EDC 8006BD3C 1000004E */  b     .L8006BE78
 /* AE2EE0 8006BD40 2C420001 */   sltiu $v0, $v0, 1
+glabel L8006BD44
 /* AE2EE4 8006BD44 908F0003 */  lbu   $t7, 3($a0)
 /* AE2EE8 8006BD48 3C188012 */  lui   $t8, %hi(D_80127010)
 /* AE2EEC 8006BD4C 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
@@ -119,6 +121,7 @@ glabel func_8006BBC0
 /* AE2F24 8006BD84 01991026 */  xor   $v0, $t4, $t9
 /* AE2F28 8006BD88 1000003B */  b     .L8006BE78
 /* AE2F2C 8006BD8C 2C420001 */   sltiu $v0, $v0, 1
+glabel L8006BD90
 /* AE2F30 8006BD90 908F0003 */  lbu   $t7, 3($a0)
 /* AE2F34 8006BD94 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2F38 8006BD98 3C188012 */  lui   $t8, %hi(D_80126FD0)
@@ -135,6 +138,7 @@ glabel func_8006BBC0
 /* AE2F64 8006BDC4 01681026 */  xor   $v0, $t3, $t0
 /* AE2F68 8006BDC8 1000002B */  b     .L8006BE78
 /* AE2F6C 8006BDCC 2C420001 */   sltiu $v0, $v0, 1
+glabel L8006BDD0
 /* AE2F70 8006BDD0 908C0003 */  lbu   $t4, 3($a0)
 /* AE2F74 8006BDD4 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2F78 8006BDD8 3C0F8012 */  lui   $t7, %hi(D_80126F88)
@@ -151,6 +155,7 @@ glabel func_8006BBC0
 /* AE2FA4 8006BE04 01C91026 */  xor   $v0, $t6, $t1
 /* AE2FA8 8006BE08 1000001B */  b     .L8006BE78
 /* AE2FAC 8006BE0C 2C420001 */   sltiu $v0, $v0, 1
+glabel L8006BE10
 /* AE2FB0 8006BE10 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2FB4 8006BE14 24E7E660 */  addiu $a3, %lo(gSaveContext) # addiu $a3, $a3, -0x19a0
 /* AE2FB8 8006BE18 90EC003A */  lbu   $t4, 0x3a($a3)
@@ -161,6 +166,7 @@ glabel func_8006BBC0
 /* AE2FCC 8006BE2C 01191026 */  xor   $v0, $t0, $t9
 /* AE2FD0 8006BE30 10000011 */  b     .L8006BE78
 /* AE2FD4 8006BE34 2C420001 */   sltiu $v0, $v0, 1
+glabel L8006BE38
 .L8006BE38:
 /* AE2FD8 8006BE38 3C048014 */  lui   $a0, %hi(D_8013B830) # $a0, 0x8014
 /* AE2FDC 8006BE3C 2484B830 */  addiu $a0, %lo(D_8013B830) # addiu $a0, $a0, -0x47d0

@@ -7,6 +7,7 @@
 #include <ultra64.h>
 #include <global.h>
 #include <z64.h>
+#include <vt.h>
 
 typedef struct
 {
@@ -76,8 +77,8 @@ static void Update(ActorEg* this, GlobalContext* globalCtx)
 
     if (((funcIndex < 0) || (0 < funcIndex)) || (funcTbl[funcIndex] == NULL))
     {
-        // Translates to: "[31m Main Mode is wrong!!!!!!!!!!!!!!!!!!!!!!!!!"
-        osSyncPrintf("\x1B[31mメインモードがおかしい!!!!!!!!!!!!!!!!!!!!!!!!!\x0A\x1B\x5B\x6D");
+        // Translates to: "Main Mode is wrong!!!!!!!!!!!!!!!!!!!!!!!!!"
+        osSyncPrintf(VT_FGCOL(RED) "メインモードがおかしい!!!!!!!!!!!!!!!!!!!!!!!!!\n" VT_RST);
     }
     else
     {

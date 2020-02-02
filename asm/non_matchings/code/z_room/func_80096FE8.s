@@ -20,17 +20,20 @@ glabel D_8013F190
     .balign 4
 
 glabel D_8013F198
-    .incbin "baserom.z64", 0xBB6338, 0x24
+    .asciz "部屋バッファサイズ=%08x(%5.1fK)\n"
+    .balign 4
 
 glabel D_8013F1BC
     .asciz "../z_room.c"
     .balign 4
 
 glabel D_8013F1C8
-    .incbin "baserom.z64", 0xBB6368, 0x20
+    .asciz "部屋バッファ開始ポインタ=%08x\n"
+    .balign 4
 
 glabel D_8013F1E8
-    .incbin "baserom.z64", 0xBB6388, 0x20
+    .asciz "部屋バッファ終了ポインタ=%08x\n"
+    .balign 4
 
 glabel D_8013F208
     .asciz "\x1B[m"

@@ -10,8 +10,8 @@
 .align 4
 
 glabel func_800CA3A0
-/* B41540 800CA3A0 3C028000 */  lui   $v0, %hi(D_80000318) # $v0, 0x8000
-/* B41544 800CA3A4 8C420318 */  lw    $v0, %lo(D_80000318)($v0)
+/* B41540 800CA3A0 3C028000 */  lui   $v0, %hi(osMemSize) # $v0, 0x8000
+/* B41544 800CA3A4 8C420318 */  lw    $v0, %lo(osMemSize)($v0)
 /* B41548 800CA3A8 3C010080 */  lui   $at, 0x80
 /* B4154C 800CA3AC 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* B41550 800CA3B0 0041082B */  sltu  $at, $v0, $at

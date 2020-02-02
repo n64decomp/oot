@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <global.h>
 #include <macros.h>
+#include <vt.h>
 
 void Actor_InitShadow(SubActorStructB4* actorSubB4, f32 arg1, void* shadowDrawFunc, f32 arg3)
 {
@@ -754,7 +755,7 @@ void TitleCard_InitPlaceName(GlobalContext* globalCtx, TitleCardContext* titleCt
     u32 size = loadedScene->titleVromEnd - loadedScene->titleVromStart;
 
     if ((size != 0) && (size <= 0x3000))
-        func_80001AA0(texture, loadedScene->titleVromStart, size, "../z_actor.c", 2765);
+        DmaMgr_SendRequest1(texture, loadedScene->titleVromStart, size, "../z_actor.c", 2765);
 
     titleCtx->texture = texture;
     titleCtx->unk_4 = arg3;
@@ -961,7 +962,7 @@ void Actor_Destroy(Actor* actor, GlobalContext* globalCtx)
         name = overlayEntry->name != NULL ? overlayEntry->name : "";
 
         // Translates to: "NO Actor CLASS DESTRUCT [%s]"
-        osSyncPrintf("Ａｃｔｏｒクラス デストラクトがありません [%s]\n\x1B[m", name);
+        osSyncPrintf("Ａｃｔｏｒクラス デストラクトがありません [%s]\n" VT_RST, name);
     }
 }
 
@@ -2944,7 +2945,7 @@ Actor* Actor_RemoveFromTypeList(GlobalContext* globalCtx, ActorContext* actorCtx
 
 void Actor_FreeOverlay(ActorOverlay* actorOverlay)
 {
-    osSyncPrintf("\x1B[36m");
+    osSyncPrintf(VT_FGCOL(CYAN));
 
     if (actorOverlay->nbLoaded == 0)
     {
@@ -2981,7 +2982,7 @@ void Actor_FreeOverlay(ActorOverlay* actorOverlay)
         // Translates to: "%d OF ACTOR CLIENT REMAINS"
         osSyncPrintf("アクタークライアントはあと %d 残っています\n", actorOverlay->nbLoaded);
 
-    osSyncPrintf("\x1B[m");
+    osSyncPrintf(VT_RST);
 }
 
 #ifdef NON_MATCHING
@@ -3013,7 +3014,7 @@ Actor* Actor_Spawn(ActorContext* actorCtx, GlobalContext* globalCtx, s16 actorId
     if (actorCtx->total > ACTOR_NUMBER_MAX)
     {
         // Translates to: "Ａｃｔｏｒ SET NUMBER EXCEEDED"
-        osSyncPrintf("\x1B[43;30mＡｃｔｏｒセット数オーバー\n\x1B[m");
+        osSyncPrintf(VT_COL(YELLOW, BLACK) "Ａｃｔｏｒセット数オーバー\n" VT_RST);
         return NULL;
     }
 
@@ -3059,7 +3060,7 @@ Actor* Actor_Spawn(ActorContext* actorCtx, GlobalContext* globalCtx, s16 actorId
             if (overlayEntry->loadedRamAddr == NULL)
             {
                 // Translates to: "CANNOT RESERVE ACTOR PROGRAM MEMORY"
-                osSyncPrintf("\x1B[41;37mＡｃｔｏｒプログラムメモリが確保できません\n\x1B[m");
+                osSyncPrintf(VT_COL(RED, WHITE) "Ａｃｔｏｒプログラムメモリが確保できません\n" VT_RST);
                 return NULL;
             }
 
@@ -3067,14 +3068,14 @@ Actor* Actor_Spawn(ActorContext* actorCtx, GlobalContext* globalCtx, s16 actorId
                           overlayEntry->vramStart, overlayEntry->vramEnd,
                           overlayEntry->loadedRamAddr);
 
-            osSyncPrintf("\x1B[32m");
+            osSyncPrintf(VT_FGCOL(GREEN));
             osSyncPrintf("OVL(a):Seg:%08x-%08x Ram:%08x-%08x Off:%08x %s\n",
                          overlayEntry->vramStart, overlayEntry->vramEnd,
                          (s32)overlayEntry->loadedRamAddr,
                          (s32)overlayEntry->loadedRamAddr + (s32)overlayEntry->vramEnd - (s32)overlayEntry->vramStart,
                          (s32)overlayEntry->vramStart - (s32)overlayEntry->loadedRamAddr,
                          name);
-            osSyncPrintf("\x1B[m");
+            osSyncPrintf(VT_RST);
 
             overlayEntry->nbLoaded = 0;
         }
@@ -3090,7 +3091,7 @@ Actor* Actor_Spawn(ActorContext* actorCtx, GlobalContext* globalCtx, s16 actorId
         ((actorInit->type == ACTORTYPE_ENEMY) && (Flags_GetClear(globalCtx,  globalCtx->roomCtx.curRoom.num))))
     {
         // Translates to: "NO DATA BANK!! <DATA BANK＝%d> (profilep->bank=%d)"
-        osSyncPrintf("\x1B[41;37mデータバンク無し！！<データバンク＝%d>(profilep->bank=%d)\n\x1B[m", objBankIndex, actorInit->objectId);
+        osSyncPrintf(VT_COL(RED, WHITE) "データバンク無し！！<データバンク＝%d>(profilep->bank=%d)\n" VT_RST, objBankIndex, actorInit->objectId);
         Actor_FreeOverlay(overlayEntry);
         return NULL;
     }
@@ -3100,7 +3101,7 @@ Actor* Actor_Spawn(ActorContext* actorCtx, GlobalContext* globalCtx, s16 actorId
     if (actor == NULL)
     {
         // Translates to: "ACTOR CLASS CANNOT BE RESERVED! %s <SIZE＝%d BYTES>"
-        osSyncPrintf("\x1B[41;37mＡｃｔｏｒクラス確保できません！ %s <サイズ＝%dバイト>\n", "\x1B[m", name, actorInit->instanceSize);
+        osSyncPrintf(VT_COL(RED, WHITE) "Ａｃｔｏｒクラス確保できません！ %s <サイズ＝%dバイト>\n", VT_RST, name, actorInit->instanceSize);
         Actor_FreeOverlay(overlayEntry);
         return NULL;
     }
@@ -3748,69 +3749,69 @@ void Actor_SetTextWithPrefix(GlobalContext* globalCtx, Actor* actor, s16 baseTex
 
     switch (globalCtx->sceneNum)
     {
-        case 0:
-        case 17:
-        case 20:
-        case 38:
-        case 39:
-        case 40:
-        case 41:
-        case 45:
-        case 52:
-        case 85:
-        case 86:
-        case 91:
+        case SCENE_YDAN:
+        case SCENE_YDAN_BOSS:
+        case SCENE_MORIBOSSROOM:
+        case SCENE_KOKIRI_HOME:
+        case SCENE_KOKIRI_HOME3:
+        case SCENE_KOKIRI_HOME4:
+        case SCENE_KOKIRI_HOME5:
+        case SCENE_KOKIRI_SHOP:
+        case SCENE_LINK_HOME:
+        case SCENE_SPOT04:
+        case SCENE_SPOT05:
+        case SCENE_SPOT10:
         case 112:
             prefix = 0x1000;
             break;
-        case 54:
-        case 81:
-        case 99:
+        case SCENE_MALON_STABLE:
+        case SCENE_SPOT00:
+        case SCENE_SPOT20:
             prefix = 0x2000;
             break;
-        case 4:
-        case 18:
-        case 21:
-        case 96:
-        case 97:
-        case 98:
+        case SCENE_HIDAN:
+        case SCENE_DDAN_BOSS:
+        case SCENE_FIRE_BS:
+        case SCENE_SPOT16:
+        case SCENE_SPOT17:
+        case SCENE_SPOT18:
             prefix = 0x3000;
             break;
-        case 2:
-        case 19:
-        case 84:
-        case 88:
-        case 89:
+        case SCENE_BDAN:
+        case SCENE_BDAN_BOSS:
+        case SCENE_SPOT03:
+        case SCENE_SPOT07:
+        case SCENE_SPOT08:
             prefix = 0x4000;
             break;
-        case 7:
-        case 24:
-        case 42:
-        case 43:
-        case 53:
-        case 58:
-        case 63:
-        case 72:
-        case 82:
-        case 83:
+        case SCENE_HAKADAN:
+        case SCENE_HAKADAN_BS:
+        case SCENE_KAKARIKO:
+        case SCENE_KAKARIKO3:
+        case SCENE_IMPA:
+        case SCENE_HUT:
+        case SCENE_HAKAANA:
+        case SCENE_HAKASITARELAY:
+        case SCENE_SPOT01:
+        case SCENE_SPOT02:
             prefix = 0x5000;
             break;
-        case 6:
-        case 23:
-        case 55:
-        case 57:
-        case 87:
-        case 90:
-        case 92:
+        case SCENE_JYASINZOU:
+        case SCENE_JYASINBOSS:
+        case SCENE_LABO:
+        case SCENE_TENT:
+        case SCENE_SPOT06:
+        case SCENE_SPOT09:
+        case SCENE_SPOT11:
             prefix = 0x6000;
             break;
-        case 27:
-        case 30:
-        case 31:
-        case 32:
-        case 33:
-        case 34:
-        case 95:
+        case SCENE_ENTRA:
+        case SCENE_MARKET_ALLEY:
+        case SCENE_MARKET_ALLEY_N:
+        case SCENE_MARKET_DAY:
+        case SCENE_MARKET_NIGHT:
+        case SCENE_MARKET_RUINS:
+        case SCENE_SPOT15:
             prefix = 0x7000;
             break;
         default:

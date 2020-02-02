@@ -10,7 +10,8 @@ void Lib_MemSet(void* dest, size_t size, u8 val)
 
     for (i = 0; i != size; i++)
     {
-        *((u8*)dest)++ = val;
+        *(u8 *)dest = val;
+        ((u8 *)dest)++;
     }
 }
 #else

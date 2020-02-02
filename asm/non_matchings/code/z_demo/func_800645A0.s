@@ -1,6 +1,7 @@
 .rdata
 glabel D_8013AE68
-    .incbin "baserom.z64", 0xBB2008, 0x18
+    .asciz "\nデモ開始要求 発令！"
+    .balign 4
 
 .text
 glabel func_800645A0

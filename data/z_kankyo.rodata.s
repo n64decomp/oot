@@ -7,299 +7,397 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013C240
-    .incbin "baserom.z64", 0xBB33E0, 0x40
+    .asciz "\x1b[43;30m\n\n\xA5\xD5\xA5\xA3\xA1\xBC\xA5\xEB\xA5\xC9\xBE\xEF\xC3\xF3\xB0\xCA\xB3\xB0\xA1\xA2\xC2\xC0\xCD\xDB\xC0\xDF\xC4\xEA\xA1\xAA\xA4\xE8\xA4\xC3\xA4\xC6\xB6\xAF\xC0\xA9\xB2\xF2\xBD\xFC\xA1\xAA\n\x1b[m"
+    # EUC-JP: フィールド常駐以外、太陽設定！よって強制解除！ | "Sun setting except field resident! So forced release!"?
+    .balign 4
 
 glabel D_8013C280
-    .incbin "baserom.z64", 0xBB3420, 0x40
+    .asciz "\x1b[41;37m\nend_frame\xA4\xC8start_frame\xA4\xCE\xA5\xD5\xA5\xEC\xA1\xBC\xA5\xE0\xB4\xD8\xB7\xB8\xA4\xAC\xA4\xAA\xA4\xAB\xA4\xB7\xA4\xA4!!!\x1b[m"
+    # EUC-JP: とstart_frameのフレーム関係がおかしい!!! | The frame relation between end_frame and start_frame is wrong
+    .balign 4
 
 glabel D_8013C2C0
-    .incbin "baserom.z64", 0xBB3460, 0x34
+    .asciz "\x1b[41;37m\nby get_parcent_forAccelBrake!!!!!!!!!\x1b[m"
+    .balign 4
 
 glabel D_8013C2F4
-    .incbin "baserom.z64", 0xBB3494, 0x3C
+    .asciz "\x1b[41;37m\n\xB4\xC4\xB6\xAD\xA3\xD6\xA3\xD2\xA5\xC7\xA1\xBC\xA5\xBF\xBC\xE8\xC6\xC0\xBC\xBA\xC7\xD4\xA1\xAA\x20\xA4\xB5\xA4\xB5\xA4\xAD\xA4\xDE\xA4\xC7\xA4\xB4\xCA\xF3\xB9\xF0\xA4\xF2\xA1\xAA\x1b[m"
+    # EUC-JP: 環境ＶＲデータ取得失敗！ ささきまでご報告を！ | Environment VR data acquisition failed! Report to Sasaki!
+    .balign 4
 
 glabel D_8013C330
-    .incbin "baserom.z64", 0xBB34D0, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C340
-    .incbin "baserom.z64", 0xBB34E0, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C350
-    .incbin "baserom.z64", 0xBB34F0, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C360
-    .incbin "baserom.z64", 0xBB3500, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C370
-    .incbin "baserom.z64", 0xBB3510, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C380
-    .incbin "baserom.z64", 0xBB3520, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C390
-    .incbin "baserom.z64", 0xBB3530, 0x40
+    .asciz "\x1b[43;30m\n\xBF\xE5\xA5\xDD\xA5\xEA\xA5\xB4\xA5\xF3\xA5\xC7\xA1\xBC\xA5\xBF\xA4\xCB\xBF\xE5\xC3\xE6\xA5\xAB\xA5\xE9\xA1\xBC\xA4\xAC\xC0\xDF\xC4\xEA\xA4\xB5\xA4\xEC\xA4\xC6\xA4\xAA\xA4\xEA\xA4\xDE\xA4\xBB\xA4\xF3!\x1b[m"
+    # EUC-JP: 水ポリゴンデータに水中カラーが設定されておりません | Underwater color is not set in the water poly data
+    .balign 4
 
 glabel D_8013C3D0
-    .incbin "baserom.z64", 0xBB3570, 0x8
+    .asciz "T%03d "
+    .balign 4
 
 glabel D_8013C3D8
-    .incbin "baserom.z64", 0xBB3578, 0x8
+    .asciz "E%03d"
+    .balign 4
 
 glabel D_8013C3E0
-    .incbin "baserom.z64", 0xBB3580, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C3E4
-    .incbin "baserom.z64", 0xBB3584, 0xC
+    .asciz "ZELDATIME "
+    .balign 4
 
 glabel D_8013C3F0
-    .incbin "baserom.z64", 0xBB3590, 0x8
+    .asciz "%02d"
+    .balign 4
 
 glabel D_8013C3F8
-    .incbin "baserom.z64", 0xBB3598, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C3FC
-    .incbin "baserom.z64", 0xBB359C, 0x4
+    .asciz ":"
+    .balign 4
 
 glabel D_8013C400
-    .incbin "baserom.z64", 0xBB35A0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C404
-    .incbin "baserom.z64", 0xBB35A4, 0x4
+    .asciz " "
+    .balign 4
 
 glabel D_8013C408
-    .incbin "baserom.z64", 0xBB35A8, 0x8
+    .asciz "%02d"
+    .balign 4
 
 glabel D_8013C410
-    .incbin "baserom.z64", 0xBB35B0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C414
-    .incbin "baserom.z64", 0xBB35B4, 0xC
+    .asciz "VRBOXTIME "
+    .balign 4
 
 glabel D_8013C420
-    .incbin "baserom.z64", 0xBB35C0, 0x8
+    .asciz "%02d"
+    .balign 4
 
 glabel D_8013C428
-    .incbin "baserom.z64", 0xBB35C8, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C42C
-    .incbin "baserom.z64", 0xBB35CC, 0x4
+    .asciz ":"
+    .balign 4
 
 glabel D_8013C430
-    .incbin "baserom.z64", 0xBB35D0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C434
-    .incbin "baserom.z64", 0xBB35D4, 0x4
+    .asciz " "
+    .balign 4
 
 glabel D_8013C438
-    .incbin "baserom.z64", 0xBB35D8, 0x8
+    .asciz "%02d"
+    .balign 4
 
 glabel D_8013C440
-    .incbin "baserom.z64", 0xBB35E0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C444
-    .incbin "baserom.z64", 0xBB35E4, 0x8
+    .asciz "YORU"
+    .balign 4
 
 glabel D_8013C44C
-    .incbin "baserom.z64", 0xBB35EC, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013C450
-    .incbin "baserom.z64", 0xBB35F0, 0x8
+    .asciz "HIRU"
+    .balign 4
 
 glabel D_8013C458
-    .incbin "baserom.z64", 0xBB35F8, 0x18
+    .asciz "\nnext_zelda_time=[%x]"
+    .balign 4
 
 glabel D_8013C470
-    .incbin "baserom.z64", 0xBB3610, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C480
-    .incbin "baserom.z64", 0xBB3620, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C490
-    .incbin "baserom.z64", 0xBB3630, 0x38
+    .asciz "\x1b[41;37m\n\xA5\xAB\xA5\xE9\xA1\xBC\xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xA4\xCE\xC0\xDF\xC4\xEA\xA4\xAC\xA4\xAA\xA4\xAB\xA4\xB7\xA4\xA4\xA4\xE8\xA4\xA6\xA4\xC7\xA4\xB9\xA1\xAA\x1b[m"
+    # EUC-JP: カラーパレットの設定がおかしいようです！ | The color palette settings seem to be wrong!
+    .balign 4
 
 glabel D_8013C4C8
-    .incbin "baserom.z64", 0xBB3668, 0x38
+    .asciz "\x1b[41;37m\n\xC0\xDF\xC4\xEA\xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xA1\xE1\x5B\x25\x64\x5D \xBA\xC7\xB8\xE5\xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xC8\xD6\xB9\xE6\xA1\xE1[%d]\n\x1b[m"
+    # EUC-JP: 設定パレット＝[%d] 最後パレット番号＝ | Set pallet = [% d] Last pallet number =
+    .balign 4
 
 glabel D_8013C500
-    .incbin "baserom.z64", 0xBB36A0, 0x2C
+    .asciz "\n\x1b[31m\xA5\xAB\xA5\xE9\xA1\xBC\xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xA4\xAC\xA4\xAA\xA4\xAB\xA4\xB7\xA4\xA4\xA4\xE8\xA4\xA6\xA4\xC7\xA4\xB9\xA1\xAA"
+    # EUC-JP: カラーパレットがおかしいようです！ | The color palette seems strange!
+    .balign 4
 
 glabel D_8013C52C
-    .incbin "baserom.z64", 0xBB36CC, 0x30
+    .asciz "\n\x1b[33m\xC0\xDF\xC4\xEA\xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xA1\xE1[%d] \xA5\xD1\xA5\xEC\xA5\xC3\xA5\xC8\xBF\xF4\xA1\xE1[%d]\n\x1b[m"
+    # EUC-JP: 設定パレット＝[%d] パレット数＝[%d] | Set pallet = [% d] Number of pallets = [% d]
+    .balign 4
 
 glabel D_8013C55C
-    .incbin "baserom.z64", 0xBB36FC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C56C
-    .incbin "baserom.z64", 0xBB370C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C57C
-    .incbin "baserom.z64", 0xBB371C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C58C
-    .incbin "baserom.z64", 0xBB372C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C59C
-    .incbin "baserom.z64", 0xBB373C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5AC
-    .incbin "baserom.z64", 0xBB374C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5BC
-    .incbin "baserom.z64", 0xBB375C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5CC
-    .incbin "baserom.z64", 0xBB376C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5DC
-    .incbin "baserom.z64", 0xBB377C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5EC
-    .incbin "baserom.z64", 0xBB378C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C5FC
-    .incbin "baserom.z64", 0xBB379C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C60C
-    .incbin "baserom.z64", 0xBB37AC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C61C
-    .incbin "baserom.z64", 0xBB37BC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C62C
-    .incbin "baserom.z64", 0xBB37CC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C63C
-    .incbin "baserom.z64", 0xBB37DC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C64C
-    .incbin "baserom.z64", 0xBB37EC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C65C
-    .incbin "baserom.z64", 0xBB37FC, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C66C
-    .incbin "baserom.z64", 0xBB380C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C67C
-    .incbin "baserom.z64", 0xBB381C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C68C
-    .incbin "baserom.z64", 0xBB382C, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C69C
-    .incbin "baserom.z64", 0xBB383C, 0x38
+    .asciz "\n\n\nBGM\xC0\xDF\xC4\xEAgame_play->sound_info.BGM=[%d] old_bgm=[%d]\n\n"
+    # EUC-JP: 設定 | Configuration
+    .balign 4
 
 glabel D_8013C6D4
-    .incbin "baserom.z64", 0xBB3874, 0x14
+    .asciz "\n-----------------\n"
+    .balign 4
 
 glabel D_8013C6E8
-    .incbin "baserom.z64", 0xBB3888, 0x14
+    .asciz "\n\x20\xB6\xAF\xC0\xA9\xA3\xC2\xA3\xC7\xA3\xCD=[%d]"
+    # EUC-JP: 強制ＢＧＭ | Forced BGM
+    .balign 4
 
 glabel D_8013C6FC
-    .incbin "baserom.z64", 0xBB389C, 0x14
+    .asciz "\n     \xA3\xC2\xA3\xC7\xA3\xCD=[%d]"
+    # EUC-JP: ＢＧＭ
+    .balign 4
 
 glabel D_8013C710
-    .incbin "baserom.z64", 0xBB38B0, 0x14
+    .asciz "\n     \xA5\xA8\xA5\xF3\xA5\xD6=[%d]"
+    # EUC-JP: エンブ | Emblem?
+    .balign 4
 
 glabel D_8013C724
-    .incbin "baserom.z64", 0xBB38C4, 0x14
+    .asciz "\n     status=[%d]"
+    .balign 4
 
 glabel D_8013C738
-    .incbin "baserom.z64", 0xBB38D8, 0x18
+    .asciz "\n\n\nNa_StartMorinigBgm\n\n"
+    .balign 4
 
 glabel D_8013C750
-    .incbin "baserom.z64", 0xBB38F0, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C760
-    .incbin "baserom.z64", 0xBB3900, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C770
-    .incbin "baserom.z64", 0xBB3910, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel D_8013C780
-    .incbin "baserom.z64", 0xBB3920, 0x10
+    .asciz "../z_kankyo.c"
+    .balign 4
 
 glabel jtbl_8013C790
-    .incbin "baserom.z64", 0xBB3930, 0x14
+    .word L8006F4A8
+    .word L8006F4CC
+    .word L8006F4CC
+    .word L8006F4CC
+    .word L8006F4F0
 
 glabel D_8013C7A4
-    .incbin "baserom.z64", 0xBB3944, 0x4
+    .float 0.001
 
 glabel D_8013C7A8
-    .incbin "baserom.z64", 0xBB3948, 0x4
+    .float 0.005
 
 glabel D_8013C7AC
-    .incbin "baserom.z64", 0xBB394C, 0x4
+    .float 0.8
 
 glabel D_8013C7B0
-    .incbin "baserom.z64", 0xBB3950, 0x4
+    .float 0.8
 
 glabel D_8013C7B4
-    .incbin "baserom.z64", 0xBB3954, 0x4
+    .float 0.8
 
 glabel D_8013C7B8
-    .incbin "baserom.z64", 0xBB3958, 0x8
+    .float 630
 
+    .balign 8
 glabel D_8013C7C0
-    .incbin "baserom.z64", 0xBB3960, 0x8
+    .double 0.001
 
 glabel D_8013C7C8
-    .incbin "baserom.z64", 0xBB3968, 0x4
+    .float 1.0E-4
 
 glabel D_8013C7CC
-    .incbin "baserom.z64", 0xBB396C, 0x4
+    .float 0.001
 
 glabel D_8013C7D0
-    .incbin "baserom.z64", 0xBB3970, 0x4
+    .float 0.001
 
 glabel D_8013C7D4
-    .incbin "baserom.z64", 0xBB3974, 0x4
+    .float 0.1
 
 glabel D_8013C7D8
-    .incbin "baserom.z64", 0xBB3978, 0x4
+    .float 0.1
 
 glabel D_8013C7DC
-    .incbin "baserom.z64", 0xBB397C, 0x4
+    .float 0.4
 
 glabel D_8013C7E0
-    .incbin "baserom.z64", 0xBB3980, 0x4
+    .float 0.7
 
 glabel D_8013C7E4
-    .incbin "baserom.z64", 0xBB3984, 0x4
+    .float 1.5707964 # M_PI / 2
 
 glabel D_8013C7E8
-    .incbin "baserom.z64", 0xBB3988, 0x4
+    .float 1.2
 
 glabel D_8013C7EC
-    .incbin "baserom.z64", 0xBB398C, 0x4
+    .float 0.1
 
 glabel D_8013C7F0
-    .incbin "baserom.z64", 0xBB3990, 0x4
+    .float 0.02
 
 glabel D_8013C7F4
-    .incbin "baserom.z64", 0xBB3994, 0x4
+    .float 0.02
 
 glabel D_8013C7F8
-    .incbin "baserom.z64", 0xBB3998, 0x4
+    .float 0.1
 
 glabel D_8013C7FC
-    .incbin "baserom.z64", 0xBB399C, 0x4
+    .float 2.9
 
 glabel D_8013C800
-    .incbin "baserom.z64", 0xBB39A0, 0x4
+    .float 5000
 
 glabel D_8013C804
-    .incbin "baserom.z64", 0xBB39A4, 0x4
+    .float 9500
 
 glabel D_8013C808
-    .incbin "baserom.z64", 0xBB39A8, 0x4
+    .float 0.017453292
 
 glabel jtbl_8013C80C
-    .incbin "baserom.z64", 0xBB39AC, 0x24
+   .word L80075B84
+   .word L80075BD8
+   .word L80075C30
+   .word L80075C6C
+   .word L80075CB4
+   .word L80075CE0
+   .word L80075D30
+   .word L80075DE4
+   .word L80075E34
 
 glabel D_8013C830
-    .incbin "baserom.z64", 0xBB39D0, 0x4
+    .float 0.16666667
 
 glabel D_8013C834
-    .incbin "baserom.z64", 0xBB39D4, 0xC
+    .float 1.8333334

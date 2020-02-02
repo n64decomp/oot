@@ -1,9 +1,11 @@
 .rdata
 glabel D_8013F988
-    .incbin "baserom.z64", 0xBB6B28, 0x14
+    .asciz "../z_scene_table.c"
+    .balign 4
 
 glabel D_8013F99C
-    .incbin "baserom.z64", 0xBB6B3C, 0x14
+    .asciz "../z_scene_table.c"
+    .balign 4
 
 .text
 glabel func_8009C0AC

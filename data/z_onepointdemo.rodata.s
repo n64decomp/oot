@@ -7,119 +7,672 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013CBA0
-    .incbin "baserom.z64", 0xBB3D40, 0x20
+    .asciz "%s(%d): xyz_t: %s (%f %f %f)\n"
+    .balign 4
 
 glabel D_8013CBC0
-    .incbin "baserom.z64", 0xBB3D60, 0x14
+    .asciz "../z_onepointdemo.c"
+    .balign 4
 
 glabel D_8013CBD4
-    .incbin "baserom.z64", 0xBB3D74, 0x4
+    .asciz "&cp"
+    .balign 4
 
 glabel D_8013CBD8
-    .incbin "baserom.z64", 0xBB3D78, 0x40
+    .asciz "\x1b[41;37monepointdemo camera: demo number not found !! (%d)\n\x1b[m"
+    .balign 4
 
 glabel D_8013CC18
-    .incbin "baserom.z64", 0xBB3DB8, 0x48
+    .asciz "\x1b[41;37monepoint demo: error: too many cameras ... give up! type=%d\n\x1b[m"
+    .balign 4
 
 glabel D_8013CC60
-    .incbin "baserom.z64", 0xBB3E00, 0x48
+    .asciz "\x1b[43;30monepointdemo camera[%d]: killed 'coz low priority (%d < %d)\n\x1b[m"
+    .balign 4
 
 glabel D_8013CCA8
-    .incbin "baserom.z64", 0xBB3E48, 0x34
+    .asciz "onepointdemo camera[%d]: delete timer=%d next=%d\n"
+    .balign 4
 
 glabel D_8013CCDC
-    .incbin "baserom.z64", 0xBB3E7C, 0x44
+    .asciz "\x1b[43;30mactor attention demo camera: canceled by other camera\n\x1b[m"
+    .balign 4
 
 glabel D_8013CD20
-    .incbin "baserom.z64", 0xBB3EC0, 0x4C
+    .asciz "\x1b[43;30mactor attention demo camera: change mode BOOKEEPON -> NORMAL\n\x1b[m"
+    .balign 4
 
 glabel D_8013CD6C
-    .incbin "baserom.z64", 0xBB3F0C, 0x48
-
+    .asciz "\x1b[43;30mactor attention demo camera: %d: unkown part of actor %d\n\x1b[m"
+    .balign 4
+    
 glabel D_8013CDB4
-    .incbin "baserom.z64", 0xBB3F54, 0x38
+    .asciz "\x1b[36m%06u:\x1b[m actor attention demo camera: request %d "
+    .balign 4
 
 glabel D_8013CDEC
-    .incbin "baserom.z64", 0xBB3F8C, 0x14
+    .asciz "\xA2\xAA \x1b[35m\xA1\xDF\x1B[m (%d)\n"
+    # EUC-JP: → [35m×[m (%d)
+    .balign 4
 
 glabel D_8013CE00
-    .incbin "baserom.z64", 0xBB3FA0, 0x14
+    .asciz "\xA2\xAA \x1b[34m\xA1\xFB\x1B[m (%d)\n"
+    # EUC-JP: → [34m○[m (%d)
+    .balign 4
 
 glabel D_8013CE14
-    .incbin "baserom.z64", 0xBB3FB4, 0x2C
+    .asciz "\x1b[41;37mactor attention demo: give up! \n\x1b[m"
+    .balign 4
 
 glabel D_8013CE40
-    .incbin "baserom.z64", 0xBB3FE0, 0x4
+    .float 57.295776
 
 glabel D_8013CE44
-    .incbin "baserom.z64", 0xBB3FE4, 0x4
+    .float 182.04167
 
 glabel jtbl_8013CE48
-    .incbin "baserom.z64", 0xBB3FE8, 0x1E8
+    .word L8007F234
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F28C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F2D0
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F31C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F35C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F3AC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F3FC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DAD4
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DB08
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F44C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F49C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F4EC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F588
+    .word L8007F654
 
 glabel jtbl_8013D030
-    .incbin "baserom.z64", 0xBB41D0, 0x5C
+    .word L8007FC74
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FCA8
+    .word L8007FCDC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FD10
+    .word L8007FD44
+    .word L8007FD78
 
 glabel jtbl_8013D08C
-    .incbin "baserom.z64", 0xBB422C, 0x284
+    .word L8007EC78
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EBE4
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EF78
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007ED6C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EE90
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EE4C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DE9C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EB8C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EA80
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007EFBC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F19C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F0EC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F054
 
 glabel jtbl_8013D310
-    .incbin "baserom.z64", 0xBB44B0, 0xA8
+    .word L8007E824
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E5DC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E914
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007F698
+    .word L8007F6E8
 
 glabel jtbl_8013D3B8
-    .incbin "baserom.z64", 0xBB4558, 0x2D4
+    .word L8007DCBC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DBF8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DBA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DF78
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DF34
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DE9C
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DCF8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DD80
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DDB4
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007DDF8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E164
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E1D8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E224
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E2A0
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E434
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E340
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E4DC
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007FFA8
+    .word L8007E5A0
 
 glabel D_8013D68C
-    .incbin "baserom.z64", 0xBB482C, 0x4
+    .float 0.00549325
 
 glabel D_8013D690
-    .incbin "baserom.z64", 0xBB4830, 0x4
+    .float 0.00549325
 
 glabel D_8013D694
-    .incbin "baserom.z64", 0xBB4834, 0x4
+    .float -1881
 
 glabel D_8013D698
-    .incbin "baserom.z64", 0xBB4838, 0x4
+    .float 766
 
 glabel D_8013D69C
-    .incbin "baserom.z64", 0xBB483C, 0x4
+    .float -1979
 
 glabel D_8013D6A0
-    .incbin "baserom.z64", 0xBB4840, 0x4
+    .float 703
 
 glabel D_8013D6A4
-    .incbin "baserom.z64", 0xBB4844, 0x4
+    .float -269
 
 glabel D_8013D6A8
-    .incbin "baserom.z64", 0xBB4848, 0x4
+    .float 1890
 
 glabel D_8013D6AC
-    .incbin "baserom.z64", 0xBB484C, 0x4
+    .float 886
 
 glabel D_8013D6B0
-    .incbin "baserom.z64", 0xBB4850, 0x4
+    .float 1729
 
 glabel D_8013D6B4
-    .incbin "baserom.z64", 0xBB4854, 0x4
+    .float 995
 
 glabel D_8013D6B8
-    .incbin "baserom.z64", 0xBB4858, 0x4
+    .float -1405
 
 glabel D_8013D6BC
-    .incbin "baserom.z64", 0xBB485C, 0x4
+    .float 265
 
 glabel D_8013D6C0
-    .incbin "baserom.z64", 0xBB4860, 0x4
+    .float -1570
 
 glabel D_8013D6C4
-    .incbin "baserom.z64", 0xBB4864, 0x4
+    .float 445
 
 glabel D_8013D6C8
-    .incbin "baserom.z64", 0xBB4868, 0x4
+    .float -1425
 
 glabel D_8013D6CC
-    .incbin "baserom.z64", 0xBB486C, 0x4
+    .float -750
 
 glabel jtbl_8013D6D0
-    .incbin "baserom.z64", 0xBB4870, 0x30
+    .word L800805A0
+    .word L800805A0
+    .word L800805A0
+    .word L800805B0
+    .word L800805A8
+    .word L800805B0
+    .word L800805A0
+    .word L800805A8
+    .word L800805B0
+    .word L800805B0
+    .word L800805A0
+    .word L800805A8

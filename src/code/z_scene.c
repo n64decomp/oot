@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <global.h>
 #include <macros.h>
+#include <vt.h>
 
 RomFile sNaviMsgFiles[];
 
@@ -20,7 +21,7 @@ s32 Object_Spawn(ObjectContext* objectCtx, s16 objectId)
     if (!((objectCtx->num < OBJECT_EXCHANGE_BANK_MAX) && (((s32)objectCtx->status[objectCtx->num].segment + size) < (s32)objectCtx->spaceEnd)))
         __assert("this->num < OBJECT_EXCHANGE_BANK_MAX && (this->status[this->num].Segment + size) < this->endSegment", "../z_scene.c", 142);
 
-    func_80001AA0(objectCtx->status[objectCtx->num].segment, gObjectTable[objectId].vromStart, size, "../z_scene.c", 145);
+    DmaMgr_SendRequest1(objectCtx->status[objectCtx->num].segment, gObjectTable[objectId].vromStart, size, "../z_scene.c", 145);
 
     if (objectCtx->num < OBJECT_EXCHANGE_BANK_MAX - 1)
         objectCtx->status[objectCtx->num + 1].segment = (void*)ALIGN16((s32)objectCtx->status[objectCtx->num].segment + size);
@@ -63,10 +64,10 @@ void Object_InitBank(GlobalContext* globalCtx, ObjectContext* objectCtx)
         objectCtx->status[i].id = 0;
     }
 
-    osSyncPrintf("\x1B[32m");
+    osSyncPrintf(VT_FGCOL(GREEN));
     // Translates to: "OBJECT EXCHANGE BANK DATA %8.3fKB"
     osSyncPrintf("オブジェクト入れ替えバンク情報 %8.3fKB\n", (f64)(spaceSize / 1024.0f));
-    osSyncPrintf("\x1B[m");
+    osSyncPrintf(VT_RST);
 
     objectCtx->spaceStart = objectCtx->status[0].segment = Game_Alloc(globalCtx, spaceSize, "../z_scene.c", 219);
     objectCtx->spaceEnd = (void*)((s32)objectCtx->spaceStart + spaceSize);
@@ -87,14 +88,14 @@ void Object_UpdateBank(ObjectContext* objectCtx)
     {
         if (status->id < 0)
         {
-            if (status->getfile.vromAddr == 0)
+            if (status->dmaRequest.vromAddr == 0)
             {
                 osCreateMesgQueue(&status->loadQueue, &status->loadMsg, 1);
                 objectFile = &gObjectTable[-status->id];
                 size = objectFile->vromEnd - objectFile->vromStart;
                 osSyncPrintf("OBJECT EXCHANGE BANK-%2d SIZE %8.3fK SEG=%08x\n",
                              i, (f64)(size / 1024.0f), status->segment);
-                func_80001A5C(&status->getfile, status->segment, objectFile->vromStart, size,
+                DmaMgr_SendRequest2(&status->dmaRequest, status->segment, objectFile->vromStart, size,
                               0, &status->loadQueue, 0, "../z_scene.c", 266);
             }
             else if (!osRecvMesg(&status->loadQueue, NULL, OS_MESG_NOBLOCK))
@@ -141,7 +142,7 @@ void func_800981B8(ObjectContext* objectCtx)
                      objectCtx->status[i].id, (f64)(size / 1024.0f), objectCtx->status[i].segment);
         osSyncPrintf("num=%d adrs=%x end=%x\n",
                      objectCtx->num, (s32)objectCtx->status[i].segment + size, objectCtx->spaceEnd);
-        func_80001AA0(objectCtx->status[i].segment, gObjectTable[id].vromStart, size, "../z_scene.c", 342);
+        DmaMgr_SendRequest1(objectCtx->status[i].segment, gObjectTable[id].vromStart, size, "../z_scene.c", 342);
     }
 }
 
@@ -153,7 +154,7 @@ void* func_800982FC(ObjectContext* objectCtx, s32 bankIndex, s16 objectId)
     void* nextPtr;
 
     status->id = -objectId;
-    status->getfile.vromAddr = 0;
+    status->dmaRequest.vromAddr = 0;
 
     size = objectFile->vromEnd - objectFile->vromStart;
     osSyncPrintf("OBJECT EXCHANGE NO=%2d BANK=%3d SIZE=%8.3fK\n",
@@ -190,10 +191,10 @@ s32 Scene_ExecuteCommands(GlobalContext* globalCtx, SceneCmd* sceneCmd)
         }
         else
         {
-            osSyncPrintf("\x1B[31m");
+            osSyncPrintf(VT_FGCOL(RED));
             // Translates to: "code VARIABLE IS ABNORMAL"
             osSyncPrintf("code の値が異常です\n");
-            osSyncPrintf("\x1B[m");
+            osSyncPrintf(VT_RST);
         }
 
         sceneCmd++;
@@ -562,7 +563,7 @@ void func_8009934C(GlobalContext* globalCtx, SceneCmd* cmd)
 // Scene Command 0x19: Misc. Settings (Camera & World Map Area)
 void func_800993C0(GlobalContext* globalCtx, SceneCmd* cmd)
 {
-    gGameInfo->unk_4B2 = cmd->miscSettings.data1;
+    gGameInfo->unk_4B2 = cmd->miscSettings.cameraMovement;
     gSaveContext.world_map_area = cmd->miscSettings.area;
 
     if ((globalCtx->sceneNum == 44) || (globalCtx->sceneNum == 66))

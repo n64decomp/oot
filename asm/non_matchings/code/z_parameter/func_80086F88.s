@@ -1,0 +1,74 @@
+glabel func_80086F88
+/* AFE128 80086F88 27BDFFD0 */  addiu $sp, $sp, -0x30
+/* AFE12C 80086F8C AFA50034 */  sw    $a1, 0x34($sp)
+/* AFE130 80086F90 30A5FFFF */  andi  $a1, $a1, 0xffff
+/* AFE134 80086F94 2401001D */  li    $at, 29
+/* AFE138 80086F98 AFBF001C */  sw    $ra, 0x1c($sp)
+/* AFE13C 80086F9C 10A10003 */  beq   $a1, $at, .L80086FAC
+/* AFE140 80086FA0 00A01825 */   move  $v1, $a1
+/* AFE144 80086FA4 2401001E */  li    $at, 30
+/* AFE148 80086FA8 14A1002B */  bne   $a1, $at, .L80087058
+.L80086FAC:
+/* AFE14C 80086FAC 3C010001 */   lui   $at, (0x000104F0 >> 16) # lui $at, 1
+/* AFE150 80086FB0 342104F0 */  ori   $at, (0x000104F0 & 0xFFFF) # ori $at, $at, 0x4f0
+/* AFE154 80086FB4 00811021 */  addu  $v0, $a0, $at
+/* AFE158 80086FB8 844E01F8 */  lh    $t6, 0x1f8($v0)
+/* AFE15C 80086FBC 55C00027 */  bnezl $t6, .L8008705C
+/* AFE160 80086FC0 2401001F */   li    $at, 31
+/* AFE164 80086FC4 908F1D6C */  lbu   $t7, 0x1d6c($a0)
+/* AFE168 80086FC8 2401001E */  li    $at, 30
+/* AFE16C 80086FCC 55E00023 */  bnezl $t7, .L8008705C
+/* AFE170 80086FD0 2401001F */   li    $at, 31
+/* AFE174 80086FD4 1461000F */  bne   $v1, $at, .L80087014
+/* AFE178 80086FD8 3C078013 */   lui   $a3, %hi(D_801333E0) # $a3, 0x8013
+/* AFE17C 80086FDC 3C188013 */  lui   $t8, %hi(D_801333E8) # $t8, 0x8013
+/* AFE180 80086FE0 271833E8 */  addiu $t8, %lo(D_801333E8) # addiu $t8, $t8, 0x33e8
+/* AFE184 80086FE4 24E733E0 */  addiu $a3, %lo(D_801333E0) # addiu $a3, $a3, 0x33e0
+/* AFE188 80086FE8 3C058013 */  lui   $a1, %hi(D_801333D4) # $a1, 0x8013
+/* AFE18C 80086FEC 24A533D4 */  addiu $a1, %lo(D_801333D4) # addiu $a1, $a1, 0x33d4
+/* AFE190 80086FF0 AFA70010 */  sw    $a3, 0x10($sp)
+/* AFE194 80086FF4 AFB80014 */  sw    $t8, 0x14($sp)
+/* AFE198 80086FF8 24046843 */  li    $a0, 26691
+/* AFE19C 80086FFC 24060004 */  li    $a2, 4
+/* AFE1A0 80087000 AFA20028 */  sw    $v0, 0x28($sp)
+/* AFE1A4 80087004 0C03DCE3 */  jal   Audio_PlaySoundGeneral
+/* AFE1A8 80087008 AFA30024 */   sw    $v1, 0x24($sp)
+/* AFE1AC 8008700C 8FA20028 */  lw    $v0, 0x28($sp)
+/* AFE1B0 80087010 8FA30024 */  lw    $v1, 0x24($sp)
+.L80087014:
+/* AFE1B4 80087014 2401001D */  li    $at, 29
+/* AFE1B8 80087018 14610007 */  bne   $v1, $at, .L80087038
+/* AFE1BC 8008701C 3C048013 */   lui   $a0, %hi(D_801333D4) # $a0, 0x8013
+/* AFE1C0 80087020 248433D4 */  addiu $a0, %lo(D_801333D4) # addiu $a0, $a0, 0x33d4
+/* AFE1C4 80087024 2405685F */  li    $a1, 26719
+/* AFE1C8 80087028 24060020 */  li    $a2, 32
+/* AFE1CC 8008702C 0C03D149 */  jal   func_800F4524
+/* AFE1D0 80087030 AFA20028 */   sw    $v0, 0x28($sp)
+/* AFE1D4 80087034 8FA20028 */  lw    $v0, 0x28($sp)
+.L80087038:
+/* AFE1D8 80087038 24190001 */  li    $t9, 1
+/* AFE1DC 8008703C A45901F8 */  sh    $t9, 0x1f8($v0)
+/* AFE1E0 80087040 3C018012 */  lui   $at, %hi(D_80125A10) # $at, 0x8012
+/* AFE1E4 80087044 A4205A10 */  sh    $zero, %lo(D_80125A10)($at)
+/* AFE1E8 80087048 3C018012 */  lui   $at, %hi(D_80125A14) # $at, 0x8012
+/* AFE1EC 8008704C 2408000A */  li    $t0, 10
+/* AFE1F0 80087050 1000000A */  b     .L8008707C
+/* AFE1F4 80087054 A4285A14 */   sh    $t0, %lo(D_80125A14)($at)
+.L80087058:
+/* AFE1F8 80087058 2401001F */  li    $at, 31
+.L8008705C:
+/* AFE1FC 8008705C 14610007 */  bne   $v1, $at, .L8008707C
+/* AFE200 80087060 3C010001 */   lui   $at, (0x000104F0 >> 16) # lui $at, 1
+/* AFE204 80087064 342104F0 */  ori   $at, (0x000104F0 & 0xFFFF) # ori $at, $at, 0x4f0
+/* AFE208 80087068 00811021 */  addu  $v0, $a0, $at
+/* AFE20C 8008706C 844901F8 */  lh    $t1, 0x1f8($v0)
+/* AFE210 80087070 51200003 */  beql  $t1, $zero, .L80087080
+/* AFE214 80087074 8FBF001C */   lw    $ra, 0x1c($sp)
+/* AFE218 80087078 A44001F8 */  sh    $zero, 0x1f8($v0)
+.L8008707C:
+/* AFE21C 8008707C 8FBF001C */  lw    $ra, 0x1c($sp)
+.L80087080:
+/* AFE220 80087080 27BD0030 */  addiu $sp, $sp, 0x30
+/* AFE224 80087084 03E00008 */  jr    $ra
+/* AFE228 80087088 00000000 */   nop   
+

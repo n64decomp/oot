@@ -33,8 +33,8 @@ glabel func_80004D10
 /* 005958 80004D58 8FA70024 */  lw    $a3, 0x24($sp)
 /* 00595C 80004D5C 3C18A460 */  lui   $t8, 0xa460
 /* 005960 80004D60 AF020000 */  sw    $v0, ($t8)
-/* 005964 80004D64 3C198000 */  lui   $t9, %hi(D_80000308) # $t9, 0x8000
-/* 005968 80004D68 8F390308 */  lw    $t9, %lo(D_80000308)($t9)
+/* 005964 80004D64 3C198000 */  lui   $t9, %hi(osRomBase) # $t9, 0x8000
+/* 005968 80004D68 8F390308 */  lw    $t9, %lo(osRomBase)($t9)
 /* 00596C 80004D6C 8FA8001C */  lw    $t0, 0x1c($sp)
 /* 005970 80004D70 3C011FFF */  lui   $at, (0x1FFFFFFF >> 16) # lui $at, 0x1fff
 /* 005974 80004D74 3421FFFF */  ori   $at, (0x1FFFFFFF & 0xFFFF) # ori $at, $at, 0xffff

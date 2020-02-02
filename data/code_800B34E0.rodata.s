@@ -7,5 +7,9 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801430C0
-    .incbin "baserom.z64", 0xBBA260, 0x40
+    .asciz "\x1b[41;37m\xA3\xB0\xBD\xFC\xBB\xBB! ZCommonGet fade_speed \xA4\xCB\xA3\xB0\xA4\xAC\xA4\xCF\xA4\xA4\xA4\xC3\xA4\xC6\xA4\xEB\x1B[m"
+    # EUC-JP: ０除算! ZCommonGet fade_speed に０がはいってる | Divide by zero! Zero is entered in ZCommonGetfade_speed
+    .balign 4

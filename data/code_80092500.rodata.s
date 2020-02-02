@@ -7,14 +7,49 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013E9E0
-    .incbin "baserom.z64", 0xBB5B80, 0x40
+    .asciz "\x1b[43;30mquake: too many request %d is changed new one !!\n\x1b[m"
+    .balign 4
 
 glabel D_8013EA20
-    .incbin "baserom.z64", 0xBB5BC0, 0x38
+    .asciz "\x1b[43;30mquake: stopped! 'coz camera [%d] killed!!\n\x1b[m"
+    .balign 4
 
 glabel jtbl_8013EA58
-    .incbin "baserom.z64", 0xBB5BF8, 0x80
+    .word L80092D48
+    .word L80092D50
+    .word L80092D9C
+    .word L80092D58
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D60
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D68
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D9C
+    .word L80092D70
 
 glabel D_8013EAD8
-    .incbin "baserom.z64", 0xBB5C78, 0x8
+    .float 0.005

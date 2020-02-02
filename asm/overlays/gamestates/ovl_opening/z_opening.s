@@ -61,5 +61,5 @@ func_80803C64:
 func_80803CA4:
 .incbin "baserom/ovl_opening", 0xB4, 0x8
 
-func_80803CAC:
+glabel func_80803CAC
 .incbin "baserom/ovl_opening", 0xBC, 0x94

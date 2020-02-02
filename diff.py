@@ -261,18 +261,22 @@ def ansi_ljust(s, width):
 
 re_int = re.compile(r'[0-9]+')
 re_comments = re.compile(r'<.*?>')
-re_regs = re.compile(r'\b(a[0-3]|t[0-9]|s[0-7]|at|v[01]|f[12]?[0-9]|f3[01]|fp)\b')
+re_regs = re.compile(r'\$?\b(a[0-3]|t[0-9]|s[0-7]|at|v[01]|f[12]?[0-9]|f3[01]|fp)\b')
 re_sprel = re.compile(r',([1-9][0-9]*|0x[1-9a-f][0-9a-f]*)\(sp\)')
 re_large_imm = re.compile(r'-?[1-9][0-9]{2,}|-?0x[0-9a-f]{3,}')
+re_imm = re.compile(r'(\b|-)([0-9]+|0x[0-9a-fA-F]+)\b(?!\(sp)|%(lo|hi)\([^)]*\)')
 forbidden = set(string.ascii_letters + '_')
-branch_likely_instructions = set([
+branch_likely_instructions = {
     'beql', 'bnel', 'beqzl', 'bnezl', 'bgezl', 'bgtzl', 'blezl', 'bltzl',
     'bc1tl', 'bc1fl'
-])
-branch_instructions = set([
+}
+branch_instructions = branch_likely_instructions.union({
     'b', 'beq', 'bne', 'beqz', 'bnez', 'bgez', 'bgtz', 'blez', 'bltz',
     'bc1t', 'bc1f'
-] + list(branch_likely_instructions))
+})
+jump_instructions = branch_instructions.union({
+    'jal', 'j'
+})
 
 def hexify_int(row, pat):
     full = pat.group(0)
@@ -323,6 +327,7 @@ def process_reloc(row, prev):
 def process(lines):
     mnemonics = []
     diff_rows = []
+    rows_with_imms = []
     skip_next = False
     originals = []
     line_nums = []
@@ -337,8 +342,9 @@ def process(lines):
             continue
 
         if 'R_MIPS_' in row:
-            if diff_rows[-1] != '<delay-slot>':
-                diff_rows[-1] = process_reloc(row, diff_rows[-1])
+            # N.B. Don't transform the diff rows, they already ignore immediates
+            # if diff_rows[-1] != '<delay-slot>':
+                # diff_rows[-1] = process_reloc(row, rows_with_imms[-1])
             originals[-1] = process_reloc(row, originals[-1])
             continue
 
@@ -349,7 +355,7 @@ def process(lines):
         line_num = tabs[0].strip()
         row_parts = row.split('\t', 1)
         mnemonic = row_parts[0].strip()
-        if mnemonic not in branch_instructions:
+        if mnemonic not in jump_instructions:
             row = re.sub(re_int, lambda s: hexify_int(row, s), row)
         original = row
         if skip_next:
@@ -360,11 +366,16 @@ def process(lines):
             skip_next = True
         row = re.sub(re_regs, '<reg>', row)
         row = re.sub(re_sprel, ',addr(sp)', row)
-        if args.ignore_large_imms:
-            row = re.sub(re_large_imm, '<imm>', row)
+        row_with_imm = row
+        if mnemonic in jump_instructions:
+            row = row.strip()
+            row, _ = split_off_branch(row)
+            row += '<imm>'
+        else:
+            row = re.sub(re_imm, '<imm>', row)
 
-        # Replace tabs with spaces
         mnemonics.append(mnemonic)
+        rows_with_imms.append(row_with_imm)
         diff_rows.append(row)
         originals.append(original)
         line_nums.append(line_num)
@@ -402,10 +413,41 @@ class SymbolColorer:
         t = t or s
         return f'{color}{t}{Fore.RESET}'
 
-def normalize_large_imms(row):
+def maybe_normalize_large_imms(row):
     if args.ignore_large_imms:
         row = re.sub(re_large_imm, '<imm>', row)
     return row
+
+def normalize_imms(row):
+    return re.sub(re_imm, '<imm>', row)
+
+def split_off_branch(line):
+    parts = line.split(',')
+    if len(parts) < 2:
+        parts = line.split()
+    off = len(line) - len(parts[-1])
+    return line[:off], line[off:]
+
+def color_imms(out1, out2):
+    g1 = []
+    g2 = []
+    re.sub(re_imm, lambda s: g1.append(s.group()), out1)
+    re.sub(re_imm, lambda s: g2.append(s.group()), out2)
+    if len(g1) == len(g2):
+        diffs = [x != y for (x, y) in zip(g1, g2)]
+        it = iter(diffs)
+        def maybe_color(s):
+            return f'{Fore.LIGHTBLUE_EX}{s}{Style.RESET_ALL}' if next(it) else s
+        out1 = re.sub(re_imm, lambda s: maybe_color(s.group()), out1)
+        it = iter(diffs)
+        out2 = re.sub(re_imm, lambda s: maybe_color(s.group()), out2)
+    return out1, out2
+
+def color_branch_imms(br1, br2):
+    if br1 != br2:
+        br1 = f'{Fore.LIGHTBLUE_EX}{br1}{Style.RESET_ALL}'
+        br2 = f'{Fore.LIGHTBLUE_EX}{br2}{Style.RESET_ALL}'
+    return br1, br2
 
 def do_diff(basedump, mydump):
     asm_lines1 = basedump.split('\n')
@@ -460,37 +502,57 @@ def do_diff(basedump, mydump):
                 original2 = ''
                 line_num2 = ''
 
-            line_color = Fore.RESET
+            line_color1 = line_color2 = sym_color = Fore.RESET
             line_prefix = ' '
             if line1 == line2:
-                if normalize_large_imms(original1) == normalize_large_imms(original2):
+                if maybe_normalize_large_imms(original1) == maybe_normalize_large_imms(original2):
                     out1 = f'{original1}'
                     out2 = f'{original2}'
                 elif line1 == '<delay-slot>':
                     out1 = f'{Style.DIM}{original1}'
                     out2 = f'{Style.DIM}{original2}'
                 else:
-                    line_color = Fore.YELLOW
-                    line_prefix = 'r'
-                    out1 = f'{Fore.YELLOW}{original1}{Style.RESET_ALL}'
-                    out2 = f'{Fore.YELLOW}{original2}{Style.RESET_ALL}'
-                    out1 = re.sub(re_regs, lambda s: sc1.color_symbol(s.group()), out1)
-                    out2 = re.sub(re_regs, lambda s: sc2.color_symbol(s.group()), out2)
-                    out1 = re.sub(re_sprel, lambda s: sc3.color_symbol(s.group()), out1)
-                    out2 = re.sub(re_sprel, lambda s: sc4.color_symbol(s.group()), out2)
+                    mnemonic = original1.split()[0]
+                    out1, out2 = original1, original2
+                    branch1 = branch2 = ''
+                    if mnemonic in jump_instructions:
+                        out1, branch1 = split_off_branch(original1)
+                        out2, branch2 = split_off_branch(original2)
+                    branchless1 = out1
+                    branchless2 = out2
+                    out1, out2 = color_imms(out1, out2)
+                    branch1, branch2 = color_branch_imms(branch1, branch2)
+                    out1 += branch1
+                    out2 += branch2
+                    if normalize_imms(branchless1) == normalize_imms(branchless2):
+                        # only imms differences
+                        sym_color = Fore.LIGHTBLUE_EX
+                        line_prefix = 'i'
+                    else:
+                        # regs differences and maybe imms as well
+                        line_color1 = line_color2 = sym_color = Fore.YELLOW
+                        line_prefix = 'r'
+                        out1 = re.sub(re_regs, lambda s: sc1.color_symbol(s.group()), out1)
+                        out2 = re.sub(re_regs, lambda s: sc2.color_symbol(s.group()), out2)
+                        out1 = re.sub(re_sprel, lambda s: sc3.color_symbol(s.group()), out1)
+                        out2 = re.sub(re_sprel, lambda s: sc4.color_symbol(s.group()), out2)
+                        out1 = f'{Fore.YELLOW}{out1}{Style.RESET_ALL}'
+                        out2 = f'{Fore.YELLOW}{out2}{Style.RESET_ALL}'
             elif tag in ['replace', 'equal']:
                 line_prefix = '|'
-                line_color = Fore.BLUE
-                out1 = f"{Fore.BLUE}{original1}{Style.RESET_ALL}"
-                out2 = f"{Fore.BLUE}{original2}{Style.RESET_ALL}"
+                line_color1 = Fore.LIGHTBLUE_EX
+                line_color2 = Fore.LIGHTBLUE_EX
+                sym_color = Fore.LIGHTBLUE_EX
+                out1 = f"{Fore.LIGHTBLUE_EX}{original1}{Style.RESET_ALL}"
+                out2 = f"{Fore.LIGHTBLUE_EX}{original2}{Style.RESET_ALL}"
             elif tag == 'delete':
                 line_prefix = '<'
-                line_color = Fore.RED
+                line_color1 = line_color2 = sym_color = Fore.RED
                 out1 = f"{Fore.RED}{original1}{Style.RESET_ALL}"
                 out2 = ''
             elif tag == 'insert':
                 line_prefix = '>'
-                line_color = Fore.GREEN
+                line_color1 = line_color2 = sym_color = Fore.GREEN
                 out1 = ''
                 out2 = f"{Fore.GREEN}{original2}{Style.RESET_ALL}"
 
@@ -512,8 +574,10 @@ def do_diff(basedump, mydump):
                 if branch_targets2[j1+k] is not None:
                     out_arrow2 = ' ' + sc6.color_symbol(branch_targets2[j1+k] + ":", '~>')
 
-            out1 =               f"{line_color}{line_num1} {in_arrow1} {out1}{Style.RESET_ALL}{out_arrow1}"
-            out2 = f"{line_color}{line_prefix} {line_num2} {in_arrow2} {out2}{Style.RESET_ALL}{out_arrow2}"
+            if sym_color == line_color2:
+                line_color2 = ''
+            out1 =               f"{line_color1}{line_num1} {in_arrow1} {out1}{Style.RESET_ALL}{out_arrow1}"
+            out2 = f"{sym_color}{line_prefix} {line_color2}{line_num2} {in_arrow2} {out2}{Style.RESET_ALL}{out_arrow2}"
             output.append(format_single_line_diff(out1, out2, args.column_width))
 
     return output[args.skip_lines:]

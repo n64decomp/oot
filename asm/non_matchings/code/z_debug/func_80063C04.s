@@ -35,7 +35,7 @@ glabel func_80063C04
 /* ADAE28 80063C88 00002825 */  move  $a1, $zero
 /* ADAE2C 80063C8C 24060080 */  li    $a2, 128
 /* ADAE30 80063C90 24070080 */  li    $a3, 128
-/* ADAE34 80063C94 0C03ECEB */  jal   SetTextRGBA
+/* ADAE34 80063C94 0C03ECEB */  jal   GfxPrint_SetColor
 /* ADAE38 80063C98 A3A8004D */   sb    $t0, 0x4d($sp)
 /* ADAE3C 80063C9C 02809025 */  move  $s2, $s4
 /* ADAE40 80063CA0 3C148014 */  lui   $s4, %hi(D_8013AD54) # $s4, 0x8014
@@ -53,12 +53,12 @@ glabel func_80063C04
 /* ADAE6C 80063CCC 240700FF */  li    $a3, 255
 /* ADAE70 80063CD0 160B0003 */  bne   $s0, $t3, .L80063CE0
 /* ADAE74 80063CD4 240C00FF */   li    $t4, 255
-/* ADAE78 80063CD8 0C03ECEB */  jal   SetTextRGBA
+/* ADAE78 80063CD8 0C03ECEB */  jal   GfxPrint_SetColor
 /* ADAE7C 80063CDC AFAC0010 */   sw    $t4, 0x10($sp)
 .L80063CE0:
 /* ADAE80 80063CE0 02202025 */  move  $a0, $s1
 /* ADAE84 80063CE4 24050003 */  li    $a1, 3
-/* ADAE88 80063CE8 0C03ED07 */  jal   SetTextXY
+/* ADAE88 80063CE8 0C03ED07 */  jal   GfxPrint_SetPos
 /* ADAE8C 80063CEC 26060005 */   addiu $a2, $s0, 5
 /* ADAE90 80063CF0 8E6D0000 */  lw    $t5, ($s3)
 /* ADAE94 80063CF4 00107040 */  sll   $t6, $s0, 1
@@ -69,7 +69,7 @@ glabel func_80063C04
 /* ADAEA8 80063D08 02802825 */  move  $a1, $s4
 /* ADAEAC 80063D0C 02A03025 */  move  $a2, $s5
 /* ADAEB0 80063D10 02403825 */  move  $a3, $s2
-/* ADAEB4 80063D14 0C03EF2D */  jal   SetTextString
+/* ADAEB4 80063D14 0C03EF2D */  jal   GfxPrint_Printf
 /* ADAEB8 80063D18 AFB90010 */   sw    $t9, 0x10($sp)
 /* ADAEBC 80063D1C 8E680000 */  lw    $t0, ($s3)
 /* ADAEC0 80063D20 02202025 */  move  $a0, $s1
@@ -79,7 +79,7 @@ glabel func_80063C04
 /* ADAED0 80063D30 24070080 */  li    $a3, 128
 /* ADAED4 80063D34 16090003 */  bne   $s0, $t1, .L80063D44
 /* ADAED8 80063D38 240A0080 */   li    $t2, 128
-/* ADAEDC 80063D3C 0C03ECEB */  jal   SetTextRGBA
+/* ADAEDC 80063D3C 0C03ECEB */  jal   GfxPrint_SetColor
 /* ADAEE0 80063D40 AFAA0010 */   sw    $t2, 0x10($sp)
 .L80063D44:
 /* ADAEE4 80063D44 26100001 */  addiu $s0, $s0, 1

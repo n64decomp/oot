@@ -3,6 +3,8 @@
 
 #include "global.h"
 
+u32 D_8000AC90 = 0;
+
 void func_80002FA0(void)
 {
     D_8000AC90 = 1;

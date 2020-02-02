@@ -7,638 +7,1194 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801479A0
-    .incbin "baserom.z64", 0xBBEB40, 0xF8
+    .asciz "G_ZBUFFER"
+    .balign 4
+    .asciz "G_TEXTURE_ENABLE"
+    .balign 4
+    .asciz "G_SHADE"
+    .balign 4
+    .asciz "G_SHADING_SMOOTH"
+    .balign 4
+    .asciz "G_CULL_FRONT"
+    .balign 4
+    .asciz "G_CULL_BACK"
+    .balign 4
+    .asciz "G_FOG"
+    .balign 4
+    .asciz "G_LIGHTING"
+    .balign 4
+    .asciz "G_TEXTURE_GEN"
+    .balign 4
+    .asciz "G_TEXTURE_GEN_LINEAR"
+    .balign 4
+    .asciz "G_LOD"
+    .balign 4
+    .asciz "G_MTX_PROJECTION"
+    .balign 4
+    .asciz "G_MTX_MODELVIEW"
+    .balign 4
+    .asciz "G_MTX_LOAD"
+    .balign 4
+    .asciz "G_MTX_MUL"
+    .balign 4
+    .asciz "G_MTX_PUSH"
+    .balign 4
+    .asciz "G_MTX_NOPUSH"
+    .balign 4
+    .asciz "?"
+    .balign 4
 
 glabel D_80147A98
-    .incbin "baserom.z64", 0xBBEC38, 0xC
+    .asciz "COMBINED"
+    .balign 4
 
 glabel D_80147AA4
-    .incbin "baserom.z64", 0xBBEC44, 0x8
+    .asciz "TEXEL0"
+    .balign 4
 
 glabel D_80147AAC
-    .incbin "baserom.z64", 0xBBEC4C, 0x8
+    .asciz "TEXEL1"
+    .balign 4
 
 glabel D_80147AB4
-    .incbin "baserom.z64", 0xBBEC54, 0xC
+    .asciz "PRIMITIVE"
+    .balign 4
 
 glabel D_80147AC0
-    .incbin "baserom.z64", 0xBBEC60, 0x8
+    .asciz "SHADE"
+    .balign 4
 
 glabel D_80147AC8
-    .incbin "baserom.z64", 0xBBEC68, 0xC
+    .asciz "ENVIRONMENT"
+    .balign 4
 
 glabel D_80147AD4
-    .incbin "baserom.z64", 0xBBEC74, 0x8
+    .asciz "CENTER"
+    .balign 4
 
 glabel D_80147ADC
-    .incbin "baserom.z64", 0xBBEC7C, 0x8
+    .asciz "SCALE"
+    .balign 4
 
 glabel D_80147AE4
-    .incbin "baserom.z64", 0xBBEC84, 0x4
+    .asciz "1"
+    .balign 4
 
 glabel D_80147AE8
-    .incbin "baserom.z64", 0xBBEC88, 0x8
+    .asciz "NOISE"
+    .balign 4
 
 glabel D_80147AF0
-    .incbin "baserom.z64", 0xBBEC90, 0x4
-
+    .asciz "K4"
+    .balign 4
 glabel D_80147AF4
-    .incbin "baserom.z64", 0xBBEC94, 0x10
+    .asciz "COMBINED_ALPHA"
+    .balign 4
 
 glabel D_80147B04
-    .incbin "baserom.z64", 0xBBECA4, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_80147B08
-    .incbin "baserom.z64", 0xBBECA8, 0x10
+    .asciz "TEXEL0_ALPHA"
+    .balign 4
 
 glabel D_80147B18
-    .incbin "baserom.z64", 0xBBECB8, 0x10
+    .asciz "TEXEL1_ALPHA"
+    .balign 4
 
 glabel D_80147B28
-    .incbin "baserom.z64", 0xBBECC8, 0x10
+    .asciz "PRIMITIVE_ALPHA"
+    .balign 4
 
 glabel D_80147B38
-    .incbin "baserom.z64", 0xBBECD8, 0xC
+    .asciz "SHADE_ALPHA"
+    .balign 4
 
 glabel D_80147B44
-    .incbin "baserom.z64", 0xBBECE4, 0xC
+    .asciz "ENV_ALPHA"
+    .balign 4
 
 glabel D_80147B50
-    .incbin "baserom.z64", 0xBBECF0, 0x10
+    .asciz "LOD_FRACTION"
+    .balign 4
 
 glabel D_80147B60
-    .incbin "baserom.z64", 0xBBED00, 0x10
+    .asciz "PRIM_LOD_FRAC"
+    .balign 4
 
 glabel D_80147B70
-    .incbin "baserom.z64", 0xBBED10, 0x4
+    .asciz "K5"
+    .balign 4    
 
 glabel D_80147B74
-    .incbin "baserom.z64", 0xBBED14, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_80147B78
-    .incbin "baserom.z64", 0xBBED18, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_80147B7C
-    .incbin "baserom.z64", 0xBBED1C, 0x4
+    .asciz "?"
+    .balign 4
 
 glabel D_80147B80
-    .incbin "baserom.z64", 0xBBED20, 0x10
+    .asciz "LOD_FRACTION"
+    .balign 4
 
 glabel D_80147B90
-    .incbin "baserom.z64", 0xBBED30, 0xC
+    .asciz "COMBINED"
+    .balign 4
 
 glabel D_80147B9C
-    .incbin "baserom.z64", 0xBBED3C, 0x8
+    .asciz "TEXEL0"
+    .balign 4
 
 glabel D_80147BA4
-    .incbin "baserom.z64", 0xBBED44, 0x8
+    .asciz "TEXEL1"
+    .balign 4
 
 glabel D_80147BAC
-    .incbin "baserom.z64", 0xBBED4C, 0xC
+    .asciz "PRIMITIVE"
+    .balign 4
 
 glabel D_80147BB8
-    .incbin "baserom.z64", 0xBBED58, 0x8
+    .asciz "SHADE"
+    .balign 4
 
 glabel D_80147BC0
-    .incbin "baserom.z64", 0xBBED60, 0xC
+    .asciz "ENVIRONMENT"
+    .balign 4
 
 glabel D_80147BCC
-    .incbin "baserom.z64", 0xBBED6C, 0x10
+    .asciz "PRIM_LOD_FRAC"
+    .balign 4
 
 glabel D_80147BDC
-    .incbin "baserom.z64", 0xBBED7C, 0x4
+    .asciz "1"
+    .balign 4
 
 glabel D_80147BE0
-    .incbin "baserom.z64", 0xBBED80, 0x4
+    .asciz "0"
+    .balign 4
 
 glabel D_80147BE4
-    .incbin "baserom.z64", 0xBBED84, 0x20
+    .asciz "\xA5\xDE\xA5\xA4\xA5\xAF\xA5\xED\xA5\xB3\xA1\xBC\xA5\xC9\xA4\xAC\xB0\xEC\xC3\xD7\xA4\xB7\xA4\xCA\xA4\xAB\xA4\xC3\xA4\xBF\n"
+    # EUC-JP: マイクロコードが一致しなかった | Microcode did not match
+    .balign 4
 
 glabel D_80147C04
-    .incbin "baserom.z64", 0xBBEDA4, 0x4
+    .asciz "|"
+    .balign 4
 
 glabel D_80147C08
-    .incbin "baserom.z64", 0xBBEDA8, 0x190
+    .asciz "%s"
+    .balign 4
+    .asciz "AA_EN"
+    .balign 4
+    .asciz "Z_CMP"
+    .balign 4
+    .asciz "Z_UPD"
+    .balign 4
+    .asciz "IM_RD"
+    .balign 4
+    .asciz "CLR_ON_CVG"
+    .balign 4
+    .asciz "CVG_DST_CLAMP"
+    .balign 4
+    .asciz "CVG_DST_WRAP"
+    .balign 4
+    .asciz "CVG_DST_FULL"
+    .balign 4
+    .asciz "CVG_DST_SAVE"
+    .balign 4
+    .asciz "ZMODE_OPA"
+    .balign 4
+    .asciz "ZMODE_INTER"
+    .balign 4
+    .asciz "ZMODE_XLU"
+    .balign 4
+    .asciz "ZMODE_DEC"
+    .balign 4
+    .asciz "CVG_X_ALPHA"
+    .balign 4
+    .asciz "ALPHA_CVG_SEL"
+    .balign 4
+    .asciz "FORCE_BL"
+    .balign 4
+    .asciz "G_BL_CLR_IN"
+    .balign 4
+    .asciz "G_BL_CLR_MEM"
+    .balign 4
+    .asciz "G_BL_CLR_BL"
+    .balign 4
+    .asciz "G_BL_CLR_FOG"
+    .balign 4
+    .asciz "G_BL_A_IN"
+    .balign 4
+    .asciz "G_BL_A_FOG"
+    .balign 4
+    .asciz "G_BL_A_SHADE"
+    .balign 4
+    .asciz "G_BL_0"
+    .balign 4
+    .asciz "G_BL_CLR_IN"
+    .balign 4
+    .asciz "G_BL_CLR_MEM"
+    .balign 4
+    .asciz "G_BL_CLR_BL"
+    .balign 4
+    .asciz "G_BL_CLR_FOG"
+    .balign 4
+    .asciz "G_BL_1MA"
+    .balign 4
+    .asciz "G_BL_A_MEM"
+    .balign 4
+    .asciz "G_BL_1"
+    .balign 4
+    .asciz "G_BL_0"
+    .balign 4
 
 glabel D_80147D98
-    .incbin "baserom.z64", 0xBBEF38, 0x4
+    .asciz "%s|"
+    .balign 4
 
 glabel D_80147D9C
-    .incbin "baserom.z64", 0xBBEF3C, 0x1C
+    .asciz "\nGBL_c1(%s, %s, %s, %s)|"
+    .balign 4
 
 glabel D_80147DB8
-    .incbin "baserom.z64", 0xBBEF58, 0x18
+    .asciz "\nGBL_c2(%s, %s, %s, %s)"
+    .balign 4
 
 glabel D_80147DD0
-    .incbin "baserom.z64", 0xBBEF70, 0x44
+    .asciz "\n{{%6d, %6d, %6d, %d, %6d, %6d, %3d, %3d, %3d, %3d}}, /* vc%d */"
+    .balign 4
 
 glabel D_80147E14
-    .incbin "baserom.z64", 0xBBEFB4, 0x44
+    .asciz "\n{{%6d, %6d, %6d, %d, %6d, %6d, %3d, %3d, %3d, %3d}}, /* vn%d */"
+    .balign 4
 
 glabel D_80147E58
-    .incbin "baserom.z64", 0xBBEFF8, 0x8
+    .asciz "%08x:"
+    .balign 4
 
 glabel D_80147E60
-    .incbin "baserom.z64", 0xBBF000, 0xC
+    .asciz "%08x-%08x:"
+    .balign 4
 
 glabel D_80147E6C
-    .incbin "baserom.z64", 0xBBF00C, 0x4
+    .asciz " "
+    .balign 4
 
 glabel D_80147E70
-    .incbin "baserom.z64", 0xBBF010, 0xC
+    .asciz "gsSPNoOp(),"
+    .balign 4
 
 glabel D_80147E7C
-    .incbin "baserom.z64", 0xBBF01C, 0x1C
+    .asciz "gsSPDisplayList(0x%08x),"
+    .balign 4
 
 glabel D_80147E98
-    .incbin "baserom.z64", 0xBBF038, 0x18
+    .asciz "gsSPBranchList(0x%08x),"
+    .balign 4
 
 glabel D_80147EB0
-    .incbin "baserom.z64", 0xBBF050, 0x14
+    .asciz "RDPHALF_1(0x%08x),"
+    .balign 4
 
 glabel D_80147EC4
-    .incbin "baserom.z64", 0xBBF064, 0x34
+    .asciz "gsSPTextureRectangle(%d,%d,%d,%d,%d,%d,%d,%d,%d),"
+    .balign 4
 
 glabel D_80147EF8
-    .incbin "baserom.z64", 0xBBF098, 0x20
+    .asciz "gsSPLoadUcode(0x%08x, 0x%08x),"
+    .balign 4
 
 glabel D_80147F18
-    .incbin "baserom.z64", 0xBBF0B8, 0x2C
+    .asciz "gsSPLoadUcodeEx(0x%08x, 0x%08x, 0x%05x),"
+    .balign 4
 
 glabel D_80147F44
-    .incbin "baserom.z64", 0xBBF0E4, 0x18
+    .asciz "gsSPEndDisplayList(),"
+    .balign 4
 
 glabel D_80147F5C
-    .incbin "baserom.z64", 0xBBF0FC, 0x34
+    .asciz "gsDPSetTile(%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d,%d),"
+    .balign 4
 
 glabel D_80147F90
-    .incbin "baserom.z64", 0xBBF130, 0x1C
+    .asciz "### TileSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。| Is required.
+    .balign 4
 
 glabel D_80147FAC
-    .incbin "baserom.z64", 0xBBF14C, 0x20
+    .asciz "gsDPLoadTile(%d,%d,%d,%d,%d),"
+    .balign 4
 
 glabel D_80147FCC
-    .incbin "baserom.z64", 0xBBF16C, 0x20
+    .asciz "gsDPLoadBlock(%d,%d,%d,%d,%d),"
+    .balign 4
 
 glabel D_80147FEC
-    .incbin "baserom.z64", 0xBBF18C, 0x1C
+    .asciz "### LoadSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。| Is required.
+    .balign 4
 
 glabel D_80148008
-    .incbin "baserom.z64", 0xBBF1A8, 0x24
+    .asciz "gsDPSetTileSize(%d,%d,%d,%d,%d),"
+    .balign 4
 
 glabel D_8014802C
-    .incbin "baserom.z64", 0xBBF1CC, 0x18
+    .asciz "gsDPLoadTLUTCmd(%d,%d),"
+    .balign 4
 
 glabel D_80148044
-    .incbin "baserom.z64", 0xBBF1E4, 0x48
+    .asciz "gsDPSetCombineLERP(%s,%s,%s,%s, %s,%s,%s,%s, %s,%s,%s,%s, %s,%s,%s,%s),"
+    .balign 4
 
 glabel D_8014808C
-    .incbin "baserom.z64", 0xBBF22C, 0x2E8
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。| Is required.
+    .balign 4
+    .asciz "SetAlphaDither"
+    .balign 4
+    .asciz "G_AD_PATTERN"
+    .balign 4
+    .asciz "G_AD_NOTPATTERN"
+    .balign 4
+    .asciz "G_AD_NOISE"
+    .balign 4
+    .asciz "G_AD_DISABLE"
+    .balign 4
+    .asciz "SetColorDither"
+    .balign 4
+    .asciz "G_CD_MAGICSQ"
+    .balign 4
+    .asciz "G_CD_BAYER"
+    .balign 4
+    .asciz "G_CD_NOISE"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetCombineKey"
+    .balign 4
+    .asciz "G_CK_NONE"
+    .balign 4
+    .asciz "G_CK_KEY"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTextureConvert"
+    .balign 4
+    .asciz "G_TC_CONV"
+    .balign 4
+    .asciz "G_TC_FILTCONV"
+    .balign 4
+    .asciz "G_TC_FILT"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTextureFilter"
+    .balign 4
+    .asciz "G_TF_POINT"
+    .balign 4
+    .asciz "G_TF_AVERAGE"
+    .balign 4
+    .asciz "G_TF_BILERP"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTextureLUT"
+    .balign 4
+    .asciz "G_TT_NONE"
+    .balign 4
+    .asciz "G_TT_RGBA16"
+    .balign 4
+    .asciz "G_TT_IA16"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTextureLOD"
+    .balign 4
+    .asciz "G_TL_TILE"
+    .balign 4
+    .asciz "G_TL_LOD"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTextureDetail"
+    .balign 4
+    .asciz "G_TD_CLAMP"
+    .balign 4
+    .asciz "G_TD_SHARPEN"
+    .balign 4
+    .asciz "G_TD_DETAIL"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetTexturePersp"
+    .balign 4
+    .asciz "G_TP_PERSP"
+    .balign 4
+    .asciz "G_TP_NONE"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "SetCycleType"
+    .balign 4
+    .asciz "G_CYC_1CYCLE"
+    .balign 4
+    .asciz "G_CYC_2CYCLE"
+    .balign 4
+    .asciz "G_CYC_COPY"
+    .balign 4
+    .asciz "G_CYC_FILL"
+    .balign 4
+    .asciz "SetColorDither"
+    .balign 4
+    .asciz "G_CD_MAGICSQ"
+    .balign 4
+    .asciz "G_CD_BAYER"
+    .balign 4
+    .asciz "G_CD_NOISE"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "PipelineMode"
+    .balign 4
+    .asciz "G_PM_1PRIMITIVE"
+    .balign 4
+    .asciz "G_PM_NPRIMITIVE"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "-1"
+    .balign 4
 
 glabel D_80148374
-    .incbin "baserom.z64", 0xBBF514, 0xC
+    .asciz "gsDP%s(%s),"
+    .balign 4
 
 glabel D_80148380
-    .incbin "baserom.z64", 0xBBF520, 0x24
+    .asciz "gsSPSetOtherModeH(%d, %d, 0x%08x),"
+    .balign 4
 
 glabel D_801483A4
-    .incbin "baserom.z64", 0xBBF544, 0x90
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。| Is required.
+    .balign 4
+    .asciz "gsDPSetAlphaCompare"
+    .balign 4
+    .asciz "G_AC_NONE"
+    .balign 4
+    .asciz "G_AC_THRESHOLD"
+    .balign 4
+    .asciz "G_AC_DITHER"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "gsDPSetDepthSource"
+    .balign 4
+    .asciz "G_ZS_PIXEL"
+    .balign 4
+    .asciz "G_ZS_PRIM"
+    .balign 4
+    .asciz "-1"
+    .balign 4
+    .asciz "-1"
+    .balign 4
 
 glabel D_80148434
-    .incbin "baserom.z64", 0xBBF5D4, 0x18
+    .asciz "\ngsDPSetRenderBlender("
+    .balign 4
 
 glabel D_8014844C
-    .incbin "baserom.z64", 0xBBF5EC, 0x4
+    .asciz "\n),"
+    .balign 4
 
 glabel D_80148450
-    .incbin "baserom.z64", 0xBBF5F0, 0xC
+    .asciz "gsDP%s(%s),"
+    .balign 4
 
 glabel D_8014845C
-    .incbin "baserom.z64", 0xBBF5FC, 0x24
+    .asciz "gsSPSetOtherModeL(%d, %d, 0x%08x),"
+    .balign 4
 
 glabel D_80148480
-    .incbin "baserom.z64", 0xBBF620, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_8014849C
-    .incbin "baserom.z64", 0xBBF63C, 0x24
+    .asciz "gsDPSetOtherMode(0x%08x, 0x%08x),"
+    .balign 4
 
 glabel D_801484C0
-    .incbin "baserom.z64", 0xBBF660, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_801484DC
-    .incbin "baserom.z64", 0xBBF67C, 0x14
+    .asciz "G_SC_NON_INTERLACE"
+    .balign 4
 
 glabel D_801484F0
-    .incbin "baserom.z64", 0xBBF690, 0x14
+    .asciz "G_SC_ODD_INTERLACE"
+    .balign 4
 
 glabel D_80148504
-    .incbin "baserom.z64", 0xBBF6A4, 0x14
+    .asciz "G_SC_EVEN_INTERLACE"
+    .balign 4
 
 glabel D_80148518
-    .incbin "baserom.z64", 0xBBF6B8, 0x4
+    .asciz "???"
+    .balign 4
 
 glabel D_8014851C
-    .incbin "baserom.z64", 0xBBF6BC, 0x28
+    .asciz "gsDPSetScissorFrac(%s, %d, %d, %d, %d),"
+    .balign 4
 
 glabel D_80148544
-    .incbin "baserom.z64", 0xBBF6E4, 0x24
+    .asciz "gsDPSetScissor(%s, %d, %d, %d, %d),"
+    .balign 4
 
 glabel D_80148568
-    .incbin "baserom.z64", 0xBBF708, 0x24
+    .asciz "gsDPFillRectangle(%d, %d, %d, %d),"
+    .balign 4
 
 glabel D_8014858C
-    .incbin "baserom.z64", 0xBBF72C, 0x44
+    .asciz "gsDPSetColorImage(G_IM_FMT_%s, G_IM_SIZ_%s, %d, 0x%08x(0x%08x) ),"
+    .balign 4
 
 glabel D_801485D0
-    .incbin "baserom.z64", 0xBBF770, 0x8
+    .asciz "RGBA"
+    .balign 4
 
 glabel D_801485D8
-    .incbin "baserom.z64", 0xBBF778, 0x4
+    .asciz "YUV"
+    .balign 4
 
 glabel D_801485DC
-    .incbin "baserom.z64", 0xBBF77C, 0x4
+    .asciz "CI"
+    .balign 4
 
 glabel D_801485E0
-    .incbin "baserom.z64", 0xBBF780, 0x4
+    .asciz "IA"
+    .balign 4
 
 glabel D_801485E4
-    .incbin "baserom.z64", 0xBBF784, 0x4
+    .asciz "I"
+    .balign 4
 
 glabel D_801485E8
-    .incbin "baserom.z64", 0xBBF788, 0x4
+    .asciz "4b"
+    .balign 4
 
 glabel D_801485EC
-    .incbin "baserom.z64", 0xBBF78C, 0x4
-
+    .asciz "8b"
+    .balign 4
 glabel D_801485F0
-    .incbin "baserom.z64", 0xBBF790, 0x4
+    .asciz "16b"
+    .balign 4
 
 glabel D_801485F4
-    .incbin "baserom.z64", 0xBBF794, 0x4
+    .asciz "32b"
+    .balign 4
 
 glabel D_801485F8
-    .incbin "baserom.z64", 0xBBF798, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148614
-    .incbin "baserom.z64", 0xBBF7B4, 0x24
+    .asciz "gsDPSetDepthImage(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148638
-    .incbin "baserom.z64", 0xBBF7D8, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148654
-    .incbin "baserom.z64", 0xBBF7F4, 0x44
+    .asciz "gsDPSetTextureImage(G_IM_FMT_%s, G_IM_SIZ_%s, %d, 0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148698
-    .incbin "baserom.z64", 0xBBF838, 0x8
+    .asciz "RGBA"
+    .balign 4
 
 glabel D_801486A0
-    .incbin "baserom.z64", 0xBBF840, 0x4
+    .asciz "YUV"
+    .balign 4
 
 glabel D_801486A4
-    .incbin "baserom.z64", 0xBBF844, 0x4
+    .asciz "CI"
+    .balign 4
 
 glabel D_801486A8
-    .incbin "baserom.z64", 0xBBF848, 0x4
+    .asciz "IA"
+    .balign 4
 
 glabel D_801486AC
-    .incbin "baserom.z64", 0xBBF84C, 0x4
+    .asciz "I"
+    .balign 4
 
 glabel D_801486B0
-    .incbin "baserom.z64", 0xBBF850, 0x4
+    .asciz "4b"
+    .balign 4
 
 glabel D_801486B4
-    .incbin "baserom.z64", 0xBBF854, 0x4
+    .asciz "8b"
+    .balign 4
 
 glabel D_801486B8
-    .incbin "baserom.z64", 0xBBF858, 0x4
+    .asciz "16b"
+    .balign 4
 
 glabel D_801486BC
-    .incbin "baserom.z64", 0xBBF85C, 0x4
+    .asciz "32b"
+    .balign 4
 
 glabel D_801486C0
-    .incbin "baserom.z64", 0xBBF860, 0x24
+    .asciz "gsDPSetEnvColor(%d, %d, %d, %d),"
+    .balign 4
 
 glabel D_801486E4
-    .incbin "baserom.z64", 0xBBF884, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148700
-    .incbin "baserom.z64", 0xBBF8A0, 0x24
+    .asciz "gsDPSetBlendColor(%d, %d, %d, %d),"
+    .balign 4
 
 glabel D_80148724
-    .incbin "baserom.z64", 0xBBF8C4, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148740
-    .incbin "baserom.z64", 0xBBF8E0, 0x24
+    .asciz "gsDPSetFogColor(%d, %d, %d, %d),"
+    .balign 4
 
 glabel D_80148764
-    .incbin "baserom.z64", 0xBBF904, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148780
-    .incbin "baserom.z64", 0xBBF920, 0x1C
+    .asciz "gsDPSetFillColor(0x%08x),"
+    .balign 4
 
 glabel D_8014879C
-    .incbin "baserom.z64", 0xBBF93C, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_801487B8
-    .incbin "baserom.z64", 0xBBF958, 0x1C
+    .asciz "gsDPSetPrimDepth(%d, %d),"
+    .balign 4
 
 glabel D_801487D4
-    .incbin "baserom.z64", 0xBBF974, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_801487F0
-    .incbin "baserom.z64", 0xBBF990, 0x2C
+    .asciz "gsDPSetPrimColor(%d, %d, %d, %d, %d, %d),"
+    .balign 4
 
 glabel D_8014881C
-    .incbin "baserom.z64", 0xBBF9BC, 0x10
+    .asciz "gsDPFullSync(),"
+    .balign 4
 
 glabel D_8014882C
-    .incbin "baserom.z64", 0xBBF9CC, 0x1C
+    .asciz "### PipeSync\xA4\xAC\xC9\xAC\xCD\xD7\xA4\xC7\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: が必要です。 | Is required.
+    .balign 4
 
 glabel D_80148848
-    .incbin "baserom.z64", 0xBBF9E8, 0x10
+    .asciz "gsDPTileSync(),"
+    .balign 4
 
 glabel D_80148858
-    .incbin "baserom.z64", 0xBBF9F8, 0x10
+    .asciz "gsDPPipeSync(),"
+    .balign 4
 
 glabel D_80148868
-    .incbin "baserom.z64", 0xBBFA08, 0x10
+    .asciz "gsDPLoadSync(),"
+    .balign 4
 
 glabel D_80148878
-    .incbin "baserom.z64", 0xBBFA18, 0xC
+    .asciz "gsDPNoOp(),"
+    .balign 4
 
 glabel D_80148884
-    .incbin "baserom.z64", 0xBBFA24, 0x14
+    .asciz "gsDPNoOpTag(%08x),"
+    .balign 4
 
 glabel D_80148898
-    .incbin "baserom.z64", 0xBBFA38, 0x20
+    .asciz "count_gsDPNoOpHere([%s:%d]),"
+    .balign 4
 
 glabel D_801488B8
-    .incbin "baserom.z64", 0xBBFA58, 0x24
+    .asciz "count_gsDPNoOpOpenDisp([%s:%d]),"
+    .balign 4
 
 glabel D_801488DC
-    .incbin "baserom.z64", 0xBBFA7C, 0x24
+    .asciz "count_gsDPNoOpCloseDisp([%s:%d]),"
+    .balign 4
 
 glabel D_80148900
-    .incbin "baserom.z64", 0xBBFAA0, 0x24
+    .asciz "count_gsDPNoOpString(%c%s%c, %d),"
+    .balign 4
 
 glabel D_80148924
-    .incbin "baserom.z64", 0xBBFAC4, 0x20
+    .asciz "count_gsDPNoOpWord(0x%08x, %d),"
+    .balign 4
 
 glabel D_80148944
-    .incbin "baserom.z64", 0xBBFAE4, 0x20
+    .asciz "count_gsDPNoOpFloat(%8.3f, %d),"
+    .balign 4
 
 glabel D_80148964
-    .incbin "baserom.z64", 0xBBFB04, 0x18
+    .asciz "count_gsDPNoOpQuiet(),"
+    .balign 4
 
 glabel D_8014897C
-    .incbin "baserom.z64", 0xBBFB1C, 0x1C
+    .asciz "count_gsDPNoOpVerbose(),"
+    .balign 4
 
 glabel D_80148998
-    .incbin "baserom.z64", 0xBBFB38, 0x24
+    .asciz "count_gsDPNoOpCallBack(%08x,%d),"
+    .balign 4
 
 glabel D_801489BC
-    .incbin "baserom.z64", 0xBBFB5C, 0x20
+    .asciz "gsDPNoOpTag3(%02x, %08x, %04x),"
+    .balign 4
 
 glabel D_801489DC
-    .incbin "baserom.z64", 0xBBFB7C, 0x1C
+    .asciz "gsSPMatrix(0x%08x(%08x), 0"
+    .balign 4
 
 glabel D_801489F8
-    .incbin "baserom.z64", 0xBBFB98, 0x4
+    .asciz "|%s"
+    .balign 4
 
 glabel D_801489FC
-    .incbin "baserom.z64", 0xBBFB9C, 0x4
+    .asciz "),"
+    .balign 4
 
 glabel D_80148A00
-    .incbin "baserom.z64", 0xBBFBA0, 0x4
+    .asciz "\n"
+    .balign 4
 
 glabel D_80148A04
-    .incbin "baserom.z64", 0xBBFBA4, 0x134
+    .ascii "/ %04x.%04x %04x.%04x %04x.%04x %.04x.%04x \\/ %12.6f %12.6f %12.6f %12.6f \\\n"
+    .ascii "| %04x.%04x %04x.%04x %04x.%04x %.04x.%04x || %12.6f %12.6f %12.6f %12.6f |\n"
+    .ascii "| %04x.%04x %04x.%04x %04x.%04x %.04x.%04x || %12.6f %12.6f %12.6f %12.6f |\n"
+    .asciz "\\ %04x.%04x %04x.%04x %04x.%04x %.04x.%04x /\\ %12.6f %12.6f %12.6f %12.6f /\n"
+    .balign 4
 
 glabel D_80148B38
-    .incbin "baserom.z64", 0xBBFCD8, 0x24
+    .asciz "gsSPVertex(0x%08x(0x%08x), %d, %d),"
+    .balign 4
 
 glabel D_80148B5C
-    .incbin "baserom.z64", 0xBBFCFC, 0x20
+    .asciz "gsSPModifyVertex(%d, %s, %08x),"
+    .balign 4
 
 glabel D_80148B7C
-    .incbin "baserom.z64", 0xBBFD1C, 0x14
+    .asciz "G_MWO_POINT_RGBA"
+    .balign 4
 
 glabel D_80148B90
-    .incbin "baserom.z64", 0xBBFD30, 0x10
+    .asciz "G_MWO_POINT_ST"
+    .balign 4
 
 glabel D_80148BA0
-    .incbin "baserom.z64", 0xBBFD40, 0x18
+    .asciz "G_MWO_POINT_XYSCREEN"
+    .balign 4
 
 glabel D_80148BB8
-    .incbin "baserom.z64", 0xBBFD58, 0x14
+    .asciz "G_MWO_POINT_ZSCREEN"
+    .balign 4
 
 glabel D_80148BCC
-    .incbin "baserom.z64", 0xBBFD6C, 0x14
+    .asciz "G_MWO_POINT_????"
+    .balign 4
 
 glabel D_80148BE0
-    .incbin "baserom.z64", 0xBBFD80, 0x1C
+    .asciz "gsSP1Triangle(%d, %d, %d),"
+    .balign 4
 
 glabel D_80148BFC
-    .incbin "baserom.z64", 0xBBFD9C, 0x14
+    .asciz "gsSPLine3D(%d, %d),"
+    .balign 4
 
 glabel D_80148C10
-    .incbin "baserom.z64", 0xBBFDB0, 0x1C
+    .asciz "gsSPLineW3D(%d, %d, %d),"
+    .balign 4
 
 glabel D_80148C2C
-    .incbin "baserom.z64", 0xBBFDCC, 0x30
+    .asciz "gsSP2Triangles(%d, %d, %d, 0, %d, %d, %d, 0),"
+    .balign 4
 
 glabel D_80148C5C
-    .incbin "baserom.z64", 0xBBFDFC, 0x24
+    .asciz "gsSP1Quadrangle(%d, %d, %d, %d, 0),"
+    .balign 4
 
 glabel D_80148C80
-    .incbin "baserom.z64", 0xBBFE20, 0x20
+    .asciz "gsSPCullDisplayList(%d, %d),"
+    .balign 4
 
 glabel D_80148CA0
-    .incbin "baserom.z64", 0xBBFE40, 0x30
+    .asciz "gsSPBranchLessZraw(0x%08x(0x%08x), %d, 0x%08x),"
+    .balign 4
 
 glabel D_80148CD0
-    .incbin "baserom.z64", 0xBBFE70, 0x24
+    .asciz "gsSPTexture(%d, %d, %d, %d, %s),"
+    .balign 4
 
 glabel D_80148CF4
-    .incbin "baserom.z64", 0xBBFE94, 0x8
+    .asciz "G_ON"
+    .balign 4
 
 glabel D_80148CFC
-    .incbin "baserom.z64", 0xBBFE9C, 0x8
+    .asciz "G_OFF"
+    .balign 4
 
 glabel D_80148D04
-    .incbin "baserom.z64", 0xBBFEA4, 0x28
+    .asciz "gsSPTextureL(%d, %d, %d, %d, %d, %s),"
+    .balign 4
 
 glabel D_80148D2C
-    .incbin "baserom.z64", 0xBBFECC, 0x8
+    .asciz "G_ON"
+    .balign 4
 
 glabel D_80148D34
-    .incbin "baserom.z64", 0xBBFED4, 0x8
+    .asciz "G_OFF"
+    .balign 4
 
 glabel D_80148D3C
-    .incbin "baserom.z64", 0xBBFEDC, 0x20
+    .asciz "gsSPPopMatrix(G_MTX_MODELVIEW),"
+    .balign 4
 
 glabel D_80148D5C
-    .incbin "baserom.z64", 0xBBFEFC, 0x28
+    .asciz "gsSPPopMatrixN(G_MTX_MODELVIEW, %d),"
+    .balign 4
 
 glabel D_80148D84
-    .incbin "baserom.z64", 0xBBFF24, 0x18
+    .asciz "gsSPLoadGeometryMode("
+    .balign 4
 
 glabel D_80148D9C
-    .incbin "baserom.z64", 0xBBFF3C, 0x4
+    .asciz "),"
+    .balign 4
 
 glabel D_80148DA0
-    .incbin "baserom.z64", 0xBBFF40, 0x18
+    .asciz "gsSPClearGeometryMode("
+    .balign 4
 
 glabel D_80148DB8
-    .incbin "baserom.z64", 0xBBFF58, 0x4
+    .asciz "),"
+    .balign 4
 
 glabel D_80148DBC
-    .incbin "baserom.z64", 0xBBFF5C, 0x18
+    .asciz "gsSPSetGeometryMode("
+    .balign 4
 
 glabel D_80148DD4
-    .incbin "baserom.z64", 0xBBFF74, 0x4
+    .asciz "),"
+    .balign 4
 
 glabel D_80148DD8
-    .incbin "baserom.z64", 0xBBFF78, 0x14
+    .asciz "gsSPGeometryMode("
+    .balign 4
 
 glabel D_80148DEC
-    .incbin "baserom.z64", 0xBBFF8C, 0x4
+    .asciz ", "
+    .balign 4
 
 glabel D_80148DF0
-    .incbin "baserom.z64", 0xBBFF90, 0x4
+    .asciz "),"
+    .balign 4
 
 glabel D_80148DF4
-    .incbin "baserom.z64", 0xBBFF94, 0x1C
+    .asciz "gsSPSegment(%d, 0x%08x),"
+    .balign 4
 
 glabel D_80148E10
-    .incbin "baserom.z64", 0xBBFFB0, 0x20
+    .asciz "gsSPClipRatio(FRUSTRATIO_%d), "
+    .balign 4
 
 glabel D_80148E30
-    .incbin "baserom.z64", 0xBBFFD0, 0x14
+    .asciz "gsSPNumLights(%d), "
+    .balign 4
 
 glabel D_80148E44
-    .incbin "baserom.z64", 0xBBFFE4, 0x1C
+    .asciz "gsSPLightColor(%d, %d), "
+    .balign 4
 
 glabel D_80148E60
-    .incbin "baserom.z64", 0xBC0000, 0x18
+    .asciz "gsSPFogFactor(%d, %d),"
+    .balign 4
 
 glabel D_80148E78
-    .incbin "baserom.z64", 0xBC0018, 0x18
+    .asciz "gsSPPerspNormalize(%d),"
+    .balign 4
 
 glabel D_80148E90
-    .incbin "baserom.z64", 0xBC0030, 0x18
+    .asciz "gsMoveWd(%d, %d, %d), "
+    .balign 4
 
 glabel D_80148EA8
-    .incbin "baserom.z64", 0xBC0048, 0x20
+    .asciz "gsSPViewport(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148EC8
-    .incbin "baserom.z64", 0xBC0068, 0x1C
+    .asciz "\x09# vscale=[%d %d %d %d], "
+    .balign 4
 
 glabel D_80148EE4
-    .incbin "baserom.z64", 0xBC0084, 0x18
+    .asciz "vtrans=[%d %d %d %d] "
+    .balign 4
 
 glabel D_80148EFC
-    .incbin "baserom.z64", 0xBC009C, 0x1C
+    .asciz "gsSPForceMatrix(0x%08x),"
+    .balign 4
 
 glabel D_80148F18
-    .incbin "baserom.z64", 0xBC00B8, 0x18
+    .asciz "gsSPLookAtX(0x%08x),"
+    .balign 4
 
 glabel D_80148F30
-    .incbin "baserom.z64", 0xBC00D0, 0x18
+    .asciz "gsSPLookAtY(0x%08x),"
+    .balign 4
 
 glabel D_80148F48
-    .incbin "baserom.z64", 0xBC00E8, 0x18
+    .asciz "gsSPLight(0x%08x,%d),"
+    .balign 4
 
 glabel D_80148F60
-    .incbin "baserom.z64", 0xBC0100, 0x20
+    .asciz "gsMoveMem(0x%08x, %d, %d, %d),"
+    .balign 4
 
 glabel D_80148F80
-    .incbin "baserom.z64", 0xBC0120, 0x14
+    .asciz "AnyDisplayList(),"
+    .balign 4
 
 glabel D_80148F94
-    .incbin "baserom.z64", 0xBC0134, 0x20
+    .asciz "gsSPBgRectCopy(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148FB4
-    .incbin "baserom.z64", 0xBC0154, 0x20
+    .asciz "gsSPBgRect1Cyc(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148FD4
-    .incbin "baserom.z64", 0xBC0174, 0x20
+    .asciz "gsSPObjSprite(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80148FF4
-    .incbin "baserom.z64", 0xBC0194, 0x24
+    .asciz "gsSPObjRectangle(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80149018
-    .incbin "baserom.z64", 0xBC01B8, 0x24
+    .asciz "gsSPObjRectangleR(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_8014903C
-    .incbin "baserom.z64", 0xBC01DC, 0x24
+    .asciz "RDPHALF_0(0x%02x, 0x%08x, 0x%04x),"
+    .balign 4
 
 glabel D_80149060
-    .incbin "baserom.z64", 0xBC0200, 0x20
+    .asciz "gsSPObjMatrix(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80149080
-    .incbin "baserom.z64", 0xBC0220, 0x24
+    .asciz "gsSPObjSubMatrix(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_801490A4
-    .incbin "baserom.z64", 0xBC0244, 0x24
+    .asciz "gsSPObjLoadTxtr(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_801490C8
-    .incbin "baserom.z64", 0xBC0268, 0x28
+    .asciz "gsSPObjLoadTxSprite(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_801490F0
-    .incbin "baserom.z64", 0xBC0290, 0x24
+    .asciz "gsSPObjLoadTxRect(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80149114
-    .incbin "baserom.z64", 0xBC02B4, 0x24
+    .asciz "gsSPObjLoadTxRectR(0x%08x(0x%08x)),"
+    .balign 4
 
 glabel D_80149138
-    .incbin "baserom.z64", 0xBC02D8, 0x2C
+    .asciz "gsSPSelectDL(0x%08x, %d, 0x%08x, 0x%08x),"
+    .balign 4
 
 glabel D_80149164
-    .incbin "baserom.z64", 0xBC0304, 0x30
+    .asciz "gsSPSelectBranchDL(0x%08x, %d, 0x%08x, 0x%08x),"
+    .balign 4
 
 glabel D_80149194
-    .incbin "baserom.z64", 0xBC0334, 0x1C
+    .asciz "gsSPSegment(%d, 0x%08x),"
+    .balign 4
 
 glabel D_801491B0
-    .incbin "baserom.z64", 0xBC0350, 0x20
+    .asciz "gsSPSetStatus(0x%08x, 0x%08x),"
+    .balign 4
 
 glabel D_801491D0
-    .incbin "baserom.z64", 0xBC0370, 0x18
+    .asciz "gsMoveWd(%d, %d, %d), "
+    .balign 4
 
 glabel D_801491E8
-    .incbin "baserom.z64", 0xBC0388, 0x1C
+    .asciz "gsSPObjRenderMode(0x%08x),"
+    .balign 4
 
 glabel D_80149204
-    .incbin "baserom.z64", 0xBC03A4, 0x14
+    .asciz "AnyDisplayList(),"
+    .balign 4
 
 glabel D_80149218
-    .incbin "baserom.z64", 0xBC03B8, 0x4
+    .asciz "\n"
+    .balign 4
 
 glabel jtbl_8014921C
-    .incbin "baserom.z64", 0xBC03BC, 0x20
+    .word L800D7D28
+    .word L800D7D34
+    .word L800D7D40
+    .word L800D7D4C
+    .word L800D7D58
+    .word L800D7D64
+    .word L800D7D70
+    .word L800D7DA8
 
 glabel jtbl_8014923C
-    .incbin "baserom.z64", 0xBC03DC, 0x20
+    .word L800D7E2C
+    .word L800D7E38
+    .word L800D7E44
+    .word L800D7E50
+    .word L800D7E5C
+    .word L800D7E68
+    .word L800D7E74
+    .word L800D7E80
 
 glabel jtbl_8014925C
-    .incbin "baserom.z64", 0xBC03FC, 0x20
+    .word L800D7ECC
+    .word L800D7EEC
+    .word L800D7EF8
+    .word L800D7F04
+    .word L800D7F10
+    .word L800D7F1C
+    .word L800D7F28
+    .word L800D7F48
 
 glabel jtbl_8014927C
-    .incbin "baserom.z64", 0xBC041C, 0x8C
+    .word L800D86D8
+    .word L800D854C
+    .word L800D8754
+    .word L800D8530
+    .word L800D85F8
+    .word L800D8DC0
+    .word L800D8CA0
+    .word L800D8620
+    .word L800D9890
+    .word L800D9698
+    .word L800D9678
+    .word L800D9658
+    .word L800D9610
+    .word L800D9890
+    .word L800D9890
+    .word L800D9890
+    .word L800D8F90
+    .word L800D957C
+    .word L800D8F20
+    .word L800D8A24
+    .word L800D9890
+    .word L800D89B8
+    .word L800D891C
+    .word L800D88B0
+    .word L800D87A4
+    .word L800D9108
+    .word L800D9530
+    .word L800D94D0
+    .word L800D9470
+    .word L800D95CC
+    .word L800D9410
+    .word L800D8A78
+    .word L800D9300
+    .word L800D92B0
+    .word L800D9174
 
 glabel jtbl_80149308
-    .incbin "baserom.z64", 0xBC04A8, 0x24
+    .word L800D96E0
+    .word L800D971C
+    .word L800D977C
+    .word L800D97AC
+    .word L800D97CC
+    .word L800D9800
+    .word L800D9844
+    .word L800D973C
+    .word L800D975C
 
 glabel jtbl_8014932C
-    .incbin "baserom.z64", 0xBC04CC, 0x18
+    .word L800DA008
+    .word L800DA100
+    .word L800DA168
+    .word L800D990C
+    .word L800DA2B4
+    .word L800DA4E8
 
 glabel jtbl_80149344
-    .incbin "baserom.z64", 0xBC04E4, 0x20
+    .word L800D9BC4
+    .word L800D9C44
+    .word L800D9F68
+    .word L800D9FB4
+    .word L800D9CF4
+    .word L800D9DF0
+    .word L800D9EC4
+    .word L800D9D8C
 
 glabel jtbl_80149364
-    .incbin "baserom.z64", 0xBC0504, 0x34
+    .word L800DA3E8
+    .word L800DA4B0
+    .word L800DA39C
+    .word L800DA4B0
+    .word L800DA33C
+    .word L800DA4B0
+    .word L800DA464
+    .word L800DA4B0
+    .word L800DA41C
+    .word L800DA4B0
+    .word L800DA4B0
+    .word L800DA4B0
+    .word L800DA490
 
 glabel jtbl_80149398
-    .incbin "baserom.z64", 0xBC0538, 0x38
+    .word L800DA814
+    .word L800DA7D0
+    .word L800DAC14
+    .word L800DAA50
+    .word L800DA950
+    .word L800DA990
+    .word L800DA9D0
+    .word L800DAA10
+    .word L800DA78C
+    .word L800DA748
+    .word L800DABD8

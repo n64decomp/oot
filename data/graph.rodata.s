@@ -7,173 +7,250 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80145180
-    .incbin "baserom.z64", 0xBBC320, 0xC
+    .asciz "vtx_cnt=%d\n"
+    .balign 4
 
 glabel D_8014518C
-    .incbin "baserom.z64", 0xBBC32C, 0x10
+    .asciz "spvtx_cnt=%d\n"
+    .balign 4
 
 glabel D_8014519C
-    .incbin "baserom.z64", 0xBBC33C, 0x10
+    .asciz "tri1_cnt=%d\n"
+    .balign 4
 
 glabel D_801451AC
-    .incbin "baserom.z64", 0xBBC34C, 0x10
+    .asciz "tri2_cnt=%d\n"
+    .balign 4
 
 glabel D_801451BC
-    .incbin "baserom.z64", 0xBBC35C, 0x10
+    .asciz "quad_cnt=%d\n"
+    .balign 4
 
 glabel D_801451CC
-    .incbin "baserom.z64", 0xBBC36C, 0x10
+    .asciz "line_cnt=%d\n"
+    .balign 4
 
 glabel D_801451DC
-    .incbin "baserom.z64", 0xBBC37C, 0x10
+    .asciz "sync_err=%d\n"
+    .balign 4
 
 glabel D_801451EC
-    .incbin "baserom.z64", 0xBBC38C, 0x14
+    .asciz "loaducode_cnt=%d\n"
+    .balign 4
 
 glabel D_80145200
-    .incbin "baserom.z64", 0xBBC3A0, 0x10
+    .asciz "dl_depth=%d\n"
+    .balign 4
 
 glabel D_80145210
-    .incbin "baserom.z64", 0xBBC3B0, 0xC
+    .asciz "dl_cnt=%d\n"
+    .balign 4
 
 glabel D_8014521C
-    .incbin "baserom.z64", 0xBBC3BC, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145228
-    .incbin "baserom.z64", 0xBBC3C8, 0x18
+    .asciz "game_init_func = %08x\n"
+    .balign 4
 
 glabel D_80145240
-    .incbin "baserom.z64", 0xBBC3E0, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_80145248
-    .incbin "baserom.z64", 0xBBC3E8, 0x1C
+    .asciz "RCP\xA4\xAC\xB5\xA2\xA4\xC3\xA4\xC6\xA4\xAD\xA4\xDE\xA4\xBB\xA4\xF3\xA4\xC7\xA4\xB7\xA4\xBF\xA1\xA3"
+    .balign 4
 
 glabel D_80145264
-    .incbin "baserom.z64", 0xBBC404, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145268
-    .incbin "baserom.z64", 0xBBC408, 0x14
+    .asciz "RCP is HUNG UP!!"
+    .balign 4
 
 glabel D_8014527C
-    .incbin "baserom.z64", 0xBBC41C, 0x10
+    .asciz "Oh! MY GOD!!"
+    .balign 4
 
 glabel D_8014528C
-    .incbin "baserom.z64", 0xBBC42C, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145298
-    .incbin "baserom.z64", 0xBBC438, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_801452A4
-    .incbin "baserom.z64", 0xBBC444, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_801452B0
-    .incbin "baserom.z64", 0xBBC450, 0x10
+    .asciz "WORK_DISP \xB3\xAB\xBB\xCF"
+    # EUC-JP: 開始 | Start
+    .balign 4
 
 glabel D_801452C0
-    .incbin "baserom.z64", 0xBBC460, 0x14
+    .asciz "POLY_OPA_DISP \xB3\xAB\xBB\xCF"
+    # EUC-JP: 開始 | Start
+    .balign 4
 
 glabel D_801452D4
-    .incbin "baserom.z64", 0xBBC474, 0x14
+    .asciz "POLY_XLU_DISP \xB3\xAB\xBB\xCF"
+    # EUC-JP: 開始 | Start
+    .balign 4
 
 glabel D_801452E8
-    .incbin "baserom.z64", 0xBBC488, 0x14
+    .asciz "OVERLAY_DISP \xB3\xAB\xBB\xCF"
+    # EUC-JP: 開始 | Start
+    .balign 4
 
 glabel D_801452FC
-    .incbin "baserom.z64", 0xBBC49C, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145308
-    .incbin "baserom.z64", 0xBBC4A8, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145314
-    .incbin "baserom.z64", 0xBBC4B4, 0x10
+    .asciz "WORK_DISP \xBD\xAA\xCE\xBB"
+    # EUC-JP: 終了 | End
+    .balign 4
 
 glabel D_80145324
-    .incbin "baserom.z64", 0xBBC4C4, 0x14
+    .asciz "POLY_OPA_DISP \xBD\xAA\xCE\xBB"
+    # EUC-JP: 終了 | End
+    .balign 4
 
 glabel D_80145338
-    .incbin "baserom.z64", 0xBBC4D8, 0x14
+    .asciz "POLY_XLU_DISP \xBD\xAA\xCE\xBB"
+    # EUC-JP: 終了 | End
+    .balign 4
 
 glabel D_8014534C
-    .incbin "baserom.z64", 0xBBC4EC, 0x14
+    .asciz "OVERLAY_DISP \xBD\xAA\xCE\xBB"
+    # EUC-JP: 終了 | End
+    .balign 4
 
 glabel D_80145360
-    .incbin "baserom.z64", 0xBBC500, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_8014536C
-    .incbin "baserom.z64", 0xBBC50C, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145378
-    .incbin "baserom.z64", 0xBBC518, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145384
-    .incbin "baserom.z64", 0xBBC524, 0x10
+    .asciz "do_count_fault"
+    .balign 4
 
 glabel D_80145394
-    .incbin "baserom.z64", 0xBBC534, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_80145398
-    .incbin "baserom.z64", 0xBBC538, 0x34
+    .asciz "\x1b[41;37m\xA5\xC0\xA5\xA4\xA5\xCA\xA5\xDF\xA5\xC3\xA5\xAF\xCE\xCE\xB0\xE8\xC0\xE8\xC6\xAC\xA4\xAC\xC7\xCB\xB2\xF5\xA4\xB5\xA4\xEC\xA4\xC6\xA4\xA4\xA4\xDE\xA4\xB9\n\x1b[m"
+    #ダイナミック領域先頭が破壊されています | Dynamic area head is destroyed
+    .balign 4
 
 glabel D_801453CC
-    .incbin "baserom.z64", 0xBBC56C, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_801453D8
-    .incbin "baserom.z64", 0xBBC578, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_801453DC
-    .incbin "baserom.z64", 0xBBC57C, 0x34
+    .asciz "\x1b[41;37m\xA5\xC0\xA5\xA4\xA5\xCA\xA5\xDF\xA5\xC3\xA5\xAF\xCE\xCE\xB0\xE8\xCB\xF6\xC8\xF8\xA4\xAC\xC7\xCB\xB2\xF5\xA4\xB5\xA4\xEC\xA4\xC6\xA4\xA4\xA4\xDE\xA4\xB9\n\x1b[m"
+    # EUC-JP: ダイナミック領域末尾が破壊されています | Dynamic region tail is destroyed
+    .balign 4
 
 glabel D_80145410
-    .incbin "baserom.z64", 0xBBC5B0, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_8014541C
-    .incbin "baserom.z64", 0xBBC5BC, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_80145420
-    .incbin "baserom.z64", 0xBBC5C0, 0x3C
+    .asciz "\x1b[41;37m\xA5\xBC\xA5\xEB\xA5\xC0\x30\xA4\xCF\xBB\xE0\xA4\xF3\xA4\xC7\xA4\xB7\xA4\xDE\xA4\xC3\xA4\xBF(graph_alloc is empty)\n\x1b[m"
+    # EUC-JP: ゼルダ0は死んでしまった | 'Zelda 0 is dead'?
+    .balign 4
 
 glabel D_8014545C
-    .incbin "baserom.z64", 0xBBC5FC, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_80145460
-    .incbin "baserom.z64", 0xBBC600, 0x3C
+    .asciz "\x1b[41;37m\xA5\xBC\xA5\xEB\xA5\xC0\x31\xA4\xCF\xBB\xE0\xA4\xF3\xA4\xC7\xA4\xB7\xA4\xDE\xA4\xC3\xA4\xBF(graph_alloc is empty)\n\x1b[m"
+    # EUC-JP: ゼルダ1は死んでしまった | 'Zelda 1 is dead'?
+    .balign 4
 
 glabel D_8014549C
-    .incbin "baserom.z64", 0xBBC63C, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_801454A0
-    .incbin "baserom.z64", 0xBBC640, 0x3C
+    .asciz "\x1b[41;37m\xA5\xBC\xA5\xEB\xA5\xC0\x34\xA4\xCF\xBB\xE0\xA4\xF3\xA4\xC7\xA4\xB7\xA4\xDE\xA4\xC3\xA4\xBF(graph_alloc is empty)\n\x1b[m"
+    # EUC-JP: ゼルダ4は死んでしまった | 'Zelda 4 is dead'?
+    .balign 4
 
 glabel D_801454DC
-    .incbin "baserom.z64", 0xBBC67C, 0x34
+    .asciz "\x1b[43;30mPRE-NMI\xA4\xCB\xA4\xE8\xA4\xEA\xA5\xEA\xA5\xBB\xA5\xC3\xA5\xC8\xA5\xE2\xA1\xBC\xA5\xC9\xA4\xCB\xB0\xDC\xB9\xD4\xA4\xB7\xA4\xDE\xA4\xB9\n\x1b[m"
+    # EUC-JP: によりリセットモードに移行します | To reset mode
+    .balign 4
 
 glabel D_80145510
-    .incbin "baserom.z64", 0xBBC6B0, 0x20
+    .asciz "\xA5\xB0\xA5\xE9\xA5\xD5\xA5\xA3\xA5\xC3\xA5\xAF\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: グラフィックスレッド実行開始 | Start graphic thread execution
+    .balign 4
 
 glabel D_80145530
-    .incbin "baserom.z64", 0xBBC6D0, 0x18
+    .asciz "\xA5\xAF\xA5\xE9\xA5\xB9\xA5\xB5\xA5\xA4\xA5\xBA\xA1\xE1%d\xA5\xD0\xA5\xA4\xA5\xC8\n"
+    # EUC-JP: クラスサイズ＝%dバイト | Class size =%d bytes
+    .balign 4
 
 glabel D_80145548
-    .incbin "baserom.z64", 0xBBC6E8, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_80145554
-    .incbin "baserom.z64", 0xBBC6F4, 0xC
+    .asciz "\xB3\xCE\xCA\xDD\xBC\xBA\xC7\xD4\n"
+    # EUC-JP: 確保失敗 | Failure to secure
+    .balign 4
 
 glabel D_80145560
-    .incbin "baserom.z64", 0xBBC700, 0x18
+    .asciz "CLASS SIZE= %d bytes"
+    .balign 4
 
 glabel D_80145578
-    .incbin "baserom.z64", 0xBBC718, 0x1C
+    .asciz "GAME CLASS MALLOC FAILED"
+    .balign 4
 
 glabel D_80145594
-    .incbin "baserom.z64", 0xBBC734, 0xC
+    .asciz "../graph.c"
+    .balign 4
 
 glabel D_801455A0
-    .incbin "baserom.z64", 0xBBC740, 0x20
+    .asciz "\xA5\xB0\xA5\xE9\xA5\xD5\xA5\xA3\xA5\xC3\xA5\xAF\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xBD\xAA\xCE\xBB\n"
+    # EUC-JP: グラフィックスレッド実行終了 | End of graphic thread execution
+    .balign 4
 
 glabel D_801455C0
-    .incbin "baserom.z64", 0xBBC760, 0x44
+    .asciz "graph_alloc siz=%d thga size=%08x bufp=%08x head=%08x tail=%08x\n"
+    .balign 4
 
 glabel D_80145604
-    .incbin "baserom.z64", 0xBBC7A4, 0x4C
+    .asciz "graph_alloc siz=%d thga size=%08x bufp=%08x head=%08x tail=%08x\n"
+    .balign 4

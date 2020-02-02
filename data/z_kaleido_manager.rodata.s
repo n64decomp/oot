@@ -7,50 +7,71 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80143E10
-    .incbin "baserom.z64", 0xBBAFB0, 0x20
+    .asciz "kaleido_scope"
+    .balign 4
+    .asciz "player_actor"
+    .balign 4
 
 glabel D_80143E30
-    .incbin "baserom.z64", 0xBBAFD0, 0x14
+    .asciz "KaleidoArea_allocp"
+    .balign 4
 
 glabel D_80143E44
-    .incbin "baserom.z64", 0xBBAFE4, 0x18
+    .asciz "../z_kaleido_manager.c"
+    .balign 4
 
 glabel D_80143E5C
-    .incbin "baserom.z64", 0xBBAFFC, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80143E64
-    .incbin "baserom.z64", 0xBBB004, 0x30
+    .asciz "OVL(k):Seg:%08x-%08x Ram:%08x-%08x Off:%08x %s\n"
+    .balign 4
 
 glabel D_80143E94
-    .incbin "baserom.z64", 0xBBB034, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80143E98
-    .incbin "baserom.z64", 0xBBB038, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80143EA0
-    .incbin "baserom.z64", 0xBBB040, 0x34
+    .asciz "KaleidoArea \xA4\xCE\xBA\xC7\xC2\xE7\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF %d \xA5\xD0\xA5\xA4\xA5\xC8\xA4\xF2\xB3\xCE\xCA\xDD\xA4\xB7\xA4\xDE\xA4\xB9\n"
+    .balign 4
 
 glabel D_80143ED4
-    .incbin "baserom.z64", 0xBBB074, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80143ED8
-    .incbin "baserom.z64", 0xBBB078, 0x18
+    .asciz "../z_kaleido_manager.c"
+    .balign 4
 
 glabel D_80143EF0
-    .incbin "baserom.z64", 0xBBB090, 0x14
+    .asciz "KaleidoArea_allocp"
+    .balign 4
 
 glabel D_80143F04
-    .incbin "baserom.z64", 0xBBB0A4, 0x18
+    .asciz "../z_kaleido_manager.c"
+    .balign 4
 
 glabel D_80143F1C
-    .incbin "baserom.z64", 0xBBB0BC, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80143F24
-    .incbin "baserom.z64", 0xBBB0C4, 0x1C
+    .asciz "KaleidoArea %08x - %08x\n"
+    .balign 4
 
 glabel D_80143F40
-    .incbin "baserom.z64", 0xBBB0E0, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80143F44
-    .incbin "baserom.z64", 0xBBB0E4, 0xC
+    .asciz "\xB0\xDB\xBE\xEF\n"
+    # EUC-JP: 異常 | Abnormal
+    .balign 4

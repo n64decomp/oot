@@ -7,5 +7,8 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80146670
-    .incbin "baserom.z64", 0xBBD810, 0x20
+    .asciz "\x1b[31m\n**** Freeze!! ****\n\x1b[m"
+    .balign 4

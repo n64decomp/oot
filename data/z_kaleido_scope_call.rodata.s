@@ -7,80 +7,115 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80143F50
-    .incbin "baserom.z64", 0xBBB0F0, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80143F58
-    .incbin "baserom.z64", 0xBBB0F8, 0x18
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xCE\xCE\xB0\xE8\x20\xB6\xAF\xC0\xA9\xC7\xD3\xBD\xFC\n"
+    # EUC-JP: カレイド領域 強制排除 | Kaleido area forced exclusion
+    .balign 4
 
 glabel D_80143F70
-    .incbin "baserom.z64", 0xBBB110, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80143F74
-    .incbin "baserom.z64", 0xBBB114, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_80143F7C
-    .incbin "baserom.z64", 0xBBB11C, 0x18
+    .asciz "\xA5\xD7\xA5\xEC\xA5\xA4\xA5\xE4\xA1\xBC\xA5\xA2\xA5\xAF\xA5\xBF\xA1\xBC\xC8\xC2\xC6\xFE\n"
+    # EUC-JP: プレイヤーアクター搬入 | Player actor import
+    .balign 4
 
 glabel D_80143F94
-    .incbin "baserom.z64", 0xBBB134, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80143F98
-    .incbin "baserom.z64", 0xBBB138, 0x2C
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xA1\xA6\xA5\xB9\xA5\xB3\xA1\xBC\xA5\xD7\xC6\xFE\xA4\xEC\xC2\xD8\xA4\xA8\x20\xA5\xB3\xA5\xF3\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xC8 \n"
+    # EUC-JP: カレイド・スコープ入れ替え コンストラクト | Kaleidoscope replacement construct
+    .balign 4
 
 glabel D_80143FC4
-    .incbin "baserom.z64", 0xBBB164, 0x1C
+    .asciz "../z_kaleido_scope_call.c"
+    .balign 4
 
 glabel D_80143FE0
-    .incbin "baserom.z64", 0xBBB180, 0x1C
+    .asciz "kaleido_scope_move = %08x\n"
+    .balign 4
 
 glabel D_80143FFC
-    .incbin "baserom.z64", 0xBBB19C, 0x1C
+    .asciz "../z_kaleido_scope_call.c"
+    .balign 4
 
 glabel D_80144018
-    .incbin "baserom.z64", 0xBBB1B8, 0x20
+    .asciz "kaleido_scope_move_func = %08x\n"
+    .balign 4
 
 glabel D_80144038
-    .incbin "baserom.z64", 0xBBB1D8, 0x1C
+    .asciz "../z_kaleido_scope_call.c"
+    .balign 4
 
 glabel D_80144054
-    .incbin "baserom.z64", 0xBBB1F4, 0x1C
+    .asciz "kaleido_scope_draw = %08x\n"
+    .balign 4
 
 glabel D_80144070
-    .incbin "baserom.z64", 0xBBB210, 0x1C
+    .asciz "../z_kaleido_scope_call.c"
+    .balign 4
 
 glabel D_8014408C
-    .incbin "baserom.z64", 0xBBB22C, 0x20
+    .asciz "kaleido_scope_draw_func = %08x\n"
+    .balign 4
 
 glabel D_801440AC
-    .incbin "baserom.z64", 0xBBB24C, 0x2C
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xA1\xA6\xA5\xB9\xA5\xB3\xA1\xBC\xA5\xD7\xC6\xFE\xA4\xEC\xC2\xD8\xA4\xA8\x20\xA5\xC7\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xC8 \n"
+    # EUC-JP:  カレイド・スコープ入れ替え デストラクト | Kaleidoscope replacement
+    .balign 4
 
 glabel D_801440D8
-    .incbin "baserom.z64", 0xBBB278, 0x1C
+    .asciz "PR_KAREIDOSCOPE_MODE=%d\n"
+    .balign 4
 
 glabel D_801440F4
-    .incbin "baserom.z64", 0xBBB294, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_801440FC
-    .incbin "baserom.z64", 0xBBB29C, 0x24
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xCE\xCE\xB0\xE8\x20\xA5\xD7\xA5\xEC\xA5\xA4\xA5\xE4\xA1\xBC\x20\xB6\xAF\xC0\xA9\xC7\xD3\xBD\xFC\n"
+    # EUC-JP: カレイド領域 プレイヤー 強制排除 | Kaleid Zone Player Forced Elimination
+    .balign 4
 
 glabel D_80144120
-    .incbin "baserom.z64", 0xBBB2C0, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80144124
-    .incbin "baserom.z64", 0xBBB2C4, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_8014412C
-    .incbin "baserom.z64", 0xBBB2CC, 0x24
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xCE\xCE\xB0\xE8\x20\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xA5\xB9\xA5\xB3\xA1\xBC\xA5\xD7\xC8\xC2\xC6\xFE\n"
+    # EUC-JP: カレイド領域 カレイドスコープ搬入 | Kaleid area Kaleidoscope loading
+    .balign 4
 
 glabel D_80144150
-    .incbin "baserom.z64", 0xBBB2F0, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80144154
-    .incbin "baserom.z64", 0xBBB2F4, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_8014415C
-    .incbin "baserom.z64", 0xBBB2FC, 0x24
+    .asciz "\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xCE\xCE\xB0\xE8\x20\xA5\xAB\xA5\xEC\xA5\xA4\xA5\xC9\xA5\xB9\xA5\xB3\xA1\xBC\xA5\xD7\xC7\xD3\xBD\xD0\n"
+    # EUC-JP: カレイド領域 カレイドスコープ排出 | Kaleid area Kaleidoscope emission
+    .balign 4
 
 glabel D_80144180
-    .incbin "baserom.z64", 0xBBB320, 0x10
+    .asciz "\x1b[m"
+    .balign 4

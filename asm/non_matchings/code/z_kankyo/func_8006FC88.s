@@ -413,7 +413,7 @@ glabel func_8006FC88
 /* AE7428 80070288 AFA00010 */  sw    $zero, 0x10($sp)
 /* AE742C 8007028C 26040048 */  addiu $a0, $s0, 0x48
 /* AE7430 80070290 8C460000 */  lw    $a2, ($v0)
-/* AE7434 80070294 0C000697 */  jal   func_80001A5C
+/* AE7434 80070294 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE7438 80070298 AFAD0014 */   sw    $t5, 0x14($sp)
 /* AE743C 8007029C 93AF005A */  lbu   $t7, 0x5a($sp)
 /* AE7440 800702A0 A20F0010 */  sb    $t7, 0x10($s0)
@@ -459,7 +459,7 @@ glabel func_8006FC88
 /* AE74D8 80070338 AFA00010 */  sw    $zero, 0x10($sp)
 /* AE74DC 8007033C 8FA40040 */  lw    $a0, 0x40($sp)
 /* AE74E0 80070340 8C460000 */  lw    $a2, ($v0)
-/* AE74E4 80070344 0C000697 */  jal   func_80001A5C
+/* AE74E4 80070344 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE74E8 80070348 AFAD0014 */   sw    $t5, 0x14($sp)
 /* AE74EC 8007034C 93AF0059 */  lbu   $t7, 0x59($sp)
 /* AE74F0 80070350 82030044 */  lb    $v1, 0x44($s0)
@@ -506,7 +506,7 @@ glabel func_8006FC88
 /* AE758C 800703EC AFA00010 */  sw    $zero, 0x10($sp)
 /* AE7590 800703F0 8FA40040 */  lw    $a0, 0x40($sp)
 /* AE7594 800703F4 8C460008 */  lw    $a2, 8($v0)
-/* AE7598 800703F8 0C000697 */  jal   func_80001A5C
+/* AE7598 800703F8 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE759C 800703FC AFB80014 */   sw    $t8, 0x14($sp)
 /* AE75A0 80070400 1000001B */  b     .L80070470
 /* AE75A4 80070404 82030044 */   lb    $v1, 0x44($s0)
@@ -534,7 +534,7 @@ glabel func_8006FC88
 /* AE75F8 80070458 8FA40040 */  lw    $a0, 0x40($sp)
 /* AE75FC 8007045C 8C460008 */  lw    $a2, 8($v0)
 /* AE7600 80070460 03272821 */  addu  $a1, $t9, $a3
-/* AE7604 80070464 0C000697 */  jal   func_80001A5C
+/* AE7604 80070464 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE7608 80070468 AFB80014 */   sw    $t8, 0x14($sp)
 /* AE760C 8007046C 82030044 */  lb    $v1, 0x44($s0)
 .L80070470:
@@ -578,7 +578,7 @@ glabel func_8006FC88
 /* AE76A4 80070504 AFA00010 */  sw    $zero, 0x10($sp)
 /* AE76A8 80070508 8FA40040 */  lw    $a0, 0x40($sp)
 /* AE76AC 8007050C 8C460008 */  lw    $a2, 8($v0)
-/* AE76B0 80070510 0C000697 */  jal   func_80001A5C
+/* AE76B0 80070510 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE76B4 80070514 AFAC0014 */   sw    $t4, 0x14($sp)
 /* AE76B8 80070518 1000001B */  b     .L80070588
 /* AE76BC 8007051C 82030044 */   lb    $v1, 0x44($s0)
@@ -606,7 +606,7 @@ glabel func_8006FC88
 /* AE7710 80070570 8FA40040 */  lw    $a0, 0x40($sp)
 /* AE7714 80070574 8C460008 */  lw    $a2, 8($v0)
 /* AE7718 80070578 01E72821 */  addu  $a1, $t7, $a3
-/* AE771C 8007057C 0C000697 */  jal   func_80001A5C
+/* AE771C 8007057C 0C000697 */  jal   DmaMgr_SendRequest2
 /* AE7720 80070580 AFAC0014 */   sw    $t4, 0x14($sp)
 /* AE7724 80070584 82030044 */  lb    $v1, 0x44($s0)
 .L80070588:

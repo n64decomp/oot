@@ -7,215 +7,320 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801457B0
-    .incbin "baserom.z64", 0xBBC950, 0x40
+    .asciz "%2d %d serialMsgQ\xA5\xED\xA5\xC3\xA5\xAF\xC2\xD4\xA4\xC1         %08x %08x          %08x\n"
+    # EUC-JP: ロック待ち | Waiting for lock
+    .balign 4
 
 glabel D_801457F0
-    .incbin "baserom.z64", 0xBBC990, 0x3C
+    .asciz "%2d %d serialMsgQ\xA4\xF2\xA5\xED\xA5\xC3\xA5\xAF\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF                     %08x\n"
+    # EUC-JP: をロックしました | Locked
+    .balign 4
 
 glabel D_8014582C
-    .incbin "baserom.z64", 0xBBC9CC, 0x34
+    .asciz "%2d %d serialMsgQ\xA5\xED\xA5\xC3\xA5\xAF\xB2\xF2\xBD\xFC\xA4\xB7\xA4\xDE\xA4\xB9   %08x %08x %08x\n"
+    # EUC-JP: ロック解除します | Unlock
+    .balign 4
 
 glabel D_80145860
-    .incbin "baserom.z64", 0xBBCA00, 0x34
+    .asciz "%2d %d serialMsgQ\xA5\xED\xA5\xC3\xA5\xAF\xB2\xF2\xBD\xFC\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF %08x %08x %08x\n"
+    # EUC-JP: ロック解除しました | Unlocked
+    .balign 4
 
 glabel D_80145894
-    .incbin "baserom.z64", 0xBBCA34, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_8014589C
-    .incbin "baserom.z64", 0xBBCA3C, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_801458B0
-    .incbin "baserom.z64", 0xBBCA50, 0x1C
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF \xA4\xD6\xA4\xEB\xA4\xD6\xA4\xEB\xA4\xD6\xA4\xEB\xA4\xD6\xA4\xEB"
+    # EUC-JP: 振動パック ぶるぶるぶるぶる | Vibration pack jumble jumble?
+    .balign 4
 
 glabel D_801458CC
-    .incbin "baserom.z64", 0xBBCA6C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_801458D0
-    .incbin "baserom.z64", 0xBBCA70, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_801458D8
-    .incbin "baserom.z64", 0xBBCA78, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_801458EC
-    .incbin "baserom.z64", 0xBBCA8C, 0x28
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xC7\xC4\xCC\xBF\xAE\xA5\xA8\xA5\xE9\xA1\xBC\xA4\xAC\xC8\xAF\xC0\xB8\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF"
+    # EUC-JP: 振動パックで通信エラーが発生しました | A communication error has occurred with the vibraton pack
+    .balign 4
 
 glabel D_80145914
-    .incbin "baserom.z64", 0xBBCAB4, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145918
-    .incbin "baserom.z64", 0xBBCAB8, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145920
-    .incbin "baserom.z64", 0xBBCAC0, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145934
-    .incbin "baserom.z64", 0xBBCAD4, 0x10
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\x20\xC4\xE4\xBB\xDF"
+    # EUC-JP: 振動パック 停止 | Stop vibration pack
+    .balign 4
 
 glabel D_80145944
-    .incbin "baserom.z64", 0xBBCAE4, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145948
-    .incbin "baserom.z64", 0xBBCAE8, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145950
-    .incbin "baserom.z64", 0xBBCAF0, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145964
-    .incbin "baserom.z64", 0xBBCB04, 0x28
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xC7\xC4\xCC\xBF\xAE\xA5\xA8\xA5\xE9\xA1\xBC\xA4\xAC\xC8\xAF\xC0\xB8\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF"
+    # EUC-JP: 振動パックで通信エラーが発生しました | A communication error has occurred with the vibration pack
+    .balign 4    
 
 glabel D_8014598C
-    .incbin "baserom.z64", 0xBBCB2C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145990
-    .incbin "baserom.z64", 0xBBCB30, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145998
-    .incbin "baserom.z64", 0xBBCB38, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_801459AC
-    .incbin "baserom.z64", 0xBBCB4C, 0x20
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xAC\xC8\xB4\xA4\xAB\xA4\xEC\xA4\xBF\xA4\xE8\xA4\xA6\xA4\xC7\xA4\xB9"
+    # EUC-JP: 振動パックが抜かれたようです | Vibration pack seems to be pulled out
+    .balign 4
 
 glabel D_801459CC
-    .incbin "baserom.z64", 0xBBCB6C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_801459D0
-    .incbin "baserom.z64", 0xBBCB70, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_801459D8
-    .incbin "baserom.z64", 0xBBCB78, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_801459EC
-    .incbin "baserom.z64", 0xBBCB8C, 0x38
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xC7\xA4\xCF\xA4\xCA\xA4\xA4\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xAC\xC8\xB4\xA4\xAB\xA4\xEC\xA4\xBF\xA4\xE8\xA4\xA6\xA4\xC7\xA4\xB9"
+    # EUC-JP: 振動パックではないコントローラパックが抜かれたようです | It seems that a controller pack that is not a vibration pack was pulled out
+    .balign 4
 
 glabel D_80145A24
-    .incbin "baserom.z64", 0xBBCBC4, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145A28
-    .incbin "baserom.z64", 0xBBCBC8, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145A30
-    .incbin "baserom.z64", 0xBBCBD0, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145A44
-    .incbin "baserom.z64", 0xBBCBE4, 0x1C
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xF2\xC7\xA7\xBC\xB1\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF"
+    # EUC-JP: 振動パックを認識しました | Recognized vibration pack
+    .balign 4
 
 glabel D_80145A60
-    .incbin "baserom.z64", 0xBBCC00, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145A64
-    .incbin "baserom.z64", 0xBBCC04, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145A70
-    .incbin "baserom.z64", 0xBBCC10, 0x10
+    .asciz "++errcnt = %d\n"
+    .balign 4
 
 glabel D_80145A80
-    .incbin "baserom.z64", 0xBBCC20, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145A88
-    .incbin "baserom.z64", 0xBBCC28, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145A9C
-    .incbin "baserom.z64", 0xBBCC3C, 0x20
+    .asciz "\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA5\xD1\xA5\xC3\xA5\xAF\xA4\xCE\xC4\xCC\xBF\xAE\xA5\xA8\xA5\xE9\xA1\xBC"
+    # EUC-JP: コントローラパックの通信エラー | Controller pack communication error
+    .balign 4
 
 glabel D_80145ABC
-    .incbin "baserom.z64", 0xBBCC5C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145AC0
-    .incbin "baserom.z64", 0xBBCC60, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145AC8
-    .incbin "baserom.z64", 0xBBCC68, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145ADC
-    .incbin "baserom.z64", 0xBBCC7C, 0x10
+    .asciz "\xBF\xB6\xC6\xB0\xA5\xD1\xA5\xC3\xA5\xAF \xC4\xE4\xBB\xDF"
+    # EUC-JP:  振動パック 停止 | Stop vibration pack
+    .balign 4
 
 glabel D_80145AEC
-    .incbin "baserom.z64", 0xBBCC8C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145AF0
-    .incbin "baserom.z64", 0xBBCC90, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145AF8
-    .incbin "baserom.z64", 0xBBCC98, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145B0C
-    .incbin "baserom.z64", 0xBBCCAC, 0x10
+    .asciz "\xC7\xA7\xBC\xB1\xA4\xB7\xA4\xDE\xA4\xB7\xA4\xBF"
+    # EUC-JP: 認識しました | Recognized
+    .balign 4
 
 glabel D_80145B1C
-    .incbin "baserom.z64", 0xBBCCBC, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145B20
-    .incbin "baserom.z64", 0xBBCCC0, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145B2C
-    .incbin "baserom.z64", 0xBBCCCC, 0x1C
+    .asciz "this->Key_switch[i] = %d\n"
+    .balign 4
 
 glabel D_80145B48
-    .incbin "baserom.z64", 0xBBCCE8, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145B50
-    .incbin "baserom.z64", 0xBBCCF0, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145B64
-    .incbin "baserom.z64", 0xBBCD04, 0x1C
+    .asciz "\xA5\xAA\xA1\xBC\xA5\xD0\xA1\xBC\xA5\xE9\xA5\xF3\xA5\xA8\xA5\xE9\xA1\xBC\xA4\xAC\xC8\xAF\xC0\xB8"
+    # EUC-JP: オーバーランエラーが発生 | Overrun error occurred
+    .balign 4
 
 glabel D_80145B80
-    .incbin "baserom.z64", 0xBBCD20, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145B84
-    .incbin "baserom.z64", 0xBBCD24, 0x8
+    .asciz "\x1b[33m"
+    .balign 4
 
 glabel D_80145B8C
-    .incbin "baserom.z64", 0xBBCD2C, 0x14
+    .asciz "padmgr: %d\xA5\xB3\xA5\xF3: %s\n"
+    # EUC-JP: コン | 'Con'?
+    .balign 4
 
 glabel D_80145BA0
-    .incbin "baserom.z64", 0xBBCD40, 0x10
+    .asciz "\xB1\xFE\xC5\xFA\xA4\xB7\xA4\xDE\xA4\xBB\xA4\xF3"
+    # EUC-JP: 応答しません | Do not respond?
+    .balign 4
 
 glabel D_80145BB0
-    .incbin "baserom.z64", 0xBBCD50, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80145BB4
-    .incbin "baserom.z64", 0xBBCD54, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145BC0
-    .incbin "baserom.z64", 0xBBCD60, 0x18
+    .asciz "padnow1->errno = %x\n"
+    .balign 4
 
 glabel D_80145BD8
-    .incbin "baserom.z64", 0xBBCD78, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145BE4
-    .incbin "baserom.z64", 0xBBCD84, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145BF0
-    .incbin "baserom.z64", 0xBBCD90, 0x20
+    .asciz "this->pad_status[i].type = %x\n"
+    .balign 4
 
 glabel D_80145C10
-    .incbin "baserom.z64", 0xBBCDB0, 0x30
+    .asciz "\xC3\xCE\xA4\xE9\xA4\xCA\xA4\xA4\xBC\xEF\xCE\xE0\xA4\xCE\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA4\xAC\xC0\xDC\xC2\xB3\xA4\xB5\xA4\xEC\xA4\xC6\xA4\xA4\xA4\xDE\xA4\xB9\n"
+    # EUC-JP: 知らない種類のコントローラが接続されています | An unknown type of controller is connected
+    .balign 4
 
 glabel D_80145C40
-    .incbin "baserom.z64", 0xBBCDE0, 0x18
+    .asciz "padmgr_HandlePreNMI()\n"
+    .balign 4
 
 glabel D_80145C58
-    .incbin "baserom.z64", 0xBBCDF8, 0x20
+    .asciz "\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: コントローラスレッド実行開始 | Start of controller thread execution
+    .balign 4
 
 glabel D_80145C78
-    .incbin "baserom.z64", 0xBBCE18, 0x28
+    .asciz "\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xA5\xA4\xA5\xD9\xA5\xF3\xA5\xC8\xC2\xD4\xA4\xC1 %lld\n"    
+    # EUC-JP: コントローラスレッドイベント待ち | Waiting for controller thread event
+    .balign 4
 
 glabel D_80145CA0
-    .incbin "baserom.z64", 0xBBCE40, 0x4
+    .asciz "msg"
+    .balign 4
 
 glabel D_80145CA4
-    .incbin "baserom.z64", 0xBBCE44, 0xC
+    .asciz "../padmgr.c"
+    .balign 4
 
 glabel D_80145CB0
-    .incbin "baserom.z64", 0xBBCE50, 0x24
+    .asciz "padmgr_HandleRetraceMsg START %lld\n"
+    .balign 4
 
 glabel D_80145CD4
-    .incbin "baserom.z64", 0xBBCE74, 0x24
+    .asciz "padmgr_HandleRetraceMsg END   %lld\n"
+    .balign 4
 
 glabel D_80145CF8
-    .incbin "baserom.z64", 0xBBCE98, 0x20
+    .asciz "\xA5\xB3\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xE9\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9\xBC\xC2\xB9\xD4\xBD\xAA\xCE\xBB\n"
+    .balign 4
 
 glabel D_80145D18
-    .incbin "baserom.z64", 0xBBCEB8, 0x28
+    .asciz "\xA5\xD1\xA5\xC3\xA5\xC9\xA5\xDE\xA5\xCD\xA1\xBC\xA5\xB8\xA5\xE3\xBA\xEE\xC0\xAE padmgr_Create()\n"
+    # EUC-JP: パッドマネージャ作成 | Create pad manager
+    .balign 4

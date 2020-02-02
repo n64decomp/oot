@@ -6,6 +6,13 @@
 #define INVISIBLE_ACTOR_MAX 20
 #define AM_FIELD_SIZE 0x27A0
 
+// From z64.h
+struct Actor;
+struct GlobalContext;
+
+// From z64light.h
+struct LightMapper;
+
 typedef struct
 {
     f32 x, y, z;
@@ -315,9 +322,15 @@ typedef struct
     /* 0x014E */ s8      unk_14E;
     /* 0x014F */ char    unk_14F[0x001];
     /* 0x0150 */ f32     unk_150;
-    /* 0x0154 */ f32     unk_154;
+    /* 0x0154 */ s8      unk_154;
+    /* 0x0155 */ char    unk_155;
+    /* 0x0156 */ u16     unk_156;
     /* 0x0158 */ u16     unk_158;
-    /* 0x015A */ char    unk_15A[0x056];
+    /* 0x015A */ char    unk_15A[0x003];
+    /* 0x015D */ u8      unk_15D;
+    /* 0x015E */ char    unk_15E;
+    /* 0x015F */ u8      unk_15F;
+    /* 0x0160 */ char    unk_160[0x050];
     /* 0x01B0 */ u32     unk_1B0;
     /* 0x01B4 */ char    unk_1B4[0x1F8];
     /* 0x03AC */ Actor*  heldActor;
@@ -341,13 +354,16 @@ typedef struct
     /* 0x0680 */ s32     stateFlags2;
     /* 0x0684 */ char    unk_684[0x008];
     /* 0x068C */ Actor*  unk_68C;
-    /* 0x0690 */ char    unk_690[0x003];
+    /* 0x0690 */ char    unk_690[0x002];
+    /* 0x0692 */ u8      unk_692;
     /* 0x0693 */ s8      exchangeItemId;
     /* 0x0694 */ Actor*  unk_694;
     /* 0x0698 */ f32     unk_698;
     /* 0x069C */ char    unk_69C[0x008];
     /* 0x06A4 */ f32     unk_6A4;
-    /* 0x06A8 */ char    unk_6A8[0x18C];
+    /* 0x06A8 */ char    unk_6A8[0x5];
+    /* 0x06AD */ u8      unk_6AD;
+    /* 0x06AE */ char    unk_6AE[0x186];
     /* 0x0834 */ s16     unk_834;
     /* 0x0836 */ char    unk_836[0x006];
     /* 0x083C */ s16     unk_83C;

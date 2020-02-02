@@ -18,7 +18,7 @@ glabel func_800BFE5C
 /* B3703C 800BFE9C AFA80010 */  sw    $t0, 0x10($sp)
 /* B37040 800BFEA0 24E7478C */  addiu $a3, %lo(D_8014478C) # addiu $a3, $a3, 0x478c
 /* B37044 800BFEA4 00402025 */  move  $a0, $v0
-/* B37048 800BFEA8 0C0006A8 */  jal   func_80001AA0
+/* B37048 800BFEA8 0C0006A8 */  jal   DmaMgr_SendRequest1
 /* B3704C 800BFEAC 8FA60024 */   lw    $a2, 0x24($sp)
 /* B37050 800BFEB0 8FBF001C */  lw    $ra, 0x1c($sp)
 /* B37054 800BFEB4 8FA20020 */  lw    $v0, 0x20($sp)

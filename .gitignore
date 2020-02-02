@@ -5,6 +5,10 @@ __pycache__/
 # Text editor remnants
 .vscode/
 .vs/
+.idea/
+CMakeLists.txt
+cmake-build-debug
+venv/
 
 # Project-specific ignores
 build/
@@ -21,6 +25,9 @@ tools/ido7.1_compiler/*
 tools/overlayhelpers/batchdisasm/output/*
 tools/overlayhelpers/batchdisasm/output2/*
 tools/overlayhelpers/batchdisasm/mipsdisasm/*
+tools/disasm/output/asm/*
+tools/asmsplitter/asm/*
+tools/asmsplitter/c/*
 
 # Assets
 *.rgba32.png

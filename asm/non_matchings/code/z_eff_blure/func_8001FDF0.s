@@ -209,7 +209,7 @@ glabel func_8001FDF0
 /* A972B4 80020114 8FB30028 */  lw    $s3, 0x28($sp)
 /* A972B8 80020118 03E00008 */  jr    $ra
 /* A972BC 8002011C 27BD0180 */   addiu $sp, $sp, 0x180
-
+glabel func_80020120
 /* A972C0 80020120 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* A972C4 80020124 10800013 */  beqz  $a0, .L80020174
 /* A972C8 80020128 AFBF0014 */   sw    $ra, 0x14($sp)

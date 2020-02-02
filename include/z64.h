@@ -13,9 +13,18 @@
 #include <sfx.h>
 #include <color.h>
 #include <ichain.h>
+#include <stdarg.h>
 
 #define SCREEN_WIDTH  320
 #define SCREEN_HEIGHT 240
+
+#define REGION_NULL 0
+#define REGION_US 1
+#define REGION_JP 2
+#define REGION_EU 3
+
+// NOTE: Once we start supporting other builds, this can be changed with an ifdef
+#define REGION_NATIVE REGION_EU
 
 // Game Info aka. Static Context (dbg ram start: 80210A10) note: this is copied from gz. adjust for accuracy.
 typedef struct
@@ -290,7 +299,8 @@ typedef struct
     /* 0x000C */ u16          day_time;
     /* 0x000E */ char         unk_0E[0x0002];
     /* 0x0010 */ s32          night_flag;
-    /* 0x0014 */ char         unk_14[0x0008];
+    /* 0x0014 */ s32          unk_14;
+    /* 0x0018 */ s32          unk_18;
     /* 0x001C */ char         id[6];
     /* 0x0022 */ s16          deaths;
     /* 0x0024 */ char         player_name[8];
@@ -448,7 +458,8 @@ typedef struct
     /* 0x13E7 */ u8           unk_13E7;
     /* 0x13E8 */ char         unk_13E8[0x006];
     /* 0x13EE */ u16          unk_13EE;
-    /* 0x13F0 */ char         unk_13F0[0x000A];
+    /* 0x13F0 */ s16          unk_13F0;
+    /* 0x13F2 */ char         unk_13F2[0x0008];
     /* 0x13FA */ u16          event_inf[4];
     /* 0x1402 */ u16          minimap_index;
     /* 0x1404 */ u16          minigame_state;
@@ -803,13 +814,13 @@ typedef struct
     /* 0x14 */ s32      unk_14;
     /* 0x18 */ OSMesgQueue* notifyQueue; // Message queue for the notification message
     /* 0x1C */ OSMesg   notifyMsg;       // Completion notification message
-} GetFile; // size = 0x20
+} DmaRequest; // size = 0x20
 
 typedef struct
 {
     /* 0x00 */ s16      id;
     /* 0x04 */ void*    segment;
-    /* 0x08 */ GetFile  getfile;
+    /* 0x08 */ DmaRequest  dmaRequest;
     /* 0x28 */ OSMesgQueue loadQueue;
     /* 0x40 */ OSMesg   loadMsg;
 } ObjectStatus; // size = 0x44
@@ -934,7 +945,7 @@ typedef struct
     /* 0x30 */ u8    unk_30;
     /* 0x31 */ s8    status;
     /* 0x34 */ void* unk_34;
-    /* 0x38 */ GetFile getfile;
+    /* 0x38 */ DmaRequest dmaRequest;
     /* 0x58 */ OSMesgQueue loadQueue;
     /* 0x70 */ OSMesg loadMsg;
 } RoomContext; // size = 0x74
@@ -992,11 +1003,14 @@ typedef struct GlobalContext
     /* 0x001E0 */ CameraContext cameraCtx;
     /* 0x007A4 */ SoundContext soundCtx;
     /* 0x007A8 */ LightingContext lightCtx;
-    /* 0x007B8 */ char unk_7B8[0x8];
+    /* 0x007B8 */ s32 unk_7B8;
+    /* 0x007BC */ char unk7BC[0x4];
     /* 0x007C0 */ CollisionContext colCtx;
     /* 0x01C24 */ ActorContext actorCtx;
     /* 0x01D64 */ CutsceneContext csCtx;
-    /* 0x01DB4 */ char unk_1DB4[0x324];
+    /* 0x01DB4 */ char unk_1DB4[0x1C4];
+    /* 0x01F78 */ u16 unk_1F78;
+    /* 0x01F7A */ char unk_1F7A[0x15E];
     /* 0x020D8 */ SubGlobalContext20D8 sub_20D8;
     /* 0x104F0 */ InterfaceContext interfaceCtx;
     /* 0x10760 */ char unk_10760[0x1D4];
@@ -1004,7 +1018,8 @@ typedef struct GlobalContext
     /* 0x10936 */ u16 pauseMenuFlag;
     /* 0x10938 */ char unk_10938[0x0E8];
     /* 0x10A20 */ u16 unk_10A20;
-    /* 0x10A22 */ char unk_10A22[0x4];
+    /* 0x10A22 */ char unk_10A22[0x2];
+    /* 0x10A24 */ u16 unk_10A24;
     /* 0x10A26 */ u16 unk_10A26;
     /* 0x10A28 */ f32 unk_10A28;
     /* 0x10A2C */ f32 unk_10A2C;
@@ -1082,11 +1097,16 @@ typedef struct GlobalContext
     /* 0x11E15 */ s8 sceneLoadFlag;
     /* 0x11E16 */ char unk_11E16[0x4];
     /* 0x11E1A */ s16 nextEntranceIndex;
-    /* 0x11E1C */ char unk_11E1C[0x42];
+    /* 0x11E1C */ char unk_11E1C[0x40];
+    /* 0x11E5C */ s8 unk_11E5C;
+    /* 0x11E5D */ char unk_11E5D;
     /* 0x11E5E */ u8 fadeOutTransition;
     /* 0x11E5F */ char unk_11E5F[0x1];
     /* 0x11E60 */ SubGlobalContext11E60 sub_11E60;
-    /* 0x120EC */ char unk_120EC[0x340];
+    /* 0x120EC */ char unk_120EC[0x304];
+    /* 0x123F0 */ s32 unk_123F0;
+    /* 0x123F4 */ char unk_123F4[0x37];
+    /* 0x1242B */ u8 unk_1242B;
     /* 0x1242C */ Scene* loadedScene;
     /* 0x12430 */ char unk_12430[0xE8];
 } GlobalContext; // size = 0x12518
@@ -1098,6 +1118,8 @@ typedef enum
     DPM_ENEMY = 2
 } DynaPolyMoveFlag;
 
+// Declared here to avoid warning
+struct LoadedParticleEntry;
 typedef struct
 {
     /* 0x0000 */ Vec3f position;
@@ -1247,7 +1269,7 @@ typedef struct
 
 typedef struct FaultClient
 {
-    struct FaultClient* prevClient;
+    struct FaultClient* next;
     u32 callback;
     u32 param1;
     u32 param2;
@@ -1255,7 +1277,7 @@ typedef struct FaultClient
 
 typedef struct FaultAddrConvClient
 {
-    struct FaultAddrConvClient* prevClient;
+    struct FaultAddrConvClient* next;
     u32 callback;
     u32 param;
 } FaultAddrConvClient;
@@ -1279,12 +1301,12 @@ typedef struct FaultThreadStruct
     OSMesg msg;
     u8 exitDebugger;
     u8 msgId;
-    u8 enterDebugger;
-    u8 unk_7CF;
+    u8 faultHandlerEnabled;
+    u8 faultActive;
     OSThread* faultedThread;
     void(*padCallback)(Input*);
-    FaultClient* lastClient;
-    FaultAddrConvClient* lastAddrConvClient;
+    FaultClient* clients;
+    FaultAddrConvClient* addrConvClients;
     u8 unk_7E0[4];
     Input padInput;
     u16 colors[36];
@@ -1463,5 +1485,56 @@ typedef enum
     /* 0x7E */ GI_INVALID_2, //crashes when opened
     /* 0x7F */ GI_INVALID_3 //crashes when opened
 } GetItemID;
+
+typedef struct GfxPrint
+{
+    /* 0x00 */ struct GfxPrint*(*callback)(struct GfxPrint*, const char*, size_t);
+    /* 0x04 */ Gfx* dlist;
+    /* 0x08 */ u16 posX;
+    /* 0x0A */ u16 posY;
+    /* 0x0C */ u16 baseX;
+    /* 0x0E */ u8 baseY;
+    /* 0x0F */ u8 flag;
+    /* 0x10 */ Color_RGBA8 color;
+} GfxPrint;
+
+typedef enum
+{
+    GFXPRINT_FLAG1 = 1,
+    GFXPRINT_USE_RGBA16 = 2,
+    GFXPRINT_FLAG4 = 4,
+    GFXPRINT_UPDATE_MODE = 8,
+    GFXPRINT_FLAG64 = 0x40,
+    GFXPRINT_OPEN = 0x80
+} GfxPrintFlag;
+
+typedef struct StackEntry
+{
+    /* 0x00 */ struct StackEntry* next;
+    /* 0x04 */ struct StackEntry* prev;
+    /* 0x08 */ u32 head;
+    /* 0x0C */ u32 tail;
+    /* 0x10 */ u32 initValue;
+    /* 0x14 */ s32 minSpace;
+    /* 0x18 */ const char* name;
+} StackEntry;
+
+typedef struct
+{
+    /* 0x00 */ u32 magic; //IS64
+    /* 0x04 */ u32 pos;
+    /* 0x08 */ u8 unk_08[0x14-0x08];
+    /* 0x14 */ u32 start;
+    /* 0x18 */ u8 unk_18[0x20-0x18];
+    /* 0x20 */ u8 data[];
+} ISVDbg;
+
+typedef struct
+{
+    /* 0x00 */ u32 vromStart;
+    /* 0x04 */ u32 vromEnd;
+    /* 0x08 */ u32 romStart;
+    /* 0x0C */ u32 romEnd; 
+} DmaEntry;
 
 #endif

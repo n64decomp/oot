@@ -1,6 +1,6 @@
 .late_rodata
 glabel D_8013C888
-    .incbin "baserom.z64", 0xBB3A28, 0x4
+    .float 0.1
 
 .text
 glabel Health_UpdateData

@@ -7,8 +7,12 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014A860
-    .incbin "baserom.z64", 0xBC1A00, 0x14
+    .asciz "../loadfragment2.c"
+    .balign 4
 
 glabel D_8014A874
-    .incbin "baserom.z64", 0xBC1A14, 0x3C
+    .asciz "OVL:SPEC(%08x-%08x) REAL(%08x-%08x) OFFSET(%08x)\n"
+    .balign 4

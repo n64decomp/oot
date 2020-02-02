@@ -7,14 +7,20 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80142E80
-    .incbin "baserom.z64", 0xBBA020, 0x14
+    .asciz "../z_vr_box_draw.c"
+    .balign 4
 
 glabel D_80142E94
-    .incbin "baserom.z64", 0xBBA034, 0x14
+    .asciz "../z_vr_box_draw.c"
+    .balign 4
 
 glabel D_80142EA8
-    .incbin "baserom.z64", 0xBBA048, 0x14
+    .asciz "../z_vr_box_draw.c"
+    .balign 4
 
 glabel D_80142EBC
-    .incbin "baserom.z64", 0xBBA05C, 0x14
+    .asciz "../z_vr_box_draw.c"
+    .balign 4

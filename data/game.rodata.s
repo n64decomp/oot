@@ -7,140 +7,206 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80144D10
-    .incbin "baserom.z64", 0xBBBEB0, 0x14
+    .asciz "last_button=%04x\n"
+    .balign 4
 
 glabel D_80144D24
-    .incbin "baserom.z64", 0xBBBEC4, 0x8
+    .asciz "%08x"
+    .balign 4
 
 glabel D_80144D2C
-    .incbin "baserom.z64", 0xBBBECC, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_80144D30
-    .incbin "baserom.z64", 0xBBBED0, 0x20
+    .incbin "baserom.z64", 0xBBBED0, 0x20 
 
 glabel D_80144D50
-    .incbin "baserom.z64", 0xBBBEF0, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144D5C
-    .incbin "baserom.z64", 0xBBBEFC, 0x30
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xCC\xC7\xCB\xB4\xA4\xDE\xA4\xC7\xA4\xA2\xA4\xC8 %08x \xA5\xD0\xA5\xA4\xA5\xC8(game_alloc)\n"
+    # EUC-JP: ハイラル滅亡まであと %08x バイト(game_alloc) | % 08x bytes (game_alloc) remaining until Hailal's demise
+    .balign 4
 
 glabel D_80144D8C
-    .incbin "baserom.z64", 0xBBBF2C, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144D98
-    .incbin "baserom.z64", 0xBBBF38, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144DA4
-    .incbin "baserom.z64", 0xBBBF44, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144DB0
-    .incbin "baserom.z64", 0xBBBF50, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144DBC
-    .incbin "baserom.z64", 0xBBBF5C, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144DC8
-    .incbin "baserom.z64", 0xBBBF68, 0x20
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xB3\xCE\xCA\xDD\x20\xA5\xB5\xA5\xA4\xA5\xBA\xA1\xE1%u \xA5\xD0\xA5\xA4\xA5\xC8\n"
+    # EUC-JP: ハイラル確保 サイズ＝%u バイト  | Hyal secured size =% u bytes
+    .balign 4
 
 glabel D_80144DE8
-    .incbin "baserom.z64", 0xBBBF88, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144DF4
-    .incbin "baserom.z64", 0xBBBF94, 0x14
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xB3\xCE\xCA\xDD\xC0\xAE\xB8\xF9\n"
+    # EUC-JP: ハイラル確保成功 | Success in securing hyal
+    .balign 4
 
 glabel D_80144E08
-    .incbin "baserom.z64", 0xBBBFA8, 0x14
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xB3\xCE\xCA\xDD\xBC\xBA\xC7\xD4\n"
+    # EUC-JP: ハイラル確保失敗 | Hyal securing failure
+    .balign 4
 
 glabel D_80144E1C
-    .incbin "baserom.z64", 0xBBBFBC, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144E28
-    .incbin "baserom.z64", 0xBBBFC8, 0x14
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xB0\xEC\xBB\xFE\xB2\xF2\xCA\xFC\x21\x21\n"
+    # EUC-JP: ハイラル一時解放!! | Hyal temporary release!
+    .balign 4
 
 glabel D_80144E3C
-    .incbin "baserom.z64", 0xBBBFDC, 0x4
+    .asciz "%c"
+    .balign 4
 
 glabel D_80144E40
-    .incbin "baserom.z64", 0xBBBFE0, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_80144E48
-    .incbin "baserom.z64", 0xBBBFE8, 0x40
+    .asciz "\xA5\xE1\xA5\xE2\xA5\xEA\xA4\xAC\xC2\xAD\xA4\xEA\xA4\xDE\xA4\xBB\xA4\xF3\xA1\xA3\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xF2\xB2\xC4\xC7\xBD\xA4\xCA\xBA\xC7\xC2\xE7\xC3\xCD\xA4\xCB\xCA\xD1\xB9\xB9\xA4\xB7\xA4\xDE\xA4\xB9\n"
+    # EUC-JP: メモリが足りません。ハイラルサイズを可能な最大値に変更します | Not enough memory. Change Hyrule size to maximum possible
+    .balign 4
 
 glabel D_80144E88
-    .incbin "baserom.z64", 0xBBC028, 0x2C
+    .asciz "(hyral=%08x max=%08x free=%08x alloc=%08x)\n"
+    .balign 4
 
 glabel D_80144EB4
-    .incbin "baserom.z64", 0xBBC054, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80144EB8
-    .incbin "baserom.z64", 0xBBC058, 0x24
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xBA\xC6\xB3\xCE\xCA\xDD \xA5\xB5\xA5\xA4\xA5\xBA\xA1\xE1%u \xA5\xD0\xA5\xA4\xA5\xC8\n"
+    # EUC-JP: ハイラル再確保 サイズ＝%u バイト | Hyal re-allocation size =%u bytes
+    .balign 4
 
 glabel D_80144EDC
-    .incbin "baserom.z64", 0xBBC07C, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144EE8
-    .incbin "baserom.z64", 0xBBC088, 0x14
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xBA\xC6\xB3\xCE\xCA\xDD\xC0\xAE\xB8\xF9\n"
+    # EUC-JP: ハイラル再確保成功 | Successful Hyal Reacquisition
+    .balign 4
 
 glabel D_80144EFC
-    .incbin "baserom.z64", 0xBBC09C, 0x14
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xBA\xC6\xB3\xCE\xCA\xDD\xBC\xBA\xC7\xD4\n"
+    # EUC-JP: ハイラル再確保失敗 | Hyal reacquisition failure
+    .balign 4
 
 glabel D_80144F10
-    .incbin "baserom.z64", 0xBBC0B0, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144F1C
-    .incbin "baserom.z64", 0xBBC0BC, 0x1C
+    .asciz "game \xA5\xB3\xA5\xF3\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xBF\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: コンストラクタ開始 | Constructor start
+    .balign 4
 
 glabel D_80144F38
-    .incbin "baserom.z64", 0xBBC0D8, 0x28
+    .asciz "game_set_next_game_null \xBD\xE8\xCD\xFD\xBB\xFE\xB4\xD6 %d us\n"
+    # EUC-JP: 処理時間 | Processing time
+    .balign 4
 
 glabel D_80144F60
-    .incbin "baserom.z64", 0xBBC100, 0x20
+    .asciz "gamealloc_init \xBD\xE8\xCD\xFD\xBB\xFE\xB4\xD6 %d us\n"
+    # EUC-JP: 処理時間 | Processing time
+    .balign 4
 
 glabel D_80144F80
-    .incbin "baserom.z64", 0xBBC120, 0x18
+    .asciz "init \xBD\xE8\xCD\xFD\xBB\xFE\xB4\xD6 %d us\n"
+    # EUC-JP: 処理時間 | Processing time
+    .balign 4
 
 glabel D_80144F98
-    .incbin "baserom.z64", 0xBBC138, 0x10
+    .asciz "this->cleanup"
+    .balign 4
 
 glabel D_80144FA8
-    .incbin "baserom.z64", 0xBBC148, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80144FB4
-    .incbin "baserom.z64", 0xBBC154, 0x20
+    .asciz "\xA4\xBD\xA4\xCE\xC2\xBE\xBD\xE9\xB4\xFC\xB2\xBD \xBD\xE8\xCD\xFD\xBB\xFE\xB4\xD6 %d us\n"
+    # EUC-JP: その他初期化 処理時間 | processing time
+    .balign 4
 
 glabel D_80144FD4
-    .incbin "baserom.z64", 0xBBC174, 0x1C
+    .asciz "game \xA5\xB3\xA5\xF3\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xBF\xBD\xAA\xCE\xBB\n"
+    # EUC-JP: コンストラクタ終了 | Constructor end
+    .balign 4
 
 glabel D_80144FF0
-    .incbin "baserom.z64", 0xBBC190, 0x18
+    .asciz "game \xA5\xC7\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xBF\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: デストラクタ開始 | Destructor start
+    .balign 4
 
 glabel D_80145008
-    .incbin "baserom.z64", 0xBBC1A8, 0x10
+    .asciz "this->cleanup"
+    .balign 4
 
 glabel D_80145018
-    .incbin "baserom.z64", 0xBBC1B8, 0xC
+    .asciz "../game.c"
+    .balign 4
 
 glabel D_80145024
-    .incbin "baserom.z64", 0xBBC1C4, 0x18
+    .asciz "game \xA5\xC7\xA5\xB9\xA5\xC8\xA5\xE9\xA5\xAF\xA5\xBF\xBD\xAA\xCE\xBB\n"
+    # EUC-JP: デストラクタ終了 | Destructor end
+    .balign 4
 
 glabel D_8014503C
-    .incbin "baserom.z64", 0xBBC1DC, 0x18
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xA4\xCF\xCC\xC7\xCB\xB4\xA4\xB7\xA4\xC6\xA4\xA4\xA4\xEB\n"
+    # EUC-JP: ハイラルは滅亡している | Hyrule is gone
+    .balign 4
 
 glabel D_80145054
-    .incbin "baserom.z64", 0xBBC1F4, 0x48
+    .asciz "\xCC\xC7\xCB\xB4\xC0\xA3\xC1\xB0\xA4\xCE\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xA4\xCB\xA4\xCF %d \xA5\xD0\xA5\xA4\xA5\xC8\xA4\xCE\xCD\xBE\xCE\xCF\xA4\xE2\xA4\xCA\xA4\xA4\xA1\xCA\xCC\xC7\xCB\xB4\xA4\xDE\xA4\xC7\xA4\xA2\xA4\xC8 %d \xA5\xD0\xA5\xA4\xA5\xC8\xA1\xCB\n"
+    # EUC-JP: 滅亡寸前のハイラルには %d バイトの余力もない（滅亡まであと %d バイト）| Hailal on the verge of destruction has% d bytes of reserve (% d bytes left before destruction)
+    .balign 4
 
 glabel D_8014509C
-    .incbin "baserom.z64", 0xBBC23C, 0x1C
+    .asciz "\xA5\xCF\xA5\xA4\xA5\xE9\xA5\xEB\xA4\xCF\xCC\xC7\xCB\xB4\xA4\xB7\xA4\xC6\xA4\xB7\xA4\xDE\xA4\xC3\xA4\xBF\n"
+    # EUC-JP: ハイラルは滅亡してしまった | Hyrule has perished
+    .balign 4
 
 glabel D_801450B8
-    .incbin "baserom.z64", 0xBBC258, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_801450C0
-    .incbin "baserom.z64", 0xBBC260, 0x24
+    .asciz "game_alloc(%08x) %08x-%08x [%s:%d]\n"
+    .balign 4
 
 glabel D_801450E4
-    .incbin "baserom.z64", 0xBBC284, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_801450E8
-    .incbin "baserom.z64", 0xBBC288, 0x8
+    .float 0.833

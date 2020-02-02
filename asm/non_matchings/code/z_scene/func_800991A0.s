@@ -12,11 +12,11 @@ glabel D_8013F614
     .balign 4
 
 glabel D_8013F630
-    .incbin "baserom.z64", 0xBB67D0, 0x30
+    .asciz "\nげぼはっ！ 指定されたデータがないでええっす！"
     .balign 4
 
 glabel D_8013F660
-    .incbin "baserom.z64", 0xBB6800, 0x30
+    .asciz "\nそこで、大人の昼データを使用するでええっす！！"
     .balign 4
 
 .text

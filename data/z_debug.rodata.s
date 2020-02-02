@@ -7,20 +7,32 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8013AD40
-    .incbin "baserom.z64", 0xBB1EE0, 0x10
+    .asciz "../z_debug.c"
+    .balign 4
 
 glabel D_8013AD50
-    .incbin "baserom.z64", 0xBB1EF0, 0x4
+    .asciz "%s"
+    .balign 4
 
 glabel D_8013AD54
-    .incbin "baserom.z64", 0xBB1EF4, 0xC
+    .asciz "%s%02d%6d"
+    .balign 4
 
 glabel D_8013AD60
-    .incbin "baserom.z64", 0xBB1F00, 0x10
+    .asciz "../z_debug.c"
+    .balign 4
 
 glabel D_8013AD70
-    .incbin "baserom.z64", 0xBB1F10, 0x10
+    .asciz "../z_debug.c"
+    .balign 4
 
 glabel jtbl_8013AD80
-    .incbin "baserom.z64", 0xBB1F20, 0x20
+    .word L80063A18
+    .word L80063A18
+    .word L80063A18
+    .word L80063A18
+    .word L80063A18
+    .word L80063A18

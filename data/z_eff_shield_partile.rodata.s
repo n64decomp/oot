@@ -7,23 +7,31 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_80135450
-    .incbin "baserom.z64", 0xBAC5F0, 0x8
+    .asciz "\x1b[31m"
+    .balign 4
 
 glabel D_80135458
-    .incbin "baserom.z64", 0xBAC5F8, 0x3C
+    .asciz "EffectShieldParticle_ct():\xA5\xD1\xA1\xBC\xA5\xC6\xA5\xA3\xA5\xAF\xA5\xEB\xBF\xF4\xA4\xAC\xA5\xAA\xA1\xBC\xA5\xD0\xA4\xB7\xA4\xC6\xA4\xDE\xA4\xB9\xA1\xA3\n"
+    # EUC-JP: パーティクル数がオーバしてます。 | The number of particles is over
+    .balign 4
 
 glabel D_80135494
-    .incbin "baserom.z64", 0xBAC634, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_80135498
-    .incbin "baserom.z64", 0xBAC638, 0x1C
+    .asciz "../z_eff_shield_particle.c"
+    .balign 4   
 
 glabel D_801354B4
-    .incbin "baserom.z64", 0xBAC654, 0x1C
+    .asciz "../z_eff_shield_particle.c"
+    .balign 4
 
 glabel D_801354D0
-    .incbin "baserom.z64", 0xBAC670, 0x4
+    .float 65534
 
 glabel D_801354D4
-    .incbin "baserom.z64", 0xBAC674, 0xC
+    .float 0.02

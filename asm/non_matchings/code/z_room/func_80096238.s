@@ -1,24 +1,31 @@
 .rdata
 glabel D_8013EF8C
-    .incbin "baserom.z64", 0xBB612C, 0x18
+    .asciz "JPEGデータを展開します\n"
+    .balign 4
 
 glabel D_8013EFA4
-    .incbin "baserom.z64", 0xBB6144, 0x1C
+    .asciz "JPEGデータアドレス %08x\n"
+    .balign 4
 
 glabel D_8013EFC0
-    .incbin "baserom.z64", 0xBB6160, 0x2C
+    .asciz "ワークバッファアドレス（Ｚバッファ）%08x\n"
+    .balign 4
 
 glabel D_8013EFEC
-    .incbin "baserom.z64", 0xBB618C, 0x24
+    .asciz "成功…だと思う。 time = %6.3f ms \n"
+    .balign 4
 
 glabel D_8013F010
-    .incbin "baserom.z64", 0xBB61B0, 0x30
+    .asciz "ワークバッファから元のアドレスに書き戻します。\n"
+    .balign 4
 
 glabel D_8013F040
-    .incbin "baserom.z64", 0xBB61E0, 0x40
+    .asciz "元のバッファのサイズが150キロバイト無いと暴走するでしょう。\n"
+    .balign 4
 
 glabel D_8013F080
-    .incbin "baserom.z64", 0xBB6220, 0x10
+    .asciz "失敗！なんで〜\n"
+    .balign 4
 
 .text
 glabel func_80096238
@@ -44,12 +51,12 @@ glabel func_80096238
 /* B0D424 80096284 0C001A78 */  jal   osGetTime
 /* B0D428 80096288 00000000 */   nop   
 /* B0D42C 8009628C 3C058017 */  lui   $a1, %hi(D_801759C0) # $a1, 0x8017
-/* B0D430 80096290 3C06801A */  lui   $a2, %hi(D_8019B1C0) # $a2, 0x801a
+/* B0D430 80096290 3C06801A */  lui   $a2, %hi(gGfxSPTaskOutputBuffer) # $a2, 0x801a
 /* B0D434 80096294 3C070001 */  lui   $a3, (0x00018000 >> 16) # lui $a3, 1
 /* B0D438 80096298 AFA20018 */  sw    $v0, 0x18($sp)
 /* B0D43C 8009629C AFA3001C */  sw    $v1, 0x1c($sp)
 /* B0D440 800962A0 34E78000 */  ori   $a3, (0x00018000 & 0xFFFF) # ori $a3, $a3, 0x8000
-/* B0D444 800962A4 24C6B1C0 */  addiu $a2, %lo(D_8019B1C0) # addiu $a2, $a2, -0x4e40
+/* B0D444 800962A4 24C6B1C0 */  addiu $a2, %lo(gGfxSPTaskOutputBuffer) # addiu $a2, $a2, -0x4e40
 /* B0D448 800962A8 24A559C0 */  addiu $a1, %lo(D_801759C0) # addiu $a1, $a1, 0x59c0
 /* B0D44C 800962AC 0C01B906 */  jal   func_8006E418
 /* B0D450 800962B0 8FA40020 */   lw    $a0, 0x20($sp)

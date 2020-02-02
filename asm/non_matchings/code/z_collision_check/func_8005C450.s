@@ -1,0 +1,24 @@
+glabel func_8005C450
+/* AD35F0 8005C450 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* AD35F4 8005C454 AFBF0014 */  sw    $ra, 0x14($sp)
+/* AD35F8 8005C458 AFA40018 */  sw    $a0, 0x18($sp)
+/* AD35FC 8005C45C AFA5001C */  sw    $a1, 0x1c($sp)
+/* AD3600 8005C460 0C016DBB */  jal   func_8005B6EC
+/* AD3604 8005C464 AFA70024 */   sw    $a3, 0x24($sp)
+/* AD3608 8005C468 8FA5001C */  lw    $a1, 0x1c($sp)
+/* AD360C 8005C46C 8FA60024 */  lw    $a2, 0x24($sp)
+/* AD3610 8005C470 8FA40018 */  lw    $a0, 0x18($sp)
+/* AD3614 8005C474 24A50018 */  addiu $a1, $a1, 0x18
+/* AD3618 8005C478 0C016E4F */  jal   func_8005B93C
+/* AD361C 8005C47C 24C60008 */   addiu $a2, $a2, 8
+/* AD3620 8005C480 8FA5001C */  lw    $a1, 0x1c($sp)
+/* AD3624 8005C484 8FA60024 */  lw    $a2, 0x24($sp)
+/* AD3628 8005C488 8FA40018 */  lw    $a0, 0x18($sp)
+/* AD362C 8005C48C 24A50040 */  addiu $a1, $a1, 0x40
+/* AD3630 8005C490 0C0170CA */  jal   func_8005C328
+/* AD3634 8005C494 24C60020 */   addiu $a2, $a2, 0x20
+/* AD3638 8005C498 8FBF0014 */  lw    $ra, 0x14($sp)
+/* AD363C 8005C49C 27BD0018 */  addiu $sp, $sp, 0x18
+/* AD3640 8005C4A0 24020001 */  li    $v0, 1
+/* AD3644 8005C4A4 03E00008 */  jr    $ra
+/* AD3648 8005C4A8 00000000 */   nop

@@ -257,40 +257,51 @@ glabel func_800A8484
 /* B1F6E0 800A8540 8C380FB8 */  lw    $t8, %lo(jtbl_80140FB8)($at)
 /* B1F6E4 800A8544 03000008 */  jr    $t8
 /* B1F6E8 800A8548 00000000 */   nop   
+glabel L800A854C
 /* B1F6EC 800A854C 0002C840 */  sll   $t9, $v0, 1
 /* B1F6F0 800A8550 3C0C8013 */  lui   $t4, %hi(D_8012A670)
 /* B1F6F4 800A8554 01996021 */  addu  $t4, $t4, $t9
 /* B1F6F8 800A8558 858CA670 */  lh    $t4, %lo(D_8012A670)($t4)
 /* B1F6FC 800A855C 1000002C */  b     .L800A8610
 /* B1F700 800A8560 AE2C0000 */   sw    $t4, ($s1)
+glabel L800A8564
 /* B1F704 800A8564 1000002A */  b     .L800A8610
 /* B1F708 800A8568 AE200000 */   sw    $zero, ($s1)
+glabel L800A856C
 /* B1F70C 800A856C 240D0004 */  li    $t5, 4
 /* B1F710 800A8570 10000027 */  b     .L800A8610
 /* B1F714 800A8574 AE2D0000 */   sw    $t5, ($s1)
+glabel L800A8578
 /* B1F718 800A8578 240E0028 */  li    $t6, 40
 /* B1F71C 800A857C 10000024 */  b     .L800A8610
 /* B1F720 800A8580 AE2E0000 */   sw    $t6, ($s1)
+glabel L800A8584
 /* B1F724 800A8584 240F0169 */  li    $t7, 361
 /* B1F728 800A8588 10000021 */  b     .L800A8610
 /* B1F72C 800A858C AE2F0000 */   sw    $t7, ($s1)
+glabel L800A8590
 /* B1F730 800A8590 24180165 */  li    $t8, 357
 /* B1F734 800A8594 1000001E */  b     .L800A8610
 /* B1F738 800A8598 AE380000 */   sw    $t8, ($s1)
+glabel L800A859C
 /* B1F73C 800A859C 24190010 */  li    $t9, 16
 /* B1F740 800A85A0 1000001B */  b     .L800A8610
 /* B1F744 800A85A4 AE390000 */   sw    $t9, ($s1)
+glabel L800A85A8
 /* B1F748 800A85A8 240C0082 */  li    $t4, 130
 /* B1F74C 800A85AC 10000018 */  b     .L800A8610
 /* B1F750 800A85B0 AE2C0000 */   sw    $t4, ($s1)
+glabel L800A85B4
 /* B1F754 800A85B4 240D0037 */  li    $t5, 55
 /* B1F758 800A85B8 10000015 */  b     .L800A8610
 /* B1F75C 800A85BC AE2D0000 */   sw    $t5, ($s1)
+glabel L800A85C0
 /* B1F760 800A85C0 240E041B */  li    $t6, 1051
 .L800A85C4:
 /* B1F764 800A85C4 10000012 */  b     .L800A8610
 /* B1F768 800A85C8 AE2E0000 */   sw    $t6, ($s1)
 .L800A85CC:
+glabel L800A85CC
 /* B1F76C 800A85CC 24010034 */  li    $at, 52
 .L800A85D0:
 /* B1F770 800A85D0 1041000E */  beq   $v0, $at, .L800A860C
@@ -559,7 +570,7 @@ glabel func_800A88D4
 /* B1FB28 800A8988 24061450 */  li    $a2, 5200
 /* B1FB2C 800A898C 24070001 */  li    $a3, 1
 /* B1FB30 800A8990 A7A2001A */  sh    $v0, 0x1a($sp)
-/* B1FB34 800A8994 0C02A7A8 */  jal   func_800A9EA0
+/* B1FB34 800A8994 0C02A7A8 */  jal   Sram_ReadWrite
 /* B1FB38 800A8998 01012021 */   addu  $a0, $t0, $at
 /* B1FB3C 800A899C 3C058016 */  lui   $a1, %hi(gSaveContext) # $a1, 0x8016
 /* B1FB40 800A89A0 24A5E660 */  addiu $a1, %lo(gSaveContext) # addiu $a1, $a1, -0x19a0
@@ -590,7 +601,7 @@ glabel func_800A88D4
 /* B1FB9C 800A89FC 9508A4E6 */  lhu   $t0, %lo(D_8012A4E6)($t0)
 /* B1FBA0 800A8A00 24061450 */  li    $a2, 5200
 /* B1FBA4 800A8A04 24070001 */  li    $a3, 1
-/* B1FBA8 800A8A08 0C02A7A8 */  jal   func_800A9EA0
+/* B1FBA8 800A8A08 0C02A7A8 */  jal   Sram_ReadWrite
 /* B1FBAC 800A8A0C 01012021 */   addu  $a0, $t0, $at
 /* B1FBB0 800A8A10 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B1FBB4 800A8A14 27BD0020 */  addiu $sp, $sp, 0x20
@@ -622,7 +633,7 @@ glabel func_800A8A20
 /* B1FC14 800A8A74 3C040800 */  lui   $a0, 0x800
 /* B1FC18 800A8A78 34068000 */  li    $a2, 32768
 /* B1FC1C 800A8A7C 00003825 */  move  $a3, $zero
-/* B1FC20 800A8A80 0C02A7A8 */  jal   func_800A9EA0
+/* B1FC20 800A8A80 0C02A7A8 */  jal   Sram_ReadWrite
 /* B1FC24 800A8A84 8DE50000 */   lw    $a1, ($t7)
 /* B1FC28 800A8A88 3C148016 */  lui   $s4, %hi(gSaveContext) # $s4, 0x8016
 /* B1FC2C 800A8A8C 2694E660 */  addiu $s4, %lo(gSaveContext) # addiu $s4, $s4, -0x19a0
@@ -837,7 +848,7 @@ glabel func_800A8A20
 /* B1FF54 800A8DB4 95500006 */  lhu   $s0, 6($t2)
 /* B1FF58 800A8DB8 24061450 */  li    $a2, 5200
 /* B1FF5C 800A8DBC 24070001 */  li    $a3, 1
-/* B1FF60 800A8DC0 0C02A7A8 */  jal   func_800A9EA0
+/* B1FF60 800A8DC0 0C02A7A8 */  jal   Sram_ReadWrite
 /* B1FF64 800A8DC4 02012021 */   addu  $a0, $s0, $at
 /* B1FF68 800A8DC8 928B001F */  lbu   $t3, 0x1f($s4)
 /* B1FF6C 800A8DCC 928C0020 */  lbu   $t4, 0x20($s4)
@@ -865,7 +876,7 @@ glabel func_800A8A20
 /* B1FFC0 800A8E20 95D00000 */  lhu   $s0, ($t6)
 /* B1FFC4 800A8E24 24061450 */  li    $a2, 5200
 /* B1FFC8 800A8E28 24070001 */  li    $a3, 1
-/* B1FFCC 800A8E2C 0C02A7A8 */  jal   func_800A9EA0
+/* B1FFCC 800A8E2C 0C02A7A8 */  jal   Sram_ReadWrite
 /* B1FFD0 800A8E30 02012021 */   addu  $a0, $s0, $at
 /* B1FFD4 800A8E34 3C048014 */  lui   $a0, %hi(D_80140C14) # $a0, 0x8014
 /* B1FFD8 800A8E38 24840C14 */  addiu $a0, %lo(D_80140C14) # addiu $a0, $a0, 0xc14
@@ -895,7 +906,7 @@ glabel func_800A8A20
 /* B20030 800A8E90 3C040800 */  lui   $a0, 0x800
 /* B20034 800A8E94 34068000 */  li    $a2, 32768
 /* B20038 800A8E98 00003825 */  move  $a3, $zero
-/* B2003C 800A8E9C 0C02A7A8 */  jal   func_800A9EA0
+/* B2003C 800A8E9C 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20040 800A8EA0 8D050000 */   lw    $a1, ($t0)
 /* B20044 800A8EA4 97A90066 */  lhu   $t1, 0x66($sp)
 /* B20048 800A8EA8 3C048014 */  lui   $a0, %hi(D_80140C58) # $a0, 0x8014
@@ -1287,7 +1298,7 @@ glabel func_800A9258
 /* B20634 800A9494 3C040800 */  lui   $a0, 0x800
 /* B20638 800A9498 34068000 */  li    $a2, 32768
 /* B2063C 800A949C 24070001 */  li    $a3, 1
-/* B20640 800A94A0 0C02A7A8 */  jal   func_800A9EA0
+/* B20640 800A94A0 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20644 800A94A4 8DC50000 */   lw    $a1, ($t6)
 /* B20648 800A94A8 3C048014 */  lui   $a0, %hi(D_80140D8C) # $a0, 0x8014
 /* B2064C 800A94AC 0C00084C */  jal   osSyncPrintf
@@ -1457,7 +1468,7 @@ glabel func_800A96D0
 /* B208D4 800A9734 24A5E660 */  addiu $a1, %lo(gSaveContext) # addiu $a1, $a1, -0x19a0
 /* B208D8 800A9738 02012021 */  addu  $a0, $s0, $at
 /* B208DC 800A973C 24061450 */  li    $a2, 5200
-/* B208E0 800A9740 0C02A7A8 */  jal   func_800A9EA0
+/* B208E0 800A9740 0C02A7A8 */  jal   Sram_ReadWrite
 /* B208E4 800A9744 24070001 */   li    $a3, 1
 /* B208E8 800A9748 8FA90020 */  lw    $t1, 0x20($sp)
 /* B208EC 800A974C 8FAC002C */  lw    $t4, 0x2c($sp)
@@ -1491,7 +1502,7 @@ glabel func_800A96D0
 /* B2095C 800A97BC 24A5E660 */  addiu $a1, %lo(gSaveContext) # addiu $a1, $a1, -0x19a0
 /* B20960 800A97C0 02012021 */  addu  $a0, $s0, $at
 /* B20964 800A97C4 24061450 */  li    $a2, 5200
-/* B20968 800A97C8 0C02A7A8 */  jal   func_800A9EA0
+/* B20968 800A97C8 0C02A7A8 */  jal   Sram_ReadWrite
 /* B2096C 800A97CC 24070001 */   li    $a3, 1
 /* B20970 800A97D0 3C048014 */  lui   $a0, %hi(D_80140E2C) # $a0, 0x8014
 /* B20974 800A97D4 0C00084C */  jal   osSyncPrintf
@@ -1562,7 +1573,7 @@ glabel func_800A97F0
 /* B20A70 800A98D0 3C040800 */  lui   $a0, 0x800
 /* B20A74 800A98D4 8E450000 */  lw    $a1, ($s2)
 /* B20A78 800A98D8 34068000 */  li    $a2, 32768
-/* B20A7C 800A98DC 0C02A7A8 */  jal   func_800A9EA0
+/* B20A7C 800A98DC 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20A80 800A98E0 24070001 */   li    $a3, 1
 /* B20A84 800A98E4 86224A5E */  lh    $v0, 0x4a5e($s1)
 /* B20A88 800A98E8 8E4C0000 */  lw    $t4, ($s2)
@@ -1683,7 +1694,7 @@ glabel func_800A9A9C
 /* B20C4C 800A9AAC 3C040800 */  lui   $a0, 0x800
 /* B20C50 800A9AB0 24060010 */  li    $a2, 16
 /* B20C54 800A9AB4 24070001 */  li    $a3, 1
-/* B20C58 800A9AB8 0C02A7A8 */  jal   func_800A9EA0
+/* B20C58 800A9AB8 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20C5C 800A9ABC 8DC50000 */   lw    $a1, ($t6)
 /* B20C60 800A9AC0 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B20C64 800A9AC4 27BD0018 */  addiu $sp, $sp, 0x18
@@ -1706,7 +1717,7 @@ glabel func_800A9AD0
 /* B20CA0 800A9B00 3C040800 */  lui   $a0, 0x800
 /* B20CA4 800A9B04 8E250000 */  lw    $a1, ($s1)
 /* B20CA8 800A9B08 34068000 */  li    $a2, 32768
-/* B20CAC 800A9B0C 0C02A7A8 */  jal   func_800A9EA0
+/* B20CAC 800A9B0C 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20CB0 800A9B10 00003825 */   move  $a3, $zero
 /* B20CB4 800A9B14 3C148014 */  lui   $s4, %hi(D_80140EC4) # $s4, 0x8014
 /* B20CB8 800A9B18 3C138016 */  lui   $s3, %hi(gSaveContext) # $s3, 0x8016
@@ -1785,7 +1796,7 @@ glabel func_800A9AD0
 /* B20DCC 800A9C2C 3C040800 */  lui   $a0, 0x800
 /* B20DD0 800A9C30 8E250000 */  lw    $a1, ($s1)
 /* B20DD4 800A9C34 34068000 */  li    $a2, 32768
-/* B20DD8 800A9C38 0C02A7A8 */  jal   func_800A9EA0
+/* B20DD8 800A9C38 0C02A7A8 */  jal   Sram_ReadWrite
 /* B20DDC 800A9C3C 24070001 */   li    $a3, 1
 /* B20DE0 800A9C40 3C048014 */  lui   $a0, %hi(D_80140EE0) # $a0, 0x8014
 /* B20DE4 800A9C44 0C00084C */  jal   osSyncPrintf

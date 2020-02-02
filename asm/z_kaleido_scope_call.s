@@ -56,13 +56,13 @@ glabel func_800BC050
 /* B331FC 800BC05C 3C048014 */  lui   $a0, %hi(D_80143F98) # $a0, 0x8014
 /* B33200 800BC060 0C00084C */  jal   osSyncPrintf
 /* B33204 800BC064 24843F98 */   addiu $a0, %lo(D_80143F98) # addiu $a0, $a0, 0x3f98
-/* B33208 800BC068 3C048082 */  lui   $a0, %hi(D_80826CB4) # $a0, 0x8082
-/* B3320C 800BC06C 24846CB4 */  addiu $a0, %lo(D_80826CB4) # addiu $a0, $a0, 0x6cb4
+/* B33208 800BC068 3C048082 */  lui   $a0, %hi(func_80826CB4) # $a0, 0x8082
+/* B3320C 800BC06C 24846CB4 */  addiu $a0, %lo(func_80826CB4) # addiu $a0, $a0, 0x6cb4
 /* B33210 800BC070 0C02EFBB */  jal   func_800BBEEC
 /* B33214 800BC074 AFA4001C */   sw    $a0, 0x1c($sp)
-/* B33218 800BC078 3C048082 */  lui   $a0, %hi(D_808262B8) # $a0, 0x8082
+/* B33218 800BC078 3C048082 */  lui   $a0, %hi(func_808262B8) # $a0, 0x8082
 /* B3321C 800BC07C 3C018016 */  lui   $at, %hi(D_80161390) # $at, 0x8016
-/* B33220 800BC080 248462B8 */  addiu $a0, %lo(D_808262B8) # addiu $a0, $a0, 0x62b8
+/* B33220 800BC080 248462B8 */  addiu $a0, %lo(func_808262B8) # addiu $a0, $a0, 0x62b8
 /* B33224 800BC084 AC221390 */  sw    $v0, %lo(D_80161390)($at)
 /* B33228 800BC088 0C02EFBB */  jal   func_800BBEEC
 /* B3322C 800BC08C AFA40018 */   sw    $a0, 0x18($sp)

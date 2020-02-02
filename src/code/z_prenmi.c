@@ -1,5 +1,6 @@
 #include <ultra64.h>
 #include <global.h>
+#include <vt.h>
 
 void func_80092320(PreNMIContext* prenmiCtx)
 {
@@ -10,7 +11,7 @@ void func_80092320(PreNMIContext* prenmiCtx)
 
 void PreNMI_Move(PreNMIContext* prenmiCtx)
 {
-    osSyncPrintf("\x1B[43;30mprenmi_move\n\x1B[m");
+    osSyncPrintf(VT_COL(YELLOW, BLACK) "prenmi_move\n" VT_RST);
 
     // Strings existing only in rodata
     ("../z_prenmi.c");
@@ -31,7 +32,7 @@ void PreNMI_Draw(PreNMIContext* prenmiCtx)
     GraphicsContext* gfxCtx = prenmiCtx->gfxCtx;
     Gfx* gfxArr[5];
 
-    osSyncPrintf("\x1B[43;30mprenmi_draw\n\x1B[m");
+    osSyncPrintf(VT_COL(YELLOW, BLACK) "prenmi_draw\n" VT_RST);
 
     func_800C6AC4(gfxArr, gfxCtx, "../z_prenmi.c", 96);
 

@@ -201,10 +201,10 @@ glabel func_800ACAF8
 /* B23F54 800ACDB4 8E0E0074 */  lw    $t6, 0x74($s0)
 .L800ACDB8:
 /* B23F58 800ACDB8 8E070070 */  lw    $a3, 0x70($s0)
-/* B23F5C 800ACDBC 3C068000 */  lui   $a2, %hi(D_80000300) # $a2, 0x8000
+/* B23F5C 800ACDBC 3C068000 */  lui   $a2, %hi(osTvType) # $a2, 0x8000
 /* B23F60 800ACDC0 AFAE0010 */  sw    $t6, 0x10($sp)
 /* B23F64 800ACDC4 8E0F0078 */  lw    $t7, 0x78($s0)
-/* B23F68 800ACDC8 8CC60300 */  lw    $a2, %lo(D_80000300)($a2)
+/* B23F68 800ACDC8 8CC60300 */  lw    $a2, %lo(osTvType)($a2)
 /* B23F6C 800ACDCC 02002025 */  move  $a0, $s0
 /* B23F70 800ACDD0 AFAF0014 */  sw    $t7, 0x14($sp)
 /* B23F74 800ACDD4 8E18007C */  lw    $t8, 0x7c($s0)

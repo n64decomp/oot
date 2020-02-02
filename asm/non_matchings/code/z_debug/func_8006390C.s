@@ -72,6 +72,7 @@ glabel func_8006390C
 /* ADABAC 80063A0C 8C2DAD80 */  lw    $t5, %lo(jtbl_8013AD80)($at)
 /* ADABB0 80063A10 01A00008 */  jr    $t5
 /* ADABB4 80063A14 00000000 */   nop   
+glabel L80063A18
 /* ADABB8 80063A18 8D0E000C */  lw    $t6, 0xc($t0)
 /* ADABBC 80063A1C 240F0010 */  li    $t7, 16
 /* ADABC0 80063A20 54EE0010 */  bnel  $a3, $t6, .L80063A64

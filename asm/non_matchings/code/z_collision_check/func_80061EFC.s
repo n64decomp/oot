@@ -16,7 +16,7 @@ glabel func_80061EFC
 /* AD90D0 80061F30 AFBF0014 */  sw    $ra, 0x14($sp)
 /* AD90D4 80061F34 AFA40018 */  sw    $a0, 0x18($sp)
 /* AD90D8 80061F38 AFA60020 */  sw    $a2, 0x20($sp)
-/* AD90DC 80061F3C 0C016C80 */  jal   func_8005B200
+/* AD90DC 80061F3C 0C016C80 */  jal   CollisionBtlTbl_Get
 /* AD90E0 80061F40 00A02025 */   move  $a0, $a1
 /* AD90E4 80061F44 8FA40018 */  lw    $a0, 0x18($sp)
 /* AD90E8 80061F48 00402825 */  move  $a1, $v0

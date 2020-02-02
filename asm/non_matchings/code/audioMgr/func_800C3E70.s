@@ -15,9 +15,9 @@ glabel func_800C3E70
 /* B3B044 800C3EA4 24844CBC */   addiu $a0, %lo(D_80144CBC) # addiu $a0, $a0, 0x4cbc
 /* B3B048 800C3EA8 0C03DC3E */  jal   func_800F70F8
 /* B3B04C 800C3EAC 00000000 */   nop   
-/* B3B050 800C3EB0 3C048000 */  lui   $a0, %hi(func_80000F68) # $a0, 0x8000
+/* B3B050 800C3EB0 3C048000 */  lui   $a0, %hi(DmaMgr_DmaCallback0) # $a0, 0x8000
 /* B3B054 800C3EB4 0C038C07 */  jal   func_800E301C
-/* B3B058 800C3EB8 24840F68 */   addiu $a0, %lo(func_80000F68) # addiu $a0, $a0, 0xf68
+/* B3B058 800C3EB8 24840F68 */   addiu $a0, %lo(DmaMgr_DmaCallback0) # addiu $a0, $a0, 0xf68
 /* B3B05C 800C3EBC 0C03DC47 */  jal   func_800F711C
 /* B3B060 800C3EC0 00000000 */   nop   
 /* B3B064 800C3EC4 260400C8 */  addiu $a0, $s0, 0xc8

@@ -1,6 +1,7 @@
 #include <ultra64.h>
 #include <global.h>
 #include <macros.h>
+#include <vt.h>
 
 void func_80095AB4(GlobalContext* globalCtx, Room* room, u32 flags);
 void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags);
@@ -155,7 +156,7 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         if (-temp_f0 < sp84.z)
         {
             temp_f2 = sp84.z - temp_f0;
-            if (temp_f2 < globalCtx->lightCtx.unkC)
+            if (temp_f2 < globalCtx->lightCtx.unk_0C)
             {
                 spA4->unk_00 = polygonDlist;
                 spA4->unk_04 = temp_f2;
@@ -269,7 +270,7 @@ s32 func_80096238(void* data)
         osSyncPrintf("ワークバッファアドレス（Ｚバッファ）%08x\n", gZBuffer);
 
         timeBefore = osGetTime();
-        if (!func_8006E418(data, gZBuffer, D_8019B1C0, sizeof(D_8019B1C0)))
+        if (!func_8006E418(data, gZBuffer, gGfxSPTaskOutputBuffer, sizeof(gGfxSPTaskOutputBuffer)))
         {
             timeAfter = osGetTime();
             time = ((timeAfter - timeBefore) * 64) / 3000;
@@ -285,8 +286,8 @@ s32 func_80096238(void* data)
         }
         else
         {
-            // Translates to: "FAILURE! WHY IS IT U+301C"
-            osSyncPrintf("失敗！なんでU+301C\n");
+            // Translates to: "FAILURE! WHY IS IT 〜"
+            osSyncPrintf("失敗！なんで〜\n");
         }
     }
 
@@ -479,7 +480,7 @@ BgImage* func_80096A74(PolygonType1* polygon1, GlobalContext* globalCtx)
     }
 
     // Translates to: "z_room.c: DATA CONSISTENT WITH CAMERA ID DOES NOT EXIST camid=%d"
-    osSyncPrintf("\x1B[41;37mz_room.c:カメラＩＤに一致するデータが存在しません camid=%d\n\x1B[m", camId);
+    osSyncPrintf(VT_COL(RED, WHITE) "z_room.c:カメラＩＤに一致するデータが存在しません camid=%d\n" VT_RST, camId);
     func_80002E50("../z_room.c", 726);
 
     return NULL;
@@ -630,7 +631,7 @@ u32 func_80096FE8(GlobalContext* globalCtx, RoomContext* roomCtx)
         }
     }
 
-    osSyncPrintf("\x1B[33m");
+    osSyncPrintf(VT_FGCOL(YELLOW));
     // Translates to: "ROOM BUFFER SIZE=%08x(%5.1fK)"
     osSyncPrintf("部屋バッファサイズ=%08x(%5.1fK)\n", maxRoomSize, (f64)(maxRoomSize * 0.0009765625f));
     roomCtx->bufPtrs[0] = Game_Alloc(globalCtx, maxRoomSize, "../z_room.c", 946);
@@ -639,7 +640,7 @@ u32 func_80096FE8(GlobalContext* globalCtx, RoomContext* roomCtx)
     roomCtx->bufPtrs[1] = (void*)((s32)roomCtx->bufPtrs[0] + maxRoomSize);
     // Translates to: "ROOM BUFFER END POINTER=%08x"
     osSyncPrintf("部屋バッファ終了ポインタ=%08x\n", roomCtx->bufPtrs[1]);
-    osSyncPrintf("\x1B[m");
+    osSyncPrintf(VT_RST);
     roomCtx->unk_30 = 0;
     roomCtx->status = 0;
 
@@ -677,7 +678,7 @@ s32 func_8009728C(GlobalContext* globalCtx, RoomContext* roomCtx, s32 roomNum)
         if (0) ; // Also necessary to match
 
         osCreateMesgQueue(&roomCtx->loadQueue, &roomCtx->loadMsg, 1);
-        func_80001A5C(&roomCtx->getfile, roomCtx->unk_34, globalCtx->roomList[roomNum].vromStart, size,
+        DmaMgr_SendRequest2(&roomCtx->dmaRequest, roomCtx->unk_34, globalCtx->roomList[roomNum].vromStart, size,
                       0, &roomCtx->loadQueue, 0, "../z_room.c", 1036);
         roomCtx->unk_30 ^= 1;
 

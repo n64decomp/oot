@@ -1,6 +1,6 @@
 #include <ultra64.h>
 #include <global.h>
-
+#include <vt.h>
 
 //data
 const char* sExceptionNames[] =
@@ -75,7 +75,7 @@ void Fault_ProcessClientContext(FaultClientContext* ctx)
     else
     {
         OSThread thread;
-        osCreateThread(&thread, 2, &Fault_ClientProcessThread, sFaultStructPtr->currClientThreadSp, 0x7E);
+        osCreateThread(&thread, 2, &Fault_ClientProcessThread, ctx, sFaultStructPtr->currClientThreadSp, 0x7E);
         osStartThread(&thread);
         t = &thread;
     }
@@ -125,7 +125,7 @@ void Fault_AddClient(FaultClient *client, void* callback, void* param0, void* pa
 {
     bool alreadyExist = false;
     OSIntMask mask = osSetIntMask(1);
-    FaultClient* iter = sFaultStructPtr->lastClient;
+    FaultClient* iter = sFaultStructPtr->clients;
     while (iter)
     {
         if (iter == client)
@@ -133,67 +133,106 @@ void Fault_AddClient(FaultClient *client, void* callback, void* param0, void* pa
             alreadyExist = true;
             goto end;
         }
-        iter = iter->prevClient;
+        iter = iter->next;
     }
 
     client->callback = callback;
     client->param1 = param0;
     client->param2 = param1;
-    client->prevClient = sFaultStructPtr->lastClient;
-    sFaultStructPtr->lastClient = client;
+    client->next = sFaultStructPtr->clients;
+    sFaultStructPtr->clients = client;
 
 end:
     osSetIntMask(mask);
     if (alreadyExist)
-        osSyncPrintf("\x1b[41;37mfault_AddClient: %08x は既にリスト中にある\n\x1b[m", client);
+        osSyncPrintf(VT_COL(RED, WHITE) "fault_AddClient: %08x は既にリスト中にある\n" VT_RST, client);
 }
 #else
 #pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_AddClient.s")
 #endif
 
-#ifdef NON_MATCHING
-void Fault_RemoveClient(FaultClient* client)
-{
-    FaultClient* iter = sFaultStructPtr->lastClient;
-    bool alreadyExist = false;
-    OSIntMask mask = osSetIntMask(1);
-    FaultClient* lastIter = NULL;
+void Fault_RemoveClient(FaultClient* client) {
+    FaultClient* iter;
+    FaultClient* lastIter;
+    OSIntMask mask;
+    u32 listIsEmpty;
 
-    while (iter)
-    {
-        if (iter == client)
-        {
-            if (!lastIter)
-            {
-                if (sFaultStructPtr->lastClient)
-                    sFaultStructPtr->lastClient = client->prevClient;
-                else
-                    alreadyExist = true;
+    iter = sFaultStructPtr->clients;
+    listIsEmpty = 0;
+    lastIter = NULL;
+
+    mask = osSetIntMask(1);
+
+    while (iter) {
+        if (iter == client) {
+            if (lastIter) {
+                lastIter->next = client->next;
+            } else {
+                sFaultStructPtr->clients = client;
+                if (sFaultStructPtr->clients) {
+                    sFaultStructPtr->clients = client->next;
+                } else {
+                    listIsEmpty = 1;
+                }
             }
-            else
-                lastIter->prevClient = client->prevClient;
+            break;
         }
 
         lastIter = iter;
-        iter = iter->prevClient;
+        iter = iter->next;
     }
 
     osSetIntMask(mask);
-    if (alreadyExist)
-        osSyncPrintf("\x1b[41;37mfault_RemoveClient: %08x リスト不整合です\n\x1b[m", client);
+
+    if (listIsEmpty)
+        osSyncPrintf(VT_COL(RED, WHITE) "fault_RemoveClient: %08x リスト不整合です\n" VT_RST, client);
 }
-#else
-#pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_RemoveClient.s")
-#endif
+
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_AddAddrConvClient.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_RemoveAddrConvClient.s")
+void Fault_RemoveAddrConvClient(FaultAddrConvClient* client) {
+    FaultAddrConvClient* iter;
+    FaultAddrConvClient* lastIter;
+    OSIntMask mask;
+    u32 listIsEmpty;
+
+    iter = sFaultStructPtr->addrConvClients;
+    listIsEmpty = 0;
+    lastIter = NULL;
+
+    mask = osSetIntMask(1);
+
+    while (iter) {
+        if (iter == client) {
+            if (lastIter) {
+                lastIter->next = client->next;
+            } else {
+                sFaultStructPtr->addrConvClients = client;
+                if (sFaultStructPtr->addrConvClients) {
+                    sFaultStructPtr->addrConvClients = client->next;
+                } else {
+                    listIsEmpty = 1;
+                }
+            }
+            break;
+        }
+
+        lastIter = iter;
+        iter = iter->next;
+    }
+
+    osSetIntMask(mask);
+
+    if (listIsEmpty) {
+        osSyncPrintf(VT_COL(RED, WHITE) "fault_AddressConverterRemoveClient: %08x は既にリスト中にある\n" VT_RST, client);
+    }
+}
 
 u32 Fault_ConvertAddress(FaultAddrConvClient* client)
 {
     u32 ret;
-    FaultAddrConvClient* iter = sFaultStructPtr->lastAddrConvClient;
+    FaultAddrConvClient* iter = sFaultStructPtr->addrConvClients;
 
     while(iter)
     {
@@ -205,7 +244,7 @@ u32 Fault_ConvertAddress(FaultAddrConvClient* client)
             else if (ret)
                 return ret;
         }
-        iter = iter->prevClient;
+        iter = iter->next;
     }
 
     return 0;
@@ -242,9 +281,9 @@ bool Fault_WaitForInputImpl()
             Fault_UpdatePadImpl();
             kDown = curInput->padPressed;
             if (kDown == 0x20)
-                sFaultStructPtr->unk_7CF = !sFaultStructPtr->unk_7CF;
+                sFaultStructPtr->faultActive = !sFaultStructPtr->faultActive;
 
-            if (!sFaultStructPtr->unk_7CF)
+            if (!sFaultStructPtr->faultActive)
                 break;
 
             if (count-- < 1)
@@ -491,51 +530,43 @@ void Fault_Wait5Seconds(void)
         Fault_Sleep(0x10);
     } while ((osGetTime() - start[0]) < OS_USEC_TO_CYCLES(5000000)+1); //0xdf84759
 
-    sFaultStructPtr->unk_7CF = true;
+    sFaultStructPtr->faultActive = true;
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_WaitForButtonCombo.s")
 
+void Fault_DrawMemDumpPage(const char* title, u32* addr, u32 param_3) {
+    u32* alignedAddr;
+    u32* writeAddr;
+    s32 y;
+    s32 x;
 
-#ifdef NON_MATCHING
-void Fault_DrawMemDumpPage(const char* title, u32* addr)
-{
-    if ((u32)addr < 0x80000000u)
-        addr = (u32*)0x80000000;
-    if ((u32)addr > 0x807fff00u)
-        addr = (u32*)0x807fff00;
+    alignedAddr = addr;
 
-    addr = (u32*)((u32)addr & ~3);
+    if (alignedAddr < (u32*)0x80000000) {
+        alignedAddr = (u32*)0x80000000;
+    }
+    if (alignedAddr > (u32*)0x807fff00) {
+        alignedAddr = (u32*)0x807fff00;
+    }
+
+    alignedAddr = (u32*)((u32)alignedAddr & ~3);
+    writeAddr = alignedAddr;
     Fault_FillScreenBlack();
     FaultDrawer_SetCharPad(-2, 0);
 
-    if (!title)
-        title = "PrintDump";
-
-    FaultDrawer_DrawText(0x24, 0x12, "%s %08x", title, addr);
-    if ((u32)addr > 0x7fffffff && (u32)addr < 0xC0000000)
-    {
-        s32 y = 0x1C;
-        do
-        {
-            s32 x;;
-            FaultDrawer_DrawText(0x18, y, "%06x", addr);
-            x = 0x52;
-            do
-            {
-                FaultDrawer_DrawText(x, y, "%08x", *addr);
-                addr++;
-                x += 0x34;
-            } while (x != 0x122);
-            y += 9;
-        } while (y != 0xE2);
+    FaultDrawer_DrawText(0x24, 0x12, "%s %08x", title? title : "PrintDump", alignedAddr);
+    if (alignedAddr >= (u32*)0x80000000 && alignedAddr < (u32*)0xC0000000) {
+        for (y = 0x1C; y != 0xE2; y += 9) {
+            FaultDrawer_DrawText(0x18, y, "%06x", writeAddr);
+            for (x = 0x52; x != 0x122; x += 0x34) {
+                FaultDrawer_DrawText(x, y, "%08x", *writeAddr++);
+            }
+        }
     }
 
     FaultDrawer_SetCharPad(0, 0);
 }
-#else
-#pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_DrawMemDumpPage.s")
-#endif
 
 
 #ifdef NON_MATCHING
@@ -555,14 +586,14 @@ void Fault_DrawMemDump(u32 pc, u32 sp, u32 unk0, u32 unk1)
         addr &= ~0xF;
         Fault_DrawMemDumpPage("Dump", (u32*)addr);
         count = 600;
-        while (sFaultStructPtr->unk_7CF)
+        while (sFaultStructPtr->faultActive)
         {
             if (count-- == 0)
                 return;
             Fault_Sleep(0x10);
             Fault_UpdatePadImpl();
             if ((sFaultStructPtr->padInput.padPressed | ~0x20) == ~0x20)
-                sFaultStructPtr->unk_7CF = false;
+                sFaultStructPtr->faultActive = false;
         }
         do
         {
@@ -596,7 +627,7 @@ void Fault_DrawMemDump(u32 pc, u32 sp, u32 unk0, u32 unk1)
         if ((held | ~0x20) == ~0)
             break;
     }
-    sFaultStructPtr->unk_7CF = true;
+    sFaultStructPtr->faultActive = true;
 }
 #else
 #pragma GLOBAL_ASM("asm/non_matchings/code/fault/Fault_DrawMemDump.s")
@@ -633,7 +664,7 @@ void Fault_CommitFB()
     {
         fb = (u16*)osViGetNextFramebuffer();
         if ((u32)fb == 0x80000000)
-            fb = (u16*)(((u32)D_80000318 | 0x80000000) - 0x25800);
+            fb = (u16*)((osMemSize | 0x80000000) - 0x25800);
     }
 
     osViSwapBuffer(fb);
@@ -642,7 +673,7 @@ void Fault_CommitFB()
 
 void Fault_ProcessClients(void)
 {
-    FaultClient* iter = sFaultStructPtr->lastClient;
+    FaultClient* iter = sFaultStructPtr->clients;
     s32 idx = 0;
     while(iter)
     {
@@ -656,7 +687,7 @@ void Fault_ProcessClients(void)
             Fault_WaitForInput();
             Fault_CommitFB();
         }
-        iter = iter->prevClient;
+        iter = iter->next;
     }
 }
 
@@ -666,6 +697,7 @@ void Fault_UpdatePad()
 }
 
 #ifdef NON_MATCHING
+
 void Fault_ThreadEntry(u32 unused)
 {
     OSThread *faultedThread;
@@ -715,12 +747,12 @@ void Fault_ThreadEntry(u32 unused)
 
         __osSetFpcCsr(__osGetFpcCsr() & -0xf81);
         sFaultStructPtr->faultedThread = faultedThread;
-        while (!sFaultStructPtr->enterDebugger)
+        while (!sFaultStructPtr->faultHandlerEnabled)
             Fault_Sleep(1000);
         Fault_Sleep(500);
         Fault_CommitFB();
 
-        if (sFaultStructPtr->unk_7CF)
+        if (sFaultStructPtr->faultActive)
             Fault_Wait5Seconds();
         else
         {
@@ -728,7 +760,7 @@ void Fault_ThreadEntry(u32 unused)
             Fault_WaitForButtonCombo();
         }
 
-        sFaultStructPtr->unk_7CF = true;
+        sFaultStructPtr->faultActive = true;
         FaultDrawer_SetForeColor(0xFFFF);
         FaultDrawer_SetBackColor(0);
 
@@ -776,14 +808,14 @@ void Fault_Start(void)
     FaultDrawer_SetInputCallback(&Fault_WaitForInput);
     sFaultStructPtr->exitDebugger = false;
     sFaultStructPtr->msgId = 0;
-    sFaultStructPtr->enterDebugger = false;
+    sFaultStructPtr->faultHandlerEnabled = false;
     sFaultStructPtr->faultedThread = NULL;
     sFaultStructPtr->padCallback = &Fault_PadCallback;
-    sFaultStructPtr->lastClient = NULL;
-    sFaultStructPtr->unk_7CF = false;
-    gFaultStruct.enterDebugger = true;
+    sFaultStructPtr->clients = NULL;
+    sFaultStructPtr->faultActive = false;
+    gFaultStruct.faultHandlerEnabled = true;
     osCreateMesgQueue(&sFaultStructPtr->queue, &sFaultStructPtr->msg, 1);
-    func_80002660(sFaultThreadInfo, &sFaultStack, sFaultStack+sizeof(sFaultStack), 0, 0x100, "fault");
+    StackCheck_Init(sFaultThreadInfo, &sFaultStack, sFaultStack+sizeof(sFaultStack), 0, 0x100, "fault");
     osCreateThread(&sFaultStructPtr->thread, 2, &Fault_ThreadEntry, 0, sFaultThreadInfo, 0x7f);
     osStartThread(&sFaultStructPtr->thread);
 }
@@ -809,6 +841,6 @@ void Fault_AddHungupAndCrashImpl(const char* arg0, const char* arg1)
 void Fault_AddHungupAndCrash(const char* filename, u32 line)
 {
     char msg[256];
-    func_80002F44(msg, "HungUp %s:%d", filename, line); //snprintf
+    snprintf(msg, "HungUp %s:%d", filename, line);
     Fault_AddHungupAndCrashImpl(msg, NULL);
 }

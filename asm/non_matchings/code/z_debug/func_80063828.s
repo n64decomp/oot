@@ -31,15 +31,15 @@ glabel func_80063828
 /* ADAA38 80063898 90450000 */  lbu   $a1, ($v0)
 /* ADAA3C 8006389C 90460001 */  lbu   $a2, 1($v0)
 /* ADAA40 800638A0 90470002 */  lbu   $a3, 2($v0)
-/* ADAA44 800638A4 0C03ECEB */  jal   SetTextRGBA
+/* ADAA44 800638A4 0C03ECEB */  jal   GfxPrint_SetColor
 /* ADAA48 800638A8 AFB90010 */   sw    $t9, 0x10($sp)
 /* ADAA4C 800638AC 02602025 */  move  $a0, $s3
 /* ADAA50 800638B0 92050000 */  lbu   $a1, ($s0)
-/* ADAA54 800638B4 0C03ED07 */  jal   SetTextXY
+/* ADAA54 800638B4 0C03ED07 */  jal   GfxPrint_SetPos
 /* ADAA58 800638B8 92060001 */   lbu   $a2, 1($s0)
 /* ADAA5C 800638BC 02602025 */  move  $a0, $s3
 /* ADAA60 800638C0 02A02825 */  move  $a1, $s5
-/* ADAA64 800638C4 0C03EF2D */  jal   SetTextString
+/* ADAA64 800638C4 0C03EF2D */  jal   GfxPrint_Printf
 /* ADAA68 800638C8 02203025 */   move  $a2, $s1
 /* ADAA6C 800638CC 86C80000 */  lh    $t0, ($s6)
 /* ADAA70 800638D0 26520001 */  addiu $s2, $s2, 1

@@ -7,47 +7,64 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_801417C0
-    .incbin "baserom.z64", 0xBB8960, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_801417D0
-    .incbin "baserom.z64", 0xBB8970, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_801417E0
-    .incbin "baserom.z64", 0xBB8980, 0x14
+    .asciz "glistp_end = %08x\n"
+    .balign 4
 
 glabel D_801417F4
-    .incbin "baserom.z64", 0xBB8994, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_80141804
-    .incbin "baserom.z64", 0xBB89A4, 0x10
+    .asciz "mono_dl = %08x\n"
+    .balign 4
 
 glabel D_80141814
-    .incbin "baserom.z64", 0xBB89B4, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_80141824
-    .incbin "baserom.z64", 0xBB89C4, 0x2C
+    .asciz "mono_dl + (1+3+1+1+80*(7+2+2+3)+1) = %08x\n"
+    .balign 4 
 
 glabel D_80141850
-    .incbin "baserom.z64", 0xBB89F0, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_80141860
-    .incbin "baserom.z64", 0xBB8A00, 0x24
+    .asciz "(1+3+1+1+80*(7+2+2+3)+1) = %08x\n"
+    .balign 4
 
 glabel D_80141884
-    .incbin "baserom.z64", 0xBB8A24, 0x20
+    .asciz "glistp_end <= mono_dl + DLSIZE"
+    .balign 4
 
 glabel D_801418A4
-    .incbin "baserom.z64", 0xBB8A44, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_801418B4
-    .incbin "baserom.z64", 0xBB8A54, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_801418C4
-    .incbin "baserom.z64", 0xBB8A64, 0x10
+    .asciz "../z_vismono.c"
+    .balign 4
 
 glabel D_801418D4
-    .incbin "baserom.z64", 0xBB8A74, 0x28
+    .asciz "glistp_end <= this->mono_dl + DLSIZE"
+    .balign 4
 
 glabel D_801418FC
-    .incbin "baserom.z64", 0xBB8A9C, 0x4
+    .asciz "../z_vismono.c"
+    .balign 4

@@ -20,7 +20,7 @@ glabel D_80136AEC
     .float 0.15
 
 glabel D_80136AF0
-    .float 1.5707964 # M_PI_2
+    .float 1.5707964 # M_PI / 2
 
 glabel D_80136AF4
     .float 0.001

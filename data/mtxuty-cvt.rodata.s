@@ -7,26 +7,36 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8014A8B0
-    .incbin "baserom.z64", 0xBC1A50, 0x4
+    .asciz "m1"
+    .balign 4
 
 glabel D_8014A8B4
-    .incbin "baserom.z64", 0xBC1A54, 0x10
+    .asciz "../mtxuty-cvt.c"
+    .balign 4
 
 glabel D_8014A8C4
-    .incbin "baserom.z64", 0xBC1A64, 0x4
+    .asciz "m2"
+    .balign 4
 
 glabel D_8014A8C8
-    .incbin "baserom.z64", 0xBC1A68, 0x10
+    .asciz "../mtxuty-cvt.c"
+    .balign 4
 
 glabel D_8014A8D8
-    .incbin "baserom.z64", 0xBC1A78, 0x4
+    .asciz "m1"
+    .balign 4
 
 glabel D_8014A8DC
-    .incbin "baserom.z64", 0xBC1A7C, 0x10
+    .asciz "../mtxuty-cvt.c"
+    .balign 4
 
 glabel D_8014A8EC
-    .incbin "baserom.z64", 0xBC1A8C, 0x4
+    .asciz "m2"
+    .balign 4
 
 glabel D_8014A8F0
-    .incbin "baserom.z64", 0xBC1A90, 0x10
+    .asciz "../mtxuty-cvt.c"
+    .balign 4

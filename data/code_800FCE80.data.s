@@ -12,6 +12,3 @@ glabel D_801344A0
 
 glabel D_801344A4
     .incbin "baserom.z64", 0xBAB644, 0xC
-
-glabel D_801344B0
-    .incbin "baserom.z64", 0xBAB650, 0x10

@@ -6,10 +6,10 @@ void func_800005A0(void* arg0)
     OSTime var1;
 
     osSyncPrintf(D_8000AFD0);
-    func_8000183C();
+    DmaMgr_Start();
     osSyncPrintf(D_8000AFE0);
     var1 = osGetTime();
-    func_80001AA0((u32)_dmadataSegmentEnd, (u32)_codeSegmentRomStart, _codeSegmentRomEnd - _codeSegmentRomStart, D_8000AFFC, 238);
+    DmaMgr_SendRequest1((u32)_dmadataSegmentEnd, (u32)_codeSegmentRomStart, _codeSegmentRomEnd - _codeSegmentRomStart, D_8000AFFC, 238);
     var1 -= osGetTime();
     osSyncPrintf(D_8000B008);
     osSyncPrintf(D_8000B028);
@@ -35,7 +35,7 @@ void func_80000694(void* a0)
     osSyncPrintf(D_8000B0AC, D_80012364);
     osSyncPrintf(D_8000B0BC);
 
-    osSyncPrintf(D_8000B0C4, (s32)D_80000318 / 1024);
+    osSyncPrintf(D_8000B0C4, osMemSize / 1024);
 
     osSyncPrintf(D_8000B100, _bootSegmentEnd);
     osSyncPrintf(D_8000B140, 0x96);
@@ -43,7 +43,7 @@ void func_80000694(void* a0)
     osSyncPrintf(D_8000B19C, 0x60);
     osSyncPrintf(D_8000B1CC, 3);
 
-    osSyncPrintf(D_8000B1FC, ((s32)D_802109E0 - (s32)D_801D89E0) / 1024);
+    osSyncPrintf(D_8000B1FC, ((s32)gSystemHeap - (s32)gAudioHeap) / 1024);
 
     osSyncPrintf(D_8000B22C);
 
@@ -53,11 +53,11 @@ void func_80000694(void* a0)
     D_80009440 = 1.0f;
     D_80009444 = 1.0f;
 
-    if (D_80000300 != 0)
+    if (osTvType != 0)
     {
-        if (D_80000300 != 1)
+        if (osTvType != 1)
         {
-            if (D_80000300 != 2)
+            if (osTvType != 2)
             {
                 D_80013960 = 0x1E;
                 var1 = &D_80013910;
@@ -133,9 +133,9 @@ void func_80000694(void* a0)
     osViBlack(1);
     osViSwapBuffer(0x803da80);
     func_80004780(0x96, &D_800138F8, &D_80013830, 0x32);
-    func_80002660(&D_80013810, &D_80012F10, &D_80013810, 0, 0x400, &D_8000B230);
-    osCreateThread(D_80012D60, 3, func_800005A0, a0, &D_80013810, 10);
-    osStartThread(D_80012D60);
+    StackCheck_Init(&D_80013810, &D_80012F10, &D_80013810, 0, 0x400, &D_8000B230);
+    osCreateThread(sMainThread, 3, func_800005A0, a0, &D_80013810, 10);
+    osStartThread(sMainThread);
     osSetThreadPri(0, 0);
 
     do

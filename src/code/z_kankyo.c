@@ -11,6 +11,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006F93C.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006F9BC.s")
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006FB94.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_8006FC88.s")
@@ -29,9 +31,14 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80073A5C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_800746DC.s")
+f32 func_800746DC()
+{
+    return Math_Rand_ZeroOne() - 0.5f;
+}
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80074704.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80074CE8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80074D6C.s")
 
@@ -61,5 +68,33 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80076934.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_800773A8.s")
+
+s32 func_800775CC()
+{
+    return gSaveContext.unk_18;
+}
+
+void func_800775D8()
+{
+    gSaveContext.unk_18 = 0;
+}
+
+s32 func_800775E4()
+{
+    return gSaveContext.unk_14;
+}
+
+void func_800775F0(u16 arg0)
+{
+    gSaveContext.disable_music_flag = arg0;
+}
+
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80077600.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80077624.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80077684.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_800776E4.s")
 

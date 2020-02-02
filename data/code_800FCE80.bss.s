@@ -9,6 +9,3 @@
 
 glabel D_80175600
     .space 0x10
-
-glabel D_80175610
-    .space 0x30

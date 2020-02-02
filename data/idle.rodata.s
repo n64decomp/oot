@@ -7,69 +7,107 @@
 
 .section .rodata
 
+.align 4
+
 glabel D_8000AFD0
-    .incbin "baserom.z64", 0xBBD0, 0x10
+    .asciz "mainx \xBC\xC2\xB9\xD4\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: 実行開始 | Start running
+    .balign 4
 
 glabel D_8000AFE0
-    .incbin "baserom.z64", 0xBBE0, 0x1C
+    .asciz "code\xA5\xBB\xA5\xB0\xA5\xE1\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xC9\xC3\xE6\x2E\x2E\x2E"
+    # EUC-JP: セグメントロード中... | Loading segment.. 
+    .balign 4
 
 glabel D_8000AFFC
     .asciz "../idle.c"
     .balign 4
 
 glabel D_8000B008
-    .incbin "baserom.z64", 0xBC08, 0x20
+    .asciz "\rcode\xA5\xBB\xA5\xB0\xA5\xE1\xA5\xF3\xA5\xC8\xA5\xED\xA1\xBC\xA5\xC9\xC3\xE6\x2E\x2E\x2E\xB4\xB0\xCE\xBB\n"
+    # EUC-JP: セグメントロード中...完了 | Loading segment..complete
+    .balign 4
 
 glabel D_8000B028
-    .incbin "baserom.z64", 0xBC28, 0x10
+    .asciz "\xC5\xBE\xC1\xF7\xBB\xFE\xB4\xD6 %6.3f\n"
+    # EUC-JP: 転送時間 | Transfer time
+    .balign 4
 
 glabel D_8000B038
-    .incbin "baserom.z64", 0xBC38, 0x20
+    .asciz "code\xA5\xBB\xA5\xB0\xA5\xE1\xA5\xF3\xA5\xC8\x42\x53\x53\xA5\xAF\xA5\xEA\xA5\xA2\xB4\xB0\xCE\xBB\n"
+    # EUC-JP: セグメントBSSクリア完了 | Segment BSS clear completed
+    .balign 4
 
 glabel D_8000B058
-    .incbin "baserom.z64", 0xBC58, 0x10
+    .asciz "mainx \xBC\xC2\xB9\xD4\xBD\xAA\xCE\xBB\n"
+    # EUC-JP: 実行終了 | End of execution
+    .balign 4
 
 glabel D_8000B068
-    .incbin "baserom.z64", 0xBC68, 0x24
+    .asciz "\xA5\xA2\xA5\xA4\xA5\xC9\xA5\xEB\xA5\xB9\xA5\xEC\xA5\xC3\xA5\xC9(idleproc)\xBC\xC2\xB9\xD4\xB3\xAB\xBB\xCF\n"
+    # EUC-JP: アイドルスレッド(idleproc)実行開始 | Start of idle thread (idleproc) execution
+    .balign 4
 
 glabel D_8000B08C
-    .incbin "baserom.z64", 0xBC8C, 0x10
+    .asciz "\xBA\xEE\xC0\xBD\xBC\xD4    : %s\n"
+    # EUC-JP: 作製者 | Creator
+    .balign 4
 
 glabel D_8000B09C
-    .incbin "baserom.z64", 0xBC9C, 0x10
+    .asciz "\xBA\xEE\xC0\xAE\xC6\xFC\xBB\xFE  : %s\n"
+    # EUC-JP: 作成日時 | Creation date
+    .balign 4
 
 glabel D_8000B0AC
-    .incbin "baserom.z64", 0xBCAC, 0x10
+    .asciz "MAKEOPTION: %s\n"
+    .balign 4
 
 glabel D_8000B0BC
-    .incbin "baserom.z64", 0xBCBC, 0x8
+    .asciz "\x1b[32m"
+    .balign 4
 
 glabel D_8000B0C4
-    .incbin "baserom.z64", 0xBCC4, 0x3C
+    .asciz "\xA3\xD2\xA3\xC1\xA3\xCD\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9(osMemSize/osGetMemSize)\n"
+    # EUC-JP: ＲＡＭサイズは %d キロバイトです | RAM size is% d kilobytes
+    .balign 4
 
 glabel D_8000B100
-    .incbin "baserom.z64", 0xBD00, 0x40
+    .asciz "_bootSegmentEnd(%08x) \xB0\xCA\xB9\xDF\xA4\xCE\xA3\xD2\xA3\xC1\xA3\xCD\xCE\xCE\xB0\xE8\xA4\xCF\xA5\xAF\xA5\xEA\xA5\xA2\xA4\xB5\xA4\xEC\xA4\xDE\xA4\xB7\xA4\xBF(boot)\n"
+    # EUC-JP: 以降のＲＡＭ領域はクリアされました | The subsequent RAM area has been cleared
+    .balign 4
 
 glabel D_8000B140
-    .incbin "baserom.z64", 0xBD40, 0x28
+    .asciz "\xA3\xDA\xA5\xD0\xA5\xC3\xA5\xD5\xA5\xA1\xA4\xCE\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: Ｚバッファのサイズは %d キロバイトです | Z buffer size is% d kilobytes
+    .balign 4
 
 glabel D_8000B168
-    .incbin "baserom.z64", 0xBD68, 0x34
+    .asciz "\xA5\xC0\xA5\xA4\xA5\xCA\xA5\xDF\xA5\xC3\xA5\xAF\xA5\xD0\xA5\xC3\xA5\xD5\xA5\xA1\xA4\xCE\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: ダイナミックバッファのサイズは %d キロバイトです | Dynamic buffer size is% d kilobytes
+    .balign 4
 
 glabel D_8000B19C
-    .incbin "baserom.z64", 0xBD9C, 0x30
+    .asciz "\xA3\xC6\xA3\xC9\xA3\xC6\xA3\xCF\xA5\xD0\xA5\xC3\xA5\xD5\xA5\xA1\xA4\xCE\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: ＦＩＦＯバッファのサイズは %d キロバイトです | FIFO buffer size is% d kilobytes
+    .balign 4
 
 glabel D_8000B1CC
-    .incbin "baserom.z64", 0xBDCC, 0x30
+    .asciz "\xA3\xD9\xA3\xC9\xA3\xC5\xA3\xCC\xA3\xC4\xA5\xD0\xA5\xC3\xA5\xD5\xA5\xA1\xA4\xCE\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: ＹＩＥＬＤバッファのサイズは %d キロバイトです | YIELD buffer size is% d kilobytes
+    .balign 4
 
 glabel D_8000B1FC
-    .incbin "baserom.z64", 0xBDFC, 0x30
+    .asciz "\xA5\xAA\xA1\xBC\xA5\xC7\xA5\xA3\xA5\xAA\xA5\xD2\xA1\xBC\xA5\xD7\xA4\xCE\xA5\xB5\xA5\xA4\xA5\xBA\xA4\xCF\x20\x25\x64\x20\xA5\xAD\xA5\xED\xA5\xD0\xA5\xA4\xA5\xC8\xA4\xC7\xA4\xB9\n"
+    # EUC-JP: オーディオヒープのサイズは %d キロバイトです | Audio heap size is% d kilobytes
+    .balign 4
 
 glabel D_8000B22C
-    .incbin "baserom.z64", 0xBE2C, 0x4
+    .asciz "\x1b[m"
+    .balign 4
 
 glabel D_8000B230
-    .incbin "baserom.z64", 0xBE30, 0x8
+    .asciz "main"
+    .balign 4
 
 glabel D_8000B238
-    .incbin "baserom.z64", 0xBE38, 0x8
+    .float 0.833
