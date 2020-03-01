@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B8E650
+glabel Mir_Ray_InitVars
  .word 0x00B70700, 0x00000030, 0x00AB0000, 0x000002B0
-.word func_80B8D2B0
-.word func_80B8D58C
-.word func_80B8D604
-.word func_80B8E0E4
+.word MirRay_Init
+.word MirRay_Destroy
+.word MirRay_Update
+.word MirRay_Draw
 glabel D_80B8E670
  .word 0x00000000
 glabel D_80B8E674

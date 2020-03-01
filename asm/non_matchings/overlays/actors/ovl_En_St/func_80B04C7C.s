@@ -55,8 +55,8 @@ glabel func_80B04C7C
 /* 004C0 80B04D50 A3A801C6 */  sb      $t0, 0x01C6($sp)           
 /* 004C4 80B04D54 A3AC01C7 */  sb      $t4, 0x01C7($sp)           
 /* 004C8 80B04D58 A3AD01CB */  sb      $t5, 0x01CB($sp)           
-/* 004CC 80B04D5C 0C009B35 */  jal     EffectAdd
-              ## EffectAdd
+/* 004CC 80B04D5C 0C009B35 */  jal     Effect_Add
+              ## Effect_Add
 /* 004D0 80B04D60 A3B901C2 */  sb      $t9, 0x01C2($sp)           
 /* 004D4 80B04D64 8FBF001C */  lw      $ra, 0x001C($sp)           
 /* 004D8 80B04D68 8FA20020 */  lw      $v0, 0x0020($sp)           

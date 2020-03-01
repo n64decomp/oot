@@ -10,8 +10,8 @@ glabel func_80041B24
 /* AB8CE4 80041B44 00001025 */   move  $v0, $zero
 .L80041B48:
 /* AB8CE8 80041B48 8C430020 */  lw    $v1, 0x20($v0)
-/* AB8CEC 80041B4C 3C0F8016 */  lui   $t7, %hi(D_80166FA8) # $t7, 0x8016
-/* AB8CF0 80041B50 8DEF6FA8 */  lw    $t7, %lo(D_80166FA8)($t7)
+/* AB8CEC 80041B4C 3C0F8016 */  lui   $t7, %hi(gSegments) # $t7, 0x8016
+/* AB8CF0 80041B50 8DEF6FA8 */  lw    $t7, %lo(gSegments)($t7)
 /* AB8CF4 80041B54 3C018000 */  lui   $at, 0x8000
 /* AB8CF8 80041B58 00617021 */  addu  $t6, $v1, $at
 /* AB8CFC 80041B5C 15CF0003 */  bne   $t6, $t7, .L80041B6C

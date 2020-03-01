@@ -15,7 +15,7 @@ glabel func_80A7A770
 .L80A7A7A4:
 /* 017F4 80A7A7A4 14410024 */  bne     $v0, $at, .L80A7A838       
 /* 017F8 80A7A7A8 2404FFCE */  addiu   $a0, $zero, 0xFFCE         ## $a0 = FFFFFFCE
-/* 017FC 80A7A7AC 0C021CC3 */  jal     func_8008730C              
+/* 017FC 80A7A7AC 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 01800 80A7A7B0 AFA60018 */  sw      $a2, 0x0018($sp)           
 /* 01804 80A7A7B4 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 01808 80A7A7B8 3C01FFFE */  lui     $at, 0xFFFE                ## $at = FFFE0000

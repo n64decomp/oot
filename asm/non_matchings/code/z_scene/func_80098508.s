@@ -11,10 +11,10 @@ glabel func_80098508
 /* B0F6CC 8009852C 00076900 */  sll   $t5, $a3, 4
 /* B0F6D0 80098530 000D7702 */  srl   $t6, $t5, 0x1c
 /* B0F6D4 80098534 01F95021 */  addu  $t2, $t7, $t9
-/* B0F6D8 80098538 3C0F8016 */  lui   $t7, %hi(D_80166FA8)
+/* B0F6D8 80098538 3C0F8016 */  lui   $t7, %hi(gSegments)
 /* B0F6DC 8009853C 000EC080 */  sll   $t8, $t6, 2
 /* B0F6E0 80098540 01F87821 */  addu  $t7, $t7, $t8
-/* B0F6E4 80098544 8DEF6FA8 */  lw    $t7, %lo(D_80166FA8)($t7)
+/* B0F6E4 80098544 8DEF6FA8 */  lw    $t7, %lo(gSegments)($t7)
 /* B0F6E8 80098548 914B0000 */  lbu   $t3, ($t2)
 /* B0F6EC 8009854C 3C0100FF */  lui   $at, (0x00FFFFFF >> 16) # lui $at, 0xff
 /* B0F6F0 80098550 3421FFFF */  ori   $at, (0x00FFFFFF & 0xFFFF) # ori $at, $at, 0xffff

@@ -177,7 +177,7 @@ glabel L80A702CC
 /* 00D20 80A702D0 03AC2021 */  addu    $a0, $sp, $t4              
 /* 00D24 80A702D4 3C01FFFF */  lui     $at, 0xFFFF                ## $at = FFFF0000
 /* 00D28 80A702D8 00240821 */  addu    $at, $at, $a0              
-/* 00D2C 80A702DC 0C021CC3 */  jal     func_8008730C              
+/* 00D2C 80A702DC 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00D30 80A702E0 84241E54 */  lh      $a0, 0x1E54($at)           ## FFFF1E54
 /* 00D34 80A702E4 8FA4004C */  lw      $a0, 0x004C($sp)           
 /* 00D38 80A702E8 3C0580A7 */  lui     $a1, %hi(D_80A72050)       ## $a1 = 80A70000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B9C9A0
+glabel Obj_Oshihiki_InitVars
  .word 0x00FF0600, 0x00000010, 0x00030000, 0x000001D4
-.word func_80B9B768
-.word func_80B9B898
-.word func_80B9C6DC
-.word func_80B9C764
+.word ObjOshihiki_Init
+.word ObjOshihiki_Destroy
+.word ObjOshihiki_Update
+.word ObjOshihiki_Draw
 glabel D_80B9C9C0
  .word 0x3DCCCCCD, 0x3E2AAAAB, 0x3E4CCCCD, 0x3EAAAAAB, 0x3DCCCCCD, 0x3E2AAAAB, 0x3E4CCCCD, 0x3EAAAAAB
 glabel D_80B9C9E0

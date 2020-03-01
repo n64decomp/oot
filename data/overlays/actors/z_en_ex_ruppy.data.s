@@ -9,12 +9,12 @@
 
 glabel D_80A0B320
  .word 0x00000001, 0x00020013, 0x00140000, 0x00010005, 0x001401F4, 0x00320000
-glabel D_80A0B338
+glabel En_Ex_Ruppy_InitVars
  .word 0x01310600, 0x00000010, 0x00010000, 0x00000164
-.word func_80A0A410
-.word func_80A0A814
-.word func_80A0B150
-.word func_80A0B1DC
+.word EnExRuppy_Init
+.word EnExRuppy_Destroy
+.word EnExRuppy_Update
+.word EnExRuppy_Draw
 glabel D_80A0B358
  .word 0x00000000, 0x3DCCCCCD, 0x00000000, 0x00000000, 0x00000000, 0x00000000
 glabel D_80A0B370

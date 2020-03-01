@@ -23,7 +23,7 @@ glabel func_80A54C6C
 /* 01E20 80A54CC0 240606EE */  addiu   $a2, $zero, 0x06EE         ## $a2 = 000006EE
 /* 01E24 80A54CC4 8F240000 */  lw      $a0, 0x0000($t9)           ## 00000000
 /* 01E28 80A54CC8 AFA80034 */  sw      $t0, 0x0034($sp)           
-/* 01E2C 80A54CCC 0C0346A2 */  jal     func_800D1A88              
+/* 01E2C 80A54CCC 0C0346A2 */  jal     Matrix_NewMtx              
 /* 01E30 80A54CD0 AFA20020 */  sw      $v0, 0x0020($sp)           
 /* 01E34 80A54CD4 8FA30020 */  lw      $v1, 0x0020($sp)           
 /* 01E38 80A54CD8 8FA80034 */  lw      $t0, 0x0034($sp)           

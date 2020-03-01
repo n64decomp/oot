@@ -20,12 +20,12 @@ glabel D_80A65E78
  .word 0x3F800000, 0x3F2AAAAB, 0x3F2AAAAB
 glabel D_80A65E84
  .word 0x06009D74, 0x06004A24
-glabel D_80A65E8C
+glabel En_Horse_InitVars
  .word 0x00140100, 0x00000010, 0x001A0000, 0x000003FC
-.word func_80A5C0D0
-.word func_80A5C818
-.word func_80A646AC
-.word func_80A65D44
+.word EnHorse_Init
+.word EnHorse_Destroy
+.word EnHorse_Update
+.word EnHorse_Draw
 glabel D_80A65EAC
  .word 0x0A080039, 0x12010000, 0x00000000, 0x00000400, 0x00040000, 0xFFCFFFFF, 0x00000000, 0x19000100, 0x00140046, 0x00000000, 0x00000000
 glabel D_80A65ED8

@@ -122,10 +122,10 @@ glabel D_80B41F18
 .word func_80B3EA7C
 .word func_80B402C4
 .word func_80B414AC
-glabel D_80B41F30
+glabel En_Xc_InitVars
  .word 0x00480400, 0x00000010, 0x008A0000, 0x0000033C
-.word func_80B41900
-.word func_80B3C270
-.word func_80B418A4
-.word func_80B41CE4
+.word EnXc_Init
+.word EnXc_Destroy
+.word EnXc_Update
+.word EnXc_Draw
 

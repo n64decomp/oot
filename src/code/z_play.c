@@ -3,13 +3,13 @@
 
 void func_800BC450(GlobalContext* globalCtx)
 {
-      func_8005A7A8(globalCtx->cameraCtx.activeCameraPtrs[(globalCtx->cameraCtx).unk_5C0],
-      			globalCtx->unk_120EC[0x33F] - 1, globalCtx);
+      func_8005A7A8(globalCtx->cameraCtx.activeCameraPtrs[globalCtx->cameraCtx.unk_5C0],
+                    globalCtx->unk_1242B - 1, globalCtx);
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BC490.s")
 
-UNK_TYPE func_800BC56C(GlobalContext* globalCtx, s16 arg1)
+s32 func_800BC56C(GlobalContext* globalCtx, s16 arg1)
 {
     return arg1 == globalCtx->unk_1242B;
 }
@@ -17,7 +17,7 @@ UNK_TYPE func_800BC56C(GlobalContext* globalCtx, s16 arg1)
 void func_800BC590(GlobalContext* globalCtx)
 {
     osSyncPrintf(D_801441B8);
-    if (gGameInfo->unk_4B2 == 0x10)
+    if (YREG(15) == 0x10)
     {
         globalCtx->unk_1242B = 2;
     }
@@ -32,8 +32,8 @@ void func_800BC88C(GlobalContext* globalCtx)
 
 Gfx* func_800BC8A0(GlobalContext* globalCtx, Gfx* a1)
 {
-    func_80093708(a1, globalCtx->lightCtx.unk_07, globalCtx->lightCtx.unk_08, globalCtx->lightCtx.unk_09, 0,
-            globalCtx->lightCtx.unk_0A, 0x3e8);
+    func_80093708(a1, globalCtx->lightCtx.unk_07, globalCtx->lightCtx.unk_08,
+                  globalCtx->lightCtx.unk_09, 0, globalCtx->lightCtx.unk_0A, 1000);
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BC8EC.s")
@@ -59,24 +59,24 @@ s32 func_800BFC84(GlobalContext* globalCtx)
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/func_800BFEC4.s")
 
-void func_800BFF0C(GlobalContext* globalCtx, void * a1)
+void func_800BFF0C(GlobalContext* globalCtx, s32 a1)
 {
- 	globalCtx->curSpawn = a1;
-    globalCtx->linkActorEntry = 0x0;
-    globalCtx->unk_11DFC = 0x0;
-    globalCtx->setupEntranceList = 0x0;
-    globalCtx->setupExitList = 0x0;
-    globalCtx->naviMsgSegment = 0x0;
-    globalCtx->setupPathList = 0x0;
-    globalCtx->nbSetupActors = 0x0;
+    globalCtx->curSpawn = a1;
+    globalCtx->linkActorEntry = NULL;
+    globalCtx->unk_11DFC = NULL;
+    globalCtx->setupEntranceList = NULL;
+    globalCtx->setupExitList = NULL;
+    globalCtx->naviMsgSegment = NULL;
+    globalCtx->setupPathList = NULL;
+    globalCtx->nbSetupActors = 0;
     Object_InitBank(globalCtx, &globalCtx->objectCtx);
     func_8007A614(globalCtx, &globalCtx->lightCtx);
     func_80098CBC(globalCtx, &globalCtx->nbTransitionActors);
     func_80096FD4(globalCtx, &globalCtx->roomCtx);
-    gGameInfo->unk_4B2 = 0;
-   	gSaveContext.world_map_area = 0;
-    Scene_ExecuteCommands(globalCtx,*(SceneCmd **)(globalCtx->unk_A7 + 9));
-    func_800BFEC4(globalCtx, (u8)globalCtx->skyboxId);
+    YREG(15) = 0;
+    gSaveContext.world_map_area = 0;
+    Scene_ExecuteCommands(globalCtx, globalCtx->unk_B0);
+    func_800BFEC4(globalCtx, globalCtx->skyboxId);
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_play/Area_Spawn.s")
@@ -134,34 +134,33 @@ void func_800C0BB4(GlobalContext* globalCtx)
 {
     gSaveContext.respawn_flag = -1;
     globalCtx->sceneLoadFlag = 0x14;
+
     if (globalCtx->sceneNum == SCENE_GANON_SONOGO ||
         globalCtx->sceneNum == SCENE_GANON_FINAL ||
         globalCtx->sceneNum == SCENE_GANONTIKA_SONOGO ||
         globalCtx->sceneNum == SCENE_GANON_DEMO)
     {
         globalCtx->nextEntranceIndex = 0x043F;
-        func_80084D10(globalCtx, 0x3C);
+        Item_Give(globalCtx, ITEM_SWORD_MASTER);
     }
-    else
-    {
-        if (gSaveContext.entrance_index == 0x028A ||
+    else if (gSaveContext.entrance_index == 0x028A ||
             gSaveContext.entrance_index == 0x028E ||
             gSaveContext.entrance_index == 0x0292 ||
             gSaveContext.entrance_index == 0x0476)
-        {
-            globalCtx->nextEntranceIndex = 0x01F9;
-        }
-        else
-        {
-            globalCtx->nextEntranceIndex = gSaveContext.entrance_index;
-        }
+    {
+        globalCtx->nextEntranceIndex = 0x01F9;
     }
+    else
+    {
+        globalCtx->nextEntranceIndex = gSaveContext.entrance_index;
+    }
+
     globalCtx->fadeOutTransition = 2;
 }
 
 void func_800C0C88(GlobalContext* globalCtx)
 {
-    func_800C0AF4(globalCtx, 0, 0xdff);
+    func_800C0AF4(globalCtx, 0, 0xDFF);
     func_800C0BB4(globalCtx);
 }
 

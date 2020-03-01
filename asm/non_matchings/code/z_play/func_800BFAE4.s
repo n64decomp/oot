@@ -4,7 +4,7 @@ glabel func_800BFAE4
 /* B36C8C 800BFAEC 248F0014 */  addiu $t7, $a0, 0x14
 /* B36C90 800BFAF0 3C018013 */  lui   $at, %hi(D_8012D1F8) # $at, 0x8013
 /* B36C94 800BFAF4 AFA40018 */  sw    $a0, 0x18($sp)
-/* B36C98 800BFAF8 0C018FA4 */  jal   DebugDisplay_ClearList
+/* B36C98 800BFAF8 0C018FA4 */  jal   DebugDisplay_Init
 /* B36C9C 800BFAFC AC2FD1F8 */   sw    $t7, %lo(D_8012D1F8)($at)
 /* B36CA0 800BFB00 3C068016 */  lui   $a2, %hi(gGameInfo) # $a2, 0x8016
 /* B36CA4 800BFB04 24C6FA90 */  addiu $a2, %lo(gGameInfo) # addiu $a2, $a2, -0x570
@@ -14,7 +14,7 @@ glabel func_800BFAE4
 /* B36CB4 800BFB14 84781052 */  lh    $t8, 0x1052($v1)
 /* B36CB8 800BFB18 5300000B */  beql  $t8, $zero, .L800BFB48
 /* B36CBC 800BFB1C 84641074 */   lh    $a0, 0x1074($v1)
-/* B36CC0 800BFB20 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B36CC0 800BFB20 0C000B84 */  jal   LogUtils_LogThreadId
 /* B36CC4 800BFB24 240511CC */   li    $a1, 4556
 /* B36CC8 800BFB28 3C048014 */  lui   $a0, %hi(D_80144750) # $a0, 0x8014
 /* B36CCC 800BFB2C 24844750 */  addiu $a0, %lo(D_80144750) # addiu $a0, $a0, 0x4750
@@ -81,7 +81,7 @@ glabel func_800BFAE4
 /* B36DB0 800BFC10 24844758 */  addiu $a0, %lo(D_80144758) # addiu $a0, $a0, 0x4758
 /* B36DB4 800BFC14 10400007 */  beqz  $v0, .L800BFC34
 /* B36DB8 800BFC18 00000000 */   nop   
-/* B36DBC 800BFC1C 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B36DBC 800BFC1C 0C000B84 */  jal   LogUtils_LogThreadId
 /* B36DC0 800BFC20 240511E7 */   li    $a1, 4583
 /* B36DC4 800BFC24 3C048014 */  lui   $a0, %hi(D_80144764) # $a0, 0x8014
 /* B36DC8 800BFC28 24844764 */  addiu $a0, %lo(D_80144764) # addiu $a0, $a0, 0x4764
@@ -98,7 +98,7 @@ glabel func_800BFAE4
 /* B36DF0 800BFC50 85CF1052 */  lh    $t7, 0x1052($t6)
 /* B36DF4 800BFC54 51E00008 */  beql  $t7, $zero, .L800BFC78
 /* B36DF8 800BFC58 8FBF0014 */   lw    $ra, 0x14($sp)
-/* B36DFC 800BFC5C 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B36DFC 800BFC5C 0C000B84 */  jal   LogUtils_LogThreadId
 /* B36E00 800BFC60 240511EB */   li    $a1, 4587
 /* B36E04 800BFC64 3C048014 */  lui   $a0, %hi(D_80144778) # $a0, 0x8014
 /* B36E08 800BFC68 24844778 */  addiu $a0, %lo(D_80144778) # addiu $a0, $a0, 0x4778

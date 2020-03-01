@@ -14,10 +14,10 @@ glabel D_808C1018
  .word 0x485003E8
 glabel D_808C101C
  .word func_808C0EEC
-glabel D_808C1020
+glabel Bg_Zg_InitVars
  .word 0x01770400, 0x00000010, 0x01560000, 0x0000016C
-.word func_808C0E04
-.word func_808C0C20
-.word func_808C0DA8
-.word func_808C0FA8
+.word BgZg_Init
+.word BgZg_Destroy
+.word BgZg_Update
+.word BgZg_Draw
 

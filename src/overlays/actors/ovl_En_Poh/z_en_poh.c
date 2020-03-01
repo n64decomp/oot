@@ -1,9 +1,30 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_poh.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80ADDD50.s")
+#define ROOM  0x00
+#define FLAGS 0x00001015
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80ADE094.s")
+void EnPoh_Init(EnPoh* this, GlobalContext* globalCtx);
+void EnPoh_Destroy(EnPoh* this, GlobalContext* globalCtx);
+void EnPoh_Update(EnPoh* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Poh_InitVars =
+{
+    ACTOR_EN_POH,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnPoh),
+    (ActorFunc)EnPoh_Init,
+    (ActorFunc)EnPoh_Destroy,
+    (ActorFunc)EnPoh_Update,
+    NULL,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/EnPoh_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/EnPoh_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80ADE114.s")
 
@@ -89,7 +110,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80AE03C4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80AE0534.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/EnPoh_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80AE067C.s")
 
@@ -108,7 +129,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80AE1600.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Poh/func_80AE1654.s")
-
-
-
-

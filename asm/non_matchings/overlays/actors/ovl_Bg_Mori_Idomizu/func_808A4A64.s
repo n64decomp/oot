@@ -28,7 +28,7 @@ glabel func_808A4A64
 /* 0048C 808A4ACC 3C05808A */  lui     $a1, %hi(D_808A4CC4)       ## $a1 = 808A0000
 /* 00490 808A4AD0 24A54CC4 */  addiu   $a1, $a1, %lo(D_808A4CC4)  ## $a1 = 808A4CC4
 /* 00494 808A4AD4 24060168 */  addiu   $a2, $zero, 0x0168         ## $a2 = 00000168
-/* 00498 808A4AD8 0C0346A2 */  jal     func_800D1A88              
+/* 00498 808A4AD8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0049C 808A4ADC AFA2005C */  sw      $v0, 0x005C($sp)           
 /* 004A0 808A4AE0 8FA3005C */  lw      $v1, 0x005C($sp)           
 /* 004A4 808A4AE4 3C0ADB06 */  lui     $t2, 0xDB06                ## $t2 = DB060000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A73FF0
+glabel En_Ice_Hono_InitVars
  .word 0x00F00700, 0x00000000, 0x00010000, 0x000001BC
-.word func_80A73228
-.word func_80A73390
-.word func_80A73C28
-.word func_80A73E0C
+.word EnIceHono_Init
+.word EnIceHono_Destroy
+.word EnIceHono_Update
+.word EnIceHono_Draw
 glabel D_80A74010
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00190050, 0x00000000, 0x00000000
 glabel D_80A7403C

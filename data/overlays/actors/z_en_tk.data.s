@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B1D4B0
+glabel En_Tk_InitVars
  .word 0x00850400, 0x00000009, 0x00890000, 0x00000770
-.word func_80B1CA60
-.word func_80B1CBDC
-.word func_80B1D158
-.word func_80B1D398
+.word EnTk_Init
+.word EnTk_Destroy
+.word EnTk_Update
+.word EnTk_Draw
 glabel D_80B1D4D0
  .word 0x040539B0, 0x040535B0, 0x040531B0, 0x04052DB0, 0x040529B0, 0x040525B0, 0x040521B0, 0x04051DB0
 glabel D_80B1D4F0

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_reeba.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE4CD0.s")
+#define ROOM  0x00
+#define FLAGS 0x08000015
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE4ECC.s")
+void EnReeba_Init(EnReeba* this, GlobalContext* globalCtx);
+void EnReeba_Destroy(EnReeba* this, GlobalContext* globalCtx);
+void EnReeba_Update(EnReeba* this, GlobalContext* globalCtx);
+void EnReeba_Draw(EnReeba* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Reeba_InitVars =
+{
+    ACTOR_EN_REEBA,
+    ACTORTYPE_MISC,
+    ROOM,
+    FLAGS,
+    OBJECT_REEBA,
+    sizeof(EnReeba),
+    (ActorFunc)EnReeba_Init,
+    (ActorFunc)EnReeba_Destroy,
+    (ActorFunc)EnReeba_Update,
+    (ActorFunc)EnReeba_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/EnReeba_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/EnReeba_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE4F40.s")
 
@@ -39,10 +61,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE5EDC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE6118.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/EnReeba_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/func_80AE63C4.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Reeba/EnReeba_Draw.s")

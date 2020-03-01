@@ -72,7 +72,7 @@ glabel func_80AC7094
 /* 044F0 80AC7190 3C0741A0 */  lui     $a3, 0x41A0                ## $a3 = 41A00000
 /* 044F4 80AC7194 46062200 */  add.s   $f8, $f4, $f6              
 /* 044F8 80AC7198 E608002C */  swc1    $f8, 0x002C($s0)           ## 0000002C
-/* 044FC 80AC719C 0C00AC78 */  jal     Actor_InitShadow
+/* 044FC 80AC719C 0C00AC78 */  jal     ActorShape_Init
               
 /* 04500 80AC71A0 AFAB0024 */  sw      $t3, 0x0024($sp)           
 /* 04504 80AC71A4 860C001C */  lh      $t4, 0x001C($s0)           ## 0000001C

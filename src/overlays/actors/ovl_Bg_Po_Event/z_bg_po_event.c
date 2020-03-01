@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_po_event.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000000
+
+void BgPoEvent_Init(BgPoEvent* this, GlobalContext* globalCtx);
+void BgPoEvent_Destroy(BgPoEvent* this, GlobalContext* globalCtx);
+void BgPoEvent_Update(BgPoEvent* this, GlobalContext* globalCtx);
+void BgPoEvent_Draw(BgPoEvent* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Po_Event_InitVars =
+{
+    ACTOR_BG_PO_EVENT,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_PO_SISTERS,
+    sizeof(BgPoEvent),
+    (ActorFunc)BgPoEvent_Init,
+    (ActorFunc)BgPoEvent_Destroy,
+    (ActorFunc)BgPoEvent_Update,
+    (ActorFunc)BgPoEvent_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A6210.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A658C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A673C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/BgPoEvent_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A6848.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/BgPoEvent_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A68D0.s")
 
@@ -41,11 +63,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A780C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A79B8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/BgPoEvent_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/func_808A7A1C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Po_Event/BgPoEvent_Draw.s")
 

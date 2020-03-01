@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_haka_ship.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F100.s")
+#define ROOM  0x00
+#define FLAGS 0x00000030
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F240.s")
+void BgHakaShip_Init(BgHakaShip* this, GlobalContext* globalCtx);
+void BgHakaShip_Destroy(BgHakaShip* this, GlobalContext* globalCtx);
+void BgHakaShip_Update(BgHakaShip* this, GlobalContext* globalCtx);
+void BgHakaShip_Draw(BgHakaShip* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Haka_Ship_InitVars =
+{
+    ACTOR_BG_HAKA_SHIP,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_HAKA_OBJECTS,
+    sizeof(BgHakaShip),
+    (ActorFunc)BgHakaShip_Init,
+    (ActorFunc)BgHakaShip_Destroy,
+    (ActorFunc)BgHakaShip_Update,
+    (ActorFunc)BgHakaShip_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/BgHakaShip_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/BgHakaShip_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F27C.s")
 
@@ -19,10 +41,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F6B4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F774.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/BgHakaShip_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/func_8087F7B4.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka_Ship/BgHakaShip_Draw.s")

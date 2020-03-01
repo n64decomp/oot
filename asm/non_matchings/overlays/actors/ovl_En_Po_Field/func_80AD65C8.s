@@ -64,7 +64,7 @@ glabel func_80AD65C8
 /* 02BA8 80AD66A8 468021A0 */  cvt.s.w $f6, $f4                   
 /* 02BAC 80AD66AC 46083302 */  mul.s   $f12, $f6, $f8             
 /* 02BB0 80AD66B0 44066000 */  mfc1    $a2, $f12                  
-/* 02BB4 80AD66B4 0C0342A3 */  jal     func_800D0A8C              
+/* 02BB4 80AD66B4 0C0342A3 */  jal     Matrix_Scale              
 /* 02BB8 80AD66B8 46006386 */  mov.s   $f14, $f12                 
 .L80AD66BC:
 /* 02BBC 80AD66BC 8FBF0014 */  lw      $ra, 0x0014($sp)           

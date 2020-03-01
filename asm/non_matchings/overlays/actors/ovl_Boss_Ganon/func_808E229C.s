@@ -93,7 +93,7 @@ glabel func_808E229C
 .L808E2400:
 /* 0BB90 808E2400 C44C02EC */  lwc1    $f12, 0x02EC($v0)          ## 000002EC
 /* 0BB94 808E2404 C44E02F0 */  lwc1    $f14, 0x02F0($v0)          ## 000002F0
-/* 0BB98 808E2408 0C034261 */  jal     func_800D0984              
+/* 0BB98 808E2408 0C034261 */  jal     Matrix_Translate              
 /* 0BB9C 808E240C 8C4602F4 */  lw      $a2, 0x02F4($v0)           ## 000002F4
 /* 0BBA0 808E2410 44912000 */  mtc1    $s1, $f4                   ## $f4 = 0.00
 /* 0BBA4 808E2414 C6480050 */  lwc1    $f8, 0x0050($s2)           ## 00000050
@@ -109,7 +109,7 @@ glabel func_808E229C
 /* 0BBCC 808E243C 00000000 */  nop
 /* 0BBD0 808E2440 46008482 */  mul.s   $f18, $f16, $f0            
 /* 0BBD4 808E2444 44069000 */  mfc1    $a2, $f18                  
-/* 0BBD8 808E2448 0C0342A3 */  jal     func_800D0A8C              
+/* 0BBD8 808E2448 0C0342A3 */  jal     Matrix_Scale              
 /* 0BBDC 808E244C 00000000 */  nop
 /* 0BBE0 808E2450 0C0347F5 */  jal     func_800D1FD4              
 /* 0BBE4 808E2454 02C02025 */  or      $a0, $s6, $zero            ## $a0 = 00000000
@@ -123,7 +123,7 @@ glabel func_808E229C
 /* 0BC04 808E2474 461E5403 */  div.s   $f16, $f10, $f30           
 /* 0BC08 808E2478 461C2183 */  div.s   $f6, $f4, $f28             
 /* 0BC0C 808E247C 46168482 */  mul.s   $f18, $f16, $f22           
-/* 0BC10 808E2480 0C0343B5 */  jal     func_800D0ED4              
+/* 0BC10 808E2480 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0BC14 808E2484 46123300 */  add.s   $f12, $f6, $f18            
 /* 0BC18 808E2488 8E6202D0 */  lw      $v0, 0x02D0($s3)           ## 000002D0
 /* 0BC1C 808E248C 3C08DA38 */  lui     $t0, 0xDA38                ## $t0 = DA380000
@@ -135,7 +135,7 @@ glabel func_808E229C
 /* 0BC34 808E24A4 8E840000 */  lw      $a0, 0x0000($s4)           ## 00000000
 /* 0BC38 808E24A8 24A57CF8 */  addiu   $a1, $a1, %lo(D_808F7CF8)  ## $a1 = 808F7CF8
 /* 0BC3C 808E24AC 2406277D */  addiu   $a2, $zero, 0x277D         ## $a2 = 0000277D
-/* 0BC40 808E24B0 0C0346A2 */  jal     func_800D1A88              
+/* 0BC40 808E24B0 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0BC44 808E24B4 00408025 */  or      $s0, $v0, $zero            ## $s0 = 00000000
 /* 0BC48 808E24B8 AE020004 */  sw      $v0, 0x0004($s0)           ## 00000004
 /* 0BC4C 808E24BC 8E6202D0 */  lw      $v0, 0x02D0($s3)           ## 000002D0

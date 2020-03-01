@@ -55,11 +55,11 @@ glabel D_80AB4F54
 .word func_80AB1E2C
 .word func_80AB2E70
 .word func_80AB2FE4
-glabel D_80AB4F68
+glabel En_Nb_InitVars
  .word 0x00C30400, 0x00000010, 0x00B30000, 0x00000328
-.word func_80AB3ECC
-.word func_80AB0F94
-.word func_80AB3E70
-.word func_80AB4280
+.word EnNb_Init
+.word EnNb_Destroy
+.word EnNb_Update
+.word EnNb_Draw
 .word 0x00000000, 0x00000000
 

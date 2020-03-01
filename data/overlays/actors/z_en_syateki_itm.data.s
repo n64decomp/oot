@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B10220
+glabel En_Syateki_Itm_InitVars
  .word 0x00C00600, 0x00000010, 0x00010000, 0x000001D8
-.word func_80B0F6B0
-.word func_80B0F82C
-.word func_80B10158
+.word EnSyatekiItm_Init
+.word EnSyatekiItm_Destroy
+.word EnSyatekiItm_Update
 .word 0x00000000
 glabel D_80B10240
  .word 0x00000000, 0xC1200000, 0xC3870000

@@ -1,7 +1,7 @@
 glabel func_809EF9A4
 /* 00654 809EF9A4 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 00658 809EF9A8 AFBF0014 */  sw      $ra, 0x0014($sp)           
-/* 0065C 809EF9AC 0C021AAF */  jal     func_80086ABC              
+/* 0065C 809EF9AC 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 00660 809EF9B0 AFA40018 */  sw      $a0, 0x0018($sp)           
 /* 00664 809EF9B4 14400003 */  bne     $v0, $zero, .L809EF9C4     
 /* 00668 809EF9B8 8FBF0014 */  lw      $ra, 0x0014($sp)           

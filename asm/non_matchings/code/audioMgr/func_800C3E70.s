@@ -27,7 +27,7 @@ glabel func_800C3E70
 /* B3B074 800C3ED4 26140074 */  addiu $s4, $s0, 0x74
 /* B3B078 800C3ED8 02803025 */  move  $a2, $s4
 /* B3B07C 800C3EDC 8E040000 */  lw    $a0, ($s0)
-/* B3B080 800C3EE0 0C034C88 */  jal   func_800D3220
+/* B3B080 800C3EE0 0C034C88 */  jal   IrqMgr_AddClient
 /* B3B084 800C3EE4 27A5003C */   addiu $a1, $sp, 0x3c
 /* B3B088 800C3EE8 24130004 */  li    $s3, 4
 /* B3B08C 800C3EEC 24120001 */  li    $s2, 1

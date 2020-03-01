@@ -86,12 +86,12 @@ glabel D_80B4E4CC
 .word D_80B4E44C
 .word D_80B4E4CC
 .word 0x00000000
-glabel D_80B4E5D0
+glabel En_Zl1_InitVars
  .word 0x00290400, 0x00000019, 0x001D0000, 0x0000020C
-.word func_80B4AB50
-.word func_80B4ADE0
-.word func_80B4C220
-.word func_80B4C45C
+.word EnZl1_Init
+.word EnZl1_Destroy
+.word EnZl1_Update
+.word EnZl1_Draw
 glabel D_80B4E5F0
  .word 0x00000039, 0x20010000, 0x01000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0014002E, 0x00000000, 0x00000000
 glabel D_80B4E61C

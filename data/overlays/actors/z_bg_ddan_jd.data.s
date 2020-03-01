@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80871060
+glabel Bg_Ddan_Jd_InitVars
  .word 0x00580100, 0x00000030, 0x002B0000, 0x00000170
-.word func_80870AB0
-.word func_80870B58
-.word func_80871004
-.word func_80871028
+.word BgDdanJd_Init
+.word BgDdanJd_Destroy
+.word BgDdanJd_Update
+.word BgDdanJd_Draw
 glabel D_80871080
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

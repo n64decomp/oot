@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80894F20
+glabel Bg_Jya_Bombchuiwa_InitVars
  .word 0x01590100, 0x00000001, 0x00F10000, 0x000001B8
-.word func_80894510
-.word func_8089458C
-.word func_80894AD8
-.word func_80894E5C
+.word BgJyaBombchuiwa_Init
+.word BgJyaBombchuiwa_Destroy
+.word BgJyaBombchuiwa_Update
+.word BgJyaBombchuiwa_Draw
 glabel D_80894F40
  .word 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010100, 0x0000FED4, 0x00000000, 0x00280064
 glabel D_80894F64

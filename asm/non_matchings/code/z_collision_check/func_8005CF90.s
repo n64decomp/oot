@@ -32,7 +32,7 @@ glabel func_8005CF90
 /* AD41A8 8005D008 27BD0018 */  addiu $sp, $sp, 0x18
 /* AD41AC 8005D00C 24020001 */  li    $v0, 1
 /* AD41B0 8005D010 03E00008 */  jr    $ra
-/* AD41B4 8005D014 00000000 */   nop   
+/* AD41B4 8005D014 00000000 */   nop
 
 glabel func_8005D018
 /* AD41B8 8005D018 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -52,7 +52,7 @@ glabel func_8005D018
 /* AD41F0 8005D050 27BD0018 */  addiu $sp, $sp, 0x18
 /* AD41F4 8005D054 24020001 */  li    $v0, 1
 /* AD41F8 8005D058 03E00008 */  jr    $ra
-/* AD41FC 8005D05C 00000000 */   nop   
+/* AD41FC 8005D05C 00000000 */   nop
 
 glabel func_8005D060
 /* AD4200 8005D060 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -72,7 +72,7 @@ glabel func_8005D060
 /* AD4238 8005D098 27BD0018 */  addiu $sp, $sp, 0x18
 /* AD423C 8005D09C 24020001 */  li    $v0, 1
 /* AD4240 8005D0A0 03E00008 */  jr    $ra
-/* AD4244 8005D0A4 00000000 */   nop   
+/* AD4244 8005D0A4 00000000 */   nop
 
 /* AD4248 8005D0A8 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* AD424C 8005D0AC AFBF0014 */  sw    $ra, 0x14($sp)
@@ -96,7 +96,7 @@ glabel func_8005D060
 /* AD4294 8005D0F4 27BD0018 */  addiu $sp, $sp, 0x18
 /* AD4298 8005D0F8 24020001 */  li    $v0, 1
 /* AD429C 8005D0FC 03E00008 */  jr    $ra
-/* AD42A0 8005D100 00000000 */   nop   
+/* AD42A0 8005D100 00000000 */   nop
 
 glabel func_8005D104
 /* AD42A4 8005D104 27BDFFE8 */  addiu $sp, $sp, -0x18
@@ -121,5 +121,4 @@ glabel func_8005D104
 /* AD42F0 8005D150 27BD0018 */  addiu $sp, $sp, 0x18
 /* AD42F4 8005D154 24020001 */  li    $v0, 1
 /* AD42F8 8005D158 03E00008 */  jr    $ra
-/* AD42FC 8005D15C 00000000 */   nop   
-
+/* AD42FC 8005D15C 00000000 */   nop

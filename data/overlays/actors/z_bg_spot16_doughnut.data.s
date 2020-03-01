@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B69F0
+glabel Bg_Spot16_Doughnut_InitVars
  .word 0x00E50600, 0x00000000, 0x017A0000, 0x00000154
-.word func_808B6440
-.word func_808B65E0
-.word func_808B65EC
-.word func_808B66E8
+.word BgSpot16Doughnut_Init
+.word BgSpot16Doughnut_Destroy
+.word BgSpot16Doughnut_Update
+.word BgSpot16Doughnut_Draw
 glabel D_808B6A10
  .word 0xB0F4157C, 0xB0F81388, 0x30FC1388
 glabel D_808B6A1C

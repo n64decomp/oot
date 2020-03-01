@@ -80,7 +80,7 @@ glabel func_80AD3594
 /* 00A18 80AD36C8 A3AA005D */  sb      $t2, 0x005D($sp)           
 /* 00A1C 80AD36CC A3A9005C */  sb      $t1, 0x005C($sp)           
 /* 00A20 80AD36D0 2406020B */  addiu   $a2, $zero, 0x020B         ## $a2 = 0000020B
-/* 00A24 80AD36D4 0C0346A2 */  jal     func_800D1A88              
+/* 00A24 80AD36D4 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00A28 80AD36D8 AFA20044 */  sw      $v0, 0x0044($sp)           
 /* 00A2C 80AD36DC 8FA30044 */  lw      $v1, 0x0044($sp)           
 /* 00A30 80AD36E0 8FA7007C */  lw      $a3, 0x007C($sp)           

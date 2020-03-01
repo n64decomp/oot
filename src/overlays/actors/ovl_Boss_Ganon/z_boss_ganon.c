@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_boss_ganon.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000035
+
+void BossGanon_Init(BossGanon* this, GlobalContext* globalCtx);
+void BossGanon_Destroy(BossGanon* this, GlobalContext* globalCtx);
+void BossGanon_Update(BossGanon* this, GlobalContext* globalCtx);
+void BossGanon_Draw(BossGanon* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Boss_Ganon_InitVars =
+{
+    ACTOR_BOSS_GANON,
+    ACTORTYPE_BOSS,
+    ROOM,
+    FLAGS,
+    OBJECT_GANON,
+    sizeof(BossGanon),
+    (ActorFunc)BossGanon_Init,
+    (ActorFunc)BossGanon_Destroy,
+    (ActorFunc)BossGanon_Update,
+    (ActorFunc)BossGanon_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D6870.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D69B0.s")
@@ -23,9 +45,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D712C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D7198.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/BossGanon_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D7738.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/BossGanon_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808D779C.s")
 
@@ -79,7 +101,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808DD20C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808DD5D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/BossGanon_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808DE734.s")
 
@@ -117,7 +139,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808E0A3C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808E0CD8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/BossGanon_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808E0F4C.s")
 
@@ -136,8 +158,4 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808E3564.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganon/func_808E3D84.s")
-
-
-
-
 

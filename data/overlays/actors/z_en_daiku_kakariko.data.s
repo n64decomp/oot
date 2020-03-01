@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809E5490
+glabel En_Daiku_Kakariko_InitVars
  .word 0x01BC0400, 0x00000019, 0x01220000, 0x00000308
-.word func_809E43D0
-.word func_809E4724
-.word func_809E4F40
-.word func_809E5340
+.word EnDaikuKakariko_Init
+.word EnDaikuKakariko_Destroy
+.word EnDaikuKakariko_Update
+.word EnDaikuKakariko_Draw
 glabel D_809E54B0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00120042, 0x00000000, 0x00000000
 glabel D_809E54DC

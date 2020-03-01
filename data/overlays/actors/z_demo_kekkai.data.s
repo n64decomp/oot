@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8098E090
+glabel Demo_Kekkai_InitVars
  .word 0x01A70700, 0x00000030, 0x01790000, 0x000001FC
-.word func_8098D014
-.word func_8098D240
-.word func_8098D5F0
-.word func_8098DF20
+.word DemoKekkai_Init
+.word DemoKekkai_Destroy
+.word DemoKekkai_Update
+.word DemoKekkai_Draw
 glabel D_8098E0B0
  .word 0x0A110939, 0x10010000, 0x00000000, 0x20000000, 0x07040000, 0x00002000, 0x00000000, 0x01010100, 0x02A800DC, 0x00780000, 0x00000000
 glabel D_8098E0DC

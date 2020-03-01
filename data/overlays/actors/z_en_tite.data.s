@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B1B5B0
+glabel En_Tite_InitVars
  .word 0x001B0500, 0x00000015, 0x00160000, 0x00000378
-.word func_80B18A88
-.word func_80B18BDC
-.word func_80B1AD94
-.word func_80B1B268
+.word EnTite_Init
+.word EnTite_Destroy
+.word EnTite_Update
+.word EnTite_Draw
 glabel D_80B1B5D0
  .word 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFCFFFFF, 0x00000000, 0x01050100, 0x00000000, 0x05DC0000, 0x00140064
 glabel D_80B1B5F4

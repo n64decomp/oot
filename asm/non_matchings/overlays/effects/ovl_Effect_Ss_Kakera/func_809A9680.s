@@ -52,7 +52,7 @@ glabel func_809A9680
 /* 000B8 809A9738 2484A5C0 */  addiu   $a0, $a0, %lo(D_809AA5C0)  ## $a0 = FFFFA5C0
 /* 000BC 809A973C 3C04809B */  lui     $a0, %hi(D_809AA5D4)       ## $a0 = 809B0000
 /* 000C0 809A9740 2484A5D4 */  addiu   $a0, $a0, %lo(D_809AA5D4)  ## $a0 = 809AA5D4
-/* 000C4 809A9744 0C000B94 */  jal     func_80002E50              
+/* 000C4 809A9744 0C000B94 */  jal     LogUtils_HungupThread              
 /* 000C8 809A9748 240500B2 */  addiu   $a1, $zero, 0x00B2         ## $a1 = 000000B2
 .L809A974C:
 /* 000CC 809A974C 3C0B809B */  lui     $t3, %hi(func_809A9874)    ## $t3 = 809B0000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809C49F0
+glabel En_Bom_Bowl_Man_InitVars
  .word 0x014B0400, 0x08000039, 0x01600000, 0x00000264
-.word func_809C3630
-.word func_809C3814
-.word func_809C4734
-.word func_809C48EC
+.word EnBomBowlMan_Init
+.word EnBomBowlMan_Destroy
+.word EnBomBowlMan_Update
+.word EnBomBowlMan_Draw
 glabel D_809C4A10
  .word 0x41800000, 0x42380000, 0x00000000, 0x42100000, 0x42600000, 0x00000000
 glabel D_809C4A28

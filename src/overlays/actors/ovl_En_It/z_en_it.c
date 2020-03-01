@@ -1,7 +1,7 @@
 /*
  * File: z_en_it.c
  * Overlay: ovl_En_It
- * Description: Dampe's Minigame Collectibles
+ * Description: Dampe's Minigame digging spot hitboxes
 */
 
 #include <ultra64.h>

@@ -48,7 +48,7 @@ glabel func_80027798
 /* A9E9E8 80027848 1580002F */  bnez  $t4, .L80027908
 /* A9E9EC 8002784C 24060249 */   li    $a2, 585
 /* A9E9F0 80027850 AFA30030 */  sw    $v1, 0x30($sp)
-/* A9E9F4 80027854 0C01EBE3 */  jal   func_8007AF8C
+/* A9E9F4 80027854 0C01EBE3 */  jal   ZeldaArena_MallocRDebug
 /* A9E9F8 80027858 AFA40040 */   sw    $a0, 0x40($sp)
 /* A9E9FC 8002785C 8FA30030 */  lw    $v1, 0x30($sp)
 /* A9EA00 80027860 3C048013 */  lui   $a0, %hi(D_80135894) # $a0, 0x8013

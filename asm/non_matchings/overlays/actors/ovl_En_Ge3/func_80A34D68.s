@@ -17,9 +17,9 @@ glabel func_80A34D68
 /* 00784 80A34DA4 10400008 */  beq     $v0, $zero, .L80A34DC8     
 /* 00788 80A34DA8 3C0142C8 */  lui     $at, 0x42C8                ## $at = 42C80000
 /* 0078C 80A34DAC 3C0E80A3 */  lui     $t6, %hi(func_80A34A20)    ## $t6 = 80A30000
-/* 00790 80A34DB0 3C0F80A3 */  lui     $t7, %hi(func_80A34E14)    ## $t7 = 80A30000
+/* 00790 80A34DB0 3C0F80A3 */  lui     $t7, %hi(EnGe3_Update)    ## $t7 = 80A30000
 /* 00794 80A34DB4 25CE4A20 */  addiu   $t6, $t6, %lo(func_80A34A20) ## $t6 = 80A34A20
-/* 00798 80A34DB8 25EF4E14 */  addiu   $t7, $t7, %lo(func_80A34E14) ## $t7 = 80A34E14
+/* 00798 80A34DB8 25EF4E14 */  addiu   $t7, $t7, %lo(EnGe3_Update) ## $t7 = 80A34E14
 /* 0079C 80A34DBC AE0E0310 */  sw      $t6, 0x0310($s0)           ## 00000310
 /* 007A0 80A34DC0 1000000C */  beq     $zero, $zero, .L80A34DF4   
 /* 007A4 80A34DC4 AE0F0130 */  sw      $t7, 0x0130($s0)           ## 00000130

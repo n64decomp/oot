@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808E4BE0
+glabel Boss_Ganon_InitVars
  .word 0x00E80900, 0x00000035, 0x00E10000, 0x0000071C
-.word func_808D7198
-.word func_808D7738
-.word func_808DD5D0
-.word func_808E0CD8
+.word BossGanon_Init
+.word BossGanon_Destroy
+.word BossGanon_Update
+.word BossGanon_Draw
 glabel D_808E4C00
  .word 0x03110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00100000, 0xFFCFFFFE, 0x00000000, 0x01050100, 0x00140050, 0xFFCE0000, 0x00000000
 glabel D_808E4C2C

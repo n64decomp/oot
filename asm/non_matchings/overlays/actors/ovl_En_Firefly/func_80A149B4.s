@@ -40,7 +40,7 @@ glabel func_80A149B4
 /* 019CC 80A14A3C 254A3D68 */  addiu   $t2, $t2, %lo(func_80A13D68) ## $t2 = 80A13D68
 /* 019D0 80A14A40 114B001C */  beq     $t2, $t3, .L80A14AB4       
 /* 019D4 80A14A44 27A40048 */  addiu   $a0, $sp, 0x0048           ## $a0 = FFFFFFA8
-/* 019D8 80A14A48 0C034236 */  jal     func_800D08D8              
+/* 019D8 80A14A48 0C034236 */  jal     Matrix_Get              
 /* 019DC 80A14A4C AFA500A4 */  sw      $a1, 0x00A4($sp)           
 /* 019E0 80A14A50 0C03F66B */  jal     Math_Rand_ZeroOne
               ## Rand.Next() float

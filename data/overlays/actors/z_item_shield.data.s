@@ -9,12 +9,12 @@
 
 glabel D_80B871A0
  .word 0x0A000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0x00000004, 0x00000000, 0x00010100, 0x000F000F, 0x00000000, 0x00000000
-glabel D_80B871CC
+glabel Item_Shield_InitVars
  .word 0x00EE0700, 0x00000010, 0x00150000, 0x0000020C
-.word func_80B86928
-.word func_80B86AA0
-.word func_80B87074
-.word func_80B87098
+.word ItemShield_Init
+.word ItemShield_Destroy
+.word ItemShield_Update
+.word ItemShield_Draw
 .word 0xFFFF00FF, 0xFF0000FF
 glabel D_80B871F4
  .word 0x00000000

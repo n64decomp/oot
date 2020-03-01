@@ -8,12 +8,12 @@
 .section .data
 
 .word 0x00000000, 0x00000000, 0x00000000
-glabel D_808B9E1C
+glabel Bg_Sst_Floor_InitVars
  .word 0x01660100, 0x00000030, 0x00E20000, 0x0000016C
-.word func_808B9910
-.word func_808B9978
-.word func_808B99A8
-.word func_808B9D14
+.word BgSstFloor_Init
+.word BgSstFloor_Destroy
+.word BgSstFloor_Update
+.word BgSstFloor_Draw
 glabel D_808B9E3C
  .word 0x48500064
 

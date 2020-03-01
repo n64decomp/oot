@@ -3,5 +3,5 @@
 
 OSThread* __osGetCurrFaultedThread()
 {
-    return D_8000AD54;
+    return __osFaultedThread;
 }

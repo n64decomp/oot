@@ -10,5 +10,6 @@
 glabel D_8012D280
     .incbin "baserom.z64", 0xBA4420, 0x4
 
+#errcnt
 glabel D_8012D284
     .incbin "baserom.z64", 0xBA4424, 0xC

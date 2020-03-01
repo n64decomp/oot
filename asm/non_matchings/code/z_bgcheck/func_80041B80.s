@@ -7,11 +7,11 @@ glabel func_80041B80
 /* AB8D34 80041B94 0C00F131 */  jal   T_BGCheck_getBGDataInfo
 /* AB8D38 80041B98 00C02825 */   move  $a1, $a2
 /* AB8D3C 80041B9C 14400003 */  bnez  $v0, .L80041BAC
-/* AB8D40 80041BA0 3C048016 */   lui   $a0, %hi(D_80166FA8) # $a0, 0x8016
+/* AB8D40 80041BA0 3C048016 */   lui   $a0, %hi(gSegments) # $a0, 0x8016
 /* AB8D44 80041BA4 10000016 */  b     .L80041C00
 /* AB8D48 80041BA8 00001025 */   move  $v0, $zero
 .L80041BAC:
-/* AB8D4C 80041BAC 8C846FA8 */  lw    $a0, %lo(D_80166FA8)($a0)
+/* AB8D4C 80041BAC 8C846FA8 */  lw    $a0, %lo(gSegments)($a0)
 /* AB8D50 80041BB0 8C430020 */  lw    $v1, 0x20($v0)
 /* AB8D54 80041BB4 3C018000 */  lui   $at, 0x8000
 /* AB8D58 80041BB8 00812021 */  addu  $a0, $a0, $at

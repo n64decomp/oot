@@ -9,12 +9,12 @@
 
 glabel D_809E1640
  .word 0x00000000, 0x00000000, 0x00000000
-glabel D_809E164C
+glabel En_Crow_InitVars
  .word 0x01C00500, 0x00005005, 0x00080000, 0x00000298
-.word func_809E0240
-.word func_809E032C
-.word func_809E1220
-.word func_809E15E0
+.word EnCrow_Init
+.word EnCrow_Destroy
+.word EnCrow_Update
+.word EnCrow_Draw
 glabel D_809E166C
  .word 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFCFFFFF, 0x00000000, 0x09010100, 0x01000000, 0x00000000, 0x00140064
 glabel D_809E1690

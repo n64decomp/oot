@@ -7,7 +7,7 @@ glabel func_80A54C34
 /* 01DA8 80A54C48 14A10004 */  bne     $a1, $at, .L80A54C5C       
 /* 01DAC 80A54C4C AFA70024 */  sw      $a3, 0x0024($sp)           
 /* 01DB0 80A54C50 8FA40028 */  lw      $a0, 0x0028($sp)           
-/* 01DB4 80A54C54 0C034236 */  jal     func_800D08D8              
+/* 01DB4 80A54C54 0C034236 */  jal     Matrix_Get              
 /* 01DB8 80A54C58 24840330 */  addiu   $a0, $a0, 0x0330           ## $a0 = 00000330
 .L80A54C5C:
 /* 01DBC 80A54C5C 8FBF0014 */  lw      $ra, 0x0014($sp)           

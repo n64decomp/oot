@@ -1,9 +1,30 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_syateki_itm.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/func_80B0F6B0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/func_80B0F82C.s")
+void EnSyatekiItm_Init(EnSyatekiItm* this, GlobalContext* globalCtx);
+void EnSyatekiItm_Destroy(EnSyatekiItm* this, GlobalContext* globalCtx);
+void EnSyatekiItm_Update(EnSyatekiItm* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Syateki_Itm_InitVars =
+{
+    ACTOR_EN_SYATEKI_ITM,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnSyatekiItm),
+    (ActorFunc)EnSyatekiItm_Init,
+    (ActorFunc)EnSyatekiItm_Destroy,
+    (ActorFunc)EnSyatekiItm_Update,
+    NULL,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/EnSyatekiItm_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/EnSyatekiItm_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/func_80B0F838.s")
 
@@ -17,8 +38,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/func_80B10070.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/func_80B10158.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Itm/EnSyatekiItm_Update.s")

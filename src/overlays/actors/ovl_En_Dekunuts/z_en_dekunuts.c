@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dekunuts.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809E9560.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809E96C8.s")
+void EnDekunuts_Init(EnDekunuts* this, GlobalContext* globalCtx);
+void EnDekunuts_Destroy(EnDekunuts* this, GlobalContext* globalCtx);
+void EnDekunuts_Update(EnDekunuts* this, GlobalContext* globalCtx);
+void EnDekunuts_Draw(EnDekunuts* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dekunuts_InitVars =
+{
+    ACTOR_EN_DEKUNUTS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_DEKUNUTS,
+    sizeof(EnDekunuts),
+    (ActorFunc)EnDekunuts_Init,
+    (ActorFunc)EnDekunuts_Destroy,
+    (ActorFunc)EnDekunuts_Update,
+    (ActorFunc)EnDekunuts_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/EnDekunuts_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/EnDekunuts_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809E96FC.s")
 
@@ -51,12 +73,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809EA70C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809EA82C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/EnDekunuts_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809EA98C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/func_809EAAC4.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekunuts/EnDekunuts_Draw.s")

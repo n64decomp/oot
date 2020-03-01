@@ -19,8 +19,8 @@ glabel func_80B88E3C
 /* 00108 80B88E78 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 0010C 80B88E7C 84C201A8 */  lh      $v0, 0x01A8($a2)           ## 000001A8
 .L80B88E80:
-/* 00110 80B88E80 3C0F80B9 */  lui     $t7, %hi(func_80B88EE0)    ## $t7 = 80B90000
-/* 00114 80B88E84 25EF8EE0 */  addiu   $t7, $t7, %lo(func_80B88EE0) ## $t7 = 80B88EE0
+/* 00110 80B88E80 3C0F80B9 */  lui     $t7, %hi(MagicFire_Update)    ## $t7 = 80B90000
+/* 00114 80B88E84 25EF8EE0 */  addiu   $t7, $t7, %lo(MagicFire_Update) ## $t7 = 80B88EE0
 /* 00118 80B88E88 18400004 */  blez    $v0, .L80B88E9C            
 /* 0011C 80B88E8C 00E02025 */  or      $a0, $a3, $zero            ## $a0 = 00000000
 /* 00120 80B88E90 244EFFFF */  addiu   $t6, $v0, 0xFFFF           ## $t6 = FFFFFFFF

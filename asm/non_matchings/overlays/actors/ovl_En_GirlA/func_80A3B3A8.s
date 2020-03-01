@@ -32,7 +32,7 @@ glabel func_80A3B3A8
 /* 00CCC 80A3B41C 10000009 */  beq     $zero, $zero, .L80A3B444   
 /* 00CD0 80A3B420 24020004 */  addiu   $v0, $zero, 0x0004         ## $v0 = 00000004
 .L80A3B424:
-/* 00CD4 80A3B424 0C0218E2 */  jal     func_80086388              
+/* 00CD4 80A3B424 0C0218E2 */  jal     Item_CheckObtainability              
 /* 00CD8 80A3B428 24040058 */  addiu   $a0, $zero, 0x0058         ## $a0 = 00000058
 /* 00CDC 80A3B42C 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 00CE0 80A3B430 54410004 */  bnel    $v0, $at, .L80A3B444       

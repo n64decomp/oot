@@ -194,7 +194,7 @@ glabel L8089E4D8
 /* 00998 8089E5C8 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 0099C 8089E5CC 468042A0 */  cvt.s.w $f10, $f8                  
 /* 009A0 8089E5D0 46105302 */  mul.s   $f12, $f10, $f16           
-/* 009A4 8089E5D4 0C034348 */  jal     func_800D0D20              
+/* 009A4 8089E5D4 0C034348 */  jal     Matrix_RotateY              
 /* 009A8 8089E5D8 00000000 */  nop
 /* 009AC 8089E5DC 3C04808A */  lui     $a0, %hi(D_8089EBAC)       ## $a0 = 808A0000
 /* 009B0 8089E5E0 2484EBAC */  addiu   $a0, $a0, %lo(D_8089EBAC)  ## $a0 = 8089EBAC

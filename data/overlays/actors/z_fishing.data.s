@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B7A630
+glabel Fishing_InitVars
  .word 0x00FE0400, 0x00000010, 0x015B0000, 0x00000550
-.word func_80B6A540
-.word func_80B6AEBC
-.word func_80B715F4
-.word func_80B75DE4
+.word Fishing_Init
+.word Fishing_Destroy
+.word Fishing_Update
+.word Fishing_Draw
 glabel D_80B7A650
  .word 0x00000000
 glabel D_80B7A654

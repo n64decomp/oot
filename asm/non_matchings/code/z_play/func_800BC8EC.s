@@ -71,7 +71,7 @@ glabel func_800BC8EC
 /* B33B98 800BC9F8 91CF1DE8 */  lbu   $t7, 0x1de8($t6)
 /* B33B9C 800BC9FC 51AF0007 */  beql  $t5, $t7, .L800BCA1C
 /* B33BA0 800BCA00 26041C24 */   addiu $a0, $s0, 0x1c24
-/* B33BA4 800BCA04 0C0211B8 */  jal   func_800846E0
+/* B33BA4 800BCA04 0C0211B8 */  jal   Inventory_SwapAgeEquipment
 /* B33BA8 800BCA08 00000000 */   nop   
 /* B33BAC 800BCA0C 02002025 */  move  $a0, $s0
 /* B33BB0 800BCA10 0C023B2B */  jal   func_8008ECAC
@@ -86,7 +86,7 @@ glabel func_800BC8EC
 /* B33BD0 800BCA30 02002025 */   move  $a0, $s0
 /* B33BD4 800BCA34 0C02EFAC */  jal   func_800BBEB0
 /* B33BD8 800BCA38 00000000 */   nop   
-/* B33BDC 800BCA3C 0C01EC8F */  jal   func_8007B23C
+/* B33BDC 800BCA3C 0C01EC8F */  jal   ZeldaArena_Cleanup
 /* B33BE0 800BCA40 00000000 */   nop   
 /* B33BE4 800BCA44 3C048016 */  lui   $a0, %hi(D_801614B8) # $a0, 0x8016
 /* B33BE8 800BCA48 0C0350B0 */  jal   Fault_RemoveClient

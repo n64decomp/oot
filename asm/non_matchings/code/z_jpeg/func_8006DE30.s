@@ -60,16 +60,16 @@ glabel func_8006DE30
 /* AE50B4 8006DF14 15B9FFF8 */  bne   $t5, $t9, .L8006DEF8
 /* AE50B8 8006DF18 AF0F003C */   sw    $t7, 0x3c($t8)
 /* AE50BC 8006DF1C 8DAF0000 */  lw    $t7, ($t5)
-/* AE50C0 8006DF20 3C048016 */  lui   $a0, %hi(D_801666A0) # $a0, 0x8016
-/* AE50C4 8006DF24 248466A0 */  addiu $a0, %lo(D_801666A0) # addiu $a0, $a0, 0x66a0
+/* AE50C0 8006DF20 3C048016 */  lui   $a0, %hi(gSchedContext+0x38) # $a0, 0x8016
+/* AE50C4 8006DF24 248466A0 */  addiu $a0, %lo(gSchedContext+0x38) # addiu $a0, $a0, 0x66a0
 /* AE50C8 8006DF28 AF0F0040 */  sw    $t7, 0x40($t8)
 /* AE50CC 8006DF2C AFA80018 */  sw    $t0, 0x18($sp)
 /* AE50D0 8006DF30 24E50030 */  addiu $a1, $a3, 0x30
 /* AE50D4 8006DF34 0C000C18 */  jal   osSendMesg
 /* AE50D8 8006DF38 24060001 */   li    $a2, 1
-/* AE50DC 8006DF3C 3C048016 */  lui   $a0, %hi(D_80166668) # $a0, 0x8016
+/* AE50DC 8006DF3C 3C048016 */  lui   $a0, %hi(gSchedContext) # $a0, 0x8016
 /* AE50E0 8006DF40 0C03257E */  jal   func_800C95F8
-/* AE50E4 8006DF44 24846668 */   addiu $a0, %lo(D_80166668) # addiu $a0, $a0, 0x6668
+/* AE50E4 8006DF44 24846668 */   addiu $a0, %lo(gSchedContext) # addiu $a0, $a0, 0x6668
 /* AE50E8 8006DF48 8FA40018 */  lw    $a0, 0x18($sp)
 /* AE50EC 8006DF4C 00002825 */  move  $a1, $zero
 /* AE50F0 8006DF50 0C000CA0 */  jal   osRecvMesg

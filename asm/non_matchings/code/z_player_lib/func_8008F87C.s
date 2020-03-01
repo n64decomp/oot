@@ -37,10 +37,10 @@ glabel func_8008F87C
 /* B06AA8 8008F908 E7AA0078 */  swc1  $f10, 0x78($sp)
 /* B06AAC 8008F90C C4246068 */  lwc1  $f4, %lo(D_80126068)($at)
 /* B06AB0 8008F910 C72606C4 */  lwc1  $f6, 0x6c4($t9)
-/* B06AB4 8008F914 0C034213 */  jal   func_800D084C
+/* B06AB4 8008F914 0C034213 */  jal   Matrix_Push
 /* B06AB8 8008F918 46062501 */   sub.s $f20, $f4, $f6
 /* B06ABC 8008F91C 8FA400BC */  lw    $a0, 0xbc($sp)
-/* B06AC0 8008F920 0C0344D0 */  jal   func_800D1340
+/* B06AC0 8008F920 0C0344D0 */  jal   Matrix_Softcv3Mult
 /* B06AC4 8008F924 8FA500C0 */   lw    $a1, 0xc0($sp)
 /* B06AC8 8008F928 3C048012 */  lui   $a0, %hi(D_8012602C) # $a0, 0x8012
 /* B06ACC 8008F92C 2484602C */  addiu $a0, %lo(D_8012602C) # addiu $a0, $a0, 0x602c
@@ -62,7 +62,7 @@ glabel func_8008F87C
 /* B06B0C 8008F96C 00021040 */  sll   $v0, $v0, 1
 /* B06B10 8008F970 AFA20038 */  sw    $v0, 0x38($sp)
 /* B06B14 8008F974 01F82021 */  addu  $a0, $t7, $t8
-/* B06B18 8008F978 0C0344D0 */  jal   func_800D1340
+/* B06B18 8008F978 0C0344D0 */  jal   Matrix_Softcv3Mult
 /* B06B1C 8008F97C 03222821 */   addu  $a1, $t9, $v0
 /* B06B20 8008F980 3C038016 */  lui   $v1, %hi(gSaveContext+4)
 /* B06B24 8008F984 8C63E664 */  lw    $v1, %lo(gSaveContext+4)($v1)
@@ -72,7 +72,7 @@ glabel func_8008F87C
 /* B06B34 8008F994 002F0821 */  addu  $at, $at, $t7
 /* B06B38 8008F998 44067000 */  mfc1  $a2, $f14
 /* B06B3C 8008F99C C42C6050 */  lwc1  $f12, %lo(D_80126050)($at)
-/* B06B40 8008F9A0 0C034261 */  jal   func_800D0984
+/* B06B40 8008F9A0 0C034261 */  jal   Matrix_Translate
 /* B06B44 8008F9A4 24070001 */   li    $a3, 1
 /* B06B48 8008F9A8 3C048012 */  lui   $a0, %hi(D_8012602C)
 /* B06B4C 8008F9AC 2484602C */  addiu $a0, %lo(D_8012602C) # addiu $a0, $a0, 0x602c
@@ -82,7 +82,7 @@ glabel func_8008F87C
 /* B06B5C 8008F9BC 24846070 */  addiu $a0, %lo(D_80126070) # addiu $a0, $a0, 0x6070
 /* B06B60 8008F9C0 0C0346BD */  jal   func_800D1AF4
 /* B06B64 8008F9C4 27A5008C */   addiu $a1, $sp, 0x8c
-/* B06B68 8008F9C8 0C034221 */  jal   func_800D0884
+/* B06B68 8008F9C8 0C034221 */  jal   Matrix_Pull
 /* B06B6C 8008F9CC 00000000 */   nop   
 /* B06B70 8008F9D0 3C014170 */  li    $at, 0x41700000 # 0.000000
 /* B06B74 8008F9D4 44815000 */  mtc1  $at, $f10

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808AE390
+glabel Bg_Spot03_Taki_InitVars
  .word 0x011F0100, 0x00000030, 0x01120000, 0x00000178
-.word func_808ADE14
-.word func_808ADEC0
-.word func_808AE0C0
-.word func_808AE0E4
+.word BgSpot03Taki_Init
+.word BgSpot03Taki_Destroy
+.word BgSpot03Taki_Update
+.word BgSpot03Taki_Draw
 glabel D_808AE3B0
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

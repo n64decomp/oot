@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8087D920
+glabel Bg_Haka_Huta_InitVars
  .word 0x00BD0100, 0x00000010, 0x008D0000, 0x0000016C
-.word func_8087CFC0
-.word func_8087D07C
-.word func_8087D8CC
-.word func_8087D8F0
+.word BgHakaHuta_Init
+.word BgHakaHuta_Destroy
+.word BgHakaHuta_Update
+.word BgHakaHuta_Draw
 glabel D_8087D940
  .word 0x48500064
 glabel D_8087D944

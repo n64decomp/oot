@@ -21,7 +21,7 @@ glabel func_800FC010
 /* B731D0 800FC030 AFB0001C */  sw    $s0, 0x1c($sp)
 /* B731D4 800FC034 AFA70034 */  sw    $a3, 0x34($sp)
 /* B731D8 800FC038 2406001F */  li    $a2, 31
-/* B731DC 800FC03C 0C03F59B */  jal   func_800FD66C
+/* B731DC 800FC03C 0C03F59B */  jal   SystemArena_MallocRDebug
 /* B731E0 800FC040 24A5A860 */   addiu $a1, %lo(D_8014A860) # addiu $a1, $a1, -0x57a0
 /* B731E4 800FC044 3C0F8013 */  lui   $t7, %hi(D_80133BC0) # $t7, 0x8013
 /* B731E8 800FC048 8DEF3BC0 */  lw    $t7, %lo(D_80133BC0)($t7)

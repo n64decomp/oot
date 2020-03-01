@@ -5,7 +5,7 @@ glabel func_809CB90C
 /* 00E08 809CB918 AFA50064 */  sw      $a1, 0x0064($sp)           
 /* 00E0C 809CB91C AFA60068 */  sw      $a2, 0x0068($sp)           
 /* 00E10 809CB920 AFA7006C */  sw      $a3, 0x006C($sp)           
-/* 00E14 809CB924 0C034236 */  jal     func_800D08D8              
+/* 00E14 809CB924 0C034236 */  jal     Matrix_Get              
 /* 00E18 809CB928 27A4001C */  addiu   $a0, $sp, 0x001C           ## $a0 = FFFFFFBC
 /* 00E1C 809CB92C 8FA20064 */  lw      $v0, 0x0064($sp)           
 /* 00E20 809CB930 24010003 */  addiu   $at, $zero, 0x0003         ## $at = 00000003

@@ -6,23 +6,34 @@
 
 /* Variables */
 
-extern u32 D_8000AC90;
-extern OSThread D_8000AD40[];
-extern OSThread *D_8000AD48;
-extern OSThread *D_8000AD4C;
-extern OSThread *D_8000AD50;
+typedef struct
+{
+    u32 initialized;
+    OSThread *mgrThread;
+    OSMesgQueue *cmdQueue;
+    OSMesgQueue *eventQueue;
+    OSMesgQueue *acccessQueue;
+    s32 (*piDmaCallback)(s32, u32, void*, size_t);
+    s32 (*epiDmaCallback)(OSPiHandle *, s32, u32, void *, size_t);
+} OSMgrArgs;
 
-extern OSMesg D_800145A0;
-extern OSMesgQueue D_800145A8;
-extern u64 D_80015AE0;
-extern u32 D_80015AE8;
+typedef struct 
+{
+    OSMesgQueue* queue;
+    OSMesg msg;
+} __osHwInt;
 
+typedef struct 
+{
+    OSMesgQueue* queue;
+    OSMesg msg;
+} __OSEventState;
 
 /* Functions */
 
 u32 __osProbeTLB(void *);
-u32 __osDisableInt(void);
-OSThread *func_8000415C(OSThread**);
-void func_800042F0(void);
+s32 __osDisableInt(void);
+OSThread *__osPopThread(OSThread**);
+void __osCleanupThread(void);
 
 #endif

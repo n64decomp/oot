@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_door_warp1.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000000
+
+void DoorWarp1_Init(DoorWarp1* this, GlobalContext* globalCtx);
+void DoorWarp1_Destroy(DoorWarp1* this, GlobalContext* globalCtx);
+void DoorWarp1_Update(DoorWarp1* this, GlobalContext* globalCtx);
+void DoorWarp1_Draw(DoorWarp1* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Door_Warp1_InitVars =
+{
+    ACTOR_DOOR_WARP1,
+    ACTORTYPE_ITEMACTION,
+    ROOM,
+    FLAGS,
+    OBJECT_WARP1,
+    sizeof(DoorWarp1),
+    (ActorFunc)DoorWarp1_Init,
+    (ActorFunc)DoorWarp1_Destroy,
+    (ActorFunc)DoorWarp1_Update,
+    (ActorFunc)DoorWarp1_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_80998780.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_80998788.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/DoorWarp1_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_80998904.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/DoorWarp1_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099898C.s")
 
@@ -65,7 +87,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099B020.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099B0DC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/DoorWarp1_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099B140.s")
 
@@ -73,9 +95,5 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099B5EC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/func_8099C4F0.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Warp1/DoorWarp1_Draw.s")
 

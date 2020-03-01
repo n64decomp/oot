@@ -15,11 +15,11 @@ glabel D_80A9C1D8
  .word 0x00000000
 glabel D_80A9C1DC
  .word 0x00000000
-glabel D_80A9C1E0
+glabel En_Kusa_InitVars
  .word 0x01250600, 0x00800010, 0x00010000, 0x000001A0
-.word func_80A9B688
-.word func_80A9B7C4
-.word func_80A9C100
+.word EnKusa_Init
+.word EnKusa_Destroy
+.word EnKusa_Update
 .word 0x00000000
 glabel D_80A9C200
  .word 0x0002012B, 0x012B0000

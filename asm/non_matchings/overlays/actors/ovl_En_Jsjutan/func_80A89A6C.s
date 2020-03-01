@@ -699,10 +699,10 @@ glabel func_80A89A6C
 /* 00CF0 80A8A490 4600C386 */  mov.s   $f14, $f24                 
 /* 00CF4 80A8A494 46000506 */  mov.s   $f20, $f0                  
 /* 00CF8 80A8A498 4600B306 */  mov.s   $f12, $f22                 
-/* 00CFC 80A8A49C 0C0342DC */  jal     func_800D0B70              
+/* 00CFC 80A8A49C 0C0342DC */  jal     Matrix_RotateX              
 /* 00D00 80A8A4A0 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 00D04 80A8A4A4 4600A306 */  mov.s   $f12, $f20                 
-/* 00D08 80A8A4A8 0C0343B5 */  jal     func_800D0ED4              
+/* 00D08 80A8A4A8 0C0343B5 */  jal     Matrix_RotateZ              
 /* 00D0C 80A8A4AC 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 00D10 80A8A4B0 27A40108 */  addiu   $a0, $sp, 0x0108           ## $a0 = FFFFFFE0
 /* 00D14 80A8A4B4 0C0346BD */  jal     func_800D1AF4              

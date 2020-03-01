@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809EAB30
+glabel En_Dekunuts_InitVars
  .word 0x00600500, 0x00000005, 0x004A0000, 0x00000314
-.word func_809E9560
-.word func_809E96C8
-.word func_809EA82C
-.word func_809EAAC4
+.word EnDekunuts_Init
+.word EnDekunuts_Destroy
+.word EnDekunuts_Update
+.word EnDekunuts_Draw
 glabel D_809EAB50
  .word 0x06000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00120020, 0x00000000, 0x00000000
 glabel D_809EAB7C

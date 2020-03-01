@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809C3410
+glabel En_Bom_InitVars
  .word 0x00100300, 0x00000030, 0x00010000, 0x00000208
-.word func_809C26D8
-.word func_809C27EC
-.word func_809C2B88
-.word func_809C3218
+.word EnBom_Init
+.word EnBom_Destroy
+.word EnBom_Update
+.word EnBom_Draw
 glabel D_809C3430
  .word 0x00002939, 0x20010000, 0x02000000, 0x00000000, 0x00000000, 0x0003F828, 0x00000000, 0x00010100, 0x0006000B, 0x000E0000, 0x00000000
 glabel D_809C345C

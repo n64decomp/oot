@@ -57,7 +57,7 @@ glabel func_808FF898
 /* 02A2C 808FF96C 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 02A30 808FF970 460A4403 */  div.s   $f16, $f8, $f10            
 /* 02A34 808FF974 46128102 */  mul.s   $f4, $f16, $f18            
-/* 02A38 808FF978 0C034348 */  jal     func_800D0D20              
+/* 02A38 808FF978 0C034348 */  jal     Matrix_RotateY              
 /* 02A3C 808FF97C 46062300 */  add.s   $f12, $f4, $f6             
 /* 02A40 808FF980 44800000 */  mtc1    $zero, $f0                 ## $f0 = 0.00
 /* 02A44 808FF984 3C013F80 */  lui     $at, 0x3F80                ## $at = 3F800000

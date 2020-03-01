@@ -1,0 +1,99 @@
+Refresh #2
+1.) Match func_8009C0AC in z_scene_table.c (#147)
+2.) Split a bunch of c files, make ido 5.3 files executable on linux to avoid permission erorrs (#149)
+3.) Decompiling ovl_Bg_Hidan_Syoku (#146)
+4.) Match func_80034EC0 (#148)
+5.) Re-adding deleted files (sorry\!) nodoc (#150)
+6.) boot Decompiled (#152)
+7.) Match __osDevMgrMain (#154)
+8.) Decompiled ovl_Bg_Menkuri_Nisekabe (#153)
+9.) Decomped several files from libultra controller handling (#155)
+10.) Bootstrapped actor decomp (#151)
+11.) Match various boot functions (#156)
+12.) Match func_8003115C in z_actor.c (#157)
+13.) Rename some code files (+ a minor data fix) (#159)
+14.) Bootstrapped the rest of the actors (#158)
+15.) Resolve init vars in z_actor_dlftbls.c (#160)
+16.) Decompiled main.c/sys_cfb.c, documented irqmgr (#161)
+17.) Fix gfx buffer definitions (#162)
+18.) Fix the type of gGfxPools (#163)
+19.) Removing static from bootstrapped actor prototypes (#165)
+20.) Removing 'static' from bootstrapped actor prototypes (nodoc) (#169) 
+21.) Decompiled ovl_opening (#172)
+22.) Decompiled ovl_Bg_Jya_Kanaami (#173)
+23.) Decompiled ovl_Bg_Bdan_Switch (#164)
+24.) Decompiled __osMalloc.c z_malloc.c, debug_malloc.c, system_malloc.c (#171)
+25.) Decompiled ovl_Bg_Jya_Amishutter (#168)
+26.) amishutter fix (#174)
+27.) Cleaned up the decompilation of ovl_En_Nutsball (#176)
+28.) Cleaned up the decompilation of ovl_En_Bird (#175)
+29.) En_Boom almost OK, 1 function left (#177)
+30.) Decompiled irqmgr.c (#178)
+31.) Decompiled ovl_En_Scene_Change (#167)
+32.) Match 7 more functions in malloc files (#179) 
+33.) Cleaned up the decompilation of ovl_En_Tubo_Trap (#180)
+34.) Bootstrapped the decompilation of ovl_title (#181)
+35.) Bootstrapping the remaining 3 gamestates for decompilation (#183) 
+36.) 3 Actors Decompiled (#187)
+37.) Decompiled ovl_Obj_Makekinsuta (#184)
+38.) Decompiled ovl_Bg_Mizu_Uzu (#185)
+39.) Update asm-processor (#182)
+40.) En_Anubice_Tag OK (#190)
+41.) Decompiled ovl_Bg_Spot01_Fusya (#189)
+42.) Finishing decompilation of Bg_Bdan_Switch (#188)
+43.) Decompiled ovl_Bg_Spot01_Idosoko (#186) 
+44.) Decompile z_parameter.c and code_80097A00.c (#191)
+45.) Created headers for actors (#193)
+46.) Decompile z_construct.c and change GameInfo access to REG macros (#192)
+47.) Updated to a newer version of ZAP2, "decompiled" several rooms and scenes. (#194)
+48.) Various renames/fixes and sys_matrix.c progress (#195)
+
+Refresh #1
+1.) Split a bunch of c files (#99)
+2.) Removed asm files accidentally added to the repo. (#100)
+3.) 3 more overlays disassembled (#104)
+4.) check syntax with gcc
+5.) Disassembled ovl_Bg_Bowl_Wall
+6.) Disassembled ovl_Bg_Bombwall
+7.) Disassembled ovl_Bg_Breakwall
+8.) Disassembled ovl_Bg_Ddan_Jd
+9.) port known libultra files from SM64
+10.) rewrite questionable code
+11.) Disassembled ovl_Bg_Ddan_Kd, fixed symbols.txt file to fix the index out of bounds error
+12.) Forgot to add the actual ovl_Bg_Ddan_Kd
+13.) Disassembled ovl_Bg_Dodoago and ovl_Bg_Dy_Yoseizo
+14.) Some warnings gone
+15.) Added defines for scenes. Updated z_actor, z_horse with these scene names.
+16.) Getting rid of some compilation warnings (#110)
+17.) Disassembled ovl_Bg_Ganon_Otyuka
+18.) Disassembly of ovl_En_Xc (#107)
+19.) Disassembled ovl_Bg_Gate_Shutter
+20.) Disassembled some more overlays (#112)
+21.) Updated progress.py script for more accurate and detailed results. (#113)
+22.) Disassembling all remaining overlays (#111)
+23.) Decompile gfxprint (#114)
+24.) Atom $f31 -> $31 fix (#115)
+25.) Various changes (#116) 
+26.) Deal with almost all remaining undefined symbols (#117) 
+27.) Added macros for ANSI escape codes and updated fixle.sh (#118) 
+28.) Decompiling various small functions (#106) 
+29.) Fix incorrect buffer symbol revert in #118 (#120)
+30.) Suggested adjustments to the changes from #106 (#119)
+31.) Decompiled two functions in z_play, set ido 5.3 compiler files to executable to avoid permission errors on linux
+32.) Decompiled boot_800029F0.c/snprintf.c (#122)
+33.) z_onepointdemo.c: 5 functions decompiled. z_locale.c cleaned up. (#123)
+34.) Decompiled 800A9D40 (#124)
+35.) Updated to new version of ZAP2, changes to how assets are handled. (#125)
+36.) Decompiled z_std_dma.c (#126)
+37.) Overlay rodata strings asciz-ified, using iconv to handle encoding change during assembly
+38.) Overlay cleanup (#132)
+39.) asm-processor update (#135)
+40.) Disassemble most of code/boot rodata and split some files (#136)
+41.) z_message_PAL jtbl work (#137)
+42.) Condensing everything into one commit (#134)
+43.) Adding .L: labels for branch labels (#141) 
+44.) Decompliation of ovl_Bg_Menkuri_Kaiten (#140)
+45.) Fix some strings and floats inside non matchings (#142)
+46.) Update diff.py script (#143) 
+47.) Fix the progress script to support overlay non matchings (#144) 
+48.) More strings converted to .asciz (#145) 

@@ -207,8 +207,6 @@ void func_8003E6E4(u16* a0)
     *a0 = 0;
 }
 
-//#pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E6E4.s")
-
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E6EC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_bgcheck/func_8003E750.s")

@@ -13,7 +13,7 @@ glabel func_80AC3928
 /* 00CB4 80AC3954 A4B801EE */  sh      $t8, 0x01EE($a1)           ## 000001EE
 /* 00CB8 80AC3958 AFA7001C */  sw      $a3, 0x001C($sp)           
 /* 00CBC 80AC395C 8FA40018 */  lw      $a0, 0x0018($sp)           
-/* 00CC0 80AC3960 0C021BC0 */  jal     func_80086F00              
+/* 00CC0 80AC3960 0C021BC0 */  jal     Interface_SetDoAction              
 /* 00CC4 80AC3964 24050010 */  addiu   $a1, $zero, 0x0010         ## $a1 = 00000010
 /* 00CC8 80AC3968 8FA4001C */  lw      $a0, 0x001C($sp)           
 /* 00CCC 80AC396C 8FA50018 */  lw      $a1, 0x0018($sp)           

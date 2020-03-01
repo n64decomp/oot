@@ -3,7 +3,7 @@ glabel func_80A3AAA8
 /* 0035C 80A3AAAC AFBF0014 */  sw      $ra, 0x0014($sp)           
 /* 00360 80A3AAB0 AFA40018 */  sw      $a0, 0x0018($sp)           
 /* 00364 80A3AAB4 AFA5001C */  sw      $a1, 0x001C($sp)           
-/* 00368 80A3AAB8 0C0218E2 */  jal     func_80086388              
+/* 00368 80A3AAB8 0C0218E2 */  jal     Item_CheckObtainability              
 /* 0036C 80A3AABC 24040003 */  addiu   $a0, $zero, 0x0003         ## $a0 = 00000003
 /* 00370 80A3AAC0 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 00374 80A3AAC4 14410003 */  bne     $v0, $at, .L80A3AAD4       

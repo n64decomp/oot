@@ -31,7 +31,7 @@ glabel func_80B281F0
 /* 01BA8 80B28258 8FAE002C */  lw      $t6, 0x002C($sp)           
 /* 01BAC 80B2825C 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 01BB0 80B28260 44067000 */  mfc1    $a2, $f14                  
-/* 01BB4 80B28264 0C0342A3 */  jal     func_800D0A8C              
+/* 01BB4 80B28264 0C0342A3 */  jal     Matrix_Scale              
 /* 01BB8 80B28268 C5CC02F4 */  lwc1    $f12, 0x02F4($t6)          ## 000002F4
 .L80B2826C:
 /* 01BBC 80B2826C 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000

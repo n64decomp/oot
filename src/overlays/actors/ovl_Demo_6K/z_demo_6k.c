@@ -1,11 +1,32 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_demo_6k.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void Demo6K_Init(Demo6K* this, GlobalContext* globalCtx);
+void Demo6K_Destroy(Demo6K* this, GlobalContext* globalCtx);
+void Demo6K_Update(Demo6K* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Demo_6K_InitVars =
+{
+    ACTOR_DEMO_6K,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(Demo6K),
+    (ActorFunc)Demo6K_Init,
+    (ActorFunc)Demo6K_Destroy,
+    (ActorFunc)Demo6K_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80966950.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80966958.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/Demo6K_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80966D80.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/Demo6K_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80966DB0.s")
 
@@ -39,7 +60,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80967F10.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80967FD8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/Demo6K_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80967FFC.s")
 
@@ -54,7 +75,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_80968FB0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_6K/func_809691BC.s")
-
-
-
-

@@ -37,7 +37,7 @@ glabel func_80A5344C
 /* 00630 80A534D0 2B01000A */  slti    $at, $t8, 0x000A           
 /* 00634 80A534D4 14200009 */  bne     $at, $zero, .L80A534FC     
 /* 00638 80A534D8 254A4954 */  addiu   $t2, $t2, %lo(func_80A54954) ## $t2 = 80A54954
-/* 0063C 80A534DC 0C021CC3 */  jal     func_8008730C              
+/* 0063C 80A534DC 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00640 80A534E0 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 00644 80A534E4 3C0880A5 */  lui     $t0, %hi(func_80A53538)    ## $t0 = 80A50000
 /* 00648 80A534E8 24197098 */  addiu   $t9, $zero, 0x7098         ## $t9 = 00007098

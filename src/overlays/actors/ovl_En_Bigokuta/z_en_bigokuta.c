@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_bigokuta.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BCC60.s")
+#define ROOM  0x00
+#define FLAGS 0x00000035
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BCDC8.s")
+void EnBigokuta_Init(EnBigokuta* this, GlobalContext* globalCtx);
+void EnBigokuta_Destroy(EnBigokuta* this, GlobalContext* globalCtx);
+void EnBigokuta_Update(EnBigokuta* this, GlobalContext* globalCtx);
+void EnBigokuta_Draw(EnBigokuta* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Bigokuta_InitVars =
+{
+    ACTOR_EN_BIGOKUTA,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_BIGOKUTA,
+    sizeof(EnBigokuta),
+    (ActorFunc)EnBigokuta_Init,
+    (ActorFunc)EnBigokuta_Destroy,
+    (ActorFunc)EnBigokuta_Update,
+    (ActorFunc)EnBigokuta_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/EnBigokuta_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/EnBigokuta_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BCE3C.s")
 
@@ -73,12 +95,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BE8DC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BE9CC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/EnBigokuta_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BEBBC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/func_809BF0AC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bigokuta/EnBigokuta_Draw.s")

@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80B39950
+glabel En_Wonder_Talk_InitVars
  .word 0x01470600, 0x08000009, 0x00010000, 0x00000168
-.word func_80B390FC
-.word func_80B390F0
-.word func_80B39804
+.word EnWonderTalk_Init
+.word EnWonderTalk_Destroy
+.word EnWonderTalk_Update
 .word 0x00000000
 

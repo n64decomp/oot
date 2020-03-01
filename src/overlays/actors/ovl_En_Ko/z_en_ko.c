@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ko.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000019
+
+void EnKo_Init(EnKo* this, GlobalContext* globalCtx);
+void EnKo_Destroy(EnKo* this, GlobalContext* globalCtx);
+void EnKo_Update(EnKo* this, GlobalContext* globalCtx);
+void EnKo_Draw(EnKo* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ko_InitVars =
+{
+    ACTOR_EN_KO,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnKo),
+    (ActorFunc)EnKo_Init,
+    (ActorFunc)EnKo_Destroy,
+    (ActorFunc)EnKo_Update,
+    (ActorFunc)EnKo_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A96DB0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A96EC4.s")
@@ -115,9 +137,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A98ECC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A98F94.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/EnKo_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99020.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/EnKo_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99048.s")
 
@@ -131,7 +153,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A995CC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99704.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/EnKo_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99864.s")
 
@@ -139,8 +161,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99C94.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/func_80A99D00.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ko/EnKo_Draw.s")

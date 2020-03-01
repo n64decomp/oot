@@ -9,7 +9,7 @@ glabel func_80B14DD8
 /* 01354 80B14DF4 10000008 */  beq     $zero, $zero, .L80B14E18   
 /* 01358 80B14DF8 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L80B14DFC:
-/* 0135C 80B14DFC 0C021AAF */  jal     func_80086ABC              
+/* 0135C 80B14DFC 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 01360 80B14E00 00000000 */  nop
 /* 01364 80B14E04 54400004 */  bnel    $v0, $zero, .L80B14E18     
 /* 01368 80B14E08 24020002 */  addiu   $v0, $zero, 0x0002         ## $v0 = 00000002

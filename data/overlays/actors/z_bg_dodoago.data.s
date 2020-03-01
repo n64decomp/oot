@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80872520
+glabel Bg_Dodoago_InitVars
  .word 0x003F0100, 0x00000000, 0x002B0000, 0x00000250
-.word func_80871B28
-.word func_80871C88
-.word func_808722EC
-.word func_80872440
+.word BgDodoago_Init
+.word BgDodoago_Destroy
+.word BgDodoago_Update
+.word BgDodoago_Draw
 glabel D_80872540
  .word 0x0A003900, 0x00010000, 0x02000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010000, 0x0050001E, 0x00500000, 0x00000000
 glabel D_8087256C

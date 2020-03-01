@@ -53,10 +53,10 @@ glabel D_809887E4
  .word func_8098764C
 .word func_80987658
 .word func_80985CE8
-glabel D_809887F0
+glabel Demo_Im_InitVars
  .word 0x00A90400, 0x00000011, 0x00870000, 0x000002FC
-.word func_809873CC
-.word func_809874F4
-.word func_80987370
-.word func_809877CC
+.word DemoIm_Init
+.word DemoIm_Destroy
+.word DemoIm_Update
+.word DemoIm_Draw
 

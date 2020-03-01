@@ -7,7 +7,7 @@
 
 .section .data
 
-glabel D_80115420
+glabel En_A_Obj_InitVars
     .incbin "baserom.z64", 0xB8C5C0, 0x20
 
 glabel D_80115440

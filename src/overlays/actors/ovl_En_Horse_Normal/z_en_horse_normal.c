@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_horse_normal.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000000
+
+void EnHorseNormal_Init(EnHorseNormal* this, GlobalContext* globalCtx);
+void EnHorseNormal_Destroy(EnHorseNormal* this, GlobalContext* globalCtx);
+void EnHorseNormal_Update(EnHorseNormal* this, GlobalContext* globalCtx);
+void EnHorseNormal_Draw(EnHorseNormal* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Horse_Normal_InitVars =
+{
+    ACTOR_EN_HORSE_NORMAL,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_HORSE_NORMAL,
+    sizeof(EnHorseNormal),
+    (ActorFunc)EnHorseNormal_Init,
+    (ActorFunc)EnHorseNormal_Destroy,
+    (ActorFunc)EnHorseNormal_Update,
+    (ActorFunc)EnHorseNormal_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6B250.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6B30C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6B3D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/EnHorseNormal_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6B8BC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/EnHorseNormal_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6B91C.s")
 
@@ -35,14 +57,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6C8E0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6C9A8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/EnHorseNormal_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6CAFC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6CC88.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/func_80A6CE6C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse_Normal/EnHorseNormal_Draw.s")

@@ -1,3 +1,117 @@
+.rdata
+glabel D_80154D50
+    .asciz "常駐ＰＡＲＡＭＥＴＥＲセグメント=%x\n"
+    .balign 4
+
+glabel D_80154D78
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154D8C
+    .asciz "parameter->parameterSegment=%x\n"
+    .balign 4
+
+glabel D_80154DAC
+    .asciz "parameter->parameterSegment != NULL"
+    .balign 4
+
+glabel D_80154DD0
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154DE4
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154DF8
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154E0C
+    .asciz "ＤＯアクション テクスチャ初期=%x\n"
+    .balign 4
+
+glabel D_80154E30
+    .asciz "parameter->do_actionSegment=%x\n"
+    .balign 4
+
+glabel D_80154E50
+    .asciz "parameter->do_actionSegment != NULL"
+    .balign 4
+
+glabel D_80154E74
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154E88
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154E9C
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154EB0
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154EC4
+    .asciz "アイコンアイテム テクスチャ初期=%x\n"
+    .balign 4
+
+glabel D_80154EE8
+    .asciz "parameter->icon_itemSegment=%x\n"
+    .balign 4
+
+glabel D_80154F08
+    .asciz "parameter->icon_itemSegment != NULL"
+    .balign 4
+
+glabel D_80154F2C
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154F40
+    .asciz "Register_Item[%x, %x, %x, %x]\n"
+    .balign 4
+
+glabel D_80154F60
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154F74
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154F88
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154F9C
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154FB0
+    .asciz "../z_construct.c"
+    .balign 4
+
+glabel D_80154FC4
+    .asciz "ＥＶＥＮＴ＝%d\n"
+    .balign 4
+
+glabel D_80154FD4
+    .asciz "restart_flag=%d\n"
+    .balign 4
+
+glabel D_80154FE8
+    .asciz "タイマー停止！！！！！！！！！！！！！！！！！！！！！  = %d\n"
+    .balign 4
+
+glabel D_80155028
+    .asciz "ＰＡＲＡＭＥＴＥＲ領域＝%x\n" 
+    .balign 4
+
+.text
 glabel func_801109B0
 /* B87B50 801109B0 27BDFFA8 */  addiu $sp, $sp, -0x58
 /* B87B54 801109B4 AFB10020 */  sw    $s1, 0x20($sp)

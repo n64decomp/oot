@@ -81,7 +81,7 @@ glabel func_8005DFAC
 /* AD5288 8005E0E8 3C01BF80 */  li    $at, 0xBF800000 # 0.000000
 /* AD528C 8005E0EC 44813000 */  mtc1  $at, $f6
 /* AD5290 8005E0F0 3C018016 */  lui   $at, %hi(D_8015DD30)
-/* AD5294 8005E0F4 0C009B35 */  jal   EffectAdd
+/* AD5294 8005E0F4 0C009B35 */  jal   Effect_Add
 /* AD5298 8005E0F8 E426DD30 */   swc1  $f6, %lo(D_8015DD30)($at)
 /* AD529C 8005E0FC 8FBF001C */  lw    $ra, 0x1c($sp)
 /* AD52A0 8005E100 27BD0028 */  addiu $sp, $sp, 0x28
@@ -170,7 +170,7 @@ glabel func_8005DFAC
 /* AD53E8 8005E248 3C01BF80 */  li    $at, 0xBF800000 # 0.000000
 /* AD53EC 8005E24C 44813000 */  mtc1  $at, $f6
 /* AD53F0 8005E250 3C018016 */  lui   $at, %hi(D_8015E1F8)
-/* AD53F4 8005E254 0C009B35 */  jal   EffectAdd
+/* AD53F4 8005E254 0C009B35 */  jal   Effect_Add
 /* AD53F8 8005E258 E426E1F8 */   swc1  $f6, %lo(D_8015E1F8)($at)
 /* AD53FC 8005E25C 8FBF001C */  lw    $ra, 0x1c($sp)
 /* AD5400 8005E260 27BD0028 */  addiu $sp, $sp, 0x28

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A68420
+glabel En_Horse_Game_Check_InitVars
  .word 0x00DB0100, 0x00000010, 0x00010000, 0x000001A4
-.word func_80A68310
-.word func_80A68390
-.word func_80A683CC
-.word func_80A68408
+.word EnHorseGameCheck_Init
+.word EnHorseGameCheck_Destroy
+.word EnHorseGameCheck_Update
+.word EnHorseGameCheck_Draw
 glabel D_80A68440
  .word 0x44D48000, 0x3F800000, 0xC4070000, 0x42EA0000, 0x3F800000, 0x43F40000, 0xC4D48000, 0x3F800000, 0xC4070000
 glabel D_80A68464

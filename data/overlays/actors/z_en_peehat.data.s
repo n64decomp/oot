@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AD2720
+glabel En_Peehat_InitVars
  .word 0x001D0500, 0x01000015, 0x00180000, 0x0000042C
-.word func_80ACF4A8
-.word func_80ACF714
-.word func_80AD1DC4
-.word func_80AD2628
+.word EnPeehat_Init
+.word EnPeehat_Destroy
+.word EnPeehat_Update
+.word EnPeehat_Draw
 glabel D_80AD2740
  .word 0x0B000909, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00050100, 0x003200A0, 0xFFBA0000, 0x00000000
 glabel D_80AD276C

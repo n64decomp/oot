@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_po_sisters.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80AD8F90.s")
+#define ROOM  0x00
+#define FLAGS 0x00005215
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80AD91D8.s")
+void EnPoSisters_Init(EnPoSisters* this, GlobalContext* globalCtx);
+void EnPoSisters_Destroy(EnPoSisters* this, GlobalContext* globalCtx);
+void EnPoSisters_Update(EnPoSisters* this, GlobalContext* globalCtx);
+void EnPoSisters_Draw(EnPoSisters* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Po_Sisters_InitVars =
+{
+    ACTOR_EN_PO_SISTERS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_PO_SISTERS,
+    sizeof(EnPoSisters),
+    (ActorFunc)EnPoSisters_Init,
+    (ActorFunc)EnPoSisters_Destroy,
+    (ActorFunc)EnPoSisters_Update,
+    (ActorFunc)EnPoSisters_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/EnPoSisters_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/EnPoSisters_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80AD9240.s")
 
@@ -115,7 +137,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80ADC10C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80ADC2CC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/EnPoSisters_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80ADC55C.s")
 
@@ -123,8 +145,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80ADC970.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/func_80ADD044.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Sisters/EnPoSisters_Draw.s")

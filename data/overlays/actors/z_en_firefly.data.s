@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A14F10
+glabel En_Firefly_InitVars
  .word 0x00130500, 0x00005005, 0x000D0000, 0x00000374
-.word func_80A130D4
-.word func_80A132CC
-.word func_80A146B8
-.word func_80A14D40
+.word EnFirefly_Init
+.word EnFirefly_Destroy
+.word EnFirefly_Update
+.word EnFirefly_Draw
 glabel D_80A14F30
  .word 0x00000000, 0xFFCFFFFF, 0x01080000, 0xFFCFFFFF, 0x00000000, 0x09010100, 0x01000000, 0x03E80000, 0x000F0064
 glabel D_80A14F54

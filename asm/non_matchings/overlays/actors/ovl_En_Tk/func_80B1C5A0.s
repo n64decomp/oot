@@ -69,7 +69,7 @@ glabel L80B1C614
 .L80B1C698:
 /* 00D98 80B1C698 00270821 */  addu    $at, $at, $a3              
 /* 00D9C 80B1C69C A02D03DC */  sb      $t5, 0x03DC($at)           ## 000103DC
-/* 00DA0 80B1C6A0 0C021CC3 */  jal     func_8008730C              
+/* 00DA0 80B1C6A0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00DA4 80B1C6A4 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 00DA8 80B1C6A8 3C038016 */  lui     $v1, 0x8016                ## $v1 = 80160000
 /* 00DAC 80B1C6AC 2463E660 */  addiu   $v1, $v1, 0xE660           ## $v1 = 8015E660

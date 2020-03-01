@@ -291,8 +291,8 @@ glabel func_800224F4
 /* A99AF8 80022958 AC620004 */  sw    $v0, 4($v1)
 /* A99AFC 8002295C AC6E0000 */  sw    $t6, ($v1)
 /* A99B00 80022960 8E0302D0 */  lw    $v1, 0x2d0($s0)
-/* A99B04 80022964 3C058013 */  lui   $a1, %hi(D_8012DB20) # $a1, 0x8013
-/* A99B08 80022968 24A5DB20 */  addiu $a1, %lo(D_8012DB20) # addiu $a1, $a1, -0x24e0
+/* A99B04 80022964 3C058013 */  lui   $a1, %hi(gMtxClear) # $a1, 0x8013
+/* A99B08 80022968 24A5DB20 */  addiu $a1, %lo(gMtxClear) # addiu $a1, $a1, -0x24e0
 /* A99B0C 8002296C 24780008 */  addiu $t8, $v1, 8
 /* A99B10 80022970 AE1802D0 */  sw    $t8, 0x2d0($s0)
 /* A99B14 80022974 AC730004 */  sw    $s3, 4($v1)

@@ -18,7 +18,7 @@ glabel func_800FCD40
 /* B73EF4 800FCD54 A0AE0000 */  sb    $t6, ($a1)
 /* B73EF8 800FCD58 00C08025 */  move  $s0, $a2
 /* B73EFC 800FCD5C AFA50024 */  sw    $a1, 0x24($sp)
-/* B73F00 800FCD60 0C040304 */  jal   func_80100C10
+/* B73F00 800FCD60 0C040304 */  jal   osContInit
 /* B73F04 800FCD64 8FA40020 */   lw    $a0, 0x20($sp)
 /* B73F08 800FCD68 10400003 */  beqz  $v0, .L800FCD78
 /* B73F0C 800FCD6C 8FA70024 */   lw    $a3, 0x24($sp)

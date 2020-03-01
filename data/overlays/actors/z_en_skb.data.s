@@ -14,12 +14,12 @@ glabel D_80AFE068
 .word D_80AFE020
 glabel D_80AFE078
  .word 0x10F2F1F2, 0x10F2F210, 0xE1F2F474, 0xF2F2F200, 0x007460D3, 0x0000D1F4, 0xF2F2F8F4, 0x0000F400
-glabel D_80AFE098
+glabel En_Skb_InitVars
  .word 0x01B00500, 0x00000015, 0x01840000, 0x00000344
-.word func_80AFCB58
-.word func_80AFCD0C
-.word func_80AFDC10
-.word func_80AFDFCC
+.word EnSkb_Init
+.word EnSkb_Destroy
+.word EnSkb_Update
+.word EnSkb_Draw
 glabel D_80AFE0B8
  .word 0x00000000, 0x41000000, 0x00000000
 glabel D_80AFE0C4

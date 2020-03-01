@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A9A0E0
+glabel En_Ko_InitVars
  .word 0x01630400, 0x00000019, 0x00010000, 0x00000324
-.word func_80A98F94
-.word func_80A99020
-.word func_80A99704
-.word func_80A99D00
+.word EnKo_Init
+.word EnKo_Destroy
+.word EnKo_Update
+.word EnKo_Draw
 glabel D_80A9A100
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0014002E, 0x00000000, 0x00000000
 glabel D_80A9A12C

@@ -199,10 +199,10 @@ glabel func_800B3718
 /* B2A90C 800B376C 01D94025 */  or    $t0, $t6, $t9
 /* B2A910 800B3770 010B6025 */  or    $t4, $t0, $t3
 /* B2A914 800B3774 ACCC0004 */  sw    $t4, 4($a2)
-/* B2A918 800B3778 3C0A8013 */  lui   $t2, %hi(D_8012D270) # $t2, 0x8013
-/* B2A91C 800B377C 8D4AD270 */  lw    $t2, %lo(D_8012D270)($t2)
-/* B2A920 800B3780 3C198013 */  lui   $t9, %hi(D_8012D274) # $t9, 0x8013
-/* B2A924 800B3784 8F39D274 */  lw    $t9, %lo(D_8012D274)($t9)
+/* B2A918 800B3778 3C0A8013 */  lui   $t2, %hi(gScreenWidth) # $t2, 0x8013
+/* B2A91C 800B377C 8D4AD270 */  lw    $t2, %lo(gScreenWidth)($t2)
+/* B2A920 800B3780 3C198013 */  lui   $t9, %hi(gScreenHeight) # $t9, 0x8013
+/* B2A924 800B3784 8F39D274 */  lw    $t9, %lo(gScreenHeight)($t9)
 /* B2A928 800B3788 254DFFFF */  addiu $t5, $t2, -1
 /* B2A92C 800B378C 24C30008 */  addiu $v1, $a2, 8
 /* B2A930 800B3790 31AF03FF */  andi  $t7, $t5, 0x3ff

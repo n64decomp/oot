@@ -55,7 +55,7 @@ glabel func_800FF3A0
 /* B76578 800FF3D8 27A40028 */  addiu $a0, $sp, 0x28
 /* B7657C 800FF3DC 8FA60068 */  lw    $a2, 0x68($sp)
 /* B76580 800FF3E0 8FA7006C */  lw    $a3, 0x6c($sp)
-/* B76584 800FF3E4 0C0418B8 */  jal   func_801062E0
+/* B76584 800FF3E4 0C0418B8 */  jal   osSetTimer
 /* B76588 800FF3E8 AFA0001C */   sw    $zero, 0x1c($sp)
 /* B7658C 800FF3EC 27A40050 */  addiu $a0, $sp, 0x50
 /* B76590 800FF3F0 00002825 */  move  $a1, $zero

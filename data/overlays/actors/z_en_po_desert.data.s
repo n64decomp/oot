@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AD3980
+glabel En_Po_Desert_InitVars
  .word 0x01BF0100, 0x00001090, 0x006D0000, 0x00000284
-.word func_80AD2CB0
-.word func_80AD2E1C
-.word func_80AD3410
-.word func_80AD37F4
+.word EnPoDesert_Init
+.word EnPoDesert_Destroy
+.word EnPoDesert_Update
+.word EnPoDesert_Draw
 glabel D_80AD39A0
  .word 0x03000039, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00190032, 0x00140000, 0x00000000
 glabel D_80AD39CC

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_toryo.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20170.s")
+#define ROOM  0x00
+#define FLAGS 0x00000009
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B203B0.s")
+void EnToryo_Init(EnToryo* this, GlobalContext* globalCtx);
+void EnToryo_Destroy(EnToryo* this, GlobalContext* globalCtx);
+void EnToryo_Update(EnToryo* this, GlobalContext* globalCtx);
+void EnToryo_Draw(EnToryo* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Toryo_InitVars =
+{
+    ACTOR_EN_TORYO,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_TORYO,
+    sizeof(EnToryo),
+    (ActorFunc)EnToryo_Init,
+    (ActorFunc)EnToryo_Destroy,
+    (ActorFunc)EnToryo_Update,
+    (ActorFunc)EnToryo_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/EnToryo_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/EnToryo_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B203D8.s")
 
@@ -17,14 +39,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20914.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20978.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/EnToryo_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20AA8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/EnToryo_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20B04.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Toryo/func_80B20B94.s")
-
-
-
-

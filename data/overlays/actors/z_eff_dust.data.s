@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8099EB40
+glabel Eff_Dust_InitVars
  .word 0x01010400, 0x00000030, 0x00010000, 0x00000568
-.word func_8099D954
-.word func_8099DB1C
-.word func_8099E4D0
-.word func_8099EB1C
+.word EffDust_Init
+.word EffDust_Destroy
+.word EffDust_Update
+.word EffDust_Draw
 glabel D_8099EB60
  .word 0xDF000000, 0x00000000, 0x00000000, 0x00000000
 

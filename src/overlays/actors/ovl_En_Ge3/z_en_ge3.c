@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ge3.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000019
+
+void EnGe3_Init(EnGe3* this, GlobalContext* globalCtx);
+void EnGe3_Destroy(EnGe3* this, GlobalContext* globalCtx);
+void EnGe3_Update(EnGe3* this, GlobalContext* globalCtx);
+void EnGe3_Draw(EnGe3* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ge3_InitVars =
+{
+    ACTOR_EN_GE3,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_GELDB,
+    sizeof(EnGe3),
+    (ActorFunc)EnGe3_Init,
+    (ActorFunc)EnGe3_Destroy,
+    (ActorFunc)EnGe3_Update,
+    (ActorFunc)EnGe3_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A34620.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A346C4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/EnGe3_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A347CC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/EnGe3_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A347F4.s")
 
@@ -27,14 +49,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A34D68.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A34E14.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/EnGe3_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A34E58.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A35004.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/func_80A35060.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ge3/EnGe3_Draw.s")

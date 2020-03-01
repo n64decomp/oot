@@ -146,11 +146,11 @@ glabel func_800FC800
 /* B739AC 800FC80C 00802825 */   move  $a1, $a0
 /* B739B0 800FC810 24050001 */  li    $a1, 1
 .L800FC814:
-/* B739B4 800FC814 3C048017 */  lui   $a0, %hi(D_80175610) # $a0, 0x8017
+/* B739B4 800FC814 3C048017 */  lui   $a0, %hi(sSystemArena) # $a0, 0x8017
 /* B739B8 800FC818 3C068013 */  lui   $a2, %hi(D_80134484) # $a2, 0x8013
 /* B739BC 800FC81C 24C64484 */  addiu $a2, %lo(D_80134484) # addiu $a2, $a2, 0x4484
-/* B739C0 800FC820 24845610 */  addiu $a0, %lo(D_80175610) # addiu $a0, $a0, 0x5610
-/* B739C4 800FC824 0C03F851 */  jal   func_800FE144
+/* B739C0 800FC820 24845610 */  addiu $a0, %lo(sSystemArena) # addiu $a0, $a0, 0x5610
+/* B739C4 800FC824 0C03F851 */  jal   __osMallocDebug
 /* B739C8 800FC828 00003825 */   move  $a3, $zero
 /* B739CC 800FC82C 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B739D0 800FC830 27BD0018 */  addiu $sp, $sp, 0x18
@@ -162,9 +162,9 @@ glabel func_800FC83C
 /* B739E0 800FC840 AFBF0014 */  sw    $ra, 0x14($sp)
 /* B739E4 800FC844 10800004 */  beqz  $a0, .L800FC858
 /* B739E8 800FC848 00802825 */   move  $a1, $a0
-/* B739EC 800FC84C 3C048017 */  lui   $a0, %hi(D_80175610) # $a0, 0x8017
-/* B739F0 800FC850 0C03F9F9 */  jal   func_800FE7E4
-/* B739F4 800FC854 24845610 */   addiu $a0, %lo(D_80175610) # addiu $a0, $a0, 0x5610
+/* B739EC 800FC84C 3C048017 */  lui   $a0, %hi(sSystemArena) # $a0, 0x8017
+/* B739F0 800FC850 0C03F9F9 */  jal   __osFree
+/* B739F4 800FC854 24845610 */   addiu $a0, %lo(sSystemArena) # addiu $a0, $a0, 0x5610
 .L800FC858:
 /* B739F8 800FC858 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B739FC 800FC85C 27BD0018 */  addiu $sp, $sp, 0x18
@@ -375,7 +375,7 @@ glabel func_800FCAB4
 glabel func_800FCB24
 /* B73CC4 800FCB24 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* B73CC8 800FCB28 AFBF0014 */  sw    $ra, 0x14($sp)
-/* B73CCC 800FCB2C 0C03F639 */  jal   func_800FD8E4
+/* B73CCC 800FCB2C 0C03F639 */  jal   SystemArena_Init
 /* B73CD0 800FCB30 00000000 */   nop   
 /* B73CD4 800FCB34 0C03F2AD */  jal   func_800FCAB4
 /* B73CD8 800FCB38 00000000 */   nop   

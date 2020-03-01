@@ -1,6 +1,27 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ossan.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000019
+
+void EnOssan_Init(EnOssan* this, GlobalContext* globalCtx);
+void EnOssan_Destroy(EnOssan* this, GlobalContext* globalCtx);
+void EnOssan_Update(EnOssan* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ossan_InitVars =
+{
+    ACTOR_EN_OSSAN,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnOssan),
+    (ActorFunc)EnOssan_Init,
+    (ActorFunc)EnOssan_Destroy,
+    (ActorFunc)EnOssan_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC2CA0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC2CA8.s")
@@ -43,9 +64,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC33B0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC3470.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/EnOssan_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC370C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/EnOssan_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC3744.s")
 
@@ -193,7 +214,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC73B4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC74C8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/EnOssan_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC74F4.s")
 
@@ -224,7 +245,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC8668.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ossan/func_80AC8784.s")
-
-
-
-

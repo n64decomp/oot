@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B22A70
+glabel En_Tp_InitVars
  .word 0x00350500, 0x00000000, 0x00220000, 0x000001D8
-.word func_80B20DE8
-.word func_80B2105C
-.word func_80B22440
-.word func_80B227AC
+.word EnTp_Init
+.word EnTp_Destroy
+.word EnTp_Update
+.word EnTp_Draw
 glabel D_80B22A90
  .word 0x00000000, 0xFFCFFFFF, 0x03080000, 0xFFCFFFFF, 0x01000000, 0x01010000, 0x00000000, 0x00000000, 0x00040064
 glabel D_80B22AB4

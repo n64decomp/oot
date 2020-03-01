@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809F03C0
+glabel En_Dns_InitVars
  .word 0x011A0100, 0x00000009, 0x01680000, 0x000002C8
-.word func_809EF350
-.word func_809EF4F4
-.word func_809F0280
-.word func_809F036C
+.word EnDns_Init
+.word EnDns_Destroy
+.word EnDns_Update
+.word EnDns_Draw
 glabel D_809F03E0
  .word 0x0A000939, 0x01000000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00120020, 0x00000000, 0x00000000
 glabel D_809F040C

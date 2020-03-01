@@ -9,12 +9,12 @@
 
 glabel D_80B2CEC0
  .word 0x00000000
-glabel D_80B2CEC4
+glabel En_Viewer_InitVars
  .word 0x002A0700, 0x00000010, 0x00010000, 0x000005F8
-.word func_80B2A208
-.word func_80B2A2D8
-.word func_80B2B2A0
-.word func_80B2C278
+.word EnViewer_Init
+.word EnViewer_Destroy
+.word EnViewer_Update
+.word EnViewer_Draw
 glabel D_80B2CEE4
  .word 0x30F8012C
 glabel D_80B2CEE8

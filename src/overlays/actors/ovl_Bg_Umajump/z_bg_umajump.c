@@ -57,7 +57,7 @@ static void Init(ActorBgUmajump* this, GlobalContext* globalCtx)
 
     if (this->actor.params == 1)
     {
-        if ((!Flags_GetEventChkInf(0x18)) && (gGameInfo->unk_556 == 0))
+        if ((!Flags_GetEventChkInf(0x18)) && (DREG(1) == 0))
         {
             Actor_Kill(&this->actor);
             return;

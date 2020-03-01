@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_boss_ganondrof.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000035
+
+void BossGanondrof_Init(BossGanondrof* this, GlobalContext* globalCtx);
+void BossGanondrof_Destroy(BossGanondrof* this, GlobalContext* globalCtx);
+void BossGanondrof_Update(BossGanondrof* this, GlobalContext* globalCtx);
+void BossGanondrof_Draw(BossGanondrof* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Boss_Ganondrof_InitVars =
+{
+    ACTOR_BOSS_GANONDROF,
+    ACTORTYPE_BOSS,
+    ROOM,
+    FLAGS,
+    OBJECT_GND,
+    sizeof(BossGanondrof),
+    (ActorFunc)BossGanondrof_Init,
+    (ActorFunc)BossGanondrof_Destroy,
+    (ActorFunc)BossGanondrof_Update,
+    (ActorFunc)BossGanondrof_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910640.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910680.s")
@@ -15,9 +37,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910A34.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910A70.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/BossGanondrof_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910CFC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/BossGanondrof_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80910D80.s")
 
@@ -57,7 +79,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80913C54.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80913E8C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/BossGanondrof_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_809142E0.s")
 
@@ -85,8 +107,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80914818.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/func_80914844.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Ganondrof/BossGanondrof_Draw.s")

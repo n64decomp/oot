@@ -58,7 +58,7 @@ glabel func_80A20EC4
 /* 011DC 80A20F9C 468021A0 */  cvt.s.w $f6, $f4                   
 /* 011E0 80A20FA0 46083283 */  div.s   $f10, $f6, $f8             
 /* 011E4 80A20FA4 46105302 */  mul.s   $f12, $f10, $f16           
-/* 011E8 80A20FA8 0C034348 */  jal     func_800D0D20              
+/* 011E8 80A20FA8 0C034348 */  jal     Matrix_RotateY              
 /* 011EC 80A20FAC 00000000 */  nop
 /* 011F0 80A20FB0 3C01C000 */  lui     $at, 0xC000                ## $at = C0000000
 /* 011F4 80A20FB4 44812000 */  mtc1    $at, $f4                   ## $f4 = -2.00

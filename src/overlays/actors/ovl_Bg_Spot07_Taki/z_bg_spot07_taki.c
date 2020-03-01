@@ -1,16 +1,34 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_spot07_taki.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/func_808AFC30.s")
+#define ROOM  0x00
+#define FLAGS 0x00000030
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/func_808AFCD8.s")
+void BgSpot07Taki_Init(BgSpot07Taki* this, GlobalContext* globalCtx);
+void BgSpot07Taki_Destroy(BgSpot07Taki* this, GlobalContext* globalCtx);
+void BgSpot07Taki_Update(BgSpot07Taki* this, GlobalContext* globalCtx);
+void BgSpot07Taki_Draw(BgSpot07Taki* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Spot07_Taki_InitVars =
+{
+    ACTOR_BG_SPOT07_TAKI,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_SPOT07_OBJECT,
+    sizeof(BgSpot07Taki),
+    (ActorFunc)BgSpot07Taki_Init,
+    (ActorFunc)BgSpot07Taki_Destroy,
+    (ActorFunc)BgSpot07Taki_Update,
+    (ActorFunc)BgSpot07Taki_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/BgSpot07Taki_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/BgSpot07Taki_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/func_808AFD08.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/func_808AFD14.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/BgSpot07Taki_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/func_808AFD38.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot07_Taki/BgSpot07Taki_Draw.s")

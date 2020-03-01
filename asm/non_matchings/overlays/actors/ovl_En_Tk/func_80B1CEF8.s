@@ -43,7 +43,7 @@ glabel func_80B1CEF8
 /* 01698 80B1CF98 860900B6 */  lh      $t1, 0x00B6($s0)           ## 000000B6
 /* 0169C 80B1CF9C 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 016A0 80B1CFA0 44895000 */  mtc1    $t1, $f10                  ## $f10 = 0.00
-/* 016A4 80B1CFA4 0C034348 */  jal     func_800D0D20              
+/* 016A4 80B1CFA4 0C034348 */  jal     Matrix_RotateY              
 /* 016A8 80B1CFA8 46805320 */  cvt.s.w $f12, $f10                 
 /* 016AC 80B1CFAC 27A4004C */  addiu   $a0, $sp, 0x004C           ## $a0 = FFFFFFF4
 /* 016B0 80B1CFB0 0C0346BD */  jal     func_800D1AF4              

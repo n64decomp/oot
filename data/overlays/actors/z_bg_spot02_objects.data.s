@@ -9,12 +9,12 @@
 
 glabel D_808AD850
  .word 0x060096B0, 0x0600A2B0, 0x0600AEB0, 0x0600BAB0, 0x0600C6B0, 0x0600D2B0, 0x0600DEB0, 0x0600EAB0, 0x0600F6B0, 0x060102B0, 0x06010EB0, 0x06011AB0
-glabel D_808AD880
+glabel Bg_Spot02_Objects_InitVars
  .word 0x009C0100, 0x00000030, 0x00A10000, 0x00000174
-.word func_808AC660
-.word func_808AC8CC
-.word func_808ACBD8
-.word func_808ACBFC
+.word BgSpot02Objects_Init
+.word BgSpot02Objects_Destroy
+.word BgSpot02Objects_Update
+.word BgSpot02Objects_Draw
 glabel D_808AD8A0
  .word 0x48500064
 glabel D_808AD8A4

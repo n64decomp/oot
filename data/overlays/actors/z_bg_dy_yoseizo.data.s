@@ -8,11 +8,11 @@
 .section .data
 
 .word 0x0000005D, 0x0000005E, 0x0000005C
-glabel D_8087544C
+glabel Bg_Dy_Yoseizo_InitVars
  .word 0x000B0600, 0x02000030, 0x000A0000, 0x000038B4
-.word func_80872830
-.word func_80872954
-.word func_80874950
+.word BgDyYoseizo_Init
+.word BgDyYoseizo_Destroy
+.word BgDyYoseizo_Update
 .word 0x00000000
 glabel D_8087546C
  .word 0xFFFFFFFF, 0xFF6464FF, 0x64FF6464, 0xFFFFAAFF, 0xFF6464FF, 0x64FF6464, 0xFFFFAA00

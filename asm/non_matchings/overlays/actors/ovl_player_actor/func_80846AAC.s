@@ -83,15 +83,15 @@ glabel func_80846AAC
 /* 149DC 80846BEC AFB80014 */  sw      $t8, 0x0014($sp)           
 /* 149E0 80846BF0 AFA00010 */  sw      $zero, 0x0010($sp)         
 /* 149E4 80846BF4 24060002 */  addiu   $a2, $zero, 0x0002         ## $a2 = 00000002
-/* 149E8 80846BF8 0C009B35 */  jal     EffectAdd
-              ## EffectAdd
+/* 149E8 80846BF8 0C009B35 */  jal     Effect_Add
+              ## Effect_Add
 /* 149EC 80846BFC 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 149F0 80846C00 8E190678 */  lw      $t9, 0x0678($s0)           ## 00000678
 /* 149F4 80846C04 3C068003 */  lui     $a2, 0x8003                ## $a2 = 80030000
 /* 149F8 80846C08 24C6B8C4 */  addiu   $a2, $a2, 0xB8C4           ## $a2 = 8002B8C4
 /* 149FC 80846C0C 260400B4 */  addiu   $a0, $s0, 0x00B4           ## $a0 = 000000B4
 /* 14A00 80846C10 24050000 */  addiu   $a1, $zero, 0x0000         ## $a1 = 00000000
-/* 14A04 80846C14 0C00AC78 */  jal     Actor_InitShadow
+/* 14A04 80846C14 0C00AC78 */  jal     ActorShape_Init
               
 /* 14A08 80846C18 8F270004 */  lw      $a3, 0x0004($t9)           ## 00000004
 /* 14A0C 80846C1C 2408FFFF */  addiu   $t0, $zero, 0xFFFF         ## $t0 = FFFFFFFF

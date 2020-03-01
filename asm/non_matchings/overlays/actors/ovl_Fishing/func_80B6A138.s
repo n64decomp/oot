@@ -42,11 +42,11 @@ glabel func_80B6A138
 /* 00834 80B6A1D4 E4EA003C */  swc1    $f10, 0x003C($a3)          ## 000007BC
 /* 00838 80B6A1D8 C4CC0004 */  lwc1    $f12, 0x0004($a2)          ## 00000004
 /* 0083C 80B6A1DC AFA70028 */  sw      $a3, 0x0028($sp)           
-/* 00840 80B6A1E0 0C034348 */  jal     func_800D0D20              
+/* 00840 80B6A1E0 0C034348 */  jal     Matrix_RotateY              
 /* 00844 80B6A1E4 AFA60030 */  sw      $a2, 0x0030($sp)           
 /* 00848 80B6A1E8 8FA60030 */  lw      $a2, 0x0030($sp)           
 /* 0084C 80B6A1EC 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
-/* 00850 80B6A1F0 0C0342DC */  jal     func_800D0B70              
+/* 00850 80B6A1F0 0C0342DC */  jal     Matrix_RotateX              
 /* 00854 80B6A1F4 C4CC0000 */  lwc1    $f12, 0x0000($a2)          ## 00000000
 /* 00858 80B6A1F8 8FA70028 */  lw      $a3, 0x0028($sp)           
 /* 0085C 80B6A1FC 27A40018 */  addiu   $a0, $sp, 0x0018           ## $a0 = FFFFFFF0

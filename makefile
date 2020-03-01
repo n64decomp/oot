@@ -59,17 +59,14 @@ SPEC := spec
 # baserom files
 include baserom_files.mk
 
-SRC_DIRS := src src/libultra_boot src/libultra_code src/boot src/code src/buffers
-ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects asm/overlays asm/overlays/actors
+SRC_DIRS := src src/libultra_boot_O1 src/libultra_boot_O2 src/libultra_code src/boot src/code src/buffers
+ASM_DIRS := asm data data/overlays data/overlays/actors data/overlays/effects data/overlays/gamestates asm/overlays asm/overlays/actors
 
 include overlays.mk
 include overlays_asm.mk
 
-TEXTURE_DIRS = assets/textures
-TEXTURE_BIN_DIRS = assets/textures/icon_item_24_static assets/textures/icon_item_dungeon_static \
-assets/textures/icon_item_field_static assets/textures/icon_item_gameover_static assets/textures/icon_item_nes_static assets/textures/icon_item_static
-
-SCENE_DIRS = scenes/test01_scene
+include textures.mk
+include scenes.mk
 
 # source code
 C_FILES       := $(foreach dir,$(SRC_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(wildcard $(dir)/*.c))
@@ -103,14 +100,16 @@ O_FILES       := $(foreach f,$(S_FILES:.s=.o),build/$f) \
 $(shell mkdir -p build/baserom)
 $(foreach dir,$(SRC_DIRS) $(ASM_DIRS) $(TEXTURE_DIRS) $(TEXTURE_BIN_DIRS) $(SCENE_DIRS),$(shell mkdir -p build/$(dir)))
 
-build/src/libultra_boot/%.o: OPTIMIZATION := -O1
+build/src/libultra_boot_O1/%.o: OPTIMIZATION := -O1
+build/src/libultra_boot_O2/%.o: OPTIMIZATION := -O2
+build/src/libultra_code/%.o: CC := $(CC_OLD)
 build/src/code/fault.o: CFLAGS += -trapuv
 build/src/code/fault.o: OPTIMIZATION := -O2 -g3
 build/src/code/fault_drawer.o: CFLAGS += -trapuv
 build/src/code/fault_drawer.o: OPTIMIZATION := -O2 -g3
-build/src/libultra_code/osJamMesg.o: OPTIMIZATION := -O1
-build/src/libultra_code/_Litob.o: OPTIMIZATION := -O3
-build/src/libultra_code/_Litob.o: CC := $(CC_OLD)
+#build/src/libultra_code/osJamMesg.o: OPTIMIZATION := -O1 #TODO is this needed?
+#build/src/libultra_code/_Litob.o: OPTIMIZATION := -O3 #TODO is this needed?
+#Command for 5.3 with asm_processor: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
 
 #### Main Targets ###
 
@@ -184,8 +183,11 @@ build/src/%.o: src/%.c
 
 build/src/boot/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/code/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+build/src/libultra_boot_O1/%.o: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
+build/src/libultra_boot_O2/%.o: CC := python3 tools/asm_processor/build.py $(CC_OLD) -- $(AS) $(ASFLAGS) --
 build/src/overlays/actors/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 build/src/overlays/effects/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
+build/src/overlays/gamestates/%.o: CC := python3 tools/asm_processor/build.py $(CC) -- $(AS) $(ASFLAGS) --
 
 #build/assets/textures/%.o: assets/textures/%.zdata
 #	$(OBJCOPY) -I binary -O elf32-big $< $@

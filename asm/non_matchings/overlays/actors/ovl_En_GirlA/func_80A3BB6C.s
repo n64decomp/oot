@@ -27,7 +27,7 @@ glabel func_80A3BB6C
 /* 0147C 80A3BBCC 032B2023 */  subu    $a0, $t9, $t3              
 /* 01480 80A3BBD0 00042023 */  subu    $a0, $zero, $a0            
 /* 01484 80A3BBD4 00042400 */  sll     $a0, $a0, 16               
-/* 01488 80A3BBD8 0C021CC3 */  jal     func_8008730C              
+/* 01488 80A3BBD8 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0148C 80A3BBDC 00042403 */  sra     $a0, $a0, 16               
 /* 01490 80A3BBE0 10000007 */  beq     $zero, $zero, .L80A3BC00   
 /* 01494 80A3BBE4 8FBF0014 */  lw      $ra, 0x0014($sp)           
@@ -35,7 +35,7 @@ glabel func_80A3BB6C
 .L80A3BBEC:
 /* 0149C 80A3BBEC 00042023 */  subu    $a0, $zero, $a0            
 /* 014A0 80A3BBF0 00042400 */  sll     $a0, $a0, 16               
-/* 014A4 80A3BBF4 0C021CC3 */  jal     func_8008730C              
+/* 014A4 80A3BBF4 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 014A8 80A3BBF8 00042403 */  sra     $a0, $a0, 16               
 /* 014AC 80A3BBFC 8FBF0014 */  lw      $ra, 0x0014($sp)           
 .L80A3BC00:

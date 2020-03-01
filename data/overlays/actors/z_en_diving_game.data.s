@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809EF090
+glabel En_Diving_Game_InitVars
  .word 0x01240400, 0x00000019, 0x00FE0000, 0x00000398
-.word func_809ED870
-.word func_809ED9A4
-.word func_809EEB90
-.word func_809EEF44
+.word EnDivingGame_Init
+.word EnDivingGame_Destroy
+.word EnDivingGame_Update
+.word EnDivingGame_Draw
 glabel D_809EF0B0
  .word 0x00000000
 glabel D_809EF0B4

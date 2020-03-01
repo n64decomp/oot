@@ -9,11 +9,11 @@
 
 glabel D_808A2210
  .word 0x00000000
-glabel D_808A2214
+glabel Bg_Mori_Elevator_InitVars
  .word 0x00870100, 0x00000010, 0x00720000, 0x00000174
-.word func_808A1984
-.word func_808A1AAC
-.word func_808A20BC
+.word BgMoriElevator_Init
+.word BgMoriElevator_Destroy
+.word BgMoriElevator_Update
 .word 0x00000000
 glabel D_808A2234
  .word 0xB0F407D0, 0xB0F801F4, 0xB0FC0BB8, 0x485003E8, 0x00000000, 0x00000000, 0x00000000

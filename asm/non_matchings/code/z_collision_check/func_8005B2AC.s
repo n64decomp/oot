@@ -14,10 +14,10 @@ glabel func_8005B2AC
 /* AD247C 8005B2DC 27A40064 */   addiu $a0, $sp, 0x64
 /* AD2480 8005B2E0 8E0202C0 */  lw    $v0, 0x2c0($s0)
 /* AD2484 8005B2E4 3C0FDA38 */  lui   $t7, (0xDA380003 >> 16) # lui $t7, 0xda38
-/* AD2488 8005B2E8 3C188013 */  lui   $t8, %hi(D_8012DB20) # $t8, 0x8013
+/* AD2488 8005B2E8 3C188013 */  lui   $t8, %hi(gMtxClear) # $t8, 0x8013
 /* AD248C 8005B2EC 244E0008 */  addiu $t6, $v0, 8
 /* AD2490 8005B2F0 AE0E02C0 */  sw    $t6, 0x2c0($s0)
-/* AD2494 8005B2F4 2718DB20 */  addiu $t8, %lo(D_8012DB20) # addiu $t8, $t8, -0x24e0
+/* AD2494 8005B2F4 2718DB20 */  addiu $t8, %lo(gMtxClear) # addiu $t8, $t8, -0x24e0
 /* AD2498 8005B2F8 35EF0003 */  ori   $t7, (0xDA380003 & 0xFFFF) # ori $t7, $t7, 3
 /* AD249C 8005B2FC AC4F0000 */  sw    $t7, ($v0)
 /* AD24A0 8005B300 AC580004 */  sw    $t8, 4($v0)

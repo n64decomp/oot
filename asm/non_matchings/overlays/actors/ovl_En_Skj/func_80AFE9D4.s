@@ -22,7 +22,7 @@ glabel func_80AFE9D4
 /* 00774 80AFEA24 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 00778 80AFEA28 46128103 */  div.s   $f4, $f16, $f18            
 /* 0077C 80AFEA2C 46062302 */  mul.s   $f12, $f4, $f6             
-/* 00780 80AFEA30 0C034348 */  jal     func_800D0D20              
+/* 00780 80AFEA30 0C034348 */  jal     Matrix_RotateY              
 /* 00784 80AFEA34 00000000 */  nop
 /* 00788 80AFEA38 27A40048 */  addiu   $a0, $sp, 0x0048           ## $a0 = FFFFFFF0
 /* 0078C 80AFEA3C 0C0346BD */  jal     func_800D1AF4              

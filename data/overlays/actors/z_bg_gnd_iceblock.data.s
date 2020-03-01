@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8087A720
+glabel Bg_Gnd_Iceblock_InitVars
  .word 0x01B70600, 0x00000030, 0x01790000, 0x00000174
-.word func_80879AA0
-.word func_80879BD4
-.word func_8087A6CC
-.word func_8087A6F0
+.word BgGndIceblock_Init
+.word BgGndIceblock_Destroy
+.word BgGndIceblock_Update
+.word BgGndIceblock_Draw
 glabel D_8087A740
  .word 0xFAFAFAFF
 glabel D_8087A744

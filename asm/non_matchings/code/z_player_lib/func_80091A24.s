@@ -322,12 +322,12 @@ glabel func_80091A24
 /* B090C4 80091F24 C44E0004 */  lwc1  $f14, 4($v0)
 /* B090C8 80091F28 C44C0000 */  lwc1  $f12, ($v0)
 /* B090CC 80091F2C 8FA70144 */  lw    $a3, 0x144($sp)
-/* B090D0 80091F30 0C0345A5 */  jal   func_800D1694
+/* B090D0 80091F30 0C0345A5 */  jal   Matrix_Softcv3Load
 /* B090D4 80091F34 AFA30114 */   sw    $v1, 0x114($sp)
 /* B090D8 80091F38 C7AC0148 */  lwc1  $f12, 0x148($sp)
 /* B090DC 80091F3C 24070001 */  li    $a3, 1
 /* B090E0 80091F40 44066000 */  mfc1  $a2, $f12
-/* B090E4 80091F44 0C0342A3 */  jal   func_800D0A8C
+/* B090E4 80091F44 0C0342A3 */  jal   Matrix_Scale
 /* B090E8 80091F48 46006386 */   mov.s $f14, $f12
 /* B090EC 80091F4C 8FA30114 */  lw    $v1, 0x114($sp)
 /* B090F0 80091F50 3C0EDB06 */  lui   $t6, (0xDB060010 >> 16) # lui $t6, 0xdb06

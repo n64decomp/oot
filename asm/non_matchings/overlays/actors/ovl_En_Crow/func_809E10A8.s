@@ -16,8 +16,8 @@ glabel func_809E10A8
               
 /* 00E9C 809E10DC 2604017C */  addiu   $a0, $s0, 0x017C           ## $a0 = 0000017C
 /* 00EA0 809E10E0 8618001C */  lh      $t8, 0x001C($s0)           ## 0000001C
-/* 00EA4 809E10E4 3C0F809E */  lui     $t7, %hi(func_809E15E0)    ## $t7 = 809E0000
-/* 00EA8 809E10E8 25EF15E0 */  addiu   $t7, $t7, %lo(func_809E15E0) ## $t7 = 809E15E0
+/* 00EA4 809E10E4 3C0F809E */  lui     $t7, %hi(EnCrow_Draw)    ## $t7 = 809E0000
+/* 00EA8 809E10E8 25EF15E0 */  addiu   $t7, $t7, %lo(EnCrow_Draw) ## $t7 = 809E15E0
 /* 00EAC 809E10EC 13000004 */  beq     $t8, $zero, .L809E1100     
 /* 00EB0 809E10F0 AE0F0134 */  sw      $t7, 0x0134($s0)           ## 00000134
 /* 00EB4 809E10F4 3C01809E */  lui     $at, %hi(D_809E1710)       ## $at = 809E0000

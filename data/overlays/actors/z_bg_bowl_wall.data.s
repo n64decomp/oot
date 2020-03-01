@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8086FA20
+glabel Bg_Bowl_Wall_InitVars
  .word 0x01BD0600, 0x00000030, 0x01780000, 0x00000188
-.word func_8086F160
-.word func_8086F230
-.word func_8086F890
-.word func_8086F8C4
+.word BgBowlWall_Init
+.word BgBowlWall_Destroy
+.word BgBowlWall_Update
+.word BgBowlWall_Draw
 glabel D_8086FA40
  .word 0x00000000, 0x43520000, 0xC1A00000, 0x00000000, 0x432A0000, 0xC1A00000, 0xC32A0000, 0x00000000, 0xC1A00000, 0x432A0000, 0x00000000, 0xC1A00000
 glabel D_8086FA70

@@ -51,7 +51,7 @@ glabel func_808E0A3C
 /* 0A290 808E0B00 46023000 */  add.s   $f0, $f6, $f2              
 /* 0A294 808E0B04 46004280 */  add.s   $f10, $f8, $f0             
 /* 0A298 808E0B08 44065000 */  mfc1    $a2, $f10                  
-/* 0A29C 808E0B0C 0C034261 */  jal     func_800D0984              
+/* 0A29C 808E0B0C 0C034261 */  jal     Matrix_Translate              
 /* 0A2A0 808E0B10 00000000 */  nop
 /* 0A2A4 808E0B14 1000000C */  beq     $zero, $zero, .L808E0B48   
 /* 0A2A8 808E0B18 00000000 */  nop
@@ -65,7 +65,7 @@ glabel func_808E0A3C
 /* 0A2C4 808E0B34 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 0A2C8 808E0B38 46128101 */  sub.s   $f4, $f16, $f18            
 /* 0A2CC 808E0B3C 44062000 */  mfc1    $a2, $f4                   
-/* 0A2D0 808E0B40 0C034261 */  jal     func_800D0984              
+/* 0A2D0 808E0B40 0C034261 */  jal     Matrix_Translate              
 /* 0A2D4 808E0B44 00000000 */  nop
 .L808E0B48:
 /* 0A2D8 808E0B48 3C018090 */  lui     $at, %hi(D_808F8178)       ## $at = 80900000
@@ -73,7 +73,7 @@ glabel func_808E0A3C
 /* 0A2E0 808E0B50 3C013F80 */  lui     $at, 0x3F80                ## $at = 3F800000
 /* 0A2E4 808E0B54 44817000 */  mtc1    $at, $f14                  ## $f14 = 1.00
 /* 0A2E8 808E0B58 44066000 */  mfc1    $a2, $f12                  
-/* 0A2EC 808E0B5C 0C0342A3 */  jal     func_800D0A8C              
+/* 0A2EC 808E0B5C 0C0342A3 */  jal     Matrix_Scale              
 /* 0A2F0 808E0B60 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0A2F4 808E0B64 8E0202C0 */  lw      $v0, 0x02C0($s0)           ## 000002C0
 /* 0A2F8 808E0B68 3C0DDA38 */  lui     $t5, 0xDA38                ## $t5 = DA380000
@@ -86,7 +86,7 @@ glabel func_808E0A3C
 /* 0A314 808E0B84 24A57C30 */  addiu   $a1, $a1, %lo(D_808F7C30)  ## $a1 = 808F7C30
 /* 0A318 808E0B88 8DC40000 */  lw      $a0, 0x0000($t6)           ## 00000000
 /* 0A31C 808E0B8C 240620CC */  addiu   $a2, $zero, 0x20CC         ## $a2 = 000020CC
-/* 0A320 808E0B90 0C0346A2 */  jal     func_800D1A88              
+/* 0A320 808E0B90 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0A324 808E0B94 AFA2004C */  sw      $v0, 0x004C($sp)           
 /* 0A328 808E0B98 8FA3004C */  lw      $v1, 0x004C($sp)           
 /* 0A32C 808E0B9C 3C18808E */  lui     $t8, %hi(D_808E4F68)       ## $t8 = 808E0000

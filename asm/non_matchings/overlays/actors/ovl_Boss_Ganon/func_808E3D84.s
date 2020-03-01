@@ -86,18 +86,18 @@ glabel func_808E3D84
 .L808E3EC8:
 /* 0D658 808E3EC8 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 00010004
 /* 0D65C 808E3ECC C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 00010008
-/* 0D660 808E3ED0 0C034261 */  jal     func_800D0984              
+/* 0D660 808E3ED0 0C034261 */  jal     Matrix_Translate              
 /* 0D664 808E3ED4 8E26000C */  lw      $a2, 0x000C($s1)           ## 0001000C
 /* 0D668 808E3ED8 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 00010034
 /* 0D66C 808E3EDC 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0D670 808E3EE0 44066000 */  mfc1    $a2, $f12                  
-/* 0D674 808E3EE4 0C0342A3 */  jal     func_800D0A8C              
+/* 0D674 808E3EE4 0C0342A3 */  jal     Matrix_Scale              
 /* 0D678 808E3EE8 46006386 */  mov.s   $f14, $f12                 
 /* 0D67C 808E3EEC C62C0048 */  lwc1    $f12, 0x0048($s1)          ## 00010048
-/* 0D680 808E3EF0 0C034348 */  jal     func_800D0D20              
+/* 0D680 808E3EF0 0C034348 */  jal     Matrix_RotateY              
 /* 0D684 808E3EF4 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D688 808E3EF8 C62C0044 */  lwc1    $f12, 0x0044($s1)          ## 00010044
-/* 0D68C 808E3EFC 0C0342DC */  jal     func_800D0B70              
+/* 0D68C 808E3EFC 0C0342DC */  jal     Matrix_RotateX              
 /* 0D690 808E3F00 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D694 808E3F04 8E0202C0 */  lw      $v0, 0x02C0($s0)           ## 000002C0
 /* 0D698 808E3F08 3C05808F */  lui     $a1, %hi(D_808F7D84)       ## $a1 = 808F0000
@@ -107,7 +107,7 @@ glabel func_808E3D84
 /* 0D6A8 808E3F18 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0D6AC 808E3F1C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0D6B0 808E3F20 24062A92 */  addiu   $a2, $zero, 0x2A92         ## $a2 = 00002A92
-/* 0D6B4 808E3F24 0C0346A2 */  jal     func_800D1A88              
+/* 0D6B4 808E3F24 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0D6B8 808E3F28 AFA2013C */  sw      $v0, 0x013C($sp)           
 /* 0D6BC 808E3F2C 8FA3013C */  lw      $v1, 0x013C($sp)           
 /* 0D6C0 808E3F30 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -174,17 +174,17 @@ glabel func_808E3D84
 /* 0D7A8 808E4018 AC4E0004 */  sw      $t6, 0x0004($v0)           ## 00000004
 /* 0D7AC 808E401C 8E26000C */  lw      $a2, 0x000C($s1)           ## 00010058
 /* 0D7B0 808E4020 C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 00010054
-/* 0D7B4 808E4024 0C034261 */  jal     func_800D0984              
+/* 0D7B4 808E4024 0C034261 */  jal     Matrix_Translate              
 /* 0D7B8 808E4028 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 00010050
 /* 0D7BC 808E402C 0C0347F5 */  jal     func_800D1FD4              
 /* 0D7C0 808E4030 8FA4006C */  lw      $a0, 0x006C($sp)           
 /* 0D7C4 808E4034 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 00010080
 /* 0D7C8 808E4038 3C063F80 */  lui     $a2, 0x3F80                ## $a2 = 3F800000
 /* 0D7CC 808E403C 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
-/* 0D7D0 808E4040 0C0342A3 */  jal     func_800D0A8C              
+/* 0D7D0 808E4040 0C0342A3 */  jal     Matrix_Scale              
 /* 0D7D4 808E4044 46006386 */  mov.s   $f14, $f12                 
 /* 0D7D8 808E4048 C62C003C */  lwc1    $f12, 0x003C($s1)          ## 00010088
-/* 0D7DC 808E404C 0C0343B5 */  jal     func_800D0ED4              
+/* 0D7DC 808E404C 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0D7E0 808E4050 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D7E4 808E4054 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0D7E8 808E4058 3C05808F */  lui     $a1, %hi(D_808F7D98)       ## $a1 = 808F0000
@@ -194,7 +194,7 @@ glabel func_808E3D84
 /* 0D7F8 808E4068 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0D7FC 808E406C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0D800 808E4070 24062AB4 */  addiu   $a2, $zero, 0x2AB4         ## $a2 = 00002AB4
-/* 0D804 808E4074 0C0346A2 */  jal     func_800D1A88              
+/* 0D804 808E4074 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0D808 808E4078 AFA20124 */  sw      $v0, 0x0124($sp)           
 /* 0D80C 808E407C 8FA30124 */  lw      $v1, 0x0124($sp)           
 /* 0D810 808E4080 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -255,16 +255,16 @@ glabel func_808E3D84
 /* 0D8E0 808E4150 AC490004 */  sw      $t1, 0x0004($v0)           ## 00000004
 /* 0D8E4 808E4154 8E26000C */  lw      $a2, 0x000C($s1)           ## 000100A4
 /* 0D8E8 808E4158 C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 000100A0
-/* 0D8EC 808E415C 0C034261 */  jal     func_800D0984              
+/* 0D8EC 808E415C 0C034261 */  jal     Matrix_Translate              
 /* 0D8F0 808E4160 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 0001009C
 /* 0D8F4 808E4164 C62C0048 */  lwc1    $f12, 0x0048($s1)          ## 000100E0
-/* 0D8F8 808E4168 0C034348 */  jal     func_800D0D20              
+/* 0D8F8 808E4168 0C034348 */  jal     Matrix_RotateY              
 /* 0D8FC 808E416C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D900 808E4170 C62C0044 */  lwc1    $f12, 0x0044($s1)          ## 000100DC
-/* 0D904 808E4174 0C0342DC */  jal     func_800D0B70              
+/* 0D904 808E4174 0C0342DC */  jal     Matrix_RotateX              
 /* 0D908 808E4178 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D90C 808E417C C62C003C */  lwc1    $f12, 0x003C($s1)          ## 000100D4
-/* 0D910 808E4180 0C0343B5 */  jal     func_800D0ED4              
+/* 0D910 808E4180 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0D914 808E4184 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D918 808E4188 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 000100CC
 /* 0D91C 808E418C C6240038 */  lwc1    $f4, 0x0038($s1)           ## 000100D0
@@ -272,11 +272,11 @@ glabel func_808E3D84
 /* 0D924 808E4194 46006386 */  mov.s   $f14, $f12                 
 /* 0D928 808E4198 460C2182 */  mul.s   $f6, $f4, $f12             
 /* 0D92C 808E419C 44063000 */  mfc1    $a2, $f6                   
-/* 0D930 808E41A0 0C0342A3 */  jal     func_800D0A8C              
+/* 0D930 808E41A0 0C0342A3 */  jal     Matrix_Scale              
 /* 0D934 808E41A4 00000000 */  nop
 /* 0D938 808E41A8 3C018090 */  lui     $at, %hi(D_808F826C)       ## $at = 80900000
 /* 0D93C 808E41AC C42C826C */  lwc1    $f12, %lo(D_808F826C)($at) 
-/* 0D940 808E41B0 0C0342DC */  jal     func_800D0B70              
+/* 0D940 808E41B0 0C0342DC */  jal     Matrix_RotateX              
 /* 0D944 808E41B4 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0D948 808E41B8 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0D94C 808E41BC 3C05808F */  lui     $a1, %hi(D_808F7DAC)       ## $a1 = 808F0000
@@ -286,7 +286,7 @@ glabel func_808E3D84
 /* 0D95C 808E41CC AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0D960 808E41D0 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0D964 808E41D4 24062ADB */  addiu   $a2, $zero, 0x2ADB         ## $a2 = 00002ADB
-/* 0D968 808E41D8 0C0346A2 */  jal     func_800D1A88              
+/* 0D968 808E41D8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0D96C 808E41DC AFA2010C */  sw      $v0, 0x010C($sp)           
 /* 0D970 808E41E0 8FA3010C */  lw      $v1, 0x010C($sp)           
 /* 0D974 808E41E4 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -356,22 +356,22 @@ glabel func_808E3D84
 /* 0DA64 808E42D4 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 000100E8
 /* 0DA68 808E42D8 C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 000100EC
 /* 0DA6C 808E42DC 8E26000C */  lw      $a2, 0x000C($s1)           ## 000100F0
-/* 0DA70 808E42E0 0C034261 */  jal     func_800D0984              
+/* 0DA70 808E42E0 0C034261 */  jal     Matrix_Translate              
 /* 0DA74 808E42E4 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 0DA78 808E42E8 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 00010118
 /* 0DA7C 808E42EC 3C063F80 */  lui     $a2, 0x3F80                ## $a2 = 3F800000
 /* 0DA80 808E42F0 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
-/* 0DA84 808E42F4 0C0342A3 */  jal     func_800D0A8C              
+/* 0DA84 808E42F4 0C0342A3 */  jal     Matrix_Scale              
 /* 0DA88 808E42F8 46006386 */  mov.s   $f14, $f12                 
 /* 0DA8C 808E42FC 3C018090 */  lui     $at, %hi(D_808F8270)       ## $at = 80900000
 /* 0DA90 808E4300 C42A8270 */  lwc1    $f10, %lo(D_808F8270)($at) 
 /* 0DA94 808E4304 C628003C */  lwc1    $f8, 0x003C($s1)           ## 00010120
 /* 0DA98 808E4308 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0DA9C 808E430C 460A4302 */  mul.s   $f12, $f8, $f10            
-/* 0DAA0 808E4310 0C0342DC */  jal     func_800D0B70              
+/* 0DAA0 808E4310 0C0342DC */  jal     Matrix_RotateX              
 /* 0DAA4 808E4314 00000000 */  nop
 /* 0DAA8 808E4318 C62C003C */  lwc1    $f12, 0x003C($s1)          ## 00010120
-/* 0DAAC 808E431C 0C0343B5 */  jal     func_800D0ED4              
+/* 0DAAC 808E431C 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0DAB0 808E4320 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0DAB4 808E4324 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0DAB8 808E4328 3C05808F */  lui     $a1, %hi(D_808F7DC0)       ## $a1 = 808F0000
@@ -381,7 +381,7 @@ glabel func_808E3D84
 /* 0DAC8 808E4338 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0DACC 808E433C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0DAD0 808E4340 24062B0F */  addiu   $a2, $zero, 0x2B0F         ## $a2 = 00002B0F
-/* 0DAD4 808E4344 0C0346A2 */  jal     func_800D1A88              
+/* 0DAD4 808E4344 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0DAD8 808E4348 AFA200F0 */  sw      $v0, 0x00F0($sp)           
 /* 0DADC 808E434C 8FA300F0 */  lw      $v1, 0x00F0($sp)           
 /* 0DAE0 808E4350 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -457,21 +457,21 @@ glabel func_808E3D84
 /* 0DBF0 808E4460 8C4293D0 */  lw      $v0, %lo(D_808F93D0)($v0)  
 /* 0DBF4 808E4464 C44C0260 */  lwc1    $f12, 0x0260($v0)          ## 80900260
 /* 0DBF8 808E4468 C44E0264 */  lwc1    $f14, 0x0264($v0)          ## 80900264
-/* 0DBFC 808E446C 0C034261 */  jal     func_800D0984              
+/* 0DBFC 808E446C 0C034261 */  jal     Matrix_Translate              
 /* 0DC00 808E4470 8C460268 */  lw      $a2, 0x0268($v0)           ## 80900268
 /* 0DC04 808E4474 C62C0048 */  lwc1    $f12, 0x0048($s1)          ## 00010178
-/* 0DC08 808E4478 0C034348 */  jal     func_800D0D20              
+/* 0DC08 808E4478 0C034348 */  jal     Matrix_RotateY              
 /* 0DC0C 808E447C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0DC10 808E4480 C62C003C */  lwc1    $f12, 0x003C($s1)          ## 0001016C
-/* 0DC14 808E4484 0C0343B5 */  jal     func_800D0ED4              
+/* 0DC14 808E4484 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0DC18 808E4488 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0DC1C 808E448C C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 00010164
 /* 0DC20 808E4490 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0DC24 808E4494 44066000 */  mfc1    $a2, $f12                  
-/* 0DC28 808E4498 0C0342A3 */  jal     func_800D0A8C              
+/* 0DC28 808E4498 0C0342A3 */  jal     Matrix_Scale              
 /* 0DC2C 808E449C 46006386 */  mov.s   $f14, $f12                 
 /* 0DC30 808E44A0 C62C0044 */  lwc1    $f12, 0x0044($s1)          ## 00010174
-/* 0DC34 808E44A4 0C034348 */  jal     func_800D0D20              
+/* 0DC34 808E44A4 0C034348 */  jal     Matrix_RotateY              
 /* 0DC38 808E44A8 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0DC3C 808E44AC 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0DC40 808E44B0 3C05808F */  lui     $a1, %hi(D_808F7DD4)       ## $a1 = 808F0000
@@ -481,7 +481,7 @@ glabel func_808E3D84
 /* 0DC50 808E44C0 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0DC54 808E44C4 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0DC58 808E44C8 24062B42 */  addiu   $a2, $zero, 0x2B42         ## $a2 = 00002B42
-/* 0DC5C 808E44CC 0C0346A2 */  jal     func_800D1A88              
+/* 0DC5C 808E44CC 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0DC60 808E44D0 AFA200DC */  sw      $v0, 0x00DC($sp)           
 /* 0DC64 808E44D4 8FA300DC */  lw      $v1, 0x00DC($sp)           
 /* 0DC68 808E44D8 3C19DB06 */  lui     $t9, 0xDB06                ## $t9 = DB060000
@@ -584,14 +584,14 @@ glabel func_808E3D84
 /* 0DDE4 808E4654 AD020004 */  sw      $v0, 0x0004($t0)           ## 00000004
 /* 0DDE8 808E4658 8E26000C */  lw      $a2, 0x000C($s1)           ## 00010188
 /* 0DDEC 808E465C C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 00010184
-/* 0DDF0 808E4660 0C034261 */  jal     func_800D0984              
+/* 0DDF0 808E4660 0C034261 */  jal     Matrix_Translate              
 /* 0DDF4 808E4664 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 00010180
 /* 0DDF8 808E4668 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 000101B0
 /* 0DDFC 808E466C C6300040 */  lwc1    $f16, 0x0040($s1)          ## 000101BC
 /* 0DE00 808E4670 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0DE04 808E4674 44066000 */  mfc1    $a2, $f12                  
 /* 0DE08 808E4678 460C8382 */  mul.s   $f14, $f16, $f12           
-/* 0DE0C 808E467C 0C0342A3 */  jal     func_800D0A8C              
+/* 0DE0C 808E467C 0C0342A3 */  jal     Matrix_Scale              
 /* 0DE10 808E4680 00000000 */  nop
 /* 0DE14 808E4684 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0DE18 808E4688 3C05808F */  lui     $a1, %hi(D_808F7DE8)       ## $a1 = 808F0000
@@ -601,7 +601,7 @@ glabel func_808E3D84
 /* 0DE28 808E4698 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0DE2C 808E469C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0DE30 808E46A0 24062B71 */  addiu   $a2, $zero, 0x2B71         ## $a2 = 00002B71
-/* 0DE34 808E46A4 0C0346A2 */  jal     func_800D1A88              
+/* 0DE34 808E46A4 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0DE38 808E46A8 AFA200C0 */  sw      $v0, 0x00C0($sp)           
 /* 0DE3C 808E46AC 8FA300C0 */  lw      $v1, 0x00C0($sp)           
 /* 0DE40 808E46B0 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -682,14 +682,14 @@ glabel func_808E3D84
 /* 0DF64 808E47D4 AD020004 */  sw      $v0, 0x0004($t0)           ## 00000004
 /* 0DF68 808E47D8 8E26000C */  lw      $a2, 0x000C($s1)           ## 000101D4
 /* 0DF6C 808E47DC C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 000101D0
-/* 0DF70 808E47E0 0C034261 */  jal     func_800D0984              
+/* 0DF70 808E47E0 0C034261 */  jal     Matrix_Translate              
 /* 0DF74 808E47E4 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 000101CC
 /* 0DF78 808E47E8 C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 000101FC
 /* 0DF7C 808E47EC C6320040 */  lwc1    $f18, 0x0040($s1)          ## 00010208
 /* 0DF80 808E47F0 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0DF84 808E47F4 44066000 */  mfc1    $a2, $f12                  
 /* 0DF88 808E47F8 460C9382 */  mul.s   $f14, $f18, $f12           
-/* 0DF8C 808E47FC 0C0342A3 */  jal     func_800D0A8C              
+/* 0DF8C 808E47FC 0C0342A3 */  jal     Matrix_Scale              
 /* 0DF90 808E4800 00000000 */  nop
 /* 0DF94 808E4804 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0DF98 808E4808 3C05808F */  lui     $a1, %hi(D_808F7DFC)       ## $a1 = 808F0000
@@ -699,7 +699,7 @@ glabel func_808E3D84
 /* 0DFA8 808E4818 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0DFAC 808E481C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0DFB0 808E4820 24062B9D */  addiu   $a2, $zero, 0x2B9D         ## $a2 = 00002B9D
-/* 0DFB4 808E4824 0C0346A2 */  jal     func_800D1A88              
+/* 0DFB4 808E4824 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0DFB8 808E4828 AFA200A8 */  sw      $v0, 0x00A8($sp)           
 /* 0DFBC 808E482C 8FA300A8 */  lw      $v1, 0x00A8($sp)           
 /* 0DFC0 808E4830 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -780,7 +780,7 @@ glabel func_808E3D84
 /* 0E0E4 808E4954 AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
 /* 0E0E8 808E4958 8E26000C */  lw      $a2, 0x000C($s1)           ## 00010220
 /* 0E0EC 808E495C C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 0001021C
-/* 0E0F0 808E4960 0C034261 */  jal     func_800D0984              
+/* 0E0F0 808E4960 0C034261 */  jal     Matrix_Translate              
 /* 0E0F4 808E4964 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 00010218
 /* 0E0F8 808E4968 3C014348 */  lui     $at, 0x4348                ## $at = 43480000
 /* 0E0FC 808E496C 44810000 */  mtc1    $at, $f0                   ## $f0 = 200.00
@@ -794,7 +794,7 @@ glabel func_808E3D84
 /* 0E11C 808E498C 46023303 */  div.s   $f12, $f6, $f2             
 /* 0E120 808E4990 46025383 */  div.s   $f14, $f10, $f2            
 /* 0E124 808E4994 44066000 */  mfc1    $a2, $f12                  
-/* 0E128 808E4998 0C0342A3 */  jal     func_800D0A8C              
+/* 0E128 808E4998 0C0342A3 */  jal     Matrix_Scale              
 /* 0E12C 808E499C 00000000 */  nop
 /* 0E130 808E49A0 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0E134 808E49A4 3C05808F */  lui     $a1, %hi(D_808F7E10)       ## $a1 = 808F0000
@@ -804,7 +804,7 @@ glabel func_808E3D84
 /* 0E144 808E49B4 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0E148 808E49B8 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0E14C 808E49BC 24062BC9 */  addiu   $a2, $zero, 0x2BC9         ## $a2 = 00002BC9
-/* 0E150 808E49C0 0C0346A2 */  jal     func_800D1A88              
+/* 0E150 808E49C0 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0E154 808E49C4 AFA20090 */  sw      $v0, 0x0090($sp)           
 /* 0E158 808E49C8 8FA30090 */  lw      $v1, 0x0090($sp)           
 /* 0E15C 808E49CC AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004
@@ -889,14 +889,14 @@ glabel func_808E3D84
 /* 0E290 808E4B00 AD020004 */  sw      $v0, 0x0004($t0)           ## 00000004
 /* 0E294 808E4B04 8E26000C */  lw      $a2, 0x000C($s1)           ## 0001026C
 /* 0E298 808E4B08 C62E0008 */  lwc1    $f14, 0x0008($s1)          ## 00010268
-/* 0E29C 808E4B0C 0C034261 */  jal     func_800D0984              
+/* 0E29C 808E4B0C 0C034261 */  jal     Matrix_Translate              
 /* 0E2A0 808E4B10 C62C0004 */  lwc1    $f12, 0x0004($s1)          ## 00010264
 /* 0E2A4 808E4B14 0C0347F5 */  jal     func_800D1FD4              
 /* 0E2A8 808E4B18 8FA4006C */  lw      $a0, 0x006C($sp)           
 /* 0E2AC 808E4B1C C62C0034 */  lwc1    $f12, 0x0034($s1)          ## 00010294
 /* 0E2B0 808E4B20 3C063F80 */  lui     $a2, 0x3F80                ## $a2 = 3F800000
 /* 0E2B4 808E4B24 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
-/* 0E2B8 808E4B28 0C0342A3 */  jal     func_800D0A8C              
+/* 0E2B8 808E4B28 0C0342A3 */  jal     Matrix_Scale              
 /* 0E2BC 808E4B2C 46006386 */  mov.s   $f14, $f12                 
 /* 0E2C0 808E4B30 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002D0
 /* 0E2C4 808E4B34 3C05808F */  lui     $a1, %hi(D_808F7E24)       ## $a1 = 808F0000
@@ -906,7 +906,7 @@ glabel func_808E3D84
 /* 0E2D4 808E4B44 AC5E0000 */  sw      $s8, 0x0000($v0)           ## 00000000
 /* 0E2D8 808E4B48 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 0E2DC 808E4B4C 24062BF2 */  addiu   $a2, $zero, 0x2BF2         ## $a2 = 00002BF2
-/* 0E2E0 808E4B50 0C0346A2 */  jal     func_800D1A88              
+/* 0E2E0 808E4B50 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0E2E4 808E4B54 AFA20078 */  sw      $v0, 0x0078($sp)           
 /* 0E2E8 808E4B58 8FA30078 */  lw      $v1, 0x0078($sp)           
 /* 0E2EC 808E4B5C AC620004 */  sw      $v0, 0x0004($v1)           ## 00000004

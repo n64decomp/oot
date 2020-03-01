@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A9E820
+glabel En_Light_InitVars
  .word 0x00080700, 0x00000000, 0x00010000, 0x00000164
-.word func_80A9DB40
-.word func_80A9DD20
-.word func_80A9DDD0
-.word func_80A9E4AC
+.word EnLight_Init
+.word EnLight_Destroy
+.word EnLight_Update
+.word EnLight_Draw
 glabel D_80A9E840
  .byte 0xFF, 0xC8, 0x00, 0xFF, 0xFF, 0x00, 0x00
 glabel D_80A9E847

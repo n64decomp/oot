@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_bili.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809BF8A0.s")
+#define ROOM  0x00
+#define FLAGS 0x00005005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809BF994.s")
+void EnBili_Init(EnBili* this, GlobalContext* globalCtx);
+void EnBili_Destroy(EnBili* this, GlobalContext* globalCtx);
+void EnBili_Update(EnBili* this, GlobalContext* globalCtx);
+void EnBili_Draw(EnBili* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Bili_InitVars =
+{
+    ACTOR_EN_BILI,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_BL,
+    sizeof(EnBili),
+    (ActorFunc)EnBili_Init,
+    (ActorFunc)EnBili_Destroy,
+    (ActorFunc)EnBili_Update,
+    (ActorFunc)EnBili_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/EnBili_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/EnBili_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809BF9BC.s")
 
@@ -55,7 +77,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809C0A70.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809C0C38.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/EnBili_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809C0E08.s")
 
@@ -65,8 +87,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809C13A8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/func_809C1498.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bili/EnBili_Draw.s")

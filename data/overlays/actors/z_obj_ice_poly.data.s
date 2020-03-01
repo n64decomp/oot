@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B94B10
+glabel Obj_Ice_Poly_InitVars
  .word 0x011E0600, 0x00000010, 0x00010000, 0x000001EC
-.word func_80B94260
-.word func_80B94420
-.word func_80B94958
-.word func_80B9497C
+.word ObjIcePoly_Init
+.word ObjIcePoly_Destroy
+.word ObjIcePoly_Update
+.word ObjIcePoly_Draw
 glabel D_80B94B30
  .word 0x0A110939, 0x20010000, 0x00000000, 0xFFCFFFFF, 0x02000000, 0x00020800, 0x00000000, 0x19010100, 0x00320078, 0x00000000, 0x00000000
 glabel D_80B94B5C

@@ -9,10 +9,10 @@
 
 glabel D_808A4C10
  .word 0x00000000
-glabel D_808A4C14
+glabel Bg_Mori_Idomizu_InitVars
  .word 0x00E40100, 0x00000030, 0x00720000, 0x00000160
-.word func_808A466C
-.word func_808A47B8
-.word func_808A4A38
+.word BgMoriIdomizu_Init
+.word BgMoriIdomizu_Destroy
+.word BgMoriIdomizu_Update
 .word 0x00000000, 0x00000000, 0x00000000, 0x00000000
 

@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_808B4B30
+glabel Bg_Spot15_Saku_InitVars
  .word 0x00F80700, 0x00000000, 0x00F00000, 0x00000180
-.word func_808B4850
-.word func_808B4900
-.word func_808B4A34
-.word func_808B4A68
+.word BgSpot15Saku_Init
+.word BgSpot15Saku_Destroy
+.word BgSpot15Saku_Update
+.word BgSpot15Saku_Draw
 

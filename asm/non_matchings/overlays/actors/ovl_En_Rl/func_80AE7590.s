@@ -44,7 +44,7 @@ glabel func_80AE7590
               ## ActorSpawn
 /* 00388 80AE7638 E7AC0014 */  swc1    $f12, 0x0014($sp)          
 /* 0038C 80AE763C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
-/* 00390 80AE7640 0C021344 */  jal     func_80084D10              
+/* 00390 80AE7640 0C021344 */  jal     Item_Give              
 /* 00394 80AE7644 2405006B */  addiu   $a1, $zero, 0x006B         ## $a1 = 0000006B
 /* 00398 80AE7648 8FAB0038 */  lw      $t3, 0x0038($sp)           
 /* 0039C 80AE764C 240A0001 */  addiu   $t2, $zero, 0x0001         ## $t2 = 00000001

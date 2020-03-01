@@ -28,7 +28,7 @@ glabel func_80A2FA50
 /* 00934 80A2FAB4 24060014 */  addiu   $a2, $zero, 0x0014         ## $a2 = 00000014
 /* 00938 80A2FAB8 0C023B67 */  jal     func_8008ED9C              
 /* 0093C 80A2FABC 2407001E */  addiu   $a3, $zero, 0x001E         ## $a3 = 0000001E
-/* 00940 80A2FAC0 0C021CC3 */  jal     func_8008730C              
+/* 00940 80A2FAC0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00944 80A2FAC4 24040032 */  addiu   $a0, $zero, 0x0032         ## $a0 = 00000032
 /* 00948 80A2FAC8 3C028016 */  lui     $v0, 0x8016                ## $v0 = 80160000
 /* 0094C 80A2FACC 2442E660 */  addiu   $v0, $v0, 0xE660           ## $v0 = 8015E660

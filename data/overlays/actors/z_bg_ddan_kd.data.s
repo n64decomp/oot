@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808718A0
+glabel Bg_Ddan_Kd_InitVars
  .word 0x005C0100, 0x00000010, 0x002B0000, 0x000001C8
-.word func_808710F8
-.word func_808711EC
-.word func_80871844
-.word func_80871868
+.word BgDdanKd_Init
+.word BgDdanKd_Destroy
+.word BgDdanKd_Update
+.word BgDdanKd_Draw
 glabel D_808718C0
  .word 0x0A003900, 0x00010000, 0x02000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010000, 0x00F500B4, 0xFE700000, 0x00000000
 glabel D_808718EC

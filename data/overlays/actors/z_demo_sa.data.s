@@ -41,11 +41,11 @@ glabel D_80990DB0
  .word func_8098FEA8
 .word func_8098FEB4
 .word func_8098F1C0
-glabel D_80990DBC
+glabel Demo_Sa_InitVars
  .word 0x00C90400, 0x00000010, 0x00BC0000, 0x000001B4
-.word func_8098FDAC
-.word func_8098E460
-.word func_8098FD50
-.word func_80990078
+.word DemoSa_Init
+.word DemoSa_Destroy
+.word DemoSa_Update
+.word DemoSa_Draw
 .word 0x00000000
 

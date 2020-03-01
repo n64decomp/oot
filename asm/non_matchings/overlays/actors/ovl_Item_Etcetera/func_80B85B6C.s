@@ -12,7 +12,7 @@ glabel func_80B85B6C
 /* 005A4 80B85B94 11E0001E */  beq     $t7, $zero, .L80B85C10     
 /* 005A8 80B85B98 240501B9 */  addiu   $a1, $zero, 0x01B9         ## $a1 = 000001B9
 /* 005AC 80B85B9C AFA60018 */  sw      $a2, 0x0018($sp)           
-/* 005B0 80B85BA0 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 005B0 80B85BA0 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 005B4 80B85BA4 AFA7001C */  sw      $a3, 0x001C($sp)           
 /* 005B8 80B85BA8 8FA7001C */  lw      $a3, 0x001C($sp)           

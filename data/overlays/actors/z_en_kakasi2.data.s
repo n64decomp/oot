@@ -9,10 +9,10 @@
 
 glabel D_80A909A0
  .word 0x0A000939, 0x20010000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00050100, 0x00140046, 0x00000000, 0x00000000
-glabel D_80A909CC
+glabel En_Kakasi2_InitVars
  .word 0x01C90600, 0x0A000031, 0x01540000, 0x000001F8
-.word func_80A90010
-.word func_80A9023C
-.word func_80A90730
+.word EnKakasi2_Init
+.word EnKakasi2_Destroy
+.word EnKakasi2_Update
 .word 0x00000000, 0x00000000
 

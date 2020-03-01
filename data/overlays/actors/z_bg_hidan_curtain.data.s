@@ -15,11 +15,11 @@ glabel D_80885BA4
  .word 0x00510090, 0x3DB851EC, 0x43100000
 glabel D_80885BB0
  .word 0x40A00000, 0x002E0058, 0x3D6147AE, 0x42B00000, 0x40400000
-glabel D_80885BC4
+glabel Bg_Hidan_Curtain_InitVars
  .word 0x00490600, 0x00000010, 0x00010000, 0x000001A4
-.word func_808851A0
-.word func_8088540C
-.word func_80885758
-.word func_808859EC
+.word BgHidanCurtain_Init
+.word BgHidanCurtain_Destroy
+.word BgHidanCurtain_Update
+.word BgHidanCurtain_Draw
 .word 0x00000000, 0x00000000, 0x00000000
 

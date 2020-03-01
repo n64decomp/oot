@@ -8,12 +8,12 @@
 .section .data
 
 .word 0x00000000
-glabel D_80899484
+glabel Bg_Jya_Ironobj_InitVars
  .word 0x01690600, 0x00000000, 0x016C0000, 0x000001B4
-.word func_80899200
-.word func_80899290
-.word func_80899420
-.word func_80899444
+.word BgJyaIronobj_Init
+.word BgJyaIronobj_Destroy
+.word BgJyaIronobj_Update
+.word BgJyaIronobj_Draw
 glabel D_808994A4
  .word 0x06000240, 0x06001050
 glabel D_808994AC

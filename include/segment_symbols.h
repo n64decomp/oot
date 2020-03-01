@@ -1,5 +1,7 @@
-#include <ultra64.h>
-#include <global.h>
+#ifndef _SEGMENT_SYMBOLS_H_
+#define _SEGMENT_SYMBOLS_H_
+
+#include <z64.h>
 
 #define DECLARE_SEGMENT(name) \
     extern u8 _##name##SegmentStart[]; \
@@ -973,7 +975,11 @@ DECLARE_ROM_SEGMENT(ganon_sonogo_scene)
 DECLARE_ROM_SEGMENT(ganontikasonogo_scene)
 DECLARE_ROM_SEGMENT(takaraya_scene)
 DECLARE_ROM_SEGMENT(ydan_boss_scene)
+
 DECLARE_ROM_SEGMENT(ddan_boss_scene)
+DECLARE_ROM_SEGMENT(ddan_boss_room_0)
+DECLARE_ROM_SEGMENT(ddan_boss_room_1)
+
 DECLARE_ROM_SEGMENT(bdan_boss_scene)
 DECLARE_ROM_SEGMENT(moribossroom_scene)
 DECLARE_ROM_SEGMENT(FIRE_bs_scene)
@@ -1032,10 +1038,16 @@ DECLARE_ROM_SEGMENT(turibori_scene)
 DECLARE_ROM_SEGMENT(nakaniwa_scene)
 DECLARE_ROM_SEGMENT(bowling_scene)
 DECLARE_ROM_SEGMENT(souko_scene)
+
 DECLARE_ROM_SEGMENT(miharigoya_scene)
+DECLARE_ROM_SEGMENT(miharigoya_room_0)
+
 DECLARE_ROM_SEGMENT(mahouya_scene)
 DECLARE_ROM_SEGMENT(ganon_demo_scene)
+
 DECLARE_ROM_SEGMENT(kinsuta_scene)
+DECLARE_ROM_SEGMENT(kinsuta_room_0)
+
 DECLARE_ROM_SEGMENT(spot00_scene)
 DECLARE_ROM_SEGMENT(spot01_scene)
 DECLARE_ROM_SEGMENT(spot02_scene)
@@ -1056,14 +1068,27 @@ DECLARE_ROM_SEGMENT(spot17_scene)
 DECLARE_ROM_SEGMENT(spot18_scene)
 DECLARE_ROM_SEGMENT(spot20_scene)
 DECLARE_ROM_SEGMENT(ganon_tou_scene)
+
 DECLARE_ROM_SEGMENT(test01_scene)
+DECLARE_ROM_SEGMENT(test01_room_0)
+
 DECLARE_ROM_SEGMENT(besitu_scene)
 DECLARE_ROM_SEGMENT(depth_test_scene)
 DECLARE_ROM_SEGMENT(syotes_scene)
 DECLARE_ROM_SEGMENT(syotes2_scene)
+
 DECLARE_ROM_SEGMENT(sutaru_scene)
+DECLARE_ROM_SEGMENT(sutaru_room_0)
+
 DECLARE_ROM_SEGMENT(hairal_niwa2_scene)
 DECLARE_ROM_SEGMENT(sasatest_scene)
-DECLARE_ROM_SEGMENT(testroom_scene)
 
-DECLARE_ROM_SEGMENT(test01_room_0)
+DECLARE_ROM_SEGMENT(testroom_scene)
+DECLARE_ROM_SEGMENT(testroom_room_0)
+DECLARE_ROM_SEGMENT(testroom_room_1)
+DECLARE_ROM_SEGMENT(testroom_room_2)
+DECLARE_ROM_SEGMENT(testroom_room_3)
+DECLARE_ROM_SEGMENT(testroom_room_4)
+
+
+#endif

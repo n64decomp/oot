@@ -20,7 +20,7 @@ static void Init(ActorObjBlockstop* this, GlobalContext* globalCtx);
 static void Destroy(ActorObjBlockstop* this, GlobalContext* globalCtx);
 static void Update(ActorObjBlockstop* this, GlobalContext* globalCtx);
 
-const ActorInit Obj_BlockStop_InitVars =
+const ActorInit Obj_Blockstop_InitVars =
 {
     ACTOR_OBJ_BLOCKSTOP,
     ACTORTYPE_PROP,

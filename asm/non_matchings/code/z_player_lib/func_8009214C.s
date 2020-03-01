@@ -2,9 +2,9 @@ glabel func_8009214C
 /* B092EC 8009214C 3C018000 */  lui   $at, (0x80003800 >> 16) # lui $at, 0x8000
 /* B092F0 80092150 34213800 */  ori   $at, (0x80003800 & 0xFFFF) # ori $at, $at, 0x3800
 /* B092F4 80092154 00A17821 */  addu  $t7, $a1, $at
-/* B092F8 80092158 3C088016 */  lui   $t0, %hi(D_80166FA8) # $t0, 0x8016
+/* B092F8 80092158 3C088016 */  lui   $t0, %hi(gSegments) # $t0, 0x8016
 /* B092FC 8009215C 3C018000 */  lui   $at, (0x80008800 >> 16) # lui $at, 0x8000
-/* B09300 80092160 25086FA8 */  addiu $t0, %lo(D_80166FA8) # addiu $t0, $t0, 0x6fa8
+/* B09300 80092160 25086FA8 */  addiu $t0, %lo(gSegments) # addiu $t0, $t0, 0x6fa8
 /* B09304 80092164 34218800 */  ori   $at, (0x80008800 & 0xFFFF) # ori $at, $at, 0x8800
 /* B09308 80092168 00A1C821 */  addu  $t9, $a1, $at
 /* B0930C 8009216C 27BDFFA8 */  addiu $sp, $sp, -0x58

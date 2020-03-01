@@ -30,8 +30,8 @@ glabel func_800808FC
 /* AF7B08 80080968 A0400140 */  sb    $zero, 0x140($v0)
 /* AF7B0C 8008096C 1420FFF9 */  bnez  $at, .L80080954
 /* AF7B10 80080970 A0400150 */   sb    $zero, 0x150($v0)
-/* AF7B14 80080974 3C168012 */  lui   $s6, %hi(D_80127120) # $s6, 0x8012
-/* AF7B18 80080978 26D67120 */  addiu $s6, %lo(D_80127120) # addiu $s6, $s6, 0x7120
+/* AF7B14 80080974 3C168012 */  lui   $s6, %hi(gBitFlags) # $s6, 0x8012
+/* AF7B18 80080978 26D67120 */  addiu $s6, %lo(gBitFlags) # addiu $s6, $s6, 0x7120
 /* AF7B1C 8008097C 02F47821 */  addu  $t7, $s7, $s4
 /* AF7B20 80080980 91F800A8 */  lbu   $t8, 0xa8($t7)
 /* AF7B24 80080984 8ECE0008 */  lw    $t6, 8($s6)

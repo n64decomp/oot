@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_shopnuts.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFA720.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFA858.s")
+void EnShopnuts_Init(EnShopnuts* this, GlobalContext* globalCtx);
+void EnShopnuts_Destroy(EnShopnuts* this, GlobalContext* globalCtx);
+void EnShopnuts_Update(EnShopnuts* this, GlobalContext* globalCtx);
+void EnShopnuts_Draw(EnShopnuts* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Shopnuts_InitVars =
+{
+    ACTOR_EN_SHOPNUTS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_SHOPNUTS,
+    sizeof(EnShopnuts),
+    (ActorFunc)EnShopnuts_Init,
+    (ActorFunc)EnShopnuts_Destroy,
+    (ActorFunc)EnShopnuts_Update,
+    (ActorFunc)EnShopnuts_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/EnShopnuts_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/EnShopnuts_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFA880.s")
 
@@ -31,14 +53,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFB0C4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFB124.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/EnShopnuts_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFB25C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFB290.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/func_80AFB46C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Shopnuts/EnShopnuts_Draw.s")

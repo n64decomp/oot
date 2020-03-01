@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A969D0
+glabel En_Karebaba_InitVars
  .word 0x00C70500, 0x00000005, 0x00390000, 0x00000290
-.word func_80A95350
-.word func_80A95480
-.word func_80A962A0
-.word func_80A96578
+.word EnKarebaba_Init
+.word EnKarebaba_Destroy
+.word EnKarebaba_Update
+.word EnKarebaba_Draw
 glabel D_80A969F0
  .word 0x0C000900, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010000, 0x00070019, 0x00000000, 0x00000000
 glabel D_80A96A1C

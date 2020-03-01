@@ -547,7 +547,7 @@ glabel L808C5A4C
 /* 04BC0 808C5D50 00000000 */  nop
 /* 04BC4 808C5D54 46803220 */  cvt.s.w $f8, $f6                   
 /* 04BC8 808C5D58 460A4302 */  mul.s   $f12, $f8, $f10            
-/* 04BCC 808C5D5C 0C034348 */  jal     func_800D0D20              
+/* 04BCC 808C5D5C 0C034348 */  jal     Matrix_RotateY              
 /* 04BD0 808C5D60 00000000 */  nop
 /* 04BD4 808C5D64 27A40190 */  addiu   $a0, $sp, 0x0190           ## $a0 = FFFFFFF0
 /* 04BD8 808C5D68 0C0346BD */  jal     func_800D1AF4              

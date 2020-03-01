@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808BAC50
+glabel Bg_Toki_Hikari_InitVars
  .word 0x006A0100, 0x00000020, 0x005E0000, 0x00000154
-.word func_808B9F00
-.word func_808B9F8C
-.word func_808B9FA4
-.word func_808B9FC8
+.word BgTokiHikari_Init
+.word BgTokiHikari_Destroy
+.word BgTokiHikari_Update
+.word BgTokiHikari_Draw
 glabel D_808BAC70
  .word 0x485003E8, 0x00000000, 0x00000000, 0x00000000
 

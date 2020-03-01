@@ -12,7 +12,7 @@ void func_800432A0(CollisionContext* colCtx, u32 floorPolySource, Actor* actor)
         if (actor->id == 0)
             ((Player*)actor)->unk_83C += v1;
 
-        actor->sub_B4.rot2.y += v1;
+        actor->shape.rot.y += v1;
         actor->posRot.rot.y += v1;
     }
 }

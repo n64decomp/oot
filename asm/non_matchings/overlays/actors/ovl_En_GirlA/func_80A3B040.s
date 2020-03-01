@@ -20,7 +20,7 @@ glabel func_80A3B040
 /* 00934 80A3B084 10000009 */  beq     $zero, $zero, .L80A3B0AC   
 /* 00938 80A3B088 24020004 */  addiu   $v0, $zero, 0x0004         ## $v0 = 00000004
 .L80A3B08C:
-/* 0093C 80A3B08C 0C0218E2 */  jal     func_80086388              
+/* 0093C 80A3B08C 0C0218E2 */  jal     Item_CheckObtainability              
 /* 00940 80A3B090 2404003E */  addiu   $a0, $zero, 0x003E         ## $a0 = 0000003E
 /* 00944 80A3B094 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 00948 80A3B098 54410004 */  bnel    $v0, $at, .L80A3B0AC       

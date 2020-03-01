@@ -52,7 +52,7 @@ glabel func_80A1B2C8
 /* 009E8 80A1B388 C42AD294 */  lwc1    $f10, %lo(D_80A1D294)($at) 
 /* 009EC 80A1B38C 46062203 */  div.s   $f8, $f4, $f6              
 /* 009F0 80A1B390 460A4302 */  mul.s   $f12, $f8, $f10            
-/* 009F4 80A1B394 0C034348 */  jal     func_800D0D20              
+/* 009F4 80A1B394 0C034348 */  jal     Matrix_RotateY              
 /* 009F8 80A1B398 00000000 */  nop
 /* 009FC 80A1B39C 27A4003C */  addiu   $a0, $sp, 0x003C           ## $a0 = FFFFFFF4
 /* 00A00 80A1B3A0 0C0346BD */  jal     func_800D1AF4              

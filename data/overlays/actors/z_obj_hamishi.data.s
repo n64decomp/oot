@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B93730
+glabel Obj_Hamishi_InitVars
  .word 0x01D20600, 0x00000000, 0x00020000, 0x000001A8
-.word func_80B93410
-.word func_80B934F4
-.word func_80B9351C
-.word func_80B93648
+.word ObjHamishi_Init
+.word ObjHamishi_Destroy
+.word ObjHamishi_Update
+.word ObjHamishi_Draw
 glabel D_80B93750
  .word 0x0C000D39, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x4FC1FFF6, 0x00000000, 0x00010100, 0x00320046, 0x00000000, 0x00000000
 glabel D_80B9377C

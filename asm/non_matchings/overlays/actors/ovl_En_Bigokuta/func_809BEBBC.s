@@ -290,7 +290,7 @@ glabel func_809BEBBC
 /* 02390 809BEFF0 46062202 */  mul.s   $f8, $f4, $f6              
 /* 02394 809BEFF4 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 02398 809BEFF8 460A4402 */  mul.s   $f16, $f8, $f10            
-/* 0239C 809BEFFC 0C0342A3 */  jal     func_800D0A8C              
+/* 0239C 809BEFFC 0C0342A3 */  jal     Matrix_Scale              
 /* 023A0 809BF000 460E8300 */  add.s   $f12, $f16, $f14           
 /* 023A4 809BF004 10000025 */  beq     $zero, $zero, .L809BF09C   
 /* 023A8 809BF008 8FBF0014 */  lw      $ra, 0x0014($sp)           
@@ -312,7 +312,7 @@ glabel func_809BEBBC
 /* 023E4 809BF044 46005380 */  add.s   $f14, $f10, $f0            
 /* 023E8 809BF048 46004301 */  sub.s   $f12, $f8, $f0             
 /* 023EC 809BF04C 44067000 */  mfc1    $a2, $f14                  
-/* 023F0 809BF050 0C0342A3 */  jal     func_800D0A8C              
+/* 023F0 809BF050 0C0342A3 */  jal     Matrix_Scale              
 /* 023F4 809BF054 00000000 */  nop
 /* 023F8 809BF058 10000010 */  beq     $zero, $zero, .L809BF09C   
 /* 023FC 809BF05C 8FBF0014 */  lw      $ra, 0x0014($sp)           
@@ -329,7 +329,7 @@ glabel func_809BEBBC
 /* 02424 809BF084 46049002 */  mul.s   $f0, $f18, $f4             
 /* 02428 809BF088 46003381 */  sub.s   $f14, $f6, $f0             
 /* 0242C 809BF08C 44067000 */  mfc1    $a2, $f14                  
-/* 02430 809BF090 0C0342A3 */  jal     func_800D0A8C              
+/* 02430 809BF090 0C0342A3 */  jal     Matrix_Scale              
 /* 02434 809BF094 00000000 */  nop
 .L809BF098:
 /* 02438 809BF098 8FBF0014 */  lw      $ra, 0x0014($sp)           

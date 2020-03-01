@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809C8240
+glabel En_Bombf_InitVars
  .word 0x004C0600, 0x00000011, 0x00310000, 0x00000210
-.word func_809C6F68
-.word func_809C7140
-.word func_809C7778
-.word func_809C7FB4
+.word EnBombf_Init
+.word EnBombf_Destroy
+.word EnBombf_Update
+.word EnBombf_Draw
 glabel D_809C8260
  .word 0x0A002939, 0x20010000, 0x02000000, 0x00000000, 0x00000000, 0x0003F828, 0x00000000, 0x00010100, 0x00090012, 0x000A0000, 0x00000000
 glabel D_809C828C

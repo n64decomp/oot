@@ -37,7 +37,7 @@ glabel func_80AD5B18
 /* 0209C 80AD5B9C 240538EC */  addiu   $a1, $zero, 0x38EC         ## $a1 = 000038EC
 /* 020A0 80AD5BA0 17000022 */  bne     $t8, $zero, .L80AD5C2C     
 /* 020A4 80AD5BA4 00000000 */  nop
-/* 020A8 80AD5BA8 0C021AAF */  jal     func_80086ABC              
+/* 020A8 80AD5BA8 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 020AC 80AD5BAC 00000000 */  nop
 /* 020B0 80AD5BB0 10400019 */  beq     $v0, $zero, .L80AD5C18     
 /* 020B4 80AD5BB4 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
@@ -50,14 +50,14 @@ glabel func_80AD5B18
 /* 020CC 80AD5BCC 2409508F */  addiu   $t1, $zero, 0x508F         ## $t1 = 0000508F
 /* 020D0 80AD5BD0 17200006 */  bne     $t9, $zero, .L80AD5BEC     
 /* 020D4 80AD5BD4 2405001E */  addiu   $a1, $zero, 0x001E         ## $a1 = 0000001E
-/* 020D8 80AD5BD8 0C021344 */  jal     func_80084D10              
+/* 020D8 80AD5BD8 0C021344 */  jal     Item_Give              
 /* 020DC 80AD5BDC 24050020 */  addiu   $a1, $zero, 0x0020         ## $a1 = 00000020
 /* 020E0 80AD5BE0 24085008 */  addiu   $t0, $zero, 0x5008         ## $t0 = 00005008
 /* 020E4 80AD5BE4 10000013 */  beq     $zero, $zero, .L80AD5C34   
 /* 020E8 80AD5BE8 A608010E */  sh      $t0, 0x010E($s0)           ## 0000010E
 .L80AD5BEC:
 /* 020EC 80AD5BEC A609010E */  sh      $t1, 0x010E($s0)           ## 0000010E
-/* 020F0 80AD5BF0 0C021344 */  jal     func_80084D10              
+/* 020F0 80AD5BF0 0C021344 */  jal     Item_Give              
 /* 020F4 80AD5BF4 8FA40024 */  lw      $a0, 0x0024($sp)           
 /* 020F8 80AD5BF8 920A0195 */  lbu     $t2, 0x0195($s0)           ## 00000195
 /* 020FC 80AD5BFC 3C0580AD */  lui     $a1, %hi(D_80AD76F0)       ## $a1 = 80AD0000

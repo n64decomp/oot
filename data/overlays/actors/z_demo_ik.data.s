@@ -22,11 +22,11 @@ glabel D_80984778
  .word func_80984610
 .word func_80983C9C
 .word func_8098441C
-glabel D_80984784
+glabel Demo_Ik_InitVars
  .word 0x01140400, 0x00000010, 0x01060000, 0x000001B4
-.word func_80984678
-.word func_80983300
-.word func_809845B4
-.word func_8098461C
+.word DemoIk_Init
+.word DemoIk_Destroy
+.word DemoIk_Update
+.word DemoIk_Draw
 .word 0x00000000, 0x00000000, 0x00000000
 

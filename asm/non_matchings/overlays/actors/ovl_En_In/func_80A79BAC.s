@@ -37,7 +37,7 @@ glabel func_80A79BAC
 /* 00C84 80A79C34 8FA50028 */  lw      $a1, 0x0028($sp)           
 /* 00C88 80A79C38 0C00B7D5 */  jal     func_8002DF54              
 /* 00C8C 80A79C3C 8FA4002C */  lw      $a0, 0x002C($sp)           
-/* 00C90 80A79C40 0C020978 */  jal     func_800825E0              
+/* 00C90 80A79C40 0C020978 */  jal     Interface_ChangeAlpha              
 /* 00C94 80A79C44 24040001 */  addiu   $a0, $zero, 0x0001         ## $a0 = 00000001
 /* 00C98 80A79C48 8FA2001C */  lw      $v0, 0x001C($sp)           
 /* 00C9C 80A79C4C 27AE0020 */  addiu   $t6, $sp, 0x0020           ## $t6 = FFFFFFF8

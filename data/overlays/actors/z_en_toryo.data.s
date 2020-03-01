@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B20BE0
+glabel En_Toryo_InitVars
  .word 0x01320400, 0x00000009, 0x01210000, 0x000002E0
-.word func_80B20170
-.word func_80B203B0
-.word func_80B20978
-.word func_80B20AA8
+.word EnToryo_Init
+.word EnToryo_Destroy
+.word EnToryo_Update
+.word EnToryo_Draw
 glabel D_80B20C00
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0012003F, 0x00000000, 0x00000000
 glabel D_80B20C2C

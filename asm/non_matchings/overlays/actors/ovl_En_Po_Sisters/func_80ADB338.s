@@ -63,8 +63,8 @@ glabel func_80ADB338
 /* 0248C 80ADB41C 25EFB51C */  addiu   $t7, $t7, %lo(func_80ADB51C) ## $t7 = 80ADB51C
 /* 02490 80ADB420 15E20008 */  bne     $t7, $v0, .L80ADB444       
 /* 02494 80ADB424 3C1980AE */  lui     $t9, %hi(func_80ADAE6C)    ## $t9 = 80AE0000
-/* 02498 80ADB428 3C1880AE */  lui     $t8, %hi(func_80ADD044)    ## $t8 = 80AE0000
-/* 0249C 80ADB42C 2718D044 */  addiu   $t8, $t8, %lo(func_80ADD044) ## $t8 = 80ADD044
+/* 02498 80ADB428 3C1880AE */  lui     $t8, %hi(EnPoSisters_Draw)    ## $t8 = 80AE0000
+/* 0249C 80ADB42C 2718D044 */  addiu   $t8, $t8, %lo(EnPoSisters_Draw) ## $t8 = 80ADD044
 /* 024A0 80ADB430 ACD80134 */  sw      $t8, 0x0134($a2)           ## 00000134
 /* 024A4 80ADB434 0C2B6798 */  jal     func_80AD9E60              
 /* 024A8 80ADB438 00C02025 */  or      $a0, $a2, $zero            ## $a0 = 00000000

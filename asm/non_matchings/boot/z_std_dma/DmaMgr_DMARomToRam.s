@@ -57,8 +57,8 @@ glabel DmaMgr_DMARomToRam
 /* 00186C 80000C6C 0214082B */  sltu  $at, $s0, $s4
 /* 001870 80000C70 10200061 */  beqz  $at, .L80000DF8
 /* 001874 80000C74 3C178001 */   lui   $s7, %hi(D_80009460) # $s7, 0x8001
-/* 001878 80000C78 3C138001 */  lui   $s3, %hi(D_800138F8) # $s3, 0x8001
-/* 00187C 80000C7C 267338F8 */  addiu $s3, %lo(D_800138F8) # addiu $s3, $s3, 0x38f8
+/* 001878 80000C78 3C138001 */  lui   $s3, %hi(gPiMgrCmdQ) # $s3, 0x8001
+/* 00187C 80000C7C 267338F8 */  addiu $s3, %lo(gPiMgrCmdQ) # addiu $s3, $s3, 0x38f8
 /* 001880 80000C80 26F79460 */  addiu $s7, %lo(D_80009460) # addiu $s7, $s7, -0x6ba0
 /* 001884 80000C84 2412000A */  li    $s2, 10
 .L80000C88:
@@ -162,8 +162,8 @@ glabel DmaMgr_DMARomToRam
 /* 0019FC 80000DFC 26F79460 */  addiu $s7, %lo(D_80009460) # addiu $s7, $s7, -0x6ba0
 /* 001A00 80000E00 8EE20000 */  lw    $v0, ($s7)
 /* 001A04 80000E04 2412000A */  li    $s2, 10
-/* 001A08 80000E08 3C138001 */  lui   $s3, %hi(D_800138F8) # $s3, 0x8001
-/* 001A0C 80000E0C 267338F8 */  addiu $s3, %lo(D_800138F8) # addiu $s3, $s3, 0x38f8
+/* 001A08 80000E08 3C138001 */  lui   $s3, %hi(gPiMgrCmdQ) # $s3, 0x8001
+/* 001A0C 80000E0C 267338F8 */  addiu $s3, %lo(gPiMgrCmdQ) # addiu $s3, $s3, 0x38f8
 /* 001A10 80000E10 A3A0009A */  sb    $zero, 0x9a($sp)
 /* 001A14 80000E14 AFB6009C */  sw    $s6, 0x9c($sp)
 /* 001A18 80000E18 AFB100A4 */  sw    $s1, 0xa4($sp)

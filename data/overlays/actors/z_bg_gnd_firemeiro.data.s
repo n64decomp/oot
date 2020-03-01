@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_808799C0
+glabel Bg_Gnd_Firemeiro_InitVars
  .word 0x01B30600, 0x00000030, 0x01790000, 0x00000178
-.word func_808794C0
-.word func_80879574
-.word func_808798C8
-.word func_808798EC
+.word BgGndFiremeiro_Init
+.word BgGndFiremeiro_Destroy
+.word BgGndFiremeiro_Update
+.word BgGndFiremeiro_Draw
 

@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_test.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000015
+
+void EnTest_Init(EnTest* this, GlobalContext* globalCtx);
+void EnTest_Destroy(EnTest* this, GlobalContext* globalCtx);
+void EnTest_Update(EnTest* this, GlobalContext* globalCtx);
+void EnTest_Draw(EnTest* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Test_InitVars =
+{
+    ACTOR_EN_TEST,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_SK2,
+    sizeof(EnTest),
+    (ActorFunc)EnTest_Init,
+    (ActorFunc)EnTest_Destroy,
+    (ActorFunc)EnTest_Update,
+    (ActorFunc)EnTest_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_8085F650.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_8085F658.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/EnTest_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_8085F8A0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/EnTest_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_8085F938.s")
 
@@ -111,18 +133,14 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_808634F8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_80863694.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/EnTest_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_80863AB8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_80863CC4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_80864048.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/EnTest_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_80864158.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Test/func_808641E8.s")
-
-
-
-

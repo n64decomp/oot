@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80914CB0
+glabel Boss_Ganondrof_InitVars
  .word 0x00520900, 0x00000035, 0x00370000, 0x00000578
-.word func_80910A70
-.word func_80910CFC
-.word func_80913E8C
-.word func_80914844
+.word BossGanondrof_Init
+.word BossGanondrof_Destroy
+.word BossGanondrof_Update
+.word BossGanondrof_Draw
 glabel D_80914CD0
  .word 0x03110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00100000, 0xFFCFFFFE, 0x00000000, 0x01050100, 0x001E005A, 0xFFCE0000, 0x00000000
 glabel D_80914CFC

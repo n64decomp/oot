@@ -1,14 +1,32 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_trap.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/func_80B24660.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/func_80B24A18.s")
+void EnTrap_Init(EnTrap* this, GlobalContext* globalCtx);
+void EnTrap_Destroy(EnTrap* this, GlobalContext* globalCtx);
+void EnTrap_Update(EnTrap* this, GlobalContext* globalCtx);
+void EnTrap_Draw(EnTrap* this, GlobalContext* globalCtx);
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/func_80B24A40.s")
+/*
+const ActorInit En_Trap_InitVars =
+{
+    ACTOR_EN_TRAP,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_TRAP,
+    sizeof(EnTrap),
+    (ActorFunc)EnTrap_Init,
+    (ActorFunc)EnTrap_Destroy,
+    (ActorFunc)EnTrap_Update,
+    (ActorFunc)EnTrap_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/EnTrap_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/func_80B257D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/EnTrap_Destroy.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/EnTrap_Update.s")
 
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Trap/EnTrap_Draw.s")

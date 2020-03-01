@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ex_ruppy.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0A410.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0A814.s")
+void EnExRuppy_Init(EnExRuppy* this, GlobalContext* globalCtx);
+void EnExRuppy_Destroy(EnExRuppy* this, GlobalContext* globalCtx);
+void EnExRuppy_Update(EnExRuppy* this, GlobalContext* globalCtx);
+void EnExRuppy_Draw(EnExRuppy* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ex_Ruppy_InitVars =
+{
+    ACTOR_EN_EX_RUPPY,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnExRuppy),
+    (ActorFunc)EnExRuppy_Init,
+    (ActorFunc)EnExRuppy_Destroy,
+    (ActorFunc)EnExRuppy_Update,
+    (ActorFunc)EnExRuppy_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/EnExRuppy_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/EnExRuppy_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0A820.s")
 
@@ -23,10 +45,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0B0F4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0B150.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/EnExRuppy_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/func_80A0B1DC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ex_Ruppy/EnExRuppy_Draw.s")

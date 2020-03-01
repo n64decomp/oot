@@ -5,10 +5,10 @@ glabel func_800C7C14
 /* B3EDC0 800C7C20 00809825 */  move  $s3, $a0
 /* B3EDC4 800C7C24 AFB2001C */  sw    $s2, 0x1c($sp)
 /* B3EDC8 800C7C28 AFB10018 */  sw    $s1, 0x18($sp)
-/* B3EDCC 800C7C2C 0C031C94 */  jal   func_800C7250
+/* B3EDCC 800C7C2C 0C031C94 */  jal   PadMgr_LockGetControllerQueue
 /* B3EDD0 800C7C30 AFB00014 */   sw    $s0, 0x14($sp)
 /* B3EDD4 800C7C34 00408825 */  move  $s1, $v0
-/* B3EDD8 800C7C38 0C0403BC */  jal   func_80100EF0
+/* B3EDD8 800C7C38 0C0403BC */  jal   osContStartReadData /*(OSMesgQueue *mq)*/
 /* B3EDDC 800C7C3C 00402025 */   move  $a0, $v0
 /* B3EDE0 800C7C40 8E630460 */  lw    $v1, 0x460($s3)
 /* B3EDE4 800C7C44 10600003 */  beqz  $v1, .L800C7C54
@@ -21,7 +21,7 @@ glabel func_800C7C14
 /* B3EDFC 800C7C5C 0C000CA0 */  jal   osRecvMesg
 /* B3EE00 800C7C60 24060001 */   li    $a2, 1
 /* B3EE04 800C7C64 26700290 */  addiu $s0, $s3, 0x290
-/* B3EE08 800C7C68 0C0403DD */  jal   func_80100F74
+/* B3EE08 800C7C68 0C0403DD */  jal osContGetReadData /*(OSContPad *pad)*/
 /* B3EE0C 800C7C6C 02002025 */   move  $a0, $s0
 /* B3EE10 800C7C70 926E045E */  lbu   $t6, 0x45e($s3)
 /* B3EE14 800C7C74 02002025 */  move  $a0, $s0
@@ -41,7 +41,7 @@ glabel func_800C7C14
 /* B3EE48 800C7CA8 0C040CA3 */  jal   func_8010328C
 /* B3EE4C 800C7CAC 02602025 */   move  $a0, $s3
 /* B3EE50 800C7CB0 02602025 */  move  $a0, $s3
-/* B3EE54 800C7CB4 0C031CBF */  jal   func_800C72FC
+/* B3EE54 800C7CB4 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B3EE58 800C7CB8 02202825 */   move  $a1, $s1
 /* B3EE5C 800C7CBC 00009025 */  move  $s2, $zero
 /* B3EE60 800C7CC0 00008825 */  move  $s1, $zero
@@ -60,7 +60,7 @@ glabel func_800C7C14
 /* B3EE90 800C7CF0 1000000A */  b     .L800C7D1C
 /* B3EE94 800C7CF4 02489025 */   or    $s2, $s2, $t0
 .L800C7CF8:
-/* B3EE98 800C7CF8 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3EE98 800C7CF8 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3EE9C 800C7CFC 240501CA */   li    $a1, 458
 /* B3EEA0 800C7D00 3C048014 */  lui   $a0, %hi(D_80145BF0) # $a0, 0x8014
 /* B3EEA4 800C7D04 24845BF0 */  addiu $a0, %lo(D_80145BF0) # addiu $a0, $a0, 0x5bf0
@@ -120,4 +120,3 @@ glabel func_800C7C14
 /* B3EF64 800C7DC4 8FB30020 */  lw    $s3, 0x20($sp)
 /* B3EF68 800C7DC8 03E00008 */  jr    $ra
 /* B3EF6C 800C7DCC 27BD0028 */   addiu $sp, $sp, 0x28
-

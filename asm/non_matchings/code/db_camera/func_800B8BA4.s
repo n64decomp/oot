@@ -66,7 +66,7 @@ glabel func_800B8BA4
 /* B2FE30 800B8C90 2448001F */  addiu $t0, $v0, 0x1f
 /* B2FE34 800B8C94 01168824 */  and   $s1, $t0, $s6
 /* B2FE38 800B8C98 02209825 */  move  $s3, $s1
-/* B2FE3C 800B8C9C 0C034ED8 */  jal   func_800D3B60
+/* B2FE3C 800B8C9C 0C034ED8 */  jal   DebugArena_MallocDebug
 /* B2FE40 800B8CA0 02202025 */   move  $a0, $s1
 /* B2FE44 800B8CA4 14400009 */  bnez  $v0, .L800B8CCC
 /* B2FE48 800B8CA8 AE020008 */   sw    $v0, 8($s0)
@@ -92,7 +92,7 @@ glabel func_800B8BA4
 .L800B8CF4:
 /* B2FE94 800B8CF4 02602025 */  move  $a0, $s3
 /* B2FE98 800B8CF8 03C02825 */  move  $a1, $fp
-/* B2FE9C 800B8CFC 0C034ED8 */  jal   func_800D3B60
+/* B2FE9C 800B8CFC 0C034ED8 */  jal   DebugArena_MallocDebug
 /* B2FEA0 800B8D00 24060B27 */   li    $a2, 2855
 /* B2FEA4 800B8D04 14400009 */  bnez  $v0, .L800B8D2C
 /* B2FEA8 800B8D08 AE020004 */   sw    $v0, 4($s0)

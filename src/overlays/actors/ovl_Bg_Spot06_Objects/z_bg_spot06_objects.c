@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_spot06_objects.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AE780.s")
+#define ROOM  0x00
+#define FLAGS 0x00000200
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AEB5C.s")
+void BgSpot06Objects_Init(BgSpot06Objects* this, GlobalContext* globalCtx);
+void BgSpot06Objects_Destroy(BgSpot06Objects* this, GlobalContext* globalCtx);
+void BgSpot06Objects_Update(BgSpot06Objects* this, GlobalContext* globalCtx);
+void BgSpot06Objects_Draw(BgSpot06Objects* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Spot06_Objects_InitVars =
+{
+    ACTOR_BG_SPOT06_OBJECTS,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_SPOT06_OBJECTS,
+    sizeof(BgSpot06Objects),
+    (ActorFunc)BgSpot06Objects_Init,
+    (ActorFunc)BgSpot06Objects_Destroy,
+    (ActorFunc)BgSpot06Objects_Update,
+    (ActorFunc)BgSpot06Objects_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/BgSpot06Objects_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/BgSpot06Objects_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AEBC0.s")
 
@@ -27,16 +49,12 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF450.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF4D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/BgSpot06Objects_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF524.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF738.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/BgSpot06Objects_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF7FC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot06_Objects/func_808AF824.s")
-
-
-
-

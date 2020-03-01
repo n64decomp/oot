@@ -69,7 +69,7 @@ static void Init(ActorSpot00Break* this, GlobalContext* globalCtx)
 
     this->dynaPolyId = DynaPolyInfo_RegisterActor(globalCtx, &globalCtx->colCtx.dyna, &this->actor, local_c);
 
-    if (gSaveContext.link_age != 0)
+    if (LINK_IS_CHILD)
     {
         Actor_Kill(&this->actor);
     }

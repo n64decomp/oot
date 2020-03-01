@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 typedef enum
 {
@@ -50,7 +49,7 @@ void func_8001D480(ActorEnAObj* this, s16 params);
 void func_8001D5C8(ActorEnAObj* this, s16 params);
 
 // TODO: Define this part of code .data here and rename the symbols
-extern ActorInit D_80115420;
+extern ActorInit En_A_Obj_InitVars;
 extern ColliderCylinderInit D_80115440;
 extern u32 D_8011546C[];
 extern u32 D_80115484[];
@@ -60,7 +59,6 @@ void En_A_Obj_SetNewUpdate(ActorEnAObj* this, ActorFunc newUpdateFunc)
     this->updateFunc = newUpdateFunc;
 }
 
-// En_A_Obj_Init
 #ifdef NON_MATCHING
 // minor ordering and regalloc differences
 void En_A_Obj_Init(ActorEnAObj* this, GlobalContext* globalCtx)
@@ -104,7 +102,7 @@ void En_A_Obj_Init(ActorEnAObj* this, GlobalContext* globalCtx)
     if (this->actor.params >= 9)
         sp28 = 12.0f;
 
-    Actor_InitShadow(&this->actor.sub_B4, 0.0f, ActorShadow_DrawFunc_Circle, sp28);
+    ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawFunc_Circle, sp28);
 
     this->dynaPolyId = -1;
     this->unk_160 = 0;
@@ -206,7 +204,7 @@ void func_8001D25C(ActorEnAObj* this, GlobalContext* globalCtx)
 
     if (this->actor.textId != 0)
     {
-        var = this->actor.rotTowardsLinkY - this->actor.sub_B4.rot2.y;
+        var = this->actor.rotTowardsLinkY - this->actor.shape.rot.y;
         if ((ABS(var) < 0x2800) ||
             ((this->actor.params == 0xA) && (ABS(var) > 0x5800)))
         {
@@ -223,7 +221,7 @@ void func_8001D310(ActorEnAObj* this, s16 params)
     this->unk_16E = 0;
     this->unk_168 = 10;
     this->actor.posRot.rot.y = 0;
-    this->actor.sub_B4.rot2 = this->actor.posRot.rot;
+    this->actor.shape.rot = this->actor.posRot.rot;
     En_A_Obj_SetNewUpdate(this, (ActorFunc)func_8001D360);
 }
 
@@ -255,8 +253,8 @@ void func_8001D360(ActorEnAObj* this, GlobalContext* globalCtx)
         }
         else
         {
-            this->actor.sub_B4.rot2.y += this->unk_172;
-            this->actor.sub_B4.rot2.x += this->unk_174;
+            this->actor.shape.rot.y += this->unk_172;
+            this->actor.shape.rot.x += this->unk_174;
             this->unk_170--;
             this->actor.gravity = -1.0f;
 
@@ -267,7 +265,7 @@ void func_8001D360(ActorEnAObj* this, GlobalContext* globalCtx)
                 this->unk_168 = 10;
                 this->actor.velocity.y = 0.0f;
                 this->actor.gravity = 0.0f;
-                this->actor.sub_B4.rot2 = this->actor.posRot.rot;
+                this->actor.shape.rot = this->actor.posRot.rot;
             }
         }
     }
@@ -281,8 +279,8 @@ void func_8001D480(ActorEnAObj* this, s16 params)
 void func_8001D4A8(ActorEnAObj* this, GlobalContext* globalCtx)
 {
     Math_SmoothScaleMaxMinF(&this->actor.speedXZ, 1.0f, 1.0f, 0.5f, 0.0f);
-    this->actor.sub_B4.rot2.x = this->actor.sub_B4.rot2.x + (this->actor.posRot.rot.x >> 1);
-    this->actor.sub_B4.rot2.z = this->actor.sub_B4.rot2.z + (this->actor.posRot.rot.z >> 1);
+    this->actor.shape.rot.x = this->actor.shape.rot.x + (this->actor.posRot.rot.x >> 1);
+    this->actor.shape.rot.z = this->actor.shape.rot.z + (this->actor.posRot.rot.z >> 1);
 
     if ((this->actor.speedXZ != 0.0f) && (this->actor.bgCheckFlags & 0x8))
     {
@@ -373,7 +371,7 @@ void En_A_Obj_Draw(ActorEnAObj* this, GlobalContext* globalCtx)
     if (this->actor.params == A_OBJ_KNOB)
         gDPSetPrimColor(gfxCtx->polyOpa.p++, 0, 1, 0x3C, 0x3C, 0x3C, 0x32);
 
-    gSPMatrix(gfxCtx->polyOpa.p++, func_800D1A88(globalCtx->gfxCtx, "../z_en_a_keep.c", 712), G_MTX_MODELVIEW | G_MTX_LOAD);
+    gSPMatrix(gfxCtx->polyOpa.p++, Matrix_NewMtx(globalCtx->gfxCtx, "../z_en_a_keep.c", 712), G_MTX_MODELVIEW | G_MTX_LOAD);
     gSPDisplayList(gfxCtx->polyOpa.p++, D_80115484[type]);
 
     func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_en_a_keep.c", 715);

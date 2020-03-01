@@ -94,12 +94,12 @@ glabel func_80B0613C
 /* 019EC 80B0627C 44803000 */  mtc1    $zero, $f6                 ## $f6 = 0.00
 /* 019F0 80B06280 46120102 */  mul.s   $f4, $f0, $f18             
 /* 019F4 80B06284 E7A6004C */  swc1    $f6, 0x004C($sp)           
-/* 019F8 80B06288 0C034213 */  jal     func_800D084C              
+/* 019F8 80B06288 0C034213 */  jal     Matrix_Push              
 /* 019FC 80B0628C E7A40048 */  swc1    $f4, 0x0048($sp)           
 /* 01A00 80B06290 C60C03F0 */  lwc1    $f12, 0x03F0($s0)          ## 000003F0
 /* 01A04 80B06294 C60E03F4 */  lwc1    $f14, 0x03F4($s0)          ## 000003F4
 /* 01A08 80B06298 8E0603F8 */  lw      $a2, 0x03F8($s0)           ## 000003F8
-/* 01A0C 80B0629C 0C034261 */  jal     func_800D0984              
+/* 01A0C 80B0629C 0C034261 */  jal     Matrix_Translate              
 /* 01A10 80B062A0 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 01A14 80B062A4 860B0032 */  lh      $t3, 0x0032($s0)           ## 00000032
 /* 01A18 80B062A8 3C0180B0 */  lui     $at, %hi(D_80B07238)       ## $at = 80B00000
@@ -108,12 +108,12 @@ glabel func_80B0613C
 /* 01A24 80B062B4 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 01A28 80B062B8 468042A0 */  cvt.s.w $f10, $f8                  
 /* 01A2C 80B062BC 46105302 */  mul.s   $f12, $f10, $f16           
-/* 01A30 80B062C0 0C034348 */  jal     func_800D0D20              
+/* 01A30 80B062C0 0C034348 */  jal     Matrix_RotateY              
 /* 01A34 80B062C4 00000000 */  nop
 /* 01A38 80B062C8 27A40044 */  addiu   $a0, $sp, 0x0044           ## $a0 = FFFFFFF4
 /* 01A3C 80B062CC 0C0346BD */  jal     func_800D1AF4              
 /* 01A40 80B062D0 27A50038 */  addiu   $a1, $sp, 0x0038           ## $a1 = FFFFFFE8
-/* 01A44 80B062D4 0C034221 */  jal     func_800D0884              
+/* 01A44 80B062D4 0C034221 */  jal     Matrix_Pull              
 /* 01A48 80B062D8 00000000 */  nop
 /* 01A4C 80B062DC 00116040 */  sll     $t4, $s1,  1               
 /* 01A50 80B062E0 000C6823 */  subu    $t5, $zero, $t4            

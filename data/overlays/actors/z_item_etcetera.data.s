@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B85D00
+glabel Item_Etcetera_InitVars
  .word 0x010F0600, 0x00000010, 0x00010000, 0x00000160
-.word func_80B855F8
-.word func_80B857C4
-.word func_80B85C40
+.word ItemEtcetera_Init
+.word ItemEtcetera_Destroy
+.word ItemEtcetera_Update
 .word 0x00000000
 glabel D_80B85D20
  .word 0x00C6010B, 0x00DC00BE, 0x00DB00DB, 0x00AA0158, 0x017F017F, 0x017F017F, 0x00BD00AA

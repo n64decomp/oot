@@ -31,9 +31,9 @@ glabel L800822DC
 /* AF947C 800822DC 3C010001 */  lui   $at, (0x000104F0 >> 16) # lui $at, 1
 /* AF9480 800822E0 342104F0 */  ori   $at, (0x000104F0 & 0xFFFF) # ori $at, $at, 0x4f0
 /* AF9484 800822E4 02819021 */  addu  $s2, $s4, $at
-/* AF9488 800822E8 3C078012 */  lui   $a3, %hi(D_80127120) # $a3, 0x8012
+/* AF9488 800822E8 3C078012 */  lui   $a3, %hi(gBitFlags) # $a3, 0x8012
 /* AF948C 800822EC A240015E */  sb    $zero, 0x15e($s2)
-/* AF9490 800822F0 24E77120 */  addiu $a3, %lo(D_80127120) # addiu $a3, $a3, 0x7120
+/* AF9490 800822F0 24E77120 */  addiu $a3, %lo(gBitFlags) # addiu $a3, $a3, 0x7120
 /* AF9494 800822F4 00D34021 */  addu  $t0, $a2, $s3
 /* AF9498 800822F8 910900A8 */  lbu   $t1, 0xa8($t0)
 /* AF949C 800822FC 8CF90008 */  lw    $t9, 8($a3)

@@ -226,7 +226,7 @@ glabel L80ACE0AC
 /* 0033C 80ACE10C E604006C */  swc1    $f4, 0x006C($s0)           ## 0000006C
 /* 00340 80ACE110 C428F2A8 */  lwc1    $f8, %lo(D_80ACF2A8)($at)  
 /* 00344 80ACE114 46024402 */  mul.s   $f16, $f8, $f2             
-/* 00348 80ACE118 0C00AC78 */  jal     Actor_InitShadow
+/* 00348 80ACE118 0C00AC78 */  jal     ActorShape_Init
               
 /* 0034C 80ACE11C E6100158 */  swc1    $f16, 0x0158($s0)          ## 00000158
 /* 00350 80ACE120 240E0012 */  addiu   $t6, $zero, 0x0012         ## $t6 = 00000012

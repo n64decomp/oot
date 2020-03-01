@@ -13,12 +13,12 @@ glabel D_808A898C
  .word 0xFFAAFFFF, 0xFFC800FF, 0x00AAFFFF, 0xAAFF00FF
 glabel D_808A899C
  .word 0x6400FFFF, 0xFF0000FF, 0x0000FFFF, 0x009600FF
-glabel D_808A89AC
+glabel Bg_Po_Syokudai_InitVars
  .word 0x01050600, 0x00000000, 0x00A40000, 0x000001B0
-.word func_808A80B0
-.word func_808A834C
-.word func_808A83BC
-.word func_808A8440
+.word BgPoSyokudai_Init
+.word BgPoSyokudai_Destroy
+.word BgPoSyokudai_Update
+.word BgPoSyokudai_Draw
 glabel D_808A89CC
  .word 0x485003E8
 

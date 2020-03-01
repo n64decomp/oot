@@ -19,7 +19,7 @@ UNK_TYPE func_8008E8DC(GlobalContext* globalCtx, Player* player)
 
 UNK_TYPE func_8008E988(GlobalContext* globalCtx)
 {
-    Player* player = (Player*) globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     return func_8008E8DC(globalCtx, player) || player->unk_6AD == 4;
 }
 
@@ -30,7 +30,7 @@ UNK_TYPE func_8008E9C4(Player* player)
 
 UNK_TYPE func_8008E9D0(Player* player)
 {
-    return gSaveContext.link_age != 0 && player->unk_14E == 2;
+    return LINK_IS_CHILD && player->unk_14E == 2;
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_player_lib/func_8008E9F8.s")
@@ -69,25 +69,25 @@ UNK_TYPE func_8008EF44(GlobalContext* globalCtx, UNK_TYPE arg1)
 
 u8 func_8008F080(GlobalContext* globalCtx)
 {
-    Player* player = (Player*) globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
-    return player->unk_15F;
+    Player* player = PLAYER;
+    return player->currentMask;
 }
 
 void func_8008F08C(GlobalContext* globalCtx)
 {
-    Player* player = (Player*) globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
-    player->unk_15F = 0;
+    Player* player = PLAYER;
+    player->currentMask = 0;
 }
 
 UNK_TYPE func_8008F098(GlobalContext* globalCtx)
 {
-    Player* player = (Player*) globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     return player->unk_14E == 3;
 }
 
 UNK_TYPE func_8008F0AC(GlobalContext* globalCtx)
 {
-    Player* player = (Player*) globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     return player->unk_15D == 0xa && player->unk_14E == 3;
 }
 
@@ -182,4 +182,3 @@ s32 func_8008F270(UNK_TYPE arg0, UNK_TYPE arg1)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_player_lib/func_80091A24.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_player_lib/func_8009214C.s")
-

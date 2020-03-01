@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AA9BE0
+glabel En_Mb_InitVars
  .word 0x004B0500, 0x00000015, 0x00300000, 0x0000050C
-.word func_80AA6058
-.word func_80AA63B8
-.word func_80AA96A4
-.word func_80AA9A08
+.word EnMb_Init
+.word EnMb_Destroy
+.word EnMb_Update
+.word EnMb_Draw
 glabel D_80AA9C00
  .word 0x00000939, 0x20010000, 0x01000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00140046, 0x00000000, 0x00000000
 glabel D_80AA9C2C

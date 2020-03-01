@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B9A7E0
+glabel Obj_Mure2_InitVars
  .word 0x01510600, 0x00000000, 0x00010000, 0x00000188
-.word func_80B9A5C8
-.word 0x80035118
-.word func_80B9A784
+.word ObjMure2_Init
+.word Actor_Noop
+.word ObjMure2_Update
 .word 0x00000000
 glabel D_80B9A800
  .word 0x4A1C4000, 0x4A1C4000, 0x4A1C4000

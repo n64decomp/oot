@@ -30,7 +30,7 @@ const ActorInit En_Vase_InitVars =
     sizeof(ActorEnVase),
     (ActorFunc)Init,
     (ActorFunc)Destroy,
-    (ActorFunc)func_80035118,
+    (ActorFunc)Actor_Noop,
     (ActorFunc)Draw
 };
 
@@ -40,7 +40,7 @@ static void Init(ActorEnVase* this, GlobalContext* globalCtx)
 {
     Actor_SetScale(&this->actor, 0.01f);
     this->actor.posRot2.pos = this->actor.posRot.pos;
-    Actor_InitShadow(&this->actor.sub_B4, 0.0f, ActorShadow_DrawFunc_Circle, 6.0f);
+    ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawFunc_Circle, 6.0f);
 }
 
 static void Destroy(ActorEnVase* this, GlobalContext* globalCtx)

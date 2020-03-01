@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80878590
+glabel Bg_Gate_Shutter_InitVars
  .word 0x01000700, 0x00000000, 0x01810000, 0x0000017C
-.word func_80878160
-.word func_8087825C
-.word func_8087848C
-.word func_808784C0
+.word BgGateShutter_Init
+.word BgGateShutter_Destroy
+.word BgGateShutter_Update
+.word BgGateShutter_Draw
 

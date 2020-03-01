@@ -1,6 +1,27 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_kusa.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00800010
+
+void EnKusa_Init(EnKusa* this, GlobalContext* globalCtx);
+void EnKusa_Destroy(EnKusa* this, GlobalContext* globalCtx);
+void EnKusa_Update(EnKusa* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Kusa_InitVars =
+{
+    ACTOR_EN_KUSA,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnKusa),
+    (ActorFunc)EnKusa_Init,
+    (ActorFunc)EnKusa_Destroy,
+    (ActorFunc)EnKusa_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9AFA0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9AFAC.s")
@@ -19,9 +40,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9B630.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9B688.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/EnKusa_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9B7C4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/EnKusa_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9B7EC.s")
 
@@ -53,10 +74,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9C068.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9C100.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/EnKusa_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kusa/func_80A9C164.s")
-
-
-
-

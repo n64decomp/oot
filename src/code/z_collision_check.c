@@ -257,4 +257,3 @@ void func_8005D400(UNK_TYPE arg0, UNK_TYPE arg1)
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_80062ECC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_collision_check/func_800635D0.s")
-

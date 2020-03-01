@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_obj_switch.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void ObjSwitch_Init(ObjSwitch* this, GlobalContext* globalCtx);
+void ObjSwitch_Destroy(ObjSwitch* this, GlobalContext* globalCtx);
+void ObjSwitch_Update(ObjSwitch* this, GlobalContext* globalCtx);
+void ObjSwitch_Draw(ObjSwitch* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Obj_Switch_InitVars =
+{
+    ACTOR_OBJ_SWITCH,
+    ACTORTYPE_SWITCH,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_DANGEON_KEEP,
+    sizeof(ObjSwitch),
+    (ActorFunc)ObjSwitch_Init,
+    (ActorFunc)ObjSwitch_Destroy,
+    (ActorFunc)ObjSwitch_Update,
+    (ActorFunc)ObjSwitch_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9D210.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9D294.s")
@@ -17,9 +39,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9D680.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9D6C4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/ObjSwitch_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9D9A4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/ObjSwitch_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9DA48.s")
 
@@ -75,7 +97,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9E584.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9E60C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/ObjSwitch_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9E748.s")
 
@@ -85,8 +107,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9E904.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/func_80B9EBBC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Switch/ObjSwitch_Draw.s")

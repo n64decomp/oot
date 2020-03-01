@@ -17,8 +17,8 @@ glabel func_8006C8C4
 /* AE3AA0 8006C900 AFA50074 */  sw    $a1, 0x74($sp)
 /* AE3AA4 8006C904 AFA00058 */  sw    $zero, 0x58($sp)
 /* AE3AA8 8006C908 8CA30008 */  lw    $v1, 8($a1)
-/* AE3AAC 8006C90C 3C088016 */  lui   $t0, %hi(D_80166FA8) # $t0, 0x8016
-/* AE3AB0 8006C910 25086FA8 */  addiu $t0, %lo(D_80166FA8) # addiu $t0, $t0, 0x6fa8
+/* AE3AAC 8006C90C 3C088016 */  lui   $t0, %hi(gSegments) # $t0, 0x8016
+/* AE3AB0 8006C910 25086FA8 */  addiu $t0, %lo(gSegments) # addiu $t0, $t0, 0x6fa8
 /* AE3AB4 8006C914 00037900 */  sll   $t7, $v1, 4
 /* AE3AB8 8006C918 000FC702 */  srl   $t8, $t7, 0x1c
 /* AE3ABC 8006C91C 0018C880 */  sll   $t9, $t8, 2

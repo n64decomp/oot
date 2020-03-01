@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_geldb.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000015
+
+void EnGeldB_Init(EnGeldB* this, GlobalContext* globalCtx);
+void EnGeldB_Destroy(EnGeldB* this, GlobalContext* globalCtx);
+void EnGeldB_Update(EnGeldB* this, GlobalContext* globalCtx);
+void EnGeldB_Draw(EnGeldB* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_GeldB_InitVars =
+{
+    ACTOR_EN_GELDB,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_GELDB,
+    sizeof(EnGeldB),
+    (ActorFunc)EnGeldB_Init,
+    (ActorFunc)EnGeldB_Destroy,
+    (ActorFunc)EnGeldB_Update,
+    (ActorFunc)EnGeldB_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A35310.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A35318.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/EnGeldB_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A35538.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/EnGeldB_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A3559C.s")
 
@@ -81,16 +103,12 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A392D8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A394A4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/EnGeldB_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A39688.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A39824.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A39A98.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/EnGeldB_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GeldB/func_80A39E2C.s")
-
-
-
-

@@ -6,11 +6,11 @@ glabel func_80A781CC
 /* 03ECC 80A781DC 0C02FF21 */  jal     func_800BFC84              
 /* 03ED0 80A781E0 00A02025 */  or      $a0, $a1, $zero            ## $a0 = 00000000
 /* 03ED4 80A781E4 1440001A */  bne     $v0, $zero, .L80A78250     
-/* 03ED8 80A781E8 3C0E80A7 */  lui     $t6, %hi(func_80A77B9C)    ## $t6 = 80A70000
+/* 03ED8 80A781E8 3C0E80A7 */  lui     $t6, %hi(EnIk_Update)    ## $t6 = 80A70000
 /* 03EDC 80A781EC 8FA20018 */  lw      $v0, 0x0018($sp)           
-/* 03EE0 80A781F0 3C0F80A8 */  lui     $t7, %hi(func_80A78074)    ## $t7 = 80A80000
-/* 03EE4 80A781F4 25CE7B9C */  addiu   $t6, $t6, %lo(func_80A77B9C) ## $t6 = 80A77B9C
-/* 03EE8 80A781F8 25EF8074 */  addiu   $t7, $t7, %lo(func_80A78074) ## $t7 = 80A78074
+/* 03EE0 80A781F0 3C0F80A8 */  lui     $t7, %hi(EnIk_Draw)    ## $t7 = 80A80000
+/* 03EE4 80A781F4 25CE7B9C */  addiu   $t6, $t6, %lo(EnIk_Update) ## $t6 = 80A77B9C
+/* 03EE8 80A781F8 25EF8074 */  addiu   $t7, $t7, %lo(EnIk_Draw) ## $t7 = 80A78074
 /* 03EEC 80A781FC 3C050200 */  lui     $a1, 0x0200                ## $a1 = 02000000
 /* 03EF0 80A78200 AC4E0130 */  sw      $t6, 0x0130($v0)           ## 00000130
 /* 03EF4 80A78204 AC4F0134 */  sw      $t7, 0x0134($v0)           ## 00000134

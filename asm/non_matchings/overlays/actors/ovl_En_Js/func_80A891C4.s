@@ -37,7 +37,7 @@ glabel func_80A891C4
 /* 0043C 80A8924C 1000000E */  beq     $zero, $zero, .L80A89288   
 /* 00440 80A89250 8FBF0014 */  lw      $ra, 0x0014($sp)           
 .L80A89254:
-/* 00444 80A89254 0C021CC3 */  jal     func_8008730C              
+/* 00444 80A89254 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00448 80A89258 2404FF38 */  addiu   $a0, $zero, 0xFF38         ## $a0 = FFFFFF38
 /* 0044C 80A8925C 3C0580A9 */  lui     $a1, %hi(func_80A89160)    ## $a1 = 80A90000
 /* 00450 80A89260 24A59160 */  addiu   $a1, $a1, %lo(func_80A89160) ## $a1 = 80A89160

@@ -1,10 +1,10 @@
 glabel func_80AD3D68
 /* 00268 80AD3D68 27BDFFD8 */  addiu   $sp, $sp, 0xFFD8           ## $sp = FFFFFFD8
 /* 0026C 80AD3D6C AFB00020 */  sw      $s0, 0x0020($sp)           
-/* 00270 80AD3D70 3C0E80AD */  lui     $t6, %hi(func_80AD64A4)    ## $t6 = 80AD0000
+/* 00270 80AD3D70 3C0E80AD */  lui     $t6, %hi(EnPoField_Update)    ## $t6 = 80AD0000
 /* 00274 80AD3D74 AFBF0024 */  sw      $ra, 0x0024($sp)           
 /* 00278 80AD3D78 AFA5002C */  sw      $a1, 0x002C($sp)           
-/* 0027C 80AD3D7C 25CE64A4 */  addiu   $t6, $t6, %lo(func_80AD64A4) ## $t6 = 80AD64A4
+/* 0027C 80AD3D7C 25CE64A4 */  addiu   $t6, $t6, %lo(EnPoField_Update) ## $t6 = 80AD64A4
 /* 00280 80AD3D80 00808025 */  or      $s0, $a0, $zero            ## $s0 = 00000000
 /* 00284 80AD3D84 AC8E0130 */  sw      $t6, 0x0130($a0)           ## 00000130
 /* 00288 80AD3D88 8FA4002C */  lw      $a0, 0x002C($sp)           

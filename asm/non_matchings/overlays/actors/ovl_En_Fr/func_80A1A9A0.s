@@ -20,7 +20,7 @@ glabel func_80A1A9A0
 /* 00048 80A1A9E8 00004012 */  mflo    $t0                        
 /* 0004C 80A1A9EC 00484821 */  addu    $t1, $v0, $t0              
 /* 00050 80A1A9F0 C52C0004 */  lwc1    $f12, 0x0004($t1)          ## 00000004
-/* 00054 80A1A9F4 0C034348 */  jal     func_800D0D20              
+/* 00054 80A1A9F4 0C034348 */  jal     Matrix_RotateY              
 /* 00058 80A1A9F8 AFA40038 */  sw      $a0, 0x0038($sp)           
 /* 0005C 80A1A9FC 27A4002C */  addiu   $a0, $sp, 0x002C           ## $a0 = FFFFFFF4
 /* 00060 80A1AA00 0C0346BD */  jal     func_800D1AF4              

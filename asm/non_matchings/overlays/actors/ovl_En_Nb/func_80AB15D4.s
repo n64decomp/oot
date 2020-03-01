@@ -25,7 +25,7 @@ glabel func_80AB15D4
               
 /* 008A0 80AB1630 E7AC0018 */  swc1    $f12, 0x0018($sp)          
 /* 008A4 80AB1634 8FA4003C */  lw      $a0, 0x003C($sp)           
-/* 008A8 80AB1638 0C021344 */  jal     func_80084D10              
+/* 008A8 80AB1638 0C021344 */  jal     Item_Give              
 /* 008AC 80AB163C 24050069 */  addiu   $a1, $zero, 0x0069         ## $a1 = 00000069
 /* 008B0 80AB1640 8FBF0034 */  lw      $ra, 0x0034($sp)           
 /* 008B4 80AB1644 27BD0038 */  addiu   $sp, $sp, 0x0038           ## $sp = 00000000

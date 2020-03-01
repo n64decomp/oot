@@ -159,8 +159,8 @@ glabel func_80103FA4
 /* B7B18C 80103FEC 00000000 */   nop   
 
 glabel func_80103FF0
-/* B7B190 80103FF0 3C058001 */  lui   $a1, %hi(D_8000ACF8)
-/* B7B194 80103FF4 24A5ACF8 */  addiu $a1, %lo(D_8000ACF8) # addiu $a1, $a1, -0x5308
+/* B7B190 80103FF0 3C058001 */  lui   $a1, %hi(osViClock)
+/* B7B194 80103FF4 24A5ACF8 */  addiu $a1, %lo(osViClock) # addiu $a1, $a1, -0x5308
 /* B7B198 80103FF8 8CAE0000 */  lw    $t6, ($a1)
 /* B7B19C 80103FFC 44844000 */  mtc1  $a0, $f8
 /* B7B1A0 80104000 3C014F80 */  li    $at, 0x4F800000 # 0.000000

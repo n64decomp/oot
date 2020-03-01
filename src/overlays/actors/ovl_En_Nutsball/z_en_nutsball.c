@@ -5,9 +5,7 @@
 */
 
 #include <ultra64.h>
-#include <ultra64/gbi.h>
 #include <global.h>
-#include <z64.h>
 
 typedef struct
 {
@@ -17,35 +15,35 @@ typedef struct
     /* 0x0151 */ s8                   unk_151;
     /* 0x0152 */ s16                  someTimer;
     /* 0x0154 */ ColliderCylinderMain cylinderCollider;
-} ActorNutsball; // size = 0x01A0
+} EnNutsball; // size = 0x01A0
 
 #define ROOM 0x00
 #define FLAGS 0x00000010
 
-void Init(ActorNutsball* this, GlobalContext* globalCtx);
-void Destroy(ActorNutsball* this, GlobalContext* globalCtx);
-void Update(ActorNutsball* this, GlobalContext* globalCtx);
-void UpdateFunc_80ABBB34(ActorNutsball* this, GlobalContext* globalCtx);
-void UpdateFunc_80ABBBA8(ActorNutsball* this, GlobalContext* globalCtx);
-void DrawFunc_80ABBE90(ActorNutsball* this, GlobalContext* globalCtx);
+void EnNutsball_Init(EnNutsball* this, GlobalContext* globalCtx);
+void EnNutsball_Destroy(EnNutsball* this, GlobalContext* globalCtx);
+void EnNutsball_Update(EnNutsball* this, GlobalContext* globalCtx);
+void UpdateFunc_80ABBB34(EnNutsball* this, GlobalContext* globalCtx);
+void func_80ABBBA8(EnNutsball* this, GlobalContext* globalCtx);
+void func_80ABBE90(EnNutsball* this, GlobalContext* globalCtx);
 
-const ActorInit En_NutsBall_InitVars =
+const ActorInit En_Nutsball_InitVars =
 {
     ACTOR_EN_NUTSBALL,
     ACTORTYPE_PROP,
     ROOM,
     FLAGS,
     OBJECT_GAMEPLAY_KEEP,
-    sizeof(ActorNutsball),
-    (ActorFunc)Init,
-    (ActorFunc)Destroy,
-    (ActorFunc)Update,
+    sizeof(EnNutsball),
+    (ActorFunc)EnNutsball_Init,
+    (ActorFunc)EnNutsball_Destroy,
+    (ActorFunc)EnNutsball_Update,
     (ActorFunc)NULL,
 };
 
 static ColliderCylinderInit cylinderInitData =
 {
-        { 0xa, 0x11, 0x9, 0x39,
+    { 0xa, 0x11, 0x9, 0x39,
     0x20, 0x1, { 0x0, 0x0 },
     0x0, { 0x0, 0x0, 0x0 },
     0xffcfffff,
@@ -59,52 +57,47 @@ static ColliderCylinderInit cylinderInitData =
     { 0x0, 0x0, 0x0 }
 };
 
-static s16 objectTbl[] = { 0x004A, 0x0164, 0x0168, 0x0171, 0x0172, 0x0000 };
-static u32 dListTbl[] = { 0x06002028, 0x060012F0, 0x06004008, 0x06002410, 0x06001890, 0x00000000 };
+s16 objectTbl[] = { 0x004A, 0x0164, 0x0168, 0x0171, 0x0172, 0x0000 };
+u32 dListTbl[] = { 0x06002028, 0x060012F0, 0x06004008, 0x06002410, 0x06001890, 0x00000000 };
 
-// MATCHING
-void Init(ActorNutsball* this, GlobalContext* globalCtx)
+void EnNutsball_Init(EnNutsball* this, GlobalContext* globalCtx)
 {
-    s8 uVar1;
-
-    Actor_InitShadow(&this->actor.sub_B4, 400, ActorShadow_DrawFunc_Circle, 13.0f);
+    s32 pad[2];
+    ActorShape_Init(&this->actor.shape, 400, ActorShadow_DrawFunc_Circle, 13.0f);
     ActorCollider_AllocCylinder(globalCtx, &this->cylinderCollider);
     ActorCollider_InitCylinder(globalCtx, &this->cylinderCollider, &this->actor, &cylinderInitData);
-    uVar1 = Object_GetIndex(&globalCtx->objectCtx, objectTbl[this->actor.params]);
-    this->objBankIndex = uVar1;
+    this->objBankIndex = Object_GetIndex(&globalCtx->objectCtx, objectTbl[this->actor.params]);
 
     if (this->objBankIndex < 0)
+    {
         Actor_Kill(&this->actor);
+    }
     else
+    {
         this->updateFunc = (ActorFunc)UpdateFunc_80ABBB34;
+    }  
 }
 
-// MATCHING
-void Destroy(ActorNutsball* this, GlobalContext* globalCtx)
+void EnNutsball_Destroy(EnNutsball* this, GlobalContext* globalCtx)
 {
-    ActorNutsball* nutsball = this;
+    EnNutsball* nutsball = this;
     ActorCollider_FreeCylinder(globalCtx, &nutsball->cylinderCollider);
 }
 
-// MATCHING
-void UpdateFunc_80ABBB34(ActorNutsball* this, GlobalContext* globalCtx)
+void UpdateFunc_80ABBB34(EnNutsball* this, GlobalContext* globalCtx)
 {
-  int iVar1;
-
-  iVar1 = Object_IsLoaded(&globalCtx->objectCtx, this->objBankIndex);
-
-  if (iVar1 != 0)
+  if (Object_IsLoaded(&globalCtx->objectCtx, this->objBankIndex))
   {
     this->actor.objBankIndex = this->objBankIndex;
-    this->actor.draw = (ActorFunc)DrawFunc_80ABBE90;
-    this->actor.sub_B4.rot2.y = 0;
+    this->actor.draw = (ActorFunc)func_80ABBE90;
+    this->actor.shape.rot.y = 0;
     this->someTimer = 0x1E;
-    this->updateFunc = (ActorFunc)UpdateFunc_80ABBBA8;
+    this->updateFunc = (ActorFunc)func_80ABBBA8;
     this->actor.speedXZ = 10;
   }
 }
 
-// NON-MATCHING - REG ALLOC AND STACK
+#ifdef NON_MATCHING
 void UpdateFunc_80ABBBA8(ActorNutsball* this, GlobalContext* globalCtx)
 {
     u8 bVar1;
@@ -113,7 +106,7 @@ void UpdateFunc_80ABBBA8(ActorNutsball* this, GlobalContext* globalCtx)
     Vec3f vector;
     s16 auStack12;
 
-    player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    player = PLAYER;
 
     this->someTimer--;
 
@@ -135,7 +128,7 @@ void UpdateFunc_80ABBBA8(ActorNutsball* this, GlobalContext* globalCtx)
                 switch (cVar3)
                 {
                 case 2:
-                    if (gSaveContext.link_age != 0)
+                    if (LINK_IS_CHILD)
                     break;
                 case 1:
                     bVar1 = this->cylinderCollider.base.colliderFlags;
@@ -169,16 +162,18 @@ void UpdateFunc_80ABBBA8(ActorNutsball* this, GlobalContext* globalCtx)
         }
     }
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Nutsball/func_80ABBBA8.s")
+#endif
 
-// MATCHING
-void Update(ActorNutsball* this, GlobalContext* globalCtx)
+void EnNutsball_Update(EnNutsball* this, GlobalContext* globalCtx)
 {
     SubGlobalContext11E60* sub_11E60;
-    ActorNutsball* nutsball;
+    EnNutsball* nutsball;
     Player* player;
 
     nutsball = this;
-    player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    player = PLAYER;
 
     if ((player->stateFlags1 & 0x300000C0) != 0 && nutsball->updateFunc != (ActorFunc)UpdateFunc_80ABBB34)
         ; // Nintendo why
@@ -199,9 +194,8 @@ void Update(ActorNutsball* this, GlobalContext* globalCtx)
     }
 }
 
-// NON-MATCHING
-// This one is going to be a pain
-void DrawFunc_80ABBE90(ActorNutsball* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void func_80ABBE90(EnNutsball* this, GlobalContext* globalCtx)
 {
     GraphicsContext* gfxCtx;
     Gfx* gfxArr[6];
@@ -211,11 +205,14 @@ void DrawFunc_80ABBE90(ActorNutsball* this, GlobalContext* globalCtx)
     func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_en_nutsball.c", 327);
 
     func_80093D18(globalCtx->gfxCtx);
-    func_800D0930(&globalCtx->mf_11DA0, 1);
-    func_800D0ED4(this->actor.initPosRot.rot.z * 9.58738e-05f, 1);
+    Matrix_Mult(&globalCtx->mf_11DA0, 1);
+    Matrix_RotateZ(this->actor.initPosRot.rot.z * 9.58738e-05f, 1);
 
-    gSPMatrix(gfxCtx->polyOpa.p++, func_800D1A88(globalCtx->gfxCtx, "../z_en_nutsball.c", 333), G_MTX_LOAD);
+    gSPMatrix(gfxCtx->polyOpa.p++, Matrix_NewMtx(globalCtx->gfxCtx, "../z_en_nutsball.c", 333), G_MTX_LOAD);
     gSPDisplayList(gfxCtx->polyOpa.p++, dListTbl[this->actor.params]);
 
     func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_en_nutsball.c", 337);
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Nutsball/func_80ABBE90.s")
+#endif

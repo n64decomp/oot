@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_kakasi.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8F170.s")
+#define ROOM  0x00
+#define FLAGS 0x02000009
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8F198.s")
+void EnKakasi_Init(EnKakasi* this, GlobalContext* globalCtx);
+void EnKakasi_Destroy(EnKakasi* this, GlobalContext* globalCtx);
+void EnKakasi_Update(EnKakasi* this, GlobalContext* globalCtx);
+void EnKakasi_Draw(EnKakasi* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Kakasi_InitVars =
+{
+    ACTOR_EN_KAKASI,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_KA,
+    sizeof(EnKakasi),
+    (ActorFunc)EnKakasi_Init,
+    (ActorFunc)EnKakasi_Destroy,
+    (ActorFunc)EnKakasi_Update,
+    (ActorFunc)EnKakasi_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/EnKakasi_Destroy.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/EnKakasi_Init.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8F28C.s")
 
@@ -21,10 +43,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8FBB8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8FC4C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/EnKakasi_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/func_80A8FD50.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Kakasi/EnKakasi_Draw.s")

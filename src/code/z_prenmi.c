@@ -9,7 +9,7 @@ void func_80092320(PreNMIContext* prenmiCtx)
     prenmiCtx->unk_10 = 0;
 }
 
-void PreNMI_Move(PreNMIContext* prenmiCtx)
+void PreNMI_Update(PreNMIContext* prenmiCtx)
 {
     osSyncPrintf(VT_COL(YELLOW, BLACK) "prenmi_move\n" VT_RST);
 
@@ -19,7 +19,7 @@ void PreNMI_Move(PreNMIContext* prenmiCtx)
 
     if (prenmiCtx->timer == 0)
     {
-        func_80000A10(1);
+        ViConfig_UpdateVi(1);
         func_80092320(prenmiCtx);
         return;
     }
@@ -47,7 +47,7 @@ void PreNMI_Draw(PreNMIContext* prenmiCtx)
 
 void PreNMI_Main(PreNMIContext* prenmiCtx)
 {
-    PreNMI_Move(prenmiCtx);
+    PreNMI_Update(prenmiCtx);
     PreNMI_Draw(prenmiCtx);
 
     prenmiCtx->unk_A0 = 1;
@@ -65,5 +65,5 @@ void PreNMI_Init(PreNMIContext* prenmiCtx)
     prenmiCtx->timer = 30;
     prenmiCtx->unk_A8 = 10;
 
-    gGameInfo->update_rate = 1;
+    R_UPDATE_RATE = 1;
 }

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_haka.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087B6B0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000000
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087B728.s")
+void BgHaka_Init(BgHaka* this, GlobalContext* globalCtx);
+void BgHaka_Destroy(BgHaka* this, GlobalContext* globalCtx);
+void BgHaka_Update(BgHaka* this, GlobalContext* globalCtx);
+void BgHaka_Draw(BgHaka* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Haka_InitVars =
+{
+    ACTOR_BG_HAKA,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_HAKA,
+    sizeof(BgHaka),
+    (ActorFunc)BgHaka_Init,
+    (ActorFunc)BgHaka_Destroy,
+    (ActorFunc)BgHaka_Update,
+    (ActorFunc)BgHaka_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/BgHaka_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/BgHaka_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087B758.s")
 
@@ -15,10 +37,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087BAE4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087BB5C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/BgHaka_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/func_8087BB80.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Haka/BgHaka_Draw.s")

@@ -9,7 +9,7 @@ glabel func_80AF6B20
 /* 015DC 80AF6B3C 00A03025 */  or      $a2, $a1, $zero            ## $a2 = 00000000
 /* 015E0 80AF6B40 00A02025 */  or      $a0, $a1, $zero            ## $a0 = 00000000
 /* 015E4 80AF6B44 24050062 */  addiu   $a1, $zero, 0x0062         ## $a1 = 00000062
-/* 015E8 80AF6B48 0C021344 */  jal     func_80084D10              
+/* 015E8 80AF6B48 0C021344 */  jal     Item_Give              
 /* 015EC 80AF6B4C AFA60024 */  sw      $a2, 0x0024($sp)           
 /* 015F0 80AF6B50 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 015F4 80AF6B54 0C2BD763 */  jal     func_80AF5D8C              

@@ -1,12 +1,11 @@
 /*
  * File: z_en_tubo_trap.c
- * Overlay: ovl_En_Tubo_Trab
+ * Overlay: ovl_En_Tubo_Trap
  * Description: Flying pot enemy
 */
 
 #include <ultra64.h>
 #include <global.h>
-#include <z64.h>
 
 typedef struct
 {
@@ -15,37 +14,20 @@ typedef struct
     /* 0x0150 */ f32 pos_y_seek;
     /* 0x0154 */ Vec3f pos_init;
     /* 0x0160 */ ColliderCylinderMain capsule;
-} ActorTuboTrap; // size = 0x01AC
+} EnTuboTrap; // size = 0x01AC
 
-static void Init(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void Destroy(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void Update(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void Draw(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void TestLevitate(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void InitializeAttack(ActorTuboTrap* this, GlobalContext* globalCtx);
-static void Fly(ActorTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_Init(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_Destroy(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_Update(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_Draw(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_TestLevitate(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_InitializeAttack(EnTuboTrap* this, GlobalContext* globalCtx);
+void EnTuboTrap_Fly(EnTuboTrap* this, GlobalContext* globalCtx);
 
 #define ROOM  0x00
 #define FLAGS 0x00000010
 
-const ActorInit En_Tubo_Trap_InitVars =
-{
-    ACTOR_EN_TUBO_TRAP,
-    ACTORTYPE_PROP,
-    ROOM,
-    FLAGS,
-    OBJECT_GAMEPLAY_DANGEON_KEEP,
-    sizeof(ActorTuboTrap),
-    (ActorFunc)Init,
-    (ActorFunc)Destroy,
-    (ActorFunc)Update,
-    (ActorFunc)Draw
-};
-
-extern u32 DL_SHARD;
-extern u32 DL_TUBO;
-
-const ColliderCylinderInit cylinderInitData =
+static ColliderCylinderInit cylinderInitData =
 {
     0x0A, 0x11, 0x09, 0x00, 0x20, 0x01,
     0x00, 0x00,
@@ -62,33 +44,53 @@ const ColliderCylinderInit cylinderInitData =
     0x0000, 0x0000, 0x0000
 };
 
-static void Init(ActorTuboTrap* this, GlobalContext* globalCtx)
+ActorInit En_Tubo_Trap_InitVars =
 {
-    Actor_InitShadow(&this->actor.sub_B4, 0.0f, ActorShadow_DrawFunc_Circle, 2.0f);
+    ACTOR_EN_TUBO_TRAP,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_DANGEON_KEEP,
+    sizeof(EnTuboTrap),
+    (ActorFunc)EnTuboTrap_Init,
+    (ActorFunc)EnTuboTrap_Destroy,
+    (ActorFunc)EnTuboTrap_Update,
+    (ActorFunc)EnTuboTrap_Draw,
+};
+
+extern u32 DL_SHARD;
+extern u32 DL_TUBO;
+
+void EnTuboTrap_Init(EnTuboTrap* this, GlobalContext* globalCtx)
+{
+    s32 pad;
+    ActorShape_Init(&this->actor.shape, 0.0f, ActorShadow_DrawFunc_Circle, 2.0f);
     osSyncPrintf("\n\n");
-    osSyncPrintf("[32m☆☆☆☆☆ 壷トラップ ☆☆☆☆☆ %x\n", this->actor.params);
+    osSyncPrintf("\x1b[32m☆☆☆☆☆ 壷トラップ ☆☆☆☆☆ %x\n\x1b[m", this->actor.params);
     ActorCollider_AllocCylinder(globalCtx, &this->capsule);
     ActorCollider_InitCylinder(globalCtx, &this->capsule, &this->actor, &cylinderInitData);
     Actor_SetScale(&this->actor, 0.1f);
-    this->playfunc = (ActorFunc*)TestLevitate;
+    this->playfunc = (ActorFunc*)EnTuboTrap_TestLevitate;
 }
 
-static void Destroy(ActorTuboTrap* this, GlobalContext* globalCtx)
+void EnTuboTrap_Destroy(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     ColliderCylinderMain* capsule = &this->capsule;
     ActorCollider_FreeCylinder(globalCtx, capsule);
 }
 
-static void DropCollectible(ActorTuboTrap* this, GlobalContext* globalCtx)
+void EnTuboTrap_DropCollectible(EnTuboTrap* this, GlobalContext* globalCtx)
 {
-    s16 param1 = ((this->actor.params >> 6 & 0x03FF) & 0x3F) << 8;
-    s16 param2 = (param1 | ((param1 >> 6 & 0x03FF) & 0x3F)) << 8;
-
-    if (param1 < 0x1A)
-        Item_DropCollectible(globalCtx, &this->actor.posRot, param2);
+    s16 params = this->actor.params;
+    s16 param1 = (params >> 6) & 0x03FF;
+    if (param1 >= 0 && param1 < 0x1A)
+    {
+        Item_DropCollectible(globalCtx, &this->actor.posRot, param1 | ((params & 0x03F) << 8));
+    }
 }
 
-static void Fragments(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_Fragments(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     u32 uVar1;
     s32 rando_seed = 0;
@@ -101,7 +103,7 @@ static void Fragments(ActorTuboTrap* this, GlobalContext* globalCtx)
         f32 rng;
 
         /* burst_depth_x */
-        burst_depth[0].x = math_sins(rando_seed) * 8.0f;
+        burst_depth[0].x = Math_Sins(rando_seed) * 8.0f;
         burst_depth[0].y = (Math_Rand_ZeroOne() * 5.0f) + 2.0f;
         burst_depth[0].z = Math_Coss(rando_seed) * 8.0f;
 
@@ -139,8 +141,12 @@ static void Fragments(ActorTuboTrap* this, GlobalContext* globalCtx)
 
     func_80033480(globalCtx, &this->actor.posRot.pos, 30.0f, 4, 20, 50, 0);
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_Fragments.s")
+#endif
 
-static void Fragments_Water(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_FragmentsWater(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     u32 uVar1;
     s32 rando_seed = 0;
@@ -158,7 +164,7 @@ static void Fragments_Water(ActorTuboTrap* this, GlobalContext* globalCtx)
     do
     {
         /* burst_depth_x */
-        burst_depth[0].x = math_sins(rando_seed) * 8.0f;
+        burst_depth[0].x = Math_Sins(rando_seed) * 8.0f;
         burst_depth[0].y = (Math_Rand_ZeroOne() * 5.0f) + 2.0f;
         burst_depth[0].z = Math_Coss(rando_seed) * 8.0f;
 
@@ -195,13 +201,17 @@ static void Fragments_Water(ActorTuboTrap* this, GlobalContext* globalCtx)
 
     func_80033480(globalCtx, &this->actor.posRot.pos, 30.0f, 4, 20, 50, 0);
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_FragmentsWater.s")
+#endif
 
-static void TestCollider(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_TestCollider(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     u8 bVar1, bVar2;
     u16 uVar3;
     Actor* collided_this;
-    Player* player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
 
     if (!(this->actor.bgCheckFlags & 20))
     {
@@ -211,9 +221,9 @@ static void TestCollider(ActorTuboTrap* this, GlobalContext* globalCtx)
     {
         if (this->actor.waterSurfaceDist > 15.0f)
         {
-            Fragments_Water(this, globalCtx);
+            EnTuboTrap_FragmentsWater(this, globalCtx);
             Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 40, NA_SE_EV_BOMB_DROP_WATER);
-            DropCollectible(this, globalCtx);
+            EnTuboTrap_DropCollectible(this, globalCtx);
             Actor_Kill(&this->actor);
             return;
         }
@@ -237,10 +247,10 @@ static void TestCollider(ActorTuboTrap* this, GlobalContext* globalCtx)
 
                 if (collided_this == &player->actor)
                 {
-                    Fragments(this, globalCtx);
+                    EnTuboTrap_Fragments(this, globalCtx);
                     Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_EV_POT_BROKEN);
                     Audio_PlaySoundAtPosition(globalCtx, &player->actor.posRot.pos, 0x28, NA_SE_PL_BODY_HIT);
-                    DropCollectible(this, globalCtx);
+                    EnTuboTrap_DropCollectible(this, globalCtx);
                     Actor_Kill(&this->actor);
                     return;
                 }
@@ -249,39 +259,43 @@ static void TestCollider(ActorTuboTrap* this, GlobalContext* globalCtx)
 
             if ((uVar3 & 8) || (uVar3 & 1))
             {
-                Fragments(this, globalCtx);
+                EnTuboTrap_Fragments(this, globalCtx);
                 Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_EV_POT_BROKEN);
-                DropCollectible(this, globalCtx);
+                EnTuboTrap_DropCollectible(this, globalCtx);
                 Actor_Kill(&this->actor);
             }
         }
         else
         {
             this->capsule.base.collideFlags = bVar2 & 0xFD;
-            Fragments(this, globalCtx);
+            EnTuboTrap_Fragments(this, globalCtx);
             Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_EV_EXPLOSION);
             Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_EV_POT_BROKEN);
-            DropCollectible(this, globalCtx);
+            EnTuboTrap_DropCollectible(this, globalCtx);
             Actor_Kill(&this->actor);
         }
     }
     else
     {
         this->capsule.base.colliderFlags = bVar1 & 0xFB;
-        Fragments(this, globalCtx);
+        EnTuboTrap_Fragments(this, globalCtx);
         Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_IT_SHIELD_REFLECT_SW);
         Audio_PlaySoundAtPosition(globalCtx, &this->actor.posRot.pos, 0x28, NA_SE_EV_POT_BROKEN);
-        DropCollectible(this, globalCtx);
+        EnTuboTrap_DropCollectible(this, globalCtx);
         Actor_Kill(&this->actor);
     }
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_TestCollider.s")
+#endif
 
-static void TestLevitate(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_TestLevitate(EnTuboTrap* this, GlobalContext* globalCtx)
 {
-    Player* player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     f32 seekY;
 
-    if (gGameInfo->unk_12D8 != 0)
+    if (BREG(2) != 0)
     {
         osSyncPrintf("[32m☆☆☆☆☆ わて     ☆☆☆☆☆ %f\n", globalCtx, this->actor.posRot.pos.y);
         osSyncPrintf("[32m☆☆☆☆☆ おいどん ☆☆☆☆☆ %f\n");
@@ -301,11 +315,15 @@ static void TestLevitate(ActorTuboTrap* this, GlobalContext* globalCtx)
         this->actor.initPosRot.pos = this->actor.posRot.pos;
 
         Audio_PlayActorSound2(this, NA_SE_EV_POT_MOVE_START);
-        this->playfunc = InitializeAttack;
+        this->playfunc = (ActorFunc)EnTuboTrap_InitializeAttack;
     }
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_TestLevitate.s")
+#endif
 
-static void InitializeAttack(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_InitializeAttack(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     this->actor.posRot.rot.y += 5000;
     Math_SmoothScaleMaxF(&this->actor.posRot.pos.y, this->pos_y_seek, 0.8f, 3.0f); /* Tween levitation */
@@ -314,37 +332,47 @@ static void InitializeAttack(ActorTuboTrap* this, GlobalContext* globalCtx)
     {
         this->actor.speedXZ = 10.0f;
         this->actor.posRot.rot.y = this->actor.rotTowardsLinkY;
-        this->playfunc = (ActorFunc*)Fly;
+        this->playfunc = (ActorFunc)EnTuboTrap_Fly;
     }
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_InitializeAttack.s")
+#endif
 
-static void Fly(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_Fly(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     Vec3f pos_delta;
 
     VEC3_SUB(pos_delta, this->pos_init, this->actor.posRot.pos);
     Audio_PlayActorSound2(&this->actor, NA_SE_EN_TUBOOCK_FLY);
 
-    if (240.0f < SQRT(SQ(pos_delta.x) + SQ(pos_delta.y) + SQ(pos_delta.z)))
+    if (240.0f < sqrtf(SQ(pos_delta.x) + SQ(pos_delta.y) + SQ(pos_delta.z)))
         Math_SmoothScaleMaxF(&this->actor.gravity, -3.0f, 0.2f, 0.5f); /* Tween to ground */
 
     this->actor.posRot.rot.y += 5000;
-    TuboTrap_TestCollider(this, globalCtx);
+    EnTuboTrap_TestCollider(this, globalCtx);
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_Fly.s")
+#endif
 
-static void Update(ActorTuboTrap* this, GlobalContext* globalCtx)
+#ifdef NON_MATCHING
+void EnTuboTrap_Update(EnTuboTrap* this, GlobalContext* globalCtx)
 {
     this->playfunc(this, globalCtx);
-
     Actor_MoveForward(&this->actor); /* Probably to haul ass towards Link */
     func_8002E4B4(globalCtx, &this->actor, 10.0f, 10.0f, 20.0f, 0x1D); /* Necessary for drawing a shadow */
-    Actor_SetHeight(&this->actor, 0);
-    this_capsule_update(&this->actor, &this->capsule);
+    Actor_SetHeight(&this->actor, 0.0f);
+    ActorCollider_Cylinder_Update(&this->actor, &this->capsule);
     Actor_CollisionCheck_SetAC(globalCtx, &globalCtx->sub_11E60, &this->capsule);
-    Actor_CollisionCheck_SetAC(globalCtx, &globalCtx->sub_11E60, &this->capsule);
+    Actor_CollisionCheck_SetAT(globalCtx, &globalCtx->sub_11E60, &this->capsule);
 }
+#else
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tubo_Trap/EnTuboTrap_Update.s")
+#endif
 
-static void Draw(ActorTuboTrap* this, GlobalContext* globalCtx)
+void EnTuboTrap_Draw(EnTuboTrap* this, GlobalContext* globalCtx)
 {
-    Draw_DListOpa(globalCtx, DL_TUBO);
+    Draw_DListOpa(globalCtx, &DL_TUBO);
 }

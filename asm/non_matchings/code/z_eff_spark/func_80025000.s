@@ -23,8 +23,8 @@ glabel func_80025000
 /* A9C1F4 80025054 12E00464 */  beqz  $s7, .L800261E8
 /* A9C1F8 80025058 3C0FDA38 */   lui   $t7, (0xDA380003 >> 16) # lui $t7, 0xda38
 /* A9C1FC 8002505C 8EC402D0 */  lw    $a0, 0x2d0($s6)
-/* A9C200 80025060 3C188013 */  lui   $t8, %hi(D_8012DB20) # $t8, 0x8013
-/* A9C204 80025064 2718DB20 */  addiu $t8, %lo(D_8012DB20) # addiu $t8, $t8, -0x24e0
+/* A9C200 80025060 3C188013 */  lui   $t8, %hi(gMtxClear) # $t8, 0x8013
+/* A9C204 80025064 2718DB20 */  addiu $t8, %lo(gMtxClear) # addiu $t8, $t8, -0x24e0
 /* A9C208 80025068 248E0008 */  addiu $t6, $a0, 8
 /* A9C20C 8002506C AECE02D0 */  sw    $t6, 0x2d0($s6)
 /* A9C210 80025070 35EF0003 */  ori   $t7, (0xDA380003 & 0xFFFF) # ori $t7, $t7, 3

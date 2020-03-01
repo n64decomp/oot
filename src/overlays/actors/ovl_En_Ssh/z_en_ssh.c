@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ssh.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000035
+
+void EnSsh_Init(EnSsh* this, GlobalContext* globalCtx);
+void EnSsh_Destroy(EnSsh* this, GlobalContext* globalCtx);
+void EnSsh_Update(EnSsh* this, GlobalContext* globalCtx);
+void EnSsh_Draw(EnSsh* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ssh_InitVars =
+{
+    ACTOR_EN_SSH,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_SSH,
+    sizeof(EnSsh),
+    (ActorFunc)EnSsh_Init,
+    (ActorFunc)EnSsh_Destroy,
+    (ActorFunc)EnSsh_Update,
+    (ActorFunc)EnSsh_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B02270.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B02278.s")
@@ -65,9 +87,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B0368C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B03754.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/EnSsh_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B038E8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/EnSsh_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B03968.s")
 
@@ -85,14 +107,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B03FF0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B04074.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/EnSsh_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B04190.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B04280.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/func_80B042B8.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ssh/EnSsh_Draw.s")

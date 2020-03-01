@@ -120,8 +120,8 @@ glabel func_80A74398
 /* 00248 80A74558 24060001 */  addiu   $a2, $zero, 0x0001         ## $a2 = 00000001
 /* 0024C 80A7455C 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 00250 80A74560 AFA00010 */  sw      $zero, 0x0010($sp)         
-/* 00254 80A74564 0C009B35 */  jal     EffectAdd
-              ## EffectAdd
+/* 00254 80A74564 0C009B35 */  jal     Effect_Add
+              ## Effect_Add
 /* 00258 80A74568 A3A001CB */  sb      $zero, 0x01CB($sp)         
 /* 0025C 80A7456C 0C29D1C5 */  jal     func_80A74714              
 /* 00260 80A74570 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000

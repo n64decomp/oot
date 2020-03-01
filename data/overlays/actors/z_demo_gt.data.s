@@ -105,11 +105,11 @@ glabel D_80982734
 .word func_80981AA0
 .word func_80981E84
 .word func_80982244
-glabel D_80982758
+glabel Demo_Gt_InitVars
  .word 0x01740600, 0x00000030, 0x014C0000, 0x000001A8
-.word func_80982474
-.word func_8097D670
-.word func_80982418
-.word func_80982558
+.word DemoGt_Init
+.word DemoGt_Destroy
+.word DemoGt_Update
+.word DemoGt_Draw
 .word 0x00000000, 0x00000000
 

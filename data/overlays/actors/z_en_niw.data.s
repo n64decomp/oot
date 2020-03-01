@@ -9,12 +9,12 @@
 
 glabel D_80AB85E0
  .word 0x00000000
-glabel D_80AB85E4
+glabel En_Niw_InitVars
  .word 0x00190600, 0x00800010, 0x00130000, 0x000007B8
-.word func_80AB5780
-.word func_80AB5BD0
-.word func_80AB7534
-.word func_80AB80B8
+.word EnNiw_Init
+.word EnNiw_Destroy
+.word EnNiw_Update
+.word EnNiw_Draw
 glabel D_80AB8604
  .word 0x459C4000, 0xC59C4000
 glabel D_80AB860C

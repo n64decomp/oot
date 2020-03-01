@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808A14C0
+glabel Bg_Mori_Bigst_InitVars
  .word 0x00860100, 0x00000010, 0x00720000, 0x0000016C
-.word func_808A0C50
-.word func_808A0DAC
-.word func_808A1344
+.word BgMoriBigst_Init
+.word BgMoriBigst_Destroy
+.word BgMoriBigst_Update
 .word 0x00000000
 glabel D_808A14E0
  .word 0xB0F40BB8, 0xB0F80BB8, 0xB0FC0BB8, 0xB86CFE0C, 0xB870D120, 0x485003E8, 0x00000000, 0x00000000

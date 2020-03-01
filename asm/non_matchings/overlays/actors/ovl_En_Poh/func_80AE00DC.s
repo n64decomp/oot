@@ -37,14 +37,14 @@ glabel func_80AE00DC
 /* 02410 80AE0160 240538EC */  addiu   $a1, $zero, 0x38EC         ## $a1 = 000038EC
 /* 02414 80AE0164 17000015 */  bne     $t8, $zero, .L80AE01BC     
 /* 02418 80AE0168 00000000 */  nop
-/* 0241C 80AE016C 0C021AAF */  jal     func_80086ABC              
+/* 0241C 80AE016C 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 02420 80AE0170 00000000 */  nop
 /* 02424 80AE0174 1040000B */  beq     $v0, $zero, .L80AE01A4     
 /* 02428 80AE0178 24085006 */  addiu   $t0, $zero, 0x5006         ## $t0 = 00005006
 /* 0242C 80AE017C 24195008 */  addiu   $t9, $zero, 0x5008         ## $t9 = 00005008
 /* 02430 80AE0180 A619010E */  sh      $t9, 0x010E($s0)           ## 0000010E
 /* 02434 80AE0184 8FA40024 */  lw      $a0, 0x0024($sp)           
-/* 02438 80AE0188 0C021344 */  jal     func_80084D10              
+/* 02438 80AE0188 0C021344 */  jal     Item_Give              
 /* 0243C 80AE018C 24050020 */  addiu   $a1, $zero, 0x0020         ## $a1 = 00000020
 /* 02440 80AE0190 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 02444 80AE0194 0C00BE0A */  jal     Audio_PlayActorSound2

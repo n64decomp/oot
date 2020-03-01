@@ -7,7 +7,7 @@ glabel func_800C016C
 /* B37320 800C0180 34211D60 */  ori   $at, (0x00011D60 & 0xFFFF) # ori $at, $at, 0x1d60
 /* B37324 800C0184 00812021 */  addu  $a0, $a0, $at
 /* B37328 800C0188 00002825 */  move  $a1, $zero
-/* B3732C 800C018C 0C03424C */  jal   func_800D0930
+/* B3732C 800C018C 0C03424C */  jal   Matrix_Mult
 /* B37330 800C0190 AFA60020 */   sw    $a2, 0x20($sp)
 /* B37334 800C0194 8FA4001C */  lw    $a0, 0x1c($sp)
 /* B37338 800C0198 0C0346BD */  jal   func_800D1AF4

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80891E90
+glabel Bg_Ice_Shutter_InitVars
  .word 0x01C80600, 0x00000010, 0x006B0000, 0x00000168
-.word func_80891B4C
-.word func_80891CC4
-.word func_80891E3C
-.word func_80891E60
+.word BgIceShutter_Init
+.word BgIceShutter_Destroy
+.word BgIceShutter_Update
+.word BgIceShutter_Draw
 glabel D_80891EB0
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

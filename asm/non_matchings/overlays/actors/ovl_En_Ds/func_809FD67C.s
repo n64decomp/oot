@@ -49,7 +49,7 @@ glabel func_809FD67C
 /* 006FC 809FD72C 1000001C */  beq     $zero, $zero, .L809FD7A0   
 /* 00700 809FD730 ADEE01EC */  sw      $t6, 0x01EC($t7)           ## 000001EC
 .L809FD734:
-/* 00704 809FD734 0C021CC3 */  jal     func_8008730C              
+/* 00704 809FD734 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00708 809FD738 2404FF9C */  addiu   $a0, $zero, 0xFF9C         ## $a0 = FFFFFF9C
 /* 0070C 809FD73C 8FA40028 */  lw      $a0, 0x0028($sp)           
 /* 00710 809FD740 3C01FFFE */  lui     $at, 0xFFFE                ## $at = FFFE0000

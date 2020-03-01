@@ -25,18 +25,18 @@ glabel func_80105F40
 /* B7D110 80105F70 AFB00018 */  sw    $s0, 0x18($sp)
 /* B7D114 80105F74 AFA60068 */  sw    $a2, 0x68($sp)
 /* B7D118 80105F78 AFA7006C */  sw    $a3, 0x6c($sp)
-/* B7D11C 80105F7C 0C0402E8 */  jal   func_80100BA0
+/* B7D11C 80105F7C 0C0402E8 */  jal   __osSiGetAccess
 /* B7D120 80105F80 24150002 */   li    $s5, 2
 /* B7D124 80105F84 97A5006A */  lhu   $a1, 0x6a($sp)
 /* B7D128 80105F88 3C1E8013 */  lui   $fp, %hi(D_80134D20) # $fp, 0x8013
-/* B7D12C 80105F8C 3C178017 */  lui   $s7, %hi(D_80175810) # $s7, 0x8017
+/* B7D12C 80105F8C 3C178017 */  lui   $s7, %hi(_osCont_lastPollType) # $s7, 0x8017
 /* B7D130 80105F90 3C148017 */  lui   $s4, %hi(D_80175960) # $s4, 0x8017
 /* B7D134 80105F94 000570C3 */  sra   $t6, $a1, 3
 /* B7D138 80105F98 00057940 */  sll   $t7, $a1, 5
 /* B7D13C 80105F9C AFAF0040 */  sw    $t7, 0x40($sp)
 /* B7D140 80105FA0 AFAE0044 */  sw    $t6, 0x44($sp)
 /* B7D144 80105FA4 26945960 */  addiu $s4, %lo(D_80175960) # addiu $s4, $s4, 0x5960
-/* B7D148 80105FA8 26F75810 */  addiu $s7, %lo(D_80175810) # addiu $s7, $s7, 0x5810
+/* B7D148 80105FA8 26F75810 */  addiu $s7, %lo(_osCont_lastPollType) # addiu $s7, $s7, 0x5810
 /* B7D14C 80105FAC 27DE4D20 */  addiu $fp, %lo(D_80134D20) # addiu $fp, $fp, 0x4d20
 .L80105FB0:
 /* B7D150 80105FB0 92F80000 */  lbu   $t8, ($s7)
@@ -96,14 +96,14 @@ glabel func_80105F40
 /* B7D210 80106070 24040001 */  li    $a0, 1
 /* B7D214 80106074 02802825 */  move  $a1, $s4
 /* B7D218 80106078 00594025 */  or    $t0, $v0, $t9
-/* B7D21C 8010607C 0C0404FC */  jal   func_801013F0
+/* B7D21C 8010607C 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7D220 80106080 A2080005 */   sb    $t0, 5($s0)
 /* B7D224 80106084 02C02025 */  move  $a0, $s6
 /* B7D228 80106088 00002825 */  move  $a1, $zero
 /* B7D22C 8010608C 0C000CA0 */  jal   osRecvMesg
 /* B7D230 80106090 24060001 */   li    $a2, 1
 /* B7D234 80106094 00002025 */  move  $a0, $zero
-/* B7D238 80106098 0C0404FC */  jal   func_801013F0
+/* B7D238 80106098 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7D23C 8010609C 02802825 */   move  $a1, $s4
 /* B7D240 801060A0 02C02025 */  move  $a0, $s6
 /* B7D244 801060A4 00002825 */  move  $a1, $zero
@@ -143,7 +143,7 @@ glabel func_80105F40
 /* B7D2C0 80106120 1040FFA3 */  beqz  $v0, .L80105FB0
 /* B7D2C4 80106124 26B5FFFF */   addiu $s5, $s5, -1
 .L80106128:
-/* B7D2C8 80106128 0C0402F9 */  jal   func_80100BE4
+/* B7D2C8 80106128 0C0402F9 */  jal   __osSiRelAccess
 /* B7D2CC 8010612C 00000000 */   nop   
 /* B7D2D0 80106130 8FBF003C */  lw    $ra, 0x3c($sp)
 /* B7D2D4 80106134 02601025 */  move  $v0, $s3

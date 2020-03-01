@@ -25,7 +25,7 @@ glabel func_80A7F8CC
 /* 014C8 80A7F928 24A57438 */  addiu   $a1, $a1, %lo(D_80A87438)  ## $a1 = 80A87438
 /* 014CC 80A7F92C 8D040000 */  lw      $a0, 0x0000($t0)           ## 00000000
 /* 014D0 80A7F930 2406041F */  addiu   $a2, $zero, 0x041F         ## $a2 = 0000041F
-/* 014D4 80A7F934 0C0346A2 */  jal     func_800D1A88              
+/* 014D4 80A7F934 0C0346A2 */  jal     Matrix_NewMtx              
 /* 014D8 80A7F938 AFA20030 */  sw      $v0, 0x0030($sp)           
 /* 014DC 80A7F93C 8FA30030 */  lw      $v1, 0x0030($sp)           
 /* 014E0 80A7F940 3C0AFA00 */  lui     $t2, 0xFA00                ## $t2 = FA000000

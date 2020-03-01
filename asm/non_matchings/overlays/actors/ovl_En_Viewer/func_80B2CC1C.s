@@ -111,7 +111,7 @@ glabel func_80B2CC1C
 /* 02BCC 80B2CDCC 46803420 */  cvt.s.w $f16, $f6                  
 /* 02BD0 80B2CDD0 46088283 */  div.s   $f10, $f16, $f8            
 /* 02BD4 80B2CDD4 46125302 */  mul.s   $f12, $f10, $f18           
-/* 02BD8 80B2CDD8 0C034348 */  jal     func_800D0D20              
+/* 02BD8 80B2CDD8 0C034348 */  jal     Matrix_RotateY              
 /* 02BDC 80B2CDDC 00000000 */  nop
 /* 02BE0 80B2CDE0 27A40034 */  addiu   $a0, $sp, 0x0034           ## $a0 = FFFFFFF4
 /* 02BE4 80B2CDE4 0C0346BD */  jal     func_800D1AF4              

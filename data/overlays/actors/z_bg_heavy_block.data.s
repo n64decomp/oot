@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80884E50
+glabel Bg_Heavy_Block_InitVars
  .word 0x00920100, 0x00000000, 0x009A0000, 0x00000178
-.word func_80883A08
-.word func_80883C48
-.word func_80884BE8
-.word func_80884C0C
+.word BgHeavyBlock_Init
+.word BgHeavyBlock_Destroy
+.word BgHeavyBlock_Update
+.word BgHeavyBlock_Draw
 glabel D_80884E70
  .word 0xC0500001, 0xB0F40FA0, 0xB0F80190, 0x30FC0190
 glabel D_80884E80

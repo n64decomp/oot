@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808916D0
+glabel Bg_Ice_Shelter_InitVars
  .word 0x00EF0100, 0x00000000, 0x006B0000, 0x00000204
-.word func_80890980
-.word func_80890B04
-.word func_80891398
-.word func_808913BC
+.word BgIceShelter_Init
+.word BgIceShelter_Destroy
+.word BgIceShelter_Update
+.word BgIceShelter_Draw
 glabel D_808916F0
  .word 0x3DCCCCCD, 0x3D75C28F, 0x3DCCCCCD, 0x3DCCCCCD, 0x3E800000
 glabel D_80891704

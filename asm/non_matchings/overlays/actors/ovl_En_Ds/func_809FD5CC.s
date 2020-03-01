@@ -9,7 +9,7 @@ glabel func_809FD5CC
 /* 005B8 809FD5E8 10000008 */  beq     $zero, $zero, .L809FD60C   
 /* 005BC 809FD5EC 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L809FD5F0:
-/* 005C0 809FD5F0 0C021AAF */  jal     func_80086ABC              
+/* 005C0 809FD5F0 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 005C4 809FD5F4 00000000 */  nop
 /* 005C8 809FD5F8 54400004 */  bnel    $v0, $zero, .L809FD60C     
 /* 005CC 809FD5FC 24020002 */  addiu   $v0, $zero, 0x0002         ## $v0 = 00000002

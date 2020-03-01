@@ -224,9 +224,9 @@ glabel func_808B0CE0
 /* 006B4 808B1014 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 006B8 808B1018 468084A0 */  cvt.s.w $f18, $f16                 
 /* 006BC 808B101C 46049302 */  mul.s   $f12, $f18, $f4            
-/* 006C0 808B1020 0C034348 */  jal     func_800D0D20              
+/* 006C0 808B1020 0C034348 */  jal     Matrix_RotateY              
 /* 006C4 808B1024 00000000 */  nop
-/* 006C8 808B1028 0C034236 */  jal     func_800D08D8              
+/* 006C8 808B1028 0C034236 */  jal     Matrix_Get              
 /* 006CC 808B102C 27A40044 */  addiu   $a0, $sp, 0x0044           ## $a0 = FFFFFF5C
 /* 006D0 808B1030 27A40044 */  addiu   $a0, $sp, 0x0044           ## $a0 = FFFFFF5C
 /* 006D4 808B1034 260500B4 */  addiu   $a1, $s0, 0x00B4           ## $a1 = 000000B4

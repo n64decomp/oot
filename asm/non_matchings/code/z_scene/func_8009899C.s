@@ -21,13 +21,13 @@ glabel func_8009899C
 /* B0FB60 800989C0 AFB1001C */  sw    $s1, 0x1c($sp)
 /* B0FB64 800989C4 AFB00018 */  sw    $s0, 0x18($sp)
 /* B0FB68 800989C8 8CA20004 */  lw    $v0, 4($a1)
-/* B0FB6C 800989CC 3C198016 */  lui   $t9, %hi(D_80166FA8)
+/* B0FB6C 800989CC 3C198016 */  lui   $t9, %hi(gSegments)
 /* B0FB70 800989D0 3C0100FF */  lui   $at, (0x00FFFFFF >> 16) # lui $at, 0xff
 /* B0FB74 800989D4 00027100 */  sll   $t6, $v0, 4
 /* B0FB78 800989D8 000E7F02 */  srl   $t7, $t6, 0x1c
 /* B0FB7C 800989DC 000FC080 */  sll   $t8, $t7, 2
 /* B0FB80 800989E0 0338C821 */  addu  $t9, $t9, $t8
-/* B0FB84 800989E4 8F396FA8 */  lw    $t9, %lo(D_80166FA8)($t9)
+/* B0FB84 800989E4 8F396FA8 */  lw    $t9, %lo(gSegments)($t9)
 /* B0FB88 800989E8 3421FFFF */  ori   $at, (0x00FFFFFF & 0xFFFF) # ori $at, $at, 0xffff
 /* B0FB8C 800989EC 00414024 */  and   $t0, $v0, $at
 /* B0FB90 800989F0 3C018000 */  lui   $at, 0x8000

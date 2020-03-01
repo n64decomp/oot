@@ -79,7 +79,7 @@ glabel Cutscene_HandleConditionalTriggers
 /* AE0470 800692D0 0C00D6DD */  jal   Flags_SetEventChkInf
 /* AE0474 800692D4 240400C1 */   li    $a0, 193
 /* AE0478 800692D8 8FA40020 */  lw    $a0, 0x20($sp)
-/* AE047C 800692DC 0C021344 */  jal   func_80084D10
+/* AE047C 800692DC 0C021344 */  jal   Item_Give
 /* AE0480 800692E0 24050007 */   li    $a1, 7
 /* AE0484 800692E4 2419011E */  li    $t9, 286
 /* AE0488 800692E8 3408FFF0 */  li    $t0, 65520
@@ -87,8 +87,8 @@ glabel Cutscene_HandleConditionalTriggers
 /* AE0490 800692F0 10000034 */  b     .L800693C4
 /* AE0494 800692F4 AE080008 */   sw    $t0, 8($s0)
 .L800692F8:
-/* AE0498 800692F8 3C038012 */  lui   $v1, %hi(D_80127120) # $v1, 0x8012
-/* AE049C 800692FC 24637120 */  addiu $v1, %lo(D_80127120) # addiu $v1, $v1, 0x7120
+/* AE0498 800692F8 3C038012 */  lui   $v1, %hi(gBitFlags) # $v1, 0x8012
+/* AE049C 800692FC 24637120 */  addiu $v1, %lo(gBitFlags) # addiu $v1, $v1, 0x7120
 /* AE04A0 80069300 8C69000C */  lw    $t1, 0xc($v1)
 /* AE04A4 80069304 8E0200A4 */  lw    $v0, 0xa4($s0)
 /* AE04A8 80069308 01225024 */  and   $t2, $t1, $v0

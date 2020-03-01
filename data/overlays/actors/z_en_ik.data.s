@@ -55,11 +55,11 @@ glabel D_80A7861C
  .word func_80A77ED0
 .word func_80A77EDC
 .word func_80A77844
-glabel D_80A78628
+glabel En_Ik_InitVars
  .word 0x01130900, 0x00000010, 0x01060000, 0x000004DC
-.word func_80A78260
-.word func_80A74310
-.word func_80A77B9C
-.word func_80A78074
+.word EnIk_Init
+.word EnIk_Destroy
+.word EnIk_Update
+.word EnIk_Draw
 .word 0x00000000, 0x00000000
 

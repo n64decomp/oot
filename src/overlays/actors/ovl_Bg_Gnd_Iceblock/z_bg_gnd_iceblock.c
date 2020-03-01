@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_gnd_iceblock.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_80879AA0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000030
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_80879BD4.s")
+void BgGndIceblock_Init(BgGndIceblock* this, GlobalContext* globalCtx);
+void BgGndIceblock_Destroy(BgGndIceblock* this, GlobalContext* globalCtx);
+void BgGndIceblock_Update(BgGndIceblock* this, GlobalContext* globalCtx);
+void BgGndIceblock_Draw(BgGndIceblock* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Gnd_Iceblock_InitVars =
+{
+    ACTOR_BG_GND_ICEBLOCK,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_DEMO_KEKKAI,
+    sizeof(BgGndIceblock),
+    (ActorFunc)BgGndIceblock_Init,
+    (ActorFunc)BgGndIceblock_Destroy,
+    (ActorFunc)BgGndIceblock_Update,
+    (ActorFunc)BgGndIceblock_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/BgGndIceblock_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/BgGndIceblock_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_80879C04.s")
 
@@ -23,11 +45,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_8087A39C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_8087A6CC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/BgGndIceblock_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/func_8087A6F0.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Gnd_Iceblock/BgGndIceblock_Draw.s")
 

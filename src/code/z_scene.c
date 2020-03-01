@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 #include <vt.h>
 
 RomFile sNaviMsgFiles[];
@@ -38,20 +37,20 @@ void Object_InitBank(GlobalContext* globalCtx, ObjectContext* objectCtx)
     u32 spaceSize;
     s32 i;
 
-    if (globalCtx2->sceneNum == 81)
+    if (globalCtx2->sceneNum == SCENE_SPOT00)
         spaceSize = 1024000;
-    else if (globalCtx2->sceneNum == 79)
+    else if (globalCtx2->sceneNum == SCENE_GANON_DEMO)
     {
         if (gSaveContext.scene_setup_index != 4)
             spaceSize = 1177600;
         else
             spaceSize = 1024000;
     }
-    else if (globalCtx2->sceneNum == 23)
+    else if (globalCtx2->sceneNum == SCENE_JYASINBOSS)
         spaceSize = 1075200;
-    else if (globalCtx2->sceneNum == 68)
+    else if (globalCtx2->sceneNum == SCENE_KENJYANOMA)
         spaceSize = 1075200;
-    else if (globalCtx2->sceneNum == 25)
+    else if (globalCtx2->sceneNum == SCENE_GANON_BOSS)
         spaceSize = 1075200;
     else
         spaceSize = 1024000;
@@ -73,7 +72,7 @@ void Object_InitBank(GlobalContext* globalCtx, ObjectContext* objectCtx)
     objectCtx->spaceEnd = (void*)((s32)objectCtx->spaceStart + spaceSize);
 
     objectCtx->mainKeepIndex = Object_Spawn(objectCtx, OBJECT_GAMEPLAY_KEEP);
-    D_80166FB8 = PHYSICAL_TO_VIRTUAL(objectCtx->status[objectCtx->mainKeepIndex].segment);
+    gSegments[4] = PHYSICAL_TO_VIRTUAL(objectCtx->status[objectCtx->mainKeepIndex].segment);
 }
 
 void Object_UpdateBank(ObjectContext* objectCtx)
@@ -276,7 +275,7 @@ void func_8009883C(GlobalContext* globalCtx, SceneCmd* cmd)
     if (cmd->specialFiles.keepObjectId != 0)
     {
         globalCtx->objectCtx.subKeepIndex = Object_Spawn(&globalCtx->objectCtx, cmd->specialFiles.keepObjectId);
-        D_80166FBC = PHYSICAL_TO_VIRTUAL(globalCtx->objectCtx.status[globalCtx->objectCtx.subKeepIndex].segment);
+        gSegments[5] = PHYSICAL_TO_VIRTUAL(globalCtx->objectCtx.status[globalCtx->objectCtx.subKeepIndex].segment);
     }
 
     if (cmd->specialFiles.naviMsgNum != 0)
@@ -291,7 +290,7 @@ void func_80098904(GlobalContext* globalCtx, SceneCmd* cmd)
     globalCtx->roomCtx.curRoom.unk_03 = cmd->roomBehavior.data1;
     globalCtx->roomCtx.curRoom.unk_02 = cmd->roomBehavior.data2;
     globalCtx->roomCtx.curRoom.showInvisActors = (cmd->roomBehavior.data2 >> 8) & 1;
-    globalCtx->sub_20D8.sub_8000.unk_640C = (cmd->roomBehavior.data2 >> 0xA) & 1;
+    globalCtx->msgCtx.unk_E40C = (cmd->roomBehavior.data2 >> 0xA) & 1;
 }
 #else
 void func_80098904(GlobalContext* globalCtx, SceneCmd* cmd);
@@ -403,13 +402,11 @@ void func_80098CC8(GlobalContext* globalCtx, SceneCmd* cmd)
     globalCtx->lightSettingsList = SEGMENTED_TO_VIRTUAL(cmd->lightSettingList.segment);
 }
 
-// TODO: find a proper way to load bytes from cmd->data2 here
-
 // Scene Command 0x11: Skybox Settings
 void func_80098D1C(GlobalContext* globalCtx, SceneCmd* cmd)
 {
     globalCtx->skyboxId = cmd->skyboxSettings.skyboxId;
-    globalCtx->unk_10A3B = globalCtx->unk_10A3C = cmd->skyboxSettings.unk_05;
+    globalCtx->gloomySky = globalCtx->unk_10A3C = cmd->skyboxSettings.unk_05;
     globalCtx->unk_10A42 = cmd->skyboxSettings.unk_06;
 }
 
@@ -563,23 +560,23 @@ void func_8009934C(GlobalContext* globalCtx, SceneCmd* cmd)
 // Scene Command 0x19: Misc. Settings (Camera & World Map Area)
 void func_800993C0(GlobalContext* globalCtx, SceneCmd* cmd)
 {
-    gGameInfo->unk_4B2 = cmd->miscSettings.cameraMovement;
+    YREG(15) = cmd->miscSettings.cameraMovement;
     gSaveContext.world_map_area = cmd->miscSettings.area;
 
-    if ((globalCtx->sceneNum == 44) || (globalCtx->sceneNum == 66))
+    if ((globalCtx->sceneNum == SCENE_SHOP1) || (globalCtx->sceneNum == SCENE_SYATEKIJYOU))
     {
-        if ((gSaveContext.link_age != 0 ? 5 : 0x11) == 0x11)
+        if (LINK_AGE_IN_YEARS == YEARS_ADULT)
         {
             gSaveContext.world_map_area = 1;
         }
     }
 
-    if (((globalCtx->sceneNum >= 81) && (globalCtx->sceneNum <= 100)) ||
-        ((globalCtx->sceneNum >= 27) && (globalCtx->sceneNum <= 37)))
+    if (((globalCtx->sceneNum >= SCENE_SPOT00) && (globalCtx->sceneNum <= SCENE_GANON_TOU)) ||
+        ((globalCtx->sceneNum >= SCENE_ENTRA) && (globalCtx->sceneNum <= SCENE_SHRINE_R)))
     {
         if (gSaveContext.cutscene_index < 0xFFF0)
         {
-            gSaveContext.world_map_area_data |= D_80127120[gSaveContext.world_map_area];
+            gSaveContext.world_map_area_data |= gBitFlags[gSaveContext.world_map_area];
             osSyncPrintf("０００  ａｒｅａ＿ａｒｒｉｖａｌ＝%x (%d)\n", gSaveContext.world_map_area_data, gSaveContext.world_map_area);
         }
     }

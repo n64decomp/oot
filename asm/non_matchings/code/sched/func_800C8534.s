@@ -20,7 +20,7 @@ glabel func_800C8534
 /* B3F71C 800C857C 24060000 */   li    $a2, 0
 /* B3F720 800C8580 3C048014 */  lui   $a0, %hi(D_80145D80) # $a0, 0x8014
 /* B3F724 800C8584 24845D80 */  addiu $a0, %lo(D_80145D80) # addiu $a0, $a0, 0x5d80
-/* B3F728 800C8588 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3F728 800C8588 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3F72C 800C858C 240501A5 */   li    $a1, 421
 /* B3F730 800C8590 3C0C8017 */  lui   $t4, %hi(D_8016A508) # $t4, 0x8017
 /* B3F734 800C8594 3C0D8017 */  lui   $t5, %hi(D_8016A50C) # $t5, 0x8017
@@ -99,7 +99,7 @@ glabel func_800C8534
 /* B3F850 800C86B0 8D8D0230 */  lw    $t5, 0x230($t4)
 /* B3F854 800C86B4 51A0001F */  beql  $t5, $zero, .L800C8734
 /* B3F858 800C86B8 8FA80020 */   lw    $t0, 0x20($sp)
-/* B3F85C 800C86BC 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3F85C 800C86BC 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3F860 800C86C0 240501AB */   li    $a1, 427
 /* B3F864 800C86C4 3C188017 */  lui   $t8, %hi(D_8016A500) # $t8, 0x8017
 /* B3F868 800C86C8 3C198017 */  lui   $t9, %hi(D_8016A504) # $t9, 0x8017
@@ -135,7 +135,7 @@ glabel func_800C8534
 /* B3F8DC 800C873C 8D090234 */  lw    $t1, 0x234($t0)
 /* B3F8E0 800C8740 5120001F */  beql  $t1, $zero, .L800C87C0
 /* B3F8E4 800C8744 8FBF0014 */   lw    $ra, 0x14($sp)
-/* B3F8E8 800C8748 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3F8E8 800C8748 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3F8EC 800C874C 240501AF */   li    $a1, 431
 /* B3F8F0 800C8750 3C0C8017 */  lui   $t4, %hi(D_8016A518) # $t4, 0x8017
 /* B3F8F4 800C8754 3C0D8017 */  lui   $t5, %hi(D_8016A51C) # $t5, 0x8017

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809EC5A0
+glabel En_Dh_InitVars
  .word 0x00A40500, 0x00000415, 0x00A60000, 0x00000324
-.word func_809EAD48
-.word func_809EAE80
-.word func_809EBFF8
-.word func_809EC230
+.word EnDh_Init
+.word EnDh_Destroy
+.word EnDh_Update
+.word EnDh_Draw
 glabel D_809EC5C0
  .word 0x00000D09, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010100, 0x00230046, 0x00000000, 0x00000000
 glabel D_809EC5EC

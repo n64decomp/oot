@@ -263,7 +263,6 @@ void FaultDrawer_VPrintf(const char* str, char* args) //va_list
     _Printf(&FaultDrawer_FormatStringFunc, &sFaultDrawerStruct, str, args);
 }
 
-#ifdef NON_MATCHING
 void FaultDrawer_Printf(const char* fmt, ...)
 {
     va_list args;
@@ -271,12 +270,7 @@ void FaultDrawer_Printf(const char* fmt, ...)
 
     FaultDrawer_VPrintf(fmt, args);
 }
-#else
-#pragma GLOBAL_ASM("asm/non_matchings/code/fault_drawer/FaultDrawer_Printf.s")
-#endif
 
-
-#ifdef NON_MATCHING
 void FaultDrawer_DrawText(s32 x, s32 y, const char* fmt, ...)
 {
     va_list args;
@@ -285,9 +279,6 @@ void FaultDrawer_DrawText(s32 x, s32 y, const char* fmt, ...)
     FaultDrawer_SetCursor(x, y);
     FaultDrawer_VPrintf(fmt, args);
 }
-#else
-#pragma GLOBAL_ASM("asm/non_matchings/code/fault_drawer/FaultDrawer_DrawText.s")
-#endif
 
 void FaultDrawer_SetDrawerFB(void* fb, u16 w, u16 h)
 {

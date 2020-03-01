@@ -22,7 +22,7 @@ glabel func_80101910
 /* B78AD4 80101934 00002825 */   move  $a1, $zero
 /* B78AD8 80101938 3C058017 */  lui   $a1, %hi(D_80175960) # $a1, 0x8017
 /* B78ADC 8010193C 24A55960 */  addiu $a1, %lo(D_80175960) # addiu $a1, $a1, 0x5960
-/* B78AE0 80101940 0C0404FC */  jal   func_801013F0
+/* B78AE0 80101940 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B78AE4 80101944 24040001 */   li    $a0, 1
 /* B78AE8 80101948 8FA40030 */  lw    $a0, 0x30($sp)
 /* B78AEC 8010194C 27A50028 */  addiu $a1, $sp, 0x28
@@ -30,7 +30,7 @@ glabel func_80101910
 /* B78AF4 80101954 24060001 */   li    $a2, 1
 /* B78AF8 80101958 3C058017 */  lui   $a1, %hi(D_80175960) # $a1, 0x8017
 /* B78AFC 8010195C 24A55960 */  addiu $a1, %lo(D_80175960) # addiu $a1, $a1, 0x5960
-/* B78B00 80101960 0C0404FC */  jal   func_801013F0
+/* B78B00 80101960 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B78B04 80101964 00002025 */   move  $a0, $zero
 /* B78B08 80101968 AFA2002C */  sw    $v0, 0x2c($sp)
 /* B78B0C 8010196C 8FA40030 */  lw    $a0, 0x30($sp)
@@ -71,10 +71,10 @@ glabel func_801019E0
 /* B78B80 801019E0 27BDFFE8 */  addiu $sp, $sp, -0x18
 /* B78B84 801019E4 3C068017 */  lui   $a2, %hi(D_80175960)
 /* B78B88 801019E8 240700FE */  li    $a3, 254
-/* B78B8C 801019EC 3C018017 */  lui   $at, %hi(D_80175810) # $at, 0x8017
+/* B78B8C 801019EC 3C018017 */  lui   $at, %hi(_osCont_lastPollType) # $at, 0x8017
 /* B78B90 801019F0 24C25960 */  addiu $v0, $a2, %lo(D_80175960)
 /* B78B94 801019F4 AFA5001C */  sw    $a1, 0x1c($sp)
-/* B78B98 801019F8 A0275810 */  sb    $a3, %lo(D_80175810)($at)
+/* B78B98 801019F8 A0275810 */  sb    $a3, %lo(_osCont_lastPollType)($at)
 /* B78B9C 801019FC 240F0001 */  li    $t7, 1
 /* B78BA0 80101A00 AC4F003C */  sw    $t7, 0x3c($v0)
 /* B78BA4 80101A04 24180001 */  li    $t8, 1

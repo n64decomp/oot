@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 void func_8007C1AC(Vec3f* dest, struct_80045714* arg1);
 

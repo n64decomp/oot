@@ -10,7 +10,7 @@ glabel func_80835E44
 /* 03C54 80835E64 2401002F */  addiu   $at, $zero, 0x002F         ## $at = 0000002F
 /* 03C58 80835E68 55C1000B */  bnel    $t6, $at, .L80835E98       
 /* 03C5C 80835E6C 8FBF0014 */  lw      $ra, 0x0014($sp)           
-/* 03C60 80835E70 0C020978 */  jal     func_800825E0              
+/* 03C60 80835E70 0C020978 */  jal     Interface_ChangeAlpha              
 /* 03C64 80835E74 24040002 */  addiu   $a0, $zero, 0x0002         ## $a0 = 00000002
 /* 03C68 80835E78 10000007 */  beq     $zero, $zero, .L80835E98   
 /* 03C6C 80835E7C 8FBF0014 */  lw      $ra, 0x0014($sp)           

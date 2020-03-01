@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80ABCA60
+glabel En_Nwc_InitVars
  .word 0x01350600, 0x00000030, 0x01240000, 0x00000734
-.word func_80ABC81C
-.word func_80ABC9A8
-.word func_80ABC9F0
-.word func_80ABCA38
+.word EnNwc_Init
+.word EnNwc_Destroy
+.word EnNwc_Update
+.word EnNwc_Draw
 glabel D_80ABCA80
  .word 0x01000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010000, 0x00000000, 0x00000000, 0x000A0064
 glabel D_80ABCAA4

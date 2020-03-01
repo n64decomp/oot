@@ -8,10 +8,10 @@ glabel func_808BB0AC
 /* 00284 808BB0C4 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 00288 808BB0C8 3C0E8016 */  lui     $t6, 0x8016                ## $t6 = 80160000
 /* 0028C 808BB0CC 8DCEE664 */  lw      $t6, -0x199C($t6)          ## 8015E664
-/* 00290 808BB0D0 3C0F808C */  lui     $t7, %hi(func_808BB1C4)    ## $t7 = 808C0000
+/* 00290 808BB0D0 3C0F808C */  lui     $t7, %hi(BgTokiSwd_Draw)    ## $t7 = 808C0000
 /* 00294 808BB0D4 2405182D */  addiu   $a1, $zero, 0x182D         ## $a1 = 0000182D
 /* 00298 808BB0D8 11C00006 */  beq     $t6, $zero, .L808BB0F4     
-/* 0029C 808BB0DC 25EFB1C4 */  addiu   $t7, $t7, %lo(func_808BB1C4) ## $t7 = 808BB1C4
+/* 0029C 808BB0DC 25EFB1C4 */  addiu   $t7, $t7, %lo(BgTokiSwd_Draw) ## $t7 = 808BB1C4
 /* 002A0 808BB0E0 0C00BE0A */  jal     Audio_PlayActorSound2
               
 /* 002A4 808BB0E4 AFA40018 */  sw      $a0, 0x0018($sp)           

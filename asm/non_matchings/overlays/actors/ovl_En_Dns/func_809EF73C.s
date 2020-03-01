@@ -39,7 +39,7 @@ glabel func_809EF73C
 /* 00478 809EF7C8 10000009 */  beq     $zero, $zero, .L809EF7F0   
 /* 0047C 809EF7CC 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L809EF7D0:
-/* 00480 809EF7D0 0C0218E2 */  jal     func_80086388              
+/* 00480 809EF7D0 0C0218E2 */  jal     Item_CheckObtainability              
 /* 00484 809EF7D4 24040058 */  addiu   $a0, $zero, 0x0058         ## $a0 = 00000058
 /* 00488 809EF7D8 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0048C 809EF7DC 54410004 */  bnel    $v0, $at, .L809EF7F0       

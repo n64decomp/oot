@@ -93,7 +93,7 @@ glabel func_80B4B010
 /* 00634 80B4B174 3C0641F0 */  lui     $a2, 0x41F0                ## $a2 = 41F00000
 /* 00638 80B4B178 0C02CE10 */  jal     func_800B3840              ## letterbox_target_addr
 /* 0063C 80B4B17C 24040020 */  addiu   $a0, $zero, 0x0020         ## $a0 = 00000020
-/* 00640 80B4B180 0C020978 */  jal     func_800825E0              
+/* 00640 80B4B180 0C020978 */  jal     Interface_ChangeAlpha              
 /* 00644 80B4B184 24040002 */  addiu   $a0, $zero, 0x0002         ## $a0 = 00000002
 /* 00648 80B4B188 27AC003C */  addiu   $t4, $sp, 0x003C           ## $t4 = FFFFFFCC
 /* 0064C 80B4B18C 8FA2006C */  lw      $v0, 0x006C($sp)           

@@ -49,7 +49,7 @@ glabel func_800C563C
 /* B3C7F0 800C5650 AFBF001C */  sw    $ra, 0x1c($sp)
 /* B3C7F4 800C5654 AFA60028 */  sw    $a2, 0x28($sp)
 /* B3C7F8 800C5658 00C02825 */  move  $a1, $a2
-/* B3C7FC 800C565C 0C03F570 */  jal   func_800FD5C0
+/* B3C7FC 800C565C 0C03F570 */  jal   SystemArena_MallocDebug
 /* B3C800 800C5660 00E03025 */   move  $a2, $a3
 /* B3C804 800C5664 1040000C */  beqz  $v0, .L800C5698
 /* B3C808 800C5668 8FAE0024 */   lw    $t6, 0x24($sp)
@@ -82,7 +82,7 @@ glabel func_800C56B0
 /* B3C864 800C56C4 3C058014 */  lui   $a1, %hi(D_80145118) # $a1, 0x8014
 /* B3C868 800C56C8 24A55118 */  addiu $a1, %lo(D_80145118) # addiu $a1, $a1, 0x5118
 /* B3C86C 800C56CC AFA70018 */  sw    $a3, 0x18($sp)
-/* B3C870 800C56D0 0C03F570 */  jal   func_800FD5C0
+/* B3C870 800C56D0 0C03F570 */  jal   SystemArena_MallocDebug
 /* B3C874 800C56D4 2406005D */   li    $a2, 93
 /* B3C878 800C56D8 1040000D */  beqz  $v0, .L800C5710
 /* B3C87C 800C56DC 8FA70018 */   lw    $a3, 0x18($sp)
@@ -119,7 +119,7 @@ glabel func_800C5724
 /* B3C8E8 800C5748 24C65134 */  addiu $a2, %lo(D_80145134) # addiu $a2, $a2, 0x5134
 /* B3C8EC 800C574C AFB00024 */  sw    $s0, 0x24($sp)
 /* B3C8F0 800C5750 24845128 */  addiu $a0, %lo(D_80145128) # addiu $a0, $a0, 0x5128
-/* B3C8F4 800C5754 0C000B58 */  jal   NullPointerCheck
+/* B3C8F4 800C5754 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B3C8F8 800C5758 24070078 */   li    $a3, 120
 /* B3C8FC 800C575C 8FB00024 */  lw    $s0, 0x24($sp)
 /* B3C900 800C5760 3C048014 */  lui   $a0, %hi(D_80145144) # $a0, 0x8014
@@ -128,7 +128,7 @@ glabel func_800C5724
 /* B3C90C 800C576C 24845144 */  addiu $a0, %lo(D_80145144) # addiu $a0, $a0, 0x5144
 /* B3C910 800C5770 24070079 */  li    $a3, 121
 /* B3C914 800C5774 2610FFF0 */  addiu $s0, $s0, -0x10
-/* B3C918 800C5778 0C000B58 */  jal   NullPointerCheck
+/* B3C918 800C5778 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B3C91C 800C577C 8E050000 */   lw    $a1, ($s0)
 /* B3C920 800C5780 8E0E0000 */  lw    $t6, ($s0)
 /* B3C924 800C5784 8E0F0004 */  lw    $t7, 4($s0)
@@ -142,7 +142,7 @@ glabel func_800C5724
 /* B3C944 800C57A4 AF380004 */  sw    $t8, 4($t9)
 /* B3C948 800C57A8 8C480004 */  lw    $t0, 4($v0)
 /* B3C94C 800C57AC 2406007D */  li    $a2, 125
-/* B3C950 800C57B0 0C03F5ED */  jal   func_800FD7B4
+/* B3C950 800C57B0 0C03F5ED */  jal   SystemArena_FreeDebug
 /* B3C954 800C57B4 AC480010 */   sw    $t0, 0x10($v0)
 .L800C57B8:
 /* B3C958 800C57B8 8FBF001C */  lw    $ra, 0x1c($sp)
@@ -166,7 +166,7 @@ glabel func_800C57CC
 .L800C57F8:
 /* B3C998 800C57F8 8E100000 */  lw    $s0, ($s0)
 /* B3C99C 800C57FC 02402825 */  move  $a1, $s2
-/* B3C9A0 800C5800 0C03F5ED */  jal   func_800FD7B4
+/* B3C9A0 800C5800 0C03F5ED */  jal   SystemArena_FreeDebug
 /* B3C9A4 800C5804 24060091 */   li    $a2, 145
 /* B3C9A8 800C5808 5630FFFB */  bnel  $s1, $s0, .L800C57F8
 /* B3C9AC 800C580C 02002025 */   move  $a0, $s0

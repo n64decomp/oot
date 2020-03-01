@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AFB4C0
+glabel En_Shopnuts_InitVars
  .word 0x01950500, 0x00000005, 0x01680000, 0x000002BC
-.word func_80AFA720
-.word func_80AFA858
-.word func_80AFB124
-.word func_80AFB46C
+.word EnShopnuts_Init
+.word EnShopnuts_Destroy
+.word EnShopnuts_Update
+.word EnShopnuts_Draw
 glabel D_80AFB4E0
  .word 0x06000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00140028, 0x00000000, 0x00000000
 glabel D_80AFB50C

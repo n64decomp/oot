@@ -11,12 +11,12 @@ glabel D_80A7F9F0
  .word 0x00000000
 glabel D_80A7F9F4
  .word 0x00000000
-glabel D_80A7F9F8
+glabel En_Ishi_InitVars
  .word 0x014E0600, 0x00800000, 0x00020000, 0x0000019C
-.word func_80A7EED8
-.word func_80A7F070
-.word func_80A7F87C
-.word func_80A7F9B0
+.word EnIshi_Init
+.word EnIshi_Destroy
+.word EnIshi_Update
+.word EnIshi_Draw
 glabel D_80A7FA18
  .word 0x3DCCCCCD
 glabel D_80A7FA1C

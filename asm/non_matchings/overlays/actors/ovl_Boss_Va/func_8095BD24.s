@@ -31,11 +31,11 @@ glabel func_8095BD24
 /* 0CAD8 8095BD98 44817000 */  mtc1    $at, $f14                  ## $f14 = 80.00
 /* 0CADC 8095BD9C 4600B306 */  mov.s   $f12, $f22                 
 /* 0CAE0 8095BDA0 3C0643C8 */  lui     $a2, 0x43C8                ## $a2 = 43C80000
-/* 0CAE4 8095BDA4 0C034261 */  jal     func_800D0984              
+/* 0CAE4 8095BDA4 0C034261 */  jal     Matrix_Translate              
 /* 0CAE8 8095BDA8 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 0CAEC 8095BDAC 3C018096 */  lui     $at, %hi(D_8095C940)       ## $at = 80960000
 /* 0CAF0 8095BDB0 C42CC940 */  lwc1    $f12, %lo(D_8095C940)($at) 
-/* 0CAF4 8095BDB4 0C034348 */  jal     func_800D0D20              
+/* 0CAF4 8095BDB4 0C034348 */  jal     Matrix_RotateY              
 /* 0CAF8 8095BDB8 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0CAFC 8095BDBC 44902000 */  mtc1    $s0, $f4                   ## $f4 = 0.00
 /* 0CB00 8095BDC0 3C018096 */  lui     $at, %hi(D_8095C944)       ## $at = 80960000
@@ -48,7 +48,7 @@ glabel func_8095BD24
 /* 0CB1C 8095BDDC 46083282 */  mul.s   $f10, $f6, $f8             
 /* 0CB20 8095BDE0 00000000 */  nop
 /* 0CB24 8095BDE4 460C5602 */  mul.s   $f24, $f10, $f12           
-/* 0CB28 8095BDE8 0C0342A3 */  jal     func_800D0A8C              
+/* 0CB28 8095BDE8 0C0342A3 */  jal     Matrix_Scale              
 /* 0CB2C 8095BDEC 4600C386 */  mov.s   $f14, $f24                 
 /* 0CB30 8095BDF0 4616C032 */  c.eq.s  $f24, $f22                 
 /* 0CB34 8095BDF4 3C018096 */  lui     $at, %hi(D_8095C94C)       ## $at = 80960000
@@ -60,7 +60,7 @@ glabel func_8095BD24
 /* 0CB4C 8095BE0C 46186683 */  div.s   $f26, $f12, $f24           
 /* 0CB50 8095BE10 4600B686 */  mov.s   $f26, $f22                 
 .L8095BE14:
-/* 0CB54 8095BE14 0C034236 */  jal     func_800D08D8              
+/* 0CB54 8095BE14 0C034236 */  jal     Matrix_Get              
 /* 0CB58 8095BE18 03C02025 */  or      $a0, $s8, $zero            ## $a0 = FFFFFFC0
 /* 0CB5C 8095BE1C 3C128096 */  lui     $s2, %hi(D_8095C3A0)       ## $s2 = 80960000
 /* 0CB60 8095BE20 3C118096 */  lui     $s1, %hi(D_8095C380)       ## $s1 = 80960000
@@ -76,10 +76,10 @@ glabel func_8095BD24
 /* 0CB88 8095BE48 2652C3A0 */  addiu   $s2, $s2, %lo(D_8095C3A0)  ## $s2 = 8095C3A0
 /* 0CB8C 8095BE4C 3C16DE00 */  lui     $s6, 0xDE00                ## $s6 = DE000000
 .L8095BE50:
-/* 0CB90 8095BE50 0C03423F */  jal     func_800D08FC              
+/* 0CB90 8095BE50 0C03423F */  jal     Matrix_Put              
 /* 0CB94 8095BE54 03C02025 */  or      $a0, $s8, $zero            ## $a0 = FFFFFFC0
 /* 0CB98 8095BE58 4600A306 */  mov.s   $f12, $f20                 
-/* 0CB9C 8095BE5C 0C0343B5 */  jal     func_800D0ED4              
+/* 0CB9C 8095BE5C 0C0343B5 */  jal     Matrix_RotateZ              
 /* 0CBA0 8095BE60 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 0CBA4 8095BE64 864F0000 */  lh      $t7, 0x0000($s2)           ## 8095C3A0
 /* 0CBA8 8095BE68 4406B000 */  mfc1    $a2, $f22                  
@@ -88,7 +88,7 @@ glabel func_8095BD24
 /* 0CBB4 8095BE74 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 0CBB8 8095BE78 468084A0 */  cvt.s.w $f18, $f16                 
 /* 0CBBC 8095BE7C 461A9382 */  mul.s   $f14, $f18, $f26           
-/* 0CBC0 8095BE80 0C034261 */  jal     func_800D0984              
+/* 0CBC0 8095BE80 0C034261 */  jal     Matrix_Translate              
 /* 0CBC4 8095BE84 00000000 */  nop
 /* 0CBC8 8095BE88 8E6202C0 */  lw      $v0, 0x02C0($s3)           ## 000002C0
 /* 0CBCC 8095BE8C 02A02825 */  or      $a1, $s5, $zero            ## $a1 = 8095C540
@@ -98,7 +98,7 @@ glabel func_8095BD24
 /* 0CBDC 8095BE9C AC540000 */  sw      $s4, 0x0000($v0)           ## 00000000
 /* 0CBE0 8095BEA0 8FB900D8 */  lw      $t9, 0x00D8($sp)           
 /* 0CBE4 8095BEA4 00408025 */  or      $s0, $v0, $zero            ## $s0 = 00000000
-/* 0CBE8 8095BEA8 0C0346A2 */  jal     func_800D1A88              
+/* 0CBE8 8095BEA8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0CBEC 8095BEAC 8F240000 */  lw      $a0, 0x0000($t9)           ## 00000000
 /* 0CBF0 8095BEB0 AE020004 */  sw      $v0, 0x0004($s0)           ## 00000004
 /* 0CBF4 8095BEB4 8E6202C0 */  lw      $v0, 0x02C0($s3)           ## 000002C0

@@ -4,8 +4,8 @@ glabel func_80AC0AB4
 /* 0045C 80AC0ABC AFBF0014 */  sw      $ra, 0x0014($sp)           
 /* 00460 80AC0AC0 8C980004 */  lw      $t8, 0x0004($a0)           ## 00000004
 /* 00464 80AC0AC4 848F008A */  lh      $t7, 0x008A($a0)           ## 0000008A
-/* 00468 80AC0AC8 3C0E80AC */  lui     $t6, %hi(func_80AC26D4)    ## $t6 = 80AC0000
-/* 0046C 80AC0ACC 25CE26D4 */  addiu   $t6, $t6, %lo(func_80AC26D4) ## $t6 = 80AC26D4
+/* 00468 80AC0AC8 3C0E80AC */  lui     $t6, %hi(EnOkuta_Draw)    ## $t6 = 80AC0000
+/* 0046C 80AC0ACC 25CE26D4 */  addiu   $t6, $t6, %lo(EnOkuta_Draw) ## $t6 = 80AC26D4
 /* 00470 80AC0AD0 37190001 */  ori     $t9, $t8, 0x0001           ## $t9 = 00000001
 /* 00474 80AC0AD4 00803025 */  or      $a2, $a0, $zero            ## $a2 = 00000000
 /* 00478 80AC0AD8 AC8E0134 */  sw      $t6, 0x0134($a0)           ## 00000134

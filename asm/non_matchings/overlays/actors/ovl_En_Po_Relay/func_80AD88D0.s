@@ -132,7 +132,7 @@ glabel func_80AD88D0
 /* 0138C 80AD8ACC 24060396 */  addiu   $a2, $zero, 0x0396         ## $a2 = 00000396
 /* 01390 80AD8AD0 8DA40000 */  lw      $a0, 0x0000($t5)           ## 00000000
 /* 01394 80AD8AD4 AFA80048 */  sw      $t0, 0x0048($sp)           
-/* 01398 80AD8AD8 0C0346A2 */  jal     func_800D1A88              
+/* 01398 80AD8AD8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0139C 80AD8ADC AFA20034 */  sw      $v0, 0x0034($sp)           
 /* 013A0 80AD8AE0 8FA30034 */  lw      $v1, 0x0034($sp)           
 /* 013A4 80AD8AE4 8FA80048 */  lw      $t0, 0x0048($sp)           

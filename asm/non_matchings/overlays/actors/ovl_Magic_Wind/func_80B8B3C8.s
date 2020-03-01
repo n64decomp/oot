@@ -14,7 +14,7 @@ glabel func_80B8B3C8
 .L80B8B3F8:
 /* 002F8 80B8B3F8 3C0480B9 */  lui     $a0, %hi(D_80B8CE3C)       ## $a0 = 80B90000
 /* 002FC 80B8B3FC 2484CE3C */  addiu   $a0, $a0, %lo(D_80B8CE3C)  ## $a0 = 80B8CE3C
-/* 00300 80B8B400 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 00300 80B8B400 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 00304 80B8B404 AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 00308 80B8B408 3C0480B9 */  lui     $a0, %hi(D_80B8CE50)       ## $a0 = 80B90000

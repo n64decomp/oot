@@ -12,7 +12,7 @@ glabel func_80A31E2C
 /* 014E4 80A31E54 A60F13FA */  sh      $t7, 0x13FA($s0)           ## 8015FA5A
 /* 014E8 80A31E58 24842808 */  addiu   $a0, $a0, %lo(D_80A32808)  ## $a0 = 80A32808
 /* 014EC 80A31E5C 24050456 */  addiu   $a1, $zero, 0x0456         ## $a1 = 00000456
-/* 014F0 80A31E60 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 014F0 80A31E60 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 014F4 80A31E64 AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 014F8 80A31E68 3C0480A3 */  lui     $a0, %hi(D_80A32818)       ## $a0 = 80A30000
@@ -24,7 +24,7 @@ glabel func_80A31E2C
 /* 0150C 80A31E7C 3C0480A3 */  lui     $a0, %hi(D_80A3283C)       ## $a0 = 80A30000
 /* 01510 80A31E80 2484283C */  addiu   $a0, $a0, %lo(D_80A3283C)  ## $a0 = 80A3283C
 /* 01514 80A31E84 24050457 */  addiu   $a1, $zero, 0x0457         ## $a1 = 00000457
-/* 01518 80A31E88 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 01518 80A31E88 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 0151C 80A31E8C AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 01520 80A31E90 3C0480A3 */  lui     $a0, %hi(D_80A3284C)       ## $a0 = 80A30000

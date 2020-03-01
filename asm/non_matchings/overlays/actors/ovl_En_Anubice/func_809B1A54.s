@@ -80,7 +80,7 @@ glabel func_809B1A54
 /* 00A58 809B1B78 E7A20058 */  swc1    $f2, 0x0058($sp)           
 /* 00A5C 809B1B7C E7AE005C */  swc1    $f14, 0x005C($sp)          
 /* 00A60 809B1B80 46062302 */  mul.s   $f12, $f4, $f6             
-/* 00A64 809B1B84 0C034348 */  jal     func_800D0D20              
+/* 00A64 809B1B84 0C034348 */  jal     Matrix_RotateY              
 /* 00A68 809B1B88 00000000 */  nop
 /* 00A6C 809B1B8C 3C014700 */  lui     $at, 0x4700                ## $at = 47000000
 /* 00A70 809B1B90 C7A20058 */  lwc1    $f2, 0x0058($sp)           
@@ -90,7 +90,7 @@ glabel func_809B1A54
 /* 00A80 809B1BA0 46081283 */  div.s   $f10, $f2, $f8             
 /* 00A84 809B1BA4 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 00A88 809B1BA8 46105302 */  mul.s   $f12, $f10, $f16           
-/* 00A8C 809B1BAC 0C0342DC */  jal     func_800D0B70              
+/* 00A8C 809B1BAC 0C0342DC */  jal     Matrix_RotateX              
 /* 00A90 809B1BB0 00000000 */  nop
 /* 00A94 809B1BB4 3C014120 */  lui     $at, 0x4120                ## $at = 41200000
 /* 00A98 809B1BB8 44816000 */  mtc1    $at, $f12                  ## $f12 = 10.00

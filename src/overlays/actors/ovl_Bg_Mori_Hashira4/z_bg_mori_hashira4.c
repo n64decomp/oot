@@ -1,13 +1,34 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_mori_hashira4.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void BgMoriHashira4_Init(BgMoriHashira4* this, GlobalContext* globalCtx);
+void BgMoriHashira4_Destroy(BgMoriHashira4* this, GlobalContext* globalCtx);
+void BgMoriHashira4_Update(BgMoriHashira4* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Mori_Hashira4_InitVars =
+{
+    ACTOR_BG_MORI_HASHIRA4,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_MORI_OBJECTS,
+    sizeof(BgMoriHashira4),
+    (ActorFunc)BgMoriHashira4_Init,
+    (ActorFunc)BgMoriHashira4_Destroy,
+    (ActorFunc)BgMoriHashira4_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A3060.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A3068.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A30F0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/BgMoriHashira4_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A322C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/BgMoriHashira4_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A325C.s")
 
@@ -21,11 +42,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A3400.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A3458.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/BgMoriHashira4_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mori_Hashira4/func_808A3484.s")
-
-
-
-
 

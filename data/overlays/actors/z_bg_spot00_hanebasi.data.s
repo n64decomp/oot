@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808AA790
+glabel Bg_Spot00_Hanebasi_InitVars
  .word 0x004A0100, 0x00000010, 0x002F0000, 0x00000180
-.word func_808A9780
-.word func_808A9B8C
-.word func_808A9FAC
-.word func_808AA588
+.word BgSpot00Hanebasi_Init
+.word BgSpot00Hanebasi_Destroy
+.word BgSpot00Hanebasi_Update
+.word BgSpot00Hanebasi_Draw
 glabel D_808AA7B0
  .word 0x00000000
 glabel D_808AA7B4

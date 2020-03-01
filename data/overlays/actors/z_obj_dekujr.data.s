@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B929E0
+glabel Obj_Dekujr_InitVars
  .word 0x00D30400, 0x00000009, 0x00CC0000, 0x000001A4
-.word func_80B92420
-.word func_80B9252C
-.word func_80B92768
-.word func_80B92854
+.word ObjDekujr_Init
+.word ObjDekujr_Destroy
+.word ObjDekujr_Update
+.word ObjDekujr_Draw
 glabel D_80B92A00
  .word 0x00000000, 0x00003901, 0x02000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00000100, 0x003C0050, 0x00000000, 0x00000000
 glabel D_80B92A2C

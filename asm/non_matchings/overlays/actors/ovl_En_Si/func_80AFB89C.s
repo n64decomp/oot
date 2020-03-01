@@ -27,7 +27,7 @@ glabel func_80AFB89C
 /* 00268 80AFB8F8 11210010 */  beq     $t1, $at, .L80AFB93C       
 /* 0026C 80AFB8FC A61900B6 */  sh      $t9, 0x00B6($s0)           ## 000000B6
 /* 00270 80AFB900 8FA40034 */  lw      $a0, 0x0034($sp)           
-/* 00274 80AFB904 0C021344 */  jal     func_80084D10              
+/* 00274 80AFB904 0C021344 */  jal     Item_Give              
 /* 00278 80AFB908 24050071 */  addiu   $a1, $zero, 0x0071         ## $a1 = 00000071
 /* 0027C 80AFB90C 8FAB002C */  lw      $t3, 0x002C($sp)           
 /* 00280 80AFB910 240A000A */  addiu   $t2, $zero, 0x000A         ## $t2 = 0000000A

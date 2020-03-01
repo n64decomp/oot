@@ -182,7 +182,7 @@ glabel func_8083B040
 /* 090C4 8083B2D4 14820013 */  bne     $a0, $v0, .L8083B324       
 /* 090C8 8083B2D8 2405FFFF */  addiu   $a1, $zero, 0xFFFF         ## $a1 = FFFFFFFF
 /* 090CC 8083B2DC 24040010 */  addiu   $a0, $zero, 0x0010         ## $a0 = 00000010
-/* 090D0 8083B2E0 0C021CCC */  jal     func_80087330              
+/* 090D0 8083B2E0 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 090D4 8083B2E4 AFA30020 */  sw      $v1, 0x0020($sp)           
 /* 090D8 8083B2E8 3C068084 */  lui     $a2, %hi(func_8084279C)    ## $a2 = 80840000
 /* 090DC 8083B2EC 24C6279C */  addiu   $a2, $a2, %lo(func_8084279C) ## $a2 = 8084279C

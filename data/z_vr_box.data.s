@@ -44,4 +44,4 @@ glabel D_8012AEBC
     .incbin "baserom.z64", 0xBA205C, 0x50
 
 glabel D_8012AF0C
-    .incbin "baserom.z64", 0xBA20AC, 0xF4
+    .incbin "baserom.z64", 0xBA20AC, 0x84

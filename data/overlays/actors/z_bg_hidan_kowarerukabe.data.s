@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8088ADF0
+glabel Bg_Hidan_Kowarerukabe_InitVars
  .word 0x00CF0100, 0x00000000, 0x002C0000, 0x000001C4
-.word func_8088A178
-.word func_8088A248
-.word func_8088AC2C
-.word func_8088ACFC
+.word BgHidanKowarerukabe_Init
+.word BgHidanKowarerukabe_Destroy
+.word BgHidanKowarerukabe_Update
+.word BgHidanKowarerukabe_Draw
 glabel D_8088AE10
  .word 0x0600B9C0, 0x0600C038, 0x0600B900
 glabel D_8088AE1C

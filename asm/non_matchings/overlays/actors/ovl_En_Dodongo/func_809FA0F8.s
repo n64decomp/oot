@@ -14,7 +14,7 @@ glabel func_809FA0F8
 /* 01ED4 809FA124 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 01ED8 809FA128 C44C034C */  lwc1    $f12, 0x034C($v0)          ## 0000034C
 /* 01EDC 809FA12C C44E0350 */  lwc1    $f14, 0x0350($v0)          ## 00000350
-/* 01EE0 809FA130 0C0342A3 */  jal     func_800D0A8C              
+/* 01EE0 809FA130 0C0342A3 */  jal     Matrix_Scale              
 /* 01EE4 809FA134 8C460354 */  lw      $a2, 0x0354($v0)           ## 00000354
 /* 01EE8 809FA138 8FBF0014 */  lw      $ra, 0x0014($sp)           
 .L809FA13C:

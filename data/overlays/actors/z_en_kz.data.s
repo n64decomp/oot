@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A9D8A0
+glabel En_Kz_InitVars
  .word 0x01640400, 0x00000009, 0x00FF0000, 0x000002D8
-.word func_80A9CF0C
-.word func_80A9D098
-.word func_80A9D5B4
-.word func_80A9D7A0
+.word EnKz_Init
+.word EnKz_Destroy
+.word EnKz_Update
+.word EnKz_Draw
 glabel D_80A9D8C0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00500078, 0x00000000, 0x00000000
 glabel D_80A9D8EC

@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_obj_hana.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/func_80B93860.s")
+#define ROOM  0x00
+#define FLAGS 0x00000000
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/func_80B93958.s")
+void ObjHana_Init(ObjHana* this, GlobalContext* globalCtx);
+void ObjHana_Destroy(ObjHana* this, GlobalContext* globalCtx);
+void ObjHana_Update(ObjHana* this, GlobalContext* globalCtx);
+void ObjHana_Draw(ObjHana* this, GlobalContext* globalCtx);
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/func_80B939A0.s")
+/*
+const ActorInit Obj_Hana_InitVars =
+{
+    ACTOR_OBJ_HANA,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_FIELD_KEEP,
+    sizeof(ObjHana),
+    (ActorFunc)ObjHana_Init,
+    (ActorFunc)ObjHana_Destroy,
+    (ActorFunc)ObjHana_Update,
+    (ActorFunc)ObjHana_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/ObjHana_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/func_80B93A10.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/ObjHana_Destroy.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/ObjHana_Update.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Hana/ObjHana_Draw.s")
 
 
 

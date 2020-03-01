@@ -71,7 +71,7 @@ glabel func_80A4A6AC
 /* 018F0 80A4A7B0 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 018F4 80A4A7B4 46049183 */  div.s   $f6, $f18, $f4             
 /* 018F8 80A4A7B8 46083302 */  mul.s   $f12, $f6, $f8             
-/* 018FC 80A4A7BC 0C034348 */  jal     func_800D0D20              
+/* 018FC 80A4A7BC 0C034348 */  jal     Matrix_RotateY              
 /* 01900 80A4A7C0 00000000 */  nop
 /* 01904 80A4A7C4 3C0480A5 */  lui     $a0, %hi(D_80A4B830)       ## $a0 = 80A50000
 /* 01908 80A4A7C8 2484B830 */  addiu   $a0, $a0, %lo(D_80A4B830)  ## $a0 = 80A4B830

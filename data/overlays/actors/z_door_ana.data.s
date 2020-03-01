@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809944A0
+glabel Door_Ana_InitVars
  .word 0x009B0700, 0x02000000, 0x00020000, 0x0000019C
-.word func_80993EF8
-.word func_80993FB4
-.word func_80994384
-.word func_809943D8
+.word DoorAna_Init
+.word DoorAna_Destroy
+.word DoorAna_Update
+.word DoorAna_Draw
 glabel D_809944C0
  .word 0x0A000900, 0x00010000, 0x02000000, 0x00000000, 0x00000000, 0x00000048, 0x00000000, 0x00010000, 0x0032000A, 0x00000000, 0x00000000
 glabel D_809944EC

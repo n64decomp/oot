@@ -77,8 +77,8 @@ glabel func_80AFEAEC
 /* 00968 80AFEC18 AFA80014 */  sw      $t0, 0x0014($sp)           
 /* 0096C 80AFEC1C 27A50020 */  addiu   $a1, $sp, 0x0020           ## $a1 = FFFFFB38
 /* 00970 80AFEC20 E7A404B0 */  swc1    $f4, 0x04B0($sp)           
-/* 00974 80AFEC24 0C009B35 */  jal     EffectAdd
-              ## EffectAdd
+/* 00974 80AFEC24 0C009B35 */  jal     Effect_Add
+              ## Effect_Add
 /* 00978 80AFEC28 E7A604B4 */  swc1    $f6, 0x04B4($sp)           
 /* 0097C 80AFEC2C 8FBF001C */  lw      $ra, 0x001C($sp)           
 /* 00980 80AFEC30 27BD04E8 */  addiu   $sp, $sp, 0x04E8           ## $sp = 00000000

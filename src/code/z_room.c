@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 #include <vt.h>
 
 void func_80095AB4(GlobalContext* globalCtx, Room* room, u32 flags);
@@ -32,8 +31,6 @@ void (*sRoomDrawHandlers[])(GlobalContext* globalCtx, Room* room, u32 flags) =
     func_80095D04,
 };
 
-UNK_TYPE D_8012711C = 0;
-
 void func_80095AA0(GlobalContext* globalCtx, Room* room, UNK_TYPE arg2, UNK_TYPE arg3)
 {
 
@@ -56,7 +53,7 @@ void func_80095AB4(GlobalContext* globalCtx, Room* room, u32 flags)
         func_800342EC(&D_801270A0, globalCtx);
         gSPSegment(gfxCtx->polyOpa.p++, 0x03, room->segment);
         func_80093C80(globalCtx);
-        gSPMatrix(gfxCtx->polyOpa.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyOpa.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
     }
 
     if (flags & 2)
@@ -64,7 +61,7 @@ void func_80095AB4(GlobalContext* globalCtx, Room* room, u32 flags)
         func_8003435C(&D_801270A0, globalCtx);
         gSPSegment(gfxCtx->polyXlu.p++, 0x03, room->segment);
         func_80093D84(globalCtx->gfxCtx);
-        gSPMatrix(gfxCtx->polyXlu.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyXlu.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
     }
 
     polygon0 = &room->mesh->polygon0;
@@ -128,7 +125,7 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         func_800342EC(&D_801270A0, globalCtx);
         gSPSegment(gfxCtx->polyOpa.p++, 0x03, room->segment);
         func_80093C80(globalCtx);
-        gSPMatrix(gfxCtx->polyOpa.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyOpa.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
     }
 
     if (flags & 2)
@@ -136,7 +133,7 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         func_8003435C(&D_801270A0, globalCtx);
         gSPSegment(gfxCtx->polyXlu.p++, 0x03, room->segment);
         func_80093D84(globalCtx->gfxCtx);
-        gSPMatrix(gfxCtx->polyXlu.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyXlu.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
     }
 
     spA4 = &spB8[0];
@@ -151,7 +148,7 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         sp90.x = polygonDlist->pos.x;
         sp90.y = polygonDlist->pos.y;
         sp90.z = polygonDlist->pos.z;
-        func_800A6E10(globalCtx->mf_11D60, &sp90, &sp84, &sp80);
+        func_800A6E10(&globalCtx->mf_11D60, &sp90, &sp84, &sp80);
         temp_f0 = polygonDlist->unk_06;
         if (-temp_f0 < sp84.z)
         {
@@ -202,13 +199,13 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         polygonDlist++;
     }
 
-    gGameInfo->unk_D82 = polygon2->num;
+    iREG(87) = polygon2->num;
 
     sp9C = 1;
     while (spB4 != NULL)
     {
         phi_s0 = spB4->unk_00;
-        if (gGameInfo->unk_D80 != 0)
+        if (iREG(86) != 0)
         {
             phi_v1 = 0;
             while (phi_v1 < polygon2->num)
@@ -219,8 +216,8 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
                 sp78++;
             }
 
-            if (((gGameInfo->unk_D80 == 1) && (gGameInfo->unk_D86 > sp9C)) ||
-                ((gGameInfo->unk_D80 == 2) && (gGameInfo->unk_D86 == sp9C)))
+            if (((iREG(86) == 1) && (iREG(89) > sp9C)) ||
+                ((iREG(86) == 2) && (iREG(89) == sp9C)))
             {
                 if ((flags & 1) && (phi_s0->opa != NULL))
                     gSPDisplayList(gfxCtx->polyOpa.p++, phi_s0->opa);
@@ -242,7 +239,7 @@ void func_80095D04(GlobalContext* globalCtx, Room* room, u32 flags)
         sp9C++;
     }
 
-    gGameInfo->unk_D84 = sp9C - 1;
+    iREG(88) = sp9C - 1;
 
     func_800C6B54(sp5C, globalCtx->gfxCtx, "../z_room.c", 430);
 }
@@ -334,7 +331,7 @@ void func_8009638C(Gfx** displayList, u32 source, u32 tlut, u16 width, u16 heigh
         gDPPipeSync(displayListHead++);
     }
 
-    if ((fmt == G_IM_FMT_RGBA) && (gGameInfo->unk_108 == 0))
+    if ((fmt == G_IM_FMT_RGBA) && (SREG(26) == 0))
     {
         bg->b.frameW = width * 4;
         bg->b.frameH = height * 4;
@@ -395,9 +392,9 @@ void func_80096680(GlobalContext* globalCtx, Room* room, u32 flags)
     polygon1 = &room->mesh->polygon1;
     sp9C = (camera->unk_142 ^ 0x19) < 1U;
     polygonDlist = SEGMENTED_TO_VIRTUAL(polygon1->dlist);
-    sp98 = (flags & 1) && sp9C && polygon1->single.source && !(gGameInfo->unk_106 & 1);
-    sp94 = (flags & 1) && polygonDlist->opa && !(gGameInfo->unk_106 & 2);
-    sp90 = (flags & 2) && polygonDlist->xlu && !(gGameInfo->unk_106 & 4);
+    sp98 = (flags & 1) && sp9C && polygon1->single.source && !(SREG(25) & 1);
+    sp94 = (flags & 1) && polygonDlist->opa && !(SREG(25) & 2);
+    sp90 = (flags & 2) && polygonDlist->xlu && !(SREG(25) & 4);
 
     if (sp94 || sp98)
     {
@@ -406,7 +403,7 @@ void func_80096680(GlobalContext* globalCtx, Room* room, u32 flags)
         if (sp94)
         {
             func_80093D18(globalCtx->gfxCtx);
-            gSPMatrix(gfxCtx->polyOpa.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+            gSPMatrix(gfxCtx->polyOpa.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
             gSPDisplayList(gfxCtx->polyOpa.p++, polygonDlist->opa);
         }
 
@@ -438,7 +435,7 @@ void func_80096680(GlobalContext* globalCtx, Room* room, u32 flags)
     {
         gSPSegment(gfxCtx->polyXlu.p++, 0x03, room->segment);
         func_80093D84(globalCtx->gfxCtx);
-        gSPMatrix(gfxCtx->polyXlu.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyXlu.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
         gSPDisplayList(gfxCtx->polyXlu.p++, polygonDlist->xlu);
     }
 
@@ -468,7 +465,7 @@ BgImage* func_80096A74(PolygonType1* polygon1, GlobalContext* globalCtx)
     if (camId2 >= 0)
         camId = camId2;
 
-    player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    player = PLAYER;
     player->actor.params = (player->actor.params & 0xFF00) | camId;
 
     bgImage = SEGMENTED_TO_VIRTUAL(polygon1->multi.list);
@@ -481,7 +478,7 @@ BgImage* func_80096A74(PolygonType1* polygon1, GlobalContext* globalCtx)
 
     // Translates to: "z_room.c: DATA CONSISTENT WITH CAMERA ID DOES NOT EXIST camid=%d"
     osSyncPrintf(VT_COL(RED, WHITE) "z_room.c:カメラＩＤに一致するデータが存在しません camid=%d\n" VT_RST, camId);
-    func_80002E50("../z_room.c", 726);
+    LogUtils_HungupThread("../z_room.c", 726);
 
     return NULL;
 }
@@ -511,9 +508,9 @@ void func_80096B6C(GlobalContext* globalCtx, Room* room, u32 flags)
     polygon1 = &room->mesh->polygon1;
     polygonDlist = SEGMENTED_TO_VIRTUAL(polygon1->dlist);
     bgImage = func_80096A74(polygon1, globalCtx);
-    sp94 = (flags & 1) && sp98 && bgImage->source && !(gGameInfo->unk_106 & 1);
-    sp90 = (flags & 1) && polygonDlist->opa && !(gGameInfo->unk_106 & 2);
-    sp8C = (flags & 2) && polygonDlist->xlu && !(gGameInfo->unk_106 & 4);
+    sp94 = (flags & 1) && sp98 && bgImage->source && !(SREG(25) & 1);
+    sp90 = (flags & 1) && polygonDlist->opa && !(SREG(25) & 2);
+    sp8C = (flags & 2) && polygonDlist->xlu && !(SREG(25) & 4);
 
     if (sp90 || sp94)
     {
@@ -522,7 +519,7 @@ void func_80096B6C(GlobalContext* globalCtx, Room* room, u32 flags)
         if (sp90)
         {
             func_80093D18(globalCtx->gfxCtx);
-            gSPMatrix(gfxCtx->polyOpa.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+            gSPMatrix(gfxCtx->polyOpa.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
             gSPDisplayList(gfxCtx->polyOpa.p++, polygonDlist->opa);
         }
 
@@ -554,7 +551,7 @@ void func_80096B6C(GlobalContext* globalCtx, Room* room, u32 flags)
     {
         gSPSegment(gfxCtx->polyXlu.p++, 0x03, room->segment);
         func_80093D84(globalCtx->gfxCtx);
-        gSPMatrix(gfxCtx->polyXlu.p++, &D_8012DB20, G_MTX_MODELVIEW | G_MTX_LOAD);
+        gSPMatrix(gfxCtx->polyXlu.p++, &gMtxClear, G_MTX_MODELVIEW | G_MTX_LOAD);
         gSPDisplayList(gfxCtx->polyXlu.p++, polygonDlist->xlu);
     }
 
@@ -574,7 +571,7 @@ void func_80096F6C(GlobalContext* globalCtx, Room* room, u32 flags)
     else if (polygon1->format == 2)
         func_80096B6C(globalCtx, room, flags);
     else
-        func_80002E50("../z_room.c", 841);
+        LogUtils_HungupThread("../z_room.c", 841);
 }
 
 void func_80096FD4(GlobalContext* globalCtx, Room* room)
@@ -614,7 +611,7 @@ u32 func_80096FE8(GlobalContext* globalCtx, RoomContext* roomCtx)
         j = 0;
         roomList = globalCtx->roomList;
         transitionActor = &globalCtx->transitionActorList[0];
-        SyncPrintfWithThreadId("../z_room.c", 912);
+        LogUtils_LogThreadId("../z_room.c", 912);
         osSyncPrintf("game_play->room_rom_address.num = %d\n", globalCtx->nbRooms);
         for (j = 0; j < globalCtx->nbTransitionActors; j++)
         {
@@ -696,10 +693,10 @@ s32 func_800973FC(GlobalContext* globalCtx, RoomContext* roomCtx)
         {
             roomCtx->status = 0;
             roomCtx->curRoom.segment = roomCtx->unk_34;
-            D_80166FB4 = PHYSICAL_TO_VIRTUAL2(roomCtx->unk_34);
+            gSegments[3] = PHYSICAL_TO_VIRTUAL2(roomCtx->unk_34);
 
             Scene_ExecuteCommands(globalCtx, roomCtx->curRoom.segment);
-            func_8008E750(globalCtx, (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first);
+            func_8008E750(globalCtx, PLAYER);
             Actor_SpawnTransitionActors(globalCtx, &globalCtx->actorCtx);
 
             return 1;
@@ -715,7 +712,7 @@ void Room_Draw(GlobalContext* globalCtx, Room* room, u32 flags)
 {
     if (room->segment != NULL)
     {
-        D_80166FB4 = PHYSICAL_TO_VIRTUAL(room->segment);
+        gSegments[3] = PHYSICAL_TO_VIRTUAL(room->segment);
         if (room->mesh->polygon.type >= ARRAY_COUNTU(sRoomDrawHandlers))
             __assert("this->ground_shape->polygon.type < number(Room_Draw_Proc)", "../z_room.c", 1125);
         sRoomDrawHandlers[room->mesh->polygon.type](globalCtx, room, flags);
@@ -729,7 +726,7 @@ void func_80097534(GlobalContext* globalCtx, RoomContext* roomCtx)
     func_80031B14(globalCtx, &globalCtx->actorCtx);
     Actor_SpawnTransitionActors(globalCtx, &globalCtx->actorCtx);
     func_80080E04(globalCtx, roomCtx->curRoom.num);
-    if (!((globalCtx->sceneNum >= 0x51) && (globalCtx->sceneNum < 0x64)))
+    if (!((globalCtx->sceneNum >= SCENE_SPOT00) && (globalCtx->sceneNum <= SCENE_SPOT20)))
         func_800807A0(globalCtx);
     func_800F66C0(globalCtx->roomCtx.curRoom.echo);
 }

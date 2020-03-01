@@ -33,9 +33,9 @@ glabel L80ACBAFC
 /* 01C10 80ACBB30 10000030 */  beq     $zero, $zero, .L80ACBBF4   
 /* 01C14 80ACBB34 97220000 */  lhu     $v0, 0x0000($t9)           ## 00000000
 glabel L80ACBB38
-/* 01C18 80ACBB38 3C0880AD */  lui     $t0, %hi(func_80ACCFB8)    ## $t0 = 80AD0000
+/* 01C18 80ACBB38 3C0880AD */  lui     $t0, %hi(EnOwl_Draw)    ## $t0 = 80AD0000
 /* 01C1C 80ACBB3C 44803000 */  mtc1    $zero, $f6                 ## $f6 = 0.00
-/* 01C20 80ACBB40 2508CFB8 */  addiu   $t0, $t0, %lo(func_80ACCFB8) ## $t0 = 80ACCFB8
+/* 01C20 80ACBB40 2508CFB8 */  addiu   $t0, $t0, %lo(EnOwl_Draw) ## $t0 = 80ACCFB8
 /* 01C24 80ACBB44 3C090601 */  lui     $t1, 0x0601                ## $t1 = 06010000
 /* 01C28 80ACBB48 AE080134 */  sw      $t0, 0x0134($s0)           ## 00000134
 /* 01C2C 80ACBB4C 2529C8A0 */  addiu   $t1, $t1, 0xC8A0           ## $t1 = 0600C8A0
@@ -52,9 +52,9 @@ glabel L80ACBB38
 /* 01C58 80ACBB78 1000001E */  beq     $zero, $zero, .L80ACBBF4   
 /* 01C5C 80ACBB7C 95420000 */  lhu     $v0, 0x0000($t2)           ## 00000000
 glabel L80ACBB80
-/* 01C60 80ACBB80 3C0B80AD */  lui     $t3, %hi(func_80ACCFB8)    ## $t3 = 80AD0000
+/* 01C60 80ACBB80 3C0B80AD */  lui     $t3, %hi(EnOwl_Draw)    ## $t3 = 80AD0000
 /* 01C64 80ACBB84 44804000 */  mtc1    $zero, $f8                 ## $f8 = 0.00
-/* 01C68 80ACBB88 256BCFB8 */  addiu   $t3, $t3, %lo(func_80ACCFB8) ## $t3 = 80ACCFB8
+/* 01C68 80ACBB88 256BCFB8 */  addiu   $t3, $t3, %lo(EnOwl_Draw) ## $t3 = 80ACCFB8
 /* 01C6C 80ACBB8C 3C0C0600 */  lui     $t4, 0x0600                ## $t4 = 06000000
 /* 01C70 80ACBB90 AE0B0134 */  sw      $t3, 0x0134($s0)           ## 00000134
 /* 01C74 80ACBB94 258C15CC */  addiu   $t4, $t4, 0x15CC           ## $t4 = 060015CC

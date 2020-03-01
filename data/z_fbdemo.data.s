@@ -7,5 +7,8 @@
 
 .section .data
 
+glabel D_8012AFB0
+    .incbin "baserom.z64", 0xBA2150, 0x50
+
 glabel D_8012B000
     .incbin "baserom.z64", 0xBA21A0, 0x30

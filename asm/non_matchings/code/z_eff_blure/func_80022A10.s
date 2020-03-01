@@ -357,10 +357,10 @@ glabel func_80022A10
 /* A9A108 80022F68 2407063C */   li    $a3, 1596
 /* A9A10C 80022F6C 8EE602D0 */  lw    $a2, 0x2d0($s7)
 /* A9A110 80022F70 3C0FDA38 */  lui   $t7, (0xDA380003 >> 16) # lui $t7, 0xda38
-/* A9A114 80022F74 3C188013 */  lui   $t8, %hi(D_8012DB20) # $t8, 0x8013
+/* A9A114 80022F74 3C188013 */  lui   $t8, %hi(gMtxClear) # $t8, 0x8013
 /* A9A118 80022F78 24CE0008 */  addiu $t6, $a2, 8
 /* A9A11C 80022F7C AEEE02D0 */  sw    $t6, 0x2d0($s7)
-/* A9A120 80022F80 2718DB20 */  addiu $t8, %lo(D_8012DB20) # addiu $t8, $t8, -0x24e0
+/* A9A120 80022F80 2718DB20 */  addiu $t8, %lo(gMtxClear) # addiu $t8, $t8, -0x24e0
 /* A9A124 80022F84 35EF0003 */  ori   $t7, (0xDA380003 & 0xFFFF) # ori $t7, $t7, 3
 /* A9A128 80022F88 ACCF0000 */  sw    $t7, ($a2)
 /* A9A12C 80022F8C ACD80004 */  sw    $t8, 4($a2)

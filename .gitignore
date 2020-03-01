@@ -19,6 +19,7 @@ baserom/
 *.z64
 *.map
 *.dump
+out.txt
 
 # Tool artifacts
 tools/ido7.1_compiler/*
@@ -38,3 +39,6 @@ tools/asmsplitter/c/*
 *.ia8.png
 *.ci4.png
 *.ci8.png
+
+#Per-user configuration
+.python-version

@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80AE23B0
+glabel En_Pu_box_InitVars
  .word 0x007D0100, 0x00000010, 0x00820000, 0x00000168
-.word func_80AE20C0
-.word func_80AE21F8
-.word func_80AE2228
-.word func_80AE237C
+.word EnPubox_Init
+.word EnPubox_Destroy
+.word EnPubox_Update
+.word EnPubox_Draw
 

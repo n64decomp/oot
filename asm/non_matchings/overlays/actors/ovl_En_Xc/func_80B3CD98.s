@@ -40,7 +40,7 @@ glabel func_80B3CD98
 /* 00C4C 80B3CE2C 35CF0004 */  ori     $t7, $t6, 0x0004           ## $t7 = 00000004
 /* 00C50 80B3CE30 A46F0EDE */  sh      $t7, 0x0EDE($v1)           ## 8015F53E
 /* 00C54 80B3CE34 8FA4001C */  lw      $a0, 0x001C($sp)           
-/* 00C58 80B3CE38 0C021344 */  jal     func_80084D10              
+/* 00C58 80B3CE38 0C021344 */  jal     Item_Give              
 /* 00C5C 80B3CE3C 2405005C */  addiu   $a1, $zero, 0x005C         ## $a1 = 0000005C
 /* 00C60 80B3CE40 3C0480B4 */  lui     $a0, %hi(D_80B41FB0)       ## $a0 = 80B40000
 /* 00C64 80B3CE44 0C00084C */  jal     osSyncPrintf

@@ -28,7 +28,7 @@ glabel func_80062CD4
 /* AD9EDC 80062D3C 3C018012 */  lui   $at, %hi(D_8011E05A) # $at, 0x8012
 /* AD9EE0 80062D40 A42CE056 */  sh    $t4, %lo(D_8011E056)($at)
 /* AD9EE4 80062D44 A42FE058 */  sh    $t7, %lo(D_8011E058)($at)
-/* AD9EE8 80062D48 0C009B35 */  jal   EffectAdd
+/* AD9EE8 80062D48 0C009B35 */  jal   Effect_Add
 /* AD9EEC 80062D4C A42EE05A */   sh    $t6, %lo(D_8011E05A)($at)
 /* AD9EF0 80062D50 8FBF001C */  lw    $ra, 0x1c($sp)
 /* AD9EF4 80062D54 27BD0028 */  addiu $sp, $sp, 0x28

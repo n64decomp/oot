@@ -50,7 +50,7 @@ glabel func_8098A9A4
 /* 01BE0 8098AA60 AC4A0000 */  sw      $t2, 0x0000($v0)           ## 00000000
 /* 01BE4 8098AA64 8E240000 */  lw      $a0, 0x0000($s1)           ## 00000000
 /* 01BE8 8098AA68 240605F9 */  addiu   $a2, $zero, 0x05F9         ## $a2 = 000005F9
-/* 01BEC 8098AA6C 0C0346A2 */  jal     func_800D1A88              
+/* 01BEC 8098AA6C 0C0346A2 */  jal     Matrix_NewMtx              
 /* 01BF0 8098AA70 AFA20034 */  sw      $v0, 0x0034($sp)           
 /* 01BF4 8098AA74 8FA30034 */  lw      $v1, 0x0034($sp)           
 /* 01BF8 8098AA78 3C0D0601 */  lui     $t5, 0x0601                ## $t5 = 06010000

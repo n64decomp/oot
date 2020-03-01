@@ -13,10 +13,10 @@ glabel func_800BB570
 /* B32710 800BB570 27BDFFD8 */  addiu $sp, $sp, -0x28
 /* B32714 800BB574 AFA40028 */  sw    $a0, 0x28($sp)
 /* B32718 800BB578 AFBF0014 */  sw    $ra, 0x14($sp)
-/* B3271C 800BB57C 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B3271C 800BB57C 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32720 800BB580 AFA0001C */  sw    $zero, 0x1c($sp)
-/* B32724 800BB584 0C031C94 */  jal   func_800C7250
-/* B32728 800BB588 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B32724 800BB584 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B32728 800BB588 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B3272C 800BB58C 3C058016 */  lui   $a1, %hi(D_801612F0) # $a1, 0x8016
 /* B32730 800BB590 AFA20024 */  sw    $v0, 0x24($sp)
 /* B32734 800BB594 24A512F0 */  addiu $a1, %lo(D_801612F0) # addiu $a1, $a1, 0x12f0
@@ -32,9 +32,9 @@ glabel func_800BB570
 /* B32758 800BB5B8 24A51358 */  addiu $a1, %lo(D_80161358) # addiu $a1, $a1, 0x1358
 /* B3275C 800BB5BC 0C040010 */  jal   func_80100040
 /* B32760 800BB5C0 248412F0 */   addiu $a0, %lo(D_801612F0) # addiu $a0, $a0, 0x12f0
-/* B32764 800BB5C4 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B32768 800BB5C8 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B3276C 800BB5CC 0C031CBF */  jal   func_800C72FC
+/* B32764 800BB5C4 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B32768 800BB5C8 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B3276C 800BB5CC 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B32770 800BB5D0 8FA50024 */   lw    $a1, 0x24($sp)
 /* B32774 800BB5D4 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B32778 800BB5D8 8FA2001C */  lw    $v0, 0x1c($sp)
@@ -56,7 +56,7 @@ glabel func_800BB5F8
 /* B327A8 800BB608 AFB3002C */  sw    $s3, 0x2c($sp)
 /* B327AC 800BB60C AFB10024 */  sw    $s1, 0x24($sp)
 /* B327B0 800BB610 AFB00020 */  sw    $s0, 0x20($sp)
-/* B327B4 800BB614 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B327B4 800BB614 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B327B8 800BB618 30B000FF */  andi  $s0, $a1, 0xff
 /* B327BC 800BB61C 30D100FF */  andi  $s1, $a2, 0xff
 /* B327C0 800BB620 AFBE0040 */  sw    $fp, 0x40($sp)
@@ -68,8 +68,8 @@ glabel func_800BB5F8
 /* B327D8 800BB638 AFA60070 */  sw    $a2, 0x70($sp)
 /* B327DC 800BB63C 24130001 */  li    $s3, 1
 /* B327E0 800BB640 0000A825 */  move  $s5, $zero
-/* B327E4 800BB644 0C031C94 */  jal   func_800C7250
-/* B327E8 800BB648 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B327E4 800BB644 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B327E8 800BB648 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B327EC 800BB64C 0230082A */  slt   $at, $s1, $s0
 /* B327F0 800BB650 AFA20064 */  sw    $v0, 0x64($sp)
 /* B327F4 800BB654 321200FF */  andi  $s2, $s0, 0xff
@@ -121,9 +121,9 @@ glabel func_800BB5F8
 /* B328A0 800BB700 1020FFE1 */  beqz  $at, .L800BB688
 /* B328A4 800BB704 02408025 */   move  $s0, $s2
 .L800BB708:
-/* B328A8 800BB708 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B328AC 800BB70C 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B328B0 800BB710 0C031CBF */  jal   func_800C72FC
+/* B328A8 800BB708 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B328AC 800BB70C 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B328B0 800BB710 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B328B4 800BB714 8FA50064 */   lw    $a1, 0x64($sp)
 /* B328B8 800BB718 3C048014 */  lui   $a0, %hi(D_80143D08) # $a0, 0x8014
 /* B328BC 800BB71C 24843D08 */  addiu $a0, %lo(D_80143D08) # addiu $a0, $a0, 0x3d08
@@ -149,13 +149,13 @@ glabel func_800BB764
 /* B32904 800BB764 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* B32908 800BB768 AFA40038 */  sw    $a0, 0x38($sp)
 /* B3290C 800BB76C AFBF001C */  sw    $ra, 0x1c($sp)
-/* B32910 800BB770 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B32910 800BB770 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32914 800BB774 AFA5003C */  sw    $a1, 0x3c($sp)
 /* B32918 800BB778 AFA60040 */  sw    $a2, 0x40($sp)
 /* B3291C 800BB77C AFA70044 */  sw    $a3, 0x44($sp)
 /* B32920 800BB780 AFA0002C */  sw    $zero, 0x2c($sp)
-/* B32924 800BB784 0C031C94 */  jal   func_800C7250
-/* B32928 800BB788 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B32924 800BB784 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B32928 800BB788 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B3292C 800BB78C 3C0E8016 */  lui   $t6, %hi(D_80161358) # $t6, 0x8016
 /* B32930 800BB790 8FA80048 */  lw    $t0, 0x48($sp)
 /* B32934 800BB794 8DCE1358 */  lw    $t6, %lo(D_80161358)($t6)
@@ -192,9 +192,9 @@ glabel func_800BB764
 /* B329AC 800BB80C 0C00084C */  jal   osSyncPrintf
 /* B329B0 800BB810 AFA80010 */   sw    $t0, 0x10($sp)
 .L800BB814:
-/* B329B4 800BB814 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B329B8 800BB818 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B329BC 800BB81C 0C031CBF */  jal   func_800C72FC
+/* B329B4 800BB814 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B329B8 800BB818 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B329BC 800BB81C 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B329C0 800BB820 8FA50034 */   lw    $a1, 0x34($sp)
 /* B329C4 800BB824 8FBF001C */  lw    $ra, 0x1c($sp)
 /* B329C8 800BB828 8FA2002C */  lw    $v0, 0x2c($sp)
@@ -206,13 +206,13 @@ glabel func_800BB838
 /* B329D8 800BB838 27BDFFC8 */  addiu $sp, $sp, -0x38
 /* B329DC 800BB83C AFA40038 */  sw    $a0, 0x38($sp)
 /* B329E0 800BB840 AFBF001C */  sw    $ra, 0x1c($sp)
-/* B329E4 800BB844 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B329E4 800BB844 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B329E8 800BB848 AFA5003C */  sw    $a1, 0x3c($sp)
 /* B329EC 800BB84C AFA60040 */  sw    $a2, 0x40($sp)
 /* B329F0 800BB850 AFA70044 */  sw    $a3, 0x44($sp)
 /* B329F4 800BB854 AFA0002C */  sw    $zero, 0x2c($sp)
-/* B329F8 800BB858 0C031C94 */  jal   func_800C7250
-/* B329FC 800BB85C 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B329F8 800BB858 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B329FC 800BB85C 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B32A00 800BB860 3C0E8016 */  lui   $t6, %hi(D_80161358) # $t6, 0x8016
 /* B32A04 800BB864 8FA80048 */  lw    $t0, 0x48($sp)
 /* B32A08 800BB868 8DCE1358 */  lw    $t6, %lo(D_80161358)($t6)
@@ -249,9 +249,9 @@ glabel func_800BB838
 /* B32A80 800BB8E0 0C00084C */  jal   osSyncPrintf
 /* B32A84 800BB8E4 AFA80010 */   sw    $t0, 0x10($sp)
 .L800BB8E8:
-/* B32A88 800BB8E8 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B32A8C 800BB8EC 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B32A90 800BB8F0 0C031CBF */  jal   func_800C72FC
+/* B32A88 800BB8E8 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B32A8C 800BB8EC 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B32A90 800BB8F0 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B32A94 800BB8F4 8FA50034 */   lw    $a1, 0x34($sp)
 /* B32A98 800BB8F8 8FBF001C */  lw    $ra, 0x1c($sp)
 /* B32A9C 800BB8FC 8FA2002C */  lw    $v0, 0x2c($sp)
@@ -264,12 +264,12 @@ glabel func_800BB90C
 /* B32AB0 800BB910 AFA40040 */  sw    $a0, 0x40($sp)
 /* B32AB4 800BB914 AFBF002C */  sw    $ra, 0x2c($sp)
 /* B32AB8 800BB918 AFB00028 */  sw    $s0, 0x28($sp)
-/* B32ABC 800BB91C 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B32ABC 800BB91C 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32AC0 800BB920 00A08025 */  move  $s0, $a1
 /* B32AC4 800BB924 AFA60048 */  sw    $a2, 0x48($sp)
 /* B32AC8 800BB928 AFA00034 */  sw    $zero, 0x34($sp)
-/* B32ACC 800BB92C 0C031C94 */  jal   func_800C7250
-/* B32AD0 800BB930 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B32ACC 800BB92C 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B32AD0 800BB930 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B32AD4 800BB934 AFA2003C */  sw    $v0, 0x3c($sp)
 /* B32AD8 800BB938 92030000 */  lbu   $v1, ($s0)
 /* B32ADC 800BB93C 00001025 */  move  $v0, $zero
@@ -411,9 +411,9 @@ glabel func_800BB90C
 /* B32CE0 800BBB40 00000000 */   nop   
 /* B32CE4 800BBB44 AFAA0034 */  sw    $t2, 0x34($sp)
 .L800BBB48:
-/* B32CE8 800BBB48 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B32CEC 800BBB4C 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B32CF0 800BBB50 0C031CBF */  jal   func_800C72FC
+/* B32CE8 800BBB48 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B32CEC 800BBB4C 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B32CF0 800BBB50 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B32CF4 800BBB54 8FA5003C */   lw    $a1, 0x3c($sp)
 /* B32CF8 800BBB58 8FBF002C */  lw    $ra, 0x2c($sp)
 /* B32CFC 800BBB5C 8FA20034 */  lw    $v0, 0x34($sp)
@@ -425,11 +425,11 @@ glabel func_800BBB6C
 /* B32D0C 800BBB6C 27BDFFD0 */  addiu $sp, $sp, -0x30
 /* B32D10 800BBB70 AFA40030 */  sw    $a0, 0x30($sp)
 /* B32D14 800BBB74 AFBF001C */  sw    $ra, 0x1c($sp)
-/* B32D18 800BBB78 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B32D18 800BBB78 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32D1C 800BBB7C AFA50034 */  sw    $a1, 0x34($sp)
 /* B32D20 800BBB80 AFA00024 */  sw    $zero, 0x24($sp)
-/* B32D24 800BBB84 0C031C94 */  jal   func_800C7250
-/* B32D28 800BBB88 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B32D24 800BBB84 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B32D28 800BBB88 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B32D2C 800BBB8C 93A30037 */  lbu   $v1, 0x37($sp)
 /* B32D30 800BBB90 3C088013 */  lui   $t0, %hi(D_8012D198) # $t0, 0x8013
 /* B32D34 800BBB94 2508D198 */  addiu $t0, %lo(D_8012D198) # addiu $t0, $t0, -0x2e68
@@ -456,9 +456,9 @@ glabel func_800BBB6C
 /* B32D84 800BBBE4 24843DEC */  addiu $a0, %lo(D_80143DEC) # addiu $a0, $a0, 0x3dec
 /* B32D88 800BBBE8 0C00084C */  jal   osSyncPrintf
 /* B32D8C 800BBBEC 8FA50020 */   lw    $a1, 0x20($sp)
-/* B32D90 800BBBF0 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B32D94 800BBBF4 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B32D98 800BBBF8 0C031CBF */  jal   func_800C72FC
+/* B32D90 800BBBF0 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B32D94 800BBBF4 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B32D98 800BBBF8 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B32D9C 800BBBFC 8FA5002C */   lw    $a1, 0x2c($sp)
 /* B32DA0 800BBC00 8FBF001C */  lw    $ra, 0x1c($sp)
 /* B32DA4 800BBC04 8FA20024 */  lw    $v0, 0x24($sp)
@@ -470,10 +470,10 @@ glabel func_800BBC14
 /* B32DB4 800BBC14 27BDFFB8 */  addiu $sp, $sp, -0x48
 /* B32DB8 800BBC18 AFA40048 */  sw    $a0, 0x48($sp)
 /* B32DBC 800BBC1C AFBF0014 */  sw    $ra, 0x14($sp)
-/* B32DC0 800BBC20 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B32DC0 800BBC20 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32DC4 800BBC24 AFA5004C */  sw    $a1, 0x4c($sp)
-/* B32DC8 800BBC28 0C031C94 */  jal   func_800C7250
-/* B32DCC 800BBC2C 248468C0 */   addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B32DC8 800BBC28 0C031C94 */  jal   PadMgr_LockGetControllerQueue
+/* B32DCC 800BBC2C 248468C0 */   addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B32DD0 800BBC30 93AE004F */  lbu   $t6, 0x4f($sp)
 /* B32DD4 800BBC34 3C058016 */  lui   $a1, %hi(D_8016125C)
 /* B32DD8 800BBC38 3C048016 */  lui   $a0, %hi(D_801612F0) # $a0, 0x8016
@@ -484,10 +484,10 @@ glabel func_800BBC14
 /* B32DEC 800BBC4C 248412F0 */  addiu $a0, %lo(D_801612F0) # addiu $a0, $a0, 0x12f0
 /* B32DF0 800BBC50 0C041358 */  jal   func_80104D60
 /* B32DF4 800BBC54 27A60024 */   addiu $a2, $sp, 0x24
-/* B32DF8 800BBC58 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
+/* B32DF8 800BBC58 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
 /* B32DFC 800BBC5C AFA20020 */  sw    $v0, 0x20($sp)
-/* B32E00 800BBC60 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
-/* B32E04 800BBC64 0C031CBF */  jal   func_800C72FC
+/* B32E00 800BBC60 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
+/* B32E04 800BBC64 0C031CBF */  jal   PadMgr_UnlockReleaseControllerQueue
 /* B32E08 800BBC68 8FA50044 */   lw    $a1, 0x44($sp)
 /* B32E0C 800BBC6C 8FB80020 */  lw    $t8, 0x20($sp)
 /* B32E10 800BBC70 8FBF0014 */  lw    $ra, 0x14($sp)

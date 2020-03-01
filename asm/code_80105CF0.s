@@ -41,15 +41,15 @@ glabel func_80105CF0
 .L80105D60:
 /* B7CF00 80105D60 00C08025 */  move  $s0, $a2
 .L80105D64:
-/* B7CF04 80105D64 0C0402E8 */  jal   func_80100BA0
+/* B7CF04 80105D64 0C0402E8 */  jal   __osSiGetAccess
 /* B7CF08 80105D68 A7A60072 */   sh    $a2, 0x72($sp)
 /* B7CF0C 80105D6C 0010C0C3 */  sra   $t8, $s0, 3
 /* B7CF10 80105D70 0010C940 */  sll   $t9, $s0, 5
 /* B7CF14 80105D74 3C178013 */  lui   $s7, %hi(D_80134D20) # $s7, 0x8013
-/* B7CF18 80105D78 3C168017 */  lui   $s6, %hi(D_80175810) # $s6, 0x8017
+/* B7CF18 80105D78 3C168017 */  lui   $s6, %hi(_osCont_lastPollType) # $s6, 0x8017
 /* B7CF1C 80105D7C 3C138017 */  lui   $s3, %hi(D_80175960) # $s3, 0x8017
 /* B7CF20 80105D80 26735960 */  addiu $s3, %lo(D_80175960) # addiu $s3, $s3, 0x5960
-/* B7CF24 80105D84 26D65810 */  addiu $s6, %lo(D_80175810) # addiu $s6, $s6, 0x5810
+/* B7CF24 80105D84 26D65810 */  addiu $s6, %lo(_osCont_lastPollType) # addiu $s6, $s6, 0x5810
 /* B7CF28 80105D88 26F74D20 */  addiu $s7, %lo(D_80134D20) # addiu $s7, $s7, 0x4d20
 /* B7CF2C 80105D8C AFB90040 */  sw    $t9, 0x40($sp)
 /* B7CF30 80105D90 AFB80044 */  sw    $t8, 0x44($sp)
@@ -113,7 +113,7 @@ glabel func_80105CF0
 /* B7D000 80105E60 0C001BC4 */  jal   bcopy
 /* B7D004 80105E64 8FA40074 */   lw    $a0, 0x74($sp)
 /* B7D008 80105E68 24040001 */  li    $a0, 1
-/* B7D00C 80105E6C 0C0404FC */  jal   func_801013F0
+/* B7D00C 80105E6C 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7D010 80105E70 02602825 */   move  $a1, $s3
 /* B7D014 80105E74 0C041890 */  jal   func_80106240
 /* B7D018 80105E78 8FA40074 */   lw    $a0, 0x74($sp)
@@ -123,7 +123,7 @@ glabel func_80105CF0
 /* B7D028 80105E88 0C000CA0 */  jal   osRecvMesg
 /* B7D02C 80105E8C 24060001 */   li    $a2, 1
 /* B7D030 80105E90 00002025 */  move  $a0, $zero
-/* B7D034 80105E94 0C0404FC */  jal   func_801013F0
+/* B7D034 80105E94 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7D038 80105E98 02602825 */   move  $a1, $s3
 /* B7D03C 80105E9C 02A02025 */  move  $a0, $s5
 /* B7D040 80105EA0 00002825 */  move  $a1, $zero
@@ -153,7 +153,7 @@ glabel func_80105CF0
 /* B7D098 80105EF8 1040FFA7 */  beqz  $v0, .L80105D98
 /* B7D09C 80105EFC 2694FFFF */   addiu $s4, $s4, -1
 .L80105F00:
-/* B7D0A0 80105F00 0C0402F9 */  jal   func_80100BE4
+/* B7D0A0 80105F00 0C0402F9 */  jal   __osSiRelAccess
 /* B7D0A4 80105F04 AFA30064 */   sw    $v1, 0x64($sp)
 /* B7D0A8 80105F08 8FA20064 */  lw    $v0, 0x64($sp)
 .L80105F0C:

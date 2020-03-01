@@ -16,7 +16,7 @@ glabel func_800C40B0
 /* B3B25C 800C40BC 3C048014 */  lui   $a0, %hi(D_80144CF0) # $a0, 0x8014
 /* B3B260 800C40C0 0C00084C */  jal   osSyncPrintf
 /* B3B264 800C40C4 24844CF0 */   addiu $a0, %lo(D_80144CF0) # addiu $a0, $a0, 0x4cf0
-/* B3B268 800C40C8 0C018D90 */  jal   func_80063640
+/* B3B268 800C40C8 0C018D90 */  jal   SaveContext_Init
 /* B3B26C 800C40CC 00000000 */   nop   
 /* B3B270 800C40D0 8FA20018 */  lw    $v0, 0x18($sp)
 /* B3B274 800C40D4 3C0E8080 */  lui   $t6, %hi(func_80800878) # $t6, 0x8080

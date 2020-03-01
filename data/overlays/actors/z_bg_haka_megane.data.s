@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_8087DD30
+glabel Bg_Haka_Megane_InitVars
  .word 0x00AE0600, 0x000000B0, 0x00010000, 0x0000016C
-.word func_8087DA40
-.word func_8087DAF4
-.word func_8087DC70
+.word BgHakaMegane_Init
+.word BgHakaMegane_Destroy
+.word BgHakaMegane_Update
 .word 0x00000000
 glabel D_8087DD50
  .word 0x48500064

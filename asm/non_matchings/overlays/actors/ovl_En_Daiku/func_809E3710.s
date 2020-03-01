@@ -37,7 +37,7 @@ glabel func_809E3710
 /* 00C6C 809E379C 00000000 */  nop
 /* 00C70 809E37A0 46805420 */  cvt.s.w $f16, $f10                 
 /* 00C74 809E37A4 46128302 */  mul.s   $f12, $f16, $f18           
-/* 00C78 809E37A8 0C034348 */  jal     func_800D0D20              
+/* 00C78 809E37A8 0C034348 */  jal     Matrix_RotateY              
 /* 00C7C 809E37AC 00000000 */  nop
 /* 00C80 809E37B0 27A40038 */  addiu   $a0, $sp, 0x0038           ## $a0 = FFFFFFF0
 /* 00C84 809E37B4 0C0346BD */  jal     func_800D1AF4              

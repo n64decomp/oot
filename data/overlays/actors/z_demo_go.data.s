@@ -20,10 +20,10 @@ glabel D_8097D44C
 glabel D_8097D468
  .word func_8097D290
 .word func_8097D29C
-glabel D_8097D470
+glabel Demo_Go_InitVars
  .word 0x00CA0400, 0x00000010, 0x00C90000, 0x000001A0
-.word func_8097D1E4
-.word func_8097C910
-.word func_8097D188
-.word func_8097D3DC
+.word DemoGo_Init
+.word DemoGo_Destroy
+.word DemoGo_Update
+.word DemoGo_Draw
 

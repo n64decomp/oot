@@ -62,10 +62,10 @@ glabel D_8096CFA4
  .word func_8096BF54
 .word func_8096BF60
 .word func_8096B840
-glabel D_8096CFB0
+glabel Demo_Du_InitVars
  .word 0x00A80400, 0x00000010, 0x009D0000, 0x000001B4
-.word func_8096BEB0
-.word func_80969AD0
-.word func_8096BE54
-.word func_8096C138
+.word DemoDu_Init
+.word DemoDu_Destroy
+.word DemoDu_Update
+.word DemoDu_Draw
 

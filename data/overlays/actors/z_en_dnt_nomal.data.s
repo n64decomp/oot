@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_809F5DB0
+glabel En_Dnt_Nomal_InitVars
  .word 0x01A30600, 0x00000030, 0x00010000, 0x00000360
-.word func_809F32C0
-.word func_809F3438
-.word func_809F5620
+.word EnDntNomal_Init
+.word EnDntNomal_Destroy
+.word EnDntNomal_Update
 .word 0x00000000
 glabel D_809F5DD0
  .word 0x0A000039, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0010002E, 0x00000000, 0x00000000

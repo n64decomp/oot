@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B5E760
+glabel En_Zl4_InitVars
  .word 0x01D30400, 0x00000019, 0x01910000, 0x000002F0
-.word func_80B5BDAC
-.word func_80B5BF68
-.word func_80B5E2B8
-.word func_80B5E54C
+.word EnZl4_Init
+.word EnZl4_Destroy
+.word EnZl4_Update
+.word EnZl4_Draw
 glabel D_80B5E780
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x000A002C, 0x00000000, 0x00000000
 glabel D_80B5E7AC

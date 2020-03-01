@@ -50,7 +50,7 @@ glabel func_80B70ED4
 /* 075F4 80B70F94 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 075F8 80B70F98 46048203 */  div.s   $f8, $f16, $f4             
 /* 075FC 80B70F9C 46064302 */  mul.s   $f12, $f8, $f6             
-/* 07600 80B70FA0 0C034348 */  jal     func_800D0D20              
+/* 07600 80B70FA0 0C034348 */  jal     Matrix_RotateY              
 /* 07604 80B70FA4 00000000 */  nop
 /* 07608 80B70FA8 27A40034 */  addiu   $a0, $sp, 0x0034           ## $a0 = FFFFFFF4
 /* 0760C 80B70FAC 0C0346BD */  jal     func_800D1AF4              

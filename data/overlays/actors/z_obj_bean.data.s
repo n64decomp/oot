@@ -9,12 +9,12 @@
 
 glabel D_80B90E30
  .word 0x00000000
-glabel D_80B90E34
+glabel Obj_Bean_InitVars
  .word 0x01260100, 0x00400000, 0x011E0000, 0x000001F8
-.word func_80B8FA7C
-.word func_80B8FCD4
-.word func_80B90AC8
-.word func_80B90D90
+.word ObjBean_Init
+.word ObjBean_Destroy
+.word ObjBean_Update
+.word ObjBean_Draw
 glabel D_80B90E54
  .word 0x0A000009, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0040001E, 0xFFE10000, 0x00000000
 glabel D_80B90E80

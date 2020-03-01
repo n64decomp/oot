@@ -69,7 +69,7 @@ glabel func_808AAD3C
 /* 00168 808AAE48 27A50020 */  addiu   $a1, $sp, 0x0020           ## $a1 = FFFFFB38
 /* 0016C 808AAE4C E7A404B0 */  swc1    $f4, 0x04B0($sp)           
 /* 00170 808AAE50 E7A604B4 */  swc1    $f6, 0x04B4($sp)           
-/* 00174 808AAE54 0C009B35 */  jal     EffectAdd              ## EffectAdd
+/* 00174 808AAE54 0C009B35 */  jal     Effect_Add              ## Effect_Add
 /* 00178 808AAE58 A7AA0028 */  sh      $t2, 0x0028($sp)           
 /* 0017C 808AAE5C 8FBF001C */  lw      $ra, 0x001C($sp)           
 /* 00180 808AAE60 27BD04E8 */  addiu   $sp, $sp, 0x04E8           ## $sp = 00000000

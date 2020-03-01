@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8089AFC0
+glabel Bg_Jya_Megami_InitVars
  .word 0x01560100, 0x00000000, 0x00F10000, 0x0000033C
-.word func_8089A518
-.word func_8089A5A4
-.word func_8089ABA4
-.word func_8089AF54
+.word BgJyaMegami_Init
+.word BgJyaMegami_Destroy
+.word BgJyaMegami_Update
+.word BgJyaMegami_Draw
 glabel D_8089AFE0
  .word 0x00000000, 0x00000000, 0x00000000, 0x00200000, 0x00000000, 0x00010000, 0x00000000, 0xFDA8FF38, 0x003C0064
 glabel D_8089B004

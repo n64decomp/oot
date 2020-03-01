@@ -24,7 +24,7 @@ glabel func_800C6C80
 /* B3DE34 800C6C94 3C058014 */  lui   $a1, %hi(D_80145650) # $a1, 0x8014
 /* B3DE38 800C6C98 24A55650 */  addiu $a1, %lo(D_80145650) # addiu $a1, $a1, 0x5650
 /* B3DE3C 800C6C9C AFA70018 */  sw    $a3, 0x18($sp)
-/* B3DE40 800C6CA0 0C03F570 */  jal   func_800FD5C0
+/* B3DE40 800C6CA0 0C03F570 */  jal   SystemArena_MallocDebug
 /* B3DE44 800C6CA4 24060028 */   li    $a2, 40
 /* B3DE48 800C6CA8 8FA70018 */  lw    $a3, 0x18($sp)
 /* B3DE4C 800C6CAC 14400003 */  bnez  $v0, .L800C6CBC
@@ -84,7 +84,7 @@ glabel func_800C6CFC
 /* B3DF04 800C6D64 8C8B0000 */  lw    $t3, ($a0)
 /* B3DF08 800C6D68 ACCB0004 */  sw    $t3, 4($a2)
 .L800C6D6C:
-/* B3DF0C 800C6D6C 0C03F5ED */  jal   func_800FD7B4
+/* B3DF0C 800C6D6C 0C03F5ED */  jal   SystemArena_FreeDebug
 /* B3DF10 800C6D70 24060048 */   li    $a2, 72
 /* B3DF14 800C6D74 8FBF0014 */  lw    $ra, 0x14($sp)
 /* B3DF18 800C6D78 27BD0018 */  addiu $sp, $sp, 0x18

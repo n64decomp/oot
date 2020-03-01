@@ -43,7 +43,7 @@ glabel func_80AC4288
 /* 01684 80AC4324 A2030252 */  sb      $v1, 0x0252($s0)           ## 00000252
 /* 01688 80AC4328 A60E01FC */  sh      $t6, 0x01FC($s0)           ## 000001FC
 /* 0168C 80AC432C 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
-/* 01690 80AC4330 0C021BC0 */  jal     func_80086F00              
+/* 01690 80AC4330 0C021BC0 */  jal     Interface_SetDoAction              
 /* 01694 80AC4334 24050006 */  addiu   $a1, $zero, 0x0006         ## $a1 = 00000006
 /* 01698 80AC4338 AE000288 */  sw      $zero, 0x0288($s0)         ## 00000288
 /* 0169C 80AC433C 0C01E221 */  jal     func_80078884              
@@ -62,7 +62,7 @@ glabel func_80AC4288
 /* 016CC 80AC436C A2030252 */  sb      $v1, 0x0252($s0)           ## 00000252
 /* 016D0 80AC4370 A60F01FC */  sh      $t7, 0x01FC($s0)           ## 000001FC
 /* 016D4 80AC4374 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
-/* 016D8 80AC4378 0C021BC0 */  jal     func_80086F00              
+/* 016D8 80AC4378 0C021BC0 */  jal     Interface_SetDoAction              
 /* 016DC 80AC437C 24050006 */  addiu   $a1, $zero, 0x0006         ## $a1 = 00000006
 /* 016E0 80AC4380 AE0002C0 */  sw      $zero, 0x02C0($s0)         ## 000002C0
 /* 016E4 80AC4384 0C01E221 */  jal     func_80078884              

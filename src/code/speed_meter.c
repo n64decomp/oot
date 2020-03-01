@@ -12,7 +12,7 @@ extern struct_801664D0 D_801664D0;
 
 void func_800C9940(struct_801664D0* arg0, u32 arg1, u32 arg2)
 {
-    NullPointerCheck(D_80146230, arg0, D_80146238, 181);
+    LogUtils_CheckNullPointer(D_80146230, arg0, D_80146238, 181);
     arg0->unk_18 = arg1;
     arg0->unk_1C = arg2;
 }

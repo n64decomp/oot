@@ -1,9 +1,30 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_niw_lady.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80AB9C40.s")
+#define ROOM  0x00
+#define FLAGS 0x00000019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80AB9D38.s")
+void EnNiwLady_Init(EnNiwLady* this, GlobalContext* globalCtx);
+void EnNiwLady_Destroy(EnNiwLady* this, GlobalContext* globalCtx);
+void EnNiwLady_Update(EnNiwLady* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Niw_Lady_InitVars =
+{
+    ACTOR_EN_NIW_LADY,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_ANE,
+    sizeof(EnNiwLady),
+    (ActorFunc)EnNiwLady_Init,
+    (ActorFunc)EnNiwLady_Destroy,
+    (ActorFunc)EnNiwLady_Update,
+    NULL,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/EnNiwLady_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/EnNiwLady_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80AB9D60.s")
 
@@ -33,14 +54,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80ABAD7C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80ABAE40.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/EnNiwLady_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80ABB0A0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80ABB0CC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Niw_Lady/func_80ABB228.s")
-
-
-
-

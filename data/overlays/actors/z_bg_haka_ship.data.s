@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8087FAA0
+glabel Bg_Haka_Ship_InitVars
  .word 0x00B00100, 0x00000030, 0x00690000, 0x00000178
-.word func_8087F100
-.word func_8087F240
-.word func_8087F774
-.word func_8087F7B4
+.word BgHakaShip_Init
+.word BgHakaShip_Destroy
+.word BgHakaShip_Update
+.word BgHakaShip_Draw
 glabel D_8087FAC0
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

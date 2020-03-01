@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80B867F0
+glabel Item_Ocarina_InitVars
  .word 0x00F10700, 0x00000010, 0x00DE0000, 0x00000154
-.word func_80B86138
-.word func_80B862E0
-.word func_80B86788
-.word func_80B867AC
+.word ItemOcarina_Init
+.word ItemOcarina_Destroy
+.word ItemOcarina_Update
+.word ItemOcarina_Draw
 

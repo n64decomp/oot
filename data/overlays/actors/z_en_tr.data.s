@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B24340
+glabel En_Tr_InitVars
  .word 0x00CC0400, 0x00000010, 0x00C10000, 0x000002E8
-.word func_80B22CF8
-.word func_80B22E60
-.word func_80B23BBC
-.word func_80B23EA4
+.word EnTr_Init
+.word EnTr_Destroy
+.word EnTr_Update
+.word EnTr_Draw
 .word 0x06003FC8, 0x06001CDC
 glabel D_80B24368
  .word 0x06002BC4, 0x06000BFC

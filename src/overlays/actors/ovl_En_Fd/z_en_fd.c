@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_fd.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000215
+
+void EnFd_Init(EnFd* this, GlobalContext* globalCtx);
+void EnFd_Destroy(EnFd* this, GlobalContext* globalCtx);
+void EnFd_Update(EnFd* this, GlobalContext* globalCtx);
+void EnFd_Draw(EnFd* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Fd_InitVars =
+{
+    ACTOR_EN_FD,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_FW,
+    sizeof(EnFd),
+    (ActorFunc)EnFd_Init,
+    (ActorFunc)EnFd_Destroy,
+    (ActorFunc)EnFd_Update,
+    (ActorFunc)EnFd_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0B6C0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0B7B8.s")
@@ -23,9 +45,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0C0A0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0C1AC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/EnFd_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0C2E8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/EnFd_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0C310.s")
 
@@ -41,13 +63,13 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0CA44.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0CABC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/EnFd_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0CCB8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0CCF0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0D01C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/EnFd_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0D40C.s")
 
@@ -58,7 +80,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0D730.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fd/func_80A0DB44.s")
-
-
-
-

@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_spot18_basket.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void BgSpot18Basket_Init(BgSpot18Basket* this, GlobalContext* globalCtx);
+void BgSpot18Basket_Destroy(BgSpot18Basket* this, GlobalContext* globalCtx);
+void BgSpot18Basket_Update(BgSpot18Basket* this, GlobalContext* globalCtx);
+void BgSpot18Basket_Draw(BgSpot18Basket* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Spot18_Basket_InitVars =
+{
+    ACTOR_BG_SPOT18_BASKET,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_SPOT18_OBJ,
+    sizeof(BgSpot18Basket),
+    (ActorFunc)BgSpot18Basket_Init,
+    (ActorFunc)BgSpot18Basket_Destroy,
+    (ActorFunc)BgSpot18Basket_Update,
+    (ActorFunc)BgSpot18Basket_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B7710.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B7770.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B792C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/BgSpot18Basket_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B7AA4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/BgSpot18Basket_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B7AEC.s")
 
@@ -33,10 +55,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B81A0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B8434.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/BgSpot18Basket_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/func_808B84F4.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot18_Basket/BgSpot18Basket_Draw.s")

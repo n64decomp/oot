@@ -11,12 +11,12 @@ glabel D_80AB0BD0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00640046, 0x00000000, 0x00000000
 glabel D_80AB0BFC
  .word 0x00000000, 0x00000000, 0xFF000000
-glabel D_80AB0C08
+glabel En_Mu_InitVars
  .word 0x01AD0400, 0x00000009, 0x01820000, 0x0000024C
-.word func_80AB062C
-.word func_80AB0704
-.word func_80AB075C
-.word func_80AB0A14
+.word EnMu_Init
+.word EnMu_Destroy
+.word EnMu_Update
+.word EnMu_Draw
 glabel D_80AB0C28
  .word 0x42433F41, 0x3E000000
 glabel D_80AB0C30

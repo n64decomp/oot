@@ -17,12 +17,12 @@ glabel D_80B0164C
  .word 0x00000000, 0x00000000
 glabel D_80B01654
  .word 0x00000000
-glabel D_80B01658
+glabel En_Skj_InitVars
  .word 0x01150500, 0x02000015, 0x010A0000, 0x00000300
-.word func_80AFE4AC
-.word func_80AFE8C4
-.word func_80B00788
-.word func_80B01530
+.word EnSkj_Init
+.word EnSkj_Destroy
+.word EnSkj_Update
+.word EnSkj_Draw
 glabel D_80B01678
  .word 0x0A110900, 0x01000000, 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFCFFFFF, 0x00000000, 0x01010100, 0x00080030, 0x00000000, 0x00000000
 glabel D_80B016A4

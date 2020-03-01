@@ -91,10 +91,10 @@ glabel func_80A245A4
 /* 00998 80A246F8 440A2000 */  mfc1    $t2, $f4                   
 /* 0099C 80A246FC 00000000 */  nop
 /* 009A0 80A24700 A60A0004 */  sh      $t2, 0x0004($s0)           ## 00000004
-/* 009A4 80A24704 0C034348 */  jal     func_800D0D20              
+/* 009A4 80A24704 0C034348 */  jal     Matrix_RotateY              
 /* 009A8 80A24708 C62C00A0 */  lwc1    $f12, 0x00A0($s1)          ## 000000A0
 /* 009AC 80A2470C C62C009C */  lwc1    $f12, 0x009C($s1)          ## 0000009C
-/* 009B0 80A24710 0C0342DC */  jal     func_800D0B70              
+/* 009B0 80A24710 0C0342DC */  jal     Matrix_RotateX              
 /* 009B4 80A24714 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 009B8 80A24718 02E02025 */  or      $a0, $s7, $zero            ## $a0 = FFFFFFE0
 /* 009BC 80A2471C 0C0346BD */  jal     func_800D1AF4              

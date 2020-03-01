@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808C0910
+glabel Bg_Ydan_Sp_InitVars
  .word 0x000F0100, 0x00000000, 0x00360000, 0x00000248
-.word func_808BF410
-.word func_808BF7F4
-.word func_808C05A4
-.word func_808C05C8
+.word BgYdanSp_Init
+.word BgYdanSp_Destroy
+.word BgYdanSp_Update
+.word BgYdanSp_Draw
 glabel D_808C0930
  .word 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00020800, 0x00000000, 0x00010000, 0x42960000, 0xC1000000, 0x42960000
 glabel D_808C0954

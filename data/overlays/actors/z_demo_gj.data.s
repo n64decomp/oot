@@ -77,10 +77,10 @@ glabel D_8097BF24
 .word func_8097B3A0
 .word func_8097B8C4
 .word func_8097BBD8
-glabel D_8097BF70
+glabel Demo_Gj_InitVars
  .word 0x01B10600, 0x00000030, 0x01850000, 0x00000278
-.word func_8097BC58
-.word func_80978A8C
-.word func_8097BBFC
-.word func_8097BD7C
+.word DemoGj_Init
+.word DemoGj_Destroy
+.word DemoGj_Update
+.word DemoGj_Draw
 

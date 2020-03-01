@@ -102,7 +102,7 @@ glabel func_80846CD8
 /* 14C58 80846E68 3C058085 */  lui     $a1, %hi(D_80855290)       ## $a1 = 80850000
 /* 14C5C 80846E6C 24A55290 */  addiu   $a1, $a1, %lo(D_80855290)  ## $a1 = 80855290
 /* 14C60 80846E70 24043008 */  addiu   $a0, $zero, 0x3008         ## $a0 = 00003008
-/* 14C64 80846E74 0C01EBB8 */  jal     func_8007AEE0              
+/* 14C64 80846E74 0C01EBB8 */  jal     ZeldaArena_MallocDebug              
 /* 14C68 80846E78 24064317 */  addiu   $a2, $zero, 0x4317         ## $a2 = 00004317
 /* 14C6C 80846E7C 244F0008 */  addiu   $t7, $v0, 0x0008           ## $t7 = 00000008
 /* 14C70 80846E80 2401FFF0 */  addiu   $at, $zero, 0xFFF0         ## $at = FFFFFFF0

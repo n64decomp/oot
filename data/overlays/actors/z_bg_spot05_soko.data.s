@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808AE700
+glabel Bg_Spot05_Soko_InitVars
  .word 0x018D0600, 0x00000000, 0x01610000, 0x0000016C
-.word func_808AE470
-.word func_808AE578
-.word func_808AE69C
-.word func_808AE6C0
+.word BgSpot05Soko_Init
+.word BgSpot05Soko_Destroy
+.word BgSpot05Soko_Update
+.word BgSpot05Soko_Draw
 glabel D_808AE720
  .word 0x48500064
 glabel D_808AE724

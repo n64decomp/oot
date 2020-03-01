@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A35170
+glabel En_Ge3_InitVars
  .word 0x01D00400, 0x00000019, 0x01690000, 0x00000314
-.word func_80A346C4
-.word func_80A347CC
-.word func_80A34E14
-.word func_80A35060
+.word EnGe3_Init
+.word EnGe3_Destroy
+.word EnGe3_Update
+.word EnGe3_Draw
 glabel D_80A35190
  .word 0x0A000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0x00000722, 0x00000000, 0x00010100, 0x00140032, 0x00000000, 0x00000000
 glabel D_80A351BC

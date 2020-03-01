@@ -38,7 +38,7 @@ glabel func_80A51A98
 /* 00850 80A51B20 0C042DA0 */  jal     func_8010B680              
 /* 00854 80A51B24 8FA40034 */  lw      $a0, 0x0034($sp)           
 /* 00858 80A51B28 8FA40034 */  lw      $a0, 0x0034($sp)           
-/* 0085C 80A51B2C 0C021BC0 */  jal     func_80086F00              
+/* 0085C 80A51B2C 0C021BC0 */  jal     Interface_SetDoAction              
 /* 00860 80A51B30 24050012 */  addiu   $a1, $zero, 0x0012         ## $a1 = 00000012
 /* 00864 80A51B34 3C0880A5 */  lui     $t0, %hi(func_80A51B54)    ## $t0 = 80A50000
 /* 00868 80A51B38 25081B54 */  addiu   $t0, $t0, %lo(func_80A51B54) ## $t0 = 80A51B54

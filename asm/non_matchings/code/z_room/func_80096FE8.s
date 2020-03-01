@@ -86,7 +86,7 @@ glabel func_80096FE8
 /* B0E224 80097084 11400034 */  beqz  $t2, .L80097158
 /* B0E228 80097088 24050390 */   li    $a1, 912
 /* B0E22C 8009708C 8EB41DF0 */  lw    $s4, 0x1df0($s5)
-/* B0E230 80097090 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B0E230 80097090 0C000B84 */  jal   LogUtils_LogThreadId
 /* B0E234 80097094 8EB21D38 */   lw    $s2, 0x1d38($s5)
 /* B0E238 80097098 3C048014 */  lui   $a0, %hi(D_8013F13C) # $a0, 0x8014
 /* B0E23C 8009709C 2484F13C */  addiu $a0, %lo(D_8013F13C) # addiu $a0, $a0, -0xec4

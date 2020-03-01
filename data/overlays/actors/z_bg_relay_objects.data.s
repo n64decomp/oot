@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808A94E0
+glabel Bg_Relay_Objects_InitVars
  .word 0x01230100, 0x00000010, 0x006C0000, 0x0000016C
-.word func_808A8E50
-.word func_808A908C
-.word func_808A946C
-.word func_808A9490
+.word BgRelayObjects_Init
+.word BgRelayObjects_Destroy
+.word BgRelayObjects_Update
+.word BgRelayObjects_Draw
 glabel D_808A9500
  .word 0xB06C0005, 0x48500064
 glabel D_808A9508

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AC2800
+glabel En_Okuta_InitVars
  .word 0x000E0500, 0x00000005, 0x00070000, 0x000003BC
-.word func_80AC0660
-.word func_80AC0868
-.word func_80AC1FD4
-.word func_80AC26D4
+.word EnOkuta_Init
+.word EnOkuta_Destroy
+.word EnOkuta_Update
+.word EnOkuta_Draw
 glabel D_80AC2820
  .word 0x0A110939, 0x20010000, 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFCFFFFF, 0x00000000, 0x09010100, 0x000D0014, 0x00000000, 0x00000000
 glabel D_80AC284C

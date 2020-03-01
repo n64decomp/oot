@@ -53,21 +53,23 @@ typedef struct
     OSViFieldRegs fldRegs[2];
 } OSViMode;
 
+typedef struct {
+    /* 0x0 */ f32 factor;
+    /* 0x4 */ u16 offset;
+    /* 0x8 */ u32 scale;
+} __OSViScale;
+
 typedef struct
 {
-    /* 0x00 */ u16 unk00; //some kind of flags.  swap buffer sets to 0x10
+    /* 0x00 */ u16 state;
     /* 0x02 */ u16 retraceCount;
     /* 0x04 */ void* buffer;
-    /* 0x08 */ OSViMode *unk08;
+    /* 0x08 */ OSViMode *modep;
     /* 0x0c */ u32 features;
     /* 0x10 */ OSMesgQueue *mq;
     /* 0x14 */ OSMesg *msg;
-    /* 0x18 */ u32 unk18;
-    /* 0x1c */ u32 unk1c;
-    /* 0x20 */ u32 unk20;
-    /* 0x24 */ f32 unk24;
-    /* 0x28 */ u16 unk28;
-    /* 0x2c */ u32 unk2c;
+    /* 0x18 */ __OSViScale x;
+    /* 0x24 */ __OSViScale y;
 } OSViContext;
 
 void osCreateViManager(OSPri pri);

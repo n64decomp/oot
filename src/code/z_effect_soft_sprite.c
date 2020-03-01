@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 extern ParticleOverlay sParticleOverlayTable[37];
 
@@ -29,7 +28,7 @@ void Effect_SS_Clear(GlobalContext* globalCtx)
         addr = iter2->loadedRamAddr;
 
         if (addr != NULL)
-            func_8007B0D4(addr, D_801357DC, 337);
+            ZeldaArena_FreeDebug(addr, D_801357DC, 337);
 
         (iter2++)->loadedRamAddr = NULL;
     }

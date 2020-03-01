@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80ABB380
+glabel En_Niw_Lady_InitVars
  .word 0x013C0400, 0x00000019, 0x01100000, 0x000002FC
-.word func_80AB9C40
-.word func_80AB9D38
-.word func_80ABAE40
+.word EnNiwLady_Init
+.word EnNiwLady_Destroy
+.word EnNiwLady_Update
 .word 0x00000000
 glabel D_80ABB3A0
  .word 0x50365070, 0x50725037, 0x50385039, 0x503A503B, 0x503D503C

@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_pu_box.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/func_80AE20C0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/func_80AE21F8.s")
+void EnPubox_Init(EnPubox* this, GlobalContext* globalCtx);
+void EnPubox_Destroy(EnPubox* this, GlobalContext* globalCtx);
+void EnPubox_Update(EnPubox* this, GlobalContext* globalCtx);
+void EnPubox_Draw(EnPubox* this, GlobalContext* globalCtx);
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/func_80AE2228.s")
+/*
+const ActorInit En_Pu_box_InitVars =
+{
+    ACTOR_EN_PU_BOX,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_PU_BOX,
+    sizeof(EnPubox),
+    (ActorFunc)EnPubox_Init,
+    (ActorFunc)EnPubox_Destroy,
+    (ActorFunc)EnPubox_Update,
+    (ActorFunc)EnPubox_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/EnPubox_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/func_80AE237C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/EnPubox_Destroy.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/EnPubox_Update.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Pu_box/EnPubox_Draw.s")
 
 
 

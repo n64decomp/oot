@@ -9,12 +9,12 @@
 
 glabel D_8089A020
  .word 0x00000000
-glabel D_8089A024
+glabel Bg_Jya_Lift_InitVars
  .word 0x01570100, 0x00000010, 0x00F10000, 0x0000016C
-.word func_80899BF8
-.word func_80899CC4
-.word func_80899F04
-.word func_80899FEC
+.word BgJyaLift_Init
+.word BgJyaLift_Destroy
+.word BgJyaLift_Update
+.word BgJyaLift_Draw
 glabel D_8089A044
  .word 0xC8500064, 0xB0F40578, 0xB0F80708, 0x30FC09C4, 0x00000000, 0x00000000, 0x00000000
 

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AE71D0
+glabel En_River_Sound_InitVars
  .word 0x003B0100, 0x00000030, 0x00010000, 0x00000150
-.word func_80AE6930
-.word func_80AE6A00
-.word func_80AE6EBC
-.word func_80AE7088
+.word EnRiverSound_Init
+.word EnRiverSound_Destroy
+.word EnRiverSound_Update
+.word EnRiverSound_Draw
 glabel D_80AE71F0
  .word 0x00000000, 0x00000000
 glabel D_80AE71F8

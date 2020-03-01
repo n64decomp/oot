@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809980D0
+glabel Door_Shutter_InitVars
  .word 0x002E0A00, 0x00000010, 0x00010000, 0x00000178
-.word func_80996490
-.word func_8099669C
-.word func_809977E4
-.word func_80997AE0
+.word DoorShutter_Init
+.word DoorShutter_Destroy
+.word DoorShutter_Update
+.word DoorShutter_Draw
 glabel D_809980F0
  .byte 0x00, 0x37
 glabel D_809980F2

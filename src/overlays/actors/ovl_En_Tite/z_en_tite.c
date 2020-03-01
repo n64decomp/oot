@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_tite.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000015
+
+void EnTite_Init(EnTite* this, GlobalContext* globalCtx);
+void EnTite_Destroy(EnTite* this, GlobalContext* globalCtx);
+void EnTite_Update(EnTite* this, GlobalContext* globalCtx);
+void EnTite_Draw(EnTite* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Tite_InitVars =
+{
+    ACTOR_EN_TITE,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_TITE,
+    sizeof(EnTite),
+    (ActorFunc)EnTite_Init,
+    (ActorFunc)EnTite_Destroy,
+    (ActorFunc)EnTite_Update,
+    (ActorFunc)EnTite_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B18A80.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B18A88.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/EnTite_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B18BDC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/EnTite_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B18C5C.s")
 
@@ -47,12 +69,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B1ABBC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B1AD94.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/EnTite_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B1B178.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/func_80B1B268.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Tite/EnTite_Draw.s")

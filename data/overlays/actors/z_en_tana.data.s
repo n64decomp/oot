@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B181E0
+glabel En_Tana_InitVars
  .word 0x00C20600, 0x00000009, 0x00B20000, 0x0000014C
-.word func_80B17F30
-.word func_80B17FAC
-.word func_80B17FB8
+.word EnTana_Init
+.word EnTana_Destroy
+.word EnTana_Update
 .word 0x00000000
 glabel D_80B18200
  .word D_80B18230

@@ -145,7 +145,7 @@ glabel func_8003C078
 /* AB342C 8003C28C AE020040 */   sw    $v0, 0x40($s0)
 /* AB3430 8003C290 3C048014 */  lui   $a0, %hi(D_801388A4) # $a0, 0x8014
 /* AB3434 8003C294 248488A4 */  addiu $a0, %lo(D_801388A4) # addiu $a0, $a0, -0x775c
-/* AB3438 8003C298 0C000B94 */  jal   func_80002E50
+/* AB3438 8003C298 0C000B94 */  jal   LogUtils_HungupThread
 /* AB343C 8003C29C 24051050 */   li    $a1, 4176
 .L8003C2A0:
 /* AB3440 8003C2A0 8E020000 */  lw    $v0, ($s0)
@@ -240,7 +240,7 @@ glabel func_8003C078
 /* AB35A0 8003C400 004D082B */  sltu  $at, $v0, $t5
 /* AB35A4 8003C404 50200005 */  beql  $at, $zero, .L8003C41C
 /* AB35A8 8003C408 8FAF0050 */   lw    $t7, 0x50($sp)
-/* AB35AC 8003C40C 0C000B94 */  jal   func_80002E50
+/* AB35AC 8003C40C 0C000B94 */  jal   LogUtils_HungupThread
 /* AB35B0 8003C410 24051086 */   li    $a1, 4230
 /* AB35B4 8003C414 8E021460 */  lw    $v0, 0x1460($s0)
 /* AB35B8 8003C418 8FAF0050 */  lw    $t7, 0x50($sp)

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_heishi2.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A52EA0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000009
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A5318C.s")
+void EnHeishi2_Init(EnHeishi2* this, GlobalContext* globalCtx);
+void EnHeishi2_Destroy(EnHeishi2* this, GlobalContext* globalCtx);
+void EnHeishi2_Update(EnHeishi2* this, GlobalContext* globalCtx);
+void EnHeishi2_Draw(EnHeishi2* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Heishi2_InitVars =
+{
+    ACTOR_EN_HEISHI2,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_SD,
+    sizeof(EnHeishi2),
+    (ActorFunc)EnHeishi2_Init,
+    (ActorFunc)EnHeishi2_Destroy,
+    (ActorFunc)EnHeishi2_Update,
+    (ActorFunc)EnHeishi2_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/EnHeishi2_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/EnHeishi2_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A531CC.s")
 
@@ -65,7 +87,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A549E8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A54A78.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/EnHeishi2_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A54BC0.s")
 
@@ -73,8 +95,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A54C6C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/func_80A54D2C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Heishi2/EnHeishi2_Draw.s")

@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_808793C0
+glabel Bg_Gnd_Darkmeiro_InitVars
  .word 0x01B40600, 0x00000030, 0x01790000, 0x00000170
-.word func_80878CC0
-.word func_80878EE8
-.word func_80879198
+.word BgGndDarkmeiro_Init
+.word BgGndDarkmeiro_Destroy
+.word BgGndDarkmeiro_Update
 .word 0x00000000
 

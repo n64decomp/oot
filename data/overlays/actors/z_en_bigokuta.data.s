@@ -13,12 +13,12 @@ glabel D_809BF3A4
  .word 0x64FFFFFF
 glabel D_809BF3A8
  .word 0x00000000, 0x00000000, 0x00000000
-glabel D_809BF3B4
+glabel En_Bigokuta_InitVars
  .word 0x00C60500, 0x00000035, 0x015F0000, 0x00000384
-.word func_809BCC60
-.word func_809BCDC8
-.word func_809BE9CC
-.word func_809BF0AC
+.word EnBigokuta_Init
+.word EnBigokuta_Destroy
+.word EnBigokuta_Update
+.word EnBigokuta_Draw
 glabel D_809BF3D4
  .word 0x01000000, 0x20000000, 0x00080000, 0xFFCFFFFF, 0x00000000, 0x09010100, 0x01000000, 0x002DFFE2, 0x004B0064
 glabel D_809BF3F8

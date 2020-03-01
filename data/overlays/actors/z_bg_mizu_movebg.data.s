@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8089EB20
+glabel Bg_Mizu_Movebg_InitVars
  .word 0x00640100, 0x00000010, 0x00590000, 0x00000188
-.word func_8089DC98
-.word func_8089E058
-.word func_8089E80C
-.word func_8089E830
+.word BgMizuMovebg_Init
+.word BgMizuMovebg_Destroy
+.word BgMizuMovebg_Update
+.word BgMizuMovebg_Draw
 glabel D_8089EB40
  .word 0xC2E66667, 0xC2E66667, 0xC2E66667, 0x00000000
 glabel D_8089EB50

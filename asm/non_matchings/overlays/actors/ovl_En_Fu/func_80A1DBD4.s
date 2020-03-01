@@ -57,7 +57,7 @@ glabel func_80A1DBD4
 /* 0049C 80A1DCAC 24080001 */  addiu   $t0, $zero, 0x0001         ## $t0 = 00000001
 /* 004A0 80A1DCB0 AC991D68 */  sw      $t9, 0x1D68($a0)           ## 00001D68
 /* 004A4 80A1DCB4 A028FA74 */  sb      $t0, -0x058C($at)          ## 8015FA74
-/* 004A8 80A1DCB8 0C021344 */  jal     func_80084D10              
+/* 004A8 80A1DCB8 0C021344 */  jal     Item_Give              
 /* 004AC 80A1DCBC 24050065 */  addiu   $a1, $zero, 0x0065         ## $a1 = 00000065
 /* 004B0 80A1DCC0 8FA7001C */  lw      $a3, 0x001C($sp)           
 /* 004B4 80A1DCC4 3C010001 */  lui     $at, 0x0001                ## $at = 00010000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A59A20
+glabel En_Holl_InitVars
  .word 0x00230A00, 0x00000010, 0x00010000, 0x00000154
-.word func_80A58CB0
-.word func_80A58CEC
-.word func_80A5989C
-.word func_80A598C0
+.word EnHoll_Init
+.word EnHoll_Destroy
+.word EnHoll_Update
+.word EnHoll_Draw
 glabel D_80A59A40
  .word func_80A58DD4
 .word func_80A591C0

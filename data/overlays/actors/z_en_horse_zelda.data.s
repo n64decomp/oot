@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A6E1B0
+glabel En_Horse_Zelda_InitVars
  .word 0x005B0100, 0x00000010, 0x00460000, 0x000002A8
-.word func_80A6DAE0
-.word func_80A6DC2C
-.word func_80A6DF00
-.word func_80A6E160
+.word EnHorseZelda_Init
+.word EnHorseZelda_Destroy
+.word EnHorseZelda_Update
+.word EnHorseZelda_Draw
 glabel D_80A6E1D0
  .word 0x06007148
 glabel D_80A6E1D4

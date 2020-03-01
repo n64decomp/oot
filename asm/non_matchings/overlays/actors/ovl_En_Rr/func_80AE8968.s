@@ -34,7 +34,7 @@ glabel func_80AE8968
 /* 005A8 80AE89E8 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 005AC 80AE89EC 8FA40034 */  lw      $a0, 0x0034($sp)           
 /* 005B0 80AE89F0 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
-/* 005B4 80AE89F4 0C025E95 */  jal     func_80097A54              
+/* 005B4 80AE89F4 0C025E95 */  jal     Inventory_DeleteEquipment              
 /* 005B8 80AE89F8 A3A0002A */  sb      $zero, 0x002A($sp)         
 /* 005BC 80AE89FC 93A6002A */  lbu     $a2, 0x002A($sp)           
 /* 005C0 80AE8A00 10400004 */  beq     $v0, $zero, .L80AE8A14     
@@ -55,7 +55,7 @@ glabel func_80AE8968
 /* 005F8 80AE8A38 1121000A */  beq     $t1, $at, .L80AE8A64       
 /* 005FC 80AE8A3C 8FA40034 */  lw      $a0, 0x0034($sp)           
 /* 00600 80AE8A40 24050002 */  addiu   $a1, $zero, 0x0002         ## $a1 = 00000002
-/* 00604 80AE8A44 0C025E95 */  jal     func_80097A54              
+/* 00604 80AE8A44 0C025E95 */  jal     Inventory_DeleteEquipment              
 /* 00608 80AE8A48 A3A7002B */  sb      $a3, 0x002B($sp)           
 /* 0060C 80AE8A4C 93A7002B */  lbu     $a3, 0x002B($sp)           
 /* 00610 80AE8A50 10400004 */  beq     $v0, $zero, .L80AE8A64     

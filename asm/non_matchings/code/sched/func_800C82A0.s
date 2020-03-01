@@ -8,7 +8,7 @@ glabel func_800C82A0
 /* B3F458 800C82B8 24C65D54 */  addiu $a2, %lo(D_80145D54) # addiu $a2, $a2, 0x5d54
 /* B3F45C 800C82BC 24845D40 */  addiu $a0, %lo(D_80145D40) # addiu $a0, $a0, 0x5d40
 /* B3F460 800C82C0 24070154 */  li    $a3, 340
-/* B3F464 800C82C4 0C000B68 */  jal   func_80002DA0
+/* B3F464 800C82C4 0C000B68 */  jal   LogUtils_CheckValidPointer
 /* B3F468 800C82C8 8DC50004 */   lw    $a1, 4($t6)
 /* B3F46C 800C82CC 8FAF0028 */  lw    $t7, 0x28($sp)
 /* B3F470 800C82D0 8DE40004 */  lw    $a0, 4($t7)
@@ -43,14 +43,14 @@ glabel func_800C82A0
 /* B3F4DC 800C833C 8FA30028 */  lw    $v1, 0x28($sp)
 /* B3F4E0 800C8340 8C620008 */  lw    $v0, 8($v1)
 .L800C8344:
-/* B3F4E4 800C8344 3C058013 */  lui   $a1, %hi(D_8012D272) # $a1, 0x8013
+/* B3F4E4 800C8344 3C058013 */  lui   $a1, %hi(gScreenWidth+2) # $a1, 0x8013
 /* B3F4E8 800C8348 24060010 */  li    $a2, 16
 /* B3F4EC 800C834C 10400003 */  beqz  $v0, .L800C835C
 /* B3F4F0 800C8350 00000000 */   nop   
 /* B3F4F4 800C8354 10000002 */  b     .L800C8360
 /* B3F4F8 800C8358 9445000A */   lhu   $a1, 0xa($v0)
 .L800C835C:
-/* B3F4FC 800C835C 94A5D272 */  lhu   $a1, %lo(D_8012D272)($a1)
+/* B3F4FC 800C835C 94A5D272 */  lhu   $a1, %lo(gScreenWidth+2)($a1)
 .L800C8360:
 /* B3F500 800C8360 0C03590C */  jal   Fault_SetFB
 /* B3F504 800C8364 8C640004 */   lw    $a0, 4($v1)

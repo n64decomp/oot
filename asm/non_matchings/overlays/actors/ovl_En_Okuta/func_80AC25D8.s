@@ -59,7 +59,7 @@ glabel func_80AC25D8
 /* 0204C 80AC26AC C7AC001C */  lwc1    $f12, 0x001C($sp)          
 /* 02050 80AC26B0 C7AE0020 */  lwc1    $f14, 0x0020($sp)          
 /* 02054 80AC26B4 8FA60024 */  lw      $a2, 0x0024($sp)           
-/* 02058 80AC26B8 0C0342A3 */  jal     func_800D0A8C              
+/* 02058 80AC26B8 0C0342A3 */  jal     Matrix_Scale              
 /* 0205C 80AC26BC 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 .L80AC26C0:
 /* 02060 80AC26C0 8FBF0014 */  lw      $ra, 0x0014($sp)           

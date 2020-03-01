@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80876A40
+glabel Bg_Ganon_Otyuka_InitVars
  .word 0x01060600, 0x00000030, 0x00E10000, 0x0000018C
-.word func_80875920
-.word func_808759B8
-.word func_808760E8
-.word func_80876130
+.word BgGanonOtyuka_Init
+.word BgGanonOtyuka_Destroy
+.word BgGanonOtyuka_Update
+.word BgGanonOtyuka_Draw
 glabel D_80876A60
  .word 0x485003E8
 glabel D_80876A64

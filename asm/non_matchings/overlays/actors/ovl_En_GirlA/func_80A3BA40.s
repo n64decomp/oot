@@ -33,47 +33,47 @@ glabel func_80A3BA40
 /* 01364 80A3BAB4 10000024 */  beq     $zero, $zero, .L80A3BB48   
 /* 01368 80A3BAB8 8FB8001C */  lw      $t8, 0x001C($sp)           
 .L80A3BABC:
-/* 0136C 80A3BABC 0C021344 */  jal     func_80084D10              
+/* 0136C 80A3BABC 0C021344 */  jal     Item_Give              
 /* 01370 80A3BAC0 24050019 */  addiu   $a1, $zero, 0x0019         ## $a1 = 00000019
 /* 01374 80A3BAC4 10000020 */  beq     $zero, $zero, .L80A3BB48   
 /* 01378 80A3BAC8 8FB8001C */  lw      $t8, 0x001C($sp)           
 .L80A3BACC:
-/* 0137C 80A3BACC 0C021344 */  jal     func_80084D10              
+/* 0137C 80A3BACC 0C021344 */  jal     Item_Give              
 /* 01380 80A3BAD0 24050015 */  addiu   $a1, $zero, 0x0015         ## $a1 = 00000015
 /* 01384 80A3BAD4 1000001C */  beq     $zero, $zero, .L80A3BB48   
 /* 01388 80A3BAD8 8FB8001C */  lw      $t8, 0x001C($sp)           
 .L80A3BADC:
-/* 0138C 80A3BADC 0C021344 */  jal     func_80084D10              
+/* 0138C 80A3BADC 0C021344 */  jal     Item_Give              
 /* 01390 80A3BAE0 24050016 */  addiu   $a1, $zero, 0x0016         ## $a1 = 00000016
 /* 01394 80A3BAE4 10000018 */  beq     $zero, $zero, .L80A3BB48   
 /* 01398 80A3BAE8 8FB8001C */  lw      $t8, 0x001C($sp)           
 .L80A3BAEC:
-/* 0139C 80A3BAEC 0C021344 */  jal     func_80084D10              
+/* 0139C 80A3BAEC 0C021344 */  jal     Item_Give              
 /* 013A0 80A3BAF0 24050017 */  addiu   $a1, $zero, 0x0017         ## $a1 = 00000017
 /* 013A4 80A3BAF4 10000014 */  beq     $zero, $zero, .L80A3BB48   
 /* 013A8 80A3BAF8 8FB8001C */  lw      $t8, 0x001C($sp)           
 glabel L80A3BAFC
-/* 013AC 80A3BAFC 0C021344 */  jal     func_80084D10              
+/* 013AC 80A3BAFC 0C021344 */  jal     Item_Give              
 /* 013B0 80A3BB00 2405001C */  addiu   $a1, $zero, 0x001C         ## $a1 = 0000001C
 /* 013B4 80A3BB04 10000010 */  beq     $zero, $zero, .L80A3BB48   
 /* 013B8 80A3BB08 8FB8001C */  lw      $t8, 0x001C($sp)           
 glabel L80A3BB0C
-/* 013BC 80A3BB0C 0C021344 */  jal     func_80084D10              
+/* 013BC 80A3BB0C 0C021344 */  jal     Item_Give              
 /* 013C0 80A3BB10 2405001D */  addiu   $a1, $zero, 0x001D         ## $a1 = 0000001D
 /* 013C4 80A3BB14 1000000C */  beq     $zero, $zero, .L80A3BB48   
 /* 013C8 80A3BB18 8FB8001C */  lw      $t8, 0x001C($sp)           
 glabel L80A3BB1C
-/* 013CC 80A3BB1C 0C021344 */  jal     func_80084D10              
+/* 013CC 80A3BB1C 0C021344 */  jal     Item_Give              
 /* 013D0 80A3BB20 2405001E */  addiu   $a1, $zero, 0x001E         ## $a1 = 0000001E
 /* 013D4 80A3BB24 10000008 */  beq     $zero, $zero, .L80A3BB48   
 /* 013D8 80A3BB28 8FB8001C */  lw      $t8, 0x001C($sp)           
 glabel L80A3BB2C
-/* 013DC 80A3BB2C 0C021344 */  jal     func_80084D10              
+/* 013DC 80A3BB2C 0C021344 */  jal     Item_Give              
 /* 013E0 80A3BB30 24050020 */  addiu   $a1, $zero, 0x0020         ## $a1 = 00000020
 /* 013E4 80A3BB34 10000004 */  beq     $zero, $zero, .L80A3BB48   
 /* 013E8 80A3BB38 8FB8001C */  lw      $t8, 0x001C($sp)           
 glabel L80A3BB3C
-/* 013EC 80A3BB3C 0C021344 */  jal     func_80084D10              
+/* 013EC 80A3BB3C 0C021344 */  jal     Item_Give              
 /* 013F0 80A3BB40 24050018 */  addiu   $a1, $zero, 0x0018         ## $a1 = 00000018
 .L80A3BB44:
 /* 013F4 80A3BB44 8FB8001C */  lw      $t8, 0x001C($sp)           
@@ -81,7 +81,7 @@ glabel L80A3BB3C
 /* 013F8 80A3BB48 870401C8 */  lh      $a0, 0x01C8($t8)           ## 000001C8
 /* 013FC 80A3BB4C 00042023 */  subu    $a0, $zero, $a0            
 /* 01400 80A3BB50 00042400 */  sll     $a0, $a0, 16               
-/* 01404 80A3BB54 0C021CC3 */  jal     func_8008730C              
+/* 01404 80A3BB54 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 01408 80A3BB58 00042403 */  sra     $a0, $a0, 16               
 /* 0140C 80A3BB5C 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 01410 80A3BB60 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

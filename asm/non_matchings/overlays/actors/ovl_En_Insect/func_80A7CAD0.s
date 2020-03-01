@@ -8,8 +8,8 @@ glabel func_80A7CAD0
 /* 00CC8 80A7CAE8 14410009 */  bne     $v0, $at, .L80A7CB10       
 /* 00CCC 80A7CAEC 00000000 */  nop
 /* 00CD0 80A7CAF0 948E0314 */  lhu     $t6, 0x0314($a0)           ## 00000314
-/* 00CD4 80A7CAF4 3C1880A8 */  lui     $t8, %hi(func_80A7DE48)    ## $t8 = 80A80000
-/* 00CD8 80A7CAF8 2718DE48 */  addiu   $t8, $t8, %lo(func_80A7DE48) ## $t8 = 80A7DE48
+/* 00CD4 80A7CAF4 3C1880A8 */  lui     $t8, %hi(EnInsect_Draw)    ## $t8 = 80A80000
+/* 00CD8 80A7CAF8 2718DE48 */  addiu   $t8, $t8, %lo(EnInsect_Draw) ## $t8 = 80A7DE48
 /* 00CDC 80A7CAFC 31CF0004 */  andi    $t7, $t6, 0x0004           ## $t7 = 00000000
 /* 00CE0 80A7CB00 15E00003 */  bne     $t7, $zero, .L80A7CB10     
 /* 00CE4 80A7CB04 00000000 */  nop

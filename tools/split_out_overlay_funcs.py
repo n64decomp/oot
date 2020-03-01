@@ -69,9 +69,10 @@ def handle_file(asm_root, asm_file, c_file_path):
 def main():
     for root, dirs, files in os.walk(asm_dir):
         for file in files:
-            c_file_path = get_c_file_path(root.split("/")[-1])
-            if c_file_path is not None:
-                handle_file(root, file, c_file_path)
+            if file.startswith("z_"):
+                c_file_path = get_c_file_path(root.split("/")[-1])
+                if c_file_path is not None:
+                    handle_file(root, file, c_file_path)
 
 
 main()

@@ -30,7 +30,7 @@ glabel func_80848A04
 /* 16858 80848A68 14600009 */  bne     $v1, $zero, .L80848A90     
 /* 1685C 80848A6C 284100C9 */  slti    $at, $v0, 0x00C9           
 /* 16860 80848A70 00002025 */  or      $a0, $zero, $zero          ## $a0 = 00000000
-/* 16864 80848A74 0C021CCC */  jal     func_80087330              
+/* 16864 80848A74 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 16868 80848A78 2405FFFF */  addiu   $a1, $zero, 0xFFFF         ## $a1 = FFFFFFFF
 /* 1686C 80848A7C 44800000 */  mtc1    $zero, $f0                 ## $f0 = 0.00
 /* 16870 80848A80 240F0001 */  addiu   $t7, $zero, 0x0001         ## $t7 = 00000001

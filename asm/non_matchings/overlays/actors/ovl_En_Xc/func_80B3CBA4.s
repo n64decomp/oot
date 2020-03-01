@@ -76,7 +76,7 @@ glabel func_80B3CBA4
 /* 00AEC 80B3CCCC 35AE0002 */  ori     $t6, $t5, 0x0002           ## $t6 = 00000002
 /* 00AF0 80B3CCD0 A46E0EDE */  sh      $t6, 0x0EDE($v1)           ## 8015F53E
 /* 00AF4 80B3CCD4 00C02025 */  or      $a0, $a2, $zero            ## $a0 = 00000000
-/* 00AF8 80B3CCD8 0C021344 */  jal     func_80084D10              
+/* 00AF8 80B3CCD8 0C021344 */  jal     Item_Give              
 /* 00AFC 80B3CCDC 2405005B */  addiu   $a1, $zero, 0x005B         ## $a1 = 0000005B
 /* 00B00 80B3CCE0 10000003 */  beq     $zero, $zero, .L80B3CCF0   
 /* 00B04 80B3CCE4 24020001 */  addiu   $v0, $zero, 0x0001         ## $v0 = 00000001

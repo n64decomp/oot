@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80994B50
+glabel Door_Gerudo_InitVars
  .word 0x01720700, 0x00000000, 0x014B0000, 0x0000016C
-.word func_809945E0
-.word func_8099468C
-.word func_80994A24
-.word func_80994A48
+.word DoorGerudo_Init
+.word DoorGerudo_Destroy
+.word DoorGerudo_Update
+.word DoorGerudo_Draw
 glabel D_80994B70
  .word 0x40500001, 0x00000000, 0x00000000, 0x00000000
 

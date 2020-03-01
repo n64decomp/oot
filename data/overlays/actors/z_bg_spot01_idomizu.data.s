@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808ABD90
+glabel Bg_Spot01_Idomizu_InitVars
  .word 0x01040100, 0x00000020, 0x00F90000, 0x00000158
-.word func_808ABAE0
-.word func_808ABB78
-.word func_808ABC34
-.word func_808ABC58
+.word BgSpot01Idomizu_Init
+.word BgSpot01Idomizu_Destroy
+.word BgSpot01Idomizu_Update
+.word BgSpot01Idomizu_Draw
 glabel D_808ABDB0
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

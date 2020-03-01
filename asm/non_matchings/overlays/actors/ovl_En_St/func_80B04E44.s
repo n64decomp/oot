@@ -44,7 +44,7 @@ glabel func_80B04E44
 /* 0065C 80B04EEC E7A80044 */  swc1    $f8, 0x0044($sp)           
 /* 00660 80B04EF0 C4900408 */  lwc1    $f16, 0x0408($a0)          ## 00000408
 /* 00664 80B04EF4 46105482 */  mul.s   $f18, $f10, $f16           
-/* 00668 80B04EF8 0C034213 */  jal     func_800D084C              
+/* 00668 80B04EF8 0C034213 */  jal     Matrix_Push              
 /* 0066C 80B04EFC E7B20048 */  swc1    $f18, 0x0048($sp)          
 /* 00670 80B04F00 27A4004C */  addiu   $a0, $sp, 0x004C           ## $a0 = FFFFFFF4
 /* 00674 80B04F04 0C0346BD */  jal     func_800D1AF4              
@@ -52,7 +52,7 @@ glabel func_80B04E44
 /* 0067C 80B04F0C 27A40040 */  addiu   $a0, $sp, 0x0040           ## $a0 = FFFFFFE8
 /* 00680 80B04F10 0C0346BD */  jal     func_800D1AF4              
 /* 00684 80B04F14 27A50028 */  addiu   $a1, $sp, 0x0028           ## $a1 = FFFFFFD0
-/* 00688 80B04F18 0C034221 */  jal     func_800D0884              
+/* 00688 80B04F18 0C034221 */  jal     Matrix_Pull              
 /* 0068C 80B04F1C 00000000 */  nop
 /* 00690 80B04F20 0C009AC3 */  jal     func_80026B0C              
 /* 00694 80B04F24 8E040404 */  lw      $a0, 0x0404($s0)           ## 00000404

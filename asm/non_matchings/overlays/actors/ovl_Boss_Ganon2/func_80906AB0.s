@@ -61,14 +61,14 @@ glabel func_80906AB0
 /* 09C54 80906B94 C44E0080 */  lwc1    $f14, 0x0080($v0)          ## 00000080
 /* 09C58 80906B98 46128101 */  sub.s   $f4, $f16, $f18            
 /* 09C5C 80906B9C 44062000 */  mfc1    $a2, $f4                   
-/* 09C60 80906BA0 0C034261 */  jal     func_800D0984              
+/* 09C60 80906BA0 0C034261 */  jal     Matrix_Translate              
 /* 09C64 80906BA4 00000000 */  nop
 /* 09C68 80906BA8 3C018091 */  lui     $at, %hi(D_8090DD98)       ## $at = 80910000
 /* 09C6C 80906BAC C42CDD98 */  lwc1    $f12, %lo(D_8090DD98)($at) 
 /* 09C70 80906BB0 3C013F80 */  lui     $at, 0x3F80                ## $at = 3F800000
 /* 09C74 80906BB4 44817000 */  mtc1    $at, $f14                  ## $f14 = 1.00
 /* 09C78 80906BB8 44066000 */  mfc1    $a2, $f12                  
-/* 09C7C 80906BBC 0C0342A3 */  jal     func_800D0A8C              
+/* 09C7C 80906BBC 0C0342A3 */  jal     Matrix_Scale              
 /* 09C80 80906BC0 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 09C84 80906BC4 8E0202C0 */  lw      $v0, 0x02C0($s0)           ## 000002C0
 /* 09C88 80906BC8 3C0DDA38 */  lui     $t5, 0xDA38                ## $t5 = DA380000
@@ -81,7 +81,7 @@ glabel func_80906AB0
 /* 09CA4 80906BE4 24A5DA70 */  addiu   $a1, $a1, %lo(D_8090DA70)  ## $a1 = 8090DA70
 /* 09CA8 80906BE8 8DC40000 */  lw      $a0, 0x0000($t6)           ## 00000000
 /* 09CAC 80906BEC 24061939 */  addiu   $a2, $zero, 0x1939         ## $a2 = 00001939
-/* 09CB0 80906BF0 0C0346A2 */  jal     func_800D1A88              
+/* 09CB0 80906BF0 0C0346A2 */  jal     Matrix_NewMtx              
 /* 09CB4 80906BF4 AFA2004C */  sw      $v0, 0x004C($sp)           
 /* 09CB8 80906BF8 8FA3004C */  lw      $v1, 0x004C($sp)           
 /* 09CBC 80906BFC 3C188091 */  lui     $t8, %hi(D_80908310)       ## $t8 = 80910000

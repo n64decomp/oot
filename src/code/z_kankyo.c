@@ -87,7 +87,7 @@ s32 func_800775E4()
 
 void func_800775F0(u16 arg0)
 {
-    gSaveContext.disable_music_flag = arg0;
+    gSaveContext.unk_140E = arg0;
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_kankyo/func_80077600.s")

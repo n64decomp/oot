@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808B2DF0
+glabel Bg_Spot11_Oasis_InitVars
  .word 0x01C20100, 0x00000010, 0x016F0000, 0x00000154
-.word func_808B2920
-.word 0x80035118
-.word func_808B2AC4
+.word BgSpot11Oasis_Init
+.word Actor_Noop
+.word BgSpot11Oasis_Update
 .word 0x00000000
 glabel D_808B2E10
  .word 0x04EC07F8

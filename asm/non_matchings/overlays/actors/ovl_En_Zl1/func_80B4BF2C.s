@@ -175,7 +175,7 @@ glabel L80B4C1A0
 /* 01674 80B4C1B4 02002825 */  or      $a1, $s0, $zero            ## $a1 = 00000000
 /* 01678 80B4C1B8 0C00B7D5 */  jal     func_8002DF54              
 /* 0167C 80B4C1BC 24060007 */  addiu   $a2, $zero, 0x0007         ## $a2 = 00000007
-/* 01680 80B4C1C0 0C020978 */  jal     func_800825E0              
+/* 01680 80B4C1C0 0C020978 */  jal     Interface_ChangeAlpha              
 /* 01684 80B4C1C4 24040032 */  addiu   $a0, $zero, 0x0032         ## $a0 = 00000032
 /* 01688 80B4C1C8 8E0E0004 */  lw      $t6, 0x0004($s0)           ## 00000004
 /* 0168C 80B4C1CC 2401FEFF */  addiu   $at, $zero, 0xFEFF         ## $at = FFFFFEFF

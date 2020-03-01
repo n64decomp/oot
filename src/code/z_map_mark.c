@@ -4,7 +4,7 @@
 
 typedef struct
 {
-    /* 0x00 */ u32 texture;
+    /* 0x00 */ void* texture;
     /* 0x04 */ u32 imageFormat;
     /* 0x08 */ u32 imageSize;
     /* 0x0C */ u32 textureWidth;
@@ -41,8 +41,8 @@ static u32 sLineBytesImageSizes[] = { 0, 1, 2, 2 };
 
 static MapMarkInfo sMapMarkInfoTable[] =
 {
-    { 0x02002580, G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 8, 32, 32, 1024, 1024 }, // Chest Icon
-    { 0x02002900, G_IM_FMT_IA,   G_IM_SIZ_8b,  8, 8, 32, 32, 1024, 1024 }, // Boss Skull Icon
+    { D_02002580, G_IM_FMT_RGBA, G_IM_SIZ_16b, 8, 8, 32, 32, 1024, 1024 }, // Chest Icon
+    { D_02002900, G_IM_FMT_IA,   G_IM_SIZ_8b,  8, 8, 32, 32, 1024, 1024 }, // Boss Skull Icon
 };
 
 static MapMarkDataOverlay sMapMarkDataOvl =
@@ -65,7 +65,7 @@ void MapMark_Init(GlobalContext* globalCtx)
     u32 overlaySize = overlay->vramEnd - overlay->vramStart;
 
     overlay->loadedRamAddr = Game_Alloc(globalCtx, overlaySize, "../z_map_mark.c", 235);
-    NullPointerCheck("dlftbl->allocp", overlay->loadedRamAddr, "../z_map_mark.c", 236);
+    LogUtils_CheckNullPointer("dlftbl->allocp", overlay->loadedRamAddr, "../z_map_mark.c", 236);
 
     func_800FC620(overlay->vromStart, overlay->vromEnd,
                   overlay->vramStart, overlay->vramEnd,
@@ -89,25 +89,25 @@ void MapMark_Draw(GlobalContext* globalCtx)
     MapMarkData* mapMarkData;
     MapMarkPoint* markPoint;
     MapMarkInfo* markInfo;
-    u16 minimapId;
+    u16 dungeonId;
     s32 i;
     s32 rectLeft;
     s32 rectTop;
     GraphicsContext* gfxCtx;
     Gfx* gfxArr[4];
 
-    minimapId = gSaveContext.minimap_index;
+    dungeonId = gSaveContext.dungeon_index;
     interfaceCtx = &globalCtx->interfaceCtx;
 
-    if ((D_8015FFD0 != NULL) && (globalCtx->interfaceCtx.roomNum >= D_8015FFD0[7][minimapId]))
+    if ((D_8015FFD0 != NULL) && (globalCtx->interfaceCtx.roomNum >= D_8015FFD0[7][dungeonId]))
     {
         // Translates to: "ROOM NUMBER EXCEEDED, YIKES %d/%d  MapMarkDraw PROCESSING INTERRUPTED"
         osSyncPrintf(VT_COL(RED, WHITE) "部屋番号がオーバーしてるで,ヤバイで %d/%d  \nMapMarkDraw の処理を中断します\n", VT_RST,
-                     globalCtx->interfaceCtx.roomNum, D_8015FFD0[7][minimapId]);
+                     globalCtx->interfaceCtx.roomNum, D_8015FFD0[7][dungeonId]);
         return;
     }
 
-    mapMarkData = &sLoadedMarkDataTable[minimapId][interfaceCtx->roomNum][0];
+    mapMarkData = &sLoadedMarkDataTable[dungeonId][interfaceCtx->roomNum][0];
 
     gfxCtx = globalCtx->gfxCtx;
     func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_map_mark.c", 303);
@@ -140,8 +140,8 @@ void MapMark_Draw(GlobalContext* globalCtx)
                                     G_TX_NOMASK, G_TX_NOMASK,
                                     G_TX_NOLOD, G_TX_NOLOD);
 
-                rectLeft = (gGameInfo->unk_1150 + markPoint->x + 204) << 2;
-                rectTop = (gGameInfo->unk_1152 + markPoint->y + 140) << 2;
+                rectLeft = (GREG(94) + markPoint->x + 204) << 2;
+                rectTop = (GREG(95) + markPoint->y + 140) << 2;
                 gSPTextureRectangle(gfxCtx->overlay.p++,
                                     rectLeft, rectTop,
                                     markInfo->rectWidth + rectLeft, rectTop + markInfo->rectHeight,
@@ -159,23 +159,23 @@ void MapMark_Draw(GlobalContext* globalCtx)
 
 void MapMark_DrawConditionally(GlobalContext* globalCtx)
 {
-    switch(globalCtx->sceneNum)
+    switch (globalCtx->sceneNum)
     {
-        case 0:
-        case 1:
-        case 2:
-        case 3:
-        case 4:
-        case 5:
-        case 6:
-        case 7:
-        case 8:
-        case 9:
-        case 17:
-        case 18:
-        case 19:
-        case 20:
-        case 21:
+        case SCENE_YDAN:
+        case SCENE_DDAN:
+        case SCENE_BDAN:
+        case SCENE_BMORI1:
+        case SCENE_HIDAN:
+        case SCENE_MIZUSIN:
+        case SCENE_JYASINZOU:
+        case SCENE_HAKADAN:
+        case SCENE_HAKADANCH:
+        case SCENE_ICE_DOUKUTO:
+        case SCENE_YDAN_BOSS:
+        case SCENE_DDAN_BOSS:
+        case SCENE_BDAN_BOSS:
+        case SCENE_MORIBOSSROOM:
+        case SCENE_FIRE_BS:
             MapMark_Draw(globalCtx);
     }
 }

@@ -1,7 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
-#include <z64.h>
 #include <vt.h>
 
 // Non-matchings functions marked with CLOSE are either a matter of regalloc or stack size and can possibly be fixed with the permutator.
@@ -108,18 +106,18 @@ void func_80043A3C(Vec3f *a, Vec3f *b, f32 c, f32 d, f32 e)
 void func_80043ABC(Camera *camera)
 {
     camera->unk_C0.z = 100.0f;
-    camera->unk_C0.y = gGameInfo->unk_1A0.y;
-    camera->unk_C0.x = gGameInfo->unk_1A0.x;
-    camera->unk_CC.x = gGameInfo->unk_198.x * 0.01f;
-    camera->unk_CC.y = gGameInfo->unk_198.y * 0.01f;
-    camera->unk_CC.z = gGameInfo->unk_198.z * 0.01f;
+    camera->unk_C0.y = OREG(7);
+    camera->unk_C0.x = OREG(6);
+    camera->unk_CC.x = OREG(2) * 0.01f;
+    camera->unk_CC.y = OREG(3) * 0.01f;
+    camera->unk_CC.z = OREG(4) * 0.01f;
 }
 
 void func_80043B60(Camera *camera)
 {
-    camera->unk_C0.x = gGameInfo->unk_1CA;
-    camera->unk_C0.z = gGameInfo->unk_1CA;
-    camera->unk_C0.y = gGameInfo->unk_1CA;
+    camera->unk_C0.x = OREG(27);
+    camera->unk_C0.z = OREG(27);
+    camera->unk_C0.y = OREG(27);
     camera->unk_CC.x = 0.001f;
     camera->unk_CC.y = 0.001f;
     camera->unk_CC.z = 0.001f;
@@ -397,12 +395,12 @@ f32 func_800450A4(Camera *camera, f32 b)
 {
     f32 ret;
     
-    if (camera->unk_100 < (gGameInfo->unk_1E6 * 0.01f))
-        ret = gGameInfo->unk_1E6 * 0.01f;
+    if (camera->unk_100 < (OREG(41) * 0.01f))
+        ret = OREG(41) * 0.01f;
     else if (b <= camera->unk_100)
         ret = b;
     else
-        ret = gGameInfo->unk_1E8 * 0.01f * camera->unk_100;
+        ret = OREG(42) * 0.01f * camera->unk_100;
     
     return ret;
 }
@@ -472,7 +470,7 @@ s32 func_800457A8(Camera *camera, struct_80045714 *b, f32 c, s16 d)
     sp2C = &camera->unk_94;
     if (d != 0)
     {
-        sp50.y -= func_8007C0A8(func_80045714(&camera->unk_108, sp2C->rot.y, b->unk_06, gGameInfo->unk_1A6), temp_ret);
+        sp50.y -= func_8007C0A8(func_80045714(&camera->unk_108, sp2C->rot.y, b->unk_06, OREG(9)), temp_ret);
     }
     func_80043A3C(&sp50, &camera->unk_E4, camera->unk_CC.y, camera->unk_CC.x, 0.1f);
     
@@ -506,20 +504,20 @@ s32 func_800458D4(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 e)
     
     temp_s1 = &camera->unk_94;
     if (e != 0)
-        sp60.y -= func_80045714(&camera->unk_108, temp_s1->rot.y, b->unk_06, gGameInfo->unk_1A6);
+        sp60.y -= func_80045714(&camera->unk_108, temp_s1->rot.y, b->unk_06, OREG(9));
     
     sp48 = temp_s1->pos.y - *d;
     temp_ret = func_800FD250(sp48, func_8007C028(&camera->unk_50, &camera->unk_5C)); // f2 and f14 are swapped
     
-    if (gGameInfo->unk_1D4 * (M_PI / 180) < temp_ret)
-        phi_f2 = 1.0f - sinf(temp_ret - gGameInfo->unk_1D4 * (M_PI / 180));
-    else if (gGameInfo->unk_1D6 * (M_PI / 180) > temp_ret)
-        phi_f2 = 1.0f - sinf(gGameInfo->unk_1D6 * (M_PI / 180) - temp_ret);
+    if (OREG(32) * (M_PI / 180) < temp_ret)
+        phi_f2 = 1.0f - sinf(temp_ret - OREG(32) * (M_PI / 180));
+    else if (OREG(33) * (M_PI / 180) > temp_ret)
+        phi_f2 = 1.0f - sinf(OREG(33) * (M_PI / 180) - temp_ret);
     else
         phi_f2 = 1.0f;
     
     sp60.y -= sp48 * phi_f2;
-    func_80043A3C(&sp60, &camera->unk_E4, gGameInfo->unk_1CE * 0.01f, gGameInfo->unk_1D0 * 0.01f, 0.1f);
+    func_80043A3C(&sp60, &camera->unk_E4, OREG(29) * 0.01f, OREG(30) * 0.01f, 0.1f);
     
     sp54.x = temp_s1->pos.x + camera->unk_E4.x;
     sp54.y = temp_s1->pos.y + camera->unk_E4.y;
@@ -553,7 +551,7 @@ s32 func_80045B08(Camera *camera, struct_80045714 *b, f32 c, s16 d)
     else
         phi_f2 = -Math_Coss(temp_s1->rot.y - b->unk_06);
     
-    sp48.y -= temp_ret * phi_f2 * gGameInfo->unk_1A6;
+    sp48.y -= temp_ret * phi_f2 * OREG(9);
     func_80043A3C(&sp48, &camera->unk_E4, camera->unk_CC.y, camera->unk_CC.x, 0.1f);
     
     sp3C.x = temp_s1->pos.x + camera->unk_E4.x;
@@ -582,11 +580,11 @@ s32 func_80045C74(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 arg4)
     sp70.x = 0.0f;
     sp70.z = 0.0f;
     
-    if (gGameInfo->unk_2EC != 0)
+    if (PREG(76) != 0)
     {
         if (arg4 != 0)
         {
-            sp70.y -= func_80045714(&camera->unk_108, sp3C->rot.y, b->unk_06, gGameInfo->unk_1A6);
+            sp70.y -= func_80045714(&camera->unk_108, sp3C->rot.y, b->unk_06, OREG(9));
         }
     }
     
@@ -594,14 +592,14 @@ s32 func_80045C74(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 arg4)
     
     if ((sp3C->pos.y == camera->unk_104) || (camera->player->actor.gravity > -0.1f) || (camera->player->stateFlags1 & 0x200000))
     {
-        *d = func_8004389C(sp3C->pos.y, *d, gGameInfo->unk_1EA * 0.01f, 0.1f);
+        *d = func_8004389C(sp3C->pos.y, *d, OREG(43) * 0.01f, 0.1f);
         sp70.y -= sp3C->pos.y - *d;
         func_80043A3C(&sp70, &camera->unk_E4, camera->unk_CC.y, camera->unk_CC.x, 0.1f);
     }
     else
     {
         temp = sp3C->pos.y - *d;
-        if (gGameInfo->unk_2EA == 0)
+        if (PREG(75) == 0)
         {
             sp54 = func_8007C028(&camera->unk_50, &camera->unk_5C);
             func_800FD250(temp, sp54);
@@ -627,10 +625,10 @@ s32 func_80045C74(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 arg4)
         {
             temp_ret_3 = func_800FD250(temp, func_8007C028(&camera->unk_50, &camera->unk_5C));
             
-            if (gGameInfo->unk_1D4 * (M_PI / 180) < temp_ret_3)
-                phi_f16 = 1.0f - sinf(temp_ret_3 - gGameInfo->unk_1D4 * (M_PI / 180));
-            else if (temp_ret_3 < gGameInfo->unk_1D6 * (M_PI / 180))
-                phi_f16 = 1.0f - sinf(gGameInfo->unk_1D6 * (M_PI / 180) - temp_ret_3);
+            if (OREG(32) * (M_PI / 180) < temp_ret_3)
+                phi_f16 = 1.0f - sinf(temp_ret_3 - OREG(32) * (M_PI / 180));
+            else if (temp_ret_3 < OREG(33) * (M_PI / 180))
+                phi_f16 = 1.0f - sinf(OREG(33) * (M_PI / 180) - temp_ret_3);
             else
                 phi_f16 = 1.0f;
             }
@@ -638,9 +636,9 @@ s32 func_80045C74(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 arg4)
             sp70.y -= temp * phi_f16;
         }
         
-        func_80043A3C(&sp70, &camera->unk_E4, gGameInfo->unk_1CE * 0.01f, gGameInfo->unk_1D0 * 0.01f, 0.1f);
-        camera->unk_CC.y = gGameInfo->unk_1CE * 0.01f;
-        camera->unk_CC.x = gGameInfo->unk_1D0 * 0.01f;
+        func_80043A3C(&sp70, &camera->unk_E4, OREG(29) * 0.01f, OREG(30) * 0.01f, 0.1f);
+        camera->unk_CC.y = OREG(29) * 0.01f;
+        camera->unk_CC.x = OREG(30) * 0.01f;
     }
     
     sp64.x = sp3C->pos.x + camera->unk_E4.x;
@@ -693,7 +691,7 @@ s32 func_800466F8(Camera *camera, struct_80045714 *b, f32 c, f32 *d, s16 e)
     sp60.y = sp48 + c;
     
     if (e != 0)
-        sp60.y -= func_80045714(&camera->unk_108, camera->unk_94.rot.y, b->unk_06, gGameInfo->unk_1A6);
+        sp60.y -= func_80045714(&camera->unk_108, camera->unk_94.rot.y, b->unk_06, OREG(9));
     
     func_80043A3C(&sp60, &camera->unk_E4, camera->unk_CC.y, camera->unk_CC.x, 0.1f);
     
@@ -713,12 +711,12 @@ void func_800468CC(Camera *camera, f32 b, f32 c, f32 d)
     if (b < c)
     {
         sp1C = c;
-        phi_f12 = gGameInfo->unk_1A0.x;
+        phi_f12 = OREG(6);
     }
     else if (d < b)
     {
         sp1C = d;
-        phi_f12 = gGameInfo->unk_1A0.x;
+        phi_f12 = OREG(6);
     }
     else
     {
@@ -726,7 +724,7 @@ void func_800468CC(Camera *camera, f32 b, f32 c, f32 d)
         phi_f12 = 1.0f;
     }
     
-    camera->unk_C0.x = func_8004389C(phi_f12, camera->unk_C0.x, gGameInfo->unk_1C6 * 0.01f, 0.1f);
+    camera->unk_C0.x = func_8004389C(phi_f12, camera->unk_C0.x, OREG(25) * 0.01f, 0.1f);
     func_8004389C(sp1C, camera->unk_DC, 1.f / camera->unk_C0.x, 0.2f);
 }
 
@@ -740,30 +738,30 @@ void func_800469C0(Camera *camera, f32 b, f32 c, f32 d, s16 e)
         sp1C = c;
         
         if (e != 0)
-            phi_f12 = gGameInfo->unk_1A0.x * 0.5f;
+            phi_f12 = OREG(6) * 0.5f;
         else
-            phi_f12 = gGameInfo->unk_1A0.x;
+            phi_f12 = OREG(6);
     }
     else if (d < b)
     {
         sp1C = d;
         
         if (e != 0)
-            phi_f12 = gGameInfo->unk_1A0.x * 0.5f;
+            phi_f12 = OREG(6) * 0.5f;
         else
-            phi_f12 = gGameInfo->unk_1A0.x;
+            phi_f12 = OREG(6);
     }
     else
     {
         sp1C = b;
         
         if (e != 0)
-            phi_f12 = gGameInfo->unk_1A0.x;
+            phi_f12 = OREG(6);
         else
             phi_f12 = 1.0f;
     }
     
-    camera->unk_C0.x = func_8004389C(phi_f12, camera->unk_C0.x, gGameInfo->unk_1C6 * 0.01f, 0.1f);
+    camera->unk_C0.x = func_8004389C(phi_f12, camera->unk_C0.x, OREG(25) * 0.01f, 0.1f);
     func_8004389C(sp1C, camera->unk_DC, 1.f / camera->unk_C0.x, 0.2f);
 }
 
@@ -792,7 +790,7 @@ void func_80046B44(Camera *camera, s16 b, s16 c, s16 d)
     }
     else
     {
-        phi_a2 = (1.0f / camera->unk_C0.y) * func_800437F0(0.8f, 1.0f - phi_v0 * (1.0f / gGameInfo->unk_19E));
+        phi_a2 = (1.0f / camera->unk_C0.y) * func_800437F0(0.8f, 1.0f - phi_v0 * (1.0f / OREG(5)));
     }
     func_8004391C(sp1C, b, phi_a2, 0xa);
 }
@@ -820,7 +818,7 @@ s16 func_80046CB4(Camera *camera, s16 b, s16 c, f32 d, f32 e)
     {
 		temp = b - 0x7fff;
         sp1C = c - temp;
-        phi_f14 = gGameInfo->unk_1F4 * 0.01f;
+        phi_f14 = OREG(48) * 0.01f;
     }
     temp_ret = func_800437F0(d, phi_f14);
     sp34 = ((1.0f - temp_ret) * e) + temp_ret;
@@ -1200,38 +1198,38 @@ void Camera_SetCameraData(Camera *camera, s16 b, s32 c, s32 d, s16 e, s16 f) // 
 
 s32 func_8005B044()
 {
-    if (gGameInfo->unk_314 == 0)
+    if (QREG(0) == 0)
     {
-        gGameInfo->unk_318 = 1;
-        gGameInfo->unk_328 = -1;
-        gGameInfo->unk_32A = 100;
-        gGameInfo->unk_32C = 80;
-        gGameInfo->unk_33C = 90;
-        gGameInfo->unk_33E = 10;
-        gGameInfo->unk_340 = 10;
-        gGameInfo->unk_342 = 50;
-        gGameInfo->unk_344 = 6000;
-        gGameInfo->unk_346 = 240;
-        gGameInfo->unk_348 = 40;
-        gGameInfo->unk_34A = 85;
-        gGameInfo->unk_34C = 55;
-        gGameInfo->unk_34E = 87;
-        gGameInfo->unk_350 = 23;
-        gGameInfo->unk_352 = 20;
-        gGameInfo->unk_354 = 4;
-        gGameInfo->unk_356 = 5;
-        gGameInfo->unk_378 = 1;
-        gGameInfo->unk_37A = 20;
-        gGameInfo->unk_37C = 200;
-        gGameInfo->unk_37E = 1;
-        gGameInfo->unk_380 = 15;
-        gGameInfo->unk_382 = 60;
-        gGameInfo->unk_384 = 15;
-        gGameInfo->unk_386 = 30;
-        gGameInfo->unk_388 = 0;
+        QREG(2) = 1;
+        QREG(10) = -1;
+        QREG(11) = 100;
+        QREG(12) = 80;
+        QREG(20) = 90;
+        QREG(21) = 10;
+        QREG(22) = 10;
+        QREG(23) = 50;
+        QREG(24) = 6000;
+        QREG(25) = 240;
+        QREG(26) = 40;
+        QREG(27) = 85;
+        QREG(28) = 55;
+        QREG(29) = 87;
+        QREG(30) = 23;
+        QREG(31) = 20;
+        QREG(32) = 4;
+        QREG(33) = 5;
+        QREG(50) = 1;
+        QREG(51) = 20;
+        QREG(52) = 200;
+        QREG(53) = 1;
+        QREG(54) = 15;
+        QREG(55) = 60;
+        QREG(56) = 15;
+        QREG(57) = 30;
+        QREG(58) = 0;
     }
     
-    gGameInfo->unk_396 = 50;
+    QREG(65) = 50;
     return 1;
 }
 

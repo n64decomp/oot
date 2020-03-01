@@ -46,7 +46,7 @@ glabel func_80B5BC00
 /* 004F8 80B5BCA8 8FA40034 */  lw      $a0, 0x0034($sp)           
 /* 004FC 80B5BCAC 0C02CE10 */  jal     func_800B3840              ## letterbox_target_addr
 /* 00500 80B5BCB0 24040020 */  addiu   $a0, $zero, 0x0020         ## $a0 = 00000020
-/* 00504 80B5BCB4 0C020978 */  jal     func_800825E0              
+/* 00504 80B5BCB4 0C020978 */  jal     Interface_ChangeAlpha              
 /* 00508 80B5BCB8 24040002 */  addiu   $a0, $zero, 0x0002         ## $a0 = 00000002
 /* 0050C 80B5BCBC 8FB90030 */  lw      $t9, 0x0030($sp)           
 /* 00510 80B5BCC0 24020001 */  addiu   $v0, $zero, 0x0001         ## $v0 = 00000001

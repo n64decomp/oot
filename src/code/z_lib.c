@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 #ifdef NON_MATCHING
 // minor ordering difference
@@ -34,7 +33,7 @@ s32 Math_ApproxUpdateScaledS(s16* pValue, s16 target, s16 step)
 
     if (step != 0)
     {
-        updateRate = gGameInfo->update_rate * 0.5f;
+        updateRate = R_UPDATE_RATE * 0.5f;
 
         if ((s16)(*pValue - target) > 0)
             step = -step;

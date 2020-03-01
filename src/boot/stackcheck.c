@@ -5,7 +5,7 @@
 StackEntry* sStackInfoListStart = NULL;
 StackEntry* sStackInfoListEnd = NULL;
 
-void StackCheck_Init(StackEntry* entry, u32 stackTop, u32 stackBottom, u32 initValue, s32 minSpace, const char* name)
+void StackCheck_Init(StackEntry* entry, void* stackTop, void* stackBottom, u32 initValue, s32 minSpace, const char* name)
 {
     StackEntry* iter;
     u32* addr;
@@ -14,8 +14,8 @@ void StackCheck_Init(StackEntry* entry, u32 stackTop, u32 stackBottom, u32 initV
         sStackInfoListStart = NULL;
     else
     {
-        entry->head = stackTop;
-        entry->tail = stackBottom;
+        entry->head = (u32)stackTop;
+        entry->tail = (u32)stackBottom;
         entry->initValue = initValue;
         entry->minSpace = minSpace;
         entry->name = name;
@@ -74,7 +74,7 @@ void StackCheck_Cleanup(StackEntry* entry)
         osSyncPrintf(VT_COL(RED, WHITE) "stackcheck_cleanup: %08x リスト不整合です\n" VT_RST, entry);
 }
 
-s32 StackCheck_GetState(StackEntry* entry)
+StackStatus StackCheck_GetState(StackEntry* entry)
 {
     u32* last;
     u32 used;
@@ -92,25 +92,25 @@ s32 StackCheck_GetState(StackEntry* entry)
 
     if (free == 0)
     {
-        ret = 2;
+        ret = STACK_STATUS_OVERFLOW;
         osSyncPrintf(VT_FGCOL(RED));
     }
     else if (free < entry->minSpace && entry->minSpace != -1)
     {
-        ret = 1;
+        ret = STACK_STATUS_WARNING;
         osSyncPrintf(VT_FGCOL(YELLOW));
     }
     else
     {
         osSyncPrintf(VT_FGCOL(GREEN));
-        ret = 0;
+        ret = STACK_STATUS_OK;
     }
 
     osSyncPrintf("head=%08x tail=%08x last=%08x used=%08x free=%08x [%s]\n", entry->head, entry->tail, last, used, free, entry->name ? entry->name : "(null)");
     osSyncPrintf(VT_RST);
 
-    if (ret != 0)
-        func_80002B10(entry->head, entry->tail - entry->head);
+    if (ret != STACK_STATUS_OK)
+        LogUtils_LogHexDump(entry->head, entry->tail - entry->head);
 
     return ret;
 }
@@ -124,7 +124,7 @@ u32 StackCheck_CheckAll()
     while(iter)
     {
         u32 state = StackCheck_GetState(iter);
-        if (state)
+        if (state != STACK_STATUS_OK)
             ret = 1;
         iter = iter->next;
     }
@@ -139,5 +139,3 @@ u32 StackCheck_Check(StackEntry* entry)
     else
         return StackCheck_GetState(entry);
 }
-
-#pragma GLOBAL_ASM("asm/non_matchings/boot/stackcheck/pad_800029E8.s")

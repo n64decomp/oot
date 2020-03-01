@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_bom_bowl_man.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C3630.s")
+#define ROOM  0x00
+#define FLAGS 0x08000039
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C3814.s")
+void EnBomBowlMan_Init(EnBomBowlMan* this, GlobalContext* globalCtx);
+void EnBomBowlMan_Destroy(EnBomBowlMan* this, GlobalContext* globalCtx);
+void EnBomBowlMan_Update(EnBomBowlMan* this, GlobalContext* globalCtx);
+void EnBomBowlMan_Draw(EnBomBowlMan* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Bom_Bowl_Man_InitVars =
+{
+    ACTOR_EN_BOM_BOWL_MAN,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_BG,
+    sizeof(EnBomBowlMan),
+    (ActorFunc)EnBomBowlMan_Init,
+    (ActorFunc)EnBomBowlMan_Destroy,
+    (ActorFunc)EnBomBowlMan_Update,
+    (ActorFunc)EnBomBowlMan_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/EnBomBowlMan_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/EnBomBowlMan_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C3820.s")
 
@@ -35,12 +57,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C4664.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C4734.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/EnBomBowlMan_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C48A8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/func_809C48EC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Bom_Bowl_Man/EnBomBowlMan_Draw.s")

@@ -1029,7 +1029,7 @@ glabel func_800B9638
 /* B31700 800BA560 1560000A */  bnez  $t3, .L800BA58C
 /* B31704 800BA564 3C018016 */   lui   $at, %hi(D_8016111A) # $at, 0x8016
 /* B31708 800BA568 A420111A */  sh    $zero, %lo(D_8016111A)($at)
-/* B3170C 800BA56C 0C020978 */  jal   func_800825E0
+/* B3170C 800BA56C 0C020978 */  jal   Interface_ChangeAlpha
 /* B31710 800BA570 24040002 */   li    $a0, 2
 /* B31714 800BA574 0C02CE10 */  jal   func_800B3840
 /* B31718 800BA578 00002025 */   move  $a0, $zero
@@ -1043,7 +1043,7 @@ glabel func_800B9638
 /* B31734 800BA594 02402825 */   move  $a1, $s2
 /* B31738 800BA598 54400011 */  bnezl $v0, .L800BA5E0
 /* B3173C 800BA59C 27A4005C */   addiu $a0, $sp, 0x5c
-/* B31740 800BA5A0 0C020978 */  jal   func_800825E0
+/* B31740 800BA5A0 0C020978 */  jal   Interface_ChangeAlpha
 /* B31744 800BA5A4 24040002 */   li    $a0, 2
 /* B31748 800BA5A8 0C02CE10 */  jal   func_800B3840
 /* B3174C 800BA5AC 00002025 */   move  $a0, $zero
@@ -1704,7 +1704,7 @@ glabel func_800B9638
 /* B320F0 800BAF50 3C018016 */  lui   $at, %hi(D_8016111C) # $at, 0x8016
 /* B320F4 800BAF54 A439111A */  sh    $t9, %lo(D_8016111A)($at)
 /* B320F8 800BAF58 A420111C */  sh    $zero, %lo(D_8016111C)($at)
-/* B320FC 800BAF5C 0C020978 */  jal   func_800825E0
+/* B320FC 800BAF5C 0C020978 */  jal   Interface_ChangeAlpha
 /* B32100 800BAF60 24040032 */   li    $a0, 50
 /* B32104 800BAF64 0C02CE10 */  jal   func_800B3840
 /* B32108 800BAF68 24040020 */   li    $a0, 32

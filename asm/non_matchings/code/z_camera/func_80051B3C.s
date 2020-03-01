@@ -341,11 +341,11 @@ glabel func_80051B3C
 /* AC9150 80051FB0 3C013F80 */  li    $at, 0x3F800000 # 0.000000
 /* AC9154 80051FB4 44814000 */  mtc1  $at, $f8
 /* AC9158 80051FB8 3C014288 */  lui   $at, 0x4288
-/* AC915C 80051FBC 3C0D8016 */  lui   $t5, %hi(D_801601F0)
+/* AC915C 80051FBC 3C0D8016 */  lui   $t5, %hi(gGameInfo)
 /* AC9160 80051FC0 8DADFA90 */  lw    $t5, %lo(gGameInfo)($t5)
 /* AC9164 80051FC4 44818000 */  mtc1  $at, $f16
 /* AC9168 80051FC8 86190142 */  lh    $t9, 0x142($s0)
-/* AC916C 80051FCC 85AE01F0 */  lh    $t6, %lo(D_801601F0)($t5)
+/* AC916C 80051FCC 85AE01F0 */  lh    $t6, 0x1f0($t5)
 /* AC9170 80051FD0 46008483 */  div.s $f18, $f16, $f0
 /* AC9174 80051FD4 3C098012 */  lui   $t1, %hi(D_8011D068)
 /* AC9178 80051FD8 448E2000 */  mtc1  $t6, $f4

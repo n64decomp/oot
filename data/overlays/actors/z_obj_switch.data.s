@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B9EC00
+glabel Obj_Switch_InitVars
  .word 0x012A0000, 0x00000010, 0x00030000, 0x00000258
-.word func_80B9D6C4
-.word func_80B9D9A4
-.word func_80B9E60C
-.word func_80B9EBBC
+.word ObjSwitch_Init
+.word ObjSwitch_Destroy
+.word ObjSwitch_Update
+.word ObjSwitch_Draw
 glabel D_80B9EC20
  .word 0x41200000
 glabel D_80B9EC24

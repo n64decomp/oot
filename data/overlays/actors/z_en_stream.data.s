@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B0BCA0
+glabel En_Stream_InitVars
  .word 0x01600100, 0x00000010, 0x013B0000, 0x00000158
-.word func_80B0B7A8
-.word func_80B0B810
-.word func_80B0BB18
-.word func_80B0BB4C
+.word EnStream_Init
+.word EnStream_Destroy
+.word EnStream_Update
+.word EnStream_Draw
 glabel D_80B0BCC0
  .word 0x48500014, 0x00000000, 0x00000000, 0x00000000
 

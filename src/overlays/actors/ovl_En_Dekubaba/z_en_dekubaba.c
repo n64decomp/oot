@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dekubaba.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E57D0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E5A10.s")
+void EnDekubaba_Init(EnDekubaba* this, GlobalContext* globalCtx);
+void EnDekubaba_Destroy(EnDekubaba* this, GlobalContext* globalCtx);
+void EnDekubaba_Update(EnDekubaba* this, GlobalContext* globalCtx);
+void EnDekubaba_Draw(EnDekubaba* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dekubaba_InitVars =
+{
+    ACTOR_EN_DEKUBABA,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_DEKUBABA,
+    sizeof(EnDekubaba),
+    (ActorFunc)EnDekubaba_Init,
+    (ActorFunc)EnDekubaba_Destroy,
+    (ActorFunc)EnDekubaba_Update,
+    (ActorFunc)EnDekubaba_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/EnDekubaba_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/EnDekubaba_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E5A38.s")
 
@@ -67,7 +89,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E8140.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E83F0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/EnDekubaba_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E858C.s")
 
@@ -79,8 +101,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E8C0C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/func_809E8C48.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dekubaba/EnDekubaba_Draw.s")

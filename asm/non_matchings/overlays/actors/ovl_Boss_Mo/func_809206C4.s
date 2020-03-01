@@ -764,7 +764,7 @@ glabel L8092107C
 /* 056C0 809211C0 E7A00074 */  swc1    $f0, 0x0074($sp)           
 /* 056C4 809211C4 E7A80070 */  swc1    $f8, 0x0070($sp)           
 /* 056C8 809211C8 E7A00078 */  swc1    $f0, 0x0078($sp)           
-/* 056CC 809211CC 0C034348 */  jal     func_800D0D20              
+/* 056CC 809211CC 0C034348 */  jal     Matrix_RotateY              
 /* 056D0 809211D0 C62C1004 */  lwc1    $f12, 0x1004($s1)          ## 00001004
 /* 056D4 809211D4 27A40070 */  addiu   $a0, $sp, 0x0070           ## $a0 = FFFFFFE0
 /* 056D8 809211D8 0C0346BD */  jal     func_800D1AF4              

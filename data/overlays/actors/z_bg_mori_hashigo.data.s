@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808A2D80
+glabel Bg_Mori_Hashigo_InitVars
  .word 0x00E20100, 0x00000000, 0x00720000, 0x000001D0
-.word func_808A2838
-.word func_808A2920
-.word func_808A2BEC
+.word BgMoriHashigo_Init
+.word BgMoriHashigo_Destroy
+.word BgMoriHashigo_Update
 .word 0x00000000
 glabel D_808A2DA0
  .word 0x04000000, 0x00000000, 0x00000000, 0x0001F820, 0x00000000, 0x00010000, 0x00000000, 0x00000000, 0x00190064

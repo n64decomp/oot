@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B922C0
+glabel Obj_Comb_InitVars
  .word 0x019E0600, 0x00000000, 0x00020000, 0x000001B4
-.word func_80B91F1C
-.word func_80B91F88
-.word func_80B920A8
-.word func_80B9211C
+.word ObjComb_Init
+.word ObjComb_Destroy
+.word ObjComb_Update
+.word ObjComb_Draw
 glabel D_80B922E0
  .word 0x00000000, 0x00000000, 0x00000000, 0x4001FFFE, 0x00000000, 0x00010100, 0x00000000, 0x00000000, 0x000F0064
 glabel D_80B92304

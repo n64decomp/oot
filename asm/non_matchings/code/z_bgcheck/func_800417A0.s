@@ -1,7 +1,7 @@
 glabel func_800417A0
 /* AB8940 800417A0 8C820010 */  lw    $v0, 0x10($a0)
-/* AB8944 800417A4 3C088016 */  lui   $t0, %hi(D_80166FA8) # $t0, 0x8016
-/* AB8948 800417A8 25086FA8 */  addiu $t0, %lo(D_80166FA8) # addiu $t0, $t0, 0x6fa8
+/* AB8944 800417A4 3C088016 */  lui   $t0, %hi(gSegments) # $t0, 0x8016
+/* AB8948 800417A8 25086FA8 */  addiu $t0, %lo(gSegments) # addiu $t0, $t0, 0x6fa8
 /* AB894C 800417AC 00027100 */  sll   $t6, $v0, 4
 /* AB8950 800417B0 000E7F02 */  srl   $t7, $t6, 0x1c
 /* AB8954 800417B4 000FC080 */  sll   $t8, $t7, 2

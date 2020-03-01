@@ -1,14 +1,32 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_jya_block.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/func_808941A0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000000
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/func_80894254.s")
+void BgJyaBlock_Init(BgJyaBlock* this, GlobalContext* globalCtx);
+void BgJyaBlock_Destroy(BgJyaBlock* this, GlobalContext* globalCtx);
+void BgJyaBlock_Update(BgJyaBlock* this, GlobalContext* globalCtx);
+void BgJyaBlock_Draw(BgJyaBlock* this, GlobalContext* globalCtx);
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/func_80894284.s")
+/*
+const ActorInit Bg_Jya_Block_InitVars =
+{
+    ACTOR_BG_JYA_BLOCK,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_DANGEON_KEEP,
+    sizeof(BgJyaBlock),
+    (ActorFunc)BgJyaBlock_Init,
+    (ActorFunc)BgJyaBlock_Destroy,
+    (ActorFunc)BgJyaBlock_Update,
+    (ActorFunc)BgJyaBlock_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/BgJyaBlock_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/func_808942A4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/BgJyaBlock_Destroy.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/BgJyaBlock_Update.s")
 
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Jya_Block/BgJyaBlock_Draw.s")

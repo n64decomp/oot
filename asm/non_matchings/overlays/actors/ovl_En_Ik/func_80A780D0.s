@@ -8,12 +8,12 @@ glabel func_80A780D0
 /* 03DD8 80A780E8 14C00014 */  bne     $a2, $zero, .L80A7813C     
 /* 03DDC 80A780EC 00000000 */  nop
 /* 03DE0 80A780F0 95CEF53A */  lhu     $t6, -0x0AC6($t6)          ## 8015F53A
-/* 03DE4 80A780F4 3C1880A7 */  lui     $t8, %hi(func_80A77B9C)    ## $t8 = 80A70000
-/* 03DE8 80A780F8 27187B9C */  addiu   $t8, $t8, %lo(func_80A77B9C) ## $t8 = 80A77B9C
+/* 03DE4 80A780F4 3C1880A7 */  lui     $t8, %hi(EnIk_Update)    ## $t8 = 80A70000
+/* 03DE8 80A780F8 27187B9C */  addiu   $t8, $t8, %lo(EnIk_Update) ## $t8 = 80A77B9C
 /* 03DEC 80A780FC 31CF0800 */  andi    $t7, $t6, 0x0800           ## $t7 = 00000000
 /* 03DF0 80A78100 15E00009 */  bne     $t7, $zero, .L80A78128     
-/* 03DF4 80A78104 3C1980A8 */  lui     $t9, %hi(func_80A78074)    ## $t9 = 80A80000
-/* 03DF8 80A78108 27398074 */  addiu   $t9, $t9, %lo(func_80A78074) ## $t9 = 80A78074
+/* 03DF4 80A78104 3C1980A8 */  lui     $t9, %hi(EnIk_Draw)    ## $t9 = 80A80000
+/* 03DF8 80A78108 27398074 */  addiu   $t9, $t9, %lo(EnIk_Draw) ## $t9 = 80A78074
 /* 03DFC 80A7810C 3C053C23 */  lui     $a1, 0x3C23                ## $a1 = 3C230000
 /* 03E00 80A78110 AC980130 */  sw      $t8, 0x0130($a0)           ## 00000130
 /* 03E04 80A78114 AC990134 */  sw      $t9, 0x0134($a0)           ## 00000134

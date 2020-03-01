@@ -19,14 +19,14 @@ glabel func_800FC0C0
 /* B73278 800FC0D8 24C6A8B4 */  addiu $a2, %lo(D_8014A8B4) # addiu $a2, $a2, -0x574c
 /* B7327C 800FC0DC 2484A8B0 */  addiu $a0, %lo(D_8014A8B0) # addiu $a0, $a0, -0x5750
 /* B73280 800FC0E0 8FA50018 */  lw    $a1, 0x18($sp)
-/* B73284 800FC0E4 0C000B58 */  jal   NullPointerCheck
+/* B73284 800FC0E4 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B73288 800FC0E8 2407001F */   li    $a3, 31
 /* B7328C 800FC0EC 3C048015 */  lui   $a0, %hi(D_8014A8C4) # $a0, 0x8015
 /* B73290 800FC0F0 3C068015 */  lui   $a2, %hi(D_8014A8C8) # $a2, 0x8015
 /* B73294 800FC0F4 24C6A8C8 */  addiu $a2, %lo(D_8014A8C8) # addiu $a2, $a2, -0x5738
 /* B73298 800FC0F8 2484A8C4 */  addiu $a0, %lo(D_8014A8C4) # addiu $a0, $a0, -0x573c
 /* B7329C 800FC0FC 8FA5001C */  lw    $a1, 0x1c($sp)
-/* B732A0 800FC100 0C000B58 */  jal   NullPointerCheck
+/* B732A0 800FC100 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B732A4 800FC104 24070020 */   li    $a3, 32
 /* B732A8 800FC108 3C014780 */  li    $at, 0x47800000 # 0.000000
 /* B732AC 800FC10C 44810000 */  mtc1  $at, $f0
@@ -125,14 +125,14 @@ glabel func_800FC258
 /* B73410 800FC270 24C6A8DC */  addiu $a2, %lo(D_8014A8DC) # addiu $a2, $a2, -0x5724
 /* B73414 800FC274 2484A8D8 */  addiu $a0, %lo(D_8014A8D8) # addiu $a0, $a0, -0x5728
 /* B73418 800FC278 8FA50018 */  lw    $a1, 0x18($sp)
-/* B7341C 800FC27C 0C000B58 */  jal   NullPointerCheck
+/* B7341C 800FC27C 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B73420 800FC280 24070037 */   li    $a3, 55
 /* B73424 800FC284 3C048015 */  lui   $a0, %hi(D_8014A8EC) # $a0, 0x8015
 /* B73428 800FC288 3C068015 */  lui   $a2, %hi(D_8014A8F0) # $a2, 0x8015
 /* B7342C 800FC28C 24C6A8F0 */  addiu $a2, %lo(D_8014A8F0) # addiu $a2, $a2, -0x5710
 /* B73430 800FC290 2484A8EC */  addiu $a0, %lo(D_8014A8EC) # addiu $a0, $a0, -0x5714
 /* B73434 800FC294 8FA5001C */  lw    $a1, 0x1c($sp)
-/* B73438 800FC298 0C000B58 */  jal   NullPointerCheck
+/* B73438 800FC298 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B7343C 800FC29C 24070038 */   li    $a3, 56
 /* B73440 800FC2A0 8FA40018 */  lw    $a0, 0x18($sp)
 /* B73444 800FC2A4 0C040BE8 */  jal   func_80102FA0

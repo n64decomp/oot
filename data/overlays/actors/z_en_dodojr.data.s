@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809F7E90
+glabel En_Dodojr_InitVars
  .word 0x002F0500, 0x00000005, 0x001F0000, 0x000002C0
-.word func_809F63C0
-.word func_809F64A8
-.word func_809F7C90
-.word func_809F7E10
+.word EnDodojr_Init
+.word EnDodojr_Destroy
+.word EnDodojr_Update
+.word EnDodojr_Draw
 glabel D_809F7EB0
  .word 0x06110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFC5FFFF, 0x00000000, 0x01010100, 0x00120014, 0x00000000, 0x00000000
 glabel D_809F7EDC

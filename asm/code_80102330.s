@@ -24,8 +24,8 @@ glabel osStopTimer
 /* B794F8 80102358 0C001CA0 */  jal   __osDisableInt
 /* B794FC 8010235C 00000000 */   nop   
 /* B79500 80102360 8FB80030 */  lw    $t8, 0x30($sp)
-/* B79504 80102364 3C088001 */  lui   $t0, %hi(D_8000ADF0) # $t0, 0x8001
-/* B79508 80102368 8D08ADF0 */  lw    $t0, %lo(D_8000ADF0)($t0)
+/* B79504 80102364 3C088001 */  lui   $t0, %hi(__osTimerList) # $t0, 0x8001
+/* B79508 80102368 8D08ADF0 */  lw    $t0, %lo(__osTimerList)($t0)
 /* B7950C 8010236C 8F190000 */  lw    $t9, ($t8)
 /* B79510 80102370 00408025 */  move  $s0, $v0
 /* B79514 80102374 1328000D */  beq   $t9, $t0, .L801023AC
@@ -44,7 +44,7 @@ glabel osStopTimer
 /* B79548 801023A8 AD2F0004 */  sw    $t7, 4($t1)
 .L801023AC:
 /* B7954C 801023AC 8FA80030 */  lw    $t0, 0x30($sp)
-/* B79550 801023B0 3C0F8001 */  lui   $t7, %hi(D_8000ADF0) # $t7, 0x8001
+/* B79550 801023B0 3C0F8001 */  lui   $t7, %hi(__osTimerList) # $t7, 0x8001
 /* B79554 801023B4 8D190000 */  lw    $t9, ($t0)
 /* B79558 801023B8 8D180004 */  lw    $t8, 4($t0)
 /* B7955C 801023BC AF190000 */  sw    $t9, ($t8)
@@ -56,14 +56,14 @@ glabel osStopTimer
 /* B79574 801023D4 ADA00000 */  sw    $zero, ($t5)
 /* B79578 801023D8 8FAE0030 */  lw    $t6, 0x30($sp)
 /* B7957C 801023DC ADC00004 */  sw    $zero, 4($t6)
-/* B79580 801023E0 8DEFADF0 */  lw    $t7, %lo(D_8000ADF0)($t7)
+/* B79580 801023E0 8DEFADF0 */  lw    $t7, %lo(__osTimerList)($t7)
 /* B79584 801023E4 8DE90000 */  lw    $t1, ($t7)
 /* B79588 801023E8 152F0003 */  bne   $t1, $t7, .L801023F8
 /* B7958C 801023EC 00000000 */   nop   
 /* B79590 801023F0 0C001BC0 */  jal   __osSetCompare
 /* B79594 801023F4 00002025 */   move  $a0, $zero
 .L801023F8:
-/* B79598 801023F8 0C001CBC */  jal   func_800072F0
+/* B79598 801023F8 0C001CBC */  jal   __osRestoreInt
 /* B7959C 801023FC 02002025 */   move  $a0, $s0
 /* B795A0 80102400 00001025 */  move  $v0, $zero
 .L80102404:

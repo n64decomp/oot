@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dodojr.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F63C0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F64A8.s")
+void EnDodojr_Init(EnDodojr* this, GlobalContext* globalCtx);
+void EnDodojr_Destroy(EnDodojr* this, GlobalContext* globalCtx);
+void EnDodojr_Update(EnDodojr* this, GlobalContext* globalCtx);
+void EnDodojr_Draw(EnDodojr* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dodojr_InitVars =
+{
+    ACTOR_EN_DODOJR,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_DODOJR,
+    sizeof(EnDodojr),
+    (ActorFunc)EnDodojr_Init,
+    (ActorFunc)EnDodojr_Destroy,
+    (ActorFunc)EnDodojr_Update,
+    (ActorFunc)EnDodojr_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/EnDodojr_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/EnDodojr_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F64D0.s")
 
@@ -69,14 +91,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F7C48.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F7C90.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/EnDodojr_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F7D50.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F7DFC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/func_809F7E10.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dodojr/EnDodojr_Draw.s")

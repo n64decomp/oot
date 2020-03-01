@@ -94,7 +94,7 @@ glabel L8001CF28
 /* A940FC 8001CF5C E7A60028 */  swc1  $f6, 0x28($sp)
 .L8001CF60:
 /* A94100 8001CF60 24C6B5EC */  addiu $a2, %lo(ActorShadow_DrawFunc_Circle) # addiu $a2, $a2, -0x4a14
-/* A94104 8001CF64 0C00AC78 */  jal   Actor_InitShadow
+/* A94104 8001CF64 0C00AC78 */  jal   ActorShape_Init
 /* A94108 8001CF68 8FA70028 */   lw    $a3, 0x28($sp)
 /* A9410C 8001CF6C 8E0A0024 */  lw    $t2, 0x24($s0)
 /* A94110 8001CF70 3C014496 */  li    $at, 0x44960000 # 0.000000

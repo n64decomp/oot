@@ -46,7 +46,7 @@ glabel func_80975A3C
 /* 04B9C 80975AEC 8E240000 */  lw      $a0, 0x0000($s1)           ## 00000000
 /* 04BA0 80975AF0 24A56B68 */  addiu   $a1, $a1, %lo(D_80976B68)  ## $a1 = 80976B68
 /* 04BA4 80975AF4 24060B93 */  addiu   $a2, $zero, 0x0B93         ## $a2 = 00000B93
-/* 04BA8 80975AF8 0C0346A2 */  jal     func_800D1A88              
+/* 04BA8 80975AF8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 04BAC 80975AFC AFA2004C */  sw      $v0, 0x004C($sp)           
 /* 04BB0 80975B00 8FA3004C */  lw      $v1, 0x004C($sp)           
 /* 04BB4 80975B04 3C0ADB06 */  lui     $t2, 0xDB06                ## $t2 = DB060000

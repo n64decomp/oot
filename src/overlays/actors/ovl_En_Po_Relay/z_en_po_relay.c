@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_po_relay.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD7740.s")
+#define ROOM  0x00
+#define FLAGS 0x00011019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD78C4.s")
+void EnPoRelay_Init(EnPoRelay* this, GlobalContext* globalCtx);
+void EnPoRelay_Destroy(EnPoRelay* this, GlobalContext* globalCtx);
+void EnPoRelay_Update(EnPoRelay* this, GlobalContext* globalCtx);
+void EnPoRelay_Draw(EnPoRelay* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Po_Relay_InitVars =
+{
+    ACTOR_EN_PO_RELAY,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_TK,
+    sizeof(EnPoRelay),
+    (ActorFunc)EnPoRelay_Init,
+    (ActorFunc)EnPoRelay_Destroy,
+    (ActorFunc)EnPoRelay_Update,
+    (ActorFunc)EnPoRelay_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/EnPoRelay_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/EnPoRelay_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD790C.s")
 
@@ -27,12 +49,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD830C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD87DC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/EnPoRelay_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD88D0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/func_80AD8B38.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Po_Relay/EnPoRelay_Draw.s")

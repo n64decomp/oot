@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_fu.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1D810.s")
+#define ROOM  0x00
+#define FLAGS 0x02000019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1D924.s")
+void EnFu_Init(EnFu* this, GlobalContext* globalCtx);
+void EnFu_Destroy(EnFu* this, GlobalContext* globalCtx);
+void EnFu_Update(EnFu* this, GlobalContext* globalCtx);
+void EnFu_Draw(EnFu* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Fu_InitVars =
+{
+    ACTOR_EN_FU,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_FU,
+    sizeof(EnFu),
+    (ActorFunc)EnFu_Init,
+    (ActorFunc)EnFu_Destroy,
+    (ActorFunc)EnFu_Update,
+    (ActorFunc)EnFu_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/EnFu_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/EnFu_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1D94C.s")
 
@@ -23,15 +45,11 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1DE24.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1DF6C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/EnFu_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1E110.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1E26C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/func_80A1E2AC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Fu/EnFu_Draw.s")
 

@@ -9,12 +9,12 @@
 
 glabel D_80880F30
  .word 0x00000000
-glabel D_80880F34
+glabel Bg_Haka_Trap_InitVars
  .word 0x00BC0100, 0x00000000, 0x00690000, 0x0000029C
-.word func_8087FCA0
-.word func_8087FF3C
-.word func_80880C80
-.word func_80880E04
+.word BgHakaTrap_Init
+.word BgHakaTrap_Destroy
+.word BgHakaTrap_Update
+.word BgHakaTrap_Draw
 glabel D_80880F54
  .word 0x09110D09, 0x20010000, 0x00000000, 0xFFCFFFFF, 0x00040000, 0xFFCFFFFF, 0x00000000, 0x01010100, 0x001E005A, 0x00000000, 0x00000000
 glabel D_80880F80

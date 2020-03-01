@@ -3916,7 +3916,7 @@ glabel func_80054478
 /* ACED4C 80057BAC 3C058014 */  lui   $a1, %hi(D_80139754) # $a1, 0x8014
 /* ACED50 80057BB0 24A59754 */  addiu $a1, %lo(D_80139754) # addiu $a1, $a1, -0x68ac
 /* ACED54 80057BB4 2406249A */  li    $a2, 9370
-/* ACED58 80057BB8 0C01EBB8 */  jal   func_8007AEE0
+/* ACED58 80057BB8 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* ACED5C 80057BBC 2404016C */   li    $a0, 364
 /* ACED60 80057BC0 1040000C */  beqz  $v0, .L80057BF4
 /* ACED64 80057BC4 AFA2001C */   sw    $v0, 0x1c($sp)
@@ -3953,7 +3953,7 @@ glabel func_80054478
 /* ACEDD4 80057C34 3C058014 */  lui   $a1, %hi(D_801397E4) # $a1, 0x8014
 /* ACEDD8 80057C38 8FA40018 */  lw    $a0, 0x18($sp)
 /* ACEDDC 80057C3C 24A597E4 */  addiu $a1, %lo(D_801397E4) # addiu $a1, $a1, -0x681c
-/* ACEDE0 80057C40 0C01EC35 */  jal   func_8007B0D4
+/* ACEDE0 80057C40 0C01EC35 */  jal   ZeldaArena_FreeDebug
 /* ACEDE4 80057C44 240624AF */   li    $a2, 9391
 /* ACEDE8 80057C48 10000005 */  b     .L80057C60
 /* ACEDEC 80057C4C 8FBF0014 */   lw    $ra, 0x14($sp)

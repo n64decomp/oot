@@ -32,8 +32,8 @@ glabel func_80AD98F4
 /* 009D4 80AD9964 E60A0294 */  swc1    $f10, 0x0294($s0)          ## 00000294
 /* 009D8 80AD9968 0C2B65F2 */  jal     func_80AD97C8              
 /* 009DC 80AD996C 8FA50034 */  lw      $a1, 0x0034($sp)           
-/* 009E0 80AD9970 3C1880AE */  lui     $t8, %hi(func_80ADD044)    ## $t8 = 80AE0000
-/* 009E4 80AD9974 2718D044 */  addiu   $t8, $t8, %lo(func_80ADD044) ## $t8 = 80ADD044
+/* 009E0 80AD9970 3C1880AE */  lui     $t8, %hi(EnPoSisters_Draw)    ## $t8 = 80AE0000
+/* 009E4 80AD9974 2718D044 */  addiu   $t8, $t8, %lo(EnPoSisters_Draw) ## $t8 = 80ADD044
 /* 009E8 80AD9978 A2000231 */  sb      $zero, 0x0231($s0)         ## 00000231
 /* 009EC 80AD997C 10000003 */  beq     $zero, $zero, .L80AD998C   
 /* 009F0 80AD9980 AE180134 */  sw      $t8, 0x0134($s0)           ## 00000134

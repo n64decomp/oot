@@ -1,0 +1,37 @@
+glabel func_800BC3D0
+/* B33570 800BC3D0 3C0E8016 */  lui   $t6, %hi(gGameInfo) # $t6, 0x8016
+/* B33574 800BC3D4 8DCEFA90 */  lw    $t6, %lo(gGameInfo)($t6)
+/* B33578 800BC3D8 27BDFFE8 */  addiu $sp, $sp, -0x18
+/* B3357C 800BC3DC AFBF0014 */  sw    $ra, 0x14($sp)
+/* B33580 800BC3E0 85CF0190 */  lh    $t7, 0x190($t6)
+/* B33584 800BC3E4 3C020001 */  lui   $v0, 1
+/* B33588 800BC3E8 00441021 */  addu  $v0, $v0, $a0
+/* B3358C 800BC3EC 29E10003 */  slti  $at, $t7, 3
+/* B33590 800BC3F0 54200014 */  bnezl $at, .L800BC444
+/* B33594 800BC3F4 8FBF0014 */   lw    $ra, 0x14($sp)
+/* B33598 800BC3F8 94420934 */  lhu   $v0, 0x934($v0)
+/* B3359C 800BC3FC 28410004 */  slti  $at, $v0, 4
+/* B335A0 800BC400 14200002 */  bnez  $at, .L800BC40C
+/* B335A4 800BC404 28410008 */   slti  $at, $v0, 8
+/* B335A8 800BC408 14200004 */  bnez  $at, .L800BC41C
+.L800BC40C:
+/* B335AC 800BC40C 2841000B */   slti  $at, $v0, 0xb
+/* B335B0 800BC410 1420000B */  bnez  $at, .L800BC440
+/* B335B4 800BC414 28410013 */   slti  $at, $v0, 0x13
+/* B335B8 800BC418 10200009 */  beqz  $at, .L800BC440
+.L800BC41C:
+/* B335BC 800BC41C 3C198013 */   lui   $t9, %hi(D_8012D1DC) # $t9, 0x8013
+/* B335C0 800BC420 8F39D1DC */  lw    $t9, %lo(D_8012D1DC)($t9)
+/* B335C4 800BC424 3C188013 */  lui   $t8, %hi(D_8012D1A0) # $t8, 0x8013
+/* B335C8 800BC428 2718D1A0 */  addiu $t8, %lo(D_8012D1A0) # addiu $t8, $t8, -0x2e60
+/* B335CC 800BC42C 17190004 */  bne   $t8, $t9, .L800BC440
+/* B335D0 800BC430 3C198016 */   lui   $t9, %hi(D_80161394) # $t9, 0x8016
+/* B335D4 800BC434 8F391394 */  lw    $t9, %lo(D_80161394)($t9)
+/* B335D8 800BC438 0320F809 */  jalr  $t9
+/* B335DC 800BC43C 00000000 */  nop   
+.L800BC440:
+/* B335E0 800BC440 8FBF0014 */  lw    $ra, 0x14($sp)
+.L800BC444:
+/* B335E4 800BC444 27BD0018 */  addiu $sp, $sp, 0x18
+/* B335E8 800BC448 03E00008 */  jr    $ra
+/* B335EC 800BC44C 00000000 */   nop   

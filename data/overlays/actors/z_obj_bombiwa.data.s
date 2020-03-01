@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B91A80
+glabel Obj_Bombiwa_InitVars
  .word 0x01270600, 0x00000000, 0x01630000, 0x00000198
-.word func_80B91648
-.word func_80B91710
-.word func_80B91938
-.word func_80B91A48
+.word ObjBombiwa_Init
+.word ObjBombiwa_Destroy
+.word ObjBombiwa_Update
+.word ObjBombiwa_Draw
 glabel D_80B91AA0
  .word 0x0C000D39, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x4FC1FFFE, 0x00000000, 0x00010100, 0x00370046, 0x00000000, 0x00000000
 glabel D_80B91ACC

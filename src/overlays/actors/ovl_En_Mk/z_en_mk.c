@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_mk.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAC900.s")
+#define ROOM  0x00
+#define FLAGS 0x00000019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AACA18.s")
+void EnMk_Init(EnMk* this, GlobalContext* globalCtx);
+void EnMk_Destroy(EnMk* this, GlobalContext* globalCtx);
+void EnMk_Update(EnMk* this, GlobalContext* globalCtx);
+void EnMk_Draw(EnMk* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Mk_InitVars =
+{
+    ACTOR_EN_MK,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_MK,
+    sizeof(EnMk),
+    (ActorFunc)EnMk_Init,
+    (ActorFunc)EnMk_Destroy,
+    (ActorFunc)EnMk_Update,
+    (ActorFunc)EnMk_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/EnMk_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/EnMk_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AACA40.s")
 
@@ -31,14 +53,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAD080.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAD2D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/EnMk_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAD518.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAD55C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/func_80AAD59C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Mk/EnMk_Draw.s")

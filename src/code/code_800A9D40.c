@@ -28,9 +28,9 @@ void func_800A9D40(u32 addr, u8 handleType, u8 handleDomain, u8 handleLatency, u
         D_8012A690.piHandle.speed = handleSpeed;
         bzero(&D_8012A690.piHandle.transferInfo, sizeof(__OSTranxInfo));
         int_disabled = __osDisableInt();
-        D_8012A690.piHandle.next = D_8000AD7C;
-        D_8000AD7C = &D_8012A690;
-        func_800072F0(int_disabled);
+        D_8012A690.piHandle.next = __osPiTable;
+        __osPiTable = &D_8012A690;
+        __osRestoreInt(int_disabled);
         D_8012A690.ioMesg.hdr.pri = 0;
         D_8012A690.ioMesg.hdr.retQueue = &D_8012A690.mesgQ;
         D_8012A690.ioMesg.devAddr = addr;

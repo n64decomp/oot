@@ -6,7 +6,7 @@ glabel func_8008ED9C
 /* B05F4C 8008EDAC AFA60020 */  sw    $a2, 0x20($sp)
 /* B05F50 8008EDB0 AFA70024 */  sw    $a3, 0x24($sp)
 /* B05F54 8008EDB4 93A50023 */  lbu   $a1, 0x23($sp)
-/* B05F58 8008EDB8 0C021AE7 */  jal   func_80086B9C
+/* B05F58 8008EDB8 0C021AE7 */  jal   Inventory_UpdateBottleItem
 /* B05F5C 8008EDBC 91C60150 */   lbu   $a2, 0x150($t6)
 /* B05F60 8008EDC0 8FA30020 */  lw    $v1, 0x20($sp)
 /* B05F64 8008EDC4 24010014 */  li    $at, 20

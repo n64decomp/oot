@@ -19,12 +19,12 @@ glabel D_80A48114
  .word 0x0A000939, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00000100, 0x00280041, 0x00000000, 0x00000000
 glabel D_80A48140
  .word 0x00000000, 0x00000000, 0xFF000000
-glabel D_80A4814C
+glabel En_Go2_InitVars
  .word 0x01AE0400, 0x00000039, 0x00C90000, 0x000005A0
-.word func_80A464CC
-.word func_80A46960
-.word func_80A478A0
-.word func_80A47E90
+.word EnGo2_Init
+.word EnGo2_Destroy
+.word EnGo2_Update
+.word EnGo2_Draw
 glabel D_80A4816C
  .byte 0x00, 0x00
 glabel D_80A4816E

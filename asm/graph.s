@@ -15,17 +15,17 @@ glabel func_800C5850
 /* B3C9F8 800C5858 0C0011D0 */  jal   osViGetNextFramebuffer
 /* B3C9FC 800C585C 00000000 */   nop   
 /* B3CA00 800C5860 AFA2001C */  sw    $v0, 0x1c($sp)
-/* B3CA04 800C5864 0C032942 */  jal   func_800CA508
+/* B3CA04 800C5864 0C032942 */  jal   SysCfb_GetFbPtr
 /* B3CA08 800C5868 00002025 */   move  $a0, $zero
 /* B3CA0C 800C586C 8FAE001C */  lw    $t6, 0x1c($sp)
 /* B3CA10 800C5870 104E0005 */  beq   $v0, $t6, .L800C5888
 /* B3CA14 800C5874 00000000 */   nop   
-/* B3CA18 800C5878 0C032942 */  jal   func_800CA508
+/* B3CA18 800C5878 0C032942 */  jal   SysCfb_GetFbPtr
 /* B3CA1C 800C587C 00002025 */   move  $a0, $zero
 /* B3CA20 800C5880 10000004 */  b     .L800C5894
 /* B3CA24 800C5884 00402025 */   move  $a0, $v0
 .L800C5888:
-/* B3CA28 800C5888 0C032942 */  jal   func_800CA508
+/* B3CA28 800C5888 0C032942 */  jal   SysCfb_GetFbPtr
 /* B3CA2C 800C588C 24040001 */   li    $a0, 1
 /* B3CA30 800C5890 00402025 */  move  $a0, $v0
 .L800C5894:
@@ -203,8 +203,8 @@ glabel func_800C5B14
 /* B3CCBC 800C5B1C AFB10018 */  sw    $s1, 0x18($sp)
 /* B3CCC0 800C5B20 AFB00014 */  sw    $s0, 0x14($sp)
 /* B3CCC4 800C5B24 8C8E02D8 */  lw    $t6, 0x2d8($a0)
-/* B3CCC8 800C5B28 3C19801B */  lui   $t9, %hi(gFrameBuffers) # $t9, 0x801b
-/* B3CCCC 800C5B2C 273941C0 */  addiu $t9, %lo(gFrameBuffers) # addiu $t9, $t9, 0x41c0
+/* B3CCC8 800C5B28 3C19801B */  lui   $t9, %hi(gGfxPools) # $t9, 0x801b
+/* B3CCCC 800C5B2C 273941C0 */  addiu $t9, %lo(gGfxPools) # addiu $t9, $t9, 0x41c0
 /* B3CCD0 800C5B30 31CF0001 */  andi  $t7, $t6, 1
 /* B3CCD4 800C5B34 000FC0C0 */  sll   $t8, $t7, 3
 /* B3CCD8 800C5B38 030FC021 */  addu  $t8, $t8, $t7
@@ -260,7 +260,7 @@ glabel func_800C5B14
 /* B3CDA0 800C5C00 00000000 */   nop   
 /* B3CDA4 800C5C04 2484FFFE */  addiu $a0, $a0, -2
 .L800C5C08:
-/* B3CDA8 800C5C08 0C032942 */  jal   func_800CA508
+/* B3CDA8 800C5C08 0C032942 */  jal   SysCfb_GetFbPtr
 /* B3CDAC 800C5C0C 00000000 */   nop   
 /* B3CDB0 800C5C10 AE0202DC */  sw    $v0, 0x2dc($s0)
 /* B3CDB4 800C5C14 AE000014 */  sw    $zero, 0x14($s0)
@@ -321,7 +321,7 @@ glabel func_800C5C2C
 .L800C5CD4:
 /* B3CE74 800C5CD4 2484521C */  addiu $a0, %lo(D_8014521C) # addiu $a0, $a0, 0x521c
 /* B3CE78 800C5CD8 240502B8 */  li    $a1, 696
-/* B3CE7C 800C5CDC 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3CE7C 800C5CDC 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3CE80 800C5CE0 AFA6001C */   sw    $a2, 0x1c($sp)
 /* B3CE84 800C5CE4 3C048014 */  lui   $a0, %hi(D_80145228) # $a0, 0x8014
 /* B3CE88 800C5CE8 24845228 */  addiu $a0, %lo(D_80145228) # addiu $a0, $a0, 0x5228
@@ -341,20 +341,20 @@ glabel func_800C5D08
 /* B3CEB4 800C5D14 0C001114 */  jal   bzero
 /* B3CEB8 800C5D18 24050300 */   li    $a1, 768
 /* B3CEBC 800C5D1C 8FA70018 */  lw    $a3, 0x18($sp)
-/* B3CEC0 800C5D20 3C0E8001 */  lui   $t6, %hi(D_8000943C) # $t6, 0x8001
-/* B3CEC4 800C5D24 3C018001 */  lui   $at, %hi(D_80009440)
+/* B3CEC0 800C5D20 3C0E8001 */  lui   $t6, %hi(gViConfigFeatures) # $t6, 0x8001
+/* B3CEC4 800C5D24 3C018001 */  lui   $at, %hi(gViConfigXScale)
 /* B3CEC8 800C5D28 ACE002D8 */  sw    $zero, 0x2d8($a3)
 /* B3CECC 800C5D2C ACE002E8 */  sw    $zero, 0x2e8($a3)
 /* B3CED0 800C5D30 ACE00284 */  sw    $zero, 0x284($a3)
-/* B3CED4 800C5D34 8DCE943C */  lw    $t6, %lo(D_8000943C)($t6)
+/* B3CED4 800C5D34 8DCE943C */  lw    $t6, %lo(gViConfigFeatures)($t6)
 /* B3CED8 800C5D38 24060008 */  li    $a2, 8
 /* B3CEDC 800C5D3C 24E4005C */  addiu $a0, $a3, 0x5c
 /* B3CEE0 800C5D40 ACEE02E4 */  sw    $t6, 0x2e4($a3)
-/* B3CEE4 800C5D44 C4249440 */  lwc1  $f4, %lo(D_80009440)($at)
-/* B3CEE8 800C5D48 3C018001 */  lui   $at, %hi(D_80009444)
+/* B3CEE4 800C5D44 C4249440 */  lwc1  $f4, %lo(gViConfigXScale)($at)
+/* B3CEE8 800C5D48 3C018001 */  lui   $at, %hi(gViConfigYScale)
 /* B3CEEC 800C5D4C 24E50038 */  addiu $a1, $a3, 0x38
 /* B3CEF0 800C5D50 E4E402F4 */  swc1  $f4, 0x2f4($a3)
-/* B3CEF4 800C5D54 C4269444 */  lwc1  $f6, %lo(D_80009444)($at)
+/* B3CEF4 800C5D54 C4269444 */  lwc1  $f6, %lo(gViConfigYScale)($at)
 /* B3CEF8 800C5D58 0C001874 */  jal   osCreateMesgQueue
 /* B3CEFC 800C5D5C E4E602F8 */   swc1  $f6, 0x2f8($a3)
 /* B3CF00 800C5D60 0C034C7C */  jal   func_800D31F0
@@ -423,7 +423,7 @@ glabel func_800C5DC0
 /* B3CFEC 800C5E4C AFAE0010 */  sw    $t6, 0x10($sp)
 /* B3CFF0 800C5E50 AFAF0014 */  sw    $t7, 0x14($sp)
 /* B3CFF4 800C5E54 27A40070 */  addiu $a0, $sp, 0x70
-/* B3CFF8 800C5E58 0C0418B8 */  jal   func_801062E0
+/* B3CFF8 800C5E58 0C0418B8 */  jal   osSetTimer
 /* B3CFFC 800C5E5C 24060000 */   li    $a2, 0
 /* B3D000 800C5E60 8FA40038 */  lw    $a0, 0x38($sp)
 /* B3D004 800C5E64 27A5006C */  addiu $a1, $sp, 0x6c
@@ -444,14 +444,14 @@ glabel func_800C5DC0
 /* B3D040 800C5EA0 0C00084C */  jal   osSyncPrintf
 /* B3D044 800C5EA4 24845264 */   addiu $a0, %lo(D_80145264) # addiu $a0, $a0, 0x5264
 /* B3D048 800C5EA8 3C04A404 */  lui   $a0, 0xa404
-/* B3D04C 800C5EAC 0C000AC4 */  jal   func_80002B10
+/* B3D04C 800C5EAC 0C000AC4 */  jal   LogUtils_LogHexDump
 /* B3D050 800C5EB0 24050020 */   li    $a1, 32
 /* B3D054 800C5EB4 3C04A410 */  lui   $a0, 0xa410
-/* B3D058 800C5EB8 0C000AC4 */  jal   func_80002B10
+/* B3D058 800C5EB8 0C000AC4 */  jal   LogUtils_LogHexDump
 /* B3D05C 800C5EBC 24050020 */   li    $a1, 32
 /* B3D060 800C5EC0 3C04801B */  lui   $a0, %hi(gGfxSPTaskYieldBuffer) # $a0, 0x801b
 /* B3D064 800C5EC4 248431C0 */  addiu $a0, %lo(gGfxSPTaskYieldBuffer) # addiu $a0, $a0, 0x31c0
-/* B3D068 800C5EC8 0C000AC4 */  jal   func_80002B10
+/* B3D068 800C5EC8 0C000AC4 */  jal   LogUtils_LogHexDump
 /* B3D06C 800C5ECC 24050C00 */   li    $a1, 3072
 /* B3D070 800C5ED0 3C028016 */  lui   $v0, %hi(gGameInfo) # $v0, 0x8016
 /* B3D074 800C5ED4 3C048013 */  lui   $a0, %hi(D_8012D260) # $a0, 0x8013
@@ -627,10 +627,10 @@ glabel func_800C5DC0
 /* B3D304 800C6164 AC580004 */  sw    $t8, 4($v0)
 /* B3D308 800C6168 8E390284 */  lw    $t9, 0x284($s1)
 /* B3D30C 800C616C 3C018013 */  lui   $at, %hi(D_8012D264) # $at, 0x8013
-/* B3D310 800C6170 3C048016 */  lui   $a0, %hi(D_801666A0) # $a0, 0x8016
+/* B3D310 800C6170 3C048016 */  lui   $a0, %hi(gSchedContext+0x38) # $a0, 0x8016
 /* B3D314 800C6174 AC590008 */  sw    $t9, 8($v0)
 /* B3D318 800C6178 8E2802E4 */  lw    $t0, 0x2e4($s1)
-/* B3D31C 800C617C 248466A0 */  addiu $a0, %lo(D_801666A0) # addiu $a0, $a0, 0x66a0
+/* B3D31C 800C617C 248466A0 */  addiu $a0, %lo(gSchedContext+0x38) # addiu $a0, $a0, 0x66a0
 /* B3D320 800C6180 24060001 */  li    $a2, 1
 /* B3D324 800C6184 AC48000C */  sw    $t0, 0xc($v0)
 /* B3D328 800C6188 C62402F4 */  lwc1  $f4, 0x2f4($s1)
@@ -645,9 +645,9 @@ glabel func_800C5DC0
 /* B3D34C 800C61AC AC23D264 */  sw    $v1, %lo(D_8012D264)($at)
 /* B3D350 800C61B0 0C000C18 */  jal   osSendMesg
 /* B3D354 800C61B4 AE240058 */   sw    $a0, 0x58($s1)
-/* B3D358 800C61B8 3C048016 */  lui   $a0, %hi(D_80166668) # $a0, 0x8016
+/* B3D358 800C61B8 3C048016 */  lui   $a0, %hi(gSchedContext) # $a0, 0x8016
 /* B3D35C 800C61BC 0C03257E */  jal   func_800C95F8
-/* B3D360 800C61C0 24846668 */   addiu $a0, %lo(D_80166668) # addiu $a0, $a0, 0x6668
+/* B3D360 800C61C0 24846668 */   addiu $a0, %lo(gSchedContext) # addiu $a0, $a0, 0x6668
 /* B3D364 800C61C4 8FBF002C */  lw    $ra, 0x2c($sp)
 /* B3D368 800C61C8 8FB00024 */  lw    $s0, 0x24($sp)
 /* B3D36C 800C61CC 8FB10028 */  lw    $s1, 0x28($sp)
@@ -856,10 +856,10 @@ glabel func_800C61D8
 /* B3D684 800C64E4 3C04A404 */  lui   $a0, 0xa404
 /* B3D688 800C64E8 04610009 */  bgez  $v1, .L800C6510
 /* B3D68C 800C64EC 00000000 */   nop   
-/* B3D690 800C64F0 0C000AC4 */  jal   func_80002B10
+/* B3D690 800C64F0 0C000AC4 */  jal   LogUtils_LogHexDump
 /* B3D694 800C64F4 24050020 */   li    $a1, 32
 /* B3D698 800C64F8 3C04A410 */  lui   $a0, 0xa410
-/* B3D69C 800C64FC 0C000AC4 */  jal   func_80002B10
+/* B3D69C 800C64FC 0C000AC4 */  jal   LogUtils_LogHexDump
 /* B3D6A0 800C6500 24050020 */   li    $a1, 32
 /* B3D6A4 800C6504 3C028016 */  lui   $v0, %hi(gGameInfo) # $v0, 0x8016
 /* B3D6A8 800C6508 8C42FA90 */  lw    $v0, %lo(gGameInfo)($v0)
@@ -871,8 +871,8 @@ glabel func_800C61D8
 /* B3D6BC 800C651C AFA000C4 */  sw    $zero, 0xc4($sp)
 .L800C6520:
 /* B3D6C0 800C6520 8E0F02D8 */  lw    $t7, 0x2d8($s0)
-/* B3D6C4 800C6524 3C09801B */  lui   $t1, %hi(gFrameBuffers) # $t1, 0x801b
-/* B3D6C8 800C6528 252941C0 */  addiu $t1, %lo(gFrameBuffers) # addiu $t1, $t1, 0x41c0
+/* B3D6C4 800C6524 3C09801B */  lui   $t1, %hi(gGfxPools) # $t1, 0x801b
+/* B3D6C8 800C6528 252941C0 */  addiu $t1, %lo(gGfxPools) # addiu $t1, $t1, 0x41c0
 /* B3D6CC 800C652C 31F80001 */  andi  $t8, $t7, 1
 /* B3D6D0 800C6530 0018C8C0 */  sll   $t9, $t8, 3
 /* B3D6D4 800C6534 0338C821 */  addu  $t9, $t9, $t8
@@ -1055,9 +1055,9 @@ glabel func_800C61D8
 /* B3D978 800C67D8 8C84DBC0 */  lw    $a0, %lo(D_8012DBC0)($a0)
 .L800C67DC:
 /* B3D97C 800C67DC 10800014 */  beqz  $a0, .L800C6830
-/* B3D980 800C67E0 3C048016 */   lui   $a0, %hi(D_80166660) # $a0, 0x8016
+/* B3D980 800C67E0 3C048016 */   lui   $a0, %hi(gAppNmiBufferPtr) # $a0, 0x8016
 /* B3D984 800C67E4 0C01EFC2 */  jal   func_8007BF08
-/* B3D988 800C67E8 8C846660 */   lw    $a0, %lo(D_80166660)($a0)
+/* B3D988 800C67E8 8C846660 */   lw    $a0, %lo(gAppNmiBufferPtr)($a0)
 /* B3D98C 800C67EC 10400010 */  beqz  $v0, .L800C6830
 /* B3D990 800C67F0 8FAE00CC */   lw    $t6, 0xcc($sp)
 /* B3D994 800C67F4 8DCF00A0 */  lw    $t7, 0xa0($t6)
@@ -1083,7 +1083,7 @@ glabel func_800C61D8
 /* B3D9DC 800C683C 03E00008 */  jr    $ra
 /* B3D9E0 800C6840 00000000 */   nop   
 
-glabel func_800C6844
+glabel Graph_ThreadEntry
 /* B3D9E4 800C6844 27BDFC60 */  addiu $sp, $sp, -0x3a0
 /* B3D9E8 800C6848 AFB00018 */  sw    $s0, 0x18($sp)
 /* B3D9EC 800C684C 3C108012 */  lui   $s0, %hi(D_8011F830) # $s0, 0x8012
@@ -1115,7 +1115,7 @@ glabel func_800C6844
 /* B3DA54 800C68B4 27B50040 */  addiu $s5, $sp, 0x40
 /* B3DA58 800C68B8 0260A025 */  move  $s4, $s3
 .L800C68BC:
-/* B3DA5C 800C68BC 0C00ABC0 */  jal   func_8002AF00
+/* B3DA5C 800C68BC 0C00ABC0 */  jal   Overlay_LoadGameState
 /* B3DA60 800C68C0 02602025 */   move  $a0, $s3
 /* B3DA64 800C68C4 8E71002C */  lw    $s1, 0x2c($s3)
 /* B3DA68 800C68C8 02C02025 */  move  $a0, $s6
@@ -1123,7 +1123,7 @@ glabel func_800C6844
 /* B3DA70 800C68D0 02202825 */   move  $a1, $s1
 /* B3DA74 800C68D4 02202025 */  move  $a0, $s1
 /* B3DA78 800C68D8 02E02825 */  move  $a1, $s7
-/* B3DA7C 800C68DC 0C03F570 */  jal   func_800FD5C0
+/* B3DA7C 800C68DC 0C03F570 */  jal   SystemArena_MallocDebug
 /* B3DA80 800C68E0 240604AC */   li    $a2, 1196
 /* B3DA84 800C68E4 1440000C */  bnez  $v0, .L800C6918
 /* B3DA88 800C68E8 00408025 */   move  $s0, $v0
@@ -1132,7 +1132,7 @@ glabel func_800C6844
 /* B3DA94 800C68F4 3C058014 */  lui   $a1, %hi(D_80145560) # $a1, 0x8014
 /* B3DA98 800C68F8 24A55560 */  addiu $a1, %lo(D_80145560) # addiu $a1, $a1, 0x5560
 /* B3DA9C 800C68FC 02A02025 */  move  $a0, $s5
-/* B3DAA0 800C6900 0C000BD1 */  jal   snprintf
+/* B3DAA0 800C6900 0C000BD1 */  jal   sprintf
 /* B3DAA4 800C6904 02203025 */   move  $a2, $s1
 /* B3DAA8 800C6908 3C048014 */  lui   $a0, %hi(D_80145578) # $a0, 0x8014
 /* B3DAAC 800C690C 24845578 */  addiu $a0, %lo(D_80145578) # addiu $a0, $a0, 0x5578
@@ -1163,9 +1163,9 @@ glabel func_800C6844
 /* B3DB04 800C6964 3C058014 */  lui   $a1, %hi(D_80145594) # $a1, 0x8014
 /* B3DB08 800C6968 24A55594 */  addiu $a1, %lo(D_80145594) # addiu $a1, $a1, 0x5594
 /* B3DB0C 800C696C 02002025 */  move  $a0, $s0
-/* B3DB10 800C6970 0C03F5ED */  jal   func_800FD7B4
+/* B3DB10 800C6970 0C03F5ED */  jal   SystemArena_FreeDebug
 /* B3DB14 800C6974 240604CB */   li    $a2, 1227
-/* B3DB18 800C6978 0C00AC2A */  jal   func_8002B0A8
+/* B3DB18 800C6978 0C00AC2A */  jal   Overlay_FreeGameState
 /* B3DB1C 800C697C 02802025 */   move  $a0, $s4
 /* B3DB20 800C6980 5660FFCE */  bnezl $s3, .L800C68BC
 /* B3DB24 800C6984 0260A025 */   move  $s4, $s3

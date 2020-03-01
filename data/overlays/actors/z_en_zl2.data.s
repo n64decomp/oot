@@ -54,10 +54,10 @@ glabel D_80B528D4
  .word func_80B523BC
 .word func_80B523C8
 .word func_80B525D4
-glabel D_80B528E0
+glabel En_Zl2_InitVars
  .word 0x004D0400, 0x00000010, 0x00600000, 0x00000280
-.word func_80B522A0
-.word func_80B4E990
-.word func_80B52244
-.word func_80B527AC
+.word EnZl2_Init
+.word EnZl2_Destroy
+.word EnZl2_Update
+.word EnZl2_Draw
 

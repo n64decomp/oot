@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_horse.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void EnHorse_Init(EnHorse* this, GlobalContext* globalCtx);
+void EnHorse_Destroy(EnHorse* this, GlobalContext* globalCtx);
+void EnHorse_Update(EnHorse* this, GlobalContext* globalCtx);
+void EnHorse_Draw(EnHorse* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Horse_InitVars =
+{
+    ACTOR_EN_HORSE,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_HORSE,
+    sizeof(EnHorse),
+    (ActorFunc)EnHorse_Init,
+    (ActorFunc)EnHorse_Destroy,
+    (ActorFunc)EnHorse_Update,
+    (ActorFunc)EnHorse_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5B2F0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5B450.s")
@@ -37,9 +59,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5C0C8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5C0D0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/EnHorse_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5C818.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/EnHorse_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A5C888.s")
 
@@ -233,7 +255,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A6467C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A646AC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/EnHorse_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A64ED4.s")
 
@@ -247,8 +269,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A65C00.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/func_80A65D44.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Horse/EnHorse_Draw.s")

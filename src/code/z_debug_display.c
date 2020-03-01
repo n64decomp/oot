@@ -9,13 +9,13 @@ typedef struct
 
 typedef void (*DebugDispObject_DrawFunc)(DebugDispObject*, u32, GlobalContext*);
 
-static void func_80064030(DebugDispObject* dispObj, u32 texture, GlobalContext* globalCtx);
-static void func_80064254(DebugDispObject* dispObj, u32 dlist, GlobalContext* globalCtx);
+static void DebugDisplay_DrawSpriteI8(DebugDispObject* dispObj, u32 texture, GlobalContext* globalCtx);
+static void DebugDisplay_DrawPolygon(DebugDispObject* dispObj, u32 dlist, GlobalContext* globalCtx);
 
 static DebugDispObject_DrawFunc sDebugObjectDrawFuncTable[] =
 {
-    func_80064030,
-    func_80064254,
+    DebugDisplay_DrawSpriteI8,
+    DebugDisplay_DrawPolygon,
 };
 
 static DebugDispObjectInfo sDebugObjectInfoTable[] =
@@ -32,7 +32,7 @@ static Lights1 sDebugObjectLights = gdSPDefLights1(0x80, 0x80, 0x80, 0xFF, 0xFF,
 
 static DebugDispObject* sDebugObjectListHead;
 
-void DebugDisplay_ClearList(void)
+void DebugDisplay_Init(void)
 {
     sDebugObjectListHead = NULL;
 }
@@ -77,7 +77,7 @@ void DebugDisplay_DrawObjects(GlobalContext* globalCtx)
     }
 }
 
-static void func_80064030(DebugDispObject* dispObj, u32 texture, GlobalContext* globalCtx)
+static void DebugDisplay_DrawSpriteI8(DebugDispObject* dispObj, u32 texture, GlobalContext* globalCtx)
 {
     GraphicsContext* gfxCtx = globalCtx->gfxCtx;
     Gfx* gfxArr[4];
@@ -88,10 +88,10 @@ static void func_80064030(DebugDispObject* dispObj, u32 texture, GlobalContext* 
 
     gDPSetPrimColor(gfxCtx->polyXlu.p++, 0, 0, dispObj->color.r, dispObj->color.g, dispObj->color.b, dispObj->color.a);
 
-    func_800D0984(dispObj->pos.x, dispObj->pos.y, dispObj->pos.z, 0);
-    func_800D0A8C(dispObj->scale.x, dispObj->scale.y, dispObj->scale.z, 1);
-    func_800D0930(&globalCtx->mf_11DA0, 1);
-    func_800D1084(dispObj->rot.x, dispObj->rot.y, dispObj->rot.z, 1);
+    Matrix_Translate(dispObj->pos.x, dispObj->pos.y, dispObj->pos.z, 0);
+    Matrix_Scale(dispObj->scale.x, dispObj->scale.y, dispObj->scale.z, 1);
+    Matrix_Mult(&globalCtx->mf_11DA0, 1);
+    Matrix_RotateXYZ(dispObj->rot.x, dispObj->rot.y, dispObj->rot.z, 1);
 
     gDPLoadTextureBlock(gfxCtx->polyXlu.p++,
                         texture,
@@ -103,13 +103,13 @@ static void func_80064030(DebugDispObject* dispObj, u32 texture, GlobalContext* 
                         G_TX_NOMASK, G_TX_NOMASK,
                         G_TX_NOLOD, G_TX_NOLOD);
 
-    gSPMatrix(gfxCtx->polyXlu.p++, func_800D1A88(globalCtx->gfxCtx, "../z_debug_display.c", 189), G_MTX_MODELVIEW | G_MTX_LOAD);
+    gSPMatrix(gfxCtx->polyXlu.p++, Matrix_NewMtx(globalCtx->gfxCtx, "../z_debug_display.c", 189), G_MTX_MODELVIEW | G_MTX_LOAD);
     gSPDisplayList(gfxCtx->polyXlu.p++, &D_04004298);
 
     func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_debug_display.c", 192);
 }
 
-static void func_80064254(DebugDispObject* dispObj, u32 dlist, GlobalContext* globalCtx)
+static void DebugDisplay_DrawPolygon(DebugDispObject* dispObj, u32 dlist, GlobalContext* globalCtx)
 {
     GraphicsContext* gfxCtx = globalCtx->gfxCtx;
     Gfx* gfxArr[4];
@@ -121,10 +121,10 @@ static void func_80064254(DebugDispObject* dispObj, u32 dlist, GlobalContext* gl
 
     gSPSetLights1(gfxCtx->polyXlu.p++, sDebugObjectLights);
 
-    func_800D1694(dispObj->pos.x, dispObj->pos.y, dispObj->pos.z, &dispObj->rot);
-    func_800D0A8C(dispObj->scale.x, dispObj->scale.y, dispObj->scale.z, 1);
+    Matrix_Softcv3Load(dispObj->pos.x, dispObj->pos.y, dispObj->pos.z, &dispObj->rot);
+    Matrix_Scale(dispObj->scale.x, dispObj->scale.y, dispObj->scale.z, 1);
 
-    gSPMatrix(gfxCtx->polyXlu.p++, func_800D1A88(globalCtx->gfxCtx, "../z_debug_display.c", 228), G_MTX_MODELVIEW | G_MTX_LOAD);
+    gSPMatrix(gfxCtx->polyXlu.p++, Matrix_NewMtx(globalCtx->gfxCtx, "../z_debug_display.c", 228), G_MTX_MODELVIEW | G_MTX_LOAD);
     gSPDisplayList(gfxCtx->polyXlu.p++, dlist);
 
     func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_debug_display.c", 231);

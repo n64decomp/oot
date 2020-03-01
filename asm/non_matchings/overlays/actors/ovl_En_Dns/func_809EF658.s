@@ -35,7 +35,7 @@ glabel func_809EF658
 /* 00384 809EF6D4 10000009 */  beq     $zero, $zero, .L809EF6FC   
 /* 00388 809EF6D8 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L809EF6DC:
-/* 0038C 809EF6DC 0C0218E2 */  jal     func_80086388              
+/* 0038C 809EF6DC 0C0218E2 */  jal     Item_CheckObtainability              
 /* 00390 809EF6E0 00002025 */  or      $a0, $zero, $zero          ## $a0 = 00000000
 /* 00394 809EF6E4 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 00398 809EF6E8 54410004 */  bnel    $v0, $at, .L809EF6FC       

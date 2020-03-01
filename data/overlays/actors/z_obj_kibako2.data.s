@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B95FB0
+glabel Obj_Kibako2_InitVars
  .word 0x01A00100, 0x00000000, 0x01700000, 0x000001B8
-.word func_80B95CF4
-.word func_80B95DB4
-.word func_80B95F58
-.word func_80B95F7C
+.word ObjKibako2_Init
+.word ObjKibako2_Destroy
+.word ObjKibako2_Update
+.word ObjKibako2_Draw
 glabel D_80B95FD0
  .word 0x0A000900, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x40000040, 0x00000000, 0x00010000, 0x001F0030, 0x00000000, 0x00000000
 glabel D_80B95FFC

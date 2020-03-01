@@ -252,12 +252,12 @@ glabel func_809ECA50
 /* 0055C 809ECDDC C60C01DC */  lwc1    $f12, 0x01DC($s0)          ## 000001DC
 /* 00560 809ECDE0 C60E01E0 */  lwc1    $f14, 0x01E0($s0)          ## 000001E0
 /* 00564 809ECDE4 8E0601E4 */  lw      $a2, 0x01E4($s0)           ## 000001E4
-/* 00568 809ECDE8 0C034261 */  jal     func_800D0984              
+/* 00568 809ECDE8 0C034261 */  jal     Matrix_Translate              
 /* 0056C 809ECDEC 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 00570 809ECDF0 87A40044 */  lh      $a0, 0x0044($sp)           
 /* 00574 809ECDF4 87A50046 */  lh      $a1, 0x0046($sp)           
 /* 00578 809ECDF8 00003025 */  or      $a2, $zero, $zero          ## $a2 = 00000000
-/* 0057C 809ECDFC 0C034421 */  jal     func_800D1084              
+/* 0057C 809ECDFC 0C034421 */  jal     Matrix_RotateXYZ              
 /* 00580 809ECE00 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 00584 809ECE04 27A40064 */  addiu   $a0, $sp, 0x0064           ## $a0 = FFFFFFDC
 /* 00588 809ECE08 0C0346BD */  jal     func_800D1AF4              
@@ -265,7 +265,7 @@ glabel func_809ECA50
 /* 00590 809ECE10 C60C0024 */  lwc1    $f12, 0x0024($s0)          ## 00000024
 /* 00594 809ECE14 C60E0028 */  lwc1    $f14, 0x0028($s0)          ## 00000028
 /* 00598 809ECE18 8E06002C */  lw      $a2, 0x002C($s0)           ## 0000002C
-/* 0059C 809ECE1C 0C034261 */  jal     func_800D0984              
+/* 0059C 809ECE1C 0C034261 */  jal     Matrix_Translate              
 /* 005A0 809ECE20 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 005A4 809ECE24 8FA4002C */  lw      $a0, 0x002C($sp)           
 /* 005A8 809ECE28 8FA50028 */  lw      $a1, 0x0028($sp)           
@@ -275,7 +275,7 @@ glabel func_809ECA50
 /* 005B8 809ECE38 87A40044 */  lh      $a0, 0x0044($sp)           
 /* 005BC 809ECE3C 87A50046 */  lh      $a1, 0x0046($sp)           
 /* 005C0 809ECE40 00003025 */  or      $a2, $zero, $zero          ## $a2 = 00000000
-/* 005C4 809ECE44 0C034421 */  jal     func_800D1084              
+/* 005C4 809ECE44 0C034421 */  jal     Matrix_RotateXYZ              
 /* 005C8 809ECE48 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 005CC 809ECE4C 27A40070 */  addiu   $a0, $sp, 0x0070           ## $a0 = FFFFFFE8
 /* 005D0 809ECE50 0C0346BD */  jal     func_800D1AF4              

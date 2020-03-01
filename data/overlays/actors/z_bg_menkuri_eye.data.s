@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8089C070
+glabel Bg_Menkuri_Eye_InitVars
  .word 0x00620100, 0x00000020, 0x004D0000, 0x000001B0
-.word func_8089BC70
-.word func_8089BD48
-.word func_8089BD70
-.word func_8089BEE0
+.word BgMenkuriEye_Init
+.word BgMenkuriEye_Destroy
+.word BgMenkuriEye_Update
+.word BgMenkuriEye_Draw
 glabel D_8089C090
  .word 0x04000000, 0x00000000, 0x00000000, 0x0001F820, 0x00000000, 0x00010000, 0x01000000, 0x00000000, 0x000E0064
 glabel D_8089C0B4

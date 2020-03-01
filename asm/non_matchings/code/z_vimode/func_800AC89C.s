@@ -44,18 +44,18 @@ glabel func_800AC89C
 /* B23AE0 800AC940 3C048014 */  lui   $a0, %hi(D_80141784) # $a0, 0x8014
 /* B23AE4 800AC944 0C00084C */  jal   osSyncPrintf
 /* B23AE8 800AC948 24841784 */   addiu $a0, %lo(D_80141784) # addiu $a0, $a0, 0x1784
-/* B23AEC 800AC94C 3C048001 */  lui   $a0, %hi(D_8000ACA0) # $a0, 0x8001
+/* B23AEC 800AC94C 3C048001 */  lui   $a0, %hi(osViModePalLan1) # $a0, 0x8001
 /* B23AF0 800AC950 0C02B00C */  jal   func_800AC030
-/* B23AF4 800AC954 2484ACA0 */   addiu $a0, %lo(D_8000ACA0) # addiu $a0, $a0, -0x5360
+/* B23AF4 800AC954 2484ACA0 */   addiu $a0, %lo(osViModePalLan1) # addiu $a0, $a0, -0x5360
 /* B23AF8 800AC958 1000000F */  b     .L800AC998
 /* B23AFC 800AC95C 8FBF0014 */   lw    $ra, 0x14($sp)
 .L800AC960:
 /* B23B00 800AC960 3C048014 */  lui   $a0, %hi(D_80141798) # $a0, 0x8014
 /* B23B04 800AC964 0C00084C */  jal   osSyncPrintf
 /* B23B08 800AC968 24841798 */   addiu $a0, %lo(D_80141798) # addiu $a0, $a0, 0x1798
-/* B23B0C 800AC96C 3C048001 */  lui   $a0, %hi(D_8000AF20) # $a0, 0x8001
+/* B23B0C 800AC96C 3C048001 */  lui   $a0, %hi(osViModeFpalLan1) # $a0, 0x8001
 /* B23B10 800AC970 0C02B00C */  jal   func_800AC030
-/* B23B14 800AC974 2484AF20 */   addiu $a0, %lo(D_8000AF20) # addiu $a0, $a0, -0x50e0
+/* B23B14 800AC974 2484AF20 */   addiu $a0, %lo(osViModeFpalLan1) # addiu $a0, $a0, -0x50e0
 /* B23B18 800AC978 10000007 */  b     .L800AC998
 /* B23B1C 800AC97C 8FBF0014 */   lw    $ra, 0x14($sp)
 .L800AC980:

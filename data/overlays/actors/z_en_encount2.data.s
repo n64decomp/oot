@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80A08B50
+glabel En_Encount2_InitVars
  .word 0x00B40500, 0x00000030, 0x00920000, 0x00000A20
-.word func_80A07990
+.word EnEncount2_Init
 .word 0x00000000
-.word func_80A082A8
-.word func_80A08674
+.word EnEncount2_Update
+.word EnEncount2_Draw
 

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_diving_game.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809ED870.s")
+#define ROOM  0x00
+#define FLAGS 0x00000019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809ED9A4.s")
+void EnDivingGame_Init(EnDivingGame* this, GlobalContext* globalCtx);
+void EnDivingGame_Destroy(EnDivingGame* this, GlobalContext* globalCtx);
+void EnDivingGame_Update(EnDivingGame* this, GlobalContext* globalCtx);
+void EnDivingGame_Draw(EnDivingGame* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Diving_Game_InitVars =
+{
+    ACTOR_EN_DIVING_GAME,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_ZO,
+    sizeof(EnDivingGame),
+    (ActorFunc)EnDivingGame_Init,
+    (ActorFunc)EnDivingGame_Destroy,
+    (ActorFunc)EnDivingGame_Update,
+    (ActorFunc)EnDivingGame_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/EnDivingGame_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/EnDivingGame_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809ED9E0.s")
 
@@ -41,14 +63,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809EEAF8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809EEB90.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/EnDivingGame_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809EEDB8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809EEDE4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/func_809EEF44.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Diving_Game/EnDivingGame_Draw.s")

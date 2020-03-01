@@ -15,12 +15,12 @@ glabel D_80888DFC
  .word 0x0A000900, 0x00020000, 0x00000002
 glabel D_80888E08
  .word D_80888D84
-glabel D_80888E0C
+glabel Bg_Hidan_Hamstep_InitVars
  .word 0x00710100, 0x00000000, 0x002C0000, 0x00000248
-.word func_808881D8
-.word func_80888474
-.word func_80888C44
-.word func_80888C68
+.word BgHidanHamstep_Init
+.word BgHidanHamstep_Destroy
+.word BgHidanHamstep_Update
+.word BgHidanHamstep_Draw
 glabel D_80888E2C
  .word func_808887C4
 .word func_80888860

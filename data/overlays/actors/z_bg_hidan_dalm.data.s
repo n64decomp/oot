@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80886480
+glabel Bg_Hidan_Dalm_InitVars
  .word 0x00400100, 0x00000000, 0x002C0000, 0x000002FC
-.word func_80885E20
-.word func_80885F04
-.word func_8088627C
-.word func_80886404
+.word BgHidanDalm_Init
+.word BgHidanDalm_Destroy
+.word BgHidanDalm_Update
+.word BgHidanDalm_Draw
 glabel D_808864A0
  .word 0x00000000, 0x00000000, 0x00000000, 0x00000040, 0x00000000, 0x00790000
 glabel D_808864B8

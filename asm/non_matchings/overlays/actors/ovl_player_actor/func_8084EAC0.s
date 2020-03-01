@@ -39,7 +39,7 @@ glabel func_8084EAC0
 /* 1C938 8084EB48 04610006 */  bgez    $v1, .L8084EB64            
 /* 1C93C 8084EB4C 0003C100 */  sll     $t8, $v1,  4               
 /* 1C940 8084EB50 8FA40034 */  lw      $a0, 0x0034($sp)           
-/* 1C944 8084EB54 0C021C5D */  jal     func_80087174              
+/* 1C944 8084EB54 0C021C5D */  jal     Health_ChangeBy              
 /* 1C948 8084EB58 2405FFF0 */  addiu   $a1, $zero, 0xFFF0         ## $a1 = FFFFFFF0
 /* 1C94C 8084EB5C 10000015 */  beq     $zero, $zero, .L8084EBB4   
 /* 1C950 8084EB60 00000000 */  nop

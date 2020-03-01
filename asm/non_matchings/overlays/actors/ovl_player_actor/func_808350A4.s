@@ -41,7 +41,7 @@ glabel func_808350A4
 /* 02F2C 8083513C 10000004 */  beq     $zero, $zero, .L80835150   
 /* 02F30 80835140 A0281E5C */  sb      $t0, 0x1E5C($at)           ## 00011E5C
 .L80835144:
-/* 02F34 80835144 0C021CCC */  jal     func_80087330              
+/* 02F34 80835144 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 02F38 80835148 AFA2002C */  sw      $v0, 0x002C($sp)           
 /* 02F3C 8083514C 8FA2002C */  lw      $v0, 0x002C($sp)           
 .L80835150:

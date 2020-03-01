@@ -22,7 +22,7 @@ glabel func_800BED40
 /* B35F28 800BED88 02002025 */  move  $a0, $s0
 /* B35F2C 800BED8C 57000005 */  bnezl $t8, .L800BEDA4
 /* B35F30 800BED90 02002025 */   move  $a0, $s0
-/* B35F34 800BED94 0C022A76 */  jal   func_8008A9D8
+/* B35F34 800BED94 0C022A76 */  jal   Interface_Draw
 /* B35F38 800BED98 AFA20024 */   sw    $v0, 0x24($sp)
 /* B35F3C 800BED9C 8FA20024 */  lw    $v0, 0x24($sp)
 /* B35F40 800BEDA0 02002025 */  move  $a0, $s0

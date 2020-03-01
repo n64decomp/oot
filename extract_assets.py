@@ -22,9 +22,9 @@ ExtractFile("assets/textures/xml/icon_item_gameover_static.xml", "assets/texture
 ExtractFile("assets/textures/xml/icon_item_nes_static.xml", "assets/textures/icon_item_nes_static")
 ExtractFile("assets/textures/xml/icon_item_static.xml", "assets/textures/icon_item_static")
 
-# Scenes
-ExtractFile("scenes/xml/test01_scene.xml", "scenes/test01_scene")
-
-
-
-# Rooms
+# Scenes and Rooms
+ExtractFile("scenes/xml/test_levels/test01.xml", "scenes/test_levels/test01")
+ExtractFile("scenes/xml/test_levels/testroom.xml", "scenes/test_levels/testroom")
+ExtractFile("scenes/xml/test_levels/sutaru.xml", "scenes/test_levels/sutaru")
+ExtractFile("scenes/xml/misc/kinsuta.xml", "scenes/misc/kinsuta")
+ExtractFile("scenes/xml/misc/miharigoya.xml", "scenes/misc/miharigoya")

@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 EntranceInfo gEntranceTable[] =
 {
@@ -1692,12 +1691,12 @@ Scene gSceneTable[] =
 
 Gfx sDefaultDisplayList[] =
 {
-    gsSPSegment(0x08, &D_80127098),
-    gsSPSegment(0x09, &D_80127098),
-    gsSPSegment(0x0A, &D_80127098),
-    gsSPSegment(0x0B, &D_80127098),
-    gsSPSegment(0x0C, &D_80127098),
-    gsSPSegment(0x0D, &D_80127098),
+    gsSPSegment(0x08, D_80127098),
+    gsSPSegment(0x09, D_80127098),
+    gsSPSegment(0x0A, D_80127098),
+    gsSPSegment(0x0B, D_80127098),
+    gsSPSegment(0x0C, D_80127098),
+    gsSPSegment(0x0D, D_80127098),
     gsDPPipeSync(),
     gsDPSetPrimColor(0, 0, 0x80, 0x80, 0x80, 0x80),
     gsDPSetEnvColor(0x80, 0x80, 0x80, 0x80),
@@ -1711,14 +1710,14 @@ void func_800994A0(GlobalContext* globalCtx)
 
     if (gSaveContext.night_flag)
     {
-        if (gSaveContext.link_age != 0)
+        if (LINK_IS_CHILD)
             computedEntranceIndex = globalCtx->nextEntranceIndex + 1;
         else
             computedEntranceIndex = globalCtx->nextEntranceIndex + 3;
     }
     else
     {
-        if (gSaveContext.link_age != 0)
+        if (LINK_IS_CHILD)
             computedEntranceIndex = globalCtx->nextEntranceIndex;
         else
             computedEntranceIndex = globalCtx->nextEntranceIndex + 2;
@@ -2086,7 +2085,7 @@ void func_8009AE30(GlobalContext* globalCtx)
 
     gameplayFrames = globalCtx->gameplayFrames;
 
-    if (globalCtx->sceneNum == 24)
+    if (globalCtx->sceneNum == SCENE_HAKADAN_BS)
         gSPSegment(gfxCtx->polyOpa.p++, 0x08,
                    func_80094F40(globalCtx->gfxCtx,
                                  0, (gameplayFrames * 2) % 128, 0, 32, 32,
@@ -2295,7 +2294,7 @@ void func_8009BAA4(GlobalContext* globalCtx)
                              0, 127 - gameplayFrames % 128, (gameplayFrames * 3) % 128, 32, 32,
                              1, gameplayFrames % 128, (gameplayFrames * 3) % 128, 32, 32));
 
-    if (globalCtx->sceneNum == 69)
+    if (globalCtx->sceneNum == SCENE_HAIRAL_NIWA)
         gSPSegment(gfxCtx->polyXlu.p++, 0x09,
                    func_80094E9C(globalCtx->gfxCtx,
                                  0, (gameplayFrames * 10) % 256, 32, 64));
@@ -2326,7 +2325,7 @@ void func_8009BC44(GlobalContext* globalCtx)
 
     gameplayFrames = globalCtx->gameplayFrames;
 
-    if (globalCtx->sceneNum == 100)
+    if (globalCtx->sceneNum == SCENE_GANON_TOU)
     {
         gSPSegment(gfxCtx->polyXlu.p++, 0x09,
                    func_80094E9C(globalCtx->gfxCtx,
@@ -2384,14 +2383,14 @@ void func_8009BEEC(GlobalContext* globalCtx);
 #endif
 
 // Scene Draw Config 38
-#ifdef NON_MATCHING
-// switch case ordering and stack usage differences
 void func_8009C0AC(GlobalContext* globalCtx)
 {
     u32 gameplayFrames;
     s8 sp7B;
     GraphicsContext* gfxCtx;
     Gfx* gfxArr[4];
+
+    if (1) ; // Necessary to match
 
     sp7B = coss((globalCtx->gameplayFrames * 1500) & 0xFFFF) >> 8;
 
@@ -2426,20 +2425,15 @@ void func_8009C0AC(GlobalContext* globalCtx)
 
     if (Flags_GetSwitch(globalCtx, 0x37))
     {
-        switch (globalCtx->sceneNum)
+        if ((globalCtx->sceneNum == SCENE_GANON_DEMO) ||
+            (globalCtx->sceneNum == SCENE_GANON_FINAL) ||
+            (globalCtx->sceneNum == SCENE_GANON_SONOGO) ||
+            (globalCtx->sceneNum == SCENE_GANONTIKA_SONOGO))
         {
-            case 79:
-            case 26:
-            case 14:
-            case 15:
-                func_8009BEEC(globalCtx);
+            func_8009BEEC(globalCtx);
         }
     }
 }
-#else
-void func_8009C0AC(GlobalContext* globalCtx);
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_scene_table/func_8009C0AC.s")
-#endif
 
 u32 D_8012A338[] = { 0x0200FAC0, 0x0200F8C0 };
 
@@ -2726,7 +2720,7 @@ void func_8009D438(GlobalContext* globalCtx)
     gfxCtx = globalCtx->gfxCtx;
     func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 6560);
 
-    if (gSaveContext.link_age == 0)
+    if (LINK_IS_ADULT)
         var = 1;
     else
         var = gSaveContext.night_flag;
@@ -2974,7 +2968,7 @@ void func_8009E0B8(GlobalContext* globalCtx)
         spA3 = 255 - (u8)globalCtx->unk_11D30[0];
     else if (gSaveContext.scene_setup_index == 6)
         spA0 = globalCtx->unk_11D30[0] + 500;
-    else if (((gSaveContext.scene_setup_index < 4) || (gSaveContext.link_age == 0)) && (gSaveContext.event_chk_inf[0] & 0x80))
+    else if (((gSaveContext.scene_setup_index < 4) || LINK_IS_ADULT) && (gSaveContext.event_chk_inf[0] & 0x80))
         spA0 = 2150;
 
     gSPSegment(gfxCtx->polyOpa.p++, 0x0A, displayListHead);
@@ -3007,7 +3001,7 @@ void func_8009E54C(GlobalContext* globalCtx)
     func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 7058);
 
     if ((gSaveContext.scene_setup_index > 3) ||
-        ((gSaveContext.link_age == 0) && !(gSaveContext.event_chk_inf[6] & 0x200)))
+        (LINK_IS_ADULT && !(gSaveContext.event_chk_inf[6] & 0x200)))
         globalCtx->unk_11D30[0] = 87;
 
     gameplayFrames = globalCtx->gameplayFrames;
@@ -3043,7 +3037,7 @@ void func_8009E730(GlobalContext* globalCtx)
 
     gameplayFrames = globalCtx->gameplayFrames;
     var = 127 - (gameplayFrames * 1) % 128;
-    if (gSaveContext.link_age == 0)
+    if (LINK_IS_ADULT)
         var = 0;
     gSPSegment(gfxCtx->polyOpa.p++, 0x0C,
                func_80094F40(globalCtx->gfxCtx,
@@ -3166,11 +3160,11 @@ void func_8009EE44(GlobalContext* globalCtx)
     gDPPipeSync(gfxCtx->polyOpa.p++);
     gDPSetEnvColor(gfxCtx->polyOpa.p++, 0x80, 0x80, 0x80, 0x80);
 
-    if ((globalCtx->unk_11D30[0] == 0) && (gSaveContext.items[D_80127493] == 0x2F))
+    if ((globalCtx->unk_11D30[0] == 0) && (INV_CONTENT(ITEM_COJIRO) == ITEM_COJIRO))
     {
         if (globalCtx->unk_11D30[1] == 50)
         {
-            func_8002F7DC(globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first, NA_SE_EV_CHICKEN_CRY_M);
+            func_8002F7DC(&PLAYER->actor, NA_SE_EV_CHICKEN_CRY_M);
             globalCtx->unk_11D30[0] = 1;
         }
         globalCtx->unk_11D30[1]++;
@@ -3458,7 +3452,7 @@ void func_8009FE58(GlobalContext* globalCtx)
     func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 7712);
 
     gameplayFrames = globalCtx->gameplayFrames;
-    if (globalCtx->sceneNum == 2)
+    if (globalCtx->sceneNum == SCENE_BDAN)
     {
         gSPSegment(gfxCtx->polyOpa.p++, 0x08,
                    func_80094F40(globalCtx->gfxCtx,
@@ -3529,11 +3523,11 @@ void func_8009FE58(GlobalContext* globalCtx)
     }
 
     if (globalCtx->roomCtx.curRoom.num == 2)
-        func_800D0A8C(1.0f, sinf(D_8012A398) * 0.8f, 1.0f, 0);
+        Matrix_Scale(1.0f, sinf(D_8012A398) * 0.8f, 1.0f, 0);
     else
-        func_800D0A8C(1.005f, sinf(D_8012A398) * 0.8f, 1.005f, 0);
+        Matrix_Scale(1.005f, sinf(D_8012A398) * 0.8f, 1.005f, 0);
 
-    gSPSegment(gfxCtx->polyOpa.p++, 0x0D, func_800D1A88(globalCtx->gfxCtx, "../z_scene_table.c", 7809));
+    gSPSegment(gfxCtx->polyOpa.p++, 0x0D, Matrix_NewMtx(globalCtx->gfxCtx, "../z_scene_table.c", 7809));
 
     func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 7811);
 }
@@ -3678,30 +3672,30 @@ void Scene_Draw(GlobalContext* globalCtx)
     GraphicsContext* gfxCtx;
     Gfx* gfxArr[4];
 
-    if (gGameInfo->unk_1074 == 0x11)
+    if (HREG(80) == 0x11)
     {
-        if (gGameInfo->unk_1092 != 0x11)
+        if (HREG(95) != 0x11)
         {
-            gGameInfo->unk_1092 = 0x11;
-            gGameInfo->unk_1076 = 1;
-            gGameInfo->unk_1078 = 1;
-            gGameInfo->unk_107A = 0;
-            gGameInfo->unk_107C = 0;
-            gGameInfo->unk_107E = 0;
-            gGameInfo->unk_1080 = 0;
-            gGameInfo->unk_1082 = 0;
-            gGameInfo->unk_1084 = 0;
-            gGameInfo->unk_1086 = 0;
-            gGameInfo->unk_108A = 0;
-            gGameInfo->unk_108C = 0;
-            gGameInfo->unk_108E = 0;
-            gGameInfo->unk_1090 = 0;
+            HREG(95) = 0x11;
+            HREG(81) = 1;
+            HREG(82) = 1;
+            HREG(83) = 0;
+            HREG(84) = 0;
+            HREG(85) = 0;
+            HREG(86) = 0;
+            HREG(87) = 0;
+            HREG(88) = 0;
+            HREG(89) = 0;
+            HREG(91) = 0;
+            HREG(92) = 0;
+            HREG(93) = 0;
+            HREG(94) = 0;
         }
 
         gfxCtx = globalCtx->gfxCtx;
         func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 8104);
 
-        if (gGameInfo->unk_1076 == 1)
+        if (HREG(81) == 1)
         {
             gSPDisplayList(gfxCtx->polyOpa.p++, sDefaultDisplayList);
             gSPDisplayList(gfxCtx->polyXlu.p++, sDefaultDisplayList);
@@ -3709,7 +3703,7 @@ void Scene_Draw(GlobalContext* globalCtx)
 
         func_800C6B54(gfxArr, globalCtx->gfxCtx, "../z_scene_table.c", 8109);
 
-        if (gGameInfo->unk_1078 == 1)
+        if (HREG(82) == 1)
             sSceneDrawHandlers[globalCtx->sceneConfig](globalCtx);
     }
     else

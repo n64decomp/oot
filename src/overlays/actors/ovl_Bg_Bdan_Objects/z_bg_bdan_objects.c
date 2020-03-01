@@ -1,13 +1,35 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_bdan_objects.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void BgBdanObjects_Init(BgBdanObjects* this, GlobalContext* globalCtx);
+void BgBdanObjects_Destroy(BgBdanObjects* this, GlobalContext* globalCtx);
+void BgBdanObjects_Update(BgBdanObjects* this, GlobalContext* globalCtx);
+void BgBdanObjects_Draw(BgBdanObjects* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Bdan_Objects_InitVars =
+{
+    ACTOR_BG_BDAN_OBJECTS,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_BDAN_OBJECTS,
+    sizeof(BgBdanObjects),
+    (ActorFunc)BgBdanObjects_Init,
+    (ActorFunc)BgBdanObjects_Destroy,
+    (ActorFunc)BgBdanObjects_Update,
+    (ActorFunc)BgBdanObjects_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086BCA0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086BD10.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086BD84.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/BgBdanObjects_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086C004.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/BgBdanObjects_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086C054.s")
 
@@ -43,10 +65,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086CB8C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086CC48.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/BgBdanObjects_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/func_8086CC84.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Bdan_Objects/BgBdanObjects_Draw.s")

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8087B510
+glabel Bg_Gnd_Soulmeiro_InitVars
  .word 0x01B50600, 0x00000000, 0x01790000, 0x000001A0
-.word func_8087ADC0
-.word func_8087AF00
-.word func_8087B3A0
-.word func_8087B3CC
+.word BgGndSoulmeiro_Init
+.word BgGndSoulmeiro_Destroy
+.word BgGndSoulmeiro_Update
+.word BgGndSoulmeiro_Draw
 glabel D_8087B530
  .word 0x0A000900, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00020800, 0x00000000, 0x00010000, 0x00320014, 0x00140000, 0x00000000
 glabel D_8087B55C

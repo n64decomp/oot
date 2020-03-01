@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_hidan_hrock.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_80889130.s")
+#define ROOM  0x00
+#define FLAGS 0x00000000
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_8088945C.s")
+void BgHidanHrock_Init(BgHidanHrock* this, GlobalContext* globalCtx);
+void BgHidanHrock_Destroy(BgHidanHrock* this, GlobalContext* globalCtx);
+void BgHidanHrock_Update(BgHidanHrock* this, GlobalContext* globalCtx);
+void BgHidanHrock_Draw(BgHidanHrock* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Hidan_Hrock_InitVars =
+{
+    ACTOR_BG_HIDAN_HROCK,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_HIDAN_OBJECTS,
+    sizeof(BgHidanHrock),
+    (ActorFunc)BgHidanHrock_Init,
+    (ActorFunc)BgHidanHrock_Destroy,
+    (ActorFunc)BgHidanHrock_Update,
+    (ActorFunc)BgHidanHrock_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/BgHidanHrock_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/BgHidanHrock_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_808894A4.s")
 
@@ -13,10 +35,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_808896B8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_80889798.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/BgHidanHrock_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/func_808897BC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Hidan_Hrock/BgHidanHrock_Draw.s")

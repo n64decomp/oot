@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_anubice_fire.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B25A0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B26C4.s")
+void EnAnubiceFire_Init(EnAnubiceFire* this, GlobalContext* globalCtx);
+void EnAnubiceFire_Destroy(EnAnubiceFire* this, GlobalContext* globalCtx);
+void EnAnubiceFire_Update(EnAnubiceFire* this, GlobalContext* globalCtx);
+void EnAnubiceFire_Draw(EnAnubiceFire* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Anubice_Fire_InitVars =
+{
+    ACTOR_EN_ANUBICE_FIRE,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_ANUBICE,
+    sizeof(EnAnubiceFire),
+    (ActorFunc)EnAnubiceFire_Init,
+    (ActorFunc)EnAnubiceFire_Destroy,
+    (ActorFunc)EnAnubiceFire_Update,
+    (ActorFunc)EnAnubiceFire_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/EnAnubiceFire_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/EnAnubiceFire_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B26EC.s")
 
@@ -11,10 +33,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B2B48.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B2CF4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/EnAnubiceFire_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/func_809B2EEC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Anubice_Fire/EnAnubiceFire_Draw.s")

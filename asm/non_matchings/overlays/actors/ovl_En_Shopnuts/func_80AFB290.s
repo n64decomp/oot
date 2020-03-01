@@ -84,7 +84,7 @@ glabel func_80AFB290
 /* 00CAC 80AFB3CC 46006386 */  mov.s   $f14, $f12                 
 .L80AFB3D0:
 /* 00CB0 80AFB3D0 44068000 */  mfc1    $a2, $f16                  
-/* 00CB4 80AFB3D4 0C0342A3 */  jal     func_800D0A8C              
+/* 00CB4 80AFB3D4 0C0342A3 */  jal     Matrix_Scale              
 /* 00CB8 80AFB3D8 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 00CBC 80AFB3DC 8FA70038 */  lw      $a3, 0x0038($sp)           
 /* 00CC0 80AFB3E0 3C0ADA38 */  lui     $t2, 0xDA38                ## $t2 = DA380000
@@ -98,7 +98,7 @@ glabel func_80AFB290
 /* 00CE0 80AFB400 8FAB0050 */  lw      $t3, 0x0050($sp)           
 /* 00CE4 80AFB404 240602CA */  addiu   $a2, $zero, 0x02CA         ## $a2 = 000002CA
 /* 00CE8 80AFB408 8D640000 */  lw      $a0, 0x0000($t3)           ## 00000000
-/* 00CEC 80AFB40C 0C0346A2 */  jal     func_800D1A88              
+/* 00CEC 80AFB40C 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00CF0 80AFB410 AFA20024 */  sw      $v0, 0x0024($sp)           
 /* 00CF4 80AFB414 8FA30024 */  lw      $v1, 0x0024($sp)           
 /* 00CF8 80AFB418 3C0E0600 */  lui     $t6, 0x0600                ## $t6 = 06000000

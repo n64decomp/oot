@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80881B40
+glabel Bg_Haka_Tubo_InitVars
  .word 0x00BB0100, 0x00000010, 0x00690000, 0x00000204
-.word func_80881250
-.word func_80881348
-.word func_808818CC
-.word func_80881AFC
+.word BgHakaTubo_Init
+.word BgHakaTubo_Destroy
+.word BgHakaTubo_Update
+.word BgHakaTubo_Draw
 glabel D_80881B60
  .word 0x0A000900, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010000, 0x0019003C, 0x001E0000, 0x00000000
 glabel D_80881B8C

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809FCE80
+glabel En_Door_InitVars
  .word 0x00090A00, 0x00000010, 0x00010000, 0x000001D8
-.word func_809FC1D0
-.word func_809FC3E8
-.word func_809FCC18
-.word func_809FCD6C
+.word EnDoor_Init
+.word EnDoor_Destroy
+.word EnDoor_Update
+.word EnDoor_Draw
 glabel D_809FCEA0
  .word 0x00040100, 0x002C0005, 0x02000059, 0x00070300, 0x01870008, 0x03000187, 0xFFFF0000, 0x0001FFFF, 0x04000002
 glabel D_809FCEC4

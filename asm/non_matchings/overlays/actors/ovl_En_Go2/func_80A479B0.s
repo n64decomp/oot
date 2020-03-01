@@ -35,7 +35,7 @@ glabel func_80A479B0
 /* 04D04 80A47A34 24A585DC */  addiu   $a1, $a1, %lo(D_80A485DC)  ## $a1 = 80A485DC
 /* 04D08 80A47A38 8D840000 */  lw      $a0, 0x0000($t4)           ## 00000000
 /* 04D0C 80A47A3C 24060B44 */  addiu   $a2, $zero, 0x0B44         ## $a2 = 00000B44
-/* 04D10 80A47A40 0C0346A2 */  jal     func_800D1A88              
+/* 04D10 80A47A40 0C0346A2 */  jal     Matrix_NewMtx              
 /* 04D14 80A47A44 AFA2002C */  sw      $v0, 0x002C($sp)           
 /* 04D18 80A47A48 8FA3002C */  lw      $v1, 0x002C($sp)           
 /* 04D1C 80A47A4C 3C0F0601 */  lui     $t7, 0x0601                ## $t7 = 06010000

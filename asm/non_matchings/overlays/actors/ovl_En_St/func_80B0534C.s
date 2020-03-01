@@ -59,12 +59,12 @@ glabel func_80B0534C
 /* 00B98 80B05428 E6120004 */  swc1    $f18, 0x0004($s0)          ## FFFFFFE0
 /* 00B9C 80B0542C C6460408 */  lwc1    $f6, 0x0408($s2)           ## 00000408
 /* 00BA0 80B05430 46062202 */  mul.s   $f8, $f4, $f6              
-/* 00BA4 80B05434 0C034213 */  jal     func_800D084C              
+/* 00BA4 80B05434 0C034213 */  jal     Matrix_Push              
 /* 00BA8 80B05438 E6080008 */  swc1    $f8, 0x0008($s0)           ## FFFFFFE4
 /* 00BAC 80B0543C C7AC0070 */  lwc1    $f12, 0x0070($sp)          
 /* 00BB0 80B05440 C7AE0074 */  lwc1    $f14, 0x0074($sp)          
 /* 00BB4 80B05444 8FA60078 */  lw      $a2, 0x0078($sp)           
-/* 00BB8 80B05448 0C034261 */  jal     func_800D0984              
+/* 00BB8 80B05448 0C034261 */  jal     Matrix_Translate              
 /* 00BBC 80B0544C 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 00BC0 80B05450 864B03BC */  lh      $t3, 0x03BC($s2)           ## 000003BC
 /* 00BC4 80B05454 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
@@ -73,12 +73,12 @@ glabel func_80B0534C
 /* 00BD0 80B05460 46805420 */  cvt.s.w $f16, $f10                 
 /* 00BD4 80B05464 46148483 */  div.s   $f18, $f16, $f20           
 /* 00BD8 80B05468 46169302 */  mul.s   $f12, $f18, $f22           
-/* 00BDC 80B0546C 0C034348 */  jal     func_800D0D20              
+/* 00BDC 80B0546C 0C034348 */  jal     Matrix_RotateY              
 /* 00BE0 80B05470 00000000 */  nop
 /* 00BE4 80B05474 02002025 */  or      $a0, $s0, $zero            ## $a0 = FFFFFFDC
 /* 00BE8 80B05478 0C0346BD */  jal     func_800D1AF4              
 /* 00BEC 80B0547C 02A02825 */  or      $a1, $s5, $zero            ## $a1 = FFFFFFD0
-/* 00BF0 80B05480 0C034221 */  jal     func_800D0884              
+/* 00BF0 80B05480 0C034221 */  jal     Matrix_Pull              
 /* 00BF4 80B05484 00000000 */  nop
 /* 00BF8 80B05488 C7A40070 */  lwc1    $f4, 0x0070($sp)           
 /* 00BFC 80B0548C 02E02025 */  or      $a0, $s7, $zero            ## $a0 = 00000000

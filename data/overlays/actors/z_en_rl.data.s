@@ -24,11 +24,11 @@ glabel D_80AE81D0
  .word func_80AE7FD0
 .word func_80AE7FDC
 .word func_80AE7D94
-glabel D_80AE81DC
+glabel En_Rl_InitVars
  .word 0x00A60400, 0x00000010, 0x00A70000, 0x000001AC
-.word func_80AE7F68
-.word func_80AE72B0
-.word func_80AE7F0C
-.word func_80AE8140
+.word EnRl_Init
+.word EnRl_Destroy
+.word EnRl_Update
+.word EnRl_Draw
 .word 0x00000000
 

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8089F520
+glabel Bg_Mizu_Shutter_InitVars
  .word 0x01BB0600, 0x00000010, 0x00590000, 0x00000190
-.word func_8089EE50
-.word func_8089F0AC
-.word func_8089F424
-.word func_8089F448
+.word BgMizuShutter_Init
+.word BgMizuShutter_Destroy
+.word BgMizuShutter_Update
+.word BgMizuShutter_Draw
 glabel D_8089F540
  .word 0x06007130, 0x060072D0
 glabel D_8089F548

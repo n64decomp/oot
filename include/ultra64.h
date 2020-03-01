@@ -9,6 +9,7 @@
 #include <ultra64/types.h>
 #include <ultra64/interrupt.h>
 #include <ultra64/os_misc.h>
+#include <ultra64/rcp.h>
 #include <ultra64/rdp.h>
 #include <ultra64/rsp.h>
 #include <ultra64/os_thread.h>
@@ -20,5 +21,6 @@
 #include <ultra64/gu.h>
 #include <ultra64/os_vi.h>
 #include <ultra64/os_pi.h>
+#include <ultra64/os_internal.h>
 
 #endif

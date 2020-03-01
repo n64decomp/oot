@@ -30,7 +30,7 @@ glabel func_808E06FC
 /* 09EF8 808E0768 AC40FFFC */  sw      $zero, -0x0004($v0)        ## 00000000
 /* 09EFC 808E076C 3C013F80 */  lui     $at, 0x3F80                ## $at = 3F800000
 /* 09F00 808E0770 44816000 */  mtc1    $at, $f12                  ## $f12 = 1.00
-/* 09F04 808E0774 0C0342DC */  jal     func_800D0B70              
+/* 09F04 808E0774 0C0342DC */  jal     Matrix_RotateX              
 /* 09F08 808E0778 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 09F0C 808E077C 3C0140A0 */  lui     $at, 0x40A0                ## $at = 40A00000
 /* 09F10 808E0780 4481A000 */  mtc1    $at, $f20                  ## $f20 = 5.00

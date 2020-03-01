@@ -9,9 +9,9 @@ glabel func_80AD3E2C
 /* 00348 80AD3E48 2484014C */  addiu   $a0, $a0, 0x014C           ## $a0 = 0000014C
 /* 0034C 80AD3E4C 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 00350 80AD3E50 44802000 */  mtc1    $zero, $f4                 ## $f4 = 0.00
-/* 00354 80AD3E54 3C0E80AD */  lui     $t6, %hi(func_80AD68E4)    ## $t6 = 80AD0000
+/* 00354 80AD3E54 3C0E80AD */  lui     $t6, %hi(EnPoField_Draw)    ## $t6 = 80AD0000
 /* 00358 80AD3E58 240200FF */  addiu   $v0, $zero, 0x00FF         ## $v0 = 000000FF
-/* 0035C 80AD3E5C 25CE68E4 */  addiu   $t6, $t6, %lo(func_80AD68E4) ## $t6 = 80AD68E4
+/* 0035C 80AD3E5C 25CE68E4 */  addiu   $t6, $t6, %lo(EnPoField_Draw) ## $t6 = 80AD68E4
 /* 00360 80AD3E60 240F00D2 */  addiu   $t7, $zero, 0x00D2         ## $t7 = 000000D2
 /* 00364 80AD3E64 24053873 */  addiu   $a1, $zero, 0x3873         ## $a1 = 00003873
 /* 00368 80AD3E68 AC8E0134 */  sw      $t6, 0x0134($a0)           ## 00000134

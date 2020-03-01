@@ -33,8 +33,8 @@ glabel L80080B28
 /* AF7CC8 80080B28 24010053 */  li    $at, 83
 /* AF7CCC 80080B2C 14610009 */  bne   $v1, $at, .L80080B54
 /* AF7CD0 80080B30 87A50036 */   lh    $a1, 0x36($sp)
-/* AF7CD4 80080B34 3C098012 */  lui   $t1, %hi(D_80127148) # $t1, 0x8012
-/* AF7CD8 80080B38 8D297148 */  lw    $t1, %lo(D_80127148)($t1)
+/* AF7CD4 80080B34 3C098012 */  lui   $t1, %hi(gBitFlags+0x28) # $t1, 0x8012
+/* AF7CD8 80080B38 8D297148 */  lw    $t1, %lo(gBitFlags+0x28)($t1)
 /* AF7CDC 80080B3C 8CCA00A4 */  lw    $t2, 0xa4($a2)
 /* AF7CE0 80080B40 012A5824 */  and   $t3, $t1, $t2
 /* AF7CE4 80080B44 11600032 */  beqz  $t3, .L80080C10
@@ -49,13 +49,13 @@ glabel L80080B28
 /* AF7D04 80080B64 24010011 */  li    $at, 17
 /* AF7D08 80080B68 24020011 */  li    $v0, 17
 /* AF7D0C 80080B6C 11800003 */  beqz  $t4, .L80080B7C
-/* AF7D10 80080B70 3C0D8012 */   lui   $t5, %hi(D_80127128) # $t5, 0x8012
+/* AF7D10 80080B70 3C0D8012 */   lui   $t5, %hi(gBitFlags+8) # $t5, 0x8012
 /* AF7D14 80080B74 10000001 */  b     .L80080B7C
 /* AF7D18 80080B78 24020005 */   li    $v0, 5
 .L80080B7C:
 /* AF7D1C 80080B7C 14410024 */  bne   $v0, $at, .L80080C10
 /* AF7D20 80080B80 00000000 */   nop   
-/* AF7D24 80080B84 8DAD7128 */  lw    $t5, %lo(D_80127128)($t5)
+/* AF7D24 80080B84 8DAD7128 */  lw    $t5, %lo(gBitFlags+8)($t5)
 /* AF7D28 80080B88 8CCE00A4 */  lw    $t6, 0xa4($a2)
 /* AF7D2C 80080B8C 01AE7824 */  and   $t7, $t5, $t6
 /* AF7D30 80080B90 15E0001F */  bnez  $t7, .L80080C10

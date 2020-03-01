@@ -18,12 +18,12 @@ glabel D_80A1701C
 glabel D_80A17040
  .word 0x0A000039, 0x10000000, 0x00000001
 .word D_80A1701C
-glabel D_80A17050
+glabel En_Fish_InitVars
  .word 0x00210700, 0x00000000, 0x00010000, 0x00000254
-.word func_80A15468
-.word func_80A155A8
-.word func_80A16F00
-.word func_80A16FAC
+.word EnFish_Init
+.word EnFish_Destroy
+.word EnFish_Update
+.word EnFish_Draw
 glabel D_80A17070
  .word 0xC850000A, 0xB0F40384, 0xB0F80028, 0x30FC02BC
 glabel D_80A17080

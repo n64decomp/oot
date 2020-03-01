@@ -9,8 +9,8 @@ extern s16 D_8011FF60[3];
 extern s16 D_8011FF74[3];
 extern s16 D_8011FF88[3];
 extern s16 D_8011FF9C[3];
-extern u32 D_8011FFB0[];
-extern u32 D_8011FFF0[];
+extern u8* D_8011FFB0[];
+extern u8* D_8011FFF0[];
 
 s16 D_8015FDC0[3];
 s16 D_8015FDC8[3];
@@ -22,7 +22,7 @@ void Health_InitData(GlobalContext* globalCtx)
     InterfaceContext* interfaceCtx = &globalCtx->interfaceCtx;
 
     interfaceCtx->unk_228 = 0x140;
-    interfaceCtx->unk_226 = gSaveContext.energy;
+    interfaceCtx->unk_226 = gSaveContext.health;
     interfaceCtx->unk_22A = interfaceCtx->unk_1FE = 0;
     interfaceCtx->unk_22C = interfaceCtx->unk_200 = 0;
 
@@ -155,7 +155,7 @@ void Health_UpdateData(GlobalContext* globalCtx)
 
 s32 func_80078E18(GlobalContext* globalCtx)
 {
-    gSaveContext.energy = globalCtx->interfaceCtx.unk_226;
+    gSaveContext.health = globalCtx->interfaceCtx.unk_226;
     return 1;
 }
 
@@ -166,9 +166,9 @@ s32 func_80078E34(GlobalContext* globalCtx)
     interfaceCtx->unk_228 = 0x140;
     interfaceCtx->unk_226 += 0x10;
 
-    if (interfaceCtx->unk_226 >= gSaveContext.energy)
+    if (interfaceCtx->unk_226 >= gSaveContext.health)
     {
-        interfaceCtx->unk_226 = gSaveContext.energy;
+        interfaceCtx->unk_226 = gSaveContext.health;
         return 1;
     }
 
@@ -191,7 +191,7 @@ s32 func_80078E84(GlobalContext* globalCtx)
         if (interfaceCtx->unk_226 <= 0)
         {
             interfaceCtx->unk_226 = 0;
-            globalCtx->unk_11D58(globalCtx, -(gSaveContext.energy + 1));
+            globalCtx->unk_11D58(globalCtx, -(gSaveContext.health + 1));
             return 1;
         }
     }
@@ -202,7 +202,7 @@ s32 func_80078E84(GlobalContext* globalCtx)
 void Interface_DrawHealth(GlobalContext* globalCtx)
 {
     s32 pad[5];
-    u32 heartBgImg;
+    u8* heartBgImg;
     u32 curColorSet;
     f32 offsetX;
     f32 offsetY;
@@ -213,20 +213,20 @@ void Interface_DrawHealth(GlobalContext* globalCtx)
     f32 temp4;
     InterfaceContext* interfaceCtx = &globalCtx->interfaceCtx;
     GraphicsContext* gfxCtx = globalCtx->gfxCtx;
-    void* sp154 = interfaceCtx->unk_12C;
-    s32 curHeartFraction = gSaveContext.energy % 0x10;
-    s16 totalHeartCount = gSaveContext.energy_capacity / 0x10;
-    s16 fullHeartCount = gSaveContext.energy / 0x10;
+    Vtx* sp154 = interfaceCtx->vtx_12C;
+    s32 curHeartFraction = gSaveContext.health % 0x10;
+    s16 totalHeartCount = gSaveContext.health_capacity / 0x10;
+    s16 fullHeartCount = gSaveContext.health / 0x10;
     s32 pad2;
     f32 sp144 = interfaceCtx->unk_22A * 0.1f;
     s32 curCombineModeSet = 0;
-    u32 curBgImgLoaded = 0;
+    u8* curBgImgLoaded = NULL;
     s32 ddHeartCountMinusOne = gSaveContext.defense_hearts - 1;
     Gfx* gfxArr[5];
 
     func_800C6AC4(gfxArr, gfxCtx, "../z_lifemeter.c", 353);
 
-    if (!(gSaveContext.energy % 0x10))
+    if (!(gSaveContext.health % 0x10))
         fullHeartCount--;
 
     curColorSet = -1;
@@ -295,11 +295,11 @@ void Interface_DrawHealth(GlobalContext* globalCtx)
             }
 
             if (i < fullHeartCount)
-                heartBgImg = &D_02000400;
+                heartBgImg = D_02000400;
             else if (i == fullHeartCount)
                 heartBgImg = D_8011FFB0[curHeartFraction];
             else
-                heartBgImg = &D_02000000;
+                heartBgImg = D_02000000;
         }
         else
         {
@@ -361,11 +361,11 @@ void Interface_DrawHealth(GlobalContext* globalCtx)
             }
 
             if (i < fullHeartCount)
-                heartBgImg = &D_02000900;
+                heartBgImg = D_02000900;
             else if (i == fullHeartCount)
                 heartBgImg = D_8011FFF0[curHeartFraction];
             else
-                heartBgImg = &D_02000500;
+                heartBgImg = D_02000500;
         }
 
         if (curBgImgLoaded != heartBgImg)
@@ -481,8 +481,8 @@ void Health_HandleCriticalAlarm(GlobalContext* globalCtx)
         {
             interfaceCtx->unk_22A = 0;
             interfaceCtx->unk_22C = 0;
-            if (!func_8008E988(globalCtx) && (globalCtx->gameState == 0) &&
-                (globalCtx->pauseMenuFlag == 0) && Health_IsCritical() && !func_800BFC84(globalCtx))
+            if (!func_8008E988(globalCtx) && (globalCtx->pauseCtx.state == 0) &&
+                (globalCtx->pauseCtx.flag == 0) && Health_IsCritical() && !func_800BFC84(globalCtx))
             {
                 func_80078884(NA_SE_SY_HITPOINT_ALARM);
             }
@@ -503,16 +503,16 @@ u32 Health_IsCritical(void)
 {
     s32 var;
 
-    if (gSaveContext.energy_capacity <= 0x50)
+    if (gSaveContext.health_capacity <= 0x50)
         var = 0x10;
-    else if (gSaveContext.energy_capacity <= 0xA0)
+    else if (gSaveContext.health_capacity <= 0xA0)
         var = 0x18;
-    else if (gSaveContext.energy_capacity <= 0xF0)
+    else if (gSaveContext.health_capacity <= 0xF0)
         var = 0x20;
     else
         var = 0x2C;
 
-    if ((var >= gSaveContext.energy) && (gSaveContext.energy > 0))
+    if ((var >= gSaveContext.health) && (gSaveContext.health > 0))
         return 1;
     else
         return 0;

@@ -12,12 +12,12 @@ glabel D_8086EF20
 glabel D_8086EFD4
  .word 0x0A000900, 0x00020000, 0x00000003
 .word D_8086EF20
-glabel D_8086EFE4
+glabel Bg_Bombwall_InitVars
  .word 0x00D00100, 0x00400000, 0x00020000, 0x000002A4
-.word func_8086E89C
-.word func_8086EB3C
-.word func_8086EEC8
-.word func_8086EEF4
+.word BgBombwall_Init
+.word BgBombwall_Destroy
+.word BgBombwall_Update
+.word BgBombwall_Draw
 glabel D_8086F004
  .word 0xB0F40708, 0xB0F8012C, 0x30FC03E8
 glabel D_8086F010

@@ -122,7 +122,7 @@ glabel L80B77558
 /* 0DC18 80B775B8 29A10014 */  slti    $at, $t5, 0x0014           
 /* 0DC1C 80B775BC 14200015 */  bne     $at, $zero, .L80B77614     
 /* 0DC20 80B775C0 00000000 */  nop
-/* 0DC24 80B775C4 0C021CC3 */  jal     func_8008730C              
+/* 0DC24 80B775C4 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0DC28 80B775C8 2404FFEC */  addiu   $a0, $zero, 0xFFEC         ## $a0 = FFFFFFEC
 /* 0DC2C 80B775CC 0C02A852 */  jal     func_800AA148              
 /* 0DC30 80B775D0 00000000 */  nop

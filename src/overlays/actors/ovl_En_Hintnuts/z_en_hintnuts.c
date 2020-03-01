@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_hintnuts.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A57200.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A5739C.s")
+void EnHintnuts_Init(EnHintnuts* this, GlobalContext* globalCtx);
+void EnHintnuts_Destroy(EnHintnuts* this, GlobalContext* globalCtx);
+void EnHintnuts_Update(EnHintnuts* this, GlobalContext* globalCtx);
+void EnHintnuts_Draw(EnHintnuts* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Hintnuts_InitVars =
+{
+    ACTOR_EN_HINTNUTS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_HINTNUTS,
+    sizeof(EnHintnuts),
+    (ActorFunc)EnHintnuts_Init,
+    (ActorFunc)EnHintnuts_Destroy,
+    (ActorFunc)EnHintnuts_Update,
+    (ActorFunc)EnHintnuts_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/EnHintnuts_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/EnHintnuts_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A573D0.s")
 
@@ -53,12 +75,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A58608.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A586B8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/EnHintnuts_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A58838.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/func_80A58970.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Hintnuts/EnHintnuts_Draw.s")

@@ -64,14 +64,14 @@ glabel L80AADB78
 /* 00418 80AADB88 0C023C23 */  jal     func_8008F08C              
 /* 0041C 80AADB8C 8FA4002C */  lw      $a0, 0x002C($sp)           
 /* 00420 80AADB90 8FA4002C */  lw      $a0, 0x002C($sp)           
-/* 00424 80AADB94 0C021344 */  jal     func_80084D10              
+/* 00424 80AADB94 0C021344 */  jal     Item_Give              
 /* 00428 80AADB98 2405002C */  addiu   $a1, $zero, 0x002C         ## $a1 = 0000002C
 /* 0042C 80AADB9C 3C038016 */  lui     $v1, 0x8016                ## $v1 = 80160000
 /* 00430 80AADBA0 2463E660 */  addiu   $v1, $v1, 0xE660           ## $v1 = 8015E660
 /* 00434 80AADBA4 94680EF6 */  lhu     $t0, 0x0EF6($v1)           ## 8015F556
 /* 00438 80AADBA8 240401F4 */  addiu   $a0, $zero, 0x01F4         ## $a0 = 000001F4
 /* 0043C 80AADBAC 35090800 */  ori     $t1, $t0, 0x0800           ## $t1 = 00000800
-/* 00440 80AADBB0 0C021CC3 */  jal     func_8008730C              
+/* 00440 80AADBB0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00444 80AADBB4 A4690EF6 */  sh      $t1, 0x0EF6($v1)           ## 8015F556
 /* 00448 80AADBB8 8FAB0020 */  lw      $t3, 0x0020($sp)           
 /* 0044C 80AADBBC 240A202E */  addiu   $t2, $zero, 0x202E         ## $t2 = 0000202E

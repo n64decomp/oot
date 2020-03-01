@@ -1,15 +1,37 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_ta.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000009
+
+void EnTa_Init(EnTa* this, GlobalContext* globalCtx);
+void EnTa_Destroy(EnTa* this, GlobalContext* globalCtx);
+void EnTa_Update(EnTa* this, GlobalContext* globalCtx);
+void EnTa_Draw(EnTa* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Ta_InitVars =
+{
+    ACTOR_EN_TA,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_TA,
+    sizeof(EnTa),
+    (ActorFunc)EnTa_Init,
+    (ActorFunc)EnTa_Destroy,
+    (ActorFunc)EnTa_Update,
+    (ActorFunc)EnTa_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B13AA0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B13AAC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B13B88.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/EnTa_Init.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B14248.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B1427C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/EnTa_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B142F4.s")
 
@@ -129,14 +151,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B16938.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B16990.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/EnTa_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B16B1C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B16CA0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/func_80B16CE0.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Ta/EnTa_Draw.s")

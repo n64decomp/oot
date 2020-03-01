@@ -15,10 +15,10 @@ glabel func_800BEDD8
 /* B35FAC 800BEE0C 02044021 */  addu  $t0, $s0, $a0
 /* B35FB0 800BEE10 910E17AE */  lbu   $t6, 0x17ae($t0)
 /* B35FB4 800BEE14 24050044 */  li    $a1, 68
-/* B35FB8 800BEE18 3C028016 */  lui   $v0, %hi(D_80166FA8) # $v0, 0x8016
+/* B35FB8 800BEE18 3C028016 */  lui   $v0, %hi(gSegments) # $v0, 0x8016
 /* B35FBC 800BEE1C 01C50019 */  multu $t6, $a1
 /* B35FC0 800BEE20 3C038000 */  lui   $v1, 0x8000
-/* B35FC4 800BEE24 24426FA8 */  addiu $v0, %lo(D_80166FA8) # addiu $v0, $v0, 0x6fa8
+/* B35FC4 800BEE24 24426FA8 */  addiu $v0, %lo(gSegments) # addiu $v0, $v0, 0x6fa8
 /* B35FC8 800BEE28 3C06DB06 */  lui   $a2, (0xDB060010 >> 16) # lui $a2, 0xdb06
 /* B35FCC 800BEE2C 00003825 */  move  $a3, $zero
 /* B35FD0 800BEE30 00007812 */  mflo  $t7
@@ -182,21 +182,21 @@ glabel func_800BEDD8
 /* B36244 800BF0A4 34211DA0 */  ori   $at, (0x00011DA0 & 0xFFFF) # ori $at, $at, 0x1da0
 /* B36248 800BF0A8 02012821 */  addu  $a1, $s0, $at
 /* B3624C 800BF0AC AFA50048 */  sw    $a1, 0x48($sp)
-/* B36250 800BF0B0 0C03472B */  jal   func_800D1CAC
+/* B36250 800BF0B0 0C03472B */  jal   Matrix_MtxToMtxF
 /* B36254 800BF0B4 26040158 */   addiu $a0, $s0, 0x158
 /* B36258 800BF0B8 3C010001 */  li    $at, 0x00010000 # 0.000000
 /* B3625C 800BF0BC 34211D60 */  ori   $at, (0x00011D60 & 0xFFFF) # ori $at, $at, 0x1d60
 /* B36260 800BF0C0 02012821 */  addu  $a1, $s0, $at
 /* B36264 800BF0C4 AFA50044 */  sw    $a1, 0x44($sp)
-/* B36268 800BF0C8 0C03472B */  jal   func_800D1CAC
+/* B36268 800BF0C8 0C03472B */  jal   Matrix_MtxToMtxF
 /* B3626C 800BF0CC 26040118 */   addiu $a0, $s0, 0x118
 /* B36270 800BF0D0 8FA40044 */  lw    $a0, 0x44($sp)
-/* B36274 800BF0D4 0C03424C */  jal   func_800D0930
+/* B36274 800BF0D4 0C03424C */  jal   Matrix_Mult
 /* B36278 800BF0D8 00002825 */   move  $a1, $zero
 /* B3627C 800BF0DC 8FA40048 */  lw    $a0, 0x48($sp)
-/* B36280 800BF0E0 0C03424C */  jal   func_800D0930
+/* B36280 800BF0E0 0C03424C */  jal   Matrix_Mult
 /* B36284 800BF0E4 24050001 */   li    $a1, 1
-/* B36288 800BF0E8 0C034236 */  jal   func_800D08D8
+/* B36288 800BF0E8 0C034236 */  jal   Matrix_Get
 /* B3628C 800BF0EC 8FA40044 */   lw    $a0, 0x44($sp)
 /* B36290 800BF0F0 8FA2004C */  lw    $v0, 0x4c($sp)
 /* B36294 800BF0F4 44800000 */  mtc1  $zero, $f0
@@ -219,7 +219,7 @@ glabel func_800BEDD8
 /* B362D8 800BF138 0C031A73 */  jal   Graph_Alloc
 /* B362DC 800BF13C 24050040 */   li    $a1, 64
 /* B362E0 800BF140 8FA40058 */  lw    $a0, 0x58($sp)
-/* B362E4 800BF144 0C034610 */  jal   func_800D1840
+/* B362E4 800BF144 0C034610 */  jal   Matrix_MtxFToMtx
 /* B362E8 800BF148 00402825 */   move  $a1, $v0
 /* B362EC 800BF14C 3C010001 */  lui   $at, 1
 /* B362F0 800BF150 00300821 */  addu  $at, $at, $s0

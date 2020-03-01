@@ -55,8 +55,8 @@ glabel func_80B02300
 /* 00164 80B023D4 A3A801C6 */  sb      $t0, 0x01C6($sp)           
 /* 00168 80B023D8 A3AC01C7 */  sb      $t4, 0x01C7($sp)           
 /* 0016C 80B023DC A3AD01CB */  sb      $t5, 0x01CB($sp)           
-/* 00170 80B023E0 0C009B35 */  jal     EffectAdd
-              ## EffectAdd
+/* 00170 80B023E0 0C009B35 */  jal     Effect_Add
+              ## Effect_Add
 /* 00174 80B023E4 A3B901C2 */  sb      $t9, 0x01C2($sp)           
 /* 00178 80B023E8 8FBF001C */  lw      $ra, 0x001C($sp)           
 /* 0017C 80B023EC 8FA20020 */  lw      $v0, 0x0020($sp)           

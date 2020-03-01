@@ -4,8 +4,8 @@ glabel func_80042548
 /* AB96F0 80042550 0C01094E */  jal   func_80042538
 /* AB96F4 80042554 AFA40018 */   sw    $a0, 0x18($sp)
 /* AB96F8 80042558 8FAE0018 */  lw    $t6, 0x18($sp)
-/* AB96FC 8004255C 3C198016 */  lui   $t9, %hi(D_80166FA8) # $t9, 0x8016
-/* AB9700 80042560 8F396FA8 */  lw    $t9, %lo(D_80166FA8)($t9)
+/* AB96FC 8004255C 3C198016 */  lui   $t9, %hi(gSegments) # $t9, 0x8016
+/* AB9700 80042560 8F396FA8 */  lw    $t9, %lo(gSegments)($t9)
 /* AB9704 80042564 8DCF0000 */  lw    $t7, ($t6)
 /* AB9708 80042568 00402825 */  move  $a1, $v0
 /* AB970C 8004256C 3C018000 */  lui   $at, 0x8000

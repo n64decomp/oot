@@ -46,7 +46,7 @@ glabel func_80AFB768
 /* 0017C 80AFB80C 306BFFFE */  andi    $t3, $v1, 0xFFFE           ## $t3 = 00000000
 /* 00180 80AFB810 A20B0163 */  sb      $t3, 0x0163($s0)           ## 00000163
 /* 00184 80AFB814 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
-/* 00188 80AFB818 0C021344 */  jal     func_80084D10              
+/* 00188 80AFB818 0C021344 */  jal     Item_Give              
 /* 0018C 80AFB81C 24050071 */  addiu   $a1, $zero, 0x0071         ## $a1 = 00000071
 /* 00190 80AFB820 8FAD002C */  lw      $t5, 0x002C($sp)           
 /* 00194 80AFB824 240C000A */  addiu   $t4, $zero, 0x000A         ## $t4 = 0000000A

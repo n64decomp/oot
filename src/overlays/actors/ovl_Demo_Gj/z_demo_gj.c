@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_demo_gj.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000030
+
+void DemoGj_Init(DemoGj* this, GlobalContext* globalCtx);
+void DemoGj_Destroy(DemoGj* this, GlobalContext* globalCtx);
+void DemoGj_Update(DemoGj* this, GlobalContext* globalCtx);
+void DemoGj_Draw(DemoGj* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Demo_Gj_InitVars =
+{
+    ACTOR_DEMO_GJ,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GJ,
+    sizeof(DemoGj),
+    (ActorFunc)DemoGj_Init,
+    (ActorFunc)DemoGj_Destroy,
+    (ActorFunc)DemoGj_Update,
+    (ActorFunc)DemoGj_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_80978930.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_80978940.s")
@@ -13,7 +35,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_809789D8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_80978A8C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/DemoGj_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_80978AC4.s")
 
@@ -231,14 +253,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_8097BBD8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_8097BBFC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/DemoGj_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_8097BC58.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/DemoGj_Init.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_8097BD70.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/func_8097BD7C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Gj/DemoGj_Draw.s")

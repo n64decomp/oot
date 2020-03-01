@@ -56,10 +56,10 @@ glabel func_8006BBC0
 /* AE2E30 8006BC90 2C420001 */   sltiu $v0, $v0, 1
 .L8006BC94:
 /* AE2E34 8006BC94 90980001 */  lbu   $t8, 1($a0)
-/* AE2E38 8006BC98 3C098012 */  lui   $t1, %hi(D_80127464)
+/* AE2E38 8006BC98 3C098012 */  lui   $t1, %hi(gItemSlots)
 /* AE2E3C 8006BC9C 24E7E660 */  addiu $a3, %lo(gSaveContext)
 /* AE2E40 8006BCA0 01384821 */  addu  $t1, $t1, $t8
-/* AE2E44 8006BCA4 91297464 */  lbu   $t1, %lo(D_80127464)($t1)
+/* AE2E44 8006BCA4 91297464 */  lbu   $t1, %lo(gItemSlots)($t1)
 /* AE2E48 8006BCA8 908E0003 */  lbu   $t6, 3($a0)
 /* AE2E4C 8006BCAC 30AC0001 */  andi  $t4, $a1, 1
 /* AE2E50 8006BCB0 00E95021 */  addu  $t2, $a3, $t1
@@ -85,11 +85,11 @@ glabel func_8006BBC0
 glabel L8006BCFC
 /* AE2E9C 8006BCFC 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2EA0 8006BD00 24E7E660 */  addiu $a3, %lo(gSaveContext) # addiu $a3, $a3, -0x19a0
-/* AE2EA4 8006BD04 3C188012 */  lui   $t8, %hi(D_801271B8) # $t8, 0x8012
-/* AE2EA8 8006BD08 8F1871B8 */  lw    $t8, %lo(D_801271B8)($t8)
+/* AE2EA4 8006BD04 3C188012 */  lui   $t8, %hi(gUpgradeMasks+8) # $t8, 0x8012
+/* AE2EA8 8006BD08 8F1871B8 */  lw    $t8, %lo(gUpgradeMasks+8)($t8)
 /* AE2EAC 8006BD0C 8CED00A0 */  lw    $t5, 0xa0($a3)
-/* AE2EB0 8006BD10 3C0A8012 */  lui   $t2, %hi(D_801271F6) # $t2, 0x8012
-/* AE2EB4 8006BD14 914A71F6 */  lbu   $t2, %lo(D_801271F6)($t2)
+/* AE2EB0 8006BD10 3C0A8012 */  lui   $t2, %hi(gUpgradeShifts+2) # $t2, 0x8012
+/* AE2EB4 8006BD14 914A71F6 */  lbu   $t2, %lo(gUpgradeShifts+2)($t2)
 /* AE2EB8 8006BD18 01B84824 */  and   $t1, $t5, $t8
 /* AE2EBC 8006BD1C 3068000F */  andi  $t0, $v1, 0xf
 /* AE2EC0 8006BD20 30B90001 */  andi  $t9, $a1, 1
@@ -107,8 +107,8 @@ glabel L8006BD44
 /* AE2EEC 8006BD4C 3C078016 */  lui   $a3, %hi(gSaveContext) # $a3, 0x8016
 /* AE2EF0 8006BD50 000F6880 */  sll   $t5, $t7, 2
 /* AE2EF4 8006BD54 030DC021 */  addu  $t8, $t8, $t5
-/* AE2EF8 8006BD58 3C098012 */  lui   $t1, %hi(D_801271F3) # $t1, 0x8012
-/* AE2EFC 8006BD5C 912971F3 */  lbu   $t1, %lo(D_801271F3)($t1)
+/* AE2EF8 8006BD58 3C098012 */  lui   $t1, %hi(gEquipShifts+3) # $t1, 0x8012
+/* AE2EFC 8006BD5C 912971F3 */  lbu   $t1, %lo(gEquipShifts+3)($t1)
 /* AE2F00 8006BD60 8F187010 */  lw    $t8, %lo(D_80127010)($t8)
 /* AE2F04 8006BD64 24E7E660 */  addiu $a3, %lo(gSaveContext) # addiu $a3, $a3, -0x19a0
 /* AE2F08 8006BD68 94E8009C */  lhu   $t0, 0x9c($a3)
@@ -170,7 +170,7 @@ glabel L8006BE38
 .L8006BE38:
 /* AE2FD8 8006BE38 3C048014 */  lui   $a0, %hi(D_8013B830) # $a0, 0x8014
 /* AE2FDC 8006BE3C 2484B830 */  addiu $a0, %lo(D_8013B830) # addiu $a0, $a0, -0x47d0
-/* AE2FE0 8006BE40 0C000B84 */  jal   SyncPrintfWithThreadId
+/* AE2FE0 8006BE40 0C000B84 */  jal   LogUtils_LogThreadId
 /* AE2FE4 8006BE44 2405009C */   li    $a1, 156
 /* AE2FE8 8006BE48 3C048014 */  lui   $a0, %hi(D_8013B844) # $a0, 0x8014
 /* AE2FEC 8006BE4C 3C058014 */  lui   $a1, %hi(D_8013B858) # $a1, 0x8014

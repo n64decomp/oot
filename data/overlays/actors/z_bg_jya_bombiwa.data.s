@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80895700
+glabel Bg_Jya_Bombiwa_InitVars
  .word 0x015B0100, 0x00000000, 0x00F10000, 0x000001C8
-.word func_8089527C
-.word func_80895354
-.word func_80895630
-.word func_808956BC
+.word BgJyaBombiwa_Init
+.word BgJyaBombiwa_Destroy
+.word BgJyaBombiwa_Update
+.word BgJyaBombiwa_Draw
 glabel D_80895720
  .word 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010000, 0x00000000, 0x00000000, 0x00320064
 glabel D_80895744

@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_brob.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CAB10.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CAD84.s")
+void EnBrob_Init(EnBrob* this, GlobalContext* globalCtx);
+void EnBrob_Destroy(EnBrob* this, GlobalContext* globalCtx);
+void EnBrob_Update(EnBrob* this, GlobalContext* globalCtx);
+void EnBrob_Draw(EnBrob* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Brob_InitVars =
+{
+    ACTOR_EN_BROB,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_BROB,
+    sizeof(EnBrob),
+    (ActorFunc)EnBrob_Init,
+    (ActorFunc)EnBrob_Destroy,
+    (ActorFunc)EnBrob_Update,
+    (ActorFunc)EnBrob_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/EnBrob_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/EnBrob_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CADDC.s")
 
@@ -29,12 +51,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CB458.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CB670.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/EnBrob_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CB90C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/func_809CB9E0.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Brob/EnBrob_Draw.s")

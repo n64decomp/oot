@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A6D350
+glabel En_Horse_Normal_InitVars
  .word 0x003C0100, 0x00000000, 0x00270000, 0x00000328
-.word func_80A6B3D0
-.word func_80A6B8BC
-.word func_80A6C9A8
-.word func_80A6CE6C
+.word EnHorseNormal_Init
+.word EnHorseNormal_Destroy
+.word EnHorseNormal_Update
+.word EnHorseNormal_Draw
 glabel D_80A6D370
  .word 0x06004580, 0x06004C20, 0x060035D4, 0x06002458, 0x060054BC, 0x06001A1C, 0x06000608, 0x06000C20, 0x060013A8
 glabel D_80A6D394

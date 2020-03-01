@@ -13,12 +13,12 @@ glabel D_80A7DEB4
  .word 0x00000000
 glabel D_80A7DEB8
  .word 0x00000000
-glabel D_80A7DEBC
+glabel En_Insect_InitVars
  .word 0x00200700, 0x00000000, 0x00010000, 0x0000032C
-.word func_80A7C0EC
-.word func_80A7C334
-.word func_80A7DC00
-.word func_80A7DE48
+.word EnInsect_Init
+.word EnInsect_Destroy
+.word EnInsect_Update
+.word EnInsect_Draw
 glabel D_80A7DEDC
  .word 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00000100, 0x00000000, 0x00000000, 0x00050064
 glabel D_80A7DF00

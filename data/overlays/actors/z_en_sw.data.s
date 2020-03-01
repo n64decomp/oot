@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B0F020
+glabel En_Sw_InitVars
  .word 0x00950400, 0x00000015, 0x00240000, 0x000004D8
-.word func_80B0C500
-.word func_80B0C9C8
-.word func_80B0EA68
-.word func_80B0EF10
+.word EnSw_Init
+.word EnSw_Destroy
+.word EnSw_Update
+.word EnSw_Draw
 glabel D_80B0F040
  .word 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFC3FFFE, 0x00000000, 0x01050100, 0x02000000, 0xFED40000, 0x00150064
 glabel D_80B0F064

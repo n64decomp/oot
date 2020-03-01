@@ -327,10 +327,10 @@ glabel func_80B6C3E0
 /* 02F04 80B6C8A4 03321021 */  addu    $v0, $t9, $s2              
 /* 02F08 80B6C8A8 E456FFF8 */  swc1    $f22, -0x0008($v0)         ## FFFFFFF8
 /* 02F0C 80B6C8AC E454FFF4 */  swc1    $f20, -0x000C($v0)         ## FFFFFFF4
-/* 02F10 80B6C8B0 0C034348 */  jal     func_800D0D20              
+/* 02F10 80B6C8B0 0C034348 */  jal     Matrix_RotateY              
 /* 02F14 80B6C8B4 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 02F18 80B6C8B8 4600A306 */  mov.s   $f12, $f20                 
-/* 02F1C 80B6C8BC 0C0342DC */  jal     func_800D0B70              
+/* 02F1C 80B6C8BC 0C0342DC */  jal     Matrix_RotateX              
 /* 02F20 80B6C8C0 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 02F24 80B6C8C4 27A400C0 */  addiu   $a0, $sp, 0x00C0           ## $a0 = FFFFFFC8
 /* 02F28 80B6C8C8 0C0346BD */  jal     func_800D1AF4              

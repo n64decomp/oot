@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_mizu_bwall.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void BgMizuBwall_Init(BgMizuBwall* this, GlobalContext* globalCtx);
+void BgMizuBwall_Destroy(BgMizuBwall* this, GlobalContext* globalCtx);
+void BgMizuBwall_Update(BgMizuBwall* this, GlobalContext* globalCtx);
+void BgMizuBwall_Draw(BgMizuBwall* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Mizu_Bwall_InitVars =
+{
+    ACTOR_BG_MIZU_BWALL,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_MIZU_OBJECTS,
+    sizeof(BgMizuBwall),
+    (ActorFunc)BgMizuBwall_Init,
+    (ActorFunc)BgMizuBwall_Destroy,
+    (ActorFunc)BgMizuBwall_Update,
+    (ActorFunc)BgMizuBwall_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089C480.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089C4CC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/BgMizuBwall_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089CDBC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/BgMizuBwall_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089CE04.s")
 
@@ -17,10 +39,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089D37C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089D388.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/BgMizuBwall_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/func_8089D3AC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Mizu_Bwall/BgMizuBwall_Draw.s")

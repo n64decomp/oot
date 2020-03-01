@@ -90,7 +90,7 @@ glabel func_80A7AA40
 /* 01BF0 80A7ABA0 A6201D74 */  sh      $zero, 0x1D74($s1)         ## 00001D74
 /* 01BF4 80A7ABA4 0C02CE10 */  jal     func_800B3840              ## letterbox_target_addr
 /* 01BF8 80A7ABA8 24040020 */  addiu   $a0, $zero, 0x0020         ## $a0 = 00000020
-/* 01BFC 80A7ABAC 0C020978 */  jal     func_800825E0              
+/* 01BFC 80A7ABAC 0C020978 */  jal     Interface_ChangeAlpha              
 /* 01C00 80A7ABB0 24040002 */  addiu   $a0, $zero, 0x0002         ## $a0 = 00000002
 /* 01C04 80A7ABB4 3C0F80A8 */  lui     $t7, %hi(func_80A7ABD4)    ## $t7 = 80A80000
 /* 01C08 80A7ABB8 25EFABD4 */  addiu   $t7, $t7, %lo(func_80A7ABD4) ## $t7 = 80A7ABD4

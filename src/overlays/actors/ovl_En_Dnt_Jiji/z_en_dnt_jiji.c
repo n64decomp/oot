@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dnt_jiji.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F1AE0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000019
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F1BDC.s")
+void EnDntJiji_Init(EnDntJiji* this, GlobalContext* globalCtx);
+void EnDntJiji_Destroy(EnDntJiji* this, GlobalContext* globalCtx);
+void EnDntJiji_Update(EnDntJiji* this, GlobalContext* globalCtx);
+void EnDntJiji_Draw(EnDntJiji* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dnt_Jiji_InitVars =
+{
+    ACTOR_EN_DNT_JIJI,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_DNS,
+    sizeof(EnDntJiji),
+    (ActorFunc)EnDntJiji_Init,
+    (ActorFunc)EnDntJiji_Destroy,
+    (ActorFunc)EnDntJiji_Update,
+    (ActorFunc)EnDntJiji_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/EnDntJiji_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/EnDntJiji_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F1C04.s")
 
@@ -47,10 +69,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F2A90.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F2C08.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/EnDntJiji_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/func_809F2E00.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Jiji/EnDntJiji_Draw.s")

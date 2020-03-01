@@ -36,9 +36,9 @@ glabel func_80A16DEC
 /* 01BE0 80A16E60 AFA40018 */  sw      $a0, 0x0018($sp)           
 /* 01BE4 80A16E64 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 01BE8 80A16E68 24010014 */  addiu   $at, $zero, 0x0014         ## $at = 00000014
-/* 01BEC 80A16E6C 3C1980A1 */  lui     $t9, %hi(func_80A16FAC)    ## $t9 = 80A10000
+/* 01BEC 80A16E6C 3C1980A1 */  lui     $t9, %hi(EnFish_Draw)    ## $t9 = 80A10000
 /* 01BF0 80A16E70 8482024A */  lh      $v0, 0x024A($a0)           ## 0000024A
-/* 01BF4 80A16E74 27396FAC */  addiu   $t9, $t9, %lo(func_80A16FAC) ## $t9 = 80A16FAC
+/* 01BF4 80A16E74 27396FAC */  addiu   $t9, $t9, %lo(EnFish_Draw) ## $t9 = 80A16FAC
 /* 01BF8 80A16E78 14410003 */  bne     $v0, $at, .L80A16E88       
 /* 01BFC 80A16E7C 00000000 */  nop
 /* 01C00 80A16E80 1000001B */  beq     $zero, $zero, .L80A16EF0   

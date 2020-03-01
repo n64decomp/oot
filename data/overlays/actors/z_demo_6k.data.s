@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_809692B0
+glabel Demo_6K_InitVars
  .word 0x00F50600, 0x00000010, 0x00010000, 0x00000294
-.word func_80966958
-.word func_80966D80
-.word func_80967FD8
+.word Demo6K_Init
+.word Demo6K_Destroy
+.word Demo6K_Update
 .word 0x00000000
 glabel D_809692D0
  .word 0x000100ED, 0x00ED0001, 0x00010001, 0x00010001, 0x00010001, 0x00010001, 0x011A0001, 0x00010001, 0x00010001, 0x00010001

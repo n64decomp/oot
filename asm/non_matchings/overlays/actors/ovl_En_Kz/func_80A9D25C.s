@@ -60,7 +60,7 @@ glabel func_80A9D25C
 /* 00DF4 80A9D344 24060001 */  addiu   $a2, $zero, 0x0001         ## $a2 = 00000001
 /* 00DF8 80A9D348 8FA4004C */  lw      $a0, 0x004C($sp)           
 /* 00DFC 80A9D34C 2405001B */  addiu   $a1, $zero, 0x001B         ## $a1 = 0000001B
-/* 00E00 80A9D350 0C021A79 */  jal     func_800869E4              
+/* 00E00 80A9D350 0C021A79 */  jal     Inventory_ReplaceItem              
 /* 00E04 80A9D354 24060014 */  addiu   $a2, $zero, 0x0014         ## $a2 = 00000014
 /* 00E08 80A9D358 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 00E0C 80A9D35C 0C2A7391 */  jal     func_80A9CE44              

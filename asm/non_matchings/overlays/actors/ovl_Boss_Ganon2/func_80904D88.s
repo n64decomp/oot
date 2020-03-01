@@ -91,20 +91,20 @@ glabel func_80904D88
 /* 07FA0 80904EE0 026A1021 */  addu    $v0, $s3, $t2              
 /* 07FA4 80904EE4 C44C0234 */  lwc1    $f12, 0x0234($v0)          ## 00000234
 /* 07FA8 80904EE8 C44E0238 */  lwc1    $f14, 0x0238($v0)          ## 00000238
-/* 07FAC 80904EEC 0C034261 */  jal     func_800D0984              
+/* 07FAC 80904EEC 0C034261 */  jal     Matrix_Translate              
 /* 07FB0 80904EF0 8C46023C */  lw      $a2, 0x023C($v0)           ## 0000023C
 /* 07FB4 80904EF4 0C0347F5 */  jal     func_800D1FD4              
 /* 07FB8 80904EF8 02802025 */  or      $a0, $s4, $zero            ## $a0 = 00000000
 /* 07FBC 80904EFC C66C030C */  lwc1    $f12, 0x030C($s3)          ## 0000030C
 /* 07FC0 80904F00 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 07FC4 80904F04 44066000 */  mfc1    $a2, $f12                  
-/* 07FC8 80904F08 0C0342A3 */  jal     func_800D0A8C              
+/* 07FC8 80904F08 0C0342A3 */  jal     Matrix_Scale              
 /* 07FCC 80904F0C 46006386 */  mov.s   $f14, $f12                 
 /* 07FD0 80904F10 0C00CFC8 */  jal     Math_Rand_CenteredFloat
               
 /* 07FD4 80904F14 4600A306 */  mov.s   $f12, $f20                 
 /* 07FD8 80904F18 46000306 */  mov.s   $f12, $f0                  
-/* 07FDC 80904F1C 0C0343B5 */  jal     func_800D0ED4              
+/* 07FDC 80904F1C 0C0343B5 */  jal     Matrix_RotateZ              
 /* 07FE0 80904F20 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 07FE4 80904F24 8E5002D0 */  lw      $s0, 0x02D0($s2)           ## 000002D0
 /* 07FE8 80904F28 3C058091 */  lui     $a1, %hi(D_8090D890)       ## $a1 = 80910000
@@ -114,7 +114,7 @@ glabel func_80904D88
 /* 07FF8 80904F38 AE1E0000 */  sw      $s8, 0x0000($s0)           ## 00000000
 /* 07FFC 80904F3C 8FAC0094 */  lw      $t4, 0x0094($sp)           
 /* 08000 80904F40 240615F2 */  addiu   $a2, $zero, 0x15F2         ## $a2 = 000015F2
-/* 08004 80904F44 0C0346A2 */  jal     func_800D1A88              
+/* 08004 80904F44 0C0346A2 */  jal     Matrix_NewMtx              
 /* 08008 80904F48 8D840000 */  lw      $a0, 0x0000($t4)           ## 00000000
 /* 0800C 80904F4C AE020004 */  sw      $v0, 0x0004($s0)           ## 00000004
 /* 08010 80904F50 8E4302D0 */  lw      $v1, 0x02D0($s2)           ## 000002D0

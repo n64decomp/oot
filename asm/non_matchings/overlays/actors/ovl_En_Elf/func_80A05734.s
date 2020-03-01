@@ -45,12 +45,12 @@ glabel func_80A05734
 /* 03BA8 80A057D8 C7AC0034 */  lwc1    $f12, 0x0034($sp)          
 /* 03BAC 80A057DC C7AE0038 */  lwc1    $f14, 0x0038($sp)          
 /* 03BB0 80A057E0 8FA6003C */  lw      $a2, 0x003C($sp)           
-/* 03BB4 80A057E4 0C034261 */  jal     func_800D0984              
+/* 03BB4 80A057E4 0C034261 */  jal     Matrix_Translate              
 /* 03BB8 80A057E8 00003825 */  or      $a3, $zero, $zero          ## $a3 = 00000000
 /* 03BBC 80A057EC 4406A000 */  mfc1    $a2, $f20                  
 /* 03BC0 80A057F0 4600A306 */  mov.s   $f12, $f20                 
 /* 03BC4 80A057F4 4600A386 */  mov.s   $f14, $f20                 
-/* 03BC8 80A057F8 0C0342A3 */  jal     func_800D0A8C              
+/* 03BC8 80A057F8 0C0342A3 */  jal     Matrix_Scale              
 /* 03BCC 80A057FC 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 .L80A05800:
 /* 03BD0 80A05800 8FB9005C */  lw      $t9, 0x005C($sp)           

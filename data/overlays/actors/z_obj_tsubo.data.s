@@ -15,11 +15,11 @@ glabel D_80BA1B58
  .word 0x00000000
 glabel D_80BA1B5C
  .word 0x00000000
-glabel D_80BA1B60
+glabel Obj_Tsubo_InitVars
  .word 0x01110600, 0x00800010, 0x00010000, 0x000001A0
-.word func_80BA0EF0
-.word func_80BA0FE4
-.word func_80BA1AE8
+.word ObjTsubo_Init
+.word ObjTsubo_Destroy
+.word ObjTsubo_Update
 .word 0x00000000
 glabel D_80BA1B80
  .word 0x0003012C

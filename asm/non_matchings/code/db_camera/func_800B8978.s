@@ -18,13 +18,13 @@ glabel func_800B8978
 /* B2FB54 800B89B4 3C058014 */  lui   $a1, %hi(D_80143A10) # $a1, 0x8014
 /* B2FB58 800B89B8 24A53A10 */  addiu $a1, %lo(D_80143A10) # addiu $a1, $a1, 0x3a10
 /* B2FB5C 800B89BC 8C440008 */  lw    $a0, 8($v0)
-/* B2FB60 800B89C0 0C034F55 */  jal   func_800D3D54
+/* B2FB60 800B89C0 0C034F55 */  jal   DebugArena_FreeDebug
 /* B2FB64 800B89C4 AFA2001C */   sw    $v0, 0x1c($sp)
 /* B2FB68 800B89C8 8FA2001C */  lw    $v0, 0x1c($sp)
 /* B2FB6C 800B89CC 3C058014 */  lui   $a1, %hi(D_80143A20) # $a1, 0x8014
 /* B2FB70 800B89D0 24A53A20 */  addiu $a1, %lo(D_80143A20) # addiu $a1, $a1, 0x3a20
 /* B2FB74 800B89D4 24060AE1 */  li    $a2, 2785
-/* B2FB78 800B89D8 0C034F55 */  jal   func_800D3D54
+/* B2FB78 800B89D8 0C034F55 */  jal   DebugArena_FreeDebug
 /* B2FB7C 800B89DC 8C440004 */   lw    $a0, 4($v0)
 /* B2FB80 800B89E0 8FA2001C */  lw    $v0, 0x1c($sp)
 .L800B89E4:

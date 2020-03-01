@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B940A0
+glabel Obj_Hsblock_InitVars
  .word 0x012D0100, 0x00000000, 0x011C0000, 0x00000168
-.word func_80B93C74
-.word func_80B93D60
-.word func_80B93F04
-.word func_80B93F50
+.word ObjHsblock_Init
+.word ObjHsblock_Destroy
+.word ObjHsblock_Update
+.word ObjHsblock_Draw
 glabel D_80B940C0
  .word 0x42AA0000, 0x42AA0000, 0x00000000
 glabel D_80B940CC

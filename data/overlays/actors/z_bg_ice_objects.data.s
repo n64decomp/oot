@@ -13,12 +13,12 @@ glabel D_80890494
  .word 0xB4B4B4FF
 glabel D_80890498
  .word 0x00000000, 0x00000000, 0x00000000
-glabel D_808904A4
+glabel Bg_Ice_Objects_InitVars
  .word 0x00D60600, 0x00000000, 0x006B0000, 0x00000174
-.word func_8088F810
-.word func_8088F898
-.word func_80890434
-.word func_80890458
+.word BgIceObjects_Init
+.word BgIceObjects_Destroy
+.word BgIceObjects_Update
+.word BgIceObjects_Draw
 glabel D_808904C4
  .word 0x48500064
 glabel D_808904C8

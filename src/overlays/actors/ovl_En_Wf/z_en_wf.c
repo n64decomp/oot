@@ -1,11 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_wf.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000015
+
+void EnWf_Init(EnWf* this, GlobalContext* globalCtx);
+void EnWf_Destroy(EnWf* this, GlobalContext* globalCtx);
+void EnWf_Update(EnWf* this, GlobalContext* globalCtx);
+void EnWf_Draw(EnWf* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Wf_InitVars =
+{
+    ACTOR_EN_WF,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_WF,
+    sizeof(EnWf),
+    (ActorFunc)EnWf_Init,
+    (ActorFunc)EnWf_Destroy,
+    (ActorFunc)EnWf_Update,
+    (ActorFunc)EnWf_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B33CB0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B33CB8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/EnWf_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B33EE8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/EnWf_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B33FB0.s")
 
@@ -69,16 +91,12 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B37038.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B37208.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/EnWf_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B37454.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B37494.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B3763C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/EnWf_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wf/func_80B37830.s")
-
-
-
-

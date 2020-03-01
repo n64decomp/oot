@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AA5EA0
+glabel En_Mag_InitVars
  .word 0x01710600, 0x00000030, 0x014A0000, 0x0000E328
-.word func_80AA3B00
-.word func_80AA3D94
-.word func_80AA3DA0
-.word func_80AA5DD4
+.word EnMag_Init
+.word EnMag_Destroy
+.word EnMag_Update
+.word EnMag_Draw
 glabel D_80AA5EC0
  .word 0x00000000
 glabel D_80AA5EC4

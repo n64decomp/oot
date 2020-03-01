@@ -25,11 +25,11 @@ glabel D_809785A8
 glabel D_809785B0
  .word func_809784D4
 .word func_80978344
-glabel D_809785B8
+glabel Demo_Geff_InitVars
  .word 0x01B20900, 0x00000030, 0x01860000, 0x00000168
-.word func_80977E4C
-.word func_80977E40
-.word func_80978478
-.word func_809784E0
+.word DemoGeff_Init
+.word DemoGeff_Destroy
+.word DemoGeff_Update
+.word DemoGeff_Draw
 .word 0x00000000, 0x00000000
 

@@ -29,7 +29,7 @@ glabel func_800C9018
 /* B40224 800C9084 0C00084C */  jal   osSyncPrintf
 /* B40228 800C9088 00403025 */   move  $a2, $v0
 .L800C908C:
-/* B4022C 800C908C 0C0002D2 */  jal   func_80000B48
+/* B4022C 800C908C 0C0002D2 */  jal   ViConfig_UpdateBlack
 /* B40230 800C9090 00000000 */   nop   
 /* B40234 800C9094 8E090238 */  lw    $t1, 0x238($s0)
 /* B40238 800C9098 252A0001 */  addiu $t2, $t1, 1

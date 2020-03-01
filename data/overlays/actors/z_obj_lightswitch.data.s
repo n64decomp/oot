@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B97F00
+glabel Obj_Lightswitch_InitVars
  .word 0x01500000, 0x00000010, 0x012A0000, 0x000001C4
-.word func_80B96FA8
-.word func_80B97180
-.word func_80B976EC
-.word func_80B97E58
+.word ObjLightswitch_Init
+.word ObjLightswitch_Destroy
+.word ObjLightswitch_Update
+.word ObjLightswitch_Draw
 glabel D_80B97F20
  .word 0x00000000, 0x00000000, 0x00000000, 0x00200000, 0x00000000, 0x00010100, 0x00000000, 0x00000000, 0x00130064
 glabel D_80B97F44

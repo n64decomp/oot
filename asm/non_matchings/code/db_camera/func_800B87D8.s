@@ -22,7 +22,7 @@ glabel func_800B87D8
 /* B2F9C8 800B8828 24A53968 */  addiu $a1, %lo(D_80143968) # addiu $a1, $a1, 0x3968
 /* B2F9CC 800B882C 00072100 */  sll   $a0, $a3, 4
 /* B2F9D0 800B8830 AFA40024 */  sw    $a0, 0x24($sp)
-/* B2F9D4 800B8834 0C034ED8 */  jal   func_800D3B60
+/* B2F9D4 800B8834 0C034ED8 */  jal   DebugArena_MallocDebug
 /* B2F9D8 800B8838 24060ABC */   li    $a2, 2748
 /* B2F9DC 800B883C 8FA70024 */  lw    $a3, 0x24($sp)
 /* B2F9E0 800B8840 14400009 */  bnez  $v0, .L800B8868
@@ -39,7 +39,7 @@ glabel func_800B87D8
 /* B2FA08 800B8868 3C058014 */  lui   $a1, %hi(D_801439B4) # $a1, 0x8014
 /* B2FA0C 800B886C 24A539B4 */  addiu $a1, %lo(D_801439B4) # addiu $a1, $a1, 0x39b4
 /* B2FA10 800B8870 00E02025 */  move  $a0, $a3
-/* B2FA14 800B8874 0C034ED8 */  jal   func_800D3B60
+/* B2FA14 800B8874 0C034ED8 */  jal   DebugArena_MallocDebug
 /* B2FA18 800B8878 24060AC2 */   li    $a2, 2754
 /* B2FA1C 800B887C 1440000F */  bnez  $v0, .L800B88BC
 /* B2FA20 800B8880 AE020004 */   sw    $v0, 4($s0)
@@ -52,7 +52,7 @@ glabel func_800B87D8
 /* B2FA3C 800B889C 3C058014 */  lui   $a1, %hi(D_80143A00) # $a1, 0x8014
 /* B2FA40 800B88A0 24A53A00 */  addiu $a1, %lo(D_80143A00) # addiu $a1, $a1, 0x3a00
 /* B2FA44 800B88A4 8E040008 */  lw    $a0, 8($s0)
-/* B2FA48 800B88A8 0C034F55 */  jal   func_800D3D54
+/* B2FA48 800B88A8 0C034F55 */  jal   DebugArena_FreeDebug
 /* B2FA4C 800B88AC 24060AC6 */   li    $a2, 2758
 /* B2FA50 800B88B0 AE000008 */  sw    $zero, 8($s0)
 /* B2FA54 800B88B4 1000002B */  b     .L800B8964

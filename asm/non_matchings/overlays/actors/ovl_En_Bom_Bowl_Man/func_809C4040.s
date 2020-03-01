@@ -37,7 +37,7 @@ glabel func_809C4040
 /* 00A94 809C40C4 29E1001E */  slti    $at, $t7, 0x001E           
 /* 00A98 809C40C8 14200034 */  bne     $at, $zero, .L809C419C     
 /* 00A9C 809C40CC 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
-/* 00AA0 809C40D0 0C021CC3 */  jal     func_8008730C              
+/* 00AA0 809C40D0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00AA4 809C40D4 2404FFE2 */  addiu   $a0, $zero, 0xFFE2         ## $a0 = FFFFFFE2
 /* 00AA8 809C40D8 A6000240 */  sh      $zero, 0x0240($s0)         ## 00000240
 /* 00AAC 809C40DC 86190240 */  lh      $t9, 0x0240($s0)           ## 00000240

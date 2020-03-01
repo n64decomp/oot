@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_karebaba.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A95350.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A95480.s")
+void EnKarebaba_Init(EnKarebaba* this, GlobalContext* globalCtx);
+void EnKarebaba_Destroy(EnKarebaba* this, GlobalContext* globalCtx);
+void EnKarebaba_Update(EnKarebaba* this, GlobalContext* globalCtx);
+void EnKarebaba_Draw(EnKarebaba* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Karebaba_InitVars =
+{
+    ACTOR_EN_KAREBABA,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_DEKUBABA,
+    sizeof(EnKarebaba),
+    (ActorFunc)EnKarebaba_Init,
+    (ActorFunc)EnKarebaba_Destroy,
+    (ActorFunc)EnKarebaba_Update,
+    (ActorFunc)EnKarebaba_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/EnKarebaba_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/EnKarebaba_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A954C0.s")
 
@@ -47,12 +69,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A961DC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A962A0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/EnKarebaba_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A9644C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/func_80A96578.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Karebaba/EnKarebaba_Draw.s")

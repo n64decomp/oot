@@ -56,7 +56,7 @@ glabel func_8083E5A8
 /* 0C460 8083E670 A4600D5A */  sh      $zero, 0x0D5A($v1)         ## 80160D5A
 .L8083E674:
 /* 0C464 8083E674 90C40000 */  lbu     $a0, 0x0000($a2)           ## 00000000
-/* 0C468 8083E678 0C0218E2 */  jal     func_80086388              
+/* 0C468 8083E678 0C0218E2 */  jal     Item_CheckObtainability              
 /* 0C46C 8083E67C AFA60030 */  sw      $a2, 0x0030($sp)           
 /* 0C470 8083E680 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0C474 8083E684 10410006 */  beq     $v0, $at, .L8083E6A0       
@@ -141,7 +141,7 @@ glabel func_8083E5A8
 /* 0C59C 8083E7AC 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0C5A0 8083E7B0 10810018 */  beq     $a0, $at, .L8083E814       
 /* 0C5A4 8083E7B4 00000000 */  nop
-/* 0C5A8 8083E7B8 0C0218E2 */  jal     func_80086388              
+/* 0C5A8 8083E7B8 0C0218E2 */  jal     Item_CheckObtainability              
 /* 0C5AC 8083E7BC 00000000 */  nop
 /* 0C5B0 8083E7C0 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0C5B4 8083E7C4 14410005 */  bne     $v0, $at, .L8083E7DC       
@@ -152,7 +152,7 @@ glabel func_8083E5A8
 /* 0C5C8 8083E7D8 240FFFB3 */  addiu   $t7, $zero, 0xFFB3         ## $t7 = FFFFFFB3
 .L8083E7DC:
 /* 0C5CC 8083E7DC 8FAB002C */  lw      $t3, 0x002C($sp)           
-/* 0C5D0 8083E7E0 0C0218E2 */  jal     func_80086388              
+/* 0C5D0 8083E7E0 0C0218E2 */  jal     Item_CheckObtainability              
 /* 0C5D4 8083E7E4 91640000 */  lbu     $a0, 0x0000($t3)           ## 00000000
 /* 0C5D8 8083E7E8 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0C5DC 8083E7EC 10410009 */  beq     $v0, $at, .L8083E814       
@@ -215,7 +215,7 @@ glabel func_8083E5A8
 /* 0C6B0 8083E8C0 816C0002 */  lb      $t4, 0x0002($t3)           ## 00000002
 /* 0C6B4 8083E8C4 05800019 */  bltz    $t4, .L8083E92C            
 /* 0C6B8 8083E8C8 00000000 */  nop
-/* 0C6BC 8083E8CC 0C0218E2 */  jal     func_80086388              
+/* 0C6BC 8083E8CC 0C0218E2 */  jal     Item_CheckObtainability              
 /* 0C6C0 8083E8D0 00000000 */  nop
 /* 0C6C4 8083E8D4 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 0C6C8 8083E8D8 14410014 */  bne     $v0, $at, .L8083E92C       

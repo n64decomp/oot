@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_fishing.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void Fishing_Init(Fishing* this, GlobalContext* globalCtx);
+void Fishing_Destroy(Fishing* this, GlobalContext* globalCtx);
+void Fishing_Update(Fishing* this, GlobalContext* globalCtx);
+void Fishing_Draw(Fishing* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Fishing_InitVars =
+{
+    ACTOR_FISHING,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_FISH,
+    sizeof(Fishing),
+    (ActorFunc)Fishing_Init,
+    (ActorFunc)Fishing_Destroy,
+    (ActorFunc)Fishing_Update,
+    (ActorFunc)Fishing_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B699A0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B69A44.s")
@@ -21,9 +43,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B6A22C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B6A540.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/Fishing_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B6AEBC.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/Fishing_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B6AF28.s")
 
@@ -59,7 +81,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B71438.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B715F4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/Fishing_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B75BAC.s")
 
@@ -69,7 +91,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B75DA4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B75DE4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/Fishing_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B76028.s")
 
@@ -92,8 +114,4 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B7A140.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Fishing/func_80B7A278.s")
-
-
-
-
 

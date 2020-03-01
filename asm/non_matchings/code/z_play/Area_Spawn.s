@@ -57,8 +57,8 @@ glabel Area_Spawn
 .L800C00E0:
 /* B37280 800C00E0 3C018000 */  lui   $at, 0x8000
 /* B37284 800C00E4 00615021 */  addu  $t2, $v1, $at
-/* B37288 800C00E8 3C018016 */  lui   $at, %hi(D_80166FB0) # $at, 0x8016
-/* B3728C 800C00EC AC2A6FB0 */  sw    $t2, %lo(D_80166FB0)($at)
+/* B37288 800C00E8 3C018016 */  lui   $at, %hi(gSegments+8) # $at, 0x8016
+/* B3728C 800C00EC AC2A6FB0 */  sw    $t2, %lo(gSegments+8)($at)
 /* B37290 800C00F0 02202025 */  move  $a0, $s1
 /* B37294 800C00F4 0C02FFC3 */  jal   func_800BFF0C
 /* B37298 800C00F8 8FA50028 */   lw    $a1, 0x28($sp)

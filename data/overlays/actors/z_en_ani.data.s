@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809B0F20
+glabel En_Ani_InitVars
  .word 0x01670400, 0x00000009, 0x00EC0000, 0x000002B4
-.word func_809B0378
-.word func_809B048C
-.word func_809B0B18
-.word func_809B0E14
+.word EnAni_Init
+.word EnAni_Destroy
+.word EnAni_Update
+.word EnAni_Draw
 glabel D_809B0F40
  .word 0x0A001139, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x001E0028, 0x00000000, 0x00000000
 glabel D_809B0F6C

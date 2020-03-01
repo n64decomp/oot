@@ -10,28 +10,28 @@
 .align 4
 
 glabel bcopy
-/* 007B10 80006F10 10C0001A */  beqz  $a2, .L80006F7C
+/* 007B10 80006F10 10C0001A */  beqz  $a2, ret
 /* 007B14 80006F14 00A03825 */   move  $a3, $a1
-/* 007B18 80006F18 10850018 */  beq   $a0, $a1, .L80006F7C
+/* 007B18 80006F18 10850018 */  beq   $a0, $a1, ret
 /* 007B1C 80006F1C 00A4082A */   slt   $at, $a1, $a0
-/* 007B20 80006F20 54200008 */  bnezl $at, .L80006F44
+/* 007B20 80006F20 54200008 */  bnezl $at, goforwards
 /* 007B24 80006F24 28C10010 */   slti  $at, $a2, 0x10
 /* 007B28 80006F28 00861020 */  add   $v0, $a0, $a2
 /* 007B2C 80006F2C 00A2082A */  slt   $at, $a1, $v0
-/* 007B30 80006F30 50200004 */  beql  $at, $zero, .L80006F44
+/* 007B30 80006F30 50200004 */  beql  $at, $zero, goforwards
 /* 007B34 80006F34 28C10010 */   slti  $at, $a2, 0x10
-/* 007B38 80006F38 1000005B */  b     .L800070A8
+/* 007B38 80006F38 1000005B */  b     gobackwards
 /* 007B3C 80006F3C 28C10010 */   slti  $at, $a2, 0x10
 /* 007B40 80006F40 28C10010 */  slti  $at, $a2, 0x10
-.L80006F44:
-/* 007B44 80006F44 14200005 */  bnez  $at, .L80006F5C
+goforwards:
+/* 007B44 80006F44 14200005 */  bnez  $at, forwards_bytecopy
 /* 007B48 80006F48 00000000 */   nop   
 /* 007B4C 80006F4C 30820003 */  andi  $v0, $a0, 3
 /* 007B50 80006F50 30A30003 */  andi  $v1, $a1, 3
-/* 007B54 80006F54 1043000B */  beq   $v0, $v1, .L80006F84
+/* 007B54 80006F54 1043000B */  beq   $v0, $v1, forwalignable
 /* 007B58 80006F58 00000000 */   nop   
-.L80006F5C:
-/* 007B5C 80006F5C 10C00007 */  beqz  $a2, .L80006F7C
+forwards_bytecopy:
+/* 007B5C 80006F5C 10C00007 */  beqz  $a2, ret
 /* 007B60 80006F60 00000000 */   nop   
 /* 007B64 80006F64 00861821 */  addu  $v1, $a0, $a2
 .L80006F68:
@@ -40,31 +40,31 @@ glabel bcopy
 /* 007B70 80006F70 24A50001 */  addiu $a1, $a1, 1
 /* 007B74 80006F74 1483FFFC */  bne   $a0, $v1, .L80006F68
 /* 007B78 80006F78 A0A2FFFF */   sb    $v0, -1($a1)
-.L80006F7C:
+ret:
 /* 007B7C 80006F7C 03E00008 */  jr    $ra
 /* 007B80 80006F80 00E01025 */   move  $v0, $a3
 
-.L80006F84:
-/* 007B84 80006F84 10400018 */  beqz  $v0, .L80006FE8
+forwalignable:
+/* 007B84 80006F84 10400018 */  beqz  $v0, forwards_32
 /* 007B88 80006F88 24010001 */   li    $at, 1
-/* 007B8C 80006F8C 1041000F */  beq   $v0, $at, .L80006FCC
+/* 007B8C 80006F8C 1041000F */  beq   $v0, $at, forw_copy3
 /* 007B90 80006F90 24010002 */   li    $at, 2
-/* 007B94 80006F94 50410008 */  beql  $v0, $at, .L80006FB8
+/* 007B94 80006F94 50410008 */  beql  $v0, $at, forw_copy2
 /* 007B98 80006F98 84820000 */   lh    $v0, ($a0)
 /* 007B9C 80006F9C 80820000 */  lb    $v0, ($a0)
 /* 007BA0 80006FA0 24840001 */  addiu $a0, $a0, 1
 /* 007BA4 80006FA4 24A50001 */  addiu $a1, $a1, 1
 /* 007BA8 80006FA8 24C6FFFF */  addiu $a2, $a2, -1
-/* 007BAC 80006FAC 1000000E */  b     .L80006FE8
+/* 007BAC 80006FAC 1000000E */  b     forwards_32
 /* 007BB0 80006FB0 A0A2FFFF */   sb    $v0, -1($a1)
 /* 007BB4 80006FB4 84820000 */  lh    $v0, ($a0)
-.L80006FB8:
+forw_copy2:
 /* 007BB8 80006FB8 24840002 */  addiu $a0, $a0, 2
 /* 007BBC 80006FBC 24A50002 */  addiu $a1, $a1, 2
 /* 007BC0 80006FC0 24C6FFFE */  addiu $a2, $a2, -2
-/* 007BC4 80006FC4 10000008 */  b     .L80006FE8
+/* 007BC4 80006FC4 10000008 */  b     forwards_32
 /* 007BC8 80006FC8 A4A2FFFE */   sh    $v0, -2($a1)
-.L80006FCC:
+forw_copy3:
 /* 007BCC 80006FCC 80820000 */  lb    $v0, ($a0)
 /* 007BD0 80006FD0 84830001 */  lh    $v1, 1($a0)
 /* 007BD4 80006FD4 24840003 */  addiu $a0, $a0, 3
@@ -72,7 +72,7 @@ glabel bcopy
 /* 007BDC 80006FDC 24C6FFFD */  addiu $a2, $a2, -3
 /* 007BE0 80006FE0 A0A2FFFD */  sb    $v0, -3($a1)
 /* 007BE4 80006FE4 A4A3FFFE */  sh    $v1, -2($a1)
-.L80006FE8:
+forwards_32:
 /* 007BE8 80006FE8 28C10020 */  slti  $at, $a2, 0x20
 /* 007BEC 80006FEC 54200016 */  bnezl $at, .L80007048
 /* 007BF0 80006FF0 28C10010 */   slti  $at, $a2, 0x10
@@ -94,9 +94,9 @@ glabel bcopy
 /* 007C30 80007030 ACAAFFF0 */  sw    $t2, -0x10($a1)
 /* 007C34 80007034 ACABFFF4 */  sw    $t3, -0xc($a1)
 /* 007C38 80007038 ACACFFF8 */  sw    $t4, -8($a1)
-/* 007C3C 8000703C 1000FFEA */  b     .L80006FE8
+/* 007C3C 8000703C 1000FFEA */  b     forwards_32
 /* 007C40 80007040 ACADFFFC */   sw    $t5, -4($a1)
-.L80007044:
+forwards_16:
 /* 007C44 80007044 28C10010 */  slti  $at, $a2, 0x10
 .L80007048:
 /* 007C48 80007048 5420000E */  bnezl $at, .L80007084
@@ -111,30 +111,30 @@ glabel bcopy
 /* 007C6C 8000706C ACA2FFF0 */  sw    $v0, -0x10($a1)
 /* 007C70 80007070 ACA3FFF4 */  sw    $v1, -0xc($a1)
 /* 007C74 80007074 ACA8FFF8 */  sw    $t0, -8($a1)
-/* 007C78 80007078 1000FFF2 */  b     .L80007044
+/* 007C78 80007078 1000FFF2 */  b     forwards_16
 /* 007C7C 8000707C ACA9FFFC */   sw    $t1, -4($a1)
-.L80007080:
+forwards_4:
 /* 007C80 80007080 28C10004 */  slti  $at, $a2, 4
 .L80007084:
-/* 007C84 80007084 1420FFB5 */  bnez  $at, .L80006F5C
+/* 007C84 80007084 1420FFB5 */  bnez  $at, forwards_bytecopy
 /* 007C88 80007088 00000000 */   nop   
 /* 007C8C 8000708C 8C820000 */  lw    $v0, ($a0)
 /* 007C90 80007090 24840004 */  addiu $a0, $a0, 4
 /* 007C94 80007094 24A50004 */  addiu $a1, $a1, 4
 /* 007C98 80007098 24C6FFFC */  addiu $a2, $a2, -4
-/* 007C9C 8000709C 1000FFF8 */  b     .L80007080
+/* 007C9C 8000709C 1000FFF8 */  b     forwards_4
 /* 007CA0 800070A0 ACA2FFFC */   sw    $v0, -4($a1)
 /* 007CA4 800070A4 28C10010 */  slti  $at, $a2, 0x10
-.L800070A8:
+gobackwards:
 /* 007CA8 800070A8 00862020 */  add   $a0, $a0, $a2
-/* 007CAC 800070AC 14200005 */  bnez  $at, .L800070C4
+/* 007CAC 800070AC 14200005 */  bnez  $at, backwards_bytecopy
 /* 007CB0 800070B0 00A62820 */   add   $a1, $a1, $a2
 /* 007CB4 800070B4 30820003 */  andi  $v0, $a0, 3
 /* 007CB8 800070B8 30A30003 */  andi  $v1, $a1, 3
-/* 007CBC 800070BC 1043000D */  beq   $v0, $v1, .L800070F4
+/* 007CBC 800070BC 1043000D */  beq   $v0, $v1, backalignable
 /* 007CC0 800070C0 00000000 */   nop   
-.L800070C4:
-/* 007CC4 800070C4 10C0FFAD */  beqz  $a2, .L80006F7C
+backwards_bytecopy:
+/* 007CC4 800070C4 10C0FFAD */  beqz  $a2, ret
 /* 007CC8 800070C8 00000000 */   nop   
 /* 007CCC 800070CC 2484FFFF */  addiu $a0, $a0, -1
 /* 007CD0 800070D0 24A5FFFF */  addiu $a1, $a1, -1
@@ -148,27 +148,27 @@ glabel bcopy
 /* 007CEC 800070EC 03E00008 */  jr    $ra
 /* 007CF0 800070F0 00E01025 */   move  $v0, $a3
 
-.L800070F4:
-/* 007CF4 800070F4 10400018 */  beqz  $v0, .L80007158
+backalignable:
+/* 007CF4 800070F4 10400018 */  beqz  $v0, backwards_32
 /* 007CF8 800070F8 24010003 */   li    $at, 3
-/* 007CFC 800070FC 1041000F */  beq   $v0, $at, .L8000713C
+/* 007CFC 800070FC 1041000F */  beq   $v0, $at, back_copy3
 /* 007D00 80007100 24010002 */   li    $at, 2
-/* 007D04 80007104 50410008 */  beql  $v0, $at, .L80007128
+/* 007D04 80007104 50410008 */  beql  $v0, $at, back_copy2
 /* 007D08 80007108 8482FFFE */   lh    $v0, -2($a0)
 /* 007D0C 8000710C 8082FFFF */  lb    $v0, -1($a0)
 /* 007D10 80007110 2484FFFF */  addiu $a0, $a0, -1
 /* 007D14 80007114 24A5FFFF */  addiu $a1, $a1, -1
 /* 007D18 80007118 24C6FFFF */  addiu $a2, $a2, -1
-/* 007D1C 8000711C 1000000E */  b     .L80007158
+/* 007D1C 8000711C 1000000E */  b     backwards_32
 /* 007D20 80007120 A0A20000 */   sb    $v0, ($a1)
 /* 007D24 80007124 8482FFFE */  lh    $v0, -2($a0)
-.L80007128:
+back_copy2:
 /* 007D28 80007128 2484FFFE */  addiu $a0, $a0, -2
 /* 007D2C 8000712C 24A5FFFE */  addiu $a1, $a1, -2
 /* 007D30 80007130 24C6FFFE */  addiu $a2, $a2, -2
-/* 007D34 80007134 10000008 */  b     .L80007158
+/* 007D34 80007134 10000008 */  b     backwards_32
 /* 007D38 80007138 A4A20000 */   sh    $v0, ($a1)
-.L8000713C:
+back_copy3:
 /* 007D3C 8000713C 8082FFFF */  lb    $v0, -1($a0)
 /* 007D40 80007140 8483FFFD */  lh    $v1, -3($a0)
 /* 007D44 80007144 2484FFFD */  addiu $a0, $a0, -3
@@ -176,7 +176,7 @@ glabel bcopy
 /* 007D4C 8000714C 24C6FFFD */  addiu $a2, $a2, -3
 /* 007D50 80007150 A0A20002 */  sb    $v0, 2($a1)
 /* 007D54 80007154 A4A30000 */  sh    $v1, ($a1)
-.L80007158:
+backwards_32:
 /* 007D58 80007158 28C10020 */  slti  $at, $a2, 0x20
 /* 007D5C 8000715C 54200016 */  bnezl $at, .L800071B8
 /* 007D60 80007160 28C10010 */   slti  $at, $a2, 0x10
@@ -198,9 +198,9 @@ glabel bcopy
 /* 007DA0 800071A0 ACAA000C */  sw    $t2, 0xc($a1)
 /* 007DA4 800071A4 ACAB0008 */  sw    $t3, 8($a1)
 /* 007DA8 800071A8 ACAC0004 */  sw    $t4, 4($a1)
-/* 007DAC 800071AC 1000FFEA */  b     .L80007158
+/* 007DAC 800071AC 1000FFEA */  b     backwards_32
 /* 007DB0 800071B0 ACAD0000 */   sw    $t5, ($a1)
-.L800071B4:
+backwards_16:
 /* 007DB4 800071B4 28C10010 */  slti  $at, $a2, 0x10
 .L800071B8:
 /* 007DB8 800071B8 5420000E */  bnezl $at, .L800071F4
@@ -215,16 +215,16 @@ glabel bcopy
 /* 007DDC 800071DC ACA2000C */  sw    $v0, 0xc($a1)
 /* 007DE0 800071E0 ACA30008 */  sw    $v1, 8($a1)
 /* 007DE4 800071E4 ACA80004 */  sw    $t0, 4($a1)
-/* 007DE8 800071E8 1000FFF2 */  b     .L800071B4
+/* 007DE8 800071E8 1000FFF2 */  b     backwards_16
 /* 007DEC 800071EC ACA90000 */   sw    $t1, ($a1)
-.L800071F0:
+backwards_4:
 /* 007DF0 800071F0 28C10004 */  slti  $at, $a2, 4
 .L800071F4:
-/* 007DF4 800071F4 1420FFB3 */  bnez  $at, .L800070C4
+/* 007DF4 800071F4 1420FFB3 */  bnez  $at, backwards_bytecopy
 /* 007DF8 800071F8 00000000 */   nop   
 /* 007DFC 800071FC 8C82FFFC */  lw    $v0, -4($a0)
 /* 007E00 80007200 2484FFFC */  addiu $a0, $a0, -4
 /* 007E04 80007204 24A5FFFC */  addiu $a1, $a1, -4
 /* 007E08 80007208 24C6FFFC */  addiu $a2, $a2, -4
-/* 007E0C 8000720C 1000FFF8 */  b     .L800071F0
+/* 007E0C 8000720C 1000FFF8 */  b     backwards_4
 /* 007E10 80007210 ACA20000 */   sw    $v0, ($a1)

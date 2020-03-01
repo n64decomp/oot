@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80BA0AD0
+glabel Obj_Timeblock_InitVars
  .word 0x01D10700, 0x0A000011, 0x01900000, 0x0000017C
-.word func_80BA0114
-.word func_80BA02FC
-.word func_80BA091C
-.word func_80BA0998
+.word ObjTimeblock_Init
+.word ObjTimeblock_Destroy
+.word ObjTimeblock_Update
+.word ObjTimeblock_Draw
 glabel D_80BA0AF0
  .word 0x3F800000
 glabel D_80BA0AF4

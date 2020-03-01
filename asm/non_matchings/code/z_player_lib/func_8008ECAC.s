@@ -7,13 +7,13 @@ glabel func_8008ECAC
 /* B05E60 8008ECC0 00A03025 */  move  $a2, $a1
 /* B05E64 8008ECC4 11C10031 */  beq   $t6, $at, .L8008ED8C
 /* B05E68 8008ECC8 3C028016 */   lui   $v0, %hi(gSaveContext) # $v0, 0x8016
-/* B05E6C 8008ECCC 3C038012 */  lui   $v1, %hi(D_801271A0) # $v1, 0x8012
-/* B05E70 8008ECD0 246371A0 */  addiu $v1, %lo(D_801271A0) # addiu $v1, $v1, 0x71a0
+/* B05E6C 8008ECCC 3C038012 */  lui   $v1, %hi(gEquipMasks) # $v1, 0x8012
+/* B05E70 8008ECD0 246371A0 */  addiu $v1, %lo(gEquipMasks) # addiu $v1, $v1, 0x71a0
 /* B05E74 8008ECD4 2442E660 */  addiu $v0, %lo(gSaveContext) # addiu $v0, $v0, -0x19a0
-/* B05E78 8008ECD8 3C048012 */  lui   $a0, %hi(D_801271F0) # $a0, 0x8012
+/* B05E78 8008ECD8 3C048012 */  lui   $a0, %hi(gEquipShifts) # $a0, 0x8012
 /* B05E7C 8008ECDC 944F0070 */  lhu   $t7, 0x70($v0)
 /* B05E80 8008ECE0 94780002 */  lhu   $t8, 2($v1)
-/* B05E84 8008ECE4 248471F0 */  addiu $a0, %lo(D_801271F0) # addiu $a0, $a0, 0x71f0
+/* B05E84 8008ECE4 248471F0 */  addiu $a0, %lo(gEquipShifts) # addiu $a0, $a0, 0x71f0
 /* B05E88 8008ECE8 90880001 */  lbu   $t0, 1($a0)
 /* B05E8C 8008ECEC 01F8C824 */  and   $t9, $t7, $t8
 /* B05E90 8008ECF0 240500FF */  li    $a1, 255

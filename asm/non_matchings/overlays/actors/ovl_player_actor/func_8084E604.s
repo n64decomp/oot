@@ -24,7 +24,7 @@ glabel func_8084E604
 /* 1C448 8084E658 3C054040 */  lui     $a1, 0x4040                ## $a1 = 40400000
 /* 1C44C 8084E65C 10400016 */  beq     $v0, $zero, .L8084E6B8     
 /* 1C450 8084E660 24040001 */  addiu   $a0, $zero, 0x0001         ## $a0 = 00000001
-/* 1C454 8084E664 0C021CCC */  jal     func_80087330              
+/* 1C454 8084E664 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 1C458 8084E668 2405FFFF */  addiu   $a1, $zero, 0xFFFF         ## $a1 = FFFFFFFF
 /* 1C45C 8084E66C C60409C0 */  lwc1    $f4, 0x09C0($s0)           ## 000009C0
 /* 1C460 8084E670 8E0709BC */  lw      $a3, 0x09BC($s0)           ## 000009BC

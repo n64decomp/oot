@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B30CF0
+glabel En_Wallmas_InitVars
  .word 0x00110500, 0x00000015, 0x000B0000, 0x00000314
-.word func_80B2F520
-.word func_80B2F65C
-.word func_80B30734
-.word func_80B30C74
+.word EnWallmas_Init
+.word EnWallmas_Destroy
+.word EnWallmas_Update
+.word EnWallmas_Draw
 glabel D_80B30D10
  .word 0x00000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x001E0028, 0x00000000, 0x00000000
 glabel D_80B30D3C

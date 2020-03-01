@@ -13,7 +13,7 @@ glabel func_800C9E44
 /* B41010 800C9E70 24846274 */   addiu $a0, %lo(D_80146274) # addiu $a0, $a0, 0x6274
 /* B41014 800C9E74 3C048014 */  lui   $a0, %hi(D_8014627C) # $a0, 0x8014
 /* B41018 800C9E78 2484627C */  addiu $a0, %lo(D_8014627C) # addiu $a0, $a0, 0x627c
-/* B4101C 800C9E7C 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B4101C 800C9E7C 0C000B84 */  jal   LogUtils_LogThreadId
 /* B41020 800C9E80 24050139 */   li    $a1, 313
 /* B41024 800C9E84 3C048014 */  lui   $a0, %hi(D_80146290) # $a0, 0x8014
 /* B41028 800C9E88 24846290 */  addiu $a0, %lo(D_80146290) # addiu $a0, $a0, 0x6290

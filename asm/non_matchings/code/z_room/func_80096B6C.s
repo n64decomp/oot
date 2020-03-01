@@ -43,7 +43,7 @@ glabel func_80096B6C
 /* B0DD54 80096BB4 000FC080 */  sll   $t8, $t7, 2
 /* B0DD58 80096BB8 00B8C821 */  addu  $t9, $a1, $t8
 /* B0DD5C 80096BBC 8F230790 */  lw    $v1, 0x790($t9)
-/* B0DD60 80096BC0 3C188016 */  lui   $t8, %hi(D_80166FA8)
+/* B0DD60 80096BC0 3C188016 */  lui   $t8, %hi(gSegments)
 /* B0DD64 80096BC4 846A0142 */  lh    $t2, 0x142($v1)
 /* B0DD68 80096BC8 394B0019 */  xori  $t3, $t2, 0x19
 /* B0DD6C 80096BCC 2D6B0001 */  sltiu $t3, $t3, 1
@@ -55,7 +55,7 @@ glabel func_80096B6C
 /* B0DD84 80096BE4 000D7702 */  srl   $t6, $t5, 0x1c
 /* B0DD88 80096BE8 000E7880 */  sll   $t7, $t6, 2
 /* B0DD8C 80096BEC 030FC021 */  addu  $t8, $t8, $t7
-/* B0DD90 80096BF0 8F186FA8 */  lw    $t8, %lo(D_80166FA8)($t8)
+/* B0DD90 80096BF0 8F186FA8 */  lw    $t8, %lo(gSegments)($t8)
 /* B0DD94 80096BF4 0041C824 */  and   $t9, $v0, $at
 /* B0DD98 80096BF8 3C018000 */  lui   $at, 0x8000
 /* B0DD9C 80096BFC 03195021 */  addu  $t2, $t8, $t9
@@ -141,8 +141,8 @@ glabel func_80096B6C
 /* B0DEC8 80096D28 246E0008 */  addiu $t6, $v1, 8
 /* B0DECC 80096D2C AE0E02C0 */  sw    $t6, 0x2c0($s0)
 /* B0DED0 80096D30 3C0FDA38 */  lui   $t7, (0xDA380003 >> 16) # lui $t7, 0xda38
-/* B0DED4 80096D34 3C188013 */  lui   $t8, %hi(D_8012DB20) # $t8, 0x8013
-/* B0DED8 80096D38 2718DB20 */  addiu $t8, %lo(D_8012DB20) # addiu $t8, $t8, -0x24e0
+/* B0DED4 80096D34 3C188013 */  lui   $t8, %hi(gMtxClear) # $t8, 0x8013
+/* B0DED8 80096D38 2718DB20 */  addiu $t8, %lo(gMtxClear) # addiu $t8, $t8, -0x24e0
 /* B0DEDC 80096D3C 35EF0003 */  ori   $t7, (0xDA380003 & 0xFFFF) # ori $t7, $t7, 3
 /* B0DEE0 80096D40 AC6F0000 */  sw    $t7, ($v1)
 /* B0DEE4 80096D44 AC780004 */  sw    $t8, 4($v1)
@@ -249,8 +249,8 @@ glabel func_80096B6C
 /* B0E070 80096ED0 AE0E02D0 */  sw    $t6, 0x2d0($s0)
 /* B0E074 80096ED4 AC4F0000 */  sw    $t7, ($v0)
 /* B0E078 80096ED8 8FB800B4 */  lw    $t8, 0xb4($sp)
-/* B0E07C 80096EDC 3C058013 */  lui   $a1, %hi(D_8012DB20) # $a1, 0x8013
-/* B0E080 80096EE0 24A5DB20 */  addiu $a1, %lo(D_8012DB20) # addiu $a1, $a1, -0x24e0
+/* B0E07C 80096EDC 3C058013 */  lui   $a1, %hi(gMtxClear) # $a1, 0x8013
+/* B0E080 80096EE0 24A5DB20 */  addiu $a1, %lo(gMtxClear) # addiu $a1, $a1, -0x24e0
 /* B0E084 80096EE4 8F19000C */  lw    $t9, 0xc($t8)
 /* B0E088 80096EE8 AC590004 */  sw    $t9, 4($v0)
 /* B0E08C 80096EEC 8FAA00B0 */  lw    $t2, 0xb0($sp)

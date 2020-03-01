@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808BF2E0
+glabel Bg_Ydan_Maruta_InitVars
  .word 0x00510600, 0x00000000, 0x00360000, 0x00000244
-.word func_808BED40
-.word func_808BEFA0
-.word func_808BF268
-.word func_808BF28C
+.word BgYdanMaruta_Init
+.word BgYdanMaruta_Destroy
+.word BgYdanMaruta_Update
+.word BgYdanMaruta_Draw
 glabel D_808BF300
  .word 0x00000000, 0x20000000, 0x00040000, 0x00000004, 0x00000000, 0x11010000, 0x435C0000, 0xC1200000, 0x00000000, 0x435C0000, 0x41200000, 0x00000000, 0xC35C0000, 0x41200000, 0x00000000
 glabel D_808BF33C

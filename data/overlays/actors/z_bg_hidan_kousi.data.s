@@ -9,12 +9,12 @@
 
 glabel D_80889E40
  .word 0x42F00000, 0x43160000, 0x43160000
-glabel D_80889E4C
+glabel Bg_Hidan_Kousi_InitVars
  .word 0x006F0600, 0x00000010, 0x002C0000, 0x0000016C
-.word func_80889968
-.word func_80889A9C
-.word func_80889D34
-.word func_80889D58
+.word BgHidanKousi_Init
+.word BgHidanKousi_Destroy
+.word BgHidanKousi_Update
+.word BgHidanKousi_Draw
 glabel D_80889E6C
  .word 0x48500064
 glabel D_80889E70

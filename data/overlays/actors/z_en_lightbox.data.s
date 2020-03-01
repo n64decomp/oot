@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_80A9EDE0
+glabel En_Lightbox_InitVars
  .word 0x007C0600, 0x00000010, 0x00810000, 0x00000164
-.word func_80A9E9D0
-.word func_80A9EAFC
-.word func_80A9EB2C
-.word func_80A9EDB4
+.word EnLightbox_Init
+.word EnLightbox_Destroy
+.word EnLightbox_Update
+.word EnLightbox_Draw
 

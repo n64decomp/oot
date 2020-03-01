@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_syateki_niw.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B118F0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B11A6C.s")
+void EnSyatekiNiw_Init(EnSyatekiNiw* this, GlobalContext* globalCtx);
+void EnSyatekiNiw_Destroy(EnSyatekiNiw* this, GlobalContext* globalCtx);
+void EnSyatekiNiw_Update(EnSyatekiNiw* this, GlobalContext* globalCtx);
+void EnSyatekiNiw_Draw(EnSyatekiNiw* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Syateki_Niw_InitVars =
+{
+    ACTOR_EN_SYATEKI_NIW,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_NIW,
+    sizeof(EnSyatekiNiw),
+    (ActorFunc)EnSyatekiNiw_Init,
+    (ActorFunc)EnSyatekiNiw_Destroy,
+    (ActorFunc)EnSyatekiNiw_Update,
+    (ActorFunc)EnSyatekiNiw_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/EnSyatekiNiw_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/EnSyatekiNiw_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B11A94.s")
 
@@ -23,18 +45,14 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B12BA4.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B12C74.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/EnSyatekiNiw_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B12FE0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B13110.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/EnSyatekiNiw_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B131B8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B132A8.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Syateki_Niw/func_80B13464.s")
-
-
-
-

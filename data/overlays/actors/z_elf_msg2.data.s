@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809ADC10
+glabel Elf_Msg2_InitVars
  .word 0x01730100, 0x00000010, 0x00010000, 0x00000150
-.word func_809AD884
-.word func_809AD95C
-.word func_809ADAA0
-.word func_809ADADC
+.word ElfMsg2_Init
+.word ElfMsg2_Destroy
+.word ElfMsg2_Update
+.word ElfMsg2_Draw
 glabel D_809ADC30
  .word 0xC85000C8, 0x30F403E8
 glabel D_809ADC38

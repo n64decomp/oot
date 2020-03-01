@@ -49,7 +49,7 @@ glabel func_8005C7E0
 /* AD3A30 8005C890 AE200018 */   sw    $zero, 0x18($s1)
 /* AD3A34 8005C894 3C058014 */  lui   $a1, %hi(D_8013A750) # $a1, 0x8014
 /* AD3A38 8005C898 24A5A750 */  addiu $a1, %lo(D_8013A750) # addiu $a1, $a1, -0x58b0
-/* AD3A3C 8005C89C 0C01EC35 */  jal   func_8007B0D4
+/* AD3A3C 8005C89C 0C01EC35 */  jal   ZeldaArena_FreeDebug
 /* AD3A40 8005C8A0 24060833 */   li    $a2, 2099
 .L8005C8A4:
 /* AD3A44 8005C8A4 AE20001C */  sw    $zero, 0x1c($s1)

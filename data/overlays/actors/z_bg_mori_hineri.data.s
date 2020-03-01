@@ -9,11 +9,11 @@
 
 glabel D_808A43E0
  .word 0xFFFF0000
-glabel D_808A43E4
+glabel Bg_Mori_Hineri_InitVars
  .word 0x00680100, 0x00000030, 0x00010000, 0x0000016C
-.word func_808A37D0
-.word func_808A39CC
-.word func_808A3F34
+.word BgMoriHineri_Init
+.word BgMoriHineri_Destroy
+.word BgMoriHineri_Update
 .word 0x00000000
 glabel D_808A4404
  .word 0x485003E8

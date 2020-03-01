@@ -113,25 +113,25 @@ glabel func_8098D9C0
 /* 00BA4 8098DB74 8FAB0124 */  lw      $t3, 0x0124($sp)           
 /* 00BA8 8098DB78 0C024F61 */  jal     func_80093D84              
 /* 00BAC 8098DB7C 8D640000 */  lw      $a0, 0x0000($t3)           ## 00000000
-/* 00BB0 8098DB80 0C034213 */  jal     func_800D084C              
+/* 00BB0 8098DB80 0C034213 */  jal     Matrix_Push              
 /* 00BB4 8098DB84 00000000 */  nop
 /* 00BB8 8098DB88 44806000 */  mtc1    $zero, $f12                ## $f12 = 0.00
 /* 00BBC 8098DB8C 3C014496 */  lui     $at, 0x4496                ## $at = 44960000
 /* 00BC0 8098DB90 44817000 */  mtc1    $at, $f14                  ## $f14 = 1200.00
 /* 00BC4 8098DB94 44066000 */  mfc1    $a2, $f12                  
-/* 00BC8 8098DB98 0C034261 */  jal     func_800D0984              
+/* 00BC8 8098DB98 0C034261 */  jal     Matrix_Translate              
 /* 00BCC 8098DB9C 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 00BD0 8098DBA0 8FB90120 */  lw      $t9, 0x0120($sp)           
 /* 00BD4 8098DBA4 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 00BD8 8098DBA8 C72C01E8 */  lwc1    $f12, 0x01E8($t9)          ## 000001E8
 /* 00BDC 8098DBAC 44066000 */  mfc1    $a2, $f12                  
-/* 00BE0 8098DBB0 0C0342A3 */  jal     func_800D0A8C              
+/* 00BE0 8098DBB0 0C0342A3 */  jal     Matrix_Scale              
 /* 00BE4 8098DBB4 46006386 */  mov.s   $f14, $f12                 
 /* 00BE8 8098DBB8 3C01C496 */  lui     $at, 0xC496                ## $at = C4960000
 /* 00BEC 8098DBBC 44817000 */  mtc1    $at, $f14                  ## $f14 = -1200.00
 /* 00BF0 8098DBC0 44806000 */  mtc1    $zero, $f12                ## $f12 = 0.00
 /* 00BF4 8098DBC4 24060000 */  addiu   $a2, $zero, 0x0000         ## $a2 = 00000000
-/* 00BF8 8098DBC8 0C034261 */  jal     func_800D0984              
+/* 00BF8 8098DBC8 0C034261 */  jal     Matrix_Translate              
 /* 00BFC 8098DBCC 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 00C00 8098DBD0 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002C6
 /* 00C04 8098DBD4 3C0EDA38 */  lui     $t6, 0xDA38                ## $t6 = DA380000
@@ -144,7 +144,7 @@ glabel func_8098D9C0
 /* 00C20 8098DBF0 24A5E218 */  addiu   $a1, $a1, %lo(D_8098E218)  ## $a1 = 8098E218
 /* 00C24 8098DBF4 8DE40000 */  lw      $a0, 0x0000($t7)           ## 00000000
 /* 00C28 8098DBF8 2406027F */  addiu   $a2, $zero, 0x027F         ## $a2 = 0000027F
-/* 00C2C 8098DBFC 0C0346A2 */  jal     func_800D1A88              
+/* 00C2C 8098DBFC 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00C30 8098DC00 AFA20084 */  sw      $v0, 0x0084($sp)           
 /* 00C34 8098DC04 8FA30084 */  lw      $v1, 0x0084($sp)           
 /* 00C38 8098DC08 3C0CDB06 */  lui     $t4, 0xDB06                ## $t4 = DB060000
@@ -189,7 +189,7 @@ glabel func_8098D9C0
 /* 00CD4 8098DCA4 244F0008 */  addiu   $t7, $v0, 0x0008           ## $t7 = 00000008
 /* 00CD8 8098DCA8 AE0F02D0 */  sw      $t7, 0x02D0($s0)           ## 000002C6
 /* 00CDC 8098DCAC AC4C0004 */  sw      $t4, 0x0004($v0)           ## 00000004
-/* 00CE0 8098DCB0 0C034221 */  jal     func_800D0884              
+/* 00CE0 8098DCB0 0C034221 */  jal     Matrix_Pull              
 /* 00CE4 8098DCB4 AC580000 */  sw      $t8, 0x0000($v0)           ## 00000000
 /* 00CE8 8098DCB8 8E0202D0 */  lw      $v0, 0x02D0($s0)           ## 000002C6
 /* 00CEC 8098DCBC 3C0ADA38 */  lui     $t2, 0xDA38                ## $t2 = DA380000
@@ -202,7 +202,7 @@ glabel func_8098D9C0
 /* 00D08 8098DCD8 24A5E22C */  addiu   $a1, $a1, %lo(D_8098E22C)  ## $a1 = 8098E22C
 /* 00D0C 8098DCDC 8D640000 */  lw      $a0, 0x0000($t3)           ## 00000000
 /* 00D10 8098DCE0 24060290 */  addiu   $a2, $zero, 0x0290         ## $a2 = 00000290
-/* 00D14 8098DCE4 0C0346A2 */  jal     func_800D1A88              
+/* 00D14 8098DCE4 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00D18 8098DCE8 AFA20078 */  sw      $v0, 0x0078($sp)           
 /* 00D1C 8098DCEC 8FA30078 */  lw      $v1, 0x0078($sp)           
 /* 00D20 8098DCF0 3C0DE700 */  lui     $t5, 0xE700                ## $t5 = E7000000

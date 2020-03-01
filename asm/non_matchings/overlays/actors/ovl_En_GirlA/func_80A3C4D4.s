@@ -16,7 +16,7 @@ glabel func_80A3C4D4
 /* 01DBC 80A3C50C 46083282 */  mul.s   $f10, $f6, $f8             
 /* 01DC0 80A3C510 46105483 */  div.s   $f18, $f10, $f16           
 /* 01DC4 80A3C514 46049302 */  mul.s   $f12, $f18, $f4            
-/* 01DC8 80A3C518 0C034348 */  jal     func_800D0D20              
+/* 01DC8 80A3C518 0C034348 */  jal     Matrix_RotateY              
 /* 01DCC 80A3C51C 00000000 */  nop
 /* 01DD0 80A3C520 8FA70018 */  lw      $a3, 0x0018($sp)           
 /* 01DD4 80A3C524 8FA5001C */  lw      $a1, 0x001C($sp)           

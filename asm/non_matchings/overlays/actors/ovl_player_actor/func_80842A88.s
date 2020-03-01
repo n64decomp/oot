@@ -4,7 +4,7 @@ glabel func_80842A88
 /* 10880 80842A90 AFA40018 */  sw      $a0, 0x0018($sp)           
 /* 10884 80842A94 AFA5001C */  sw      $a1, 0x001C($sp)           
 /* 10888 80842A98 2405FFFF */  addiu   $a1, $zero, 0xFFFF         ## $a1 = FFFFFFFF
-/* 1088C 80842A9C 0C021CCC */  jal     func_80087330              
+/* 1088C 80842A9C 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 10890 80842AA0 00002025 */  or      $a0, $zero, $zero          ## $a0 = 00000000
 /* 10894 80842AA4 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 10898 80842AA8 8FA5001C */  lw      $a1, 0x001C($sp)           

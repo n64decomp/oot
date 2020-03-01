@@ -31,7 +31,7 @@ glabel func_80B17934
 /* 00444 80B179A4 00000000 */  nop
 /* 00448 80B179A8 0C041B33 */  jal     func_80106CCC              
 /* 0044C 80B179AC 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
-/* 00450 80B179B0 0C021CC3 */  jal     func_8008730C              
+/* 00450 80B179B0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00454 80B179B4 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 00458 80B179B8 3C01447A */  lui     $at, 0x447A                ## $at = 447A0000
 /* 0045C 80B179BC 44812000 */  mtc1    $at, $f4                   ## $f4 = 1000.00

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AEA620
+glabel En_Rr_InitVars
  .word 0x00DD0500, 0x00000435, 0x00D40000, 0x000023C4
-.word func_80AE8440
-.word func_80AE85DC
-.word func_80AE9D84
-.word func_80AEA1D4
+.word EnRr_Init
+.word EnRr_Destroy
+.word EnRr_Update
+.word EnRr_Draw
 glabel D_80AEA640
  .word D_80AEA720
 .word D_80AEA72C

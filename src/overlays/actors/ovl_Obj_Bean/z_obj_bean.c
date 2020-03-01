@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_obj_bean.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00400000
+
+void ObjBean_Init(ObjBean* this, GlobalContext* globalCtx);
+void ObjBean_Destroy(ObjBean* this, GlobalContext* globalCtx);
+void ObjBean_Update(ObjBean* this, GlobalContext* globalCtx);
+void ObjBean_Draw(ObjBean* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Obj_Bean_InitVars =
+{
+    ACTOR_OBJ_BEAN,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_MAMENOKI,
+    sizeof(ObjBean),
+    (ActorFunc)ObjBean_Init,
+    (ActorFunc)ObjBean_Destroy,
+    (ActorFunc)ObjBean_Update,
+    (ActorFunc)ObjBean_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8EA80.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8EAD8.s")
@@ -55,9 +77,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8FA20.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8FA7C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/ObjBean_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8FCD4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/ObjBean_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B8FD50.s")
 
@@ -127,14 +149,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B90A34.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B90AC8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/ObjBean_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B90C7C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B90D04.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/func_80B90D90.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Obj_Bean/ObjBean_Draw.s")

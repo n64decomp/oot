@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B969A0
+glabel Obj_Lift_InitVars
  .word 0x012C0100, 0x00000010, 0x011D0000, 0x00000170
-.word func_80B963E4
-.word func_80B964EC
-.word func_80B96940
-.word func_80B96974
+.word ObjLift_Init
+.word ObjLift_Destroy
+.word ObjLift_Update
+.word ObjLift_Draw
 glabel D_80B969C0
  .word 0x0000000A, 0x0014001E, 0x00280032, 0x003C0000
 glabel D_80B969D0

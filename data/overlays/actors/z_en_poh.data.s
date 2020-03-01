@@ -9,11 +9,11 @@
 
 glabel D_80AE1A50
  .word 0x00000000
-glabel D_80AE1A54
+glabel En_Poh_InitVars
  .word 0x000D0500, 0x00001015, 0x00010000, 0x000003A8
-.word func_80ADDD50
-.word func_80ADE094
-.word func_80AE0534
+.word EnPoh_Init
+.word EnPoh_Destroy
+.word EnPoh_Update
 .word 0x00000000
 glabel D_80AE1A74
  .word 0x03000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00140028, 0x00140000, 0x00000000

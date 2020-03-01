@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A56ED0
+glabel En_Heishi4_InitVars
  .word 0x01780400, 0x00000009, 0x00970000, 0x00000308
-.word func_80A560D0
-.word func_80A56300
-.word func_80A56CB4
-.word func_80A56E78
+.word EnHeishi4_Init
+.word EnHeishi4_Destroy
+.word EnHeishi4_Update
+.word EnHeishi4_Draw
 glabel D_80A56EF0
  .word 0x00000006, 0x00000007
 glabel D_80A56EF8

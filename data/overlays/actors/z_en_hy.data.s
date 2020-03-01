@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A71EA0
+glabel En_Hy_InitVars
  .word 0x016E0400, 0x00000019, 0x00010000, 0x00000334
-.word func_80A70D80
-.word func_80A70E0C
-.word func_80A715DC
-.word func_80A71C28
+.word EnHy_Init
+.word EnHy_Destroy
+.word EnHy_Update
+.word EnHy_Draw
 glabel D_80A71EC0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0014002E, 0x00000000, 0x00000000
 glabel D_80A71EEC

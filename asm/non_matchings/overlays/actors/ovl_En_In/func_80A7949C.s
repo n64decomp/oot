@@ -8,7 +8,7 @@ glabel func_80A7949C
 /* 00504 80A794B4 15C1000C */  bne     $t6, $at, .L80A794E8       
 /* 00508 80A794B8 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 0050C 80A794BC AFA3001C */  sw      $v1, 0x001C($sp)           
-/* 00510 80A794C0 0C021CC3 */  jal     func_8008730C              
+/* 00510 80A794C0 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00514 80A794C4 AFA50024 */  sw      $a1, 0x0024($sp)           
 /* 00518 80A794C8 8FA60024 */  lw      $a2, 0x0024($sp)           
 /* 0051C 80A794CC 240F205C */  addiu   $t7, $zero, 0x205C         ## $t7 = 0000205C

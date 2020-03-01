@@ -20,7 +20,7 @@ glabel func_800BCA64
 /* B33C4C 800BCAAC 10000213 */  b     .L800BD2FC
 /* B33C50 800BCAB0 AC8F000C */   sw    $t7, 0xc($a0)
 .L800BCAB4:
-/* B33C54 800BCAB4 0C03F616 */  jal   func_800FD858
+/* B33C54 800BCAB4 0C03F616 */  jal   SystemArena_Display
 /* B33C58 800BCAB8 00000000 */   nop   
 /* B33C5C 800BCABC 3C05001D */  lui   $a1, (0x001D4790 >> 16) # lui $a1, 0x1d
 /* B33C60 800BCAC0 34A54790 */  ori   $a1, (0x001D4790 & 0xFFFF) # ori $a1, $a1, 0x4790
@@ -206,8 +206,8 @@ glabel func_800BCA64
 /* B33EF8 800BCD58 00107880 */   sll   $t7, $s0, 2
 /* B33EFC 800BCD5C 50200017 */  beql  $at, $zero, .L800BCDBC
 /* B33F00 800BCD60 00107880 */   sll   $t7, $s0, 2
-/* B33F04 800BCD64 3C038012 */  lui   $v1, %hi(D_80127120) # $v1, 0x8012
-/* B33F08 800BCD68 24637120 */  addiu $v1, %lo(D_80127120) # addiu $v1, $v1, 0x7120
+/* B33F04 800BCD64 3C038012 */  lui   $v1, %hi(gBitFlags) # $v1, 0x8012
+/* B33F08 800BCD68 24637120 */  addiu $v1, %lo(gBitFlags) # addiu $v1, $v1, 0x7120
 /* B33F0C 800BCD6C 8C790048 */  lw    $t9, 0x48($v1)
 /* B33F10 800BCD70 8E4200A4 */  lw    $v0, 0xa4($s2)
 /* B33F14 800BCD74 03224824 */  and   $t1, $t9, $v0
@@ -310,12 +310,12 @@ glabel func_800BCA64
 /* B34080 800BCEE0 A24F141C */  sb    $t7, 0x141c($s2)
 /* B34084 800BCEE4 02202025 */  move  $a0, $s1
 /* B34088 800BCEE8 24050021 */  li    $a1, 33
-/* B3408C 800BCEEC 0C021A79 */  jal   func_800869E4
+/* B3408C 800BCEEC 0C021A79 */  jal   Inventory_ReplaceItem
 /* B34090 800BCEF0 24060022 */   li    $a2, 34
 /* B34094 800BCEF4 14400005 */  bnez  $v0, .L800BCF0C
 /* B34098 800BCEF8 02202025 */   move  $a0, $s1
 /* B3409C 800BCEFC 2405002D */  li    $a1, 45
-/* B340A0 800BCF00 0C021A79 */  jal   func_800869E4
+/* B340A0 800BCF00 0C021A79 */  jal   Inventory_ReplaceItem
 /* B340A4 800BCF04 2406002E */   li    $a2, 46
 /* B340A8 800BCF08 10400004 */  beqz  $v0, .L800BCF1C
 .L800BCF0C:
@@ -366,7 +366,7 @@ glabel func_800BCA64
 /* B34150 800BCFB0 00000000 */   nop   
 /* B34154 800BCFB4 0C03F668 */  jal   func_800FD9A0
 /* B34158 800BCFB8 00602025 */   move  $a0, $v1
-/* B3415C 800BCFBC 0C034204 */  jal   func_800D0810
+/* B3415C 800BCFBC 0C034204 */  jal   Matrix_Init
 /* B34160 800BCFC0 02202025 */   move  $a0, $s1
 /* B34164 800BCFC4 3C0C800C */  lui   $t4, %hi(func_800BFAE4) # $t4, 0x800c
 /* B34168 800BCFC8 3C0D800C */  lui   $t5, %hi(func_800BC8EC) # $t5, 0x800c
@@ -467,7 +467,7 @@ glabel func_800BCA64
 /* B342D8 800BD138 0124C023 */  subu  $t8, $t1, $a0
 /* B342DC 800BD13C AFA20084 */  sw    $v0, 0x84($sp)
 /* B342E0 800BD140 00808025 */  move  $s0, $a0
-/* B342E4 800BD144 0C01EC81 */  jal   func_8007B204
+/* B342E4 800BD144 0C01EC81 */  jal   ZeldaArena_Init
 /* B342E8 800BD148 03022821 */   addu  $a1, $t8, $v0
 /* B342EC 800BD14C 8FAA007C */  lw    $t2, 0x7c($sp)
 /* B342F0 800BD150 8FAB0084 */  lw    $t3, 0x84($sp)
@@ -479,8 +479,8 @@ glabel func_800BCA64
 /* B34308 800BD168 0C00084C */  jal   osSyncPrintf
 /* B3430C 800BD16C 02002825 */   move  $a1, $s0
 /* B34310 800BD170 3C048016 */  lui   $a0, %hi(D_801614B8) # $a0, 0x8016
-/* B34314 800BD174 3C058008 */  lui   $a1, %hi(func_8007B178) # $a1, 0x8008
-/* B34318 800BD178 24A5B178 */  addiu $a1, %lo(func_8007B178) # addiu $a1, $a1, -0x4e88
+/* B34314 800BD174 3C058008 */  lui   $a1, %hi(ZeldaArena_Display) # $a1, 0x8008
+/* B34318 800BD178 24A5B178 */  addiu $a1, %lo(ZeldaArena_Display) # addiu $a1, $a1, -0x4e88
 /* B3431C 800BD17C 248414B8 */  addiu $a0, %lo(D_801614B8) # addiu $a0, $a0, 0x14b8
 /* B34320 800BD180 00003025 */  move  $a2, $zero
 /* B34324 800BD184 0C035077 */  jal   Fault_AddClient
@@ -549,7 +549,7 @@ glabel func_800BCA64
 /* B3440C 800BD26C 00310821 */  addu  $at, $at, $s1
 /* B34410 800BD270 A020242B */  sb    $zero, 0x242b($at)
 .L800BD274:
-/* B34414 800BD274 0C02101F */  jal   func_8008407C
+/* B34414 800BD274 0C02101F */  jal   Interface_SetSceneRestrictions
 /* B34418 800BD278 02202025 */   move  $a0, $s1
 /* B3441C 800BD27C 0C01D62B */  jal   func_800758AC
 /* B34420 800BD280 02202025 */   move  $a0, $s1

@@ -12,7 +12,7 @@ glabel func_80A3DF60
 /* 008A8 80A3DF88 8FA4001C */  lw      $a0, 0x001C($sp)           
 /* 008AC 80A3DF8C 50400008 */  beql    $v0, $zero, .L80A3DFB0     
 /* 008B0 80A3DF90 8FBF0014 */  lw      $ra, 0x0014($sp)           
-/* 008B4 80A3DF94 0C021CC3 */  jal     func_8008730C              
+/* 008B4 80A3DF94 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 008B8 80A3DF98 2404FF38 */  addiu   $a0, $zero, 0xFF38         ## $a0 = FFFFFF38
 /* 008BC 80A3DF9C 8FAF0018 */  lw      $t7, 0x0018($sp)           
 /* 008C0 80A3DFA0 3C0E80A4 */  lui     $t6, %hi(func_80A3DC44)    ## $t6 = 80A40000

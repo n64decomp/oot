@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B3310
+glabel Bg_Spot12_Gate_InitVars
  .word 0x01900100, 0x00000000, 0x01620000, 0x0000016C
-.word func_808B3018
-.word func_808B3090
-.word func_808B32A4
-.word func_808B32D8
+.word BgSpot12Gate_Init
+.word BgSpot12Gate_Destroy
+.word BgSpot12Gate_Update
+.word BgSpot12Gate_Draw
 glabel D_808B3330
  .word 0xC8500064, 0xB0F409C4, 0xB0F801F4, 0x30FC04B0
 

@@ -1,16 +1,34 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_vb_sima.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/func_808BDD60.s")
+#define ROOM  0x00
+#define FLAGS 0x00000000
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/func_808BDDC8.s")
+void BgVbSima_Init(BgVbSima* this, GlobalContext* globalCtx);
+void BgVbSima_Destroy(BgVbSima* this, GlobalContext* globalCtx);
+void BgVbSima_Update(BgVbSima* this, GlobalContext* globalCtx);
+void BgVbSima_Draw(BgVbSima* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Vb_Sima_InitVars =
+{
+    ACTOR_BG_VB_SIMA,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_FD,
+    sizeof(BgVbSima),
+    (ActorFunc)BgVbSima_Init,
+    (ActorFunc)BgVbSima_Destroy,
+    (ActorFunc)BgVbSima_Update,
+    (ActorFunc)BgVbSima_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/BgVbSima_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/BgVbSima_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/func_808BDDF8.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/func_808BDEC4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/BgVbSima_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/func_808BE324.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Vb_Sima/BgVbSima_Draw.s")

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A4DE60
+glabel En_Goroiwa_InitVars
  .word 0x01300600, 0x00000010, 0x011F0000, 0x000001D4
-.word func_80A4D418
-.word func_80A4D5B8
-.word func_80A4DCC8
-.word func_80A4DE28
+.word EnGoroiwa_Init
+.word EnGoroiwa_Destroy
+.word EnGoroiwa_Update
+.word EnGoroiwa_Draw
 glabel D_80A4DE80
  .word 0x00000000, 0x20000000, 0x00040000, 0x00000000, 0x00000000, 0x01000100, 0x00000000, 0x00000000, 0x003A0064
 glabel D_80A4DEA4

@@ -66,7 +66,7 @@ glabel Fault_ProcessClientContext
 /* B4B294 800D40F4 34E74178 */  ori   $a3, (0x02CB4178 & 0xFFFF) # ori $a3, $a3, 0x4178
 /* B4B298 800D40F8 02802025 */  move  $a0, $s4
 /* B4B29C 800D40FC 24060000 */  li    $a2, 0
-/* B4B2A0 800D4100 0C0418B8 */  jal   func_801062E0
+/* B4B2A0 800D4100 0C0418B8 */  jal   osSetTimer
 /* B4B2A4 800D4104 AFB00018 */   sw    $s0, 0x18($sp)
 /* B4B2A8 800D4108 02002025 */  move  $a0, $s0
 /* B4B2AC 800D410C 02202825 */  move  $a1, $s1
@@ -88,7 +88,7 @@ glabel Fault_ProcessClientContext
 /* B4B2E8 800D4148 8FDF0054 */   lw    $ra, 0x54($fp)
 /* B4B2EC 800D414C 0C000C6C */  jal   osStopThread
 /* B4B2F0 800D4150 02A02025 */   move  $a0, $s5
-/* B4B2F4 800D4154 0C0010D0 */  jal   func_80004340
+/* B4B2F4 800D4154 0C0010D0 */  jal   osDestroyThread
 /* B4B2F8 800D4158 02A02025 */   move  $a0, $s5
 /* B4B2FC 800D415C 8FDF0054 */  lw    $ra, 0x54($fp)
 .L800D4160:

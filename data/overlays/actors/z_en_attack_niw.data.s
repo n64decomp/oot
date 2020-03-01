@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809B6150
+glabel En_Attack_Niw_InitVars
  .word 0x01440500, 0x00000010, 0x00130000, 0x000002E8
-.word func_809B5100
-.word func_809B5234
-.word func_809B5CD4
-.word func_809B60F0
+.word EnAttackNiw_Init
+.word EnAttackNiw_Destroy
+.word EnAttackNiw_Update
+.word EnAttackNiw_Draw
 glabel D_809B6170
  .word 0x801F0001, 0xB86CF830, 0x304C0000
 glabel D_809B617C

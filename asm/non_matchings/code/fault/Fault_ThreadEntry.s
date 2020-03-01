@@ -58,12 +58,12 @@ glabel Fault_ThreadEntry
 /* B4D2C4 800D6124 8E250000 */  lw    $a1, ($s1)
 /* B4D2C8 800D6128 2404000A */  li    $a0, 10
 /* B4D2CC 800D612C 24060001 */  li    $a2, 1
-/* B4D2D0 800D6130 0C001488 */  jal   func_80005220
+/* B4D2D0 800D6130 0C001488 */  jal   osSetEventMesg
 /* B4D2D4 800D6134 24A507B0 */   addiu $a1, $a1, 0x7b0
 /* B4D2D8 800D6138 8E250000 */  lw    $a1, ($s1)
 /* B4D2DC 800D613C 2404000C */  li    $a0, 12
 /* B4D2E0 800D6140 24060002 */  li    $a2, 2
-/* B4D2E4 800D6144 0C001488 */  jal   func_80005220
+/* B4D2E4 800D6144 0C001488 */  jal   osSetEventMesg
 /* B4D2E8 800D6148 24A507B0 */   addiu $a1, $a1, 0x7b0
 /* B4D2EC 800D614C 3C178014 */  lui   $s7, %hi(D_8014742C) # $s7, 0x8014
 /* B4D2F0 800D6150 3C168014 */  lui   $s6, %hi(D_80147408) # $s6, 0x8014

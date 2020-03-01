@@ -1,6 +1,27 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_demo_effect.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000030
+
+void DemoEffect_Init(DemoEffect* this, GlobalContext* globalCtx);
+void DemoEffect_Destroy(DemoEffect* this, GlobalContext* globalCtx);
+void DemoEffect_Update(DemoEffect* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Demo_Effect_InitVars =
+{
+    ACTOR_DEMO_EFFECT,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(DemoEffect),
+    (ActorFunc)DemoEffect_Init,
+    (ActorFunc)DemoEffect_Destroy,
+    (ActorFunc)DemoEffect_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80970F50.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80970F58.s")
@@ -9,9 +30,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80971070.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_809710C0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/DemoEffect_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80971914.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/DemoEffect_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80971960.s")
 
@@ -83,7 +104,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_8097456C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_80974690.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/DemoEffect_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_809746B4.s")
 
@@ -118,7 +139,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_8097670C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Effect/func_809767B0.s")
-
-
-
-

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809AFF60
+glabel En_Am_InitVars
  .word 0x00540500, 0x04000015, 0x00380000, 0x0000038C
-.word func_809AE050
-.word func_809AE218
-.word func_809AF9FC
-.word func_809AFDE4
+.word EnAm_Init
+.word EnAm_Destroy
+.word EnAm_Update
+.word EnAm_Draw
 glabel D_809AFF80
  .word 0x05000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x000F0046, 0x00000000, 0x00000000
 glabel D_809AFFAC

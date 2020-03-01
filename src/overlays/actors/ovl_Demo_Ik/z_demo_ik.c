@@ -1,7 +1,29 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_demo_ik.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_80983300.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
+
+void DemoIk_Init(DemoIk* this, GlobalContext* globalCtx);
+void DemoIk_Destroy(DemoIk* this, GlobalContext* globalCtx);
+void DemoIk_Update(DemoIk* this, GlobalContext* globalCtx);
+void DemoIk_Draw(DemoIk* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Demo_Ik_InitVars =
+{
+    ACTOR_DEMO_IK,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_IK,
+    sizeof(DemoIk),
+    (ActorFunc)DemoIk_Init,
+    (ActorFunc)DemoIk_Destroy,
+    (ActorFunc)DemoIk_Update,
+    (ActorFunc)DemoIk_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/DemoIk_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_8098330C.s")
 
@@ -73,14 +95,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_8098441C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_809845B4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/DemoIk_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_80984610.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_8098461C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/DemoIk_Draw.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/func_80984678.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ik/DemoIk_Init.s")

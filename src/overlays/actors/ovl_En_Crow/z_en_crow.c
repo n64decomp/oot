@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_crow.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E0240.s")
+#define ROOM  0x00
+#define FLAGS 0x00005005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E032C.s")
+void EnCrow_Init(EnCrow* this, GlobalContext* globalCtx);
+void EnCrow_Destroy(EnCrow* this, GlobalContext* globalCtx);
+void EnCrow_Update(EnCrow* this, GlobalContext* globalCtx);
+void EnCrow_Draw(EnCrow* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Crow_InitVars =
+{
+    ACTOR_EN_CROW,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_CROW,
+    sizeof(EnCrow),
+    (ActorFunc)EnCrow_Init,
+    (ActorFunc)EnCrow_Destroy,
+    (ActorFunc)EnCrow_Update,
+    (ActorFunc)EnCrow_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/EnCrow_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/EnCrow_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E0354.s")
 
@@ -31,14 +53,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E1174.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E1220.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/EnCrow_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E1434.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E1520.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/func_809E15E0.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Crow/EnCrow_Draw.s")

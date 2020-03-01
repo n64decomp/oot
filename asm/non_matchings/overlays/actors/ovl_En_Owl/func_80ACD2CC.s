@@ -92,8 +92,8 @@ glabel func_80ACD2CC
 /* 03500 80ACD420 27AF003C */  addiu   $t7, $sp, 0x003C           ## $t7 = FFFFFFF4
 /* 03504 80ACD424 46020402 */  mul.s   $f16, $f0, $f2             
 /* 03508 80ACD428 44802000 */  mtc1    $zero, $f4                 ## $f4 = 0.00
-/* 0350C 80ACD42C 3C0880AD */  lui     $t0, %hi(func_80ACCFB8)    ## $t0 = 80AD0000
-/* 03510 80ACD430 2508CFB8 */  addiu   $t0, $t0, %lo(func_80ACCFB8) ## $t0 = 80ACCFB8
+/* 0350C 80ACD42C 3C0880AD */  lui     $t0, %hi(EnOwl_Draw)    ## $t0 = 80AD0000
+/* 03510 80ACD430 2508CFB8 */  addiu   $t0, $t0, %lo(EnOwl_Draw) ## $t0 = 80ACCFB8
 /* 03514 80ACD434 46104480 */  add.s   $f18, $f8, $f16            
 /* 03518 80ACD438 E7B20044 */  swc1    $f18, 0x0044($sp)          
 /* 0351C 80ACD43C E60203F8 */  swc1    $f2, 0x03F8($s0)           ## 000003F8

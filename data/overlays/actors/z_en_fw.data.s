@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A1FB40
+glabel En_Fw_InitVars
  .word 0x00AB0500, 0x00000215, 0x009E0000, 0x00000700
-.word func_80A1EB40
-.word func_80A1EC48
-.word func_80A1F44C
-.word func_80A1F5E0
+.word EnFw_Init
+.word EnFw_Destroy
+.word EnFw_Update
+.word EnFw_Draw
 glabel D_80A1FB60
  .word 0x00000000, 0x00000000, 0x00040000, 0xFFCFFFFE, 0x00000000, 0x00050100, 0x020004B0, 0x00000000, 0x00100064
 glabel D_80A1FB84

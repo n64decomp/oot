@@ -80,7 +80,7 @@ glabel func_80AF95C4
 /* 008BC 80AF96DC 448B2000 */  mtc1    $t3, $f4                   ## $f4 = 0.00
 /* 008C0 80AF96E0 00000000 */  nop
 /* 008C4 80AF96E4 468021A0 */  cvt.s.w $f6, $f4                   
-/* 008C8 80AF96E8 0C0342DC */  jal     func_800D0B70              
+/* 008C8 80AF96E8 0C0342DC */  jal     Matrix_RotateX              
 /* 008CC 80AF96EC 46163303 */  div.s   $f12, $f6, $f22            
 /* 008D0 80AF96F0 3C1280B0 */  lui     $s2, %hi(D_80AFA660)       ## $s2 = 80B00000
 /* 008D4 80AF96F4 3C0380B0 */  lui     $v1, %hi(D_80AFA16C)       ## $v1 = 80B00000
@@ -190,7 +190,7 @@ glabel func_80AF95C4
 /* 00A60 80AF9880 016F0019 */  multu   $t3, $t7                   
 /* 00A64 80AF9884 00006812 */  mflo    $t5                        
 /* 00A68 80AF9888 A7AD0178 */  sh      $t5, 0x0178($sp)           
-/* 00A6C 80AF988C 0C03424C */  jal     func_800D0930              
+/* 00A6C 80AF988C 0C03424C */  jal     Matrix_Mult              
 /* 00A70 80AF9890 00000000 */  nop
 /* 00A74 80AF9894 3C0480B0 */  lui     $a0, %hi(D_80AFA0D0)       ## $a0 = 80B00000
 /* 00A78 80AF9898 2484A0D0 */  addiu   $a0, $a0, %lo(D_80AFA0D0)  ## $a0 = 80AFA0D0
@@ -206,7 +206,7 @@ glabel func_80AF95C4
 /* 00AA0 80AF98C0 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 00AA4 80AF98C4 46148483 */  div.s   $f18, $f16, $f20           
 /* 00AA8 80AF98C8 46049302 */  mul.s   $f12, $f18, $f4            
-/* 00AAC 80AF98CC 0C034348 */  jal     func_800D0D20              
+/* 00AAC 80AF98CC 0C034348 */  jal     Matrix_RotateY              
 /* 00AB0 80AF98D0 00000000 */  nop
 /* 00AB4 80AF98D4 87B80178 */  lh      $t8, 0x0178($sp)           
 /* 00AB8 80AF98D8 3C0180B0 */  lui     $at, %hi(D_80AFA4FC)       ## $at = 80B00000
@@ -216,7 +216,7 @@ glabel func_80AF95C4
 /* 00AC8 80AF98E8 46803220 */  cvt.s.w $f8, $f6                   
 /* 00ACC 80AF98EC 46144283 */  div.s   $f10, $f8, $f20            
 /* 00AD0 80AF98F0 46105302 */  mul.s   $f12, $f10, $f16           
-/* 00AD4 80AF98F4 0C0342DC */  jal     func_800D0B70              
+/* 00AD4 80AF98F4 0C0342DC */  jal     Matrix_RotateX              
 /* 00AD8 80AF98F8 00000000 */  nop
 /* 00ADC 80AF98FC 3C014080 */  lui     $at, 0x4080                ## $at = 40800000
 /* 00AE0 80AF9900 4481A000 */  mtc1    $at, $f20                  ## $f20 = 4.00
@@ -277,7 +277,7 @@ glabel func_80AF95C4
 /* 00BB8 80AF99D8 448E9000 */  mtc1    $t6, $f18                  ## $f18 = 0.00
 /* 00BBC 80AF99DC 00000000 */  nop
 /* 00BC0 80AF99E0 46809120 */  cvt.s.w $f4, $f18                  
-/* 00BC4 80AF99E4 0C0342DC */  jal     func_800D0B70              
+/* 00BC4 80AF99E4 0C0342DC */  jal     Matrix_RotateX              
 /* 00BC8 80AF99E8 46162303 */  div.s   $f12, $f4, $f22            
 /* 00BCC 80AF99EC 3C013F80 */  lui     $at, 0x3F80                ## $at = 3F800000
 /* 00BD0 80AF99F0 3C1280B0 */  lui     $s2, %hi(D_80AFA0E8)       ## $s2 = 80B00000

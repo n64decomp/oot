@@ -26,7 +26,7 @@ https://github.com/simonlindholm/decomp-permuter may be useful in fixing mismatc
 - reuse variables
 - fiddle with int promotion if relevant
 - special compiler-generated patterns, like turning `(x ^ A) < 1` back into `x == A`, or recognizing bit field access
-- declare variables within loop headers
+- initialize other variables within loop headers, like `for(i = 0, someothervar = 4; i < 4; i++)`
 
 ### Reorderings
 

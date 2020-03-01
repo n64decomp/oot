@@ -43,7 +43,7 @@ glabel func_80A313E0
 /* 00B10 80A31480 1000000E */  beq     $zero, $zero, .L80A314BC   
 /* 00B14 80A31484 AE3902B4 */  sw      $t9, 0x02B4($s1)           ## 000002B4
 .L80A31488:
-/* 00B18 80A31488 0C021CC3 */  jal     func_8008730C              
+/* 00B18 80A31488 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00B1C 80A3148C 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 00B20 80A31490 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 00B24 80A31494 0C042DC8 */  jal     func_8010B720              

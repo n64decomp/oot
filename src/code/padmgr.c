@@ -1,94 +1,56 @@
 #include <ultra64.h>
 #include <global.h>
 
-typedef struct
-{
-    /* 0x00 */ char unk_00[0x68];
-} PadMgr_2BC_Entry; // size = 0x68
+#include <PR/os_cont.h>
+#include <ultra64/controller.h>
+#include <padmgr.h>
 
-typedef struct
+OSMesgQueue* PadMgr_LockGetControllerQueue(PadMgr* padmgr)
 {
-    /* 0x00 */ u16 type;
-    /* 0x02 */ u8 status;
-    /* 0x03 */ u8 errnb;
-} OSContStatus; // size = 0x04
-
-typedef struct
-{
-    /* 0x0000 */ OSContStatus pad_status[4];
-    /* 0x0010 */ OSMesg unk_10[1];
-    /* 0x0014 */ OSMesg unk_14[1];
-    /* 0x0018 */ OSMesg unk_18[4];
-    /* 0x0028 */ OSMesgQueue unk_28;
-    /* 0x0040 */ OSMesgQueue unk_40;
-    /* 0x0058 */ OSMesgQueue unk_58;
-    /* 0x0070 */ UNK_TYPE unk_70;
-    /* 0x0074 */ UNK_TYPE unk_74;
-    /* 0x0078 */ UNK_TYPE unk_78;
-    /* 0x007C */ UNK_TYPE unk_7C;
-    /* 0x0080 */ OSThread thread;
-    /* 0x0230 */ char unk_230[0x78];
-    /* 0x02A8 */ u8 unk_2A8;
-    /* 0x02A9 */ u8 unk_2A9;
-    /* 0x02AA */ u8 unk_2AA[4];
-    /* 0x02AA */ u8 unk_2AE[4];
-    /* 0x02B2 */ u8 unk_2B2[4];
-    /* 0x02B6 */ u8 unk_2B6[4];
-    /* 0x02BA */ char unk_2BA[0x02];
-    /* 0x02BC */ PadMgr_2BC_Entry unk_2BC[4];
-    /* 0x045C */ u8 unk_45C;
-    /* 0x045D */ u8 unk_45D;
-    /* 0x045E */ u8 unk_45E;
-    /* 0x045F */ u8 unk_45F;
-    /* 0x0460 */ char unk_460[0x08];
-} PadMgr; // size = 0x468
-
-OSMesg func_800C7250(PadMgr* padmgr)
-{
-    OSMesg mesg = NULL;
+    OSMesgQueue* ctrlrqueue = NULL;
 
     if (D_8012D280 > 2)
-        osSyncPrintf(D_801457B0, osGetThreadId(NULL), padmgr->unk_28.validCount, padmgr, &padmgr->unk_28, &mesg);
+        osSyncPrintf(D_801457B0, osGetThreadId(NULL), padmgr->queue1.validCount, padmgr, &padmgr->queue1, &ctrlrqueue);
 
-    osRecvMesg(&padmgr->unk_28, &mesg, OS_MESG_BLOCK);
+    osRecvMesg(&padmgr->queue1, &ctrlrqueue, OS_MESG_BLOCK);
 
     if (D_8012D280 > 2)
-        osSyncPrintf(D_801457F0, osGetThreadId(NULL), padmgr->unk_28.validCount, mesg);
+        osSyncPrintf(D_801457F0, osGetThreadId(NULL), padmgr->queue1.validCount, ctrlrqueue);
 
-    return mesg;
+    return ctrlrqueue;
 }
 
-void func_800C72FC(PadMgr* padmgr, OSMesg mesg)
+void PadMgr_UnlockReleaseControllerQueue(PadMgr* padmgr, OSMesgQueue* ctrlrqueue)
 {
     if (D_8012D280 > 2)
-        osSyncPrintf(D_8014582C, osGetThreadId(NULL), padmgr->unk_28.validCount, padmgr, &padmgr->unk_28, mesg);
+        osSyncPrintf(D_8014582C, osGetThreadId(NULL), padmgr->queue1.validCount, padmgr, &padmgr->queue1, ctrlrqueue);
 
-    osSendMesg(&padmgr->unk_28, mesg, OS_MESG_BLOCK);
+    osSendMesg(&padmgr->queue1, ctrlrqueue, OS_MESG_BLOCK);
 
     if (D_8012D280 > 2)
-        osSyncPrintf(D_80145860, osGetThreadId(NULL), padmgr->unk_28.validCount, padmgr, &padmgr->unk_28, mesg);
+        osSyncPrintf(D_80145860, osGetThreadId(NULL), padmgr->queue1.validCount, padmgr, &padmgr->queue1, ctrlrqueue);
 }
 
-void func_800C73BC(PadMgr* padmgr)
+void PadMgr_Lock2(PadMgr* padmgr)
 {
-    osRecvMesg(&padmgr->unk_40, 0, OS_MESG_BLOCK);
+    osRecvMesg(&padmgr->queue2, 0, OS_MESG_BLOCK);
 }
 
-void func_800C73E4(PadMgr* padmgr)
+void PadMgr_Unlock2(PadMgr* padmgr)
 {
-    osSendMesg(&padmgr->unk_40, 0, OS_MESG_BLOCK);
+    osSendMesg(&padmgr->queue2, 0, OS_MESG_BLOCK);
 }
 
 #ifdef NON_MATCHING
 void func_800C740C(PadMgr* padmgr)
 {
     s32 var1;
-    OSMesg var2;
+    OSMesgQueue* ctrlrqueue;
     s32 var3;
     s32 var4;
     s32 i;
 
-    var2 = func_800C7250(padmgr);
+    ctrlrqueue = PadMgr_LockGetControllerQueue(padmgr);
     var1 = 0;
 
     for (i = 0; i < 4; i++)
@@ -103,14 +65,14 @@ void func_800C740C(PadMgr* padmgr)
                     {
                         if (padmgr->unk_2B6[i] < 3)
                         {
-                            osSyncPrintf(D_80145894);
-                            osSyncPrintf(D_8014589C, i + 1, D_801458B0);
-                            osSyncPrintf(D_801458CC);
-                            if (func_80100780(&padmgr->unk_2BC[i], 1) != 0)
+                            osSyncPrintf(D_80145894); //"\x1b[33m" (probably formatting/debugger interface)
+                            osSyncPrintf(D_8014589C, i + 1, D_801458B0); //"padmgr: %d[JPN]Con: ", "[JPN]Vibration pack jumble jumble"
+                            osSyncPrintf(D_801458CC); //"\x1b[m" (probably formatting/debugger interface)
+                            if (osSetVibration(&padmgr->unk_controller[i], 1) != 0)
                             {
                                 padmgr->unk_2AE[i] = 0;
                                 osSyncPrintf(D_801458D0);
-                                osSyncPrintf(D_801458D8, i + 1, D_801458EC);
+                                osSyncPrintf(D_801458D8, i + 1, D_801458EC); //"A communication error has occurred with the vibraton pack"
                                 osSyncPrintf(D_80145914);
                             }
                             else
@@ -125,13 +87,13 @@ void func_800C740C(PadMgr* padmgr)
                         if (padmgr->unk_2B6[i] != 0)
                         {
                             osSyncPrintf(D_80145918);
-                            osSyncPrintf(D_80145920, i + 1, D_80145934);
+                            osSyncPrintf(D_80145920, i + 1, D_80145934); //"Stop vibration pack"
                             osSyncPrintf(D_80145944);
-                            if (func_80100780(&padmgr->unk_2BC[i], 0) != 0)
+                            if (osSetVibration(&padmgr->unk_controller[i], 0) != 0)
                             {
                                 padmgr->unk_2AE[i] = 0;
                                 osSyncPrintf(D_80145948);
-                                osSyncPrintf(D_80145950, i + 1, D_80145964);
+                                osSyncPrintf(D_80145950, i + 1, D_80145964); //"A communication error has occurred with the vibration pack"
                                 osSyncPrintf(D_8014598C);
                             }
                             else
@@ -150,15 +112,15 @@ void func_800C740C(PadMgr* padmgr)
                     if (padmgr->unk_2AE[i] == 1)
                     {
                         osSyncPrintf(D_80145990);
-                        osSyncPrintf(D_80145998, i + 1, D_801459AC);
+                        osSyncPrintf(D_80145998, i + 1, D_801459AC); //"Vibration pack seems to be pulled out"
                         osSyncPrintf(D_801459CC);
                         padmgr->unk_2AE[i] = 0;
                     }
                     else
                     {
                         osSyncPrintf(D_801459D0);
-                        osSyncPrintf(D_801459D8, i + 1, D_801459EC);
                         osSyncPrintf(D_80145A24);
+                        osSyncPrintf(D_801459D8, i + 1, D_801459EC); //"It seems that a controller pack that is not a vibration pack was pulled out"
                         padmgr->unk_2AE[i] = 0;
                     }
                 }
@@ -172,15 +134,15 @@ void func_800C740C(PadMgr* padmgr)
 
         if ((padmgr->unk_2AA[var3] != 0) && (padmgr->pad_status[var3].status & 1) && (padmgr->unk_2AE[var3] != 1))
         {
-            var4 = func_801009F4(var2, &padmgr->unk_2BC[var3], var3);
+            var4 = osProbeVibrationPack(ctrlrqueue, &padmgr->unk_controller[var3], var3);
 
             if (var4 == 0)
             {
                 padmgr->unk_2AE[var3] = 1;
-                func_80100780(&padmgr->unk_2BC[var3], 1);
-                func_80100780(&padmgr->unk_2BC[var3], 0);
+                osSetVibration(&padmgr->unk_controller[var3], 1);
+                osSetVibration(&padmgr->unk_controller[var3], 0);
                 osSyncPrintf(D_80145A28);
-                osSyncPrintf(D_80145A30, var3 + 1, D_80145A44);
+                osSyncPrintf(D_80145A30, var3 + 1, D_80145A44); //"Recognized vibration pack"
                 osSyncPrintf(D_80145A60);
             }
             else if (var4 == 11)
@@ -189,46 +151,47 @@ void func_800C740C(PadMgr* padmgr)
             }
             else if (var4 == 4)
             {
-                SyncPrintfWithThreadId(D_80145A64, 282);
-                D_8012D284++;
-                osSyncPrintf(D_80145A70);
+                LogUtils_LogThreadId(D_80145A64, 282);
+                ++D_8012D284;
+                osSyncPrintf(D_80145A70, D_8012D284); //"++errcnt = %d"
                 osSyncPrintf(D_80145A80);
-                osSyncPrintf(D_80145A88, var3 + 1, D_80145A9C);
+                osSyncPrintf(D_80145A88, var3 + 1, D_80145A9C); //"Controller pack communication error"
                 osSyncPrintf(D_80145ABC);
             }
         }
     }
 
     D_8016A4F0++;
-    func_800C72FC(padmgr, var2);
+    PadMgr_UnlockReleaseControllerQueue(padmgr, ctrlrqueue);
 }
 #else
 #pragma GLOBAL_ASM("asm/non_matchings/code/padmgr/func_800C740C.s")
 #endif
 
+//func_800A2300 in 1.0
 void func_800C7818(PadMgr* padmgr)
 {
     s32 i;
-    OSMesg mesg;
+    OSMesgQueue* ctrlrqueue;
 
-    mesg = func_800C7250(padmgr);
+    ctrlrqueue = PadMgr_LockGetControllerQueue(padmgr);
 
     for (i = 0; i < 4; i++)
     {
-        if (func_801009F4(mesg, &padmgr->unk_2BC[i], i) == 0)
+        if (osProbeVibrationPack(ctrlrqueue, &padmgr->unk_controller[i], i) == 0)
         {
             if ((gFaultStruct.msgId == 0) && (padmgr->unk_45D != 0))
             {
                 osSyncPrintf(D_80145AC0);
-                osSyncPrintf(D_80145AC8, i + 1, D_80145ADC);
+                osSyncPrintf(D_80145AC8, i + 1, D_80145ADC); //"Stop vibration pack"
                 osSyncPrintf(D_80145AEC);
             }
 
-            func_80100780(&padmgr->unk_2BC[i], 0);
+            osSetVibration(&padmgr->unk_controller[i], 0);
         }
     }
 
-    func_800C72FC(padmgr, mesg);
+    PadMgr_UnlockReleaseControllerQueue(padmgr, ctrlrqueue);
 }
 
 void func_800C7928(PadMgr* padmgr)
@@ -243,6 +206,7 @@ void func_800C7934(PadMgr* padmgr, u32 a1, u32 a2)
 }
 
 #ifdef NON_MATCHING
+//func_800A23CC in 1.0
 void func_800C7948(PadMgr* padmgr, u8* a1)
 {
     padmgr->unk_2B2[0] = a1[0];
@@ -268,8 +232,10 @@ void func_800C7DD0(PadMgr* padmgr)
 }
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/padmgr/func_800C7E08.s")
+//void func_800C7E08(Input*, u32);
 
-void func_800C7F80(PadMgr* padmgr)
+//800A2918 in 1.0
+void PadMgr_Run(PadMgr* padmgr)
 {
     s16* mesg;
     s32 bVar2;
@@ -280,15 +246,15 @@ void func_800C7F80(PadMgr* padmgr)
 
     while (bVar2 == 0)
     {
-        if ((D_8012D280 > 2) && (padmgr->unk_58.validCount == 0))
+        if ((D_8012D280 > 2) && (padmgr->queue3.validCount == 0))
             osSyncPrintf(D_80145C78, (osGetTime() * 64) / 3000);
 
-        osRecvMesg(&padmgr->unk_58, &mesg, OS_MESG_BLOCK);
-        NullPointerCheck(D_80145CA0, mesg, D_80145CA4, 563);
+        osRecvMesg(&padmgr->queue3, &mesg, OS_MESG_BLOCK);
+        LogUtils_CheckNullPointer(D_80145CA0, mesg, D_80145CA4, 563);
 
         switch (*mesg)
         {
-            case 1:
+            case OS_SC_RETRACE_MSG:
                 if (D_8012D280 > 2)
                     osSyncPrintf(D_80145CB0, (osGetTime() * 64) / 3000);
 
@@ -298,36 +264,37 @@ void func_800C7F80(PadMgr* padmgr)
                     osSyncPrintf(D_80145CD4, (osGetTime() * 64) / 3000);
 
                 break;
-            case 4:
+            case OS_SC_PRE_NMI_MSG:
                 func_800C7DD0(padmgr);
                 break;
-            case 3:
+            case OS_SC_NMI_MSG:
                 bVar2 = 1;
                 break;
         }
     }
 
-    func_800D3300(padmgr->unk_78, &padmgr->unk_70);
+    IrqMgr_RemoveClient(padmgr->unk_78, &padmgr->unk_70);
     osSyncPrintf(D_80145CF8);
 }
 
-void func_800C819C(PadMgr* padmgr, OSMesg mesg, UNK_TYPE arg2, OSId id, OSPri priority, void* stack)
+//func_800A2A14 in 1.0
+void PadMgr_Init(PadMgr* padmgr, OSMesgQueue* ctrlrqueue, UNK_TYPE arg2, OSId id, OSPri priority, void* stack)
 {
     osSyncPrintf(D_80145D18);
     bzero(padmgr, sizeof(PadMgr));
     padmgr->unk_78 = arg2;
 
-    osCreateMesgQueue(&padmgr->unk_58, padmgr->unk_18, 4);
-    func_800D3220(padmgr->unk_78, &padmgr->unk_70, &padmgr->unk_58);
-    osCreateMesgQueue(&padmgr->unk_28, padmgr->unk_10, 1);
-    func_800C72FC(padmgr, mesg);
-    osCreateMesgQueue(&padmgr->unk_40, padmgr->unk_14, 1);
-    func_800C73E4(padmgr);
-    func_800FCD40(mesg, &padmgr->unk_2A8, padmgr);
+    osCreateMesgQueue(&padmgr->queue3, padmgr->msgbuf3, 4);
+    IrqMgr_AddClient(padmgr->unk_78, &padmgr->unk_70, &padmgr->queue3);
+    osCreateMesgQueue(&padmgr->queue1, padmgr->msgbuf1, 1);
+    PadMgr_UnlockReleaseControllerQueue(padmgr, ctrlrqueue);
+    osCreateMesgQueue(&padmgr->queue2, padmgr->msgbuf2, 1);
+    PadMgr_Unlock2(padmgr);
+    func_800FCD40(ctrlrqueue, &padmgr->unk_2A8, padmgr);
 
     padmgr->unk_2A9 = 4;
     func_80104D00(padmgr->unk_2A9);
 
-    osCreateThread(&padmgr->thread, id, func_800C7F80, padmgr, stack, priority);
+    osCreateThread(&padmgr->thread, id, PadMgr_Run, padmgr, stack, priority);
     osStartThread(&padmgr->thread);
 }

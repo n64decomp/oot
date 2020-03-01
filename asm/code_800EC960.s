@@ -58,8 +58,8 @@ glabel func_800ECA00
 /* B63BA4 800ECA04 8DCEBA0C */  lw    $t6, %lo(D_8016BA0C)($t6)
 /* B63BA8 800ECA08 27BDFF80 */  addiu $sp, $sp, -0x80
 /* B63BAC 800ECA0C AFBF0014 */  sw    $ra, 0x14($sp)
-/* B63BB0 800ECA10 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B63BB4 800ECA14 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B63BB0 800ECA10 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B63BB4 800ECA14 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B63BB8 800ECA18 27A50020 */  addiu $a1, $sp, 0x20
 /* B63BBC 800ECA1C 00003025 */  move  $a2, $zero
 /* B63BC0 800ECA20 0C031F82 */  jal   func_800C7E08
@@ -2304,8 +2304,8 @@ glabel func_800EE930
 glabel func_800EE97C
 /* B65B1C 800EE97C 27BDFF80 */  addiu $sp, $sp, -0x80
 /* B65B20 800EE980 AFBF0014 */  sw    $ra, 0x14($sp)
-/* B65B24 800EE984 3C048016 */  lui   $a0, %hi(D_801668C0) # $a0, 0x8016
-/* B65B28 800EE988 248468C0 */  addiu $a0, %lo(D_801668C0) # addiu $a0, $a0, 0x68c0
+/* B65B24 800EE984 3C048016 */  lui   $a0, %hi(gPadMgr) # $a0, 0x8016
+/* B65B28 800EE988 248468C0 */  addiu $a0, %lo(gPadMgr) # addiu $a0, $a0, 0x68c0
 /* B65B2C 800EE98C 27A50020 */  addiu $a1, $sp, 0x20
 /* B65B30 800EE990 0C031F82 */  jal   func_800C7E08
 /* B65B34 800EE994 00003025 */   move  $a2, $zero

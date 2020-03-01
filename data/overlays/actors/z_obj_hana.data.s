@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B93A50
+glabel Obj_Hana_InitVars
  .word 0x014F0600, 0x00000000, 0x00020000, 0x00000198
-.word func_80B93860
-.word func_80B93958
-.word func_80B939A0
-.word func_80B93A10
+.word ObjHana_Init
+.word ObjHana_Destroy
+.word ObjHana_Update
+.word ObjHana_Draw
 glabel D_80B93A70
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0008000A, 0x00000000, 0x00000000
 glabel D_80B93A9C

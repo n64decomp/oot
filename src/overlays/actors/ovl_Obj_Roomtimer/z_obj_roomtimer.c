@@ -24,7 +24,7 @@ static void Update(ActorRoomTimer* this, GlobalContext* globalCtx);
 static void func_80B9D054(ActorRoomTimer* this, GlobalContext* globalCtx);
 static void func_80B9D0B0(ActorRoomTimer* this, GlobalContext* globalCtx);
 
-const ActorInit Obj_RoomTimer_InitVars =
+const ActorInit Obj_Roomtimer_InitVars =
 {
     ACTOR_OBJ_ROOMTIMER,
     ACTORTYPE_ENEMY,

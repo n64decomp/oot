@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B9FDF0
+glabel Obj_Syokudai_InitVars
  .word 0x005E0600, 0x00000410, 0x00A40000, 0x000001FC
-.word func_80B9F2B0
-.word func_80B9F470
-.word func_80B9F4C4
-.word func_80B9FAE4
+.word ObjSyokudai_Init
+.word ObjSyokudai_Destroy
+.word ObjSyokudai_Update
+.word ObjSyokudai_Draw
 glabel D_80B9FE10
  .word 0x09000D39, 0x20010000, 0x02000000, 0x00100000, 0x00000000, 0xEE01FFFF, 0x00000000, 0x00050100, 0x000C002D, 0x00000000, 0x00000000
 glabel D_80B9FE3C

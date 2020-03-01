@@ -65,10 +65,10 @@ glabel func_80B6C960
 /* 030B0 80B6CA50 46000304 */  sqrt.s  $f12, $f0                  
 /* 030B4 80B6CA54 46000507 */  neg.s   $f20, $f0                  
 /* 030B8 80B6CA58 4600D306 */  mov.s   $f12, $f26                 
-/* 030BC 80B6CA5C 0C034348 */  jal     func_800D0D20              
+/* 030BC 80B6CA5C 0C034348 */  jal     Matrix_RotateY              
 /* 030C0 80B6CA60 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 030C4 80B6CA64 4600A306 */  mov.s   $f12, $f20                 
-/* 030C8 80B6CA68 0C0342DC */  jal     func_800D0B70              
+/* 030C8 80B6CA68 0C0342DC */  jal     Matrix_RotateX              
 /* 030CC 80B6CA6C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 030D0 80B6CA70 02802025 */  or      $a0, $s4, $zero            ## $a0 = FFFFFFD8
 /* 030D4 80B6CA74 0C0346BD */  jal     func_800D1AF4              

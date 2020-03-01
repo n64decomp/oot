@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B1690
+glabel Bg_Spot08_Iceblock_InitVars
  .word 0x00D10100, 0x00000000, 0x00740000, 0x0000019C
-.word func_808B1154
-.word func_808B1358
-.word func_808B1594
-.word func_808B162C
+.word BgSpot08Iceblock_Init
+.word BgSpot08Iceblock_Destroy
+.word BgSpot08Iceblock_Update
+.word BgSpot08Iceblock_Draw
 glabel D_808B16B0
  .word 0x00000000, 0x3F800000, 0x00000000
 glabel D_808B16BC

@@ -9,10 +9,10 @@
 
 glabel D_809C56E0
  .word 0x00000033, 0x0000003E, 0x00000003, 0x00000065, 0x00000055
-glabel D_809C56F4
+glabel En_Bom_Bowl_Pit_InitVars
  .word 0x014C0600, 0x00000010, 0x00010000, 0x00003704
-.word func_809C4E40
-.word func_809C4E54
-.word func_809C5698
+.word EnBomBowlPit_Init
+.word EnBomBowlPit_Destroy
+.word EnBomBowlPit_Update
 .word 0x00000000, 0x00000000, 0x00000000, 0x00000000
 

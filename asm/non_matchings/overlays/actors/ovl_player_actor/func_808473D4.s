@@ -445,7 +445,7 @@ glabel func_808473D4
 .L808479F8:
 /* 157E8 808479F8 8FA40030 */  lw      $a0, 0x0030($sp)           
 /* 157EC 808479FC 30E5FFFF */  andi    $a1, $a3, 0xFFFF           ## $a1 = 0000000A
-/* 157F0 80847A00 0C021BC0 */  jal     func_80086F00              
+/* 157F0 80847A00 0C021BC0 */  jal     Interface_SetDoAction              
 /* 157F4 80847A04 AFA60034 */  sw      $a2, 0x0034($sp)           
 /* 157F8 80847A08 8FA60034 */  lw      $a2, 0x0034($sp)           
 /* 157FC 80847A0C 8FA40030 */  lw      $a0, 0x0030($sp)           
@@ -458,21 +458,21 @@ glabel func_808473D4
 /* 15818 80847A28 8FA40030 */  lw      $a0, 0x0030($sp)           
 /* 1581C 80847A2C 11800005 */  beq     $t4, $zero, .L80847A44     
 /* 15820 80847A30 00000000 */  nop
-/* 15824 80847A34 0C021BE2 */  jal     func_80086F88              
+/* 15824 80847A34 0C021BE2 */  jal     Interface_SetNaviCall              
 /* 15828 80847A38 8FA40030 */  lw      $a0, 0x0030($sp)           
 /* 1582C 80847A3C 10000004 */  beq     $zero, $zero, .L80847A50   
 /* 15830 80847A40 8FA40030 */  lw      $a0, 0x0030($sp)           
 .L80847A44:
-/* 15834 80847A44 0C021BE2 */  jal     func_80086F88              
+/* 15834 80847A44 0C021BE2 */  jal     Interface_SetNaviCall              
 /* 15838 80847A48 2405001D */  addiu   $a1, $zero, 0x001D         ## $a1 = 0000001D
 /* 1583C 80847A4C 8FA40030 */  lw      $a0, 0x0030($sp)           
 .L80847A50:
-/* 15840 80847A50 0C021BE2 */  jal     func_80086F88              
+/* 15840 80847A50 0C021BE2 */  jal     Interface_SetNaviCall              
 /* 15844 80847A54 2405001E */  addiu   $a1, $zero, 0x001E         ## $a1 = 0000001E
 /* 15848 80847A58 10000004 */  beq     $zero, $zero, .L80847A6C   
 /* 1584C 80847A5C 8FBF0014 */  lw      $ra, 0x0014($sp)           
 .L80847A60:
-/* 15850 80847A60 0C021BE2 */  jal     func_80086F88              
+/* 15850 80847A60 0C021BE2 */  jal     Interface_SetNaviCall              
 /* 15854 80847A64 2405001F */  addiu   $a1, $zero, 0x001F         ## $a1 = 0000001F
 .L80847A68:
 /* 15858 80847A68 8FBF0014 */  lw      $ra, 0x0014($sp)           

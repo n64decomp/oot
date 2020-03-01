@@ -34,7 +34,7 @@ glabel func_809EDEDC
 /* 006E4 809EDF54 29E10014 */  slti    $at, $t7, 0x0014           
 /* 006E8 809EDF58 54200008 */  bnel    $at, $zero, .L809EDF7C     
 /* 006EC 809EDF5C A60002A4 */  sh      $zero, 0x02A4($s0)         ## 000002A4
-/* 006F0 809EDF60 0C021CC3 */  jal     func_8008730C              
+/* 006F0 809EDF60 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 006F4 809EDF64 2404FFEC */  addiu   $a0, $zero, 0xFFEC         ## $a0 = FFFFFFEC
 /* 006F8 809EDF68 8FA70024 */  lw      $a3, 0x0024($sp)           
 /* 006FC 809EDF6C 24184054 */  addiu   $t8, $zero, 0x4054         ## $t8 = 00004054

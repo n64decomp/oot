@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8086CD50
+glabel Bg_Bdan_Objects_InitVars
  .word 0x00C80100, 0x00000010, 0x00960000, 0x000001BC
-.word func_8086BD84
-.word func_8086C004
-.word func_8086CC48
-.word func_8086CC84
+.word BgBdanObjects_Init
+.word BgBdanObjects_Destroy
+.word BgBdanObjects_Update
+.word BgBdanObjects_Draw
 glabel D_8086CD70
  .word 0x0A110000, 0x20010000, 0x00000000, 0xFFCFFFFF, 0x00040000, 0x00000000, 0x00000000, 0x09000000, 0x00BB0050, 0x00000000, 0x00000000
 glabel D_8086CD9C

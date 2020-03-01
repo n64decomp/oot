@@ -45,10 +45,10 @@ glabel func_80A23204
               
 /* 013E8 80A232A8 E7A60030 */  swc1    $f6, 0x0030($sp)           
 /* 013EC 80A232AC 46000306 */  mov.s   $f12, $f0                  
-/* 013F0 80A232B0 0C034348 */  jal     func_800D0D20              
+/* 013F0 80A232B0 0C034348 */  jal     Matrix_RotateY              
 /* 013F4 80A232B4 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 013F8 80A232B8 C7AC0030 */  lwc1    $f12, 0x0030($sp)          
-/* 013FC 80A232BC 0C0342DC */  jal     func_800D0B70              
+/* 013FC 80A232BC 0C0342DC */  jal     Matrix_RotateX              
 /* 01400 80A232C0 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 01404 80A232C4 44800000 */  mtc1    $zero, $f0                 ## $f0 = 0.00
 /* 01408 80A232C8 3C0141A0 */  lui     $at, 0x41A0                ## $at = 41A00000

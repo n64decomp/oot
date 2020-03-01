@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_boss_va.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000035
+
+void BossVa_Init(BossVa* this, GlobalContext* globalCtx);
+void BossVa_Destroy(BossVa* this, GlobalContext* globalCtx);
+void BossVa_Update(BossVa* this, GlobalContext* globalCtx);
+void BossVa_Draw(BossVa* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Boss_Va_InitVars =
+{
+    ACTOR_BOSS_VA,
+    ACTORTYPE_BOSS,
+    ROOM,
+    FLAGS,
+    OBJECT_BV,
+    sizeof(BossVa),
+    (ActorFunc)BossVa_Init,
+    (ActorFunc)BossVa_Destroy,
+    (ActorFunc)BossVa_Update,
+    (ActorFunc)BossVa_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8094F2C0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8094F2C8.s")
@@ -23,9 +45,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8094FC70.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8094FE5C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/BossVa_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_809506A8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/BossVa_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_809506F0.s")
 
@@ -115,7 +137,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_80957CEC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_80957D5C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/BossVa_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_80957F60.s")
 
@@ -133,7 +155,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_80958FFC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_809591C8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/BossVa_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_809597F4.s")
 
@@ -154,8 +176,4 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8095BBD0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Va/func_8095BD24.s")
-
-
-
-
 

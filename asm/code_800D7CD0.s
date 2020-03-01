@@ -222,10 +222,10 @@ glabel func_800D7F5C
 /* B4F108 800D7F68 8FA40018 */  lw    $a0, 0x18($sp)
 /* B4F10C 800D7F6C 0C001114 */  jal   bzero
 /* B4F110 800D7F70 240500D8 */   li    $a1, 216
-/* B4F114 800D7F74 3C028016 */  lui   $v0, %hi(D_80166FA8) # $v0, 0x8016
-/* B4F118 800D7F78 3C048016 */  lui   $a0, %hi(D_80166FE8) # $a0, 0x8016
-/* B4F11C 800D7F7C 24846FE8 */  addiu $a0, %lo(D_80166FE8) # addiu $a0, $a0, 0x6fe8
-/* B4F120 800D7F80 24426FA8 */  addiu $v0, %lo(D_80166FA8) # addiu $v0, $v0, 0x6fa8
+/* B4F114 800D7F74 3C028016 */  lui   $v0, %hi(gSegments) # $v0, 0x8016
+/* B4F118 800D7F78 3C048016 */  lui   $a0, %hi(sGraphThread) # $a0, 0x8016
+/* B4F11C 800D7F7C 24846FE8 */  addiu $a0, %lo(sGraphThread) # addiu $a0, $a0, 0x6fe8
+/* B4F120 800D7F80 24426FA8 */  addiu $v0, %lo(gSegments) # addiu $v0, $v0, 0x6fa8
 /* B4F124 800D7F84 8FA30018 */  lw    $v1, 0x18($sp)
 .L800D7F88:
 /* B4F128 800D7F88 8C4E0000 */  lw    $t6, ($v0)

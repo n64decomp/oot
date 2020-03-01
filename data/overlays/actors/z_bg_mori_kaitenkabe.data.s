@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808A53B0
+glabel Bg_Mori_Kaitenkabe_InitVars
  .word 0x00880100, 0x00000000, 0x00720000, 0x00000188
-.word func_808A4E30
-.word func_808A4F0C
-.word func_808A5288
+.word BgMoriKaitenkabe_Init
+.word BgMoriKaitenkabe_Destroy
+.word BgMoriKaitenkabe_Update
 .word 0x00000000
 glabel D_808A53D0
  .word 0xB0F403E8, 0xB0F803E8, 0xB0FC03E8, 0x485003E8

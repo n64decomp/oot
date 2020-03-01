@@ -70,7 +70,7 @@ glabel func_80B15FE8
 /* 02648 80B160E8 24C66938 */  addiu   $a2, $a2, %lo(func_80B16938) ## $a2 = 80B16938
 /* 0264C 80B160EC 0C2C4EA8 */  jal     func_80B13AA0              
 /* 02650 80B160F0 24A55E80 */  addiu   $a1, $a1, %lo(func_80B15E80) ## $a1 = 80B15E80
-/* 02654 80B160F4 0C021CC3 */  jal     func_8008730C              
+/* 02654 80B160F4 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 02658 80B160F8 2404FFE2 */  addiu   $a0, $zero, 0xFFE2         ## $a0 = FFFFFFE2
 /* 0265C 80B160FC 3C014248 */  lui     $at, 0x4248                ## $at = 42480000
 /* 02660 80B16100 44812000 */  mtc1    $at, $f4                   ## $f4 = 50.00
@@ -100,7 +100,7 @@ glabel func_80B15FE8
 /* 026BC 80B1615C 1000000F */  beq     $zero, $zero, .L80B1619C   
 /* 026C0 80B16160 960202E0 */  lhu     $v0, 0x02E0($s0)           ## 000002E0
 .L80B16164:
-/* 026C4 80B16164 0C021CC3 */  jal     func_8008730C              
+/* 026C4 80B16164 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 026C8 80B16168 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 026CC 80B1616C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 026D0 80B16170 0C2C5764 */  jal     func_80B15D90              

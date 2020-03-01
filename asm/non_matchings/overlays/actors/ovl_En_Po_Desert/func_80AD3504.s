@@ -20,7 +20,7 @@ glabel func_80AD3504
 /* 0089C 80AD354C 468021A0 */  cvt.s.w $f6, $f4                   
 /* 008A0 80AD3550 46083302 */  mul.s   $f12, $f6, $f8             
 /* 008A4 80AD3554 44066000 */  mfc1    $a2, $f12                  
-/* 008A8 80AD3558 0C0342A3 */  jal     func_800D0A8C              
+/* 008A8 80AD3558 0C0342A3 */  jal     Matrix_Scale              
 /* 008AC 80AD355C 46006386 */  mov.s   $f14, $f12                 
 /* 008B0 80AD3560 8FA4002C */  lw      $a0, 0x002C($sp)           
 .L80AD3564:

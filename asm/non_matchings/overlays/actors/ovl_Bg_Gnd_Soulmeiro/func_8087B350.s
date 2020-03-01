@@ -11,8 +11,8 @@ glabel func_8087B350
 /* 005B0 8087B370 30A5003F */  andi    $a1, $a1, 0x003F           ## $a1 = 00000000
 /* 005B4 8087B374 10400005 */  beq     $v0, $zero, .L8087B38C     
 /* 005B8 8087B378 8FA60018 */  lw      $a2, 0x0018($sp)           
-/* 005BC 8087B37C 3C0E8088 */  lui     $t6, %hi(func_8087B3CC)    ## $t6 = 80880000
-/* 005C0 8087B380 25CEB3CC */  addiu   $t6, $t6, %lo(func_8087B3CC) ## $t6 = 8087B3CC
+/* 005BC 8087B37C 3C0E8088 */  lui     $t6, %hi(BgGndSoulmeiro_Draw)    ## $t6 = 80880000
+/* 005C0 8087B380 25CEB3CC */  addiu   $t6, $t6, %lo(BgGndSoulmeiro_Draw) ## $t6 = 8087B3CC
 /* 005C4 8087B384 10000002 */  beq     $zero, $zero, .L8087B390   
 /* 005C8 8087B388 ACCE0134 */  sw      $t6, 0x0134($a2)           ## 00000134
 .L8087B38C:

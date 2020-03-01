@@ -41,7 +41,7 @@ glabel func_80983820
 .L809838B0:
 /* 005B0 809838B0 3C068003 */  lui     $a2, 0x8003                ## $a2 = 80030000
 /* 005B4 809838B4 44070000 */  mfc1    $a3, $f0                   
-/* 005B8 809838B8 0C00AC78 */  jal     Actor_InitShadow
+/* 005B8 809838B8 0C00AC78 */  jal     ActorShape_Init
               
 /* 005BC 809838BC 24C6B5EC */  addiu   $a2, $a2, 0xB5EC           ## $a2 = 8002B5EC
 /* 005C0 809838C0 2605014C */  addiu   $a1, $s0, 0x014C           ## $a1 = 0000014C

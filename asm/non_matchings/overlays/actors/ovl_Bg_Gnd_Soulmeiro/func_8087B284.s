@@ -13,8 +13,8 @@ glabel func_8087B284
 /* 004EC 8087B2AC 54400024 */  bnel    $v0, $zero, .L8087B340     
 /* 004F0 8087B2B0 8FBF0024 */  lw      $ra, 0x0024($sp)           
 /* 004F4 8087B2B4 920F015D */  lbu     $t7, 0x015D($s0)           ## 0000015D
-/* 004F8 8087B2B8 3C0E8088 */  lui     $t6, %hi(func_8087B3CC)    ## $t6 = 80880000
-/* 004FC 8087B2BC 25CEB3CC */  addiu   $t6, $t6, %lo(func_8087B3CC) ## $t6 = 8087B3CC
+/* 004F8 8087B2B8 3C0E8088 */  lui     $t6, %hi(BgGndSoulmeiro_Draw)    ## $t6 = 80880000
+/* 004FC 8087B2BC 25CEB3CC */  addiu   $t6, $t6, %lo(BgGndSoulmeiro_Draw) ## $t6 = 8087B3CC
 /* 00500 8087B2C0 31F80002 */  andi    $t8, $t7, 0x0002           ## $t8 = 00000000
 /* 00504 8087B2C4 13000012 */  beq     $t8, $zero, .L8087B310     
 /* 00508 8087B2C8 AE0E0134 */  sw      $t6, 0x0134($s0)           ## 00000134

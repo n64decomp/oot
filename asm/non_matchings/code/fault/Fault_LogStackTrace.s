@@ -59,8 +59,8 @@ glabel Fault_LogStackTrace
 /* B4CF40 800D5DA0 8FBF003C */   lw    $ra, 0x3c($sp)
 .L800D5DA4:
 /* B4CF44 800D5DA4 8FB10050 */  lw    $s1, 0x50($sp)
-/* B4CF48 800D5DA8 3C1E8000 */  lui   $fp, %hi(func_800042F0) # $fp, 0x8000
-/* B4CF4C 800D5DAC 27DE42F0 */  addiu $fp, %lo(func_800042F0) # addiu $fp, $fp, 0x42f0
+/* B4CF48 800D5DA8 3C1E8000 */  lui   $fp, %hi(__osCleanupThread) # $fp, 0x8000
+/* B4CF4C 800D5DAC 27DE42F0 */  addiu $fp, %lo(__osCleanupThread) # addiu $fp, $fp, 0x42f0
 /* B4CF50 800D5DB0 123E0025 */  beq   $s1, $fp, .L800D5E48
 /* B4CF54 800D5DB4 27B70054 */   addiu $s7, $sp, 0x54
 /* B4CF58 800D5DB8 3C148014 */  lui   $s4, %hi(D_80147340) # $s4, 0x8014

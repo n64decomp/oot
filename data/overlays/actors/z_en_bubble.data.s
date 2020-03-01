@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809CCE10
+glabel En_Bubble_InitVars
  .word 0x002D0500, 0x00000001, 0x00120000, 0x00000260
-.word func_809CC88C
-.word func_809CC98C
-.word func_809CCB58
-.word func_809CCBD0
+.word EnBubble_Init
+.word EnBubble_Destroy
+.word EnBubble_Update
+.word EnBubble_Draw
 glabel D_809CCE30
  .word 0x00000000, 0x00000000, 0x00040000, 0xFFCFD753, 0x00000000, 0x00010100, 0x00000000, 0x00000000, 0x00100064, 0x00000000, 0x00000000, 0x00000000, 0x00002824, 0x00000000, 0x00790000, 0x00000000, 0x00000000, 0x00100064
 glabel D_809CCE78

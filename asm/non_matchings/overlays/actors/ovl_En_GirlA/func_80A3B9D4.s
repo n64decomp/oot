@@ -5,7 +5,7 @@ glabel func_80A3B9D4
 /* 01290 80A3B9E0 84A401C8 */  lh      $a0, 0x01C8($a1)           ## 000001C8
 /* 01294 80A3B9E4 00042023 */  subu    $a0, $zero, $a0            
 /* 01298 80A3B9E8 00042400 */  sll     $a0, $a0, 16               
-/* 0129C 80A3B9EC 0C021CC3 */  jal     func_8008730C              
+/* 0129C 80A3B9EC 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 012A0 80A3B9F0 00042403 */  sra     $a0, $a0, 16               
 /* 012A4 80A3B9F4 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 012A8 80A3B9F8 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

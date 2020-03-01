@@ -31,8 +31,8 @@ glabel func_80BA24F8
 /* 00774 80BA2564 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 00778 80BA2568 0C2E8812 */  jal     func_80BA2048              
 /* 0077C 80BA256C 00C02825 */  or      $a1, $a2, $zero            ## $a1 = 00000000
-/* 00780 80BA2570 3C0880BA */  lui     $t0, %hi(func_80BA26F4)    ## $t0 = 80BA0000
-/* 00784 80BA2574 250826F4 */  addiu   $t0, $t0, %lo(func_80BA26F4) ## $t0 = 80BA26F4
+/* 00780 80BA2570 3C0880BA */  lui     $t0, %hi(ObjWarp2block_Draw)    ## $t0 = 80BA0000
+/* 00784 80BA2574 250826F4 */  addiu   $t0, $t0, %lo(ObjWarp2block_Draw) ## $t0 = 80BA26F4
 /* 00788 80BA2578 AE080134 */  sw      $t0, 0x0134($s0)           ## 00000134
 .L80BA257C:
 /* 0078C 80BA257C 0C2E8980 */  jal     func_80BA2600              

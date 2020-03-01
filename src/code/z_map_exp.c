@@ -17,7 +17,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_map_exp/func_80081240.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/code/z_map_exp/func_800816E0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/code/z_map_exp/Interface_DrawMinimap.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/code/z_map_exp/func_80082248.s")
 

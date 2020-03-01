@@ -14,12 +14,12 @@ glabel func_800CA104
 /* B412D4 800CA134 29E10003 */  slti  $at, $t7, 3
 /* B412D8 800CA138 1420001E */  bnez  $at, .L800CA1B4
 /* B412DC 800CA13C 00000000 */   nop   
-/* B412E0 800CA140 0C01EC9A */  jal   func_8007B268
+/* B412E0 800CA140 0C01EC9A */  jal   ZeldaArena_IsInitalized
 /* B412E4 800CA144 00000000 */   nop   
 /* B412E8 800CA148 1040001A */  beqz  $v0, .L800CA1B4
 /* B412EC 800CA14C 27A4005C */   addiu $a0, $sp, 0x5c
 /* B412F0 800CA150 27A50058 */  addiu $a1, $sp, 0x58
-/* B412F4 800CA154 0C01EC6A */  jal   func_8007B1A8
+/* B412F4 800CA154 0C01EC6A */  jal   ZeldaArena_GetSizes
 /* B412F8 800CA158 27A60054 */   addiu $a2, $sp, 0x54
 /* B412FC 800CA15C 8FA60054 */  lw    $a2, 0x54($sp)
 /* B41300 800CA160 8FB80058 */  lw    $t8, 0x58($sp)
@@ -52,7 +52,7 @@ glabel func_800CA104
 /* B41368 800CA1C8 1420001A */  bnez  $at, .L800CA234
 /* B4136C 800CA1CC 27A40050 */   addiu $a0, $sp, 0x50
 /* B41370 800CA1D0 27A5004C */  addiu $a1, $sp, 0x4c
-/* B41374 800CA1D4 0C03F622 */  jal   func_800FD888
+/* B41374 800CA1D4 0C03F622 */  jal   SystemArena_GetSizes
 /* B41378 800CA1D8 27A60048 */   addiu $a2, $sp, 0x48
 /* B4137C 800CA1DC 8FAE00A0 */  lw    $t6, 0xa0($sp)
 /* B41380 800CA1E0 8FAF004C */  lw    $t7, 0x4c($sp)

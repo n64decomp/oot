@@ -175,7 +175,7 @@ glabel func_8007542C
 /* AEC860 800756C0 26D6CF30 */  addiu $s6, %lo(D_0402CF30) # addiu $s6, $s6, -0x30d0
 /* AEC864 800756C4 44068000 */  mfc1  $a2, $f16
 /* AEC868 800756C8 26B50000 */  addiu $s5, $s5, 0
-/* AEC86C 800756CC 0C034261 */  jal   func_800D0984
+/* AEC86C 800756CC 0C034261 */  jal   Matrix_Translate
 /* AEC870 800756D0 46062380 */   add.s $f14, $f4, $f6
 /* AEC874 800756D4 8209001C */  lb    $t1, 0x1c($s0)
 /* AEC878 800756D8 24050001 */  li    $a1, 1
@@ -183,7 +183,7 @@ glabel func_8007542C
 /* AEC880 800756E0 00000000 */  nop   
 /* AEC884 800756E4 46809120 */  cvt.s.w $f4, $f18
 /* AEC888 800756E8 46182302 */  mul.s $f12, $f4, $f24
-/* AEC88C 800756EC 0C0342DC */  jal   func_800D0B70
+/* AEC88C 800756EC 0C0342DC */  jal   Matrix_RotateX
 /* AEC890 800756F0 00000000 */   nop   
 /* AEC894 800756F4 820A001D */  lb    $t2, 0x1d($s0)
 /* AEC898 800756F8 24050001 */  li    $a1, 1
@@ -191,13 +191,13 @@ glabel func_8007542C
 /* AEC8A0 80075700 00000000 */  nop   
 /* AEC8A4 80075704 46803220 */  cvt.s.w $f8, $f6
 /* AEC8A8 80075708 46184302 */  mul.s $f12, $f8, $f24
-/* AEC8AC 8007570C 0C0343B5 */  jal   func_800D0ED4
+/* AEC8AC 8007570C 0C0343B5 */  jal   Matrix_RotateZ
 /* AEC8B0 80075710 00000000 */   nop   
 /* AEC8B4 80075714 3C0142C8 */  li    $at, 0x42C80000 # 0.000000
 /* AEC8B8 80075718 44817000 */  mtc1  $at, $f14
 /* AEC8BC 8007571C 4406D000 */  mfc1  $a2, $f26
 /* AEC8C0 80075720 4600D306 */  mov.s $f12, $f26
-/* AEC8C4 80075724 0C0342A3 */  jal   func_800D0A8C
+/* AEC8C4 80075724 0C0342A3 */  jal   Matrix_Scale
 /* AEC8C8 80075728 24070001 */   li    $a3, 1
 /* AEC8CC 8007572C 8E4202D0 */  lw    $v0, 0x2d0($s2)
 /* AEC8D0 80075730 3C0CFA00 */  lui   $t4, 0xfa00
@@ -224,7 +224,7 @@ glabel func_8007542C
 /* AEC924 80075784 8E640000 */  lw    $a0, ($s3)
 /* AEC928 80075788 24A5C67C */  addiu $a1, %lo(D_8013C67C) # addiu $a1, $a1, -0x3984
 /* AEC92C 8007578C 24060D05 */  li    $a2, 3333
-/* AEC930 80075790 0C0346A2 */  jal   func_800D1A88
+/* AEC930 80075790 0C0346A2 */  jal   Matrix_NewMtx
 /* AEC934 80075794 00408825 */   move  $s1, $v0
 /* AEC938 80075798 AE220004 */  sw    $v0, 4($s1)
 /* AEC93C 8007579C 8E4202D0 */  lw    $v0, 0x2d0($s2)
@@ -235,7 +235,7 @@ glabel func_8007542C
 /* AEC950 800757B0 AC4A0000 */  sw    $t2, ($v0)
 /* AEC954 800757B4 920B001E */  lbu   $t3, 0x1e($s0)
 /* AEC958 800757B8 3C048012 */  lui   $a0, %hi(D_8011FEA0)
-/* AEC95C 800757BC 3C198016 */  lui   $t9, %hi(D_80166FA8)
+/* AEC95C 800757BC 3C198016 */  lui   $t9, %hi(gSegments)
 /* AEC960 800757C0 000B6080 */  sll   $t4, $t3, 2
 /* AEC964 800757C4 008C2021 */  addu  $a0, $a0, $t4
 /* AEC968 800757C8 8C84FEA0 */  lw    $a0, %lo(D_8011FEA0)($a0)
@@ -245,7 +245,7 @@ glabel func_8007542C
 /* AEC978 800757D8 000E7F02 */  srl   $t7, $t6, 0x1c
 /* AEC97C 800757DC 000FC080 */  sll   $t8, $t7, 2
 /* AEC980 800757E0 0338C821 */  addu  $t9, $t9, $t8
-/* AEC984 800757E4 8F396FA8 */  lw    $t9, %lo(D_80166FA8)($t9)
+/* AEC984 800757E4 8F396FA8 */  lw    $t9, %lo(gSegments)($t9)
 /* AEC988 800757E8 00816824 */  and   $t5, $a0, $at
 /* AEC98C 800757EC 3C018000 */  lui   $at, 0x8000
 /* AEC990 800757F0 01B94021 */  addu  $t0, $t5, $t9

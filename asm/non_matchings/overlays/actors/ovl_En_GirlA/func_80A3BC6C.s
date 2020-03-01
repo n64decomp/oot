@@ -71,7 +71,7 @@ glabel L80A3BD48
 /* 0160C 80A3BD5C 84A401C8 */  lh      $a0, 0x01C8($a1)           ## 000001C8
 /* 01610 80A3BD60 00042023 */  subu    $a0, $zero, $a0            
 /* 01614 80A3BD64 00042400 */  sll     $a0, $a0, 16               
-/* 01618 80A3BD68 0C021CC3 */  jal     func_8008730C              
+/* 01618 80A3BD68 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0161C 80A3BD6C 00042403 */  sra     $a0, $a0, 16               
 /* 01620 80A3BD70 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 01624 80A3BD74 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

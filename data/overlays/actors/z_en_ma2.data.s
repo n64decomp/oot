@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AA2800
+glabel En_Ma2_InitVars
  .word 0x00D90400, 0x02000039, 0x00D00000, 0x00000284
-.word func_80AA1E3C
-.word func_80AA1FE0
-.word func_80AA2268
-.word func_80AA267C
+.word EnMa2_Init
+.word EnMa2_Destroy
+.word EnMa2_Update
+.word EnMa2_Draw
 glabel D_80AA2820
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0012002E, 0x00000000, 0x00000000
 glabel D_80AA284C

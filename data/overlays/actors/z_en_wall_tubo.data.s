@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B2F320
+glabel En_Wall_Tubo_InitVars
  .word 0x01BE0600, 0x00000010, 0x00010000, 0x00000170
-.word func_80B2EDF0
-.word func_80B2EE50
-.word func_80B2F25C
+.word EnWallTubo_Init
+.word EnWallTubo_Destroy
+.word EnWallTubo_Update
 .word 0x00000000
 glabel D_80B2F340
  .word 0x00000000, 0x3DCCCCCD, 0x00000000

@@ -62,7 +62,7 @@ glabel L80A79318
 /* 00378 80A79328 15A10009 */  bne     $t5, $at, .L80A79350       
 /* 0037C 80A7932C 2404FFF6 */  addiu   $a0, $zero, 0xFFF6         ## $a0 = FFFFFFF6
 /* 00380 80A79330 AFA60024 */  sw      $a2, 0x0024($sp)           
-/* 00384 80A79334 0C021CC3 */  jal     func_8008730C              
+/* 00384 80A79334 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00388 80A79338 AFA70020 */  sw      $a3, 0x0020($sp)           
 /* 0038C 80A7933C 8FA60024 */  lw      $a2, 0x0024($sp)           
 /* 00390 80A79340 8FA70020 */  lw      $a3, 0x0020($sp)           

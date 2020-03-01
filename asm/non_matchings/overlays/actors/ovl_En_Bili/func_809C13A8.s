@@ -55,7 +55,7 @@ glabel func_809C13A8
 .L809C1474:
 /* 01BD4 809C1474 C7AE0024 */  lwc1    $f14, 0x0024($sp)          
 /* 01BD8 809C1478 8FA60028 */  lw      $a2, 0x0028($sp)           
-/* 01BDC 809C147C 0C0342A3 */  jal     func_800D0A8C              
+/* 01BDC 809C147C 0C0342A3 */  jal     Matrix_Scale              
 /* 01BE0 809C1480 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 01BE4 809C1484 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 01BE8 809C1488 27BD0030 */  addiu   $sp, $sp, 0x0030           ## $sp = 00000000

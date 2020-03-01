@@ -1,8 +1,8 @@
 glabel func_8006C778
 /* AE3918 8006C778 00067100 */  sll   $t6, $a2, 4
-/* AE391C 8006C77C 3C088016 */  lui   $t0, %hi(D_80166FA8) # $t0, 0x8016
+/* AE391C 8006C77C 3C088016 */  lui   $t0, %hi(gSegments) # $t0, 0x8016
 /* AE3920 8006C780 000E7F02 */  srl   $t7, $t6, 0x1c
-/* AE3924 8006C784 25086FA8 */  addiu $t0, %lo(D_80166FA8) # addiu $t0, $t0, 0x6fa8
+/* AE3924 8006C784 25086FA8 */  addiu $t0, %lo(gSegments) # addiu $t0, $t0, 0x6fa8
 /* AE3928 8006C788 000FC080 */  sll   $t8, $t7, 2
 /* AE392C 8006C78C 27BDFFE0 */  addiu $sp, $sp, -0x20
 /* AE3930 8006C790 0118C821 */  addu  $t9, $t0, $t8
@@ -38,7 +38,7 @@ glabel func_8006C778
 /* AE39A8 8006C808 00812021 */  addu  $a0, $a0, $at
 /* AE39AC 8006C80C 3C058014 */  lui   $a1, %hi(D_8013B9E0) # $a1, 0x8014
 /* AE39B0 8006C810 24A5B9E0 */  addiu $a1, %lo(D_8013B9E0) # addiu $a1, $a1, -0x4620
-/* AE39B4 8006C814 0C01EBB8 */  jal   func_8007AEE0
+/* AE39B4 8006C814 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AE39B8 8006C818 00042040 */   sll   $a0, $a0, 1
 /* AE39BC 8006C81C 14400007 */  bnez  $v0, .L8006C83C
 /* AE39C0 8006C820 AE02001C */   sw    $v0, 0x1c($s0)

@@ -18,7 +18,7 @@ glabel func_80AFE390
 /* 00120 80AFE3D0 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 00124 80AFE3D4 460A4403 */  div.s   $f16, $f8, $f10            
 /* 00128 80AFE3D8 46128302 */  mul.s   $f12, $f16, $f18           
-/* 0012C 80AFE3DC 0C034348 */  jal     func_800D0D20              
+/* 0012C 80AFE3DC 0C034348 */  jal     Matrix_RotateY              
 /* 00130 80AFE3E0 00000000 */  nop
 /* 00134 80AFE3E4 8FA60028 */  lw      $a2, 0x0028($sp)           
 /* 00138 80AFE3E8 27A4001C */  addiu   $a0, $sp, 0x001C           ## $a0 = FFFFFFF4

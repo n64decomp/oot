@@ -1,0 +1,20 @@
+glabel func_800D2A98
+/* B49C38 800D2A98 27BDFFA0 */  addiu $sp, $sp, -0x60
+/* B49C3C 800D2A9C 44856000 */  mtc1  $a1, $f12
+/* B49C40 800D2AA0 44867000 */  mtc1  $a2, $f14
+/* B49C44 800D2AA4 C7A40070 */  lwc1  $f4, 0x70($sp)
+/* B49C48 800D2AA8 AFBF001C */  sw    $ra, 0x1c($sp)
+/* B49C4C 800D2AAC AFA40060 */  sw    $a0, 0x60($sp)
+/* B49C50 800D2AB0 44056000 */  mfc1  $a1, $f12
+/* B49C54 800D2AB4 44067000 */  mfc1  $a2, $f14
+/* B49C58 800D2AB8 AFA7006C */  sw    $a3, 0x6c($sp)
+/* B49C5C 800D2ABC 27A40020 */  addiu $a0, $sp, 0x20
+/* B49C60 800D2AC0 0C034A8D */  jal   func_800D2A34
+/* B49C64 800D2AC4 E7A40010 */   swc1  $f4, 0x10($sp)
+/* B49C68 800D2AC8 27A40020 */  addiu $a0, $sp, 0x20
+/* B49C6C 800D2ACC 0C041938 */  jal   func_801064E0
+/* B49C70 800D2AD0 8FA50060 */   lw    $a1, 0x60($sp)
+/* B49C74 800D2AD4 8FBF001C */  lw    $ra, 0x1c($sp)
+/* B49C78 800D2AD8 27BD0060 */  addiu $sp, $sp, 0x60
+/* B49C7C 800D2ADC 03E00008 */  jr    $ra
+/* B49C80 800D2AE0 00000000 */   nop   

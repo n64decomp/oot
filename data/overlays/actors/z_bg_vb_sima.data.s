@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808BE3F0
+glabel Bg_Vb_Sima_InitVars
  .word 0x00AC0100, 0x00000000, 0x009C0000, 0x0000017C
-.word func_808BDD60
-.word func_808BDDC8
-.word func_808BDEC4
-.word func_808BE324
+.word BgVbSima_Init
+.word BgVbSima_Destroy
+.word BgVbSima_Update
+.word BgVbSima_Draw
 glabel D_808BE410
  .word 0x48500064
 glabel D_808BE414

@@ -1,17 +1,9 @@
 #include <ultra64.h>
 #include <global.h>
-
-typedef void (*type_func_800A9F30)(s32 a, s32 b);
-
-typedef struct
-{
-    /* 0x0000 */ char unk_00[0x460];
-    /* 0x0460 */ type_func_800A9F30 unk_460;
-    /* 0x0464 */ s32 unk_464;
-} struct_801668C0;
+#include <padmgr.h>
 
 extern u8 D_80160FD0[];
-extern struct_801668C0 D_801668C0;
+extern PadMgr gPadMgr;
 
 void func_800A9F30(s32 a, s32 b)
 {
@@ -47,8 +39,8 @@ void func_800AA0B4(void)
 {
     func_800D3140(&D_80160FD0);
 
-    D_801668C0.unk_460 = func_800A9F30;
-    D_801668C0.unk_464 = 0;
+    gPadMgr.unk_460 = func_800A9F30;
+    gPadMgr.unk_464 = 0;
 
     if (0) ; // Necessary to match
 }
@@ -56,12 +48,12 @@ void func_800AA0B4(void)
 #ifdef NON_MATCHING
 void func_800AA0F0(void)
 {
-    if ((D_801668C0.unk_460 == func_800A9F30) && (D_801668C0.unk_464 == 0))
+    if ((gPadMgr.unk_460 == func_800A9F30) && (gPadMgr.unk_464 == 0))
     {
         // asm loads/writes directly to 0x80166D20 and 0x80166D24
         // but the compiler wants to reuse offsets from 0x801668C0
-        D_801668C0.unk_460 = NULL;
-        D_801668C0.unk_464 = 0;
+        gPadMgr.unk_460 = NULL;
+        gPadMgr.unk_464 = 0;
     }
 
     func_800D3178(&D_80160FD0);
@@ -72,7 +64,7 @@ void func_800AA0F0(void)
 
 u32 func_800AA148(void)
 {
-    return ((D_80166B6E ^ 1) == 0);
+    return ((gPadMgr.unk_2AE[0] ^ 1) == 0);
 }
 
 void func_800AA15C(void)

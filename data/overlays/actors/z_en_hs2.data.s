@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A6F480
+glabel En_Hs2_InitVars
  .word 0x01A60400, 0x00000009, 0x01280000, 0x000002B0
-.word func_80A6EFA0
-.word func_80A6F08C
-.word func_80A6F1F0
-.word func_80A6F420
+.word EnHs2_Init
+.word EnHs2_Destroy
+.word EnHs2_Update
+.word EnHs2_Draw
 glabel D_80A6F4A0
  .word 0x0A001139, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00280028, 0x00000000, 0x00000000
 glabel D_80A6F4CC

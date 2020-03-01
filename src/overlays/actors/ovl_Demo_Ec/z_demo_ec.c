@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_demo_ec.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_8096D4B0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_8096D4D0.s")
+void DemoEc_Init(DemoEc* this, GlobalContext* globalCtx);
+void DemoEc_Destroy(DemoEc* this, GlobalContext* globalCtx);
+void DemoEc_Update(DemoEc* this, GlobalContext* globalCtx);
+void DemoEc_Draw(DemoEc* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Demo_Ec_InitVars =
+{
+    ACTOR_DEMO_EC,
+    ACTORTYPE_NPC,
+    ROOM,
+    FLAGS,
+    OBJECT_EC,
+    sizeof(DemoEc),
+    (ActorFunc)DemoEc_Init,
+    (ActorFunc)DemoEc_Destroy,
+    (ActorFunc)DemoEc_Update,
+    (ActorFunc)DemoEc_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/DemoEc_Destroy.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/DemoEc_Init.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_8096D52C.s")
 
@@ -219,12 +241,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_80970140.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_80970224.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/DemoEc_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_809702B0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/func_809702BC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Demo_Ec/DemoEc_Draw.s")

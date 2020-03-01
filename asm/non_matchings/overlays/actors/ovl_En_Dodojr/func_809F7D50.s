@@ -27,7 +27,7 @@ glabel func_809F7D50
 /* 019F4 809F7DB4 46020380 */  add.s   $f14, $f0, $f2             
 /* 019F8 809F7DB8 46023300 */  add.s   $f12, $f6, $f2             
 /* 019FC 809F7DBC 44066000 */  mfc1    $a2, $f12                  
-/* 01A00 809F7DC0 0C0342A3 */  jal     func_800D0A8C              
+/* 01A00 809F7DC0 0C0342A3 */  jal     Matrix_Scale              
 /* 01A04 809F7DC4 00000000 */  nop
 /* 01A08 809F7DC8 8FA50034 */  lw      $a1, 0x0034($sp)           
 .L809F7DCC:

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809E4040
+glabel En_Daiku_InitVars
  .word 0x01330400, 0x00000019, 0x01220000, 0x0000034C
-.word func_809E2BE0
-.word func_809E2F28
-.word func_809E3C94
-.word func_809E3DA8
+.word EnDaiku_Init
+.word EnDaiku_Destroy
+.word EnDaiku_Update
+.word EnDaiku_Draw
 glabel D_809E4060
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00120042, 0x00000000, 0x00000000
 glabel D_809E408C

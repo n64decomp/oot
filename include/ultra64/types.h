@@ -30,4 +30,18 @@ typedef union
     long long int forc_structure_alignment;
 } Mtx;
 
+typedef float MtxF_t[4][4];
+typedef union
+{
+    MtxF_t mf;
+    struct
+    {
+        float xx, xy, xz, xw,
+              yx, yy, yz, yw,
+              zx, zy, zz, zw,
+              wx, wy, wz, ww;
+    };
+    long long int forc_structure_alignment;
+} MtxF;
+
 #endif

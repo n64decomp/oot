@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_goma.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A48EC0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000035
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A49248.s")
+void EnGoma_Init(EnGoma* this, GlobalContext* globalCtx);
+void EnGoma_Destroy(EnGoma* this, GlobalContext* globalCtx);
+void EnGoma_Update(EnGoma* this, GlobalContext* globalCtx);
+void EnGoma_Draw(EnGoma* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Goma_InitVars =
+{
+    ACTOR_BOSS_GOMA,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_GOL,
+    sizeof(EnGoma),
+    (ActorFunc)EnGoma_Init,
+    (ActorFunc)EnGoma_Destroy,
+    (ActorFunc)EnGoma_Update,
+    (ActorFunc)EnGoma_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/EnGoma_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/EnGoma_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A49294.s")
 
@@ -61,20 +83,16 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4A964.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4AA74.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/EnGoma_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4ACC0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4AE60.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4AED8.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/EnGoma_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4B3AC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4B3F0.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Goma/func_80A4B554.s")
-
-
-
-

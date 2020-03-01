@@ -16,12 +16,12 @@ glabel func_800ACAF8
 /* B23CD0 800ACB30 00000000 */   nop   
 .L800ACB34:
 /* B23CD4 800ACB34 8E0E0054 */  lw    $t6, 0x54($s0)
-/* B23CD8 800ACB38 3C018013 */  lui   $at, %hi(D_8012D270) # $at, 0x8013
+/* B23CD8 800ACB38 3C018013 */  lui   $at, %hi(gScreenWidth) # $at, 0x8013
 /* B23CDC 800ACB3C 02002025 */  move  $a0, $s0
-/* B23CE0 800ACB40 AC2ED270 */  sw    $t6, %lo(D_8012D270)($at)
+/* B23CE0 800ACB40 AC2ED270 */  sw    $t6, %lo(gScreenWidth)($at)
 /* B23CE4 800ACB44 8E0F0050 */  lw    $t7, 0x50($s0)
-/* B23CE8 800ACB48 3C018013 */  lui   $at, %hi(D_8012D274) # $at, 0x8013
-/* B23CEC 800ACB4C AC2FD274 */  sw    $t7, %lo(D_8012D274)($at)
+/* B23CE8 800ACB48 3C018013 */  lui   $at, %hi(gScreenHeight) # $at, 0x8013
+/* B23CEC 800ACB4C AC2FD274 */  sw    $t7, %lo(gScreenHeight)($at)
 /* B23CF0 800ACB50 94A20000 */  lhu   $v0, ($a1)
 /* B23CF4 800ACB54 2401EFF6 */  li    $at, -4106
 /* B23CF8 800ACB58 0041C027 */  nor   $t8, $v0, $at
@@ -227,11 +227,11 @@ glabel func_800ACAF8
 /* B23FB8 800ACE18 8E050080 */   lw    $a1, 0x80($s0)
 /* B23FBC 800ACE1C 8E0D0068 */  lw    $t5, 0x68($s0)
 /* B23FC0 800ACE20 24010003 */  li    $at, 3
-/* B23FC4 800ACE24 3C048001 */  lui   $a0, %hi(D_8000AE00) # $a0, 0x8001
+/* B23FC4 800ACE24 3C048001 */  lui   $a0, %hi(osViModeNtscLan1) # $a0, 0x8001
 /* B23FC8 800ACE28 15A10007 */  bne   $t5, $at, .L800ACE48
 /* B23FCC 800ACE2C 00000000 */   nop   
 /* B23FD0 800ACE30 0C02B00C */  jal   func_800AC030
-/* B23FD4 800ACE34 2484AE00 */   addiu $a0, %lo(D_8000AE00) # addiu $a0, $a0, -0x5200
+/* B23FD4 800ACE34 2484AE00 */   addiu $a0, %lo(osViModeNtscLan1) # addiu $a0, $a0, -0x5200
 /* B23FD8 800ACE38 0C02B00C */  jal   func_800AC030
 /* B23FDC 800ACE3C 02002025 */   move  $a0, $s0
 /* B23FE0 800ACE40 240E0002 */  li    $t6, 2

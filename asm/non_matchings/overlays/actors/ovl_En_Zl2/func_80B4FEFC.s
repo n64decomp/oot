@@ -25,7 +25,7 @@ glabel func_80B4FEFC
               ## ActorSpawn
 /* 015C8 80B4FF58 E7AC0014 */  swc1    $f12, 0x0014($sp)          
 /* 015CC 80B4FF5C 8FA40034 */  lw      $a0, 0x0034($sp)           
-/* 015D0 80B4FF60 0C021344 */  jal     func_80084D10              
+/* 015D0 80B4FF60 0C021344 */  jal     Item_Give              
 /* 015D4 80B4FF64 24050012 */  addiu   $a1, $zero, 0x0012         ## $a1 = 00000012
 /* 015D8 80B4FF68 8FA80030 */  lw      $t0, 0x0030($sp)           
 /* 015DC 80B4FF6C 24190001 */  addiu   $t9, $zero, 0x0001         ## $t9 = 00000001

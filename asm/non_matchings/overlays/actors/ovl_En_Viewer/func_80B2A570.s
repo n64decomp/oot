@@ -113,7 +113,7 @@ glabel func_80B2A570
 /* 004F8 80B2A6F8 46082100 */  add.s   $f4, $f4, $f8              
 .L80B2A6FC:
 /* 004FC 80B2A6FC 44072000 */  mfc1    $a3, $f4                   
-/* 00500 80B2A700 0C00AC78 */  jal     Actor_InitShadow
+/* 00500 80B2A700 0C00AC78 */  jal     ActorShape_Init
               
 /* 00504 80B2A704 00000000 */  nop
 /* 00508 80B2A708 92290008 */  lbu     $t1, 0x0008($s1)           ## 00000008

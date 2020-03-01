@@ -1,9 +1,30 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dnt_nomal.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F32C0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000030
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F3438.s")
+void EnDntNomal_Init(EnDntNomal* this, GlobalContext* globalCtx);
+void EnDntNomal_Destroy(EnDntNomal* this, GlobalContext* globalCtx);
+void EnDntNomal_Update(EnDntNomal* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dnt_Nomal_InitVars =
+{
+    ACTOR_EN_DNT_NOMAL,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnDntNomal),
+    (ActorFunc)EnDntNomal_Init,
+    (ActorFunc)EnDntNomal_Destroy,
+    (ActorFunc)EnDntNomal_Update,
+    NULL,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/EnDntNomal_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/EnDntNomal_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F3480.s")
 
@@ -69,7 +90,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F551C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F5620.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/EnDntNomal_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F58E4.s")
 
@@ -78,7 +99,3 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F5A6C.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dnt_Nomal/func_809F5C98.s")
-
-
-
-

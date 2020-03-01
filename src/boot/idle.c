@@ -1,149 +1,92 @@
 #include <ultra64.h>
 #include <global.h>
+#include <vt.h>
 
-void func_800005A0(void* arg0)
+OSThread sMainThread;
+u8 sMainStack[0x900];
+StackEntry sMainStackInfo;
+OSMesg sPiMgrCmdBuff[50];
+OSMesgQueue gPiMgrCmdQ;
+OSViMode gViConfigMode;
+u8 D_80013960;
+
+u8 D_80009430 = 1;
+u8 volatile gViConfigUseDefault = 1;
+u8 gViConfigAdditionalScanLines = 0;
+u32 gViConfigFeatures = OS_VI_DITHER_FILTER_ON | OS_VI_GAMMA_OFF;
+f32 gViConfigXScale = 1.0;
+f32 gViConfigYScale = 1.0;
+
+void Main_ThreadEntry(void* arg0)
 {
     OSTime var1;
 
-    osSyncPrintf(D_8000AFD0);
+    osSyncPrintf("mainx 実行開始\n");
     DmaMgr_Start();
-    osSyncPrintf(D_8000AFE0);
+    osSyncPrintf("codeセグメントロード中...");
     var1 = osGetTime();
-    DmaMgr_SendRequest1((u32)_dmadataSegmentEnd, (u32)_codeSegmentRomStart, _codeSegmentRomEnd - _codeSegmentRomStart, D_8000AFFC, 238);
+    DmaMgr_SendRequest1((u32)_dmadataSegmentEnd, (u32)_codeSegmentRomStart, _codeSegmentRomEnd - _codeSegmentRomStart, "../idle.c", 238);
     var1 -= osGetTime();
-    osSyncPrintf(D_8000B008);
-    osSyncPrintf(D_8000B028);
+    osSyncPrintf("\rcodeセグメントロード中...完了\n");
+    osSyncPrintf("転送時間 %6.3f\n");
     bzero(_codeSegmentBssStart, _codeSegmentBssEnd - _codeSegmentBssStart);
-    osSyncPrintf(D_8000B038);
-    func_800C6E20(arg0);
-    osSyncPrintf(D_8000B058);
+    osSyncPrintf("codeセグメントBSSクリア完了\n");
+    Main(arg0);
+    osSyncPrintf("mainx 実行終了\n");
 }
 
-// NON MATCHING
-/*
-void func_80000694(void* a0)
+void Idle_ThreadEntry(void* a0)
 {
-    u32* var1;
-    u32* var2;
-    u32* var3;
-    u32* var4;
-    u32 var5;
+    osSyncPrintf("アイドルスレッド(idleproc)実行開始\n");
+    osSyncPrintf("作製者    : %s\n", gBuildTeam);
+    osSyncPrintf("作成日時  : %s\n", gBuildDate);
+    osSyncPrintf("MAKEOPTION: %s\n", gBuildMakeOption);
+    osSyncPrintf(VT_FGCOL(GREEN));
+    osSyncPrintf("ＲＡＭサイズは %d キロバイトです(osMemSize/osGetMemSize)\n", (s32)osMemSize / 1024);
+    osSyncPrintf("_bootSegmentEnd(%08x) 以降のＲＡＭ領域はクリアされました(boot)\n", _bootSegmentEnd);
+    osSyncPrintf("Ｚバッファのサイズは %d キロバイトです\n", 0x96);
+    osSyncPrintf("ダイナミックバッファのサイズは %d キロバイトです\n", 0x92);
+    osSyncPrintf("ＦＩＦＯバッファのサイズは %d キロバイトです\n", 0x60);
+    osSyncPrintf("ＹＩＥＬＤバッファのサイズは %d キロバイトです\n", 3);
+    osSyncPrintf("オーディオヒープのサイズは %d キロバイトです\n", ((s32)gSystemHeap - (s32)gAudioHeap) / 1024);
+    osSyncPrintf(VT_RST);
 
-    osSyncPrintf(D_8000B068);
-    osSyncPrintf(D_8000B08C, D_80012340);
-    osSyncPrintf(D_8000B09C, D_80012350);
-    osSyncPrintf(D_8000B0AC, D_80012364);
-    osSyncPrintf(D_8000B0BC);
+    osCreateViManager(0xFE);
 
-    osSyncPrintf(D_8000B0C4, osMemSize / 1024);
+    gViConfigFeatures = 0x42;
+    gViConfigXScale = 1.0f;
+    gViConfigYScale = 1.0f;
 
-    osSyncPrintf(D_8000B100, _bootSegmentEnd);
-    osSyncPrintf(D_8000B140, 0x96);
-    osSyncPrintf(D_8000B168, 0x92);
-    osSyncPrintf(D_8000B19C, 0x60);
-    osSyncPrintf(D_8000B1CC, 3);
-
-    osSyncPrintf(D_8000B1FC, ((s32)gSystemHeap - (s32)gAudioHeap) / 1024);
-
-    osSyncPrintf(D_8000B22C);
-
-    func_80008CA0(0xFE);
-
-    D_8000943C = 0x42;
-    D_80009440 = 1.0f;
-    D_80009444 = 1.0f;
-
-    if (osTvType != 0)
+    switch (osTvType)
     {
-        if (osTvType != 1)
-        {
-            if (osTvType != 2)
-            {
-                D_80013960 = 0x1E;
-                var1 = &D_80013910;
-                var2 = &D_8000AE50;
+        case 1:
+            D_80013960 = 2;
+            gViConfigMode = osViModeNtscLan1;
+            break;
 
-                do
-                {
-                    var4 = var2;
-                    var3 = var1;
-                    *var3 = *var4;
-                    var3[1] = var4[1];
-                    var3[2] = var4[2];
-                    var1 = var3 + 3;
-                    var2 = var4 + 3;
-                }
-                while (var4 + 3 != &D_8000AE98);
+        case 2:
+            D_80013960 = 0x1E;
+            gViConfigMode = osViModeMpalLan1;
+            break;
 
-                var5 = var4[4];
-                var3[3] = D_8000AE98;
-                var3[4] = var5;
-            }
-            else
-            {
-                D_80013960 = 2;
-                var1 = &D_80013910;
-                var2 = &D_8000AE00;
-
-                do
-                {
-                    var4 = var2;
-                    var3 = var1;
-                    *var3 = *var4;
-                    var3[1] = var4[1];
-                    var3[2] = var4[2];
-                    var1 = var3 + 3;
-                    var2 = var4 + 3;
-                }
-                while (var4 + 3 != &D_8000AE48);
-
-                var5 = var4[4];
-                var3[3] = D_8000AE48;
-                var3[4] = var5;
-            }
-        }
-    }
-    else
-    {
-        D_80013960 = 0x2C;
-        var1 = &D_80013910;
-        var2 = &D_8000AF20;
-
-        do
-        {
-            var4 = var2;
-            var3 = var1;
-            *var3 = *var4;
-            var3[1] = var4[1];
-            var3[2] = var4[2];
-            var1 = var3 + 3;
-            var2 = var4 + 3;
-        }
-        while (var4 + 3 != &D_8000AF68);
-
-        var5 = var4[4];
-        var3[3] = D_8000AF68;
-        var3[4] = var5;
-        D_80009444 = D_8000B238;
+        case 0:
+            D_80013960 = 0x2C;
+            gViConfigMode = osViModeFpalLan1;
+            gViConfigYScale = 0.833f;
+            break;
     }
 
     D_80009430 = 1;
-    osViSetMode(&D_80013910);
-    func_80000A10(1);
+    osViSetMode(&gViConfigMode);
+    ViConfig_UpdateVi(1);
     osViBlack(1);
     osViSwapBuffer(0x803da80);
-    func_80004780(0x96, &D_800138F8, &D_80013830, 0x32);
-    StackCheck_Init(&D_80013810, &D_80012F10, &D_80013810, 0, 0x400, &D_8000B230);
-    osCreateThread(sMainThread, 3, func_800005A0, a0, &D_80013810, 10);
-    osStartThread(sMainThread);
-    osSetThreadPri(0, 0);
+    osCreatePiManager(0x96, &gPiMgrCmdQ, sPiMgrCmdBuff, 0x32);
+    StackCheck_Init(&sMainStackInfo, sMainStack, sMainStack+sizeof(sMainStack), 0, 0x400, "main");
+    osCreateThread(&sMainThread, 3, Main_ThreadEntry, a0, sMainStack+sizeof(sMainStack), 10);
+    osStartThread(&sMainThread);
+    osSetThreadPri(NULL, 0);
 
-    do
-    {
-
-    }
-    while(1);
+    while(1)
+        ;
 }
-*/
-
-#pragma GLOBAL_ASM("asm/non_matchings/boot/idle/func_80000694.s")

@@ -9,11 +9,11 @@
 
 glabel D_808A5E60
  .word 0x00000000
-glabel D_808A5E64
+glabel Bg_Mori_Rakkatenjo_InitVars
  .word 0x00890100, 0x00000030, 0x00720000, 0x00000178
-.word func_808A5570
-.word func_808A56F4
-.word func_808A5C70
+.word BgMoriRakkatenjo_Init
+.word BgMoriRakkatenjo_Destroy
+.word BgMoriRakkatenjo_Update
 .word 0x00000000
 glabel D_808A5E84
  .word 0xB06CFFFF, 0xB070FFF5, 0x485003E8

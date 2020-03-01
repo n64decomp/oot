@@ -2,7 +2,7 @@ glabel func_809EF8F4
 /* 005A4 809EF8F4 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 005A8 809EF8F8 AFBF0014 */  sw      $ra, 0x0014($sp)           
 /* 005AC 809EF8FC AFA40018 */  sw      $a0, 0x0018($sp)           
-/* 005B0 809EF900 0C0218E2 */  jal     func_80086388              
+/* 005B0 809EF900 0C0218E2 */  jal     Item_CheckObtainability              
 /* 005B4 809EF904 24040003 */  addiu   $a0, $zero, 0x0003         ## $a0 = 00000003
 /* 005B8 809EF908 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 005BC 809EF90C 14410003 */  bne     $v0, $at, .L809EF91C       

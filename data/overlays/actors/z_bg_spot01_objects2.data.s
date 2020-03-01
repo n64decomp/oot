@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808AC4E0
+glabel Bg_Spot01_Objects2_InitVars
  .word 0x019D0100, 0x00000010, 0x00010000, 0x00000180
-.word func_808AC140
-.word func_808AC220
-.word func_808AC480
+.word BgSpot01Objects2_Init
+.word BgSpot01Objects2_Destroy
+.word BgSpot01Objects2_Update
 .word 0x00000000
 glabel D_808AC500
  .word 0xB0F43200, 0xB0F807D0, 0xB0FC05DC, 0x48500064

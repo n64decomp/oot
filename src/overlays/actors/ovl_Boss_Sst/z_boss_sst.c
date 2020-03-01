@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_boss_sst.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_8092C5D0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000435
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_8092CA54.s")
+void BossSst_Init(BossSst* this, GlobalContext* globalCtx);
+void BossSst_Destroy(BossSst* this, GlobalContext* globalCtx);
+void BossSst_Update(BossSst* this, GlobalContext* globalCtx);
+void BossSst_Draw(BossSst* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Boss_Sst_InitVars =
+{
+    ACTOR_BOSS_SST,
+    ACTORTYPE_BOSS,
+    ROOM,
+    FLAGS,
+    OBJECT_SST,
+    sizeof(BossSst),
+    (ActorFunc)BossSst_Init,
+    (ActorFunc)BossSst_Destroy,
+    (ActorFunc)BossSst_Update,
+    (ActorFunc)BossSst_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/BossSst_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/BossSst_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_8092CAA0.s")
 
@@ -251,7 +273,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_80933EE0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_8093402C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/BossSst_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_80934338.s")
 
@@ -261,7 +283,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_80934628.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_80934668.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/BossSst_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_80934A44.s")
 
@@ -284,8 +306,4 @@
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_809360FC.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Boss_Sst/func_8093639C.s")
-
-
-
-
 

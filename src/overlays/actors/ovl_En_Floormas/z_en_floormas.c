@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_floormas.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A17510.s")
+#define ROOM  0x00
+#define FLAGS 0x00000405
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A17720.s")
+void EnFloormas_Init(EnFloormas* this, GlobalContext* globalCtx);
+void EnFloormas_Destroy(EnFloormas* this, GlobalContext* globalCtx);
+void EnFloormas_Update(EnFloormas* this, GlobalContext* globalCtx);
+void EnFloormas_Draw(EnFloormas* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Floormas_InitVars =
+{
+    ACTOR_EN_FLOORMAS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_WALLMASTER,
+    sizeof(EnFloormas),
+    (ActorFunc)EnFloormas_Init,
+    (ActorFunc)EnFloormas_Destroy,
+    (ActorFunc)EnFloormas_Update,
+    (ActorFunc)EnFloormas_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/EnFloormas_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/EnFloormas_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A17748.s")
 
@@ -99,16 +121,12 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A19D18.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A19EC4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/EnFloormas_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A1A128.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A1A160.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A1A254.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/EnFloormas_Draw.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Floormas/func_80A1A350.s")
-
-
-
-

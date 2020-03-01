@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809B22B0
+glabel En_Anubice_InitVars
  .word 0x00E00500, 0x00000015, 0x00D60000, 0x00000314
-.word func_809B12A4
-.word func_809B13D4
-.word func_809B1D08
-.word func_809B2254
+.word EnAnubice_Init
+.word EnAnubice_Destroy
+.word EnAnubice_Update
+.word EnAnubice_Draw
 glabel D_809B22D0
  .word 0x0A000939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x001D0067, 0x00000000, 0x00000000
 glabel D_809B22FC

@@ -12,114 +12,100 @@ beginseg
     name "boot"
     include "build/src/boot/boot_main.o"
     include "build/src/boot/idle.o"
-    include "build/data/idle.data.o"
-    include "build/data/idle.rodata.o"
-    include "build/data/idle.bss.o"
-    include "build/src/boot/boot_80000A10.o"
+    include "build/src/boot/viconfig.o"
     include "build/src/boot/z_std_dma.o"
-    include "build/asm/boot_80001B30.o"
-    include "build/data/boot_80001B30.bss.o"
+    include "build/src/boot/yaz0.o"
     include "build/src/boot/z_locale.o"
     include "build/src/boot/assert.o"
-    include "build/src/boot/is.o"
-    include "build/asm/boot_800023D0.o"
-    include "build/data/boot_800023D0.data.o"
-    include "build/data/boot_800023D0.bss.o"
-    include "build/asm/boot_800025B0.o"
+    include "build/src/boot/is_debug.o"
+    include "build/src/libultra_boot_O2/osDriveRomInit.o"
+    include "build/src/boot/yaz0_old.o"
     include "build/src/boot/stackcheck.o"
-    include "build/src/boot/boot_800029F0.o"
-    include "build/src/boot/snprintf.o"
-    include "build/src/libultra_boot/libultra_os.o"
-    include "build/src/libultra_boot/osStopThread.o"
-    include "build/src/libultra_boot/os80003270.o"
-    include "build/src/libultra_boot/osRecvMesg.o"
-    include "build/asm/boot_800033C0.o"
-    include "build/data/boot_800033C0.data.o"
+    include "build/src/boot/logutils.o"
+    include "build/src/libultra_boot_O2/sprintf.o"
+    include "build/src/libultra_boot_O1/piacs.o"
+    include "build/src/libultra_boot_O1/osSendMesg.o"
+    include "build/src/libultra_boot_O1/osStopThread.o"
+    include "build/src/libultra_boot_O1/osViExtendVStart.o"
+    include "build/src/libultra_boot_O1/osViModePalLan1.o"
+    include "build/src/libultra_boot_O1/osRecvMesg.o"
+    include "build/src/libultra_boot_O1/initialize.o"
     include "build/asm/libm.o"
-    include "build/asm/boot_800039D0.o"
-    include "build/data/boot_800039D0.rodata.o"
-    include "build/asm/boot_80004300.o"
+    include "build/asm/exceptasm.o"
+    include "build/src/libultra_boot_O1/__osDequeueThread.o"
+    include "build/src/libultra_boot_O1/osDestroyThread.o"
     include "build/asm/bzero.o"
-    include "build/src/libultra_boot/osCreateThread.o"
+    include "build/src/libultra_boot_O1/osCreateThread.o"
     include "build/asm/__osSetSR.o"
     include "build/asm/__osGetSR.o"
     include "build/asm/osWritebackDCache.o"
-    include "build/asm/osViGetNextFramebuffer.o"
-    include "build/asm/boot_80004780.o"
-    include "build/asm/boot_80004900.o"
-    include "build/data/boot_80004900.rodata.o"
-    include "build/asm/boot_80004CE0.o"
-    include "build/asm/boot_80004D10.o"
-    include "build/src/libultra_boot/osVirtualToPhysical.o"
-    include "build/src/libultra_code/osViBlack.o"
-    include "build/asm/boot_80004ED0.o"
-    include "build/src/libultra_boot/osGetThreadId.o"
+    include "build/src/libultra_boot_O2/osViGetNextFramebuffer.o"
+    include "build/src/libultra_boot_O2/pimgr.o"
+    include "build/src/libultra_boot_O2/__osDevMgrMain.o"
+    include "build/src/libultra_boot_O2/__osPiRawStartDma.o"
+    include "build/src/libultra_boot_O1/osVirtualToPhysical.o"
+    include "build/src/libultra_boot_O2/osViBlack.o"
+    include "build/src/libultra_boot_O2/__osSiRawReadIo.o"
+    include "build/src/libultra_boot_O1/osGetThreadId.o"
     include "build/asm/osSetIntMask.o"
     include "build/data/osSetIntMask.rodata.o"
-    include "build/src/libultra_code/osViSetMode.o"
+    include "build/src/libultra_boot_O2/osViSetMode.o"
     include "build/asm/__osProbeTLB.o"
-    include "build/asm/boot_80005100.o"
-    include "build/asm/boot_80005220.o"
-    include "build/data/boot_80005220.data.o"
-    include "build/asm/boot_800052E0.o"
-    include "build/data/boot_800052E0.data.o"
-    include "build/data/boot_800052E0.rodata.o"
-    include "build/asm/boot_80005FC0.o"
-    include "build/asm/osEPiStartDma.o"
-    include "build/asm/boot_800060B0.o"
-    include "build/asm/boot_800060F0.o"
+    include "build/src/libultra_boot_O1/osGetMemSize.o"
+    include "build/src/libultra_boot_O1/osSetEventMesg.o"
+    include "build/src/libultra_boot_O2/_Printf.o"
+    include "build/asm/osUnmapTLBAll.o"
+    include "build/src/libultra_boot_O2/osEPiStartDma.o"
+    include "build/src/libultra_boot_O2/string.o"
     include "build/asm/osInvalICache.o"
-    include "build/src/libultra_boot/osCreateMesgQueue.o"
+    include "build/src/libultra_boot_O1/osCreateMesgQueue.o"
     include "build/asm/osInvalDCache.o"
-    include "build/asm/boot_800062B0.o"
-    include "build/src/libultra_code/osJamMesg.o"
-    include "build/src/libultra_boot/osSetThreadPri.o"
-    include "build/src/libultra_boot/osGetThreadPri.o"
-    include "build/asm/boot_80006530.o"
-    include "build/src/libultra_code/osViSwapBuffer.o"
-    include "build/asm/boot_800066E0.o"
+    include "build/src/libultra_boot_O2/__osSiDeviceBusy.o"
+    include "build/src/libultra_boot_O1/osJamMesg.o"
+    include "build/src/libultra_boot_O1/osSetThreadPri.o"
+    include "build/src/libultra_boot_O1/osGetThreadPri.o"
+    include "build/src/libultra_boot_O2/__osEPiRawReadIo.o"
+    include "build/src/libultra_boot_O2/osViSwapBuffer.o"
+    include "build/src/libultra_boot_O2/__osEPiRawStartDma.o"
     include "build/asm/bcmp.o"
-    include "build/src/libultra_boot/osGetTime.o"
-    include "build/asm/boot_80006A70.o"
-    include "build/data/boot_80006A70.data.o"
-    include "build/data/boot_80006A70.bss.o"
+    include "build/src/libultra_boot_O1/osGetTime.o"
+    include "build/src/libultra_boot_O1/timerintr.o"
     include "build/asm/osGetCount.o"
-    include "build/asm/__osSetGlobalIntMask.o"
+    include "build/src/libultra_boot_O1/__osSetGlobalIntMask.o"
     include "build/asm/__osSetCompare.o"
     include "build/asm/bcopy.o"
-    include "build/asm/__osResetGlobalIntMask.o"
-    include "build/asm/boot_80007280.o"
-    include "build/asm/boot_800072F0.o"
-    include "build/asm/boot_80007310.o"
-    include "build/data/boot_80007310.data.o"
-    include "build/asm/boot_80007430.o"
-    include "build/asm/boot_80007730.o"
-    include "build/asm/osEPiReadIo.o"
-    include "build/src/libultra_code/osViSetSpecialFeatures.o"
-    include "build/asm/osCartRomInit.o"
-    include "build/data/osCartRomInit.bss.o"
+    include "build/src/libultra_boot_O1/__osResetGlobalIntMask.o"
+    include "build/asm/__osDisableInt.o"
+    include "build/asm/__osRestoreInt.o"
+    include "build/src/libultra_boot_O2/osViModeNtscLan1.o"
+    include "build/src/libultra_boot_O2/osViModeMpalLan1.o"
+    include "build/src/libultra_boot_O2/__osViInit.o"
+    include "build/src/libultra_boot_O2/__osViSwapContext.o"
+    include "build/src/libultra_boot_O2/osPiGetCmdQueue.o"
+    include "build/src/libultra_boot_O2/osEPiReadIo.o"
+    include "build/src/libultra_boot_O2/osViSetSpecialFeatures.o"
+    include "build/src/libultra_boot_O2/osCartRomInit.o"
+    include "build/src/libultra_boot_O2/osViModeFpalLan1.o"
     include "build/asm/__osSetFpcCsr.o"
     include "build/asm/__osGetFpcCsr.o"
-    include "build/asm/osEPiWriteIo.o"
+    include "build/src/libultra_boot_O2/osEPiWriteIo.o"
     include "build/asm/osMapTLBRdb.o"
-    include "build/asm/osYieldThread.o"
+    include "build/src/libultra_boot_O1/osYieldThread.o"
     include "build/asm/__osGetCause.o"
-    include "build/asm/boot_80007BA0.o"
-    include "build/src/libultra_code/_Litob.o"
-    include "build/asm/boot_80007FA0.o"
-    include "build/asm/boot_80008130.o"
-    include "build/data/boot_80008130.rodata.o"
-    include "build/asm/boot_80008CA0.o"
-    include "build/data/boot_80008CA0.data.o"
-    include "build/data/boot_80008CA0.bss.o"
-    include "build/asm/boot_80008FB0.o"
-    include "build/src/libultra_boot/osStartThread.o"
-    include "build/asm/osViSetYScale.o"
-    include "build/asm/boot_80009160.o"
-    include "build/asm/boot_80009270.o"
-    include "build/asm/boot_800092E0.o"
-    include "build/asm/boot_80009310.o"
-    include "build/data/boot_rodata_80012340.o"
+    include "build/src/libultra_boot_O2/__osEPiRawWriteIo.o"
+    include "build/src/libultra_boot_O2/_Litob.o"
+    include "build/src/libultra_boot_O2/ldiv.o"
+    include "build/src/libultra_boot_O2/_Ldtob.o"
+    include "build/src/boot/build.o"
+    include "build/src/libultra_boot_O2/__osSiRawWriteIo.o"
+    include "build/src/libultra_boot_O2/vimgr.o"
+    include "build/src/libultra_boot_O2/__osViGetCurrentContext.o"
+    include "build/src/libultra_boot_O1/osStartThread.o"
+    include "build/src/libultra_boot_O2/osViSetYScale.o"
+    include "build/src/libultra_boot_O2/osViSetXScale.o"
+    include "build/src/libultra_boot_O1/__osSetHWIntrRoutine.o"
+    include "build/src/libultra_boot_O1/__osGetHWIntrRoutine.o"
+    include "build/asm/__osSetWatchLo.o"
     include "build/data/rsp_boot.text.o"
     address 0x80000460
 endseg
@@ -352,7 +338,7 @@ beginseg
     include "build/data/code_8006C510.rodata.o"
     include "build/src/code/z_fcurve_data_skelanime.o"
     include "build/data/z_fcurve_data_skelanime.rodata.o"
-    include "build/data/code_data_8011F830.o"
+    include "build/data/z_game_dlftbls.data.o"
     include "build/src/code/z_horse.o"
     include "build/src/code/z_jpeg.o"
     include "build/data/z_jpeg.data.o"
@@ -373,10 +359,7 @@ beginseg
     include "build/data/z_lights.data.o"
     include "build/data/z_lights.rodata.o"
     include "build/data/z_lights.bss.o"
-    include "build/asm/code_8007AE10.o"
-    include "build/data/code_8007AE10.data.o"
-    include "build/data/code_8007AE10.rodata.o"
-    include "build/data/code_8007AE10.bss.o"
+    include "build/src/code/z_malloc.o"
     include "build/src/code/z_map_mark.o"
     include "build/src/code/z_moji.o"
     include "build/src/code/code_8007BE60.o"
@@ -391,10 +374,8 @@ beginseg
     include "build/data/z_map_exp.rodata.o"
     include "build/data/z_map_exp.bss.o"
     include "build/src/code/z_parameter.o"
-    include "build/data/z_parameter.data.o"
-    include "build/data/z_parameter.rodata.o"
-    include "build/data/z_parameter.bss.o"
     include "build/asm/code_8008E4E0.o"
+    include "build/data/code_8008E4E0.rodata.o"
     include "build/asm/code_8008E6A0.o"
     include "build/src/code/z_player_lib.o"
     include "build/data/z_player_lib.data.o"
@@ -405,54 +386,54 @@ beginseg
     include "build/data/code_80092500.data.o"
     include "build/data/code_80092500.rodata.o"
     include "build/data/code_80092500.bss.o"
-    include "build/asm/z_rcp.o"
+    include "build/src/code/z_rcp.o"
     include "build/data/z_rcp.data.o"
     include "build/data/z_rcp.rodata.o"
     include "build/src/code/z_room.o"
-    include "build/asm/z_sample.o"
+    include "build/src/code/z_sample.o"
     include "build/data/z_sample.rodata.o"
-    include "build/asm/code_80097A00.o"
-    include "build/data/code_80097A00.data.o"
-    include "build/data/code_80097A00.rodata.o"
+    include "build/src/code/code_80097A00.o"
     include "build/src/code/z_scene.o"
     include "build/src/code/z_scene_table.o"
-    include "build/asm/z_skelanime.o"
+    include "build/src/code/z_skelanime.o"
     include "build/data/z_skelanime.data.o"
     include "build/data/z_skelanime.rodata.o"
     include "build/data/z_skelanime.bss.o"
-    include "build/asm/z_skin.o"
+    include "build/src/code/z_skin.o"
     include "build/data/z_skin.rodata.o"
-    include "build/asm/z_skin_awb.o"
+    include "build/data/z_skin.bss.o"
+    include "build/src/code/z_skin_awb.o"
     include "build/data/z_skin_awb.rodata.o"
-    include "build/asm/z_skin_matrix.o"
+    include "build/src/code/z_skin_matrix.o"
     include "build/data/z_skin_matrix.data.o"
     include "build/data/z_skin_matrix.rodata.o"
-    include "build/asm/z_sram.o"
+    include "build/src/code/z_sram.o"
     include "build/data/z_sram.data.o"
     include "build/data/z_sram.rodata.o"
     include "build/src/code/code_800A9D40.o"
     include "build/src/code/code_800A9F30.o"
     include "build/data/code_800A9F30.rodata.o"
     include "build/data/code_800A9F30.bss.o"
-    include "build/asm/z_view.o"
+    include "build/src/code/z_view.o"
     include "build/data/z_view.data.o"
     include "build/data/z_view.rodata.o"
     include "build/src/code/z_vimode.o"
     include "build/data/z_vimode.rodata.o"
     include "build/asm/code_800ACE70.o"
     include "build/data/code_800ACE70.data.o"
-    include "build/asm/z_vismono.o"
+    include "build/src/code/z_vismono.o"
     include "build/data/z_vismono.rodata.o"
     include "build/asm/code_800AD920.o"
-    include "build/asm/z_vr_box.o"
+    include "build/src/code/z_vr_box.o"
     include "build/data/z_vr_box.data.o"
     include "build/data/z_vr_box.rodata.o"
-    include "build/asm/z_vr_box_draw.o"
+    include "build/src/code/z_vr_box_draw.o"
     include "build/data/z_vr_box_draw.rodata.o"
     include "build/data/z_vr_box_draw.bss.o"
-    include "build/asm/code_800B1750.o"
-    include "build/data/code_800B1750.bss.o"
-    include "build/asm/z_fbdemo.o"
+    include "build/asm/z_player_call.o"
+    include "build/data/z_player_call.data.o"
+    include "build/data/z_player_call.bss.o"
+    include "build/src/code/z_fbdemo.o"
     include "build/data/z_fbdemo.data.o"
     include "build/data/z_fbdemo.rodata.o"
     include "build/asm/code_800B2400.o"
@@ -477,10 +458,10 @@ beginseg
     include "build/data/code_800BB570.data.o"
     include "build/data/code_800BB570.rodata.o"
     include "build/data/code_800BB570.bss.o"
-    include "build/asm/z_kaleido_manager.o"
+    include "build/src/code/z_kaleido_manager.o"
     include "build/data/z_kaleido_manager.data.o"
     include "build/data/z_kaleido_manager.rodata.o"
-    include "build/asm/z_kaleido_scope_call.o"
+    include "build/src/code/z_kaleido_scope_call.o"
     include "build/data/z_kaleido_scope_call.rodata.o"
     include "build/data/z_kaleido_scope_call.bss.o"
     include "build/src/code/z_play.o"
@@ -508,10 +489,7 @@ beginseg
     include "build/data/graph.bss.o"
     include "build/asm/listalloc.o"
     include "build/data/listalloc.rodata.o"
-    include "build/asm/main.o"
-    include "build/data/main.data.o"
-    include "build/data/main.rodata.o"
-    include "build/data/main.bss.o"
+    include "build/src/code/main.o"
     include "build/src/code/padmgr.o"
     include "build/data/padmgr.data.o"
     include "build/data/padmgr.rodata.o"
@@ -523,36 +501,26 @@ beginseg
     include "build/src/code/speed_meter.o"
     include "build/data/speed_meter.data.o"
     include "build/data/speed_meter.rodata.o"
-    include "build/asm/sys_cfb.o"
-    include "build/data/sys_cfb.rodata.o"
-    include "build/data/sys_cfb.bss.o"
-    include "build/asm/code_800CA540.o"
-    include "build/data/code_800CA540.data.o"
-    include "build/data/code_800CA540.rodata.o"
-    include "build/asm/code_800CA7D0.o"
-    include "build/data/code_800CA7D0.data.o"
-    include "build/data/code_800CA7D0.rodata.o"
-    include "build/data/code_800CA7D0.bss.o"
-    include "build/asm/code_800D05F0.o"
-    include "build/data/code_800D05F0.rodata.o"
-    include "build/asm/sys_matrix.o"
-    include "build/data/sys_matrix.data.o"
-    include "build/data/sys_matrix.rodata.o"
-    include "build/data/sys_matrix.bss.o"
-    include "build/src/code/code_800D2DF0.o"
-    include "build/data/code_800D2DF0.data.o"
+    include "build/src/code/sys_cfb.o"
+    include "build/asm/sys_math.o"
+    include "build/data/sys_math.data.o"
+    include "build/data/sys_math.rodata.o"
+    include "build/asm/sys_math3d.o"
+    include "build/data/sys_math3d.data.o"
+    include "build/data/sys_math3d.rodata.o"
+    include "build/data/sys_math3d.bss.o"
+    include "build/asm/sys_math_atan.o"
+    include "build/data/sys_math_atan.rodata.o"
+    include "build/src/code/sys_matrix.o"
+    include "build/src/code/sys_ucode.o"
+    include "build/data/sys_ucode.data.o"
     include "build/asm/code_800D2E30.o"
     include "build/data/code_800D2E30.data.o"
     include "build/asm/code_800D31A0.o"
     include "build/data/code_800D31A0.data.o"
     include "build/data/code_800D31A0.rodata.o"
-    include "build/asm/irqmgr.o"
-    include "build/data/irqmgr.data.o"
-    include "build/data/irqmgr.rodata.o"
-    include "build/asm/code_800D3A90.o"
-    include "build/data/code_800D3A90.data.o"
-    include "build/data/code_800D3A90.rodata.o"
-    include "build/data/code_800D3A90.bss.o"
+    include "build/src/code/irqmgr.o"
+    include "build/src/code/debug_malloc.o"
     include "build/src/code/fault.o"
     include "build/src/code/fault_drawer.o"
     include "build/asm/code_800D71F0.o"
@@ -603,16 +571,11 @@ beginseg
     include "build/data/code_800FCE80.data.o"
     include "build/data/code_800FCE80.rodata.o"
     include "build/data/code_800FCE80.bss.o"
-    include "build/asm/code_800FD4F0.o"
-    include "build/data/code_800FD4F0.data.o"
-    include "build/data/code_800FD4F0.rodata.o"
-    include "build/data/code_800FD4F0.bss.o"
+    include "build/src/code/system_malloc.o"
     include "build/asm/code_800FD970.o"
     include "build/data/code_800FD970.data.o"
     include "build/data/code_800FD970.bss.o"
-    include "build/asm/code_800FDB30.o"
-    include "build/data/code_800FDB30.rodata.o"
-    include "build/data/code_800FDB30.bss.o"
+    include "build/src/code/__osMalloc.o"
     include "build/asm/code_800FF340.o"
     include "build/asm/code_800FFA50.o"
     include "build/data/code_800FFA50.bss.o"
@@ -622,14 +585,14 @@ beginseg
     include "build/data/code_80100290.data.o"
     include "build/data/code_80100290.rodata.o"
     include "build/data/code_80100290.bss.o"
-    include "build/asm/code_80100780.o"
-    include "build/data/code_80100780.data.o"
-    include "build/data/code_80100780.bss.o"
-    include "build/asm/code_80100EF0.o"
+    include "build/src/libultra_code/osVibrationPack.o"
+    include "build/src/libultra_code/__osSiCreateAccessQueue.o"
+    include "build/src/libultra_code/osContInit.o"
+    include "build/src/libultra_code/osContStartReadData.o"
     include "build/src/libultra_code/guPerspectiveF.o"
     include "build/asm/code_80101360.o"
     include "build/data/code_80101360.rodata.o"
-    include "build/asm/code_801013F0.o"
+    include "build/src/libultra_code/__osSiRawStartDma.o"
     include "build/asm/code_801014A0.o"
     include "build/data/code_801014A0.bss.o"
     include "build/asm/code_80101910.o"
@@ -653,13 +616,13 @@ beginseg
     include "build/src/libultra_code/code_80104140.o"
     include "build/asm/code_80104160.o"
     include "build/data/code_80104610.rodata.o"
-    include "build/src/libultra_boot/osDpGetStatus.o"
-    include "build/src/libultra_boot/osDpSetStatus.o"
+    include "build/src/libultra_code/osDpGetStatus.o"
+    include "build/src/libultra_code/osDpSetStatus.o"
     include "build/asm/code_801041E0.o"
     include "build/asm/code_80104450.o"
     include "build/asm/cosf.o"
     include "build/asm/coss.o"
-    include "build/asm/code_801047B0.o"
+    include "build/asm/osViSetEvent.o"
     include "build/asm/code_80104810.o"
     include "build/asm/code_80104B00.o"
     include "build/asm/code_80104C80.o"
@@ -673,7 +636,7 @@ beginseg
     include "build/data/code_80105CF0.data.o"
     include "build/asm/code_80105F40.o"
     include "build/asm/code_80106170.o"
-    include "build/asm/code_801062E0.o"
+    include "build/asm/osSetTimer.o"
     include "build/src/libultra_code/__osSpGetStatus.o"
     include "build/src/libultra_code/__osSpSetStatus.o"
     include "build/asm/osWritebackDCacheAll.o"
@@ -688,11 +651,10 @@ beginseg
     include "build/asm/code_801067F0.o"
     include "build/asm/code_80106860.o"
     include "build/asm/code_801068B0.o"
-    include "build/asm/z_message_PAL.o"
+    include "build/src/code/z_message_PAL.o"
     include "build/data/z_message_PAL.rodata.o"
     include "build/data/z_message_PAL.bss.o"
     include "build/src/code/z_construct.o"
-    include "build/data/z_construct.rodata.o"
     include "build/data/rsp.text.o"
     include "build/data/rsp.rodata.o"
     address 0x8001CE60
@@ -701,38 +663,50 @@ endseg
 beginseg
     name "buffers"
     include "build/src/buffers/zbuffer.o"
-    include "build/src/buffers/taskbuffers.o"
-    include "build/src/buffers/framebuffers.o"
+    include "build/src/buffers/gfxbuffers.o"
     include "build/src/buffers/heaps.o"
 endseg
 
 beginseg
     name "ovl_title"
-    //include "build/baserom/ovl_title.o"
-    include "build/asm/overlays/gamestates/ovl_title/z_title.o"
+    include "build/src/overlays/gamestates/ovl_title/z_title.o"
+    include "build/data/overlays/gamestates/z_title.data.o"
+    include "build/data/overlays/gamestates/z_title.reloc.o"
     address 0x80800000
 endseg
 
 beginseg
     name "ovl_select"
-    include "build/asm/overlays/gamestates/ovl_select/z_select.o"
+    include "build/src/overlays/gamestates/ovl_select/z_select.o"
+    include "build/data/overlays/gamestates/z_select.data.o"
+    include "build/data/overlays/gamestates/z_select.rodata.o"
+    include "build/data/overlays/gamestates/z_select.reloc.o"
 endseg
 
 beginseg
     name "ovl_opening"
-    include "build/asm/overlays/gamestates/ovl_opening/z_opening.o"
+    include "build/src/overlays/gamestates/ovl_opening/z_opening.o"
+    include "build/src/overlays/gamestates/ovl_opening/z_opening_reloc.o"
 endseg
 
 // note: increment commands account for segments who have BSS data but reflect a Virt addr range difference.
 
 beginseg
     name "ovl_file_choose"
-    include "build/asm/overlays/gamestates/ovl_file_choose/z_file_choose.o"
+    include "build/src/overlays/gamestates/ovl_file_choose/z_file_choose.o"
+    include "build/data/overlays/gamestates/z_file_choose.data.o"
+    include "build/data/overlays/gamestates/z_file_choose.rodata.o"
+    include "build/data/overlays/gamestates/z_file_choose.bss.o"
+    include "build/data/overlays/gamestates/z_file_choose.reloc.o"
 endseg
 
 beginseg
     name "ovl_kaleido_scope"
-    include "build/asm/overlays/gamestates/ovl_kaleido_scope/z_kaleido_scope.o"
+    include "build/src/overlays/gamestates/ovl_kaleido_scope/z_kaleido_scope.o"
+    include "build/data/overlays/gamestates/z_kaleido_scope.data.o"
+    include "build/data/overlays/gamestates/z_kaleido_scope.rodata.o"
+    include "build/data/overlays/gamestates/z_kaleido_scope.bss.o"
+    include "build/data/overlays/gamestates/z_kaleido_scope.reloc.o"
 endseg
 
 beginseg
@@ -800,9 +774,7 @@ endseg
 beginseg
     name "ovl_Bg_Bdan_Switch"
     include "build/src/overlays/actors/ovl_Bg_Bdan_Switch/z_bg_bdan_switch.o"
-    include "build/data/overlays/actors/z_bg_bdan_switch.data.o"
-    include "build/data/overlays/actors/z_bg_bdan_switch.rodata.o"
-    include "build/data/overlays/actors/z_bg_bdan_switch.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Bdan_Switch/z_bg_bdan_switch_reloc.o"
 endseg
 
 beginseg
@@ -1134,9 +1106,7 @@ endseg
 beginseg
     name "ovl_Bg_Hidan_Syoku"
     include "build/src/overlays/actors/ovl_Bg_Hidan_Syoku/z_bg_hidan_syoku.o"
-    include "build/data/overlays/actors/z_bg_hidan_syoku.data.o"
-    include "build/data/overlays/actors/z_bg_hidan_syoku.rodata.o"
-    include "build/data/overlays/actors/z_bg_hidan_syoku.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Hidan_Syoku/z_bg_hidan_syoku_reloc.o"
 endseg
 
 beginseg
@@ -1189,9 +1159,7 @@ endseg
 beginseg
     name "ovl_Bg_Jya_Amishutter"
     include "build/src/overlays/actors/ovl_Bg_Jya_Amishutter/z_bg_jya_amishutter.o"
-    include "build/data/overlays/actors/z_bg_jya_amishutter.data.o"
-    include "build/data/overlays/actors/z_bg_jya_amishutter.rodata.o"
-    include "build/data/overlays/actors/z_bg_jya_amishutter.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Amishutter/z_bg_jya_amishutter_reloc.o"
 endseg
 
 beginseg
@@ -1261,9 +1229,7 @@ endseg
 beginseg
     name "ovl_Bg_Jya_Kanaami"
     include "build/src/overlays/actors/ovl_Bg_Jya_Kanaami/z_bg_jya_kanaami.o"
-    include "build/data/overlays/actors/z_bg_jya_kanaami.data.o"
-    include "build/data/overlays/actors/z_bg_jya_kanaami.rodata.o"
-    include "build/data/overlays/actors/z_bg_jya_kanaami.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Jya_Kanaami/z_bg_jya_kanaami_reloc.o"
 endseg
 
 beginseg
@@ -1308,8 +1274,7 @@ endseg
 beginseg
     name "ovl_Bg_Menkuri_Nisekabe"
     include "build/src/overlays/actors/ovl_Bg_Menkuri_Nisekabe/z_bg_menkuri_nisekabe.o"
-    include "build/data/overlays/actors/z_bg_menkuri_nisekabe.data.o"
-    include "build/data/overlays/actors/z_bg_menkuri_nisekabe.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Menkuri_Nisekabe/z_bg_menkuri_nisekabe_reloc.o"
 endseg
 
 beginseg
@@ -1340,8 +1305,7 @@ endseg
 beginseg
     name "ovl_Bg_Mizu_Uzu"
     include "build/src/overlays/actors/ovl_Bg_Mizu_Uzu/z_bg_mizu_uzu.o"
-    include "build/data/overlays/actors/z_bg_mizu_uzu.data.o"
-    include "build/data/overlays/actors/z_bg_mizu_uzu.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Mizu_Uzu/z_bg_mizu_uzu_reloc.o"
 endseg
 
 beginseg
@@ -1475,9 +1439,7 @@ endseg
 beginseg
     name "ovl_Bg_Spot01_Fusya"
     include "build/src/overlays/actors/ovl_Bg_Spot01_Fusya/z_bg_spot01_fusya.o"
-    include "build/data/overlays/actors/z_bg_spot01_fusya.data.o"
-    include "build/data/overlays/actors/z_bg_spot01_fusya.rodata.o"
-    include "build/data/overlays/actors/z_bg_spot01_fusya.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Fusya/z_bg_spot01_fusya_reloc.o"
 endseg
 
 beginseg
@@ -1499,9 +1461,7 @@ endseg
 beginseg
     name "ovl_Bg_Spot01_Idosoko"
     include "build/src/overlays/actors/ovl_Bg_Spot01_Idosoko/z_bg_spot01_idosoko.o"
-    include "build/data/overlays/actors/z_bg_spot01_idosoko.data.o"
-    include "build/data/overlays/actors/z_bg_spot01_idosoko.rodata.o"
-    include "build/data/overlays/actors/z_bg_spot01_idosoko.reloc.o"
+    include "build/src/overlays/actors/ovl_Bg_Spot01_Idosoko/z_bg_spot01_idosoko_reloc.o"
 endseg
 
 beginseg
@@ -2383,9 +2343,7 @@ endseg
 beginseg
     name "ovl_En_Anubice_Tag"
     include "build/src/overlays/actors/ovl_En_Anubice_Tag/z_en_anubice_tag.o"
-    include "build/data/overlays/actors/z_en_anubice_tag.data.o"
-    include "build/data/overlays/actors/z_en_anubice_tag.rodata.o"
-    include "build/data/overlays/actors/z_en_anubice_tag.reloc.o"
+    include "build/src/overlays/actors/ovl_En_Anubice_Tag/z_en_anubice_tag_reloc.o"
 endseg
 
 beginseg
@@ -2452,7 +2410,8 @@ endseg
 
 beginseg
     name "ovl_En_Bird"
-    include "build/asm/overlays/actors/ovl_En_Bird/z_en_bird.o"
+    include "build/src/overlays/actors/ovl_En_Bird/z_en_bird.o"
+    include "build/data/overlays/actors/z_en_bird.reloc.o"
 endseg
 
 beginseg
@@ -2505,7 +2464,8 @@ endseg
 
 beginseg
     name "ovl_En_Boom"
-    include "build/asm/overlays/actors/ovl_En_Boom/z_en_boom.o"
+    include "build/src/overlays/actors/ovl_En_Boom/z_en_boom.o"
+    include "build/data/overlays/actors/z_en_boom.reloc.o"
 endseg
 
 beginseg
@@ -2904,7 +2864,6 @@ beginseg
     name "ovl_En_Ganon_Organ"
     include "build/src/overlays/actors/ovl_En_Ganon_Organ/z_en_ganon_organ.o"
     include "build/data/overlays/actors/z_en_ganon_organ.data.o"
-    include "build/data/overlays/actors/z_en_ganon_organ.rodata.o"
     include "build/data/overlays/actors/z_en_ganon_organ.reloc.o"
 endseg
 
@@ -3388,9 +3347,7 @@ endseg
 beginseg
     name "ovl_En_Ms"
     include "build/src/overlays/actors/ovl_En_Ms/z_en_ms.o"
-    include "build/data/overlays/actors/z_en_ms.data.o"
-    include "build/data/overlays/actors/z_en_ms.rodata.o"
-    include "build/data/overlays/actors/z_en_ms.reloc.o"
+    include "build/src/overlays/actors/ovl_En_Ms/z_en_ms_reloc.o"
 endseg
 
 beginseg
@@ -3435,7 +3392,8 @@ endseg
 
 beginseg
     name "ovl_En_Nutsball"
-    include "build/asm/overlays/actors/ovl_En_Nutsball/z_en_nutsball.o"
+    include "build/src/overlays/actors/ovl_En_Nutsball/z_en_nutsball.o"
+    include "build/data/overlays/actors/z_en_nutsball.reloc.o"
 endseg
 
 beginseg
@@ -3463,9 +3421,7 @@ endseg
 beginseg
     name "ovl_En_Okarina_Effect"
     include "build/src/overlays/actors/ovl_En_Okarina_Effect/z_en_okarina_effect.o"
-    include "build/data/overlays/actors/z_en_okarina_effect.data.o"
-    include "build/data/overlays/actors/z_en_okarina_effect.rodata.o"
-    include "build/data/overlays/actors/z_en_okarina_effect.reloc.o"
+    include "build/src/overlays/actors/ovl_En_Okarina_Effect/z_en_okarina_effect_reloc.o"
 endseg
 
 beginseg
@@ -3639,9 +3595,7 @@ endseg
 beginseg
     name "ovl_En_Scene_Change"
     include "build/src/overlays/actors/ovl_En_Scene_Change/z_en_scene_change.o"
-    include "build/data/overlays/actors/z_en_scene_change.data.o"
-    include "build/data/overlays/actors/z_en_scene_change.rodata.o"
-    include "build/data/overlays/actors/z_en_scene_change.reloc.o"
+    include "build/src/overlays/actors/ovl_En_Scene_Change/z_en_scene_change_reloc.o"
 endseg
 
 beginseg
@@ -3863,7 +3817,8 @@ endseg
 
 beginseg
     name "ovl_En_Tubo_Trap"
-    include "build/asm/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o"
+    include "build/src/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o"
+    include "build/data/overlays/actors/z_en_tubo_trap.reloc.o"
 endseg
 
 beginseg
@@ -4259,9 +4214,7 @@ endseg
 beginseg
     name "ovl_Obj_Makekinsuta"
     include "build/src/overlays/actors/ovl_Obj_Makekinsuta/z_obj_makekinsuta.o"
-    include "build/data/overlays/actors/z_obj_makekinsuta.data.o"
-    include "build/data/overlays/actors/z_obj_makekinsuta.rodata.o"
-    include "build/data/overlays/actors/z_obj_makekinsuta.reloc.o"
+    include "build/src/overlays/actors/ovl_Obj_Makekinsuta/z_obj_makekinsuta_reloc.o"
 endseg
 
 beginseg
@@ -9260,37 +9213,49 @@ endseg
 beginseg
     name "testroom_scene"
     romalign 0x1000
-    include "build/baserom/testroom_scene.o"
+    //include "build/baserom/testroom_scene.o"
+    include "build/scenes/test_levels/testroom/testroom_scene.o"
+    address 0x02000000
 endseg
 
 beginseg
     name "testroom_room_0"
     romalign 0x1000
-    include "build/baserom/testroom_room_0.o"
+    //include "build/baserom/testroom_room_0.o"
+    include "build/scenes/test_levels/testroom/testroom_room_0.o"
+    address 0x03000000
 endseg
 
 beginseg
     name "testroom_room_1"
     romalign 0x1000
-    include "build/baserom/testroom_room_1.o"
+    //include "build/baserom/testroom_room_1.o"
+    include "build/scenes/test_levels/testroom/testroom_room_1.o"
+    address 0x03000000
 endseg
 
 beginseg
     name "testroom_room_2"
     romalign 0x1000
-    include "build/baserom/testroom_room_2.o"
+    //include "build/baserom/testroom_room_2.o"
+    include "build/scenes/test_levels/testroom/testroom_room_2.o"
+    address 0x03000000
 endseg
 
 beginseg
     name "testroom_room_3"
     romalign 0x1000
-    include "build/baserom/testroom_room_3.o"
+    //include "build/baserom/testroom_room_3.o"
+    include "build/scenes/test_levels/testroom/testroom_room_3.o"
+    address 0x03000000
 endseg
 
 beginseg
     name "testroom_room_4"
     romalign 0x1000
-    include "build/baserom/testroom_room_4.o"
+    //include "build/baserom/testroom_room_4.o"
+    include "build/scenes/test_levels/testroom/testroom_room_4.o"
+    address 0x03000000
 endseg
 
 beginseg
@@ -9326,13 +9291,17 @@ endseg
 beginseg
     name "sutaru_scene"
     romalign 0x1000
-    include "build/baserom/sutaru_scene.o"
+    //include "build/baserom/sutaru_scene.o"
+    include "build/scenes/test_levels/sutaru/sutaru_scene.o"
+    address 0x02000000
 endseg
 
 beginseg
     name "sutaru_room_0"
     romalign 0x1000
-    include "build/baserom/sutaru_room_0.o"
+    //include "build/baserom/sutaru_room_0.o"
+    include "build/scenes/test_levels/sutaru/sutaru_room_0.o"
+    address 0x03000000
 endseg
 
 beginseg
@@ -9879,6 +9848,8 @@ beginseg
     name "ddan_boss_scene"
     romalign 0x1000
     include "build/baserom/ddan_boss_scene.o"
+    //include "build/scenes/dungeons/ddan_boss/ddan_boss_scene.o"
+    //address 0x02000000
 endseg
 
 beginseg
@@ -10352,13 +10323,17 @@ endseg
 beginseg
     name "miharigoya_scene"
     romalign 0x1000
-    include "build/baserom/miharigoya_scene.o"
+    //include "build/baserom/miharigoya_scene.o"
+    include "build/scenes/misc/miharigoya/miharigoya_scene.o"
+    address 0x02000000
 endseg
 
 beginseg
     name "miharigoya_room_0"
     romalign 0x1000
-    include "build/baserom/miharigoya_room_0.o"
+    //include "build/baserom/miharigoya_room_0.o"
+    include "build/scenes/misc/miharigoya/miharigoya_room_0.o"
+    address 0x03000000
 endseg
 
 beginseg
@@ -10496,13 +10471,17 @@ endseg
 beginseg
     name "kinsuta_scene"
     romalign 0x1000
-    include "build/baserom/kinsuta_scene.o"
+    //include "build/baserom/kinsuta_scene.o"
+    include "build/scenes/misc/kinsuta/kinsuta_scene.o"
+    address 0x02000000
 endseg
 
 beginseg
     name "kinsuta_room_0"
     romalign 0x1000
-    include "build/baserom/kinsuta_room_0.o"
+    //include "build/baserom/kinsuta_room_0.o"
+    include "build/scenes/misc/kinsuta/kinsuta_room_0.o"
+    address 0x03000000
 endseg
 
 beginseg
@@ -10527,14 +10506,16 @@ beginseg
     name "test01_scene"
     romalign 0x1000
     //include "build/baserom/test01_scene.o"
-    include "build/scenes/test01_scene/test01_scene.o"
+    include "build/scenes/test_levels/test01/test01_scene.o"
     address 0x02000000
 endseg
 
 beginseg
     name "test01_room_0"
     romalign 0x1000
-    include "build/baserom/test01_room_0.o"
+    //include "build/baserom/test01_room_0.o"
+    include "build/scenes/test_levels/test01/test01_room_0.o"
+    address 0x03000000
 endseg
 
 beginseg

@@ -40,7 +40,7 @@ glabel func_80AC4EC8
 /* 022BC 80AC4F5C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 022C0 80AC4F60 0C02F124 */  jal     func_800BC490              
 /* 022C4 80AC4F64 AC4C0680 */  sw      $t4, 0x0680($v0)           ## 00000680
-/* 022C8 80AC4F68 0C020978 */  jal     func_800825E0              
+/* 022C8 80AC4F68 0C020978 */  jal     Interface_ChangeAlpha              
 /* 022CC 80AC4F6C 24040032 */  addiu   $a0, $zero, 0x0032         ## $a0 = 00000032
 /* 022D0 80AC4F70 A2200251 */  sb      $zero, 0x0251($s1)         ## 00000251
 /* 022D4 80AC4F74 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000

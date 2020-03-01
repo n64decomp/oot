@@ -1,6 +1,27 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_girla.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000019
+
+void EnGirlA_Init(EnGirlA* this, GlobalContext* globalCtx);
+void EnGirlA_Destroy(EnGirlA* this, GlobalContext* globalCtx);
+void EnGirlA_Update(EnGirlA* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_GirlA_InitVars =
+{
+    ACTOR_EN_GIRLA,
+    ACTORTYPE_PROP,
+    ROOM,
+    FLAGS,
+    OBJECT_GAMEPLAY_KEEP,
+    sizeof(EnGirlA),
+    (ActorFunc)EnGirlA_Init,
+    (ActorFunc)EnGirlA_Destroy,
+    (ActorFunc)EnGirlA_Update,
+    NULL,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3A750.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3A758.s")
@@ -23,9 +44,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3A8D0.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3AA28.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/EnGirlA_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3AA7C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/EnGirlA_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3AAA8.s")
 
@@ -131,12 +152,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3C3BC.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3C474.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/EnGirlA_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3C498.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_GirlA/func_80A3C4D4.s")
-
-
-
-

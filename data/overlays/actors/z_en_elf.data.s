@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A06000
+glabel En_Elf_InitVars
  .word 0x00180700, 0x02000030, 0x00010000, 0x000002D0
-.word func_80A02414
-.word func_80A029D0
-.word func_80A056DC
-.word func_80A05858
+.word EnElf_Init
+.word EnElf_Destroy
+.word EnElf_Update
+.word EnElf_Draw
 glabel D_80A06020
  .word 0x48500008
 glabel D_80A06024

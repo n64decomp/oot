@@ -69,7 +69,7 @@ glabel func_80AB9F24
 /* 003E4 80ABA024 24C6B5EC */  addiu   $a2, $a2, 0xB5EC           ## $a2 = 8002B5EC
 /* 003E8 80ABA028 260400B4 */  addiu   $a0, $s0, 0x00B4           ## $a0 = 000000B4
 /* 003EC 80ABA02C 24050000 */  addiu   $a1, $zero, 0x0000         ## $a1 = 00000000
-/* 003F0 80ABA030 0C00AC78 */  jal     Actor_InitShadow
+/* 003F0 80ABA030 0C00AC78 */  jal     ActorShape_Init
               
 /* 003F4 80ABA034 3C0741A0 */  lui     $a3, 0x41A0                ## $a3 = 41A00000
 /* 003F8 80ABA038 260502B0 */  addiu   $a1, $s0, 0x02B0           ## $a1 = 000002B0

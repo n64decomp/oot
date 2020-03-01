@@ -1,6 +1,5 @@
 #include <ultra64.h>
 #include <global.h>
-#include <macros.h>
 
 u16 D_8011E1C0 = 0;
 u16 D_8011E1C4 = 0;
@@ -34,6 +33,7 @@ CutsceneStateHandler sCsStateHandlers2[] =
 
 u8 sTitleCsState = 0;
 
+// TODO: use symbols for these cutscene locations once scenes and rooms are in C
 EntranceCutscene sEntranceCutsceneTable[] =
 {
     { 0x0185, 2, 0xA0, 0x02013AA0 },
@@ -190,7 +190,7 @@ u32 func_8006472C(GlobalContext* globalCtx, CutsceneContext* csCtx, f32 target)
 
 void func_80064760(GlobalContext* globalCtx, CutsceneContext* csCtx)
 {
-    func_800825E0(1);
+    Interface_ChangeAlpha(1);
     func_800B3840(0x20);
 
     if (func_8006472C(globalCtx, csCtx, 1.0f))
@@ -203,7 +203,7 @@ void func_80064760(GlobalContext* globalCtx, CutsceneContext* csCtx)
 void func_800647C0(GlobalContext* globalCtx, CutsceneContext* csCtx)
 {
     func_80068C3C(globalCtx, csCtx);
-    func_800825E0(1);
+    Interface_ChangeAlpha(1);
     func_800B3840(0x20);
 
     if (func_8006472C(globalCtx, csCtx, 1.0f))
@@ -218,7 +218,7 @@ void func_800647C0(GlobalContext* globalCtx, CutsceneContext* csCtx)
 // regalloc and minor ordering differences
 void func_80064824(GlobalContext* globalCtx, CutsceneContext* csCtx, CsCmdBase* cmd)
 {
-    Player* player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     f32 temp;
     u8 sp3F;
 
@@ -267,7 +267,7 @@ void func_80064824(GlobalContext* globalCtx, CutsceneContext* csCtx, CsCmdBase* 
             if (sp3F != 0)
             {
                 globalCtx->unk_10A3D = 1;
-                globalCtx->unk_10A3B = 1;
+                globalCtx->gloomySky = 1;
                 globalCtx->unk_10A3C = 0;
                 globalCtx->unk_10A3E = 0x3C;
                 globalCtx->unk_10A45 = 1;
@@ -331,7 +331,7 @@ void func_80064824(GlobalContext* globalCtx, CutsceneContext* csCtx, CsCmdBase* 
             break;
         case 18:
             globalCtx->unk_10B12[0] = 0;
-            globalCtx->unk_10B01 = 2;
+            globalCtx->gloomySkyEvent = 2;
             if (gSaveContext.day_time < 0x4AAB)
                 gSaveContext.day_time += 30;
             if (globalCtx->unk_10B12[1] == 0)
@@ -505,22 +505,22 @@ void func_80065134(GlobalContext* globalCtx, CutsceneContext* csCtx, CsCmdDayTim
 // Command 0x3E8: Code Execution (& Terminates Cutscene?)
 void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCtx, CsCmdBase* cmd)
 {
-    Player* player = (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first;
+    Player* player = PLAYER;
     s32 temp = 0;
 
     if ((gSaveContext.game_mode != 0) && (gSaveContext.game_mode != 3) &&
-        (globalCtx->sceneNum != 81) && (csCtx->frames > 20) &&
+        (globalCtx->sceneNum != SCENE_SPOT00) && (csCtx->frames > 20) &&
         (!~(globalCtx->input[0].padPressed | 0xFFFF7FFF) ||
          !~(globalCtx->input[0].padPressed | -0x4001) ||
          !~(globalCtx->input[0].padPressed | -0x1001)) &&
-        (gSaveContext.file_index != 0xFEDC) && (globalCtx->sceneLoadFlag == 0))
+        (gSaveContext.file_num != 0xFEDC) && (globalCtx->sceneLoadFlag == 0))
     {
         Audio_PlaySoundGeneral(NA_SE_SY_PIECE_OF_HEART, &D_801333D4, 4, &D_801333E0, &D_801333E0, &D_801333E8);
         temp = 1;
     }
 
     if ((csCtx->frames == cmd->startFrame) || (temp != 0) ||
-        ((csCtx->frames > 20) && (!~(globalCtx->input[0].padPressed | -0x1001)) && (gSaveContext.file_index != 0xFEDC)))
+        ((csCtx->frames > 20) && (!~(globalCtx->input[0].padPressed | -0x1001)) && (gSaveContext.file_num != 0xFEDC)))
     {
         csCtx->state = CS_STATE_UNSKIPPABLE_EXEC;
         func_800F68BC(0);
@@ -593,7 +593,7 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 {
                     if (gSaveContext.scene_setup_index < 4)
                     {
-                        if (gSaveContext.link_age != 0)
+                        if (LINK_IS_CHILD)
                             globalCtx->linkAgeOnLoad = 0;
                         else
                             globalCtx->linkAgeOnLoad = 1;
@@ -676,7 +676,7 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 globalCtx->fadeOutTransition = 3;
                 break;
             case 22:
-                func_80084D10(globalCtx, 0x5D);
+                Item_Give(globalCtx, ITEM_SONG_REQUIEM);
                 globalCtx->nextEntranceIndex = 0x0123;
                 globalCtx->sceneLoadFlag = 0x14;
                 gSaveContext.cutscene_index = 0xFFF0;
@@ -721,21 +721,21 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
             case 29:
                 globalCtx->nextEntranceIndex = 0x006B;
                 globalCtx->sceneLoadFlag = 0x14;
-                gSaveContext.unk_1415 = 0;
+                gSaveContext.chamber_cutscene_num = 0;
                 globalCtx->fadeOutTransition = 3;
                 break;
             case 30:
                 globalCtx->nextEntranceIndex = 0x006B;
                 globalCtx->sceneLoadFlag = 0x14;
                 globalCtx->fadeOutTransition = 3;
-                func_80084D10(globalCtx, 0x67);
-                gSaveContext.unk_1415 = 1;
+                Item_Give(globalCtx, ITEM_MEDALLION_FIRE);
+                gSaveContext.chamber_cutscene_num = 1;
                 break;
             case 31:
                 globalCtx->nextEntranceIndex = 0x006B;
                 globalCtx->sceneLoadFlag = 0x14;
                 globalCtx->fadeOutTransition = 3;
-                gSaveContext.unk_1415 = 2;
+                gSaveContext.chamber_cutscene_num = 2;
                 break;
             case 32:
                 globalCtx->linkAgeOnLoad = 1;
@@ -808,7 +808,7 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 globalCtx->fadeOutTransition = 4;
                 break;
             case 47:
-                func_80084D10(globalCtx, 0x5E);
+                Item_Give(globalCtx, ITEM_SONG_NOCTURNE);
                 gSaveContext.event_chk_inf[5] |= 0x10;
                 globalCtx->nextEntranceIndex = 0x00DB;
                 globalCtx->sceneLoadFlag = 0x14;
@@ -954,9 +954,9 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 gSaveContext.transition_type = 2;
                 break;
             case 71:
-                gSaveContext.active_equips.all |= 0x100;
+                gSaveContext.equips.equipment |= 0x0100;
                 func_8008ECAC(globalCtx, player);
-                gSaveContext.active_equips.all |= 0x1000;
+                gSaveContext.equips.equipment |= 0x1000;
                 func_8008ECAC(globalCtx, player);
                 globalCtx->linkAgeOnLoad = 1;
                 globalCtx->nextEntranceIndex = 0x0053;
@@ -1070,7 +1070,7 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 }
                 break;
             case 96:
-                if (D_80127120[4] & gSaveContext.quest_items)
+                if (gBitFlags[4] & gSaveContext.quest_items)
                 {
                     globalCtx->nextEntranceIndex = 0x006B;
                     globalCtx->sceneLoadFlag = 0x14;
@@ -1087,7 +1087,7 @@ void Cutscene_Command_Terminator(GlobalContext* globalCtx, CutsceneContext* csCt
                 }
                 break;
             case 97:
-                if (D_80127120[3] & gSaveContext.quest_items)
+                if (gBitFlags[3] & gSaveContext.quest_items)
                 {
                     globalCtx->nextEntranceIndex = 0x006B;
                     globalCtx->sceneLoadFlag = 0x14;
@@ -1299,7 +1299,7 @@ void Cutscene_Command_TransitionFX(GlobalContext* globalCtx, CutsceneContext* cs
                               (gSaveContext.entrance_index == 0x0138) ||
                               (gSaveContext.entrance_index == 0x0371)))
                         Audio_PlaySoundGeneral(NA_SE_EV_WHITE_OUT, &D_801333D4, 4, &D_801333E0, &D_801333E0, &D_801333E8);
-                    else if ((temp == 0.0f) && (globalCtx->sceneNum == 13))
+                    else if ((temp == 0.0f) && (globalCtx->sceneNum == SCENE_GANONTIKA))
                         func_800788CC(NA_SE_EV_WHITE_OUT);
                 }
                 else
@@ -1386,7 +1386,7 @@ s32 Cutscene_Command_CameraPositions(GlobalContext* globalCtx, CutsceneContext* 
                 func_800C0314(globalCtx, csCtx->unk_16, 7);
                 func_8005AC60(func_800C04A4(globalCtx, csCtx->unk_16));
                 func_8005AC6C(func_800C04A4(globalCtx, csCtx->unk_16), csCtx->cameraFocus, csCtx->cameraPosition,
-                              (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first, relativeToLink);
+                              PLAYER, relativeToLink);
             }
         }
     }
@@ -1427,7 +1427,7 @@ s32 Cutscene_Command_CameraFocus(GlobalContext* globalCtx, CutsceneContext* csCt
                 func_800C0314(globalCtx, csCtx->unk_16, 7);
                 func_8005AC60(func_800C04A4(globalCtx, csCtx->unk_16));
                 func_8005AC6C(func_800C04A4(globalCtx, csCtx->unk_16), csCtx->cameraFocus, csCtx->cameraPosition,
-                              (Player*)globalCtx->actorCtx.actorList[ACTORTYPE_PLAYER].first, relativeToLink);
+                              PLAYER, relativeToLink);
             }
         }
     }
@@ -1548,9 +1548,9 @@ void Cutscene_Command_Textbox(GlobalContext* globalCtx, CutsceneContext* csCtx, 
             if (D_8011E1C0 != cmd->base)
             {
                 D_8011E1C0 = cmd->base;
-                if ((cmd->type == 3) && (D_80127120[20] & gSaveContext.quest_items))
+                if ((cmd->type == 3) && (gBitFlags[20] & gSaveContext.quest_items))
                     func_8010B680(globalCtx, cmd->textId1, 0);
-                else if ((cmd->type == 4) && (D_80127120[19] & gSaveContext.quest_items))
+                else if ((cmd->type == 4) && (gBitFlags[19] & gSaveContext.quest_items))
                     func_8010B680(globalCtx, cmd->textId1, 0);
                 else
                     func_8010B680(globalCtx, cmd->base, 0);
@@ -1570,7 +1570,7 @@ void Cutscene_Command_Textbox(GlobalContext* globalCtx, CutsceneContext* csCtx, 
         if (csCtx->frames >= cmd->endFrame)
         {
             originalCsFrames = csCtx->frames;
-            dialogState = func_8010BDBC(&globalCtx->sub_20D8);
+            dialogState = func_8010BDBC(&globalCtx->msgCtx);
 
             if ((dialogState != 2) && (dialogState != 0) && (dialogState != 7) && (dialogState != 8))
             {
@@ -1578,7 +1578,7 @@ void Cutscene_Command_Textbox(GlobalContext* globalCtx, CutsceneContext* csCtx, 
 
                 if ((dialogState == 4) && (func_80106BC8(globalCtx) != 0))
                 {
-                    if (globalCtx->sub_20D8.sub_8000.unk_63E5 == 0)
+                    if (globalCtx->msgCtx.choiceIndex == 0)
                     {
                         if (cmd->textId1 != 0xFFFF)
                             func_8010B720(globalCtx, cmd->textId1);
@@ -1611,7 +1611,7 @@ void Cutscene_Command_Textbox(GlobalContext* globalCtx, CutsceneContext* csCtx, 
 
             if (csCtx->frames == originalCsFrames)
             {
-                func_800825E0(1);
+                Interface_ChangeAlpha(1);
                 D_8011E1C0 = 0;
                 D_8011E1C4 = 0;
             }
@@ -1988,7 +1988,7 @@ void func_80068C3C(GlobalContext* globalCtx, CutsceneContext* csCtx)
     {
         if (0) ; // Also necessary to match
 
-        if (gGameInfo->unk_12D4 != 0)
+        if (BREG(0) != 0)
         {
             gfxCtx = globalCtx->gfxCtx;
             func_800C6AC4(gfxArr, globalCtx->gfxCtx, "../z_demo.c", 4101);
@@ -2005,7 +2005,7 @@ void func_80068C3C(GlobalContext* globalCtx, CutsceneContext* csCtx)
         }
 
         csCtx->frames++;
-        if (gGameInfo->unk_1452 != 0)
+        if (dREG(95) != 0)
             Cutscene_ProcessCommands(globalCtx, csCtx, D_8012D1F0);
         else
             Cutscene_ProcessCommands(globalCtx, csCtx, globalCtx->csCtx.segment);
@@ -2097,7 +2097,7 @@ void func_80068ECC(GlobalContext* globalCtx, CutsceneContext* csCtx)
 
             if (gSaveContext.cutscene_trigger == 0)
             {
-                func_800825E0(1);
+                Interface_ChangeAlpha(1);
                 func_800B3840(0x20);
                 func_800B38A4(0x20);
                 csCtx->state++;
@@ -2168,7 +2168,7 @@ void Cutscene_HandleConditionalTriggers(GlobalContext* globalCtx)
             gSaveContext.entrance_index = 0x0123;
             gSaveContext.cutscene_index = 0xFFF0;
         }
-        else if ((gSaveContext.entrance_index == 0x00DB) && (gSaveContext.link_age == 0) &&
+        else if ((gSaveContext.entrance_index == 0x00DB) && LINK_IS_ADULT &&
                  (gSaveContext.event_chk_inf[4] & 0x0100) && (gSaveContext.event_chk_inf[4] & 0x0200) &&
                  (gSaveContext.event_chk_inf[4] & 0x0400) && !Flags_GetEventChkInf(0xAA))
         {
@@ -2178,12 +2178,12 @@ void Cutscene_HandleConditionalTriggers(GlobalContext* globalCtx)
         else if ((gSaveContext.entrance_index == 0x05E0) && !Flags_GetEventChkInf(0xC1))
         {
             Flags_SetEventChkInf(0xC1);
-            func_80084D10(globalCtx, 7);
+            Item_Give(globalCtx, ITEM_OCARINA_FAIRY);
             gSaveContext.entrance_index = 0x011E;
             gSaveContext.cutscene_index = 0xFFF0;
         }
-        else if ((D_80127120[3] & gSaveContext.quest_items) && (D_80127120[4] & gSaveContext.quest_items) &&
-                 (gSaveContext.link_age == 0) && !Flags_GetEventChkInf(0xC4) &&
+        else if ((gBitFlags[3] & gSaveContext.quest_items) && (gBitFlags[4] & gSaveContext.quest_items) &&
+                 LINK_IS_ADULT && !Flags_GetEventChkInf(0xC4) &&
                  (gEntranceTable[gSaveContext.entrance_index].scene == 67))
         {
             Flags_SetEventChkInf(0xC4);

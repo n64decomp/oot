@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B8550
+glabel Bg_Spot18_Basket_InitVars
  .word 0x015C0600, 0x00000010, 0x00AF0000, 0x0000021C
-.word func_808B792C
-.word func_808B7AA4
-.word func_808B8434
-.word func_808B84F4
+.word BgSpot18Basket_Init
+.word BgSpot18Basket_Destroy
+.word BgSpot18Basket_Update
+.word BgSpot18Basket_Draw
 glabel D_808B8570
  .word 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00000000, 0x07F80000, 0x00360064, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010000, 0x01000000, 0x05780000, 0x000D0064
 glabel D_808B85B8

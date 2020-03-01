@@ -23,7 +23,7 @@ glabel func_80977EA8
 /* 000BC 80977EFC 24A58630 */  addiu   $a1, $a1, %lo(D_80978630)  ## $a1 = 80978630
 /* 000C0 80977F00 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 000C4 80977F04 240600B7 */  addiu   $a2, $zero, 0x00B7         ## $a2 = 000000B7
-/* 000C8 80977F08 0C0346A2 */  jal     func_800D1A88              
+/* 000C8 80977F08 0C0346A2 */  jal     Matrix_NewMtx              
 /* 000CC 80977F0C AFA2002C */  sw      $v0, 0x002C($sp)           
 /* 000D0 80977F10 8FA3002C */  lw      $v1, 0x002C($sp)           
 /* 000D4 80977F14 3C08DE00 */  lui     $t0, 0xDE00                ## $t0 = DE000000

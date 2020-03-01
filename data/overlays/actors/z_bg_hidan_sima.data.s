@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8088F180
+glabel Bg_Hidan_Sima_InitVars
  .word 0x00460100, 0x00000000, 0x002C0000, 0x0000020C
-.word func_8088E3D0
-.word func_8088E4D0
-.word func_8088EA6C
-.word func_8088F008
+.word BgHidanSima_Init
+.word BgHidanSima_Destroy
+.word BgHidanSima_Update
+.word BgHidanSima_Draw
 glabel D_8088F1A0
  .word 0x00000000, 0x20000000, 0x01040000, 0x00000000, 0x00000000, 0x19000000, 0x01000000, 0x00280064, 0x00160064, 0x00000000, 0x20000000, 0x01040000, 0x00000000, 0x00000000, 0x19000000, 0x01000000, 0x00280091, 0x001E0064
 glabel D_8088F1E8

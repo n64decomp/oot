@@ -31,7 +31,7 @@ glabel func_809F3480
 /* 00230 809F34F0 44070000 */  mfc1    $a3, $f0                   
 /* 00234 809F34F4 24C6B5EC */  addiu   $a2, $a2, 0xB5EC           ## $a2 = 8002B5EC
 /* 00238 809F34F8 260400B4 */  addiu   $a0, $s0, 0x00B4           ## $a0 = 000000B4
-/* 0023C 809F34FC 0C00AC78 */  jal     Actor_InitShadow
+/* 0023C 809F34FC 0C00AC78 */  jal     ActorShape_Init
               
 /* 00240 809F3500 A20A001E */  sb      $t2, 0x001E($s0)           ## 0000001E
 /* 00244 809F3504 3C01C000 */  lui     $at, 0xC000                ## $at = C0000000

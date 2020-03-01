@@ -108,56 +108,56 @@ typedef struct
 
 typedef struct
 {
-    /* 0x00 */ Vec3s  rot2; // Updating this value changes an actor's rotation immediately
+    /* 0x00 */ Vec3s  rot; // Current actor shape rotation
     /* 0x06 */ u8     unk_06;
     /* 0x08 */ f32    unk_08; // Model y axis offset. Represents model space units. collision mesh related
     /* 0x0C */ void (*shadowDrawFunc)(struct Actor*, struct LightMapper*, struct GlobalContext*);
     /* 0x10 */ f32    unk_10;
     /* 0x14 */ u8     unk_14;
     /* 0x15 */ u8     unk_15;
-} SubActorStructB4; // size = 0x18
+} ActorShape; // size = 0x18
 
 typedef struct Actor
 {
-    /* 0x00 */ s16      id; // Actor Id
-    /* 0x02 */ u8       type; // Actor Type. Refer to the corresponding enum for values
-    /* 0x03 */ s8       room; // Room number the actor is part of. FF denotes that the actor won't despawn on a room change
-    /* 0x04 */ u32      flags; // Flags used for various purposes
-    /* 0x08 */ PosRot   initPosRot; // Contains Initial Rotation when Object is Spawned
-    /* 0x1C */ s16      params; // original name: "args_data"; Configurable variable set by an actor's spawn data
-    /* 0x1E */ s8       objBankIndex; // original name: "bank"; Object bank index of this actor's object dependency
-    /* 0x1F */ s8       unk_1F;
-    /* 0x20 */ u16      soundEffect; // Plays sound effect relative to actor's location (if within range of camera?)
-    /* 0x22 */ u16      unk_22;
-    /* 0x24 */ PosRot   posRot; // Current coordinates
-    /* 0x38 */ PosRot   posRot2; // Related to camera
-    /* 0x4C */ f32      unk_4C;
-    /* 0x50 */ Vec3f    scale; // Sets x,y,z scaling factor. Typically, a factor of 0.01 is used for each axis
-    /* 0x5C */ Vec3f    velocity;
-    /* 0x68 */ f32      speedXZ; // Always positive, stores how fast the actor is traveling along the XZ plane
-    /* 0x6C */ f32      gravity; // Acceleration due to gravity; value is added to Y velocity every frame
-    /* 0x70 */ f32      minVelocityY; // Sets the lower bounds cap on velocity along the Y axis
-    /* 0x74 */ CollisionPoly* wallPoly; // Wall polygon an actor is touching
-    /* 0x78 */ CollisionPoly* floorPoly; // Floor polygon an actor is over/touching
-    /* 0x7C */ u8       wallPolySource; // Complex Poly Surface Source. 0x32 = Scene
-    /* 0x7D */ u8       floorPolySource; // Complex Poly Surface Source. 0x32 = Scene. related to 0x80/88
-    /* 0x7E */ s16      unk_7E;
-    /* 0x80 */ f32      unk_80; // Floor poly height?
-    /* 0x84 */ f32      unk_84;
-    /* 0x88 */ u16      bgCheckFlags;
-    /* 0x8A */ s16      rotTowardsLinkY; // Rotation y (give item, possibly next facing dir?/face toward link?)
-    /* 0x8C */ f32      waterSurfaceDist;
-    /* 0x90 */ f32      xzDistanceFromLink;
-    /* 0x94 */ f32      yDistanceFromLink;
-    /* 0x98 */ SubActorStruct98 sub_98;
-    /* 0xB4 */ SubActorStructB4 sub_B4;
-    /* 0xCC */ Vec3f    unk_CC; // Used in Link, not Deku Babas
-    /* 0xD8 */ Vec3f    unk_D8; // Used in Link, not Deku Babas
-    /* 0xE4 */ Vec3f    unk_E4; // Stores result of some vector transformation involving actor xyz vector, and a matrix at Global Context + 11D60
-    /* 0xF0 */ f32      unk_F0; // Related to above
-    /* 0xF4 */ f32      unk_F4;
-    /* 0xF8 */ f32      unk_F8;
-    /* 0xFC */ f32      unk_FC;
+    /* 0x000 */ s16     id; // Actor Id
+    /* 0x002 */ u8      type; // Actor Type. Refer to the corresponding enum for values
+    /* 0x003 */ s8      room; // Room number the actor is part of. FF denotes that the actor won't despawn on a room change
+    /* 0x004 */ u32     flags; // Flags used for various purposes
+    /* 0x008 */ PosRot  initPosRot; // Contains Initial Rotation when Object is Spawned
+    /* 0x01C */ s16     params; // original name: "args_data"; Configurable variable set by an actor's spawn data
+    /* 0x01E */ s8      objBankIndex; // original name: "bank"; Object bank index of this actor's object dependency
+    /* 0x01F */ s8      unk_1F;
+    /* 0x020 */ u16     soundEffect; // Plays sound effect relative to actor's location (if within range of camera?)
+    /* 0x022 */ u16     unk_22;
+    /* 0x024 */ PosRot  posRot; // Current coordinates
+    /* 0x038 */ PosRot  posRot2; // Related to camera
+    /* 0x04C */ f32     unk_4C;
+    /* 0x050 */ Vec3f   scale; // Sets x,y,z scaling factor. Typically, a factor of 0.01 is used for each axis
+    /* 0x05C */ Vec3f   velocity;
+    /* 0x068 */ f32     speedXZ; // Always positive, stores how fast the actor is traveling along the XZ plane
+    /* 0x06C */ f32     gravity; // Acceleration due to gravity; value is added to Y velocity every frame
+    /* 0x070 */ f32     minVelocityY; // Sets the lower bounds cap on velocity along the Y axis
+    /* 0x074 */ CollisionPoly* wallPoly; // Wall polygon an actor is touching
+    /* 0x078 */ CollisionPoly* floorPoly; // Floor polygon an actor is over/touching
+    /* 0x07C */ u8      wallPolySource; // Complex Poly Surface Source. 0x32 = Scene
+    /* 0x07D */ u8      floorPolySource; // Complex Poly Surface Source. 0x32 = Scene. related to 0x80/88
+    /* 0x07E */ s16     unk_7E;
+    /* 0x080 */ f32     unk_80; // Floor poly height?
+    /* 0x084 */ f32     unk_84;
+    /* 0x088 */ u16     bgCheckFlags;
+    /* 0x08A */ s16     rotTowardsLinkY; // Rotation y (give item, possibly next facing dir?/face toward link?)
+    /* 0x08C */ f32     waterSurfaceDist;
+    /* 0x090 */ f32     xzDistanceFromLink;
+    /* 0x094 */ f32     yDistanceFromLink;
+    /* 0x098 */ SubActorStruct98 sub_98;
+    /* 0x0B4 */ ActorShape shape;
+    /* 0x0CC */ Vec3f   unk_CC; // Used in Link, not Deku Babas
+    /* 0x0D8 */ Vec3f   unk_D8; // Used in Link, not Deku Babas
+    /* 0x0E4 */ Vec3f   unk_E4; // Stores result of some vector transformation involving actor xyz vector, and a matrix at Global Context + 11D60
+    /* 0x0F0 */ f32     unk_F0; // Related to above
+    /* 0x0F4 */ f32     unk_F4;
+    /* 0x0F8 */ f32     unk_F8;
+    /* 0x0FC */ f32     unk_FC;
     /* 0x100 */ Vec3f   pos4; // Final Coordinates last frame (collision, NTSC 1.0 f 8002F8E0)
     /* 0x10C */ u8      unk_10C; // Z-Target related
     /* 0x10D */ u8      unk_10D; // Z-Target related
@@ -189,8 +189,6 @@ typedef struct Actor
     /* 0x13C */ char    dbgPad[0x10]; // Padding that only exists in the debug rom
     /* From here on, the structure and size varies for each actor */
 } Actor; // size = 0x14C
-// Actors with a poly-type collision mesh will always set this variable
-//  /* 0x14C */ s32 PolyActorId; // Index for poly mesh
 
 typedef enum
 {
@@ -203,9 +201,9 @@ typedef enum
 typedef struct
 {
     /* 0x00 */ Actor* actor;
-    /* 0x04 */ Actor* unkActor1;
-    /* 0x08 */ Actor* unkActor2;
-    /* 0x0C */ Actor* unkActor3;
+    /* 0x04 */ Actor* at;
+    /* 0x08 */ Actor* ac;
+    /* 0x0C */ Actor* ot;
     /* 0x10 */ u8 colliderFlags; /* Compared to 0x11 */
     /* 0x11 */ u8 collideFlags; /* Compared to 0x10 */
     /* 0x12 */ u8 maskA; /* Bitwise-and compared to 0x13 */
@@ -313,14 +311,14 @@ typedef struct
     /* 0x158 */ u32 unk_158;
     /* 0x15C */ u32 unk_15C;
     /* 0x160 */ u8 unk_160;
-} DynaPolyActor;
+} DynaPolyActor; // size = 0x164
 
 typedef struct
 {
     /* 0x0000 */ Actor   actor;
     /* 0x014C */ char    unk_14C[0x002];
     /* 0x014E */ s8      unk_14E;
-    /* 0x014F */ char    unk_14F[0x001];
+    /* 0x014F */ s8      unk_14F;
     /* 0x0150 */ f32     unk_150;
     /* 0x0154 */ s8      unk_154;
     /* 0x0155 */ char    unk_155;
@@ -329,7 +327,7 @@ typedef struct
     /* 0x015A */ char    unk_15A[0x003];
     /* 0x015D */ u8      unk_15D;
     /* 0x015E */ char    unk_15E;
-    /* 0x015F */ u8      unk_15F;
+    /* 0x015F */ u8      currentMask;
     /* 0x0160 */ char    unk_160[0x050];
     /* 0x01B0 */ u32     unk_1B0;
     /* 0x01B4 */ char    unk_1B4[0x1F8];
@@ -350,8 +348,8 @@ typedef struct
     /* 0x0668 */ char    unk_668[0x004];
     /* 0x066C */ s32     unk_66C;
     /* 0x0670 */ char    unk_670[0x00C];
-    /* 0x067C */ s32     stateFlags1;
-    /* 0x0680 */ s32     stateFlags2;
+    /* 0x067C */ u32     stateFlags1;
+    /* 0x0680 */ u32     stateFlags2;
     /* 0x0684 */ char    unk_684[0x008];
     /* 0x068C */ Actor*  unk_68C;
     /* 0x0690 */ char    unk_690[0x002];

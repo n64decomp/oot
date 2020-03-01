@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A0F010
+glabel En_Fd_Fire_InitVars
  .word 0x00A30500, 0x00000015, 0x00030000, 0x000001AC
-.word func_80A0E5DC
-.word func_80A0E6E4
-.word func_80A0EAE8
-.word func_80A0EBE0
+.word EnFdFire_Init
+.word EnFdFire_Destroy
+.word EnFdFire_Update
+.word EnFdFire_Draw
 glabel D_80A0F030
  .word 0x0A110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x01080000, 0x0D840008, 0x00000000, 0x01010100, 0x000C002E, 0x00000000, 0x00000000
 glabel D_80A0F05C

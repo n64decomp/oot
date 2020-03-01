@@ -119,12 +119,12 @@ glabel func_80BA4D7C
 /* 024A0 80BA4F40 46102380 */  add.s   $f14, $f4, $f16            
 /* 024A4 80BA4F44 46125100 */  add.s   $f4, $f10, $f18            
 /* 024A8 80BA4F48 44062000 */  mfc1    $a2, $f4                   
-/* 024AC 80BA4F4C 0C034261 */  jal     func_800D0984              
+/* 024AC 80BA4F4C 0C034261 */  jal     Matrix_Translate              
 /* 024B0 80BA4F50 00000000 */  nop
 /* 024B4 80BA4F54 C60C0190 */  lwc1    $f12, 0x0190($s0)          ## 00000190
 /* 024B8 80BA4F58 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 /* 024BC 80BA4F5C 44066000 */  mfc1    $a2, $f12                  
-/* 024C0 80BA4F60 0C0342A3 */  jal     func_800D0A8C              
+/* 024C0 80BA4F60 0C0342A3 */  jal     Matrix_Scale              
 /* 024C4 80BA4F64 46006386 */  mov.s   $f14, $f12                 
 /* 024C8 80BA4F68 0C024F61 */  jal     func_80093D84              
 /* 024CC 80BA4F6C 8E240000 */  lw      $a0, 0x0000($s1)           ## 00000000
@@ -293,7 +293,7 @@ glabel func_80BA4D7C
 /* 02734 80BA51D4 AC6F0004 */  sw      $t7, 0x0004($v1)           ## 00000004
 /* 02738 80BA51D8 34211DA0 */  ori     $at, $at, 0x1DA0           ## $at = 00011DA0
 /* 0273C 80BA51DC 02212021 */  addu    $a0, $s1, $at              
-/* 02740 80BA51E0 0C03424C */  jal     func_800D0930              
+/* 02740 80BA51E0 0C03424C */  jal     Matrix_Mult              
 /* 02744 80BA51E4 AFA80058 */  sw      $t0, 0x0058($sp)           
 /* 02748 80BA51E8 8FA80058 */  lw      $t0, 0x0058($sp)           
 /* 0274C 80BA51EC 3C18DA38 */  lui     $t8, 0xDA38                ## $t8 = DA380000
@@ -307,7 +307,7 @@ glabel func_80BA4D7C
 /* 0276C 80BA520C 8E240000 */  lw      $a0, 0x0000($s1)           ## 00000000
 /* 02770 80BA5210 24060588 */  addiu   $a2, $zero, 0x0588         ## $a2 = 00000588
 /* 02774 80BA5214 AFA80058 */  sw      $t0, 0x0058($sp)           
-/* 02778 80BA5218 0C0346A2 */  jal     func_800D1A88              
+/* 02778 80BA5218 0C0346A2 */  jal     Matrix_NewMtx              
 /* 0277C 80BA521C AFA20038 */  sw      $v0, 0x0038($sp)           
 /* 02780 80BA5220 8FA30038 */  lw      $v1, 0x0038($sp)           
 /* 02784 80BA5224 8FA80058 */  lw      $t0, 0x0058($sp)           

@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80AC88A0
+glabel En_Ossan_InitVars
  .word 0x003D0400, 0x00000019, 0x00010000, 0x000002D8
-.word func_80AC3470
-.word func_80AC370C
-.word func_80AC74C8
+.word EnOssan_Init
+.word EnOssan_Destroy
+.word EnOssan_Update
 .word 0x00000000, 0x0A000039, 0x01000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x001E0050, 0x00000000, 0x00000000
 glabel D_80AC88EC
  .word 0x000A001E, 0x00140032

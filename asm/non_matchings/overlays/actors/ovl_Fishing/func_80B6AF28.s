@@ -467,7 +467,7 @@ glabel func_80B6AF28
 .L80B6B604:
 /* 01C64 80B6B604 0C041B33 */  jal     func_80106CCC              
 /* 01C68 80B6B608 02402025 */  or      $a0, $s2, $zero            ## $a0 = 00000000
-/* 01C6C 80B6B60C 0C021CC3 */  jal     func_8008730C              
+/* 01C6C 80B6B60C 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 01C70 80B6B610 2404FFCE */  addiu   $a0, $zero, 0xFFCE         ## $a0 = FFFFFFCE
 /* 01C74 80B6B614 2409FFFF */  addiu   $t1, $zero, 0xFFFF         ## $t1 = FFFFFFFF
 /* 01C78 80B6B618 A609002C */  sh      $t1, 0x002C($s0)           ## 0000002C

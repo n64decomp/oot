@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809D2470
+glabel En_Bx_InitVars
  .word 0x00DF0500, 0x00000010, 0x00D50000, 0x00000298
-.word func_809D1AE0
-.word func_809D1CE4
-.word func_809D1DDC
-.word func_809D20FC
+.word EnBx_Init
+.word EnBx_Destroy
+.word EnBx_Update
+.word EnBx_Draw
 glabel D_809D2490
  .word 0x06110900, 0x00010000, 0x01000000, 0xFFCFFFFF, 0x03040000, 0xFFCFFFFF, 0x01000000, 0x01010000, 0x003C0064, 0x00640000, 0x00000000
 glabel D_809D24BC

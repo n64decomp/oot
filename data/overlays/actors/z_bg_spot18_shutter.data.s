@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B9850
+glabel Bg_Spot18_Shutter_InitVars
  .word 0x01C40600, 0x00000030, 0x00AF0000, 0x00000168
-.word func_808B93D0
-.word func_808B957C
-.word func_808B97F8
-.word func_808B981C
+.word BgSpot18Shutter_Init
+.word BgSpot18Shutter_Destroy
+.word BgSpot18Shutter_Update
+.word BgSpot18Shutter_Draw
 glabel D_808B9870
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000
 

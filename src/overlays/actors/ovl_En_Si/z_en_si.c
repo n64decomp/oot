@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_si.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFB690.s")
+#define ROOM  0x00
+#define FLAGS 0x00000201
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFB720.s")
+void EnSi_Init(EnSi* this, GlobalContext* globalCtx);
+void EnSi_Destroy(EnSi* this, GlobalContext* globalCtx);
+void EnSi_Update(EnSi* this, GlobalContext* globalCtx);
+void EnSi_Draw(EnSi* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Si_InitVars =
+{
+    ACTOR_EN_SI,
+    ACTORTYPE_ITEMACTION,
+    ROOM,
+    FLAGS,
+    OBJECT_ST,
+    sizeof(EnSi),
+    (ActorFunc)EnSi_Init,
+    (ActorFunc)EnSi_Destroy,
+    (ActorFunc)EnSi_Update,
+    (ActorFunc)EnSi_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/EnSi_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/EnSi_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFB748.s")
 
@@ -13,9 +35,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFB950.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFB9E4.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/EnSi_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/func_80AFBA54.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Si/EnSi_Draw.s")
 
 
 

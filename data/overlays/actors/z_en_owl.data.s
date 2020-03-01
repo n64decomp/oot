@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80ACD5D0
+glabel En_Owl_InitVars
  .word 0x014D0400, 0x00000019, 0x01310000, 0x00000414
-.word func_80AC9F20
-.word func_80ACA390
-.word func_80ACC6A0
-.word func_80ACCFB8
+.word EnOwl_Init
+.word EnOwl_Destroy
+.word EnOwl_Update
+.word EnOwl_Draw
 glabel D_80ACD5F0
  .word 0x0A001139, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x001E0028, 0x00000000, 0x00000000
 glabel D_80ACD61C

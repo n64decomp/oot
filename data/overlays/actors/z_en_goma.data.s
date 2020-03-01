@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A4B780
+glabel En_Goma_InitVars
  .word 0x00280500, 0x00000035, 0x001E0000, 0x000003A4
-.word func_80A48EC0
-.word func_80A49248
-.word func_80A4AA74
-.word func_80A4AED8
+.word EnGoma_Init
+.word EnGoma_Destroy
+.word EnGoma_Update
+.word EnGoma_Draw
 glabel D_80A4B7A0
  .word 0x03110039, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00080000, 0xFFDFFFFF, 0x00000000, 0x01000100, 0x000F001E, 0x000A0000, 0x00000000
 glabel D_80A4B7CC

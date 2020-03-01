@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B1F9D0
+glabel En_Torch2_InitVars
  .word 0x00330900, 0x00000035, 0x00200000, 0x00000A94
-.word func_80B1D980
-.word func_80B1DB28
-.word func_80B1DDC4
-.word func_80B1F7F8
+.word EnTorch2_Init
+.word EnTorch2_Destroy
+.word EnTorch2_Update
+.word EnTorch2_Draw
 glabel D_80B1F9F0
  .word 0x00000000
 glabel D_80B1F9F4

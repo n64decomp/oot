@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B90D0
+glabel Bg_Spot18_Obj_InitVars
  .word 0x00B90100, 0x00000000, 0x00AF0000, 0x0000016C
-.word func_808B8D1C
-.word func_808B8D90
-.word func_808B9060
-.word func_808B9094
+.word BgSpot18Obj_Init
+.word BgSpot18Obj_Destroy
+.word BgSpot18Obj_Update
+.word BgSpot18Obj_Draw
 glabel D_808B90F0
  .word 0x01010100
 glabel D_808B90F4

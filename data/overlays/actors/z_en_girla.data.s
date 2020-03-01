@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80A3C570
+glabel En_GirlA_InitVars
  .word 0x00040600, 0x00000019, 0x00010000, 0x000001D4
-.word func_80A3AA28
-.word func_80A3AA7C
-.word func_80A3C474
+.word EnGirlA_Init
+.word EnGirlA_Destroy
+.word EnGirlA_Update
 .word 0x00000000
 glabel D_80A3C590
  .word D_80A3CCD0

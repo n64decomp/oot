@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808BEC00
+glabel Bg_Ydan_Hasi_InitVars
  .word 0x00500100, 0x00000030, 0x00360000, 0x0000016C
-.word func_808BE500
-.word func_808BE660
-.word func_808BEA6C
-.word func_808BEA90
+.word BgYdanHasi_Init
+.word BgYdanHasi_Destroy
+.word BgYdanHasi_Update
+.word BgYdanHasi_Draw
 glabel D_808BEC20
  .word 0x48500064
 glabel D_808BEC24

@@ -18,7 +18,7 @@ glabel func_80A541FC
 /* 01398 80A54238 240E2021 */  addiu   $t6, $zero, 0x2021         ## $t6 = 00002021
 /* 0139C 80A5423C 8FAF0018 */  lw      $t7, 0x0018($sp)           
 /* 013A0 80A54240 2404000F */  addiu   $a0, $zero, 0x000F         ## $a0 = 0000000F
-/* 013A4 80A54244 0C021CC3 */  jal     func_8008730C              
+/* 013A4 80A54244 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 013A8 80A54248 A5EE010E */  sh      $t6, 0x010E($t7)           ## 0000010E
 /* 013AC 80A5424C 8FB80018 */  lw      $t8, 0x0018($sp)           
 /* 013B0 80A54250 8FA4001C */  lw      $a0, 0x001C($sp)           

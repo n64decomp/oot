@@ -146,10 +146,10 @@ glabel D_809705B0
 .word func_8096FDCC
 .word func_8096FF7C
 .word func_8097009C
-glabel D_80970610
+glabel Demo_Ec_InitVars
  .word 0x01820400, 0x00000010, 0x015A0000, 0x000001A8
-.word func_8096D4D0
-.word func_8096D4B0
-.word func_80970224
-.word func_809702BC
+.word DemoEc_Init
+.word DemoEc_Destroy
+.word DemoEc_Update
+.word DemoEc_Draw
 

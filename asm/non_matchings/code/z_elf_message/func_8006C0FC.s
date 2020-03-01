@@ -89,7 +89,7 @@ glabel func_8006C0FC
 /* AE33E0 8006C240 1000000F */  b     .L8006C280
 /* AE33E4 8006C244 3042FFFF */   andi  $v0, $v0, 0xffff
 .L8006C248:
-/* AE33E8 8006C248 0C000B84 */  jal   SyncPrintfWithThreadId
+/* AE33E8 8006C248 0C000B84 */  jal   LogUtils_LogThreadId
 /* AE33EC 8006C24C 24050119 */   li    $a1, 281
 /* AE33F0 8006C250 02C02025 */  move  $a0, $s6
 /* AE33F4 8006C254 0C00084C */  jal   osSyncPrintf

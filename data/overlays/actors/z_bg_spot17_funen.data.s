@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808B7600
+glabel Bg_Spot17_Funen_InitVars
  .word 0x00BF0000, 0x00000030, 0x00B10000, 0x0000014C
-.word func_808B7400
-.word func_808B7440
-.word func_808B744C
+.word BgSpot17Funen_Init
+.word BgSpot17Funen_Destroy
+.word BgSpot17Funen_Update
 .word 0x00000000
 glabel D_808B7620
  .word 0x48500064, 0x00000000, 0x00000000, 0x00000000

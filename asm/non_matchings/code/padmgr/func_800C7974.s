@@ -6,7 +6,7 @@ glabel func_800C7974
 /* B3EB24 800C7984 AFB30024 */  sw    $s3, 0x24($sp)
 /* B3EB28 800C7988 AFB20020 */  sw    $s2, 0x20($sp)
 /* B3EB2C 800C798C AFB1001C */  sw    $s1, 0x1c($sp)
-/* B3EB30 800C7990 0C031CEF */  jal   func_800C73BC
+/* B3EB30 800C7990 0C031CEF */  jal   PadMgr_Lock2
 /* B3EB34 800C7994 AFB00018 */   sw    $s0, 0x18($sp)
 /* B3EB38 800C7998 928E02A9 */  lbu   $t6, 0x2a9($s4)
 /* B3EB3C 800C799C 26900230 */  addiu $s0, $s4, 0x230
@@ -70,7 +70,7 @@ glabel func_800C7974
 /* B3EC14 800C7A74 24845B20 */  addiu $a0, %lo(D_80145B20) # addiu $a0, $a0, 0x5b20
 /* B3EC18 800C7A78 2405017C */  li    $a1, 380
 /* B3EC1C 800C7A7C A60C0004 */  sh    $t4, 4($s0)
-/* B3EC20 800C7A80 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3EC20 800C7A80 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3EC24 800C7A84 AFA20034 */   sw    $v0, 0x34($sp)
 /* B3EC28 800C7A88 8FA20034 */  lw    $v0, 0x34($sp)
 /* B3EC2C 800C7A8C 3C048014 */  lui   $a0, %hi(D_80145B2C) # $a0, 0x8014
@@ -122,7 +122,7 @@ glabel func_800C7974
 /* B3ECDC 800C7B3C 1000000C */  b     .L800C7B70
 /* B3ECE0 800C7B40 26510001 */   addiu $s1, $s2, 1
 .L800C7B44:
-/* B3ECE4 800C7B44 0C000B84 */  jal   SyncPrintfWithThreadId
+/* B3ECE4 800C7B44 0C000B84 */  jal   LogUtils_LogThreadId
 /* B3ECE8 800C7B48 2405018C */   li    $a1, 396
 /* B3ECEC 800C7B4C 3C048014 */  lui   $a0, %hi(D_80145BC0) # $a0, 0x8014
 /* B3ECF0 800C7B50 24845BC0 */  addiu $a0, %lo(D_80145BC0) # addiu $a0, $a0, 0x5bc0
@@ -167,7 +167,7 @@ glabel func_800C7974
 /* B3ED84 800C7BE4 1420FF71 */  bnez  $at, .L800C79AC
 /* B3ED88 800C7BE8 26730006 */   addiu $s3, $s3, 6
 .L800C7BEC:
-/* B3ED8C 800C7BEC 0C031CF9 */  jal   func_800C73E4
+/* B3ED8C 800C7BEC 0C031CF9 */  jal   PadMgr_Unlock2
 /* B3ED90 800C7BF0 02802025 */   move  $a0, $s4
 /* B3ED94 800C7BF4 8FBF002C */  lw    $ra, 0x2c($sp)
 /* B3ED98 800C7BF8 8FB00018 */  lw    $s0, 0x18($sp)
@@ -177,4 +177,3 @@ glabel func_800C7974
 /* B3EDA8 800C7C08 8FB40028 */  lw    $s4, 0x28($sp)
 /* B3EDAC 800C7C0C 03E00008 */  jr    $ra
 /* B3EDB0 800C7C10 27BD0050 */   addiu $sp, $sp, 0x50
-

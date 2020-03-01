@@ -15,12 +15,12 @@ glabel func_80104F40
 /* B7C0E8 80104F48 AFB00018 */  sw    $s0, 0x18($sp)
 /* B7C0EC 80104F4C 00A08025 */  move  $s0, $a1
 /* B7C0F0 80104F50 AFA40070 */  sw    $a0, 0x70($sp)
-/* B7C0F4 80104F54 0C0402E8 */  jal   func_80100BA0
+/* B7C0F4 80104F54 0C0402E8 */  jal   __osSiGetAccess
 /* B7C0F8 80104F58 AFA60078 */   sw    $a2, 0x78($sp)
 /* B7C0FC 80104F5C 8FA40070 */  lw    $a0, 0x70($sp)
 /* B7C100 80104F60 0C040644 */  jal   func_80101910
 /* B7C104 80104F64 8FA50078 */   lw    $a1, 0x78($sp)
-/* B7C108 80104F68 0C0402F9 */  jal   func_80100BE4
+/* B7C108 80104F68 0C0402F9 */  jal   __osSiRelAccess
 /* B7C10C 80104F6C AFA2006C */   sw    $v0, 0x6c($sp)
 /* B7C110 80104F70 8FA3006C */  lw    $v1, 0x6c($sp)
 /* B7C114 80104F74 8FAE0070 */  lw    $t6, 0x70($sp)

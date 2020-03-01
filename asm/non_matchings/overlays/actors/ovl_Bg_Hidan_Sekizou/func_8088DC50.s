@@ -45,7 +45,7 @@ glabel func_8088DC50
 /* 00E2C 8088DCEC 3C058013 */  lui     $a1, 0x8013                ## $a1 = 80130000
 /* 00E30 8088DCF0 46000586 */  mov.s   $f22, $f0                  
 /* 00E34 8088DCF4 24A5DB60 */  addiu   $a1, $a1, 0xDB60           ## $a1 = 8012DB60
-/* 00E38 8088DCF8 0C0346EA */  jal     func_800D1BA8              
+/* 00E38 8088DCF8 0C0346EA */  jal     Matrix_MtxFCopy              
 /* 00E3C 8088DCFC 02602025 */  or      $a0, $s3, $zero            ## $a0 = FFFFFFA8
 /* 00E40 8088DD00 86B807A0 */  lh      $t8, 0x07A0($s5)           ## 000007A0
 /* 00E44 8088DD04 0018C880 */  sll     $t9, $t8,  2               

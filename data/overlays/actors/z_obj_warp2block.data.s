@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80BA2820
+glabel Obj_Warp2block_InitVars
  .word 0x01D60700, 0x0A000011, 0x01900000, 0x00000178
-.word func_80BA2348
-.word func_80BA2488
-.word func_80BA26B8
-.word func_80BA26F4
+.word ObjWarp2block_Init
+.word ObjWarp2block_Destroy
+.word ObjWarp2block_Update
+.word ObjWarp2block_Draw
 glabel D_80BA2840
  .word 0x3F800000
 glabel D_80BA2844

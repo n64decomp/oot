@@ -461,3 +461,9 @@ SRC_DIRS += \
     src/overlays/actors/ovl_En_Fd_Fire/ \
     src/overlays/actors/ovl_En_Diving_Game/ \
     src/overlays/actors/ovl_En_GirlA/ \
+    src/overlays/gamestates/ovl_select/ \
+    src/overlays/gamestates/ovl_file_choose/ \
+    src/overlays/gamestates/ovl_kaleido_scope/ \
+    src/overlays/actors/ovl_En_Tubo_Trap/ \
+    src/overlays/gamestates/ovl_title/ \
+    src/overlays/gamestates/ovl_opening/ \

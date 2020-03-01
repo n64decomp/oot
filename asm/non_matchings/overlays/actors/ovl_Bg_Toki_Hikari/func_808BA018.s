@@ -24,7 +24,7 @@ glabel func_808BA018
 /* 00170 808BA070 3C05808C */  lui     $a1, %hi(D_808BAC98)       ## $a1 = 808C0000
 /* 00174 808BA074 24A5AC98 */  addiu   $a1, $a1, %lo(D_808BAC98)  ## $a1 = 808BAC98
 /* 00178 808BA078 240600FC */  addiu   $a2, $zero, 0x00FC         ## $a2 = 000000FC
-/* 0017C 808BA07C 0C0346A2 */  jal     func_800D1A88              
+/* 0017C 808BA07C 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00180 808BA080 AFA2004C */  sw      $v0, 0x004C($sp)           
 /* 00184 808BA084 8FA3004C */  lw      $v1, 0x004C($sp)           
 /* 00188 808BA088 3C188016 */  lui     $t8, 0x8016                ## $t8 = 80160000
@@ -100,7 +100,7 @@ glabel func_808BA018
 /* 0029C 808BA19C AC4C0000 */  sw      $t4, 0x0000($v0)           ## 00000000
 /* 002A0 808BA1A0 8E240000 */  lw      $a0, 0x0000($s1)           ## 00000000
 /* 002A4 808BA1A4 24060116 */  addiu   $a2, $zero, 0x0116         ## $a2 = 00000116
-/* 002A8 808BA1A8 0C0346A2 */  jal     func_800D1A88              
+/* 002A8 808BA1A8 0C0346A2 */  jal     Matrix_NewMtx              
 /* 002AC 808BA1AC AFA20038 */  sw      $v0, 0x0038($sp)           
 /* 002B0 808BA1B0 8FA30038 */  lw      $v1, 0x0038($sp)           
 /* 002B4 808BA1B4 3C0F0600 */  lui     $t7, 0x0600                ## $t7 = 06000000

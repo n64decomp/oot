@@ -193,7 +193,7 @@ glabel Actor_Spawn
 /* AA9270 800320D0 240427A0 */  li    $a0, 10144
 /* AA9274 800320D4 55A0000F */  bnezl $t5, .L80032114
 /* AA9278 800320D8 8FB90060 */   lw    $t9, 0x60($sp)
-/* AA927C 800320DC 0C01EBE3 */  jal   func_8007AF8C
+/* AA927C 800320DC 0C01EBE3 */  jal   ZeldaArena_MallocRDebug
 /* AA9280 800320E0 00003025 */   move  $a2, $zero
 /* AA9284 800320E4 8FAE0060 */  lw    $t6, 0x60($sp)
 /* AA9288 800320E8 3C0F8016 */  lui   $t7, %hi(gGameInfo) # $t7, 0x8016
@@ -216,13 +216,13 @@ glabel Actor_Spawn
 /* AA92C4 80032124 8FA40040 */   lw    $a0, 0x40($sp)
 /* AA92C8 80032128 8FA40040 */  lw    $a0, 0x40($sp)
 /* AA92CC 8003212C 8FA50044 */  lw    $a1, 0x44($sp)
-/* AA92D0 80032130 0C01EBE3 */  jal   func_8007AF8C
+/* AA92D0 80032130 0C01EBE3 */  jal   ZeldaArena_MallocRDebug
 /* AA92D4 80032134 00003025 */   move  $a2, $zero
 /* AA92D8 80032138 10000005 */  b     .L80032150
 /* AA92DC 8003213C AE020010 */   sw    $v0, 0x10($s0)
 .L80032140:
 /* AA92E0 80032140 8FA50044 */  lw    $a1, 0x44($sp)
-/* AA92E4 80032144 0C01EBB8 */  jal   func_8007AEE0
+/* AA92E4 80032144 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AA92E8 80032148 00003025 */   move  $a2, $zero
 /* AA92EC 8003214C AE020010 */  sw    $v0, 0x10($s0)
 .L80032150:
@@ -311,7 +311,7 @@ glabel Actor_Spawn
 /* AA9420 80032280 8C64000C */  lw    $a0, 0xc($v1)
 /* AA9424 80032284 AFA30054 */  sw    $v1, 0x54($sp)
 /* AA9428 80032288 8FA50044 */  lw    $a1, 0x44($sp)
-/* AA942C 8003228C 0C01EBB8 */  jal   func_8007AEE0
+/* AA942C 8003228C 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AA9430 80032290 24060001 */   li    $a2, 1
 /* AA9434 80032294 8FA30054 */  lw    $v1, 0x54($sp)
 /* AA9438 80032298 1440000C */  bnez  $v0, .L800322CC
@@ -417,14 +417,14 @@ glabel Actor_Spawn
 /* AA95B8 80032418 AFA70058 */  sw    $a3, 0x58($sp)
 /* AA95BC 8003241C 0C00C747 */  jal   Actor_AddToTypeList
 /* AA95C0 80032420 8FA40060 */   lw    $a0, 0x60($sp)
-/* AA95C4 80032424 3C108016 */  lui   $s0, %hi(D_80166FC0) # $s0, 0x8016
+/* AA95C4 80032424 3C108016 */  lui   $s0, %hi(gSegments+0x18) # $s0, 0x8016
 /* AA95C8 80032428 8FA40058 */  lw    $a0, 0x58($sp)
-/* AA95CC 8003242C 8E106FC0 */  lw    $s0, %lo(D_80166FC0)($s0)
+/* AA95CC 8003242C 8E106FC0 */  lw    $s0, %lo(gSegments+0x18)($s0)
 /* AA95D0 80032430 0C00B59E */  jal   Actor_Init
 /* AA95D4 80032434 8FA50064 */   lw    $a1, 0x64($sp)
-/* AA95D8 80032438 3C018016 */  lui   $at, %hi(D_80166FC0) # $at, 0x8016
+/* AA95D8 80032438 3C018016 */  lui   $at, %hi(gSegments+0x18) # $at, 0x8016
 /* AA95DC 8003243C 8FA20058 */  lw    $v0, 0x58($sp)
-/* AA95E0 80032440 AC306FC0 */  sw    $s0, %lo(D_80166FC0)($at)
+/* AA95E0 80032440 AC306FC0 */  sw    $s0, %lo(gSegments+0x18)($at)
 .L80032444:
 /* AA95E4 80032444 8FBF002C */  lw    $ra, 0x2c($sp)
 /* AA95E8 80032448 8FB00028 */  lw    $s0, 0x28($sp)

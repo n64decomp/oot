@@ -22,7 +22,7 @@ glabel func_8083819C
               ## ActorSpawn
 /* 05FDC 808381EC E7A60014 */  swc1    $f6, 0x0014($sp)           
 /* 05FE0 808381F0 8FA40034 */  lw      $a0, 0x0034($sp)           
-/* 05FE4 808381F4 0C025E95 */  jal     func_80097A54              
+/* 05FE4 808381F4 0C025E95 */  jal     Inventory_DeleteEquipment              
 /* 05FE8 808381F8 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 05FEC 808381FC 8FA40034 */  lw      $a0, 0x0034($sp)           
 /* 05FF0 80838200 2405305F */  addiu   $a1, $zero, 0x305F         ## $a1 = 0000305F

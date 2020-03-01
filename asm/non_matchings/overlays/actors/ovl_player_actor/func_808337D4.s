@@ -63,7 +63,7 @@ glabel func_808337D4
 .L808338C0:
 /* 016B0 808338C0 91A40000 */  lbu     $a0, 0x0000($t5)           ## 00000000
 /* 016B4 808338C4 AFA70044 */  sw      $a3, 0x0044($sp)           
-/* 016B8 808338C8 0C021CCC */  jal     func_80087330              
+/* 016B8 808338C8 0C021CCC */  jal     Inventory_ChangeAmmo              
 /* 016BC 808338CC 2405FFFF */  addiu   $a1, $zero, 0xFFFF         ## $a1 = FFFFFFFF
 /* 016C0 808338D0 8FA70044 */  lw      $a3, 0x0044($sp)           
 .L808338D4:

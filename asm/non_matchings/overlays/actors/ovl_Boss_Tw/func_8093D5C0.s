@@ -1450,7 +1450,7 @@ glabel L8093E854
 /* 05DB8 8093EA88 E7AA0094 */  swc1    $f10, 0x0094($sp)          
 /* 05DBC 8093EA8C E7A40098 */  swc1    $f4, 0x0098($sp)           
 /* 05DC0 8093EA90 C62C01A8 */  lwc1    $f12, 0x01A8($s1)          ## 000001A8
-/* 05DC4 8093EA94 0C034348 */  jal     func_800D0D20              
+/* 05DC4 8093EA94 0C034348 */  jal     Matrix_RotateY              
 /* 05DC8 8093EA98 00002825 */  or      $a1, $zero, $zero          ## $a1 = 00000000
 /* 05DCC 8093EA9C 27A40090 */  addiu   $a0, $sp, 0x0090           ## $a0 = FFFFFFF0
 /* 05DD0 8093EAA0 0C0346BD */  jal     func_800D1AF4              

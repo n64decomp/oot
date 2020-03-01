@@ -1,18 +1,20 @@
 #include <ultra64.h>
 #include <global.h>
 #include <vt.h>
+#include <padmgr.h>
 
 u32 gCurrentRegion = 0;
+LocaleCartInfo sCartInfo;
 
 //temporary
-extern u8 D_801668C0[];
+extern PadMgr gPadMgr;
 
 void Locale_Init()
 {
-    osEPiReadIo(gCartHandle, 0x38, &D_80014508);
-    osEPiReadIo(gCartHandle, 0x3C, &D_8001450C);
+    osEPiReadIo(gCartHandle, 0x38, &sCartInfo.mediaFormat);
+    osEPiReadIo(gCartHandle, 0x3C, &sCartInfo.regionInfo);
 
-    switch (D_8001450E)
+    switch (sCartInfo.countryCode)
     {
         case 'J': // "NTSC-U (North America)"
             gCurrentRegion = REGION_US;
@@ -26,7 +28,7 @@ void Locale_Init()
         default:
             osSyncPrintf(VT_COL(RED, WHITE));
             osSyncPrintf("z_locale_init: 日本用かアメリカ用か判別できません\n");
-            func_80002E50("../z_locale.c", 0x76);
+            LogUtils_HungupThread("../z_locale.c", 0x76);
             osSyncPrintf(VT_RST);
             break;
     }
@@ -41,11 +43,12 @@ void Locale_ResetRegion()
 
 u32 func_80001F48()
 {
+    PadMgr* padMgr = (PadMgr*)(u32)&gPadMgr; //cast required to match
+
     if (gCurrentRegion == REGION_NATIVE)
         return 0;
 
-    //weird but matches, temporary
-    if (*(u8*)((u32)D_801668C0 + 0x2A8) & 4)
+    if (padMgr->unk_2A8 & 4)
         return 0;
 
     return 1;
@@ -53,11 +56,12 @@ u32 func_80001F48()
 
 u32 func_80001F8C()
 {
+    PadMgr* padMgr = (PadMgr*)(u32)&gPadMgr; //cast required to match
+
     if (gCurrentRegion == REGION_NATIVE)
         return 0;
 
-    //same as above
-    if (*(u8*)((u32)D_801668C0 + 0x2A8) & 4)
+    if (padMgr->unk_2A8 & 4)
         return 1;
 
     return 0;

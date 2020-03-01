@@ -93,7 +93,7 @@ glabel func_8091A9E8
 /* 05120 8091AB30 2484B418 */  addiu   $a0, $a0, %lo(D_8091B418)  ## $a0 = 8091B418
 /* 05124 8091AB34 0C0346BD */  jal     func_800D1AF4              
 /* 05128 8091AB38 27A5009C */  addiu   $a1, $sp, 0x009C           ## $a1 = FFFFFFF4
-/* 0512C 8091AB3C 0C034236 */  jal     func_800D08D8              
+/* 0512C 8091AB3C 0C034236 */  jal     Matrix_Get              
 /* 05130 8091AB40 27A40048 */  addiu   $a0, $sp, 0x0048           ## $a0 = FFFFFFA0
 /* 05134 8091AB44 27A40048 */  addiu   $a0, $sp, 0x0048           ## $a0 = FFFFFFA0
 /* 05138 8091AB48 27A50094 */  addiu   $a1, $sp, 0x0094           ## $a1 = FFFFFFEC

@@ -13,12 +13,12 @@ glabel D_80B4A1B0
  .word 0x00000000
 glabel D_80B4A1B4
  .word 0x00010000
-glabel D_80B4A1B8
+glabel En_Zf_InitVars
  .word 0x00250500, 0x00000015, 0x001B0000, 0x00000568
-.word func_80B442F0
-.word func_80B44624
-.word func_80B4924C
-.word func_80B498D8
+.word EnZf_Init
+.word EnZf_Destroy
+.word EnZf_Update
+.word EnZf_Draw
 glabel D_80B4A1D8
  .word 0x00000909, 0x10010000, 0x01000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00140046, 0x00000000, 0x00000000
 glabel D_80B4A204

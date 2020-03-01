@@ -9,12 +9,12 @@
 
 glabel D_8089B9C0
  .word 0x00000000, 0x00000000, 0x00000000, 0x00000000
-glabel D_8089B9D0
+glabel Bg_Jya_Zurerukabe_InitVars
  .word 0x00FA0100, 0x00000010, 0x00F10000, 0x00000170
-.word func_8089B660
-.word func_8089B76C
-.word func_8089B938
-.word func_8089B990
+.word BgJyaZurerukabe_Init
+.word BgJyaZurerukabe_Destroy
+.word BgJyaZurerukabe_Update
+.word BgJyaZurerukabe_Draw
 glabel D_8089B9F0
  .word 0x03AF0413, 0x04DB053F
 glabel D_8089B9F8

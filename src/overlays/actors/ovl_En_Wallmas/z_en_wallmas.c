@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_wallmas.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B2F520.s")
+#define ROOM  0x00
+#define FLAGS 0x00000015
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B2F65C.s")
+void EnWallmas_Init(EnWallmas* this, GlobalContext* globalCtx);
+void EnWallmas_Destroy(EnWallmas* this, GlobalContext* globalCtx);
+void EnWallmas_Update(EnWallmas* this, GlobalContext* globalCtx);
+void EnWallmas_Draw(EnWallmas* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Wallmas_InitVars =
+{
+    ACTOR_EN_WALLMAS,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_WALLMASTER,
+    sizeof(EnWallmas),
+    (ActorFunc)EnWallmas_Init,
+    (ActorFunc)EnWallmas_Destroy,
+    (ActorFunc)EnWallmas_Update,
+    (ActorFunc)EnWallmas_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/EnWallmas_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/EnWallmas_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B2F684.s")
 
@@ -61,7 +83,7 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B3061C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B30734.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/EnWallmas_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B308F4.s")
 
@@ -69,8 +91,4 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B30B48.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/func_80B30C74.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Wallmas/EnWallmas_Draw.s")

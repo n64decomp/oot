@@ -9,12 +9,12 @@
 
 glabel D_808B4590
  .word 0x00000000
-glabel D_808B4594
+glabel Bg_Spot15_Rrbox_InitVars
  .word 0x01070100, 0x00000000, 0x00F00000, 0x00000184
-.word func_808B3B94
-.word func_808B3C6C
-.word func_808B44EC
-.word func_808B4558
+.word BgSpot15Rrbox_Init
+.word BgSpot15Rrbox_Destroy
+.word BgSpot15Rrbox_Update
+.word BgSpot15Rrbox_Draw
 glabel D_808B45B4
  .word 0xC8500064, 0xB0F403E8, 0xB0F801F4, 0x30FC03E8
 glabel D_808B45C4

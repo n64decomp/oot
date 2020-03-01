@@ -1,6 +1,28 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_spot08_iceblock.h"
 
+#define ROOM  0x00
+#define FLAGS 0x00000000
+
+void BgSpot08Iceblock_Init(BgSpot08Iceblock* this, GlobalContext* globalCtx);
+void BgSpot08Iceblock_Destroy(BgSpot08Iceblock* this, GlobalContext* globalCtx);
+void BgSpot08Iceblock_Update(BgSpot08Iceblock* this, GlobalContext* globalCtx);
+void BgSpot08Iceblock_Draw(BgSpot08Iceblock* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Bg_Spot08_Iceblock_InitVars =
+{
+    ACTOR_BG_SPOT08_ICEBLOCK,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_SPOT08_OBJ,
+    sizeof(BgSpot08Iceblock),
+    (ActorFunc)BgSpot08Iceblock_Init,
+    (ActorFunc)BgSpot08Iceblock_Destroy,
+    (ActorFunc)BgSpot08Iceblock_Update,
+    (ActorFunc)BgSpot08Iceblock_Draw,
+};
+*/
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B0960.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B0968.s")
@@ -23,9 +45,9 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1054.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1154.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/BgSpot08Iceblock_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1358.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/BgSpot08Iceblock_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1388.s")
 
@@ -41,10 +63,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1574.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B1594.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/BgSpot08Iceblock_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/func_808B162C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Spot08_Iceblock/BgSpot08Iceblock_Draw.s")

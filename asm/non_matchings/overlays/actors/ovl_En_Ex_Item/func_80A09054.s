@@ -42,8 +42,8 @@ glabel func_80A09054
               
 /* 00240 80A090E0 84C5001C */  lh      $a1, 0x001C($a2)           ## 0000001C
 /* 00244 80A090E4 8FA60018 */  lw      $a2, 0x0018($sp)           
-/* 00248 80A090E8 3C0F80A1 */  lui     $t7, %hi(func_80A09ABC)    ## $t7 = 80A10000
-/* 0024C 80A090EC 25EF9ABC */  addiu   $t7, $t7, %lo(func_80A09ABC) ## $t7 = 80A09ABC
+/* 00248 80A090E8 3C0F80A1 */  lui     $t7, %hi(EnExItem_Draw)    ## $t7 = 80A10000
+/* 0024C 80A090EC 25EF9ABC */  addiu   $t7, $t7, %lo(EnExItem_Draw) ## $t7 = 80A09ABC
 /* 00250 80A090F0 84C30152 */  lh      $v1, 0x0152($a2)           ## 00000152
 /* 00254 80A090F4 80CE016C */  lb      $t6, 0x016C($a2)           ## 0000016C
 /* 00258 80A090F8 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000

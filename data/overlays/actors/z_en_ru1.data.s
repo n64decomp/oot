@@ -78,10 +78,10 @@ glabel D_80AF1A04
  .word func_80AF03F4
 .word func_80AF0400
 .word func_80AF05D4
-glabel D_80AF1A10
+glabel En_Ru1_InitVars
  .word 0x00A10400, 0x04000011, 0x00A30000, 0x0000039C
-.word func_80AF0110
-.word func_80AEADFC
-.word func_80AF00B4
-.word func_80AF07A4
+.word EnRu1_Init
+.word EnRu1_Destroy
+.word EnRu1_Update
+.word EnRu1_Draw
 

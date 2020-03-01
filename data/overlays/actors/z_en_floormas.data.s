@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A1A450
+glabel En_Floormas_InitVars
  .word 0x008E0500, 0x00000405, 0x000B0000, 0x00000314
-.word func_80A17510
-.word func_80A17720
-.word func_80A19EC4
-.word func_80A1A254
+.word EnFloormas_Init
+.word EnFloormas_Destroy
+.word EnFloormas_Update
+.word EnFloormas_Draw
 glabel D_80A1A470
  .word 0x00110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x04100000, 0xFFCFFFFF, 0x00000000, 0x09050100, 0x00190028, 0x00000000, 0x00000000
 glabel D_80A1A49C

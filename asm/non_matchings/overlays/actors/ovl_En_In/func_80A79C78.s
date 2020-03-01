@@ -120,7 +120,7 @@ glabel func_80A79C78
 /* 00E90 80A79E40 01616024 */  and     $t4, $t3, $at              
 /* 00E94 80A79E44 0C02CE10 */  jal     func_800B3840              ## letterbox_target_addr
 /* 00E98 80A79E48 AE0C0004 */  sw      $t4, 0x0004($s0)           ## 00000004
-/* 00E9C 80A79E4C 0C020978 */  jal     func_800825E0              
+/* 00E9C 80A79E4C 0C020978 */  jal     Interface_ChangeAlpha              
 /* 00EA0 80A79E50 24040002 */  addiu   $a0, $zero, 0x0002         ## $a0 = 00000002
 /* 00EA4 80A79E54 8FBF0024 */  lw      $ra, 0x0024($sp)           
 /* 00EA8 80A79E58 8FB00018 */  lw      $s0, 0x0018($sp)           

@@ -12,7 +12,7 @@ glabel func_809DF870
 /* 00A98 809DF898 8FA4001C */  lw      $a0, 0x001C($sp)           
 /* 00A9C 809DF89C 50400014 */  beql    $v0, $zero, .L809DF8F0     
 /* 00AA0 809DF8A0 8FBF0014 */  lw      $ra, 0x0014($sp)           
-/* 00AA4 809DF8A4 0C021AAF */  jal     func_80086ABC              
+/* 00AA4 809DF8A4 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 00AA8 809DF8A8 00000000 */  nop
 /* 00AAC 809DF8AC 10400009 */  beq     $v0, $zero, .L809DF8D4     
 /* 00AB0 809DF8B0 8FA4001C */  lw      $a0, 0x001C($sp)           

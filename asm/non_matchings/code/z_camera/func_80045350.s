@@ -67,7 +67,7 @@ glabel func_80045350
 /* ABC5D8 80045438 506B0005 */  beql  $v1, $t3, .L80045450
 /* ABC5DC 8004543C 8FBF0014 */   lw    $ra, 0x14($sp)
 /* ABC5E0 80045440 AC430000 */  sw    $v1, ($v0)
-/* ABC5E4 80045444 0C020978 */  jal   func_800825E0
+/* ABC5E4 80045444 0C020978 */  jal   Interface_ChangeAlpha
 /* ABC5E8 80045448 94440002 */   lhu   $a0, 2($v0)
 .L8004544C:
 /* ABC5EC 8004544C 8FBF0014 */  lw    $ra, 0x14($sp)

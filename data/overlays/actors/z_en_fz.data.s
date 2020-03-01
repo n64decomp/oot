@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A21B70
+glabel En_Fz_InitVars
  .word 0x01210500, 0x00000415, 0x01140000, 0x00000BD4
-.word func_80A1FDC0
-.word func_80A1FF3C
-.word func_80A210BC
-.word func_80A2124C
+.word EnFz_Init
+.word EnFz_Destroy
+.word EnFz_Update
+.word EnFz_Draw
 glabel D_80A21B90
  .word 0x0A110939, 0x01000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0xFFCE0FDB, 0x00000000, 0x01050100, 0x001E0050, 0x00000000, 0x00000000
 glabel D_80A21BBC

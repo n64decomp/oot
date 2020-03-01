@@ -40,11 +40,11 @@ glabel D_80AF510C
  .word func_80AF3F14
 .word func_80AF3F20
 .word func_80AF321C
-glabel D_80AF5118
+glabel En_Ru2_InitVars
  .word 0x00D20400, 0x00000010, 0x00CA0000, 0x00000314
-.word func_80AF3E1C
-.word func_80AF25E0
-.word func_80AF3DC0
-.word func_80AF4084
+.word EnRu2_Init
+.word EnRu2_Destroy
+.word EnRu2_Update
+.word EnRu2_Draw
 .word 0x00000000, 0x00000000
 

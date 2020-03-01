@@ -7,10 +7,10 @@
 
 .section .data
 
-glabel D_8086E730
+glabel Bg_Bom_Guard_InitVars
  .word 0x01A50600, 0x00000010, 0x01780000, 0x00000178
-.word func_8086E558
-.word func_8086E608
-.word func_8086E704
+.word BgBomGuard_Init
+.word BgBomGuard_Destroy
+.word BgBomGuard_Update
 .word 0x00000000
 

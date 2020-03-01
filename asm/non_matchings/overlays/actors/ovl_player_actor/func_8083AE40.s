@@ -28,7 +28,7 @@ glabel func_8083AE40
 /* 08C94 8083AEA4 03284823 */  subu    $t1, $t9, $t0              
 /* 08C98 8083AEA8 AFA90040 */  sw      $t1, 0x0040($sp)           
 /* 08C9C 8083AEAC AFA20038 */  sw      $v0, 0x0038($sp)           
-/* 08CA0 8083AEB0 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 08CA0 8083AEB0 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 08CA4 8083AEB4 24052382 */  addiu   $a1, $zero, 0x2382         ## $a1 = 00002382
 /* 08CA8 8083AEB8 3C048085 */  lui     $a0, %hi(D_80855250)       ## $a0 = 80850000

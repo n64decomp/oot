@@ -24,12 +24,12 @@ glabel func_80104810
 /* B7B9DC 8010483C AFB00018 */  sw    $s0, 0x18($sp)
 /* B7B9E0 80104840 AFA50074 */  sw    $a1, 0x74($sp)
 /* B7B9E4 80104844 0000A825 */  move  $s5, $zero
-/* B7B9E8 80104848 0C0402E8 */  jal   func_80100BA0
+/* B7B9E8 80104848 0C0402E8 */  jal   __osSiGetAccess
 /* B7B9EC 8010484C 24110003 */   li    $s1, 3
-/* B7B9F0 80104850 3C1E8017 */  lui   $fp, %hi(D_80175811) # $fp, 0x8017
+/* B7B9F0 80104850 3C1E8017 */  lui   $fp, %hi(_osCont_numControllers) # $fp, 0x8017
 /* B7B9F4 80104854 3C138017 */  lui   $s3, %hi(D_80175960) # $s3, 0x8017
 /* B7B9F8 80104858 26735960 */  addiu $s3, %lo(D_80175960) # addiu $s3, $s3, 0x5960
-/* B7B9FC 8010485C 27DE5811 */  addiu $fp, %lo(D_80175811) # addiu $fp, $fp, 0x5811
+/* B7B9FC 8010485C 27DE5811 */  addiu $fp, %lo(_osCont_numControllers) # addiu $fp, $fp, 0x5811
 /* B7BA00 80104860 00008025 */  move  $s0, $zero
 /* B7BA04 80104864 27B70054 */  addiu $s7, $sp, 0x54
 /* B7BA08 80104868 27B60067 */  addiu $s6, $sp, 0x67
@@ -38,14 +38,14 @@ glabel func_80104810
 /* B7BA10 80104870 0C041267 */  jal   func_8010499C
 /* B7BA14 80104874 00002025 */   move  $a0, $zero
 /* B7BA18 80104878 24040001 */  li    $a0, 1
-/* B7BA1C 8010487C 0C0404FC */  jal   func_801013F0
+/* B7BA1C 8010487C 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7BA20 80104880 02602825 */   move  $a1, $s3
 /* B7BA24 80104884 02402025 */  move  $a0, $s2
 /* B7BA28 80104888 02802825 */  move  $a1, $s4
 /* B7BA2C 8010488C 0C000CA0 */  jal   osRecvMesg
 /* B7BA30 80104890 24060001 */   li    $a2, 1
 /* B7BA34 80104894 00002025 */  move  $a0, $zero
-/* B7BA38 80104898 0C0404FC */  jal   func_801013F0
+/* B7BA38 80104898 0C0404FC */  jal   __osSiRawStartDma /*(s32 dir, void *addr)*/
 /* B7BA3C 8010489C 02602825 */   move  $a1, $s3
 /* B7BA40 801048A0 AFA2006C */  sw    $v0, 0x6c($sp)
 /* B7BA44 801048A4 02402025 */  move  $a0, $s2
@@ -101,7 +101,7 @@ glabel func_80104810
 /* B7BAF0 80104950 1420FFF1 */  bnez  $at, .L80104918
 /* B7BAF4 80104954 24420004 */   addiu $v0, $v0, 4
 .L80104958:
-/* B7BAF8 80104958 0C0402F9 */  jal   func_80100BE4
+/* B7BAF8 80104958 0C0402F9 */  jal   __osSiRelAccess
 /* B7BAFC 8010495C 00000000 */   nop   
 /* B7BB00 80104960 8FAC0074 */  lw    $t4, 0x74($sp)
 /* B7BB04 80104964 A1950000 */  sb    $s5, ($t4)
@@ -122,14 +122,14 @@ glabel func_80104810
 glabel func_8010499C
 /* B7BB3C 8010499C 27BDFFF0 */  addiu $sp, $sp, -0x10
 /* B7BB40 801049A0 3C058017 */  lui   $a1, %hi(D_80175960)
-/* B7BB44 801049A4 3C018017 */  lui   $at, %hi(D_80175810) # $at, 0x8017
+/* B7BB44 801049A4 3C018017 */  lui   $at, %hi(_osCont_lastPollType) # $at, 0x8017
 /* B7BB48 801049A8 24A25960 */  addiu $v0, $a1, %lo(D_80175960)
 /* B7BB4C 801049AC AFA40010 */  sw    $a0, 0x10($sp)
-/* B7BB50 801049B0 A0245810 */  sb    $a0, %lo(D_80175810)($at)
+/* B7BB50 801049B0 A0245810 */  sb    $a0, %lo(_osCont_lastPollType)($at)
 /* B7BB54 801049B4 240F0001 */  li    $t7, 1
 /* B7BB58 801049B8 AC4F003C */  sw    $t7, 0x3c($v0)
-/* B7BB5C 801049BC 3C068017 */  lui   $a2, %hi(D_80175811) # $a2, 0x8017
-/* B7BB60 801049C0 24C65811 */  addiu $a2, %lo(D_80175811) # addiu $a2, $a2, 0x5811
+/* B7BB5C 801049BC 3C068017 */  lui   $a2, %hi(_osCont_numControllers) # $a2, 0x8017
+/* B7BB60 801049C0 24C65811 */  addiu $a2, %lo(_osCont_numControllers) # addiu $a2, $a2, 0x5811
 /* B7BB64 801049C4 90CD0000 */  lbu   $t5, ($a2)
 /* B7BB68 801049C8 241800FF */  li    $t8, 255
 /* B7BB6C 801049CC 24190001 */  li    $t9, 1
@@ -169,8 +169,8 @@ glabel func_8010499C
 /* B7BBEC 80104A4C 27BD0010 */   addiu $sp, $sp, 0x10
 
 glabel func_80104A50
-/* B7BBF0 80104A50 3C078017 */  lui   $a3, %hi(D_80175811) # $a3, 0x8017
-/* B7BBF4 80104A54 24E75811 */  addiu $a3, %lo(D_80175811) # addiu $a3, $a3, 0x5811
+/* B7BBF0 80104A50 3C078017 */  lui   $a3, %hi(_osCont_numControllers) # $a3, 0x8017
+/* B7BBF4 80104A54 24E75811 */  addiu $a3, %lo(_osCont_numControllers) # addiu $a3, $a3, 0x5811
 /* B7BBF8 80104A58 90EE0000 */  lbu   $t6, ($a3)
 /* B7BBFC 80104A5C 3C038017 */  lui   $v1, %hi(D_80175960) # $v1, 0x8017
 /* B7BC00 80104A60 27BDFFE8 */  addiu $sp, $sp, -0x18

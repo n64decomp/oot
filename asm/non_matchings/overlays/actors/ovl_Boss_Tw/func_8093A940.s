@@ -20,11 +20,11 @@ glabel func_8093A940
 /* 01CB8 8093A988 46062201 */  sub.s   $f8, $f4, $f6              
 /* 01CBC 8093A98C E7A8004C */  swc1    $f8, 0x004C($sp)           
 /* 01CC0 8093A990 C48C0518 */  lwc1    $f12, 0x0518($a0)          ## 00000518
-/* 01CC4 8093A994 0C0342DC */  jal     func_800D0B70              
+/* 01CC4 8093A994 0C0342DC */  jal     Matrix_RotateX              
 /* 01CC8 8093A998 46006307 */  neg.s   $f12, $f12                 
 /* 01CCC 8093A99C C60C051C */  lwc1    $f12, 0x051C($s0)          ## 0000051C
 /* 01CD0 8093A9A0 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
-/* 01CD4 8093A9A4 0C034348 */  jal     func_800D0D20              
+/* 01CD4 8093A9A4 0C034348 */  jal     Matrix_RotateY              
 /* 01CD8 8093A9A8 46006307 */  neg.s   $f12, $f12                 
 /* 01CDC 8093A9AC 27A40044 */  addiu   $a0, $sp, 0x0044           ## $a0 = FFFFFFF4
 /* 01CE0 8093A9B0 0C0346BD */  jal     func_800D1AF4              

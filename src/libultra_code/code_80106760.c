@@ -6,9 +6,9 @@ u32* func_80106760()
     register u32 sMask = __osDisableInt();
     u32* var1;
 
-    var1 = (u32*)D_8000AF00[0x04 / 4];
+    var1 = __osViCurr->buffer;
 
-    func_800072F0(sMask);
+    __osRestoreInt(sMask);
 
     return var1;
 }

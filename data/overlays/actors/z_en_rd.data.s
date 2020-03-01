@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AE48A0
+glabel En_Rd_InitVars
  .word 0x00900500, 0x00000415, 0x00980000, 0x0000036C
-.word func_80AE2408
-.word func_80AE25F0
-.word func_80AE42DC
-.word func_80AE4668
+.word EnRd_Init
+.word EnRd_Destroy
+.word EnRd_Update
+.word EnRd_Draw
 glabel D_80AE48C0
  .word 0x00000909, 0x10010000, 0x01000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00050100, 0x00140046, 0x00000000, 0x00000000
 glabel D_80AE48EC

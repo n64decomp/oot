@@ -1,9 +1,30 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_door_killer.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80994C50.s")
+#define ROOM  0x00
+#define FLAGS 0x00000010
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80994FD4.s")
+void DoorKiller_Init(DoorKiller* this, GlobalContext* globalCtx);
+void DoorKiller_Destroy(DoorKiller* this, GlobalContext* globalCtx);
+void DoorKiller_Update(DoorKiller* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit Door_Killer_InitVars =
+{
+    ACTOR_DOOR_KILLER,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_DOOR_KILLER,
+    sizeof(DoorKiller),
+    (ActorFunc)DoorKiller_Init,
+    (ActorFunc)DoorKiller_Destroy,
+    (ActorFunc)DoorKiller_Update,
+    NULL,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/DoorKiller_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/DoorKiller_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995020.s")
 
@@ -29,14 +50,10 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995D6C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995E1C.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/DoorKiller_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995E40.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995EC4.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Door_Killer/func_80995F1C.s")
-
-
-
-

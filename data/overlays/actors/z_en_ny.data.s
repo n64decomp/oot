@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80ABE310
+glabel En_Ny_InitVars
  .word 0x00EC0500, 0x00000005, 0x00E50000, 0x000002B8
-.word func_80ABCBB0
-.word func_80ABCD18
-.word func_80ABD49C
-.word func_80ABDD24
+.word EnNy_Init
+.word EnNy_Destroy
+.word EnNy_Update
+.word EnNy_Draw
 glabel D_80ABE330
  .word 0x00000000, 0xFFCFFFFF, 0x04080000, 0xFFCFFFFF, 0x00000000, 0x01010100, 0x00000000, 0x00000000, 0x000F0064
 glabel D_80ABE354

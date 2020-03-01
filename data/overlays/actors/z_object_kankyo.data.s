@@ -11,12 +11,12 @@ glabel D_80BA58E0
  .word 0x04029F30, 0x0402A530, 0x0402AB30, 0x0402B130, 0x0402B730, 0x0402BD30, 0x0402C330, 0x0402C930
 glabel D_80BA5900
  .word 0x060015E0, 0x060025E0, 0x060035E0, 0x060045E0, 0x060055E0, 0x060065E0, 0x060075E0, 0x060085E0
-glabel D_80BA5920
+glabel Object_Kankyo_InitVars
  .word 0x00970700, 0x02000030, 0x00010000, 0x00001660
-.word func_80BA2AA8
-.word func_80BA2DA8
-.word func_80BA3BEC
-.word func_80BA3C10
+.word ObjectKankyo_Init
+.word ObjectKankyo_Destroy
+.word ObjectKankyo_Update
+.word ObjectKankyo_Draw
 glabel D_80BA5940
  .word 0x00000000
 glabel D_80BA5944

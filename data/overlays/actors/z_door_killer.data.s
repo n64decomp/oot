@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80995F90
+glabel Door_Killer_InitVars
  .word 0x01C10100, 0x00000010, 0x018E0000, 0x00000284
-.word func_80994C50
-.word func_80994FD4
-.word func_80995E1C
+.word DoorKiller_Init
+.word DoorKiller_Destroy
+.word DoorKiller_Update
 .word 0x00000000
 glabel D_80995FB0
  .word 0x09110900, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00100000, 0x0001FFEE, 0x00000000, 0x01010000, 0x00140064, 0x00000000, 0x00000000

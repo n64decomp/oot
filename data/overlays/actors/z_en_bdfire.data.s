@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809BCAF0
+glabel En_Bdfire_InitVars
  .word 0x00000500, 0x00000030, 0x00190000, 0x000001E4
-.word func_809BC040
-.word func_809BC26C
-.word func_809BC88C
-.word func_809BCAC4
+.word EnBdfire_Init
+.word EnBdfire_Destroy
+.word EnBdfire_Update
+.word EnBdfire_Draw
 glabel D_809BCB10
  .word 0x060264E0, 0x060274E0, 0x060284E0, 0x060294E0, 0x0602A4E0, 0x0602B4E0, 0x0602C4E0, 0x0602D4E0
 

@@ -14,7 +14,7 @@ glabel func_80B1642C
 /* 029BC 80B1645C 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 029C0 80B16460 50400024 */  beql    $v0, $zero, .L80B164F4     
 /* 029C4 80B16464 8FBF0024 */  lw      $ra, 0x0024($sp)           
-/* 029C8 80B16468 0C021AAF */  jal     func_80086ABC              
+/* 029C8 80B16468 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 029CC 80B1646C 00000000 */  nop
 /* 029D0 80B16470 10400017 */  beq     $v0, $zero, .L80B164D0     
 /* 029D4 80B16474 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000

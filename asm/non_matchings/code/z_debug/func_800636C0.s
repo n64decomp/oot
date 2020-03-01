@@ -4,7 +4,7 @@ glabel func_800636C0
 /* ADA868 800636C8 3C058014 */  lui   $a1, %hi(D_8013AD40) # $a1, 0x8014
 /* ADA86C 800636CC 24A5AD40 */  addiu $a1, %lo(D_8013AD40) # addiu $a1, $a1, -0x52c0
 /* ADA870 800636D0 240415D4 */  li    $a0, 5588
-/* ADA874 800636D4 0C03F570 */  jal   func_800FD5C0
+/* ADA874 800636D4 0C03F570 */  jal   SystemArena_MallocDebug
 /* ADA878 800636D8 24060104 */   li    $a2, 260
 /* ADA87C 800636DC 3C048016 */  lui   $a0, %hi(gGameInfo) # $a0, 0x8016
 /* ADA880 800636E0 2484FA90 */  addiu $a0, %lo(gGameInfo) # addiu $a0, $a0, -0x570

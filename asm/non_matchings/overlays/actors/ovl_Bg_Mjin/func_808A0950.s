@@ -79,7 +79,7 @@ glabel func_808A0950
 /* 002F8 808A0A78 24A50B30 */  addiu   $a1, $a1, %lo(D_808A0B30)  ## $a1 = 808A0B30
 /* 002FC 808A0A7C 2406011D */  addiu   $a2, $zero, 0x011D         ## $a2 = 0000011D
 /* 00300 808A0A80 AFA20028 */  sw      $v0, 0x0028($sp)           
-/* 00304 808A0A84 0C0346A2 */  jal     func_800D1A88              
+/* 00304 808A0A84 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00308 808A0A88 AFA70048 */  sw      $a3, 0x0048($sp)           
 /* 0030C 808A0A8C 8FA30028 */  lw      $v1, 0x0028($sp)           
 /* 00310 808A0A90 8FA70048 */  lw      $a3, 0x0048($sp)           

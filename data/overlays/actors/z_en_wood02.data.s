@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B3BEE0
+glabel En_Wood02_InitVars
  .word 0x00770600, 0x00000000, 0x007C0000, 0x000001A4
-.word func_80B3B2AC
-.word func_80B3B6E8
-.word func_80B3B720
-.word func_80B3BC14
+.word EnWood02_Init
+.word EnWood02_Destroy
+.word EnWood02_Update
+.word EnWood02_Draw
 glabel D_80B3BF00
  .word 0x0D000D39, 0x10010000, 0x05000000, 0x00000000, 0x00000000, 0x0FC0074A, 0x00000000, 0x00010100, 0x0012003C, 0x00000000, 0x00000000
 glabel D_80B3BF2C

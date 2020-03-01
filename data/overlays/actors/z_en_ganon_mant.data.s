@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A24D00
+glabel En_Ganon_Mant_InitVars
  .word 0x016F0900, 0x00000030, 0x00010000, 0x00001708
-.word func_80A23D60
-.word func_80A23D78
-.word func_80A247C8
-.word func_80A249CC
+.word EnGanonMant_Init
+.word EnGanonMant_Destroy
+.word EnGanonMant_Update
+.word EnGanonMant_Draw
 glabel D_80A24D20
  .word 0x00000000, 0x00000001, 0x00010001, 0x00010001, 0x00000000
 glabel D_80A24D34

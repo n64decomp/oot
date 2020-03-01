@@ -26,7 +26,7 @@ glabel func_80A09C40
 /* 00E00 80A09CA0 24A5A05C */  addiu   $a1, $a1, %lo(D_80A0A05C)  ## $a1 = 80A0A05C
 /* 00E04 80A09CA4 8D040000 */  lw      $a0, 0x0000($t0)           ## 00000000
 /* 00E08 80A09CA8 24060377 */  addiu   $a2, $zero, 0x0377         ## $a2 = 00000377
-/* 00E0C 80A09CAC 0C0346A2 */  jal     func_800D1A88              
+/* 00E0C 80A09CAC 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00E10 80A09CB0 AFA20030 */  sw      $v0, 0x0030($sp)           
 /* 00E14 80A09CB4 8FA30030 */  lw      $v1, 0x0030($sp)           
 /* 00E18 80A09CB8 3C0ADB06 */  lui     $t2, 0xDB06                ## $t2 = DB060000

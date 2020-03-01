@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809F2F80
+glabel En_Dnt_Jiji_InitVars
  .word 0x01A20400, 0x00000019, 0x01710000, 0x000002A8
-.word func_809F1AE0
-.word func_809F1BDC
-.word func_809F2C08
-.word func_809F2E00
+.word EnDntJiji_Init
+.word EnDntJiji_Destroy
+.word EnDntJiji_Update
+.word EnDntJiji_Draw
 glabel D_809F2FA0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x001E0050, 0x00000000, 0x00000000
 glabel D_809F2FCC

@@ -82,8 +82,7 @@ void Fault_ProcessClientContext(FaultClientContext* ctx)
 
     while(true)
     {
-        //osSetTimer(&timer, 0x2cb4178, 0, &queue, (OSMesg)0x29A);
-        func_801062E0(&timer, 0x2cb4178, 0, &queue, (OSMesg)0x29A);
+        osSetTimer(&timer, OS_USEC_TO_CYCLES(1000000), 0, &queue, (OSMesg)0x29A);
         osRecvMesg(&queue, &recMsg, 1);
 
         if (recMsg == (OSMesg)0x29A)
@@ -101,7 +100,7 @@ void Fault_ProcessClientContext(FaultClientContext* ctx)
     {
         osStopThread(t);
         //osDestroyThread(t);
-        func_80004340(t);
+        osDestroyThread(t);
     }
 }
 #else
@@ -257,6 +256,7 @@ void Fault_Sleep(u32 duration)
 
 void Fault_PadCallback(Input* input)
 {
+    //BUG: this function is not called correctly and thus will crash from reading a bad pointer at 0x800C7E4C
     func_800C7E08(input, 0);
 }
 
@@ -348,7 +348,6 @@ void Fault_PrintFReg(s32 idx, f32 *value)
     else
         FaultDrawer_Printf("F%02d:  %08x(16) ", idx, raw);
 }
-
 
 #ifdef NON_MATCHING
 void Fault_LogFReg(s32 idx, f32 *value)
@@ -654,7 +653,7 @@ void Fault_CommitFB()
 {
     u16* fb;
     osViSetYScale(1.0f);
-    osViSetMode(&D_8000AE00);
+    osViSetMode(&osViModeNtscLan1);
     osViSetSpecialFeatures(0x42); //gama_disable|dither_fliter_enable_aa_mode3_disable
     osViBlack(false);
 
@@ -704,8 +703,8 @@ void Fault_ThreadEntry(u32 unused)
     OSMesg msg;
 
     //osSetEventMesg
-    func_80005220(OS_EVENT_CPU_BREAK, &sFaultStructPtr->queue, 1);
-    func_80005220(OS_EVENT_FAULT, &sFaultStructPtr->queue, 2);
+    osSetEventMesg(OS_EVENT_CPU_BREAK, &sFaultStructPtr->queue, 1);
+    osSetEventMesg(OS_EVENT_FAULT, &sFaultStructPtr->queue, 2);
     while (true)
     {
         osRecvMesg(&sFaultStructPtr->queue, &msg, 1);
@@ -841,6 +840,6 @@ void Fault_AddHungupAndCrashImpl(const char* arg0, const char* arg1)
 void Fault_AddHungupAndCrash(const char* filename, u32 line)
 {
     char msg[256];
-    snprintf(msg, "HungUp %s:%d", filename, line);
+    sprintf(msg, "HungUp %s:%d", filename, line);
     Fault_AddHungupAndCrashImpl(msg, NULL);
 }

@@ -362,7 +362,7 @@ glabel L808DB498
 /* 04F70 808DB7E0 468021A0 */  cvt.s.w $f6, $f4                   
 /* 04F74 808DB7E4 46083283 */  div.s   $f10, $f6, $f8             
 /* 04F78 808DB7E8 46105302 */  mul.s   $f12, $f10, $f16           
-/* 04F7C 808DB7EC 0C034348 */  jal     func_800D0D20              
+/* 04F7C 808DB7EC 0C034348 */  jal     Matrix_RotateY              
 /* 04F80 808DB7F0 00000000 */  nop
 /* 04F84 808DB7F4 3C014780 */  lui     $at, 0x4780                ## $at = 47800000
 /* 04F88 808DB7F8 44816000 */  mtc1    $at, $f12                  ## $f12 = 65536.00
@@ -370,7 +370,7 @@ glabel L808DB498
               
 /* 04F90 808DB800 00000000 */  nop
 /* 04F94 808DB804 46000306 */  mov.s   $f12, $f0                  
-/* 04F98 808DB808 0C0343B5 */  jal     func_800D0ED4              
+/* 04F98 808DB808 0C0343B5 */  jal     Matrix_RotateZ              
 /* 04F9C 808DB80C 24050001 */  addiu   $a1, $zero, 0x0001         ## $a1 = 00000001
 /* 04FA0 808DB810 27A40074 */  addiu   $a0, $sp, 0x0074           ## $a0 = FFFFFFDC
 /* 04FA4 808DB814 0C0346BD */  jal     func_800D1AF4              

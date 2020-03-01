@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80A50B50
+glabel En_Guest_InitVars
  .word 0x01A40400, 0x00000019, 0x01110000, 0x00000310
-.word func_80A50220
-.word func_80A502D4
-.word func_80A502FC
+.word EnGuest_Init
+.word EnGuest_Destroy
+.word EnGuest_Update
 .word 0x00000000
 glabel D_80A50B70
  .word 0x0A000039, 0x01000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x000A003C, 0x00000000, 0x00000000

@@ -54,7 +54,7 @@ glabel func_80B161C0
 /* 027E4 80B16284 1000000F */  beq     $zero, $zero, .L80B162C4   
 /* 027E8 80B16288 960202E0 */  lhu     $v0, 0x02E0($s0)           ## 000002E0
 .L80B1628C:
-/* 027EC 80B1628C 0C021CC3 */  jal     func_8008730C              
+/* 027EC 80B1628C 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 027F0 80B16290 00042403 */  sra     $a0, $a0, 16               
 /* 027F4 80B16294 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 027F8 80B16298 0C2C5764 */  jal     func_80B15D90              

@@ -13,12 +13,12 @@ glabel D_808972B0
  .word 0xE7000000, 0x00000000, 0xFC3097FF, 0xFFFFFE38, 0xE200001C, 0x0C184DD8, 0xD9F0FBFF, 0x00000000, 0x01004008
 .word D_80897270
 .word 0x06000204, 0x00000406, 0xDF000000, 0x00000000
-glabel D_808972E8
+glabel Bg_Jya_Cobra_InitVars
  .word 0x00FC0600, 0x00000010, 0x00F10000, 0x000011A4
-.word func_808967D4
-.word func_808968E8
-.word func_80896C48
-.word func_808971A8
+.word BgJyaCobra_Init
+.word BgJyaCobra_Destroy
+.word BgJyaCobra_Update
+.word BgJyaCobra_Draw
 glabel D_80897308
  .word 0x00000000, 0x00000000
 glabel D_80897310

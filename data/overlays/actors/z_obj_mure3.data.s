@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80B9B0A0
+glabel Obj_Mure3_InitVars
  .word 0x01AB0100, 0x00000000, 0x00010000, 0x00000170
-.word func_80B9AEBC
-.word func_80B9AF18
-.word func_80B9B070
+.word ObjMure3_Init
+.word ObjMure3_Destroy
+.word ObjMure3_Update
 .word 0x00000000
 glabel D_80B9B0C0
  .word 0x00050005, 0x00070000

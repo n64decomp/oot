@@ -65,7 +65,7 @@ static void Update(ActorMenkuriKaiten* this, GlobalContext* globalCtx)
     if (!Flags_GetSwitch(globalCtx, this->actor.params) && func_80043590(&this->actor))
     {
         func_8002F974(&this->actor, 0x2024);
-        this->actor.sub_B4.rot2.y += 0x80;
+        this->actor.shape.rot.y += 0x80;
     }
 }
 

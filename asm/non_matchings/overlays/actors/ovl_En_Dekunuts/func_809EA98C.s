@@ -74,7 +74,7 @@ glabel func_809EA98C
 /* 01540 809EAAA0 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000
 .L809EAAA4:
 /* 01544 809EAAA4 44068000 */  mfc1    $a2, $f16                  
-/* 01548 809EAAA8 0C0342A3 */  jal     func_800D0A8C              
+/* 01548 809EAAA8 0C0342A3 */  jal     Matrix_Scale              
 /* 0154C 809EAAAC 24070001 */  addiu   $a3, $zero, 0x0001         ## $a3 = 00000001
 .L809EAAB0:
 /* 01550 809EAAB0 00001025 */  or      $v0, $zero, $zero          ## $v0 = 00000000

@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_808A0AE0
+glabel Bg_Mjin_InitVars
  .word 0x006E0100, 0x00000010, 0x00010000, 0x0000016C
-.word func_808A0788
-.word func_808A0820
-.word func_808A092C
+.word BgMjin_Init
+.word BgMjin_Destroy
+.word BgMjin_Update
 .word 0x00000000
 glabel D_808A0B00
  .byte 0xC8, 0x50, 0x03, 0xE8, 0xB0, 0xF4, 0x0F, 0xA0, 0xB0, 0xF8, 0x01, 0x90, 0x30, 0xFC

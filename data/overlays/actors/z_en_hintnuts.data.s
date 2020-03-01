@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A589E0
+glabel En_Hintnuts_InitVars
  .word 0x01920500, 0x00000005, 0x01640000, 0x00000260
-.word func_80A57200
-.word func_80A5739C
-.word func_80A586B8
-.word func_80A58970
+.word EnHintnuts_Init
+.word EnHintnuts_Destroy
+.word EnHintnuts_Update
+.word EnHintnuts_Draw
 glabel D_80A58A00
  .word 0x06000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00120020, 0x00000000, 0x00000000
 glabel D_80A58A2C

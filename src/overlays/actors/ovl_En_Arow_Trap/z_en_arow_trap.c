@@ -58,7 +58,7 @@ static void Update(ActorEnArowTrap* this, GlobalContext* globalCtx)
         {
             Actor_Spawn(&globalCtx->actorCtx, globalCtx, ACTOR_EN_ARROW,
                         this->actor.posRot.pos.x, this->actor.posRot.pos.y, this->actor.posRot.pos.z,
-                        this->actor.sub_B4.rot2.x, this->actor.sub_B4.rot2.y, this->actor.sub_B4.rot2.z,
+                        this->actor.shape.rot.x, this->actor.shape.rot.y, this->actor.shape.rot.z,
                         0xFFFFFFFF);
             this->attackTimer = 80;
         }

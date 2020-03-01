@@ -104,8 +104,8 @@ glabel func_80A16200
 /* 010F4 80A16374 10200008 */  beq     $at, $zero, .L80A16398     
 /* 010F8 80A16378 8FAC002C */  lw      $t4, 0x002C($sp)           
 /* 010FC 80A1637C 11800004 */  beq     $t4, $zero, .L80A16390     
-/* 01100 80A16380 3C0D80A1 */  lui     $t5, %hi(func_80A16FAC)    ## $t5 = 80A10000
-/* 01104 80A16384 25AD6FAC */  addiu   $t5, $t5, %lo(func_80A16FAC) ## $t5 = 80A16FAC
+/* 01100 80A16380 3C0D80A1 */  lui     $t5, %hi(EnFish_Draw)    ## $t5 = 80A10000
+/* 01104 80A16384 25AD6FAC */  addiu   $t5, $t5, %lo(EnFish_Draw) ## $t5 = 80A16FAC
 /* 01108 80A16388 1000000F */  beq     $zero, $zero, .L80A163C8   
 /* 0110C 80A1638C AE0D0134 */  sw      $t5, 0x0134($s0)           ## 00000134
 .L80A16390:

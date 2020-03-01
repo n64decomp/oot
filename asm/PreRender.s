@@ -76,14 +76,14 @@ glabel func_800C0F28
 /* B380EC 800C0F4C 24844A20 */  addiu $a0, %lo(D_80144A20) # addiu $a0, $a0, 0x4a20
 /* B380F0 800C0F50 24C64A28 */  addiu $a2, %lo(D_80144A28) # addiu $a2, $a2, 0x4a28
 /* B380F4 800C0F54 240700D7 */  li    $a3, 215
-/* B380F8 800C0F58 0C000B58 */  jal   NullPointerCheck
+/* B380F8 800C0F58 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B380FC 800C0F5C 02002825 */   move  $a1, $s0
 /* B38100 800C0F60 3C048014 */  lui   $a0, %hi(D_80144A38) # $a0, 0x8014
 /* B38104 800C0F64 3C068014 */  lui   $a2, %hi(D_80144A40) # $a2, 0x8014
 /* B38108 800C0F68 24C64A40 */  addiu $a2, %lo(D_80144A40) # addiu $a2, $a2, 0x4a40
 /* B3810C 800C0F6C 24844A38 */  addiu $a0, %lo(D_80144A38) # addiu $a0, $a0, 0x4a38
 /* B38110 800C0F70 8FA5002C */  lw    $a1, 0x2c($sp)
-/* B38114 800C0F74 0C000B58 */  jal   NullPointerCheck
+/* B38114 800C0F74 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38118 800C0F78 240700D8 */   li    $a3, 216
 /* B3811C 800C0F7C 8FAE002C */  lw    $t6, 0x2c($sp)
 /* B38120 800C0F80 3C048014 */  lui   $a0, %hi(D_80144A50) # $a0, 0x8014
@@ -92,7 +92,7 @@ glabel func_800C0F28
 /* B3812C 800C0F8C 24C64A58 */  addiu $a2, %lo(D_80144A58) # addiu $a2, $a2, 0x4a58
 /* B38130 800C0F90 24844A50 */  addiu $a0, %lo(D_80144A50) # addiu $a0, $a0, 0x4a50
 /* B38134 800C0F94 240700DA */  li    $a3, 218
-/* B38138 800C0F98 0C000B58 */  jal   NullPointerCheck
+/* B38138 800C0F98 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B3813C 800C0F9C AFA50024 */   sw    $a1, 0x24($sp)
 /* B38140 800C0FA0 8FA50024 */  lw    $a1, 0x24($sp)
 /* B38144 800C0FA4 3C0FE700 */  lui   $t7, 0xe700
@@ -285,14 +285,14 @@ glabel func_800C1258
 /* B38414 800C1274 24C64A70 */  addiu $a2, %lo(D_80144A70) # addiu $a2, $a2, 0x4a70
 /* B38418 800C1278 24844A68 */  addiu $a0, %lo(D_80144A68) # addiu $a0, $a0, 0x4a68
 /* B3841C 800C127C 02002825 */  move  $a1, $s0
-/* B38420 800C1280 0C000B58 */  jal   NullPointerCheck
+/* B38420 800C1280 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38424 800C1284 24070116 */   li    $a3, 278
 /* B38428 800C1288 3C048014 */  lui   $a0, %hi(D_80144A80) # $a0, 0x8014
 /* B3842C 800C128C 3C068014 */  lui   $a2, %hi(D_80144A88) # $a2, 0x8014
 /* B38430 800C1290 24C64A88 */  addiu $a2, %lo(D_80144A88) # addiu $a2, $a2, 0x4a88
 /* B38434 800C1294 24844A80 */  addiu $a0, %lo(D_80144A80) # addiu $a0, $a0, 0x4a80
 /* B38438 800C1298 8FA5002C */  lw    $a1, 0x2c($sp)
-/* B3843C 800C129C 0C000B58 */  jal   NullPointerCheck
+/* B3843C 800C129C 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38440 800C12A0 24070117 */   li    $a3, 279
 /* B38444 800C12A4 8FAE002C */  lw    $t6, 0x2c($sp)
 /* B38448 800C12A8 3C048014 */  lui   $a0, %hi(D_80144A98) # $a0, 0x8014
@@ -301,7 +301,7 @@ glabel func_800C1258
 /* B38454 800C12B4 24C64AA0 */  addiu $a2, %lo(D_80144AA0) # addiu $a2, $a2, 0x4aa0
 /* B38458 800C12B8 24844A98 */  addiu $a0, %lo(D_80144A98) # addiu $a0, $a0, 0x4a98
 /* B3845C 800C12BC 24070119 */  li    $a3, 281
-/* B38460 800C12C0 0C000B58 */  jal   NullPointerCheck
+/* B38460 800C12C0 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38464 800C12C4 AFA50024 */   sw    $a1, 0x24($sp)
 /* B38468 800C12C8 8FA50024 */  lw    $a1, 0x24($sp)
 /* B3846C 800C12CC 3C0FE700 */  lui   $t7, 0xe700
@@ -595,14 +595,14 @@ glabel func_800C170C
 /* B388D0 800C1730 24844AB0 */  addiu $a0, %lo(D_80144AB0) # addiu $a0, $a0, 0x4ab0
 /* B388D4 800C1734 24C64AB8 */  addiu $a2, %lo(D_80144AB8) # addiu $a2, $a2, 0x4ab8
 /* B388D8 800C1738 24070157 */  li    $a3, 343
-/* B388DC 800C173C 0C000B58 */  jal   NullPointerCheck
+/* B388DC 800C173C 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B388E0 800C1740 02002825 */   move  $a1, $s0
 /* B388E4 800C1744 3C048014 */  lui   $a0, %hi(D_80144AC8) # $a0, 0x8014
 /* B388E8 800C1748 3C068014 */  lui   $a2, %hi(D_80144AD0) # $a2, 0x8014
 /* B388EC 800C174C 24C64AD0 */  addiu $a2, %lo(D_80144AD0) # addiu $a2, $a2, 0x4ad0
 /* B388F0 800C1750 24844AC8 */  addiu $a0, %lo(D_80144AC8) # addiu $a0, $a0, 0x4ac8
 /* B388F4 800C1754 8FA5002C */  lw    $a1, 0x2c($sp)
-/* B388F8 800C1758 0C000B58 */  jal   NullPointerCheck
+/* B388F8 800C1758 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B388FC 800C175C 24070158 */   li    $a3, 344
 /* B38900 800C1760 8FAE002C */  lw    $t6, 0x2c($sp)
 /* B38904 800C1764 3C048014 */  lui   $a0, %hi(D_80144AE0) # $a0, 0x8014
@@ -611,7 +611,7 @@ glabel func_800C170C
 /* B38910 800C1770 24C64AE8 */  addiu $a2, %lo(D_80144AE8) # addiu $a2, $a2, 0x4ae8
 /* B38914 800C1774 24844AE0 */  addiu $a0, %lo(D_80144AE0) # addiu $a0, $a0, 0x4ae0
 /* B38918 800C1778 2407015A */  li    $a3, 346
-/* B3891C 800C177C 0C000B58 */  jal   NullPointerCheck
+/* B3891C 800C177C 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38920 800C1780 AFA50024 */   sw    $a1, 0x24($sp)
 /* B38924 800C1784 8FA50024 */  lw    $a1, 0x24($sp)
 /* B38928 800C1788 3C0FE700 */  lui   $t7, 0xe700
@@ -866,14 +866,14 @@ glabel func_800C1B24
 /* B38CE8 800C1B48 24844AF8 */  addiu $a0, %lo(D_80144AF8) # addiu $a0, $a0, 0x4af8
 /* B38CEC 800C1B4C 24C64B00 */  addiu $a2, %lo(D_80144B00) # addiu $a2, $a2, 0x4b00
 /* B38CF0 800C1B50 240701A6 */  li    $a3, 422
-/* B38CF4 800C1B54 0C000B58 */  jal   NullPointerCheck
+/* B38CF4 800C1B54 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38CF8 800C1B58 02002825 */   move  $a1, $s0
 /* B38CFC 800C1B5C 3C048014 */  lui   $a0, %hi(D_80144B10) # $a0, 0x8014
 /* B38D00 800C1B60 3C068014 */  lui   $a2, %hi(D_80144B18) # $a2, 0x8014
 /* B38D04 800C1B64 24C64B18 */  addiu $a2, %lo(D_80144B18) # addiu $a2, $a2, 0x4b18
 /* B38D08 800C1B68 24844B10 */  addiu $a0, %lo(D_80144B10) # addiu $a0, $a0, 0x4b10
 /* B38D0C 800C1B6C 8FA5002C */  lw    $a1, 0x2c($sp)
-/* B38D10 800C1B70 0C000B58 */  jal   NullPointerCheck
+/* B38D10 800C1B70 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38D14 800C1B74 240701A7 */   li    $a3, 423
 /* B38D18 800C1B78 8FAE002C */  lw    $t6, 0x2c($sp)
 /* B38D1C 800C1B7C 3C048014 */  lui   $a0, %hi(D_80144B28) # $a0, 0x8014
@@ -882,7 +882,7 @@ glabel func_800C1B24
 /* B38D28 800C1B88 24C64B30 */  addiu $a2, %lo(D_80144B30) # addiu $a2, $a2, 0x4b30
 /* B38D2C 800C1B8C 24844B28 */  addiu $a0, %lo(D_80144B28) # addiu $a0, $a0, 0x4b28
 /* B38D30 800C1B90 240701A9 */  li    $a3, 425
-/* B38D34 800C1B94 0C000B58 */  jal   NullPointerCheck
+/* B38D34 800C1B94 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B38D38 800C1B98 AFA50024 */   sw    $a1, 0x24($sp)
 /* B38D3C 800C1B9C 8FA50024 */  lw    $a1, 0x24($sp)
 /* B38D40 800C1BA0 3C0FE700 */  lui   $t7, 0xe700
@@ -1093,14 +1093,14 @@ glabel func_800C1E9C
 /* B39058 800C1EB8 24C64B50 */  addiu $a2, %lo(D_80144B50) # addiu $a2, $a2, 0x4b50
 /* B3905C 800C1EBC 24844B40 */  addiu $a0, %lo(D_80144B40) # addiu $a0, $a0, 0x4b40
 /* B39060 800C1EC0 8E050020 */  lw    $a1, 0x20($s0)
-/* B39064 800C1EC4 0C000B58 */  jal   NullPointerCheck
+/* B39064 800C1EC4 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B39068 800C1EC8 240701E1 */   li    $a3, 481
 /* B3906C 800C1ECC 3C048014 */  lui   $a0, %hi(D_80144B60) # $a0, 0x8014
 /* B39070 800C1ED0 3C068014 */  lui   $a2, %hi(D_80144B6C) # $a2, 0x8014
 /* B39074 800C1ED4 24C64B6C */  addiu $a2, %lo(D_80144B6C) # addiu $a2, $a2, 0x4b6c
 /* B39078 800C1ED8 24844B60 */  addiu $a0, %lo(D_80144B60) # addiu $a0, $a0, 0x4b60
 /* B3907C 800C1EDC 8E05001C */  lw    $a1, 0x1c($s0)
-/* B39080 800C1EE0 0C000B58 */  jal   NullPointerCheck
+/* B39080 800C1EE0 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B39084 800C1EE4 240701E2 */   li    $a3, 482
 /* B39088 800C1EE8 8E070020 */  lw    $a3, 0x20($s0)
 /* B3908C 800C1EEC 50E00008 */  beql  $a3, $zero, .L800C1F10
@@ -1129,14 +1129,14 @@ glabel func_800C1F20
 /* B390DC 800C1F3C 24C64B8C */  addiu $a2, %lo(D_80144B8C) # addiu $a2, $a2, 0x4b8c
 /* B390E0 800C1F40 24844B7C */  addiu $a0, %lo(D_80144B7C) # addiu $a0, $a0, 0x4b7c
 /* B390E4 800C1F44 8E050014 */  lw    $a1, 0x14($s0)
-/* B390E8 800C1F48 0C000B58 */  jal   NullPointerCheck
+/* B390E8 800C1F48 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B390EC 800C1F4C 240701EF */   li    $a3, 495
 /* B390F0 800C1F50 3C048014 */  lui   $a0, %hi(D_80144B9C) # $a0, 0x8014
 /* B390F4 800C1F54 3C068014 */  lui   $a2, %hi(D_80144BA8) # $a2, 0x8014
 /* B390F8 800C1F58 24C64BA8 */  addiu $a2, %lo(D_80144BA8) # addiu $a2, $a2, 0x4ba8
 /* B390FC 800C1F5C 24844B9C */  addiu $a0, %lo(D_80144B9C) # addiu $a0, $a0, 0x4b9c
 /* B39100 800C1F60 8E050010 */  lw    $a1, 0x10($s0)
-/* B39104 800C1F64 0C000B58 */  jal   NullPointerCheck
+/* B39104 800C1F64 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B39108 800C1F68 240701F0 */   li    $a3, 496
 /* B3910C 800C1F6C 8E070014 */  lw    $a3, 0x14($s0)
 /* B39110 800C1F70 50E00008 */  beql  $a3, $zero, .L800C1F94
@@ -1236,7 +1236,7 @@ glabel func_800C20B4
 /* B39274 800C20D4 24C64BC8 */  addiu $a2, %lo(D_80144BC8) # addiu $a2, $a2, 0x4bc8
 /* B39278 800C20D8 24844BB8 */  addiu $a0, %lo(D_80144BB8) # addiu $a0, $a0, 0x4bb8
 /* B3927C 800C20DC 8E050018 */  lw    $a1, 0x18($s0)
-/* B39280 800C20E0 0C000B58 */  jal   NullPointerCheck
+/* B39280 800C20E0 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B39284 800C20E4 24070214 */   li    $a3, 532
 /* B39288 800C20E8 8E070018 */  lw    $a3, 0x18($s0)
 /* B3928C 800C20EC 02002025 */  move  $a0, $s0
@@ -1283,14 +1283,14 @@ glabel func_800C213C
 /* B3931C 800C217C 3C068014 */  lui   $a2, %hi(D_80144BE0) # $a2, 0x8014
 /* B39320 800C2180 24C64BE0 */  addiu $a2, %lo(D_80144BE0) # addiu $a2, $a2, 0x4be0
 /* B39324 800C2184 02602825 */  move  $a1, $s3
-/* B39328 800C2188 0C000B58 */  jal   NullPointerCheck
+/* B39328 800C2188 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B3932C 800C218C 24070233 */   li    $a3, 563
 /* B39330 800C2190 3C048014 */  lui   $a0, %hi(D_80144BF0) # $a0, 0x8014
 /* B39334 800C2194 3C068014 */  lui   $a2, %hi(D_80144BF8) # $a2, 0x8014
 /* B39338 800C2198 24C64BF8 */  addiu $a2, %lo(D_80144BF8) # addiu $a2, $a2, 0x4bf8
 /* B3933C 800C219C 24844BF0 */  addiu $a0, %lo(D_80144BF0) # addiu $a0, $a0, 0x4bf0
 /* B39340 800C21A0 8FA50044 */  lw    $a1, 0x44($sp)
-/* B39344 800C21A4 0C000B58 */  jal   NullPointerCheck
+/* B39344 800C21A4 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B39348 800C21A8 24070234 */   li    $a3, 564
 /* B3934C 800C21AC 8FAF0044 */  lw    $t7, 0x44($sp)
 /* B39350 800C21B0 3C048014 */  lui   $a0, %hi(D_80144C08) # $a0, 0x8014
@@ -1299,7 +1299,7 @@ glabel func_800C213C
 /* B3935C 800C21BC 24C64C10 */  addiu $a2, %lo(D_80144C10) # addiu $a2, $a2, 0x4c10
 /* B39360 800C21C0 24844C08 */  addiu $a0, %lo(D_80144C08) # addiu $a0, $a0, 0x4c08
 /* B39364 800C21C4 24070236 */  li    $a3, 566
-/* B39368 800C21C8 0C000B58 */  jal   NullPointerCheck
+/* B39368 800C21C8 0C000B58 */  jal   LogUtils_CheckNullPointer
 /* B3936C 800C21CC AFA5003C */   sw    $a1, 0x3c($sp)
 /* B39370 800C21D0 8FA5003C */  lw    $a1, 0x3c($sp)
 /* B39374 800C21D4 3C17E700 */  lui   $s7, 0xe700

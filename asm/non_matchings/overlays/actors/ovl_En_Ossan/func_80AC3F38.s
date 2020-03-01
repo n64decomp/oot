@@ -28,7 +28,7 @@ glabel func_80AC3F38
 /* 012FC 80AC3F9C 00042400 */  sll     $a0, $a0, 16               
 /* 01300 80AC3FA0 00042403 */  sra     $a0, $a0, 16               
 /* 01304 80AC3FA4 AFA60018 */  sw      $a2, 0x0018($sp)           
-/* 01308 80AC3FA8 0C021CC3 */  jal     func_8008730C              
+/* 01308 80AC3FA8 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0130C 80AC3FAC AFA7001C */  sw      $a3, 0x001C($sp)           
 /* 01310 80AC3FB0 8FA60018 */  lw      $a2, 0x0018($sp)           
 /* 01314 80AC3FB4 8FA7001C */  lw      $a3, 0x001C($sp)           

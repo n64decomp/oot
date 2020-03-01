@@ -79,11 +79,11 @@ glabel D_80B5A568
  .word func_80B59FE8
 .word func_80B59FF4
 .word func_80B5A1D0
-glabel D_80B5A574
+glabel En_Zl3_InitVars
  .word 0x01790400, 0x00000010, 0x00600000, 0x00000420
-.word func_80B59E9C
-.word func_80B53440
-.word func_80B59E40
-.word func_80B5A3A8
+.word EnZl3_Init
+.word EnZl3_Destroy
+.word EnZl3_Update
+.word EnZl3_Draw
 .word 0x00000000, 0x00000000, 0x00000000
 

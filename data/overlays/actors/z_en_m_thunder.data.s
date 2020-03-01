@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AA0400
+glabel En_M_Thunder_InitVars
  .word 0x00570700, 0x00000000, 0x00010000, 0x000001CC
-.word func_80A9EFE8
-.word func_80A9F2A8
-.word func_80A9FB1C
-.word func_80A9FCE8
+.word EnMThunder_Init
+.word EnMThunder_Destroy
+.word EnMThunder_Update
+.word EnMThunder_Draw
 glabel D_80AA0420
  .word 0x0A090000, 0x10010000, 0x02000000, 0x00000001, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x19010100, 0x00C800C8, 0x00000000, 0x00000000
 glabel D_80AA044C

@@ -10,10 +10,10 @@ glabel func_808BE930
 /* 0044C 808BE94C AFA70020 */  sw      $a3, 0x0020($sp)           
 /* 00450 808BE950 1040000E */  beq     $v0, $zero, .L808BE98C     
 /* 00454 808BE954 8FA70020 */  lw      $a3, 0x0020($sp)           
-/* 00458 808BE958 3C0F808C */  lui     $t7, %hi(func_808BEA90)    ## $t7 = 808C0000
+/* 00458 808BE958 3C0F808C */  lui     $t7, %hi(BgYdanHasi_Draw)    ## $t7 = 808C0000
 /* 0045C 808BE95C 3C18808C */  lui     $t8, %hi(func_808BE99C)    ## $t8 = 808C0000
 /* 00460 808BE960 240E0104 */  addiu   $t6, $zero, 0x0104         ## $t6 = 00000104
-/* 00464 808BE964 25EFEA90 */  addiu   $t7, $t7, %lo(func_808BEA90) ## $t7 = 808BEA90
+/* 00464 808BE964 25EFEA90 */  addiu   $t7, $t7, %lo(BgYdanHasi_Draw) ## $t7 = 808BEA90
 /* 00468 808BE968 2718E99C */  addiu   $t8, $t8, %lo(func_808BE99C) ## $t8 = 808BE99C
 /* 0046C 808BE96C A4EE016A */  sh      $t6, 0x016A($a3)           ## 0000016A
 /* 00470 808BE970 ACEF0134 */  sw      $t7, 0x0134($a3)           ## 00000134

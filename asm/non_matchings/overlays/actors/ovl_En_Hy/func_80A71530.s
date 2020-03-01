@@ -30,7 +30,7 @@ glabel func_80A71530
 /* 01FEC 80A7159C 10000007 */  beq     $zero, $zero, .L80A715BC   
 /* 01FF0 80A715A0 A4580F2A */  sh      $t8, 0x0F2A($v0)           ## 8015F58A
 .L80A715A4:
-/* 01FF4 80A715A4 0C021CC3 */  jal     func_8008730C              
+/* 01FF4 80A715A4 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 01FF8 80A715A8 24040005 */  addiu   $a0, $zero, 0x0005         ## $a0 = 00000005
 /* 01FFC 80A715AC 3C028016 */  lui     $v0, 0x8016                ## $v0 = 80160000
 /* 02000 80A715B0 2442E660 */  addiu   $v0, $v0, 0xE660           ## $v0 = 8015E660

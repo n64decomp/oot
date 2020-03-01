@@ -2,10 +2,10 @@ glabel DynaPolyInfo_Alloc
 /* AB8A20 80041880 00047100 */  sll   $t6, $a0, 4
 /* AB8A24 80041884 000E7F02 */  srl   $t7, $t6, 0x1c
 /* AB8A28 80041888 000FC080 */  sll   $t8, $t7, 2
-/* AB8A2C 8004188C 3C198016 */  lui   $t9, %hi(D_80166FA8)
+/* AB8A2C 8004188C 3C198016 */  lui   $t9, %hi(gSegments)
 /* AB8A30 80041890 0338C821 */  addu  $t9, $t9, $t8
 /* AB8A34 80041894 3C0100FF */  lui   $at, (0x00FFFFFF >> 16) # lui $at, 0xff
-/* AB8A38 80041898 8F396FA8 */  lw    $t9, %lo(D_80166FA8)($t9)
+/* AB8A38 80041898 8F396FA8 */  lw    $t9, %lo(gSegments)($t9)
 /* AB8A3C 8004189C 3421FFFF */  ori   $at, (0x00FFFFFF & 0xFFFF) # ori $at, $at, 0xffff
 /* AB8A40 800418A0 00814024 */  and   $t0, $a0, $at
 /* AB8A44 800418A4 27BDFFE8 */  addiu $sp, $sp, -0x18

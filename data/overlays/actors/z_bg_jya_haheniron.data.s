@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80898720
+glabel Bg_Jya_Haheniron_InitVars
  .word 0x018F0600, 0x00000010, 0x016C0000, 0x000001B4
-.word func_80898340
-.word func_80898408
-.word func_80898690
-.word func_808986BC
+.word BgJyaHaheniron_Init
+.word BgJyaHaheniron_Destroy
+.word BgJyaHaheniron_Update
+.word BgJyaHaheniron_Draw
 glabel D_80898740
  .word 0x00000000, 0xFFCFFFFF, 0x00040000, 0x00000000, 0x00000000, 0x01000000, 0x00000000, 0x00000000, 0x000A0064
 glabel D_80898764

@@ -2,14 +2,6 @@
 #include <global.h>
 #include <vt.h>
 
-typedef struct 
-{
-    u32 unk_00;
-    u32 unk_04;
-    u32 unk_08;
-} struct_800138F8;
-
-
 StackEntry sDmaMgrStackInfo;
 OSMesgQueue sDmaMgrMsgQueue;
 OSMesg sDmaMgrMsgs[0x20];
@@ -1559,9 +1551,6 @@ const char* sDmaMgrFileNames[0x5FC] =
 
 s32 sDmaMgrQueueFullLogged = 0;
 
-extern u32 D_80013900;
-extern DmaEntry gDmaDataTable[0x60C];
-
 s32 DmaMgr_CompareName(const char* name1, const char* name2)
 {
     while (*name1 != 0u)
@@ -1613,18 +1602,18 @@ s32 DmaMgr_DMARomToRam(u32 rom, u32 ram, u32 size)
         ioMsg.size = buffSize;
 
         if (D_80009460 == 10)
-            osSyncPrintf("%10lld ノーマルＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ioMsg.dramAddr, ioMsg.devAddr, ioMsg.size, ((struct_800138F8*)&D_800138F8)->unk_08);
+            osSyncPrintf("%10lld ノーマルＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ioMsg.dramAddr, ioMsg.devAddr, ioMsg.size, gPiMgrCmdQ.validCount);
 
         ret = osEPiStartDma(gCartHandle, &ioMsg, OS_READ);
         if (ret)
             goto DmaMgr_DMARomToRam_end;
 
         if (D_80009460 == 10)
-            osSyncPrintf("%10lld ノーマルＤＭＡ START (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ((struct_800138F8*)&D_800138F8)->unk_08);
+            osSyncPrintf("%10lld ノーマルＤＭＡ START (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), gPiMgrCmdQ.validCount);
 
         osRecvMesg(&queue, NULL, 1);
         if (D_80009460 == 10)
-            osSyncPrintf("%10lld ノーマルＤＭＡ END (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ((struct_800138F8*)&D_800138F8)->unk_08);
+            osSyncPrintf("%10lld ノーマルＤＭＡ END (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), gPiMgrCmdQ.validCount);
 
         size -= buffSize;
         rom += buffSize;
@@ -1637,7 +1626,7 @@ s32 DmaMgr_DMARomToRam(u32 rom, u32 ram, u32 size)
     ioMsg.dramAddr = ram;
     ioMsg.size = buffSize;
     if (D_80009460 == 10)
-        osSyncPrintf("%10lld ノーマルＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ioMsg.dramAddr, ioMsg.devAddr, ioMsg.size, ((struct_800138F8*)&D_800138F8)->unk_08);
+        osSyncPrintf("%10lld ノーマルＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ioMsg.dramAddr, ioMsg.devAddr, ioMsg.size, gPiMgrCmdQ.validCount);
 
     ret = osEPiStartDma(gCartHandle, &ioMsg, OS_READ);
     if (ret)
@@ -1645,7 +1634,7 @@ s32 DmaMgr_DMARomToRam(u32 rom, u32 ram, u32 size)
     
     osRecvMesg(&queue, NULL, 1);
     if (D_80009460 == 10)
-        osSyncPrintf("%10lld ノーマルＤＭＡ END (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), ((struct_800138F8*)&D_800138F8)->unk_08);
+        osSyncPrintf("%10lld ノーマルＤＭＡ END (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), gPiMgrCmdQ.validCount);
 
 DmaMgr_DMARomToRam_end:
     osInvalICache(ram, size);
@@ -1671,7 +1660,7 @@ s32 DmaMgr_DmaCallback0(OSPiHandle* pihandle, OSIoMesg* mb, s32 direction)
         __assert("mb != NULL", "../z_std_dma.c", 532);
 
     if (D_80009460 == 10)
-        osSyncPrintf("%10lld サウンドＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), mb->dramAddr, mb->devAddr, mb->size, D_80013900);
+        osSyncPrintf("%10lld サウンドＤＭＡ %08x %08x %08x (%d)\n", OS_CYCLES_TO_USEC(osGetTime()), mb->dramAddr, mb->devAddr, mb->size, gPiMgrCmdQ.validCount);
 
     ret = osEPiStartDma(pihandle, mb, direction);
     if (ret)
@@ -1686,7 +1675,7 @@ void DmaMgr_DmaCallback1(u32 ram, u32 rom, u32 size)
     OSMesg msg;
     OSIoMesg ioMsg;
 
-    handle = func_800023D0();
+    handle = osDriveRomInit();
     osInvalICache(ram, size);
     osInvalDCache(ram, size);
     osCreateMesgQueue(&queue, &msg, 1);
@@ -1727,13 +1716,13 @@ void DmaMgr_Error(DmaRequest* req, const char* file, const char* errorName, cons
     osSyncPrintf(VT_RST);
 
     if (req->filename)
-        snprintf(buff1, "DMA ERROR: %s %d", req->filename, req->line);
+        sprintf(buff1, "DMA ERROR: %s %d", req->filename, req->line);
     else if (sDmaMgrCurFileName)
-        snprintf(buff1, "DMA ERROR: %s %d", sDmaMgrCurFileName, sDmaMgrCurFileLine);
+        sprintf(buff1, "DMA ERROR: %s %d", sDmaMgrCurFileName, sDmaMgrCurFileLine);
     else
-        snprintf(buff1, "DMA ERROR: %s", errorName ? errorName : "???");
+        sprintf(buff1, "DMA ERROR: %s", errorName ? errorName : "???");
     
-    snprintf(buff2, "%07X %08X %X %s", vrom, ram, size, file ? file : "???");
+    sprintf(buff2, "%07X %08X %X %s", vrom, ram, size, file ? file : "???");
     Fault_AddHungupAndCrashImpl(buff1, buff2);
 }
 
@@ -1816,7 +1805,7 @@ void DmaMgr_ProcessMsg(DmaRequest* req)
                     DmaMgr_Error(req, filename, "Can't Transfer Segment", "圧縮されたセグメントの一部だけをＤＭＡ転送することはできません");
 
                 osSetThreadPri(NULL, 0x0A);
-                func_80001E14(romStart, ram, romSize);
+                Yaz0_Decompress(romStart, ram, romSize);
                 osSetThreadPri(NULL, 0x10);
                 found = true;
                 "   Press ROM:%X RAM:%X SIZE:%X\n";
@@ -1890,7 +1879,7 @@ s32 DmaMgr_SendRequestImpl(DmaRequest* req, u32 ram, u32 vrom, u32 size, u32 unk
         osSyncPrintf("%c", 7);
         osSyncPrintf(VT_FGCOL(RED));
         osSyncPrintf("dmaEntryMsgQが一杯です。キューサイズの再検討をおすすめします。");
-        SyncPrintfWithThreadId("../z_std_dma.c", 952);
+        LogUtils_LogThreadId("../z_std_dma.c", 952);
         osSyncPrintf("(sizeof(dmaEntryMsgBufs) / sizeof(dmaEntryMsgBufs[0])) = %d\n", (sizeof(sDmaMgrMsgs)/sizeof(sDmaMgrMsgs[0])));
         osSyncPrintf(VT_RST);
     }

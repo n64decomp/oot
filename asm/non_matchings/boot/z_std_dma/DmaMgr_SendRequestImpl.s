@@ -104,7 +104,7 @@ glabel DmaMgr_SendRequestImpl
 /* 002368 80001768 24841BF4 */   addiu $a0, %lo(D_80011BF4) # addiu $a0, $a0, 0x1bf4
 /* 00236C 8000176C 3C048001 */  lui   $a0, %hi(D_80011C34) # $a0, 0x8001
 /* 002370 80001770 24841C34 */  addiu $a0, %lo(D_80011C34) # addiu $a0, $a0, 0x1c34
-/* 002374 80001774 0C000B84 */  jal   SyncPrintfWithThreadId
+/* 002374 80001774 0C000B84 */  jal   LogUtils_LogThreadId
 /* 002378 80001778 240503B8 */   li    $a1, 952
 /* 00237C 8000177C 3C048001 */  lui   $a0, %hi(D_80011C44) # $a0, 0x8001
 /* 002380 80001780 24841C44 */  addiu $a0, %lo(D_80011C44) # addiu $a0, $a0, 0x1c44

@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_80A3E330
+glabel En_Gm_InitVars
  .word 0x013D0400, 0x00000019, 0x00C90000, 0x000002D0
-.word func_80A3D6E0
-.word func_80A3D7A0
-.word func_80A3E06C
+.word EnGm_Init
+.word EnGm_Destroy
+.word EnGm_Update
 .word 0x00000000
 glabel D_80A3E350
  .word 0x0A000039, 0x01000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x00640078, 0x00000000, 0x00000000

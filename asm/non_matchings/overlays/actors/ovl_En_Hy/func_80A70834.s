@@ -11,17 +11,17 @@ glabel func_80A70834
 /* 012A8 80A70858 3319007F */  andi    $t9, $t8, 0x007F           ## $t9 = 00000000
 /* 012AC 80A7085C 57210043 */  bnel    $t9, $at, .L80A7096C       
 /* 012B0 80A70860 8FBF0014 */  lw      $ra, 0x0014($sp)           
-/* 012B4 80A70864 0C021ACB */  jal     func_80086B2C              
+/* 012B4 80A70864 0C021ACB */  jal     Inventory_HasSpecificBottle              
 /* 012B8 80A70868 AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 012BC 80A7086C 14400020 */  bne     $v0, $zero, .L80A708F0     
 /* 012C0 80A70870 8FA60020 */  lw      $a2, 0x0020($sp)           
 /* 012C4 80A70874 2404001D */  addiu   $a0, $zero, 0x001D         ## $a0 = 0000001D
-/* 012C8 80A70878 0C021ACB */  jal     func_80086B2C              
+/* 012C8 80A70878 0C021ACB */  jal     Inventory_HasSpecificBottle              
 /* 012CC 80A7087C AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 012D0 80A70880 1440001B */  bne     $v0, $zero, .L80A708F0     
 /* 012D4 80A70884 8FA60020 */  lw      $a2, 0x0020($sp)           
 /* 012D8 80A70888 24040019 */  addiu   $a0, $zero, 0x0019         ## $a0 = 00000019
-/* 012DC 80A7088C 0C021ACB */  jal     func_80086B2C              
+/* 012DC 80A7088C 0C021ACB */  jal     Inventory_HasSpecificBottle              
 /* 012E0 80A70890 AFA60020 */  sw      $a2, 0x0020($sp)           
 /* 012E4 80A70894 14400016 */  bne     $v0, $zero, .L80A708F0     
 /* 012E8 80A70898 8FA60020 */  lw      $a2, 0x0020($sp)           

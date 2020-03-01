@@ -59,7 +59,7 @@ static void Init(ActorEg* this, GlobalContext* globalCtx)
 static void func_809FFDC8(ActorEg* this, GlobalContext* globalCtx)
 {
     if (!hasVoidedOut && (gSaveContext.timer_2_value < 1) &&
-        Flags_GetSwitch(globalCtx, 0x36) && (gGameInfo->unk_1454 == 0))
+        Flags_GetSwitch(globalCtx, 0x36) && (kREG(0) == 0))
     {
         // Void the player out
         func_800C0C88(globalCtx);

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AAC2F0
+glabel En_Md_InitVars
  .word 0x016D0400, 0x02000019, 0x00FB0000, 0x00000324
-.word func_80AAB650
-.word func_80AAB84C
-.word func_80AABE34
-.word func_80AAC160
+.word EnMd_Init
+.word EnMd_Destroy
+.word EnMd_Update
+.word EnMd_Draw
 glabel D_80AAC310
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0024002E, 0x00000000, 0x00000000
 glabel D_80AAC33C

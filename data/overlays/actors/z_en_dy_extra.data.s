@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809FFC20
+glabel En_Dy_Extra_InitVars
  .word 0x01840600, 0x00000030, 0x000A0000, 0x00000174
-.word func_809FF6FC
-.word func_809FF6F0
-.word func_809FF8F8
-.word func_809FF964
+.word EnDyExtra_Init
+.word EnDyExtra_Destroy
+.word EnDyExtra_Update
+.word EnDyExtra_Draw
 glabel D_809FFC40
  .word 0xFFFFAAFF, 0xFFFFAAFF
 glabel D_809FFC48

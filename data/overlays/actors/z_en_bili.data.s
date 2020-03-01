@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809C1620
+glabel En_Bili_InitVars
  .word 0x00340500, 0x00005005, 0x00210000, 0x00000220
-.word func_809BF8A0
-.word func_809BF994
-.word func_809C0C38
-.word func_809C1498
+.word EnBili_Init
+.word EnBili_Destroy
+.word EnBili_Update
+.word EnBili_Draw
 glabel D_809C1640
  .word 0x08110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x03080000, 0xFFCFFFFF, 0x01000000, 0x19010100, 0x0009001C, 0xFFEC0000, 0x00000000
 glabel D_809C166C

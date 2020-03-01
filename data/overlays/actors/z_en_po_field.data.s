@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AD7060
+glabel En_Po_Field_InitVars
  .word 0x01750500, 0x00001035, 0x006D0000, 0x000002DC
-.word func_80AD3B00
-.word func_80AD3D08
-.word func_80AD64A4
-.word func_80AD68E4
+.word EnPoField_Init
+.word EnPoField_Destroy
+.word EnPoField_Update
+.word EnPoField_Draw
 glabel D_80AD7080
  .word 0x03000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00190032, 0x00140000, 0x00000000
 glabel D_80AD70AC

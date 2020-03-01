@@ -50,7 +50,7 @@ glabel func_808BAF40
 /* 001B4 808BAFF4 02202025 */  or      $a0, $s1, $zero            ## $a0 = 00000000
 /* 001B8 808BAFF8 11C00007 */  beq     $t6, $zero, .L808BB018     
 /* 001BC 808BAFFC 2718B7A0 */  addiu   $t8, $t8, %lo(D_808BB7A0)  ## $t8 = 808BB7A0
-/* 001C0 808BB000 0C021344 */  jal     func_80084D10              
+/* 001C0 808BB000 0C021344 */  jal     Item_Give              
 /* 001C4 808BB004 2405003C */  addiu   $a1, $zero, 0x003C         ## $a1 = 0000003C
 /* 001C8 808BB008 3C0F808C */  lui     $t7, %hi(D_808BB2F0)       ## $t7 = 808C0000
 /* 001CC 808BB00C 25EFB2F0 */  addiu   $t7, $t7, %lo(D_808BB2F0)  ## $t7 = 808BB2F0

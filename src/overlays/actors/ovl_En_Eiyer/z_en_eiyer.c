@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_eiyer.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_809FFFA0.s")
+#define ROOM  0x00
+#define FLAGS 0x00000005
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A0017C.s")
+void EnEiyer_Init(EnEiyer* this, GlobalContext* globalCtx);
+void EnEiyer_Destroy(EnEiyer* this, GlobalContext* globalCtx);
+void EnEiyer_Update(EnEiyer* this, GlobalContext* globalCtx);
+void EnEiyer_Draw(EnEiyer* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Eiyer_InitVars =
+{
+    ACTOR_EN_EIYER,
+    ACTORTYPE_ENEMY,
+    ROOM,
+    FLAGS,
+    OBJECT_EI,
+    sizeof(EnEiyer),
+    (ActorFunc)EnEiyer_Init,
+    (ActorFunc)EnEiyer_Destroy,
+    (ActorFunc)EnEiyer_Update,
+    (ActorFunc)EnEiyer_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/EnEiyer_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/EnEiyer_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A001A4.s")
 
@@ -61,12 +83,8 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A0142C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A01570.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/EnEiyer_Update.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A0178C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/func_80A017DC.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Eiyer/EnEiyer_Draw.s")

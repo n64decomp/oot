@@ -42,7 +42,7 @@ glabel func_808A2C28
 /* 00768 808A2CC8 AC4F0000 */  sw      $t7, 0x0000($v0)           ## 00000000
 /* 0076C 808A2CCC 8CE40000 */  lw      $a0, 0x0000($a3)           ## 00000000
 /* 00770 808A2CD0 AFA80044 */  sw      $t0, 0x0044($sp)           
-/* 00774 808A2CD4 0C0346A2 */  jal     func_800D1A88              
+/* 00774 808A2CD4 0C0346A2 */  jal     Matrix_NewMtx              
 /* 00778 808A2CD8 AFA2002C */  sw      $v0, 0x002C($sp)           
 /* 0077C 808A2CDC 8FA3002C */  lw      $v1, 0x002C($sp)           
 /* 00780 808A2CE0 8FA80044 */  lw      $t0, 0x0044($sp)           

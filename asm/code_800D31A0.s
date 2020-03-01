@@ -33,8 +33,8 @@ glabel func_800D31A0
 /* B4A38C 800D31EC 00000000 */   nop   
 
 glabel func_800D31F0
-/* B4A390 800D31F0 3C0E8016 */  lui   $t6, %hi(D_801668C0) # $t6, 0x8016
-/* B4A394 800D31F4 25CE68C0 */  addiu $t6, %lo(D_801668C0) # addiu $t6, $t6, 0x68c0
+/* B4A390 800D31F0 3C0E8016 */  lui   $t6, %hi(gPadMgr) # $t6, 0x8016
+/* B4A394 800D31F4 25CE68C0 */  addiu $t6, %lo(gPadMgr) # addiu $t6, $t6, 0x68c0
 /* B4A398 800D31F8 91CF02A8 */  lbu   $t7, 0x2a8($t6)
 /* B4A39C 800D31FC 3C018013 */  lui   $at, %hi(D_8012DBC0)
 /* B4A3A0 800D3200 31F80002 */  andi  $t8, $t7, 2

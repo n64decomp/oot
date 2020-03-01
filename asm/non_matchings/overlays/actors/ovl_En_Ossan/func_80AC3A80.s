@@ -14,7 +14,7 @@ glabel func_80AC3A80
 /* 00E10 80AC3AB0 0320F809 */  jalr    $ra, $t9                   
 /* 00E14 80AC3AB4 00000000 */  nop
 /* 00E18 80AC3AB8 8FA40018 */  lw      $a0, 0x0018($sp)           
-/* 00E1C 80AC3ABC 0C021BC0 */  jal     func_80086F00              
+/* 00E1C 80AC3ABC 0C021BC0 */  jal     Interface_SetDoAction              
 /* 00E20 80AC3AC0 24050006 */  addiu   $a1, $zero, 0x0006         ## $a1 = 00000006
 /* 00E24 80AC3AC4 8FA6001C */  lw      $a2, 0x001C($sp)           
 /* 00E28 80AC3AC8 ACC00288 */  sw      $zero, 0x0288($a2)         ## 00000288

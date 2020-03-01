@@ -62,7 +62,7 @@ glabel func_8005C8C8
 /* AD3B4C 8005C9AC 000420C0 */  sll   $a0, $a0, 3
 /* AD3B50 8005C9B0 008F2023 */  subu  $a0, $a0, $t7
 /* AD3B54 8005C9B4 00042080 */  sll   $a0, $a0, 2
-/* AD3B58 8005C9B8 0C01EBB8 */  jal   func_8007AEE0
+/* AD3B58 8005C9B8 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AD3B5C 8005C9BC AE4F0018 */   sw    $t7, 0x18($s2)
 /* AD3B60 8005C9C0 1440000D */  bnez  $v0, .L8005C9F8
 /* AD3B64 8005C9C4 AE42001C */   sw    $v0, 0x1c($s2)
@@ -140,7 +140,7 @@ glabel func_8005C8C8
 /* AD3C70 8005CAD0 000420C0 */  sll   $a0, $a0, 3
 /* AD3C74 8005CAD4 008F2023 */  subu  $a0, $a0, $t7
 /* AD3C78 8005CAD8 00042080 */  sll   $a0, $a0, 2
-/* AD3C7C 8005CADC 0C01EBB8 */  jal   func_8007AEE0
+/* AD3C7C 8005CADC 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AD3C80 8005CAE0 AE6F0018 */   sw    $t7, 0x18($s3)
 /* AD3C84 8005CAE4 1440000D */  bnez  $v0, .L8005CB1C
 /* AD3C88 8005CAE8 AE62001C */   sw    $v0, 0x1c($s3)

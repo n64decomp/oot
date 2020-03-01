@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B17DB0
+glabel En_Takara_Man_InitVars
  .word 0x017C0400, 0x08000039, 0x01550000, 0x00000238
-.word func_80B1756C
-.word func_80B17560
-.word func_80B17B74
-.word func_80B17CB0
+.word EnTakaraMan_Init
+.word EnTakaraMan_Destroy
+.word EnTakaraMan_Update
+.word EnTakaraMan_Draw
 glabel D_80B17DD0
  .word 0x00000000
 glabel D_80B17DD4

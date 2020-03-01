@@ -11,19 +11,19 @@ glabel func_80A3B714
 /* 00FE8 80A3B738 10000008 */  beq     $zero, $zero, .L80A3B75C   
 /* 00FEC 80A3B73C 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B740:
-/* 00FF0 80A3B740 0C021344 */  jal     func_80084D10              
+/* 00FF0 80A3B740 0C021344 */  jal     Item_Give              
 /* 00FF4 80A3B744 2405008C */  addiu   $a1, $zero, 0x008C         ## $a1 = 0000008C
 /* 00FF8 80A3B748 10000004 */  beq     $zero, $zero, .L80A3B75C   
 /* 00FFC 80A3B74C 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B750:
-/* 01000 80A3B750 0C021344 */  jal     func_80084D10              
+/* 01000 80A3B750 0C021344 */  jal     Item_Give              
 /* 01004 80A3B754 2405008D */  addiu   $a1, $zero, 0x008D         ## $a1 = 0000008D
 /* 01008 80A3B758 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B75C:
 /* 0100C 80A3B75C 85E401C8 */  lh      $a0, 0x01C8($t7)           ## 000001C8
 /* 01010 80A3B760 00042023 */  subu    $a0, $zero, $a0            
 /* 01014 80A3B764 00042400 */  sll     $a0, $a0, 16               
-/* 01018 80A3B768 0C021CC3 */  jal     func_8008730C              
+/* 01018 80A3B768 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0101C 80A3B76C 00042403 */  sra     $a0, $a0, 16               
 /* 01020 80A3B770 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 01024 80A3B774 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

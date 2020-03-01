@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809FF210
+glabel En_Du_InitVars
  .word 0x00980400, 0x02000009, 0x009D0000, 0x0000021C
-.word func_809FE1AC
-.word func_809FE37C
-.word func_809FED1C
-.word func_809FF074
+.word EnDu_Init
+.word EnDu_Destroy
+.word EnDu_Update
+.word EnDu_Draw
 glabel D_809FF230
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x0014002E, 0x00000000, 0x00000000
 glabel D_809FF25C

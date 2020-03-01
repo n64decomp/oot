@@ -1,15 +1,33 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_bg_menkuri_eye.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/func_8089BC70.s")
+#define ROOM  0x00
+#define FLAGS 0x00000020
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/func_8089BD48.s")
+void BgMenkuriEye_Init(BgMenkuriEye* this, GlobalContext* globalCtx);
+void BgMenkuriEye_Destroy(BgMenkuriEye* this, GlobalContext* globalCtx);
+void BgMenkuriEye_Update(BgMenkuriEye* this, GlobalContext* globalCtx);
+void BgMenkuriEye_Draw(BgMenkuriEye* this, GlobalContext* globalCtx);
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/func_8089BD70.s")
+/*
+const ActorInit Bg_Menkuri_Eye_InitVars =
+{
+    ACTOR_BG_MENKURI_EYE,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_MENKURI_OBJECTS,
+    sizeof(BgMenkuriEye),
+    (ActorFunc)BgMenkuriEye_Init,
+    (ActorFunc)BgMenkuriEye_Destroy,
+    (ActorFunc)BgMenkuriEye_Update,
+    (ActorFunc)BgMenkuriEye_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/BgMenkuriEye_Init.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/func_8089BEE0.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/BgMenkuriEye_Destroy.s")
 
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/BgMenkuriEye_Update.s")
 
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_Bg_Menkuri_Eye/BgMenkuriEye_Draw.s")
 

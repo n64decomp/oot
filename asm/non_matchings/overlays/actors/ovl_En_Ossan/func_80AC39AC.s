@@ -42,7 +42,7 @@ glabel func_80AC39AC
 .L80AC3A40:
 /* 00DA0 80AC3A40 02002025 */  or      $a0, $s0, $zero            ## $a0 = 00000000
 /* 00DA4 80AC3A44 24050006 */  addiu   $a1, $zero, 0x0006         ## $a1 = 00000006
-/* 00DA8 80AC3A48 0C021BC0 */  jal     func_80086F00              
+/* 00DA8 80AC3A48 0C021BC0 */  jal     Interface_SetDoAction              
 /* 00DAC 80AC3A4C AFA70024 */  sw      $a3, 0x0024($sp)           
 /* 00DB0 80AC3A50 8FA40024 */  lw      $a0, 0x0024($sp)           
 /* 00DB4 80AC3A54 24020001 */  addiu   $v0, $zero, 0x0001         ## $v0 = 00000001

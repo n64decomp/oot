@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A94470
+glabel En_Kanban_InitVars
  .word 0x01410600, 0x00000019, 0x012F0000, 0x000001EC
-.word func_80A92058
-.word func_80A9218C
-.word func_80A92278
-.word func_80A93B88
+.word EnKanban_Init
+.word EnKanban_Destroy
+.word EnKanban_Update
+.word EnKanban_Draw
 glabel D_80A94490
  .word 0x0A110939, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x01010100, 0x00140032, 0x00050000, 0x00000000
 glabel D_80A944BC

@@ -53,7 +53,7 @@ glabel func_8005BCC8
 /* AD2F28 8005BD88 240605A3 */  li    $a2, 1443
 /* AD2F2C 8005BD8C AE4E0018 */  sw    $t6, 0x18($s2)
 /* AD2F30 8005BD90 8C640008 */  lw    $a0, 8($v1)
-/* AD2F34 8005BD94 0C01EBB8 */  jal   func_8007AEE0
+/* AD2F34 8005BD94 0C01EBB8 */  jal   ZeldaArena_MallocDebug
 /* AD2F38 8005BD98 00042180 */   sll   $a0, $a0, 6
 /* AD2F3C 8005BD9C 1440000D */  bnez  $v0, .L8005BDD4
 /* AD2F40 8005BDA0 AE42001C */   sw    $v0, 0x1c($s2)

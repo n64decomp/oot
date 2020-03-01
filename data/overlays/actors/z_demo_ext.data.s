@@ -14,11 +14,11 @@ glabel D_80977C70
 glabel D_80977C7C
  .word func_80977944
 .word func_80977950
-glabel D_80977C84
+glabel Demo_Ext_InitVars
  .word 0x01180400, 0x00000010, 0x005A0000, 0x00000184
-.word func_8097739C
-.word func_80977390
-.word func_809778E8
-.word func_80977C10
+.word DemoExt_Init
+.word DemoExt_Destroy
+.word DemoExt_Update
+.word DemoExt_Draw
 .word 0x00000000, 0x00000000, 0x00000000
 

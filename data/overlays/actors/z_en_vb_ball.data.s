@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B29FE0
+glabel En_Vb_Ball_InitVars
  .word 0x00000900, 0x00000030, 0x009C0000, 0x000001B4
-.word func_80B28FA0
-.word func_80B29120
-.word func_80B295B4
-.word func_80B29D80
+.word EnVbBall_Init
+.word EnVbBall_Destroy
+.word EnVbBall_Update
+.word EnVbBall_Draw
 glabel D_80B2A000
  .word 0x0A110939, 0x10010000, 0x06000000, 0x00100700, 0x00200000, 0x00100700, 0x00000000, 0x01010100, 0x0014001E, 0x000A0000, 0x00000000
 glabel D_80B2A02C

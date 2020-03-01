@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_809FBEF0
+glabel En_Dog_InitVars
  .word 0x019B0400, 0x00000000, 0x016B0000, 0x00000290
-.word func_809FB44C
-.word func_809FB69C
-.word func_809FBCC4
-.word func_809FBDB8
+.word EnDog_Init
+.word EnDog_Destroy
+.word EnDog_Update
+.word EnDog_Draw
 glabel D_809FBF10
  .word 0x06000939, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00100014, 0x00000000, 0x00000000
 glabel D_809FBF3C

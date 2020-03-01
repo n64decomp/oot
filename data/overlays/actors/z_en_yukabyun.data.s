@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B43F10
+glabel En_Yukabyun_InitVars
  .word 0x006B0500, 0x00000010, 0x005F0000, 0x000001A0
-.word func_80B439C0
-.word func_80B43A6C
-.word func_80B43C40
-.word func_80B43DE0
+.word EnYukabyun_Init
+.word EnYukabyun_Destroy
+.word EnYukabyun_Update
+.word EnYukabyun_Draw
 glabel D_80B43F30
  .word 0x0A11093D, 0x10010000, 0x00000000, 0xFFCFFFFF, 0x00040000, 0xFFCFFFFF, 0x00000000, 0x09010100, 0x001C0008, 0x00000000, 0x00000000
 glabel D_80B43F5C

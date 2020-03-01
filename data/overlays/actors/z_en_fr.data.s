@@ -19,11 +19,11 @@ glabel D_80A1D018
  .word 0x02030400, 0x01000000
 glabel D_80A1D020
  .word 0x00000003, 0x00000004, 0x00000000, 0x00000001, 0x00000002
-glabel D_80A1D034
+glabel En_Fr_InitVars
  .word 0x00ED0400, 0x02000019, 0x00E60000, 0x000003C4
-.word func_80A1AAB4
-.word func_80A1AF3C
-.word func_80A1AC44
+.word EnFr_Init
+.word EnFr_Destroy
+.word EnFr_Update
 .word 0x00000000
 glabel D_80A1D054
  .word 0xC8AA00FF, 0x00AAC8FF, 0xD27864FF, 0x7882E6FF, 0xBEBEBEFF

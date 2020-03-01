@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80925CB0
+glabel Boss_Mo_InitVars
  .word 0x00C40900, 0x00000035, 0x00B40000, 0x0000158C
-.word func_8091C0B0
-.word func_8091C494
-.word func_80922F74
-.word func_80924B08
+.word BossMo_Init
+.word BossMo_Destroy
+.word BossMo_Update
+.word BossMo_Draw
 glabel D_80925CD0
  .word 0x00000000
 glabel D_80925CD4

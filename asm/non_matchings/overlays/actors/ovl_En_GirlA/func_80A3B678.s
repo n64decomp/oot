@@ -15,29 +15,29 @@ glabel func_80A3B678
 /* 00F5C 80A3B6AC 10000010 */  beq     $zero, $zero, .L80A3B6F0   
 /* 00F60 80A3B6B0 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B6B4:
-/* 00F64 80A3B6B4 0C021344 */  jal     func_80084D10              
+/* 00F64 80A3B6B4 0C021344 */  jal     Item_Give              
 /* 00F68 80A3B6B8 2405008E */  addiu   $a1, $zero, 0x008E         ## $a1 = 0000008E
 /* 00F6C 80A3B6BC 1000000C */  beq     $zero, $zero, .L80A3B6F0   
 /* 00F70 80A3B6C0 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B6C4:
-/* 00F74 80A3B6C4 0C021344 */  jal     func_80084D10              
+/* 00F74 80A3B6C4 0C021344 */  jal     Item_Give              
 /* 00F78 80A3B6C8 2405008F */  addiu   $a1, $zero, 0x008F         ## $a1 = 0000008F
 /* 00F7C 80A3B6CC 10000008 */  beq     $zero, $zero, .L80A3B6F0   
 /* 00F80 80A3B6D0 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B6D4:
-/* 00F84 80A3B6D4 0C021344 */  jal     func_80084D10              
+/* 00F84 80A3B6D4 0C021344 */  jal     Item_Give              
 /* 00F88 80A3B6D8 24050090 */  addiu   $a1, $zero, 0x0090         ## $a1 = 00000090
 /* 00F8C 80A3B6DC 10000004 */  beq     $zero, $zero, .L80A3B6F0   
 /* 00F90 80A3B6E0 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B6E4:
-/* 00F94 80A3B6E4 0C021344 */  jal     func_80084D10              
+/* 00F94 80A3B6E4 0C021344 */  jal     Item_Give              
 /* 00F98 80A3B6E8 24050091 */  addiu   $a1, $zero, 0x0091         ## $a1 = 00000091
 /* 00F9C 80A3B6EC 8FAF001C */  lw      $t7, 0x001C($sp)           
 .L80A3B6F0:
 /* 00FA0 80A3B6F0 85E401C8 */  lh      $a0, 0x01C8($t7)           ## 000001C8
 /* 00FA4 80A3B6F4 00042023 */  subu    $a0, $zero, $a0            
 /* 00FA8 80A3B6F8 00042400 */  sll     $a0, $a0, 16               
-/* 00FAC 80A3B6FC 0C021CC3 */  jal     func_8008730C              
+/* 00FAC 80A3B6FC 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 00FB0 80A3B700 00042403 */  sra     $a0, $a0, 16               
 /* 00FB4 80A3B704 8FBF0014 */  lw      $ra, 0x0014($sp)           
 /* 00FB8 80A3B708 27BD0018 */  addiu   $sp, $sp, 0x0018           ## $sp = 00000000

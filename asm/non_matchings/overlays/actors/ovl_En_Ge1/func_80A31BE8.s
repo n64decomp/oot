@@ -45,7 +45,7 @@ glabel func_80A31BE8
 /* 01320 80A31C90 10000038 */  beq     $zero, $zero, .L80A31D74   
 /* 01324 80A31C94 AE2802B4 */  sw      $t0, 0x02B4($s1)           ## 000002B4
 .L80A31C98:
-/* 01328 80A31C98 0C021CC3 */  jal     func_8008730C              
+/* 01328 80A31C98 0C021CC3 */  jal     Rupees_ChangeBy              
 /* 0132C 80A31C9C 2404FFEC */  addiu   $a0, $zero, 0xFFEC         ## $a0 = FFFFFFEC
 /* 01330 80A31CA0 3C010001 */  lui     $at, 0x0001                ## $at = 00010000
 /* 01334 80A31CA4 8FA5002C */  lw      $a1, 0x002C($sp)           

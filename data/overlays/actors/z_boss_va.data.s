@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_8095BF40
+glabel Boss_Va_InitVars
  .word 0x00BA0900, 0x00000035, 0x008C0000, 0x000003B8
-.word func_8094FE5C
-.word func_809506A8
-.word func_80957D5C
-.word func_809591C8
+.word BossVa_Init
+.word BossVa_Destroy
+.word BossVa_Update
+.word BossVa_Draw
 glabel D_8095BF60
  .word 0x0A110939, 0x20010000, 0x00000000, 0xFFCFFFEF, 0x03080000, 0x00000010, 0x00000000, 0x01010100, 0x00550078, 0x00000000, 0x00000000
 glabel D_8095BF8C

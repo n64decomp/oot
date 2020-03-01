@@ -14,8 +14,8 @@ glabel func_808B5B04
 /* 00F00 808B5B30 0C22D6D6 */  jal     func_808B5B58              
 /* 00F04 808B5B34 8FA40018 */  lw      $a0, 0x0018($sp)           
 /* 00F08 808B5B38 8FB80018 */  lw      $t8, 0x0018($sp)           
-/* 00F0C 808B5B3C 3C0F808B */  lui     $t7, %hi(func_808B5C98)    ## $t7 = 808B0000
-/* 00F10 808B5B40 25EF5C98 */  addiu   $t7, $t7, %lo(func_808B5C98) ## $t7 = 808B5C98
+/* 00F0C 808B5B3C 3C0F808B */  lui     $t7, %hi(BgSpot16Bombstone_Draw)    ## $t7 = 808B0000
+/* 00F10 808B5B40 25EF5C98 */  addiu   $t7, $t7, %lo(BgSpot16Bombstone_Draw) ## $t7 = 808B5C98
 /* 00F14 808B5B44 AF0F0134 */  sw      $t7, 0x0134($t8)           ## 00000134
 /* 00F18 808B5B48 8FBF0014 */  lw      $ra, 0x0014($sp)           
 .L808B5B4C:

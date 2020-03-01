@@ -2,7 +2,7 @@ glabel func_80A3B54C
 /* 00DFC 80A3B54C 27BDFFE8 */  addiu   $sp, $sp, 0xFFE8           ## $sp = FFFFFFE8
 /* 00E00 80A3B550 AFBF0014 */  sw      $ra, 0x0014($sp)           
 /* 00E04 80A3B554 AFA40018 */  sw      $a0, 0x0018($sp)           
-/* 00E08 80A3B558 0C021AAF */  jal     func_80086ABC              
+/* 00E08 80A3B558 0C021AAF */  jal     Inventory_HasEmptyBottle              
 /* 00E0C 80A3B55C AFA5001C */  sw      $a1, 0x001C($sp)           
 /* 00E10 80A3B560 14400003 */  bne     $v0, $zero, .L80A3B570     
 /* 00E14 80A3B564 8FAF001C */  lw      $t7, 0x001C($sp)           
@@ -18,7 +18,7 @@ glabel func_80A3B54C
 /* 00E38 80A3B588 10000009 */  beq     $zero, $zero, .L80A3B5B0   
 /* 00E3C 80A3B58C 24020004 */  addiu   $v0, $zero, 0x0004         ## $v0 = 00000004
 .L80A3B590:
-/* 00E40 80A3B590 0C0218E2 */  jal     func_80086388              
+/* 00E40 80A3B590 0C0218E2 */  jal     Item_CheckObtainability              
 /* 00E44 80A3B594 24040020 */  addiu   $a0, $zero, 0x0020         ## $a0 = 00000020
 /* 00E48 80A3B598 240100FF */  addiu   $at, $zero, 0x00FF         ## $at = 000000FF
 /* 00E4C 80A3B59C 54410004 */  bnel    $v0, $at, .L80A3B5B0       

@@ -58,8 +58,8 @@ glabel Fault_DrawStackTrace
 /* B4CDD0 800D5C30 8FBF0044 */   lw    $ra, 0x44($sp)
 .L800D5C34:
 /* B4CDD4 800D5C34 8FB20060 */  lw    $s2, 0x60($sp)
-/* B4CDD8 800D5C38 3C138000 */  lui   $s3, %hi(func_800042F0) # $s3, 0x8000
-/* B4CDDC 800D5C3C 267342F0 */  addiu $s3, %lo(func_800042F0) # addiu $s3, $s3, 0x42f0
+/* B4CDD8 800D5C38 3C138000 */  lui   $s3, %hi(__osCleanupThread) # $s3, 0x8000
+/* B4CDDC 800D5C3C 267342F0 */  addiu $s3, %lo(__osCleanupThread) # addiu $s3, $s3, 0x42f0
 /* B4CDE0 800D5C40 12530025 */  beq   $s2, $s3, .L800D5CD8
 /* B4CDE4 800D5C44 000280C0 */   sll   $s0, $v0, 3
 /* B4CDE8 800D5C48 02158821 */  addu  $s1, $s0, $s5

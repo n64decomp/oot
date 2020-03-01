@@ -16,8 +16,8 @@ glabel func_80A153AC
 /* 00160 80A153E0 44812000 */  mtc1    $at, $f4                   ## $f4 = 600.00
 /* 00164 80A153E4 3C014120 */  lui     $at, 0x4120                ## $at = 41200000
 /* 00168 80A153E8 44813000 */  mtc1    $at, $f6                   ## $f6 = 10.00
-/* 0016C 80A153EC 3C0F80A1 */  lui     $t7, %hi(func_80A16FAC)    ## $t7 = 80A10000
-/* 00170 80A153F0 25EF6FAC */  addiu   $t7, $t7, %lo(func_80A16FAC) ## $t7 = 80A16FAC
+/* 0016C 80A153EC 3C0F80A1 */  lui     $t7, %hi(EnFish_Draw)    ## $t7 = 80A10000
+/* 00170 80A153F0 25EF6FAC */  addiu   $t7, $t7, %lo(EnFish_Draw) ## $t7 = 80A16FAC
 /* 00174 80A153F4 24189BF0 */  addiu   $t8, $zero, 0x9BF0         ## $t8 = FFFF9BF0
 /* 00178 80A153F8 24194000 */  addiu   $t9, $zero, 0x4000         ## $t9 = 00004000
 /* 0017C 80A153FC 44804000 */  mtc1    $zero, $f8                 ## $f8 = 0.00

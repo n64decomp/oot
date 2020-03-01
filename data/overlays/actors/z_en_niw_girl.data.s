@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80AB9980
+glabel En_Niw_Girl_InitVars
  .word 0x019A0400, 0x00000019, 0x016A0000, 0x000002FC
-.word func_80AB8F80
-.word func_80AB9180
-.word func_80AB95C4
-.word func_80AB9848
+.word EnNiwGirl_Init
+.word EnNiwGirl_Destroy
+.word EnNiwGirl_Update
+.word EnNiwGirl_Draw
 glabel D_80AB99A0
  .word 0x0A000039, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000000, 0x00000100, 0x000A001E, 0x00000000, 0x00000000
 glabel D_80AB99CC

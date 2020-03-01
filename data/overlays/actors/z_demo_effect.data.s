@@ -7,11 +7,11 @@
 
 .section .data
 
-glabel D_809767F0
+glabel Demo_Effect_InitVars
  .word 0x008B0100, 0x00000030, 0x00010000, 0x000001A0
-.word func_809710C0
-.word func_80971914
-.word func_80974690
+.word DemoEffect_Init
+.word DemoEffect_Destroy
+.word DemoEffect_Update
 .word 0x00000000
 glabel D_80976810
  .word 0x00000000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_808B26E0
+glabel Bg_Spot11_Bakudankabe_InitVars
  .word 0x019F0100, 0x00000030, 0x016F0000, 0x000001B0
-.word func_808B252C
-.word func_808B25D4
-.word func_808B261C
-.word func_808B26B4
+.word BgSpot11Bakudankabe_Init
+.word BgSpot11Bakudankabe_Destroy
+.word BgSpot11Bakudankabe_Update
+.word BgSpot11Bakudankabe_Draw
 glabel D_808B2700
  .word 0x0A000900, 0x20010000, 0x00000000, 0x00000000, 0x00000000, 0x00000008, 0x00000000, 0x00010000, 0x00280050, 0x000008D3, 0x006CF9D4
 glabel D_808B272C

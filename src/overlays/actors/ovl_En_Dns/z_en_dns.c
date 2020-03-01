@@ -1,9 +1,31 @@
-#include <ultra64.h>
-#include <global.h>
+#include "z_en_dns.h"
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809EF350.s")
+#define ROOM  0x00
+#define FLAGS 0x00000009
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809EF4F4.s")
+void EnDns_Init(EnDns* this, GlobalContext* globalCtx);
+void EnDns_Destroy(EnDns* this, GlobalContext* globalCtx);
+void EnDns_Update(EnDns* this, GlobalContext* globalCtx);
+void EnDns_Draw(EnDns* this, GlobalContext* globalCtx);
+
+/*
+const ActorInit En_Dns_InitVars =
+{
+    ACTOR_EN_DNS,
+    ACTORTYPE_BG,
+    ROOM,
+    FLAGS,
+    OBJECT_SHOPNUTS,
+    sizeof(EnDns),
+    (ActorFunc)EnDns_Init,
+    (ActorFunc)EnDns_Destroy,
+    (ActorFunc)EnDns_Update,
+    (ActorFunc)EnDns_Draw,
+};
+*/
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/EnDns_Init.s")
+
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/EnDns_Destroy.s")
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809EF51C.s")
 
@@ -57,10 +79,6 @@
 
 #pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809F017C.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809F0280.s")
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/EnDns_Update.s")
 
-#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/func_809F036C.s")
-
-
-
-
+#pragma GLOBAL_ASM("asm/non_matchings/overlays/actors/ovl_En_Dns/EnDns_Draw.s")

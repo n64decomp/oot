@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80A6AEC0
+glabel En_Horse_Link_Child_InitVars
  .word 0x009A0100, 0x02000010, 0x00A00000, 0x000002A4
-.word func_80A69668
-.word func_80A6983C
-.word func_80A6AAA8
-.word func_80A6AE68
+.word EnHorseLinkChild_Init
+.word EnHorseLinkChild_Destroy
+.word EnHorseLinkChild_Update
+.word EnHorseLinkChild_Draw
 glabel D_80A6AEE0
  .word 0x060043E4, 0x06004B08
 glabel D_80A6AEE8

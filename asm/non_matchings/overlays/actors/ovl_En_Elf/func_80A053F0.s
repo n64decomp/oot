@@ -119,7 +119,7 @@ glabel func_80A053F0
 /* 03974 80A055A4 248460D8 */  addiu   $a0, $a0, %lo(D_80A060D8)  ## $a0 = 80A060D8
 /* 03978 80A055A8 11A00008 */  beq     $t5, $zero, .L80A055CC     
 /* 0397C 80A055AC 00000000 */  nop
-/* 03980 80A055B0 0C000B84 */  jal     SyncPrintfWithThreadId
+/* 03980 80A055B0 0C000B84 */  jal     LogUtils_LogThreadId
               
 /* 03984 80A055B4 24050A23 */  addiu   $a1, $zero, 0x0A23         ## $a1 = 00000A23
 /* 03988 80A055B8 3C0480A0 */  lui     $a0, %hi(D_80A060E8)       ## $a0 = 80A00000

@@ -7,12 +7,12 @@
 
 .section .data
 
-glabel D_80B2EA00
+glabel En_Vm_InitVars
  .word 0x008A0500, 0x00000011, 0x008B0000, 0x000003B4
-.word func_80B2D468
-.word func_80B2D5D8
-.word func_80B2E148
-.word func_80B2E618
+.word EnVm_Init
+.word EnVm_Destroy
+.word EnVm_Update
+.word EnVm_Draw
 glabel D_80B2EA20
  .word 0x09000D39, 0x10010000, 0x00000000, 0x00000000, 0x00000000, 0xFFCFFFFF, 0x00000000, 0x00010100, 0x00190046, 0x00000000, 0x00000000
 glabel D_80B2EA4C
